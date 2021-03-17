@@ -1,5 +1,5 @@
 ## [NPMK (Neural Processing Matlab Kit)](https://github.com/BlackrockMicrosystems/NPMK)
-Raw data of our dataset are stored in .NSx format of Blackrock Microsystems (https://www.blackrockmicro.com/). In this project, NPMK is used to load raw data and save them as matlab files (*.mat).
+Raw data of our dataset are stored in .NSx format of [Blackrock Microsystems](https://www.blackrockmicro.com/). In this project, NPMK is used to load raw data and save them as matlab files (*.mat).
 
 ## nsx2mat.m
 ns2mat.m does the followings:
