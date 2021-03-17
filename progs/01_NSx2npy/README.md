@@ -1,13 +1,13 @@
 ## [NPMK (Neural Processing Matlab Kit)](https://github.com/BlackrockMicrosystems/NPMK)
-Raw data of our dataset are stored in .NSx format of [Blackrock Microsystems](https://www.blackrockmicro.com/). In this project, NPMK is used to load raw data and save them as matlab files (*.mat).
+Our raw dataset are stored in .NSx format of [Blackrock Microsystems](https://www.blackrockmicro.com/). In this project, NPMK is used to load the raw data.
 
 ## nsx2mat.m
 ns2mat.m does the followings:
-1) to load *.ns3 and *.ns4 files ("./data/orig/0?/day?/raw/0?_day?.ns?")
-2) to save analog input (indicating video capturing timings) and each tetrode's voltage [uV] separately.
+1) to load *.ns3 and *.ns4 files ("${SEMI_RIPPLE_HOME}/data/orig/0?/day?/raw/0?_day?.ns?")
+2) to separately save analog input and each tetrode's voltage [uV]. Note that analog input indicates video capturing timings.
 
 ## nsx2mat_octave.m
-The octave version of the nsx2mat.m script. The following bash one line code creates ./data/0?/day?/split_octave/2kHz_mat/*.mat files.
+The octave version of the nsx2mat.m script. The following bash one-liner creates files named ${SEMI_RIPPLE_HOME}/data/0?/day?/split_octave/2kHz_mat/*.mat.
 ``` bash
 octave nsx2mat_octave.m --no-gui
 ```
