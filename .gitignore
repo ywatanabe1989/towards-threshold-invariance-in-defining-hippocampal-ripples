@@ -9,6 +9,7 @@
 
 ## Containers and Images but Definition Files to Reproduce them
 *.sif
+singularity/semi_ripple
 
 
 ## octave
