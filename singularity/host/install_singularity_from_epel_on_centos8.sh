@@ -22,3 +22,4 @@ sudo sh -c "echo `whoami`:100000:65536 >> /etc/subgid"
 
 
 ## EOF
+sudo yum --showduplicates search singularity

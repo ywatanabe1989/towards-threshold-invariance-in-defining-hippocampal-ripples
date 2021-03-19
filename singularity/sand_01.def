@@ -1,0 +1,122 @@
+Bootstrap: docker
+From: pytorch/pytorch:1.6.0-cuda10.2-cudnn7-runtime
+
+# From: pytorch/pytorch:1.5.0-cuda10.1-cudnn7-runtime
+
+# %setup → %post → %files → %test → [RUN] → $help →  %labels → %environment → %startscript→ %runscript
+
+
+%setup
+
+
+%post -c /bin/bash
+#     ## PATHs
+#     export PATH=/opt/conda/bin:/opt/conda/bin/pip:$HOME/.local/bin:$PATH
+#     export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/lib:/usr/local/lib64
+#     export PYTHONPATH=''
+
+    export CUDA_HOME=/usr/local/cuda
+    export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+
+#     echo export PATH=$PATH >> $SINGULARITY_ENVIRONMENT
+#     echo export LD_LIBRARY_PATH=$LD_LIBRARY_PATH >> $SINGULARITY_ENVIRONMENT
+#     echo export PYTHON_PATH=$PYTHON_PATH >> $SINGULARITY_ENVIRONMENT
+#     echo export CUDA_HOME=$CUDA_HOME >> $SINGULARITY_ENVIRONMENT
+#     echo export LC_ALL=$LC_ALL >> $SINGULARITY_ENVIRONMENT
+
+
+    ## Command Line Prompt
+    CUSTOM_ENV_FILE=/.singularity.d/env/99-zz_custom_env.sh
+    cat > $CUSTOM_ENV_FILE << EOF
+#!/bin/bash
+PS1="(Sand)\W \$ "
+EOF
+    chmod 755 $CUSTOM_ENV_FILE
+
+
+    ## Preparation
+    # echo > /etc/hosts
+    # yum -y install setup
+    # yum -y update
+    # yum -y groupinstall "Development Tools"
+
+
+    ## Locale; en_US.UTF-8
+    apt-get upgrade -y
+    apt-get update    
+    apt-get install -y locales
+
+    apt-get install language-packs-en -y
+    export LC_ALL=en_US.UTF-8 # C # https://github.com/hpcng/singularity/issues/11
+    echo export LC_ALL=$LC_ALL >> $SINGULARITY_ENVIRONMENT
+
+
+
+
+
+    # # https://www.tecmint.com/fix-failed-to-set-locale-defaulting-to-c-utf-8-in-centos/
+    # # yum -y install langpacks-en glibc-all-langpacks
+    # export LC_ALL=en_US.UTF-8 # C # https://github.com/hpcng/singularity/issues/11    
+    # echo export LC_ALL=$LC_ALL >> $SINGULARITY_ENVIRONMENT
+
+
+#     ## Misc
+#     yum -y install tkinter
+#     yum -y install mesa-libGL
+    
+
+#     ## Python
+#     # init pip
+#     python3 -m pip install --upgrade pip
+#     # conda # conda command not found
+#     source activate rapids
+#     conda update -n base -c defaults conda
+#     conda config --append channels conda-forge
+    
+#     # install python packages
+#     # conda install -c pytorch-nightly pytorch torchvision
+#     conda install -y pytorch
+#     conda install -y torchvision
+
+#     conda install -y h5py
+#     conda install -y matplotlib
+#     conda install -y natsort
+#     conda install -y nbconvert
+#     conda install -y numpy
+#     conda install -y numba
+#     conda install -y obspy
+#     conda install -y pandas
+#     conda install -y scikit-learn
+#     conda install -y seaborn
+#     conda install -y six
+#     conda install -y tqdm
+    
+#     ## Metadata for This Container
+#     NOW=`date`
+#     echo "export CONTAINER_BUILD_DATE=\"${NOW}\"" >> $SINGULARITY_ENVIRONMENT
+
+
+%files
+
+
+%test
+
+
+%help
+    The Container for Semisupervised_Ripple repository
+
+
+%labels
+    Author XXXXX
+    Version 0.0.0
+
+
+%environment
+
+
+%startscript
+
+
+%runscript
