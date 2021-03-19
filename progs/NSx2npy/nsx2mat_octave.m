@@ -55,28 +55,9 @@ for i_f = 1:length(LOADPATHS_MOUSE_01)
         end
     end
 end
-disp('0000000000000000')
+clear
 
 
-% Loaded:./data/orig/01/day1/raw/01_day1.ns3
-% Saved to:./data/01/day1/split_octave/tt5-3.mat
-% Saved to:./data/01/day1/split_octave/tt1-3.mat
-% Saved to:./data/01/day1/split_octave/tt5-4.mat
-% Saved to:./data/01/day1/split_octave/tt1-4.mat
-% Saved to:./data/01/day1/split_octave/tt6-1.mat
-% Saved to:./data/01/day1/split_octave/tt2-1.mat
-% Saved to:./data/01/day1/split_octave/tt6-2.mat
-% Saved to:./data/01/day1/split_octave/tt2-2.mat
-% Saved to:./data/01/day1/split_octave/tt6-3.mat
-% Saved to:./data/01/day1/split_octave/tt2-3.mat
-% Saved to:./data/01/day1/split_octave/tt6-4.mat
-% Saved to:./data/01/day1/split_octave/tt2-4.mat
-% Saved to:./data/01/day1/split_octave/tt7-1.mat
-% Saved to:./data/01/day1/split_octave/tt3-1.mat
-% Saved to:./data/01/day1/split_octave/tt7-2.mat
-% Saved to:./data/01/day1/split_octave/tt3-2.mat
-% Saved to:./data/01/day1/split_octave/tt8-1.mat
-% Saved to:./data/01/day1/split_octave/tt8-2.mat
 
 %% Mouse #02, #03, #04, and "#05 on DAY 1, 2, 3"
 LOADPATHS_MOUSE_02_03_04_05 = {
@@ -120,14 +101,15 @@ for i_f = 1:length(LOADPATHS_MOUSE_02_03_04_05)
             label = NS3.ElectrodesInfo(1, i_label).Label;
             save_fname = strcat(label(1:5), ".mat");
             save_data = NS3.Data(i_label,:);
-            disp('aaa')
         end
 
         % analog input, or video capturing timings
-        if i_label == data_size 
+        if i_label == data_size
+            % label = NS3.ElectrodesInfo(1, i_label).Label;
+            % save_fname = strcat(label(1:5), ".mat"); % analog_input.mat
+            
             save_fname = 'analog_input.mat';
             save_data = (NS3.Data(i_label,:) ./ 4) * 6.5534;
-            disp('bbb')            
         end
 
         % Save
@@ -135,10 +117,10 @@ for i_f = 1:length(LOADPATHS_MOUSE_02_03_04_05)
         mkdir(dirname_split);
         save('-v7', savepath, 'save_data')
         disp(strcat('Saved to: ', savepath))
-        disp('ccc')        
         
     end
 end
+clear
 
 
 %% Mouse #05 day4

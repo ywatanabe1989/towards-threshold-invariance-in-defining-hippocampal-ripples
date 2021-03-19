@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 '''Helper script for loading .mat files into python.
 For .mat with multiple variables use mat2dict to get return dictionary with .mat variables.
 For .mat with 1 matrix use mat2npa to return np.array

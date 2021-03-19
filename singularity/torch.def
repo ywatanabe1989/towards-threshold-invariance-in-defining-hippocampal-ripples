@@ -24,7 +24,7 @@ From: rapidsai/rapidsai:cuda10.2-base-centos7-py3.8
 
     ## Command Line Prompt
     CUSTOM_ENV_FILE=/.singularity.d/env/99-zz_custom_env.sh
-    cat >$CUSTOM_ENV_FILE <<EOF
+    cat > $CUSTOM_ENV_FILE << EOF
 #!/bin/bash
 PS1="(S)\W \$ "
 EOF
