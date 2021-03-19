@@ -1,6 +1,9 @@
-## Set envirionment variable
+## Set envirionment variables
+``` bash
 export SEMI_RIPPLE_HOME=/mnt/nvme/Semisupervised_Ripple
 export SINGULARITY_BINDPATH="/mnt,"
+```
+
 
 ## Machine specs
 - CPU:
