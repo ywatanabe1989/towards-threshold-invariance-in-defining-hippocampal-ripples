@@ -1,8 +1,7 @@
 ## [Singularity GPU Support](https://sylabs.io/guides/3.7/user-guide/gpu.html)
 The host machine needs to be installed a driver and library for CUDA/ROCm.
-```
-As long as the host has a driver and library installation for CUDA/ROCm then it’s possible to e.g. run tensorflow in an up-to-date Ubuntu 18.04 container, from an older RHEL 6 host.
-```
+> As long as the host has a driver and library installation for CUDA/ROCm then it’s possible to e.g. run tensorflow in an up-to-date Ubuntu 18.04 container, from an older RHEL 6 host.
+
 
 ## Notes
 - Ensure that **the /dev/nvidiaX** device entries are available inside the container, so that the GPU cards in the host are accessible.
