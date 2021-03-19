@@ -1,5 +1,6 @@
 ## Set envirionment variable
 export SEMI_RIPPLE_HOME=/mnt/nvme/Semisupervised_Ripple
+export SINGULARITY_BINDPATH="/mnt,"
 
 ## Our machine specs
 CPU:

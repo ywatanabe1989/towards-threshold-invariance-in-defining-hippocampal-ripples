@@ -1,5 +1,6 @@
 Bootstrap: docker
-From: rapidsai/rapidsai:cuda10.2-base-centos7-py3.8
+From: nvidia/cuda:11.2.2-cudnn8-runtime-centos8 # https://hub.docker.com/r/nvidia/cuda
+
 
 
 # %setup → %post → %files → %test → [RUN] → $help →  %labels → %environment → %startscript→ %runscript
@@ -10,7 +11,7 @@ From: rapidsai/rapidsai:cuda10.2-base-centos7-py3.8
 
 %post -c /bin/bash
     ## PATHs
-    export PATH=/opt/conda/envs/rapids/bin:/opt/conda/bin:$HOME/.local/bin:$PATH
+    export PATH=/opt/conda/bin:/opt/conda/bin/pip:$HOME/.local/bin:$PATH
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/lib:/usr/local/lib64
     export PYTHONPATH=''
     export CUDA_HOME=/user/local/cuda
@@ -53,7 +54,7 @@ EOF
     ## Python
     # init pip
     python3 -m pip install --upgrade pip
-    # conda
+    # conda # conda command not found
     source activate rapids
     conda update -n base -c defaults conda
     conda config --append channels conda-forge

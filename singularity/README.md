@@ -17,3 +17,17 @@ The host machine needs to be installed a driver and library for CUDA/ROCm.
 Singularity will find the NVIDIA/CUDA libraries on your host either using **the nvidia-container-cli tool**, or, if it is not available, a list of libraries in the configuration file etc/singularity/nvbliblist.
 
 **If possible we recommend installing the nvidia-container-cli tool** from [the NVIDIA libnvidia-container website](https://nvidia.github.io/libnvidia-container/)
+
+The fall-back etc/singularity/nvbliblist library list is correct at time of release for CUDA 10.1. However, if future CUDA versions split or add library files you may need to edit it. The nvidia-container-cli tool will be updated by NVIDIA to always return the appropriate list of libraries.
+
+``` bash
+DIST=$(. /etc/os-release; echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/libnvidia-container/$DIST/libnvidia-container.repo | \
+  sudo tee /etc/yum.repos.d/libnvidia-container.repo
+  
+sudo yum install libnvidia-container-tools -y
+```
+
+singularity pull docker://pytorch/pytorch
+
+singularity exec --nv torch.sif ipython
