@@ -4,8 +4,8 @@ Our raw dataset are stored in .NSx format of [Blackrock Microsystems](https://ww
 
 ## nsx2mat_matlab.m
 **./ns2mat_matlab.m** does the followings:
-1) to load *.ns3 and *.ns4 files ("${SEMI_RIPPLE_HOME}/data/orig/0?/day?/raw/0?_day?.ns?")
-2) to separately save analog input and each tetrode's voltage [uV]. Note that analog input indicates video capturing timings.
+1. To load *.ns3 and *.ns4 files ("${SEMI_RIPPLE_HOME}/data/orig/0?/day?/raw/0?_day?.ns?")
+2. To separately save analog input and each tetrode's voltage [uV]. Note that analog input indicates video capturing timings.
 
 
 ## nsx2mat_octave.m
@@ -20,9 +20,9 @@ $ octave nsx2mat_octave.m --no-gui
 
 ## mat2npy.py
 **./mat2npy.py** does the followings:
-    1) To load a "${SEMI_RIPPLE_HOME}/data/0?/day?/split_octave/2kHz_mat/*tt?-?.mat" file.
-    2) To down-sample the loaded 1D LFP (local field potential) or MEP (myoelectric potential) data.
-    3) To save the down-sampled 1D signal as a numpy file (e.g., ./data/0?/day?/split/1kHz_npy/*tt?-?_fp16.npy).
+1. To load a "${SEMI_RIPPLE_HOME}/data/0?/day?/split_octave/2kHz_mat/*tt?-?.mat" file.
+2. To down-sample the loaded 1D LFP (local field potential) or MEP (myoelectric potential) data.
+3. To save the down-sampled 1D signal as a numpy file (e.g., ./data/0?/day?/split/1kHz_npy/*tt?-?_fp16.npy).
 
 
 ## mat2npy.sh
@@ -30,4 +30,4 @@ $ octave nsx2mat_octave.m --no-gui
 
 
 ## 48h_to_2days.py
-48h_to_2days.py splits 48-hour recording of the mouse #05 on DAY4 into DAY4 and DAY5.
+**./48h_to_2days.py** splits 48-hour recording of the mouse #05 on DAY4 into DAY4 and DAY5.
