@@ -3,7 +3,7 @@
 export SEMI_RIPPLE_HOME=/mnt/nvme/Semisupervised_Ripple
 export SINGULARITY_SIF_ROOT_NAME=semi_ripples
 export SINGULARITY_BINDPATH="/mnt,"
-. $SEMI_RIPPLE_HOME/singularity/singularity-init.bash # aliases
+. $SEMI_RIPPLE_HOME/singularity/singularity-aliases.bash # aliases
 ```
 
 

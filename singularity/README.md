@@ -10,8 +10,8 @@
 ## ./semi_ripples.sif
 **./semi_ripples.sif** is the singularity image file to run our python scripts.
 
-## ./singularity-init.bash
-**./singularity-init.bash** contains bash aliases to use singularity casually.
+## ./singularity-aliases.bash
+**./singularity-aliases.bash** contains bash aliases to use singularity casually.
 
 ``` bash
 $ sshell # move into the shell in the singularity environment (**s**ingularity **shell**).
@@ -21,7 +21,7 @@ $ sbuild *.py # build a *def file or something and the second arguments takes --
 
 $ sshellw # writable sshell
 $ sbuildw # writable sbuild
-$ sipy # writable sipy
+gggg$ sipy # writable sipy
 $ spy *.py # writable spy
 
 ```
