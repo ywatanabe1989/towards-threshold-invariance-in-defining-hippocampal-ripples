@@ -1,6 +1,6 @@
 ## collect_env.py
 **./collect_env.py** collect environment information as below.
-'''
+```
 Collecting environment information...
 PyTorch version: 1.7.0
 Is debug build: True
@@ -32,4 +32,5 @@ Versions of relevant libraries:
 [pip3] torchaudio==0.7.0a0+ac17b64
 [pip3] torchvision==0.8.1
 [conda] Could not collect
-'''
+```
+
