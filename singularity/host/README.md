@@ -1,5 +1,5 @@
 ## collect_env.py
-**./collect_env.py** collect environment information as below.
+**./collect_env.py** collects environment information as below.
 ```
 Collecting environment information...
 PyTorch version: 1.7.0
