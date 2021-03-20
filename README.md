@@ -12,5 +12,5 @@ export SINGULARITY_BINDPATH="/mnt,"
 - RAM: 128 GB
 - GPU: 1080ti * 4
 - 2 TB NVME storage
-- 28 TB NVME storage
+- 28 TB RAID5 HDD storage
 
