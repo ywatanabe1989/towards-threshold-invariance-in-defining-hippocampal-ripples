@@ -105,6 +105,6 @@ EOF
 
 '''
 ## bash
-SIF_ROOT_NAME=${SEMI_RIPPLE_HOME}/singularity/semi_ripple
+SIF_ROOT_NAME=${SEMI_RIPPLE_HOME}/singularity/semi_ripples
 singularity build --sandbox --fakeroot $SIF_ROOT_NAME ${SIF_ROOT_NAME}.def
 '''
