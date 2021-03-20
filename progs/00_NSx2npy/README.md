@@ -3,7 +3,7 @@ Our raw dataset are stored in .NSx format of [Blackrock Microsystems](https://ww
 
 
 ## nsx2mat_matlab.m
-ns2mat_matlab.m does the followings:
+**./ns2mat_matlab.m** does the followings:
 1) to load *.ns3 and *.ns4 files ("${SEMI_RIPPLE_HOME}/data/orig/0?/day?/raw/0?_day?.ns?")
 2) to separately save analog input and each tetrode's voltage [uV]. Note that analog input indicates video capturing timings.
 
