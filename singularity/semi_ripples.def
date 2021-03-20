@@ -70,6 +70,7 @@ EOF
     conda install -y seaborn
     conda install -y six
     conda install -y tqdm
+    conda install -y h5py
     
     ## Metadata
     NOW=`date`

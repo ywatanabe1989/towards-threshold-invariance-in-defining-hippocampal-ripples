@@ -36,7 +36,6 @@ def mat2dict(fname):
 
 
 def keys2npa(d, typ):
-    import pdb; pdb.set_trace()
     d2 = {}
     for key in public_keys(d):
         x = np.array(d[key], dtype=typ)
@@ -49,10 +48,8 @@ def keys2npa(d, typ):
 def public_keys(d):
     return [k for k in d.keys() if not k.startswith('_') ]
 
-
 def mat2npa(fname, typ):
     '''Function returns np array from 1st entry in .mat file'''
-    import pdb; pdb.set_trace()
     d = keys2npa(mat2dict(fname), typ)
     return d[d.keys()[0]]
 
