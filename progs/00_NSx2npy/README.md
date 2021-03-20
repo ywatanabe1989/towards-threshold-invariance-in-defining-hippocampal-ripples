@@ -11,7 +11,7 @@ ns2mat_matlab.m does the followings:
 ## nsx2mat_octave.m
 The octave version of the nsx2mat_matlab.m script. The following bash one-liner creates files named "${SEMI_RIPPLE_HOME}/data/0?/day?/split_octave/2kHz_mat/*tt?-?.mat."
 ``` bash
-octave nsx2mat_octave.m --no-gui
+$ octave nsx2mat_octave.m --no-gui
 ```
 
 ## mat_check.py
@@ -23,8 +23,7 @@ octave nsx2mat_octave.m --no-gui
     1) To load a "${SEMI_RIPPLE_HOME}/data/0?/day?/split_octave/2kHz_mat/*tt?-?.mat" file.
     2) To down-sample the loaded 1D LFP (local field potential) or MEP (myoelectric potential) data.
     3) To save the down-sampled 1D signal as a numpy file (e.g., ./data/0?/day?/split/1kHz_npy/*tt?-?_fp16.npy).
-    
-g
+
 
 ## mat2npy.sh
 **./mat2npy.sh** globs "./data/0?/day?/split/2kHz_mat/*tt?-?.mat" file paths and run **./mat2npy.py** on each of them.
