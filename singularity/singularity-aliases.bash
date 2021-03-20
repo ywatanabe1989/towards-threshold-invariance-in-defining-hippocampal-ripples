@@ -25,7 +25,7 @@ function sbuild () {
     DEF_FPATH=$1
     OPTION=$2
     
-    SEMI_RIPPLE_HOME=/mnt/nvme/Semisupervised_Ripple
+    # SEMI_RIPPLE_HOME=/mnt/nvme/Semisupervised_Ripples
 	SINGULARITY_SIF_ROOT_NAME=$DEF_FPATH # semi_ripples
 	SINGULARITY_SIF_ROOT_PATH=$SEMI_RIPPLE_HOME/singularity/${SINGULARITY_SIF_ROOT_NAME}
 	SINGULARITY_SIF_PATH=$SEMI_RIPPLE_HOME/singularity/${SINGULARITY_SIF_ROOT_NAME}.sif
@@ -41,7 +41,7 @@ alias sshellw="singularity shell --writable $SINGULARITY_SIF_ROOT_PATH"
 
 function sbuildw () {
     DEF_FPATH=$1
-    SEMI_RIPPLE_HOME=/mnt/nvme/Semisupervised_Ripple
+    # SEMI_RIPPLE_HOME=/mnt/nvme/Semisupervised_Ripple
 	SINGULARITY_SIF_ROOT_NAME=$DEF_FPATH # semi_ripples
 	SINGULARITY_SIF_ROOT_PATH=$SEMI_RIPPLE_HOME/singularity/${SINGULARITY_SIF_ROOT_NAME}
 	SINGULARITY_SIF_PATH=$SEMI_RIPPLE_HOME/singularity/${SINGULARITY_SIF_ROOT_NAME}.sif
