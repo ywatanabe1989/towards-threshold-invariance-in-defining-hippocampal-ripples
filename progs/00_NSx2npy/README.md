@@ -29,5 +29,9 @@ $ octave nsx2mat_octave.m --no-gui
 **./mat2npy.sh** globs "./data/0?/day?/split/2kHz_mat/*tt?-?.mat" file paths and run **./mat2npy.py** on each of them.
 
 
-## 48h_to_2days.py
-**./48h_to_2days.py** splits 48-hour recording of the mouse #05 on DAY4 into DAY4 and DAY5.
+## mouse05_48h_to_2days.py
+**./48h_to_2days.py** splits about 48-hour recording of the mouse #05 on "DAY4" into DAY4 and DAY5.
+
+
+## mouse05_48h_to_2days.sh
+**./48h_to_2days.sh** scales **./48h_to_2days.py**.
