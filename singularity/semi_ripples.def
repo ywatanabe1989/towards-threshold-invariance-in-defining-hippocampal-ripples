@@ -9,29 +9,38 @@ From: rapidsai/rapidsai:cuda10.2-base-centos7-py3.8
 
 
 %post -c /bin/bash
+    ################################################################################
     ## PATHs
-    export PATH=/opt/conda/envs/rapids/bin:/opt/conda/bin:$HOME/.local/bin:$PATH
+    ################################################################################    
+    export PATH=/opt/conda/condabin:/opt/conda/envs/rapids/bin:/opt/conda/bin:$HOME/.local/bin:$PATH
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/lib:/usr/local/lib64
     export PYTHONPATH=''
     export CUDA_HOME=/user/local/cuda
-
+    ## To /.singularity.d/env/91-environment.sh
     echo export PATH=$PATH >> $SINGULARITY_ENVIRONMENT
     echo export LD_LIBRARY_PATH=$LD_LIBRARY_PATH >> $SINGULARITY_ENVIRONMENT
     echo export PYTHON_PATH=$PYTHON_PATH >> $SINGULARITY_ENVIRONMENT
     echo export CUDA_HOME=$CUDA_HOME >> $SINGULARITY_ENVIRONMENT
-    echo export LC_ALL=$LC_ALL >> $SINGULARITY_ENVIRONMENT
+    # . $SINGULARITY_ENVIRONMENT # /.singularity.d/env/91-environment.sh
 
 
-    ## Command Line Prompt
+    ################################################################################
+    ## Custom environment
+    ################################################################################    
     CUSTOM_ENV_FILE=/.singularity.d/env/99-zz_custom_env.sh
-    cat > $CUSTOM_ENV_FILE << EOF
-#!/bin/bash
-PS1="(S)\W \$ "
-EOF
+    cat <<- "    EOF" > $CUSTOM_ENV_FILE
+    #!/bin/bash
+    PS1="(SSS)\W \$ "
+
+    . activate rapids # source activate rapids
+    echo -e "\n --- Rapids environment was activated --- \n"
+     
+    EOF
     chmod 755 $CUSTOM_ENV_FILE
 
-
-    ## Preparation
+    ################################################################################
+    ## CentOS
+    ################################################################################    
     echo > /etc/hosts
     yum -y install setup
     yum -y update
@@ -48,8 +57,9 @@ EOF
     yum -y install tkinter
     yum -y install mesa-libGL
     
-
+    ################################################################################
     ## Python
+    ################################################################################    
     # pip
     python3 -m pip install --upgrade pip
     
@@ -64,17 +74,16 @@ EOF
     conda install -y numpy
     conda install -y obspy
     conda install -y pandas
-    # conda install -y pytorch torchvision
     conda install -y pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
     conda install -y scikit-learn
     conda install -y seaborn
     conda install -y six
     conda install -y tqdm
     conda install -y h5py
+    conda install -y black
     
     ## Metadata
-    NOW=`date`
-    echo "export CONTAINER_BUILD_DATE=\"${NOW}\"" >> $SINGULARITY_ENVIRONMENT
+    echo "export CONTAINER_BUILD_DATE=`date`" >> $SINGULARITY_ENVIRONMENT
 
 
 %files
@@ -89,19 +98,37 @@ EOF
 
 %labels
     Author XXXXX
-    Version 0.0.1
+    Version 0.0.2
 
 
 %environment
+    # # This section will be appended to the file /.singularity.d/env/90-environment.sh
+    # # Also, files in /.singularity.d/env are sourced in alpha-numerical order
+    # source activate rapids
+    # echo "\n --- Rapids environment was activated --- \n"
 
+    # ## Try here
+    # export PATH=/opt/conda/condabin:/opt/conda/envs/rapids/bin:/opt/conda/bin:$HOME/.local/bin:$PATH
+    # export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/lib:/usr/local/lib64
+    # export PYTHONPATH=''
+    # export CUDA_HOME=/user/local/cuda
+    # export CONTAINER_BUILD_DATE=\"`date`\"
 
+    
+    
 %startscript
-    source activate rapids
+    # source activate rapids
 
 %runscript
-    source activate rapids
+    # this section will be written in "/singularity" file.
+    # This file is run with the following one line shell script.
+    # $ singularity run centos7.img
+    # or the above one is identical with the below one.
+    # $ singularity exec centos7.img cat /singularity
+    
+    # source activate rapids
     echo "Container was created $NOW"
-    echo "\n --- Rapids environment was activated --- \n"
+    # echo "\n --- Rapids environment was activated --- \n"
 
 
 '''

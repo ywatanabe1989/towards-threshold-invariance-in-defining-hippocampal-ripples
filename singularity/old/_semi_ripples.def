@@ -1,0 +1,121 @@
+Bootstrap: docker
+From: rapidsai/rapidsai:cuda10.2-base-centos7-py3.8
+
+
+# %setup → %post → %files → %test → [RUN] → $help →  %labels → %environment → % startscript→ %runscript
+
+
+%setup
+
+
+%post -c /bin/bash
+    ## PATHs
+    export PATH=/opt/conda/condabin:/opt/conda/envs/rapids/bin:/opt/conda/bin:$HOME/.local/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/lib:/usr/local/lib64
+    export PYTHONPATH=''
+    export CUDA_HOME=/user/local/cuda
+
+    echo export PATH=$PATH >> $SINGULARITY_ENVIRONMENT
+    echo export LD_LIBRARY_PATH=$LD_LIBRARY_PATH >> $SINGULARITY_ENVIRONMENT
+    echo export PYTHON_PATH=$PYTHON_PATH >> $SINGULARITY_ENVIRONMENT
+    echo export CUDA_HOME=$CUDA_HOME >> $SINGULARITY_ENVIRONMENT
+    echo export LC_ALL=$LC_ALL >> $SINGULARITY_ENVIRONMENT
+
+
+    ## Command Line Prompt
+    CUSTOM_ENV_FILE=/.singularity.d/env/99-zz_custom_env.sh
+    cat > $CUSTOM_ENV_FILE << EOF
+#!/bin/bash
+PS1="(S)\W \$ "
+EOF
+    chmod 755 $CUSTOM_ENV_FILE
+
+
+    ## Preparation
+    echo > /etc/hosts
+    yum -y install setup
+    yum -y update
+    yum -y groupinstall "Development Tools"
+
+
+    ## Locale: en_US.UTF-8
+    yum -y install langpacks-en glibc-all-langpacks
+    export LC_ALL=en_US.UTF-8
+    echo export LC_ALL=$LC_ALL >> $SINGULARITY_ENVIRONMENT
+
+
+    ## Misc
+    yum -y install tkinter
+    yum -y install mesa-libGL
+    
+
+    ## Python
+    # pip
+    python3 -m pip install --upgrade pip
+    
+    # conda
+    source activate rapids
+    conda update -n base -c defaults conda
+    conda config --append channels conda-forge
+    
+    # python packages
+    conda install -y matplotlib
+    conda install -y natsort
+    conda install -y numpy
+    conda install -y obspy
+    conda install -y pandas
+    # conda install -y pytorch torchvision
+    conda install -y pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+    conda install -y scikit-learn
+    conda install -y seaborn
+    conda install -y six
+    conda install -y tqdm
+    conda install -y h5py
+    conda install -y black
+    
+    ## Metadata
+    NOW=`date`
+    echo "export CONTAINER_BUILD_DATE=\"${NOW}\"" >> $SINGULARITY_ENVIRONMENT
+
+
+%files
+
+
+%test
+
+
+%help
+    The container for the paper "Semisupervised hippocampal ripples."
+
+
+%labels
+    Author XXXXX
+    Version 0.0.2
+
+
+%environment
+    # This section will be appended to the file /.singularity.d/env/90-environment.sh
+    # Also, files in /.singularity.d/env are sourced in alpha-numerical order
+    source activate rapids
+    echo "\n --- Rapids environment was activated --- \n"
+    
+%startscript
+    # source activate rapids
+
+%runscript
+    # this section will be written in "/singularity" file.
+    # This file is run with the following one line shell script.
+    # $ singularity run centos7.img
+    # or the above one is identical with the below one.
+    # $ singularity exec centos7.img cat /singularity
+    
+    # source activate rapids
+    echo "Container was created $NOW"
+    # echo "\n --- Rapids environment was activated --- \n"
+
+
+'''
+## bash
+SIF_ROOT_NAME=${SEMI_RIPPLE_HOME}/singularity/semi_ripples
+singularity build --sandbox --fakeroot $SIF_ROOT_NAME ${SIF_ROOT_NAME}.def
+'''
