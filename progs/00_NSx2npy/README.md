@@ -9,7 +9,7 @@ Our raw dataset are stored in .NSx format of [Blackrock Microsystems](https://ww
 
 
 ## nsx2mat_octave.m
-The octave version of the nsx2mat_matlab.m script. The following bash one-liner creates files named "${SEMI_RIPPLE_HOME}/data/0?/day?/split_octave/2kHz_mat/*tt?-?.mat."
+The octave version of the nsx2mat_matlab.m script. The following bash one-liner creates files named "${SEMI_RIPPLE_HOME}/data/0?/day?/split_octave/LFP_MEP_2kHz_mat/*tt?-?.mat."
 ``` bash
 $ octave nsx2mat_octave.m --no-gui
 ```
@@ -20,13 +20,13 @@ $ octave nsx2mat_octave.m --no-gui
 
 ## mat2npy.py
 **./mat2npy.py** does the followings:
-1. To load a "${SEMI_RIPPLE_HOME}/data/0?/day?/split_octave/2kHz_mat/*tt?-?.mat" file.
+1. To load a "${SEMI_RIPPLE_HOME}/data/0?/day?/split_octave/LFP_MEP_2kHz_mat/*tt?-?.mat" file.
 2. To down-sample the loaded 1D LFP (local field potential) or MEP (myoelectric potential) data.
 3. To save the down-sampled 1D signal as a numpy file (e.g., ./data/0?/day?/split/1kHz_npy/*tt?-?_fp16.npy).
 
 
 ## mat2npy.sh
-**./mat2npy.sh** globs "./data/0?/day?/split/2kHz_mat/*tt?-?.mat" file paths and run **./mat2npy.py** on each of them.
+**./mat2npy.sh** globs "./data/0?/day?/split/LFP_MEP_2kHz_mat/*tt?-?.mat" file paths and run **./mat2npy.py** on each of them.
 
 
 ## mouse05_48h_to_2days.py
@@ -35,3 +35,7 @@ $ octave nsx2mat_octave.m --no-gui
 
 ## mouse05_48h_to_2days.sh
 **./48h_to_2days.sh** scales **./48h_to_2days.py**.
+
+
+## create_list_of_hippo_LFP_and_trape_MEP_tetrodes.sh
+**./create_list_of_hippo_LFP_and_trape_MEP_tetrodes.sh** creates file path list of hippocampal LFP ($SEMI_RIPPLE_HOME/data/HIPPO_LFP_TT_IDs.txt, the list of 184 numpy files) and trapezius MEP ($SEMI_RIPPLE_HOME/data/TRAPE_MEP_TT_IDs.txt, the list of 36 numpy files).

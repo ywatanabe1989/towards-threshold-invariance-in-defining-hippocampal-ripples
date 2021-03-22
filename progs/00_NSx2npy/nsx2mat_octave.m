@@ -20,7 +20,7 @@ for i_f = 1:length(LOADPATHS_MOUSE_01)
     dirname_split = strsplit(dirname_raw, "orig/");
     dirname_split = strcat(dirname_split{1,1}, dirname_split{1,2});
     dirname_split = erase(dirname_split, "/raw");
-    dirname_split = strcat(dirname_split, "/split_octave/2kHz_mat/");
+    dirname_split = strcat(dirname_split, "/split_octave/LFP_MEP_2kHz_mat/");
 
     % analog input, or video capturing timings
     if i_f == 1        
@@ -86,7 +86,7 @@ for i_f = 1:length(LOADPATHS_MOUSE_02_03_04_05)
     dirname_split = strsplit(dirname_raw, "orig/");
     dirname_split = strcat(dirname_split{1,1}, dirname_split{1,2});
     dirname_split = erase(dirname_split, "/raw");
-    dirname_split = strcat(dirname_split, "/split_octave/2kHz_mat/");
+    dirname_split = strcat(dirname_split, "/split_octave/LFP_MEP_2kHz_mat/");
 
     % Load
     NS3 = openNSx(loadpath, 'uV', 'precision');
@@ -130,7 +130,7 @@ loadpath = './data/orig/05/day4/raw/05_day4.ns3';
 dirname_split = strsplit(dirname_raw, "orig/");
 dirname_split = strcat(dirname_split{1,1}, dirname_split{1,2});
 dirname_split = erase(dirname_split, "/raw");
-dirname_split = strcat(dirname_split, "/split_octave/2kHz_mat/");
+dirname_split = strcat(dirname_split, "/split_octave/LFP_MEP_2kHz_mat/");
 % Load
 NS3 = openNSx(loadpath, 'uV', 'precision');
 disp(strcat('Loaded: ', loadpath))

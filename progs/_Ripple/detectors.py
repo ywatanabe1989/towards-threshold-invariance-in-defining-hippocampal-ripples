@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import numpy as np
 from ripple_detection import Kay_ripple_detector
 import argparse

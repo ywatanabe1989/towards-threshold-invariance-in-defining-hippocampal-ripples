@@ -9,8 +9,9 @@ import myutils.myfunc as mf
 
 
 ap = argparse.ArgumentParser()
-ap.add_argument("-m", "--mat", default='../data/01/day1/split/tt8-2.mat', \
+ap.add_argument("-m", "--mat", default='./data/01/day1/split/LFP_MEP_2kHz_mat/tt8-2.mat', \
                 help="path to input .mat file")
+
 ap.add_argument("-dtype", default=np.float16, \
                 help=" ")
 args = ap.parse_args()

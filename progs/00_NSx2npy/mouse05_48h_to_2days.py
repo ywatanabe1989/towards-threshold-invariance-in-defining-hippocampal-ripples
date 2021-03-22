@@ -21,7 +21,7 @@ from progs.utils.general import (get_samp_rate_str_from_fpath,
 
 
 ap = argparse.ArgumentParser()
-ap.add_argument("-n", "--numpy", default='./data/05/day4/split/1kHz_npy/1_tt5-3_fp16.npy',
+ap.add_argument("-n", "--numpy", default='./data/05/day4/split/LFP_MEP_1kHz_npy/1_tt5-3_fp16.npy',
                 help="path to input .npy file")
 args = ap.parse_args()
 

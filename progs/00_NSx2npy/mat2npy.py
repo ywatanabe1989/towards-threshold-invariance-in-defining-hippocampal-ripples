@@ -17,10 +17,10 @@ def load_a_prepared_mat_file_as_an_arr(lpath_mat, dtype=np.float32):
     
     Example:
         # pseudo-output of nsx2mat_matlab.m
-        lpath_matlab = './data/01/day1/split_matlab/2kHz_mat/tt8-2.mat'
+        lpath_matlab = './data/01/day1/split_matlab/LFP_MEP_2kHz_mat/tt8-2.mat'
 
         # pseudo-output of nsx2mat_octave.m
-        lpath_octave = './data/01/day1/split_octave/2kHz_mat/tt8-2.mat'
+        lpath_octave = './data/01/day1/split_octave/LFP_MEP_2kHz_mat/tt8-2.mat'
     
         data_mat = load_a_prepared_mat_file_as_an_arr(lpath_matlab, dtype=args.dtype)
         data_oct = load_a_prepared_mat_file_as_an_arr(lpath_octave, dtype=args.dtype)
@@ -60,7 +60,7 @@ if __name__ == '__main__':
 
     ## Parse command line arguments
     ap = argparse.ArgumentParser()
-    ap.add_argument("-l", "--lpath_mat", default='./data/01/day1/split/2kHz_mat/tt8-2.mat', \
+    ap.add_argument("-l", "--lpath_mat", default='./data/01/day1/split/LFP_MEP_2kHz_mat/tt8-2.mat', \
                     help="path to input .mat file")
     ap.add_argument("--dtype", default=np.float16, \
                     help=" ")
