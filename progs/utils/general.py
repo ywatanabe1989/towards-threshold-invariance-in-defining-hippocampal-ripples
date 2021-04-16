@@ -31,7 +31,8 @@ def to_str_dtype(dtype):
 def to_int_samp_rate(samp_rate_int):
     TO_INT_SAMP_RATE_DICT = {'2kHz':2000, '1kHz':1000, '500kHz': 500}
     return TO_INT_SAMP_RATE_DICT[samp_rate_int]
-    
+
+
 def to_str_samp_rate(samp_rate_str):
     TO_STR_SAMP_RATE_DICT = {2000: '2kHz', 1000: '1kHz', 500: '500kHz'}
     return TO_STR_SAMP_RATE_DICT[samp_rate_str]
@@ -61,11 +62,13 @@ def save_npy(np_arr, fpath):
     np.save(fpath, np_arr)
     print('Saved to: {}'.format(fpath))
 
+
 def load_pkl(fpath, print=False):
-    obj = pkl_load(fpath)
-    if print:
-        print('Loaded: {}'.format(fpath))    
-    return obj
+    import pickle
+    with open(fpath, 'rb') as f: # 'r'
+        obj = pickle.load(f)
+        # print(obj.keys())
+        return obj
 
 def load_npy(fpath, print=False):
     arr = np.load(fpath)
@@ -73,23 +76,160 @@ def load_npy(fpath, print=False):
         print('Loaded: {}'.format(fpath))
     return arr
 
-class time_tracker():
+
+class TimeStamper():
     def __init__(self):
+        import time; self.time = time
         self.id = -1
         self.start = time.time()
         self.prev = self.start
 
-    def __call__(self, comment=None):
-        now = time.time()
+    def __call__(self, comment):
+        now = self.time.time()
         from_start = now - self.start
-        self.from_start_hhmmss = time.strftime('%H:%M:%S', time.gmtime(from_start))
+        
+        self.from_start_hhmmss = self.time.strftime('%H:%M:%S',
+                                                    self.time.gmtime(from_start))
         from_prev = now - self.prev
-        self.from_prev_hhmmss = time.strftime('%H:%M:%S', time.gmtime(from_prev))
+        
+        self.from_prev_hhmmss = self.time.strftime('%H:%M:%S',
+                                                   self.time.gmtime(from_prev))
+        
         self.id += 1
         self.prev = now
-        if comment:
-            print("Time (id:{}): tot {}, prev {} [hh:mm:ss]: {}\n".format(\
-                  self.id, self.from_start_hhmmss, self.from_prev_hhmmss, comment))
-        else:
-            print("Time (id:{}): tot {}, prev {} [hh:mm:ss]\n".format(\
-                  self.id, self.from_start_hhmmss, self.from_prev_hhmmss))
+        
+        print("Time (id:{}): tot {}, prev {} [hh:mm:ss]: {}\n".format(\
+              self.id, self.from_start_hhmmss, self.from_prev_hhmmss, comment))
+
+    def get(self):
+        return self.id, self.from_start_hhmmss, self.from_prev_hhmmss, comment
+
+
+
+
+def read_txt(fpath):
+    f = open(fpath, "r")
+    read = [l.strip('\n\r') for l in f]
+    f.close()
+    return read
+
+
+def search_str_list(str_list, search_key):
+  import re
+  matched_keys = []
+  indi = []
+  for ii, string in enumerate(str_list):
+    m = re.search(search_key, string)
+    if m is not None:
+      matched_keys.append(string)
+      indi.append(ii)
+  return indi, matched_keys
+      
+
+def load_yaml_as_dict(yaml_path = './config.yaml'):
+    import yaml
+    config = {}
+    with open(yaml_path) as f:
+        _obj = yaml.safe_load(f)
+        config.update(_obj)
+    return config
+
+
+def fix_seed(seed=42):
+    # https://github.com/lucidrains/vit-pytorch/blob/main/examples/cats_and_dogs.ipynb
+    import os
+    os.environ['PYTHONHASHSEED'] = str(seed)
+
+    
+    try:
+        random.seed(seed)
+    except:
+        pass
+
+    
+    try:
+        np.random.seed(seed)
+    except:
+        pass
+
+    
+    try:
+        torch.manual_seed(seed)
+        torch.cuda.manual_seed(seed)        
+        torch.cuda.manual_seed_all(seed)
+        torch.backends.cudnn.deterministic = True
+    except:
+        pass
+
+    
+    try:
+        tf.random.set_seed(seed)
+    except:
+        pass
+
+
+# def torch_to_arr(x):
+#     is_arr = isinstance(x, (np.ndarray, np.generic) )
+#     if is_arr: # when x is np.array
+#         return x
+#     if torch.is_tensor(x): # when x is torch.tensor
+#         return x.detach().numpy().cpu()
+    
+# def save_listed_scalars_as_csv(listed_scalars, spath_csv, column_name='_',
+#                                indi_suffix=None, overwrite=False):
+#     '''Puts to df and save it as csv'''
+#     if overwrite == True:
+#         mv_to_tmp(spath_csv, L=2)
+#     indi_suffix = np.arange(len(listed_scalars)) if indi_suffix is None else indi_suffix
+#     df = pd.DataFrame({'{}'.format(column_name):listed_scalars}
+#                       , index=indi_suffix)
+#     df.to_csv(spath_csv)
+#     print('Saved to: {}'.format(spath_csv))
+
+    
+# def save_listed_dfs_as_csv(listed_dfs, spath_csv, indi_suffix=None, overwrite=False):
+#     '''listed_dfs:
+#            [df1, df2, df3, ..., dfN]. They will be written vertically in the order.
+    
+#        spath_csv:
+#            /hoge/fuga/foo.csv
+#        indi_suffix:
+#            At the left top cell on the output csv file, '{}'.format(indi_suffix[i])
+#            will be added, where i is the index of the df.On the other hand,
+#            when indi_suffix=None is passed, only '{}'.format(i) will be added.
+#     '''
+#     if overwrite == True:
+#         mv_to_tmp(spath_csv, L=2)
+    
+#     indi_suffix = np.arange(len(listed_dfs)) if indi_suffix is None else indi_suffix
+#     for i, df in enumerate(listed_dfs):
+#         with open(spath_csv, mode='a') as f:
+#             f_writer = csv.writer(f)
+#             i_suffix = indi_suffix[i]
+#             f_writer.writerow(['{}'.format(indi_suffix[i])])
+#         df.to_csv(spath_csv, mode='a', index=True, header=True)
+#         with open(spath_csv, mode='a') as f:
+#             f_writer = csv.writer(f)
+#             f_writer.writerow([''])
+#     print('Saved to: {}'.format(spath_csv))
+    
+
+# def take_N_percentile(data, perc=25):
+#     return sorted(data)[int(len(data)*perc/100)]
+    
+def mv_to_tmp(fpath, L=2):
+    from shutil import move
+    import os
+    try:
+        tgt_fname = connect_str_list_with_hyphens(fpath.split('/')[-L:])
+        tgt_fpath = '/tmp/{}'.format(tgt_fname)
+        move(fpath, tgt_fpath)
+        print('Moved to: {}'.format(tgt_fpath))
+    except:
+        pass
+
+def connect_str_list_with_hyphens(str_list):
+    connected = ''
+    for s in str_list:
+        connected += '-' + s
+    return connected[1:]

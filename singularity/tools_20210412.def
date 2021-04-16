@@ -1,0 +1,136 @@
+Bootstrap: docker
+From: centos/python-38-centos7
+# From: centos:centos7
+
+%setup
+
+
+%post -c /bin/bash
+    ################################################################################
+    ## PATHs
+    ################################################################################    
+    . $SINGULARITY_ENVIRONMENT # . /.singularity.d/env/91-environment.sh
+
+
+    ################################################################################
+    ## CentOS
+    ################################################################################    
+    echo > /etc/hosts
+    yum -y install setup
+    yum -y update
+    yum -y groupinstall "Development Tools"
+    # EPEL Repo
+    yum -y install epel-release
+    yum -y update
+    
+
+    ## Locale: en_US.UTF-8
+    yum -y install langpacks-en glibc-all-langpacks
+    export LC_ALL=en_US.UTF-8
+    echo export LC_ALL=$LC_ALL >> $SINGULARITY_ENVIRONMENT
+
+    ## Misc
+    yum -y install tkinter
+    yum -y install mesa-libGL
+    yum -y install tree
+    yum -y install htop
+    ## RipGrep
+    yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/carlwgeorge/ripgrep/repo/epel-7/carlwgeorge-ripgrep-epel-7.repo
+    yum -y install ripgrep
+    
+    '''
+    ## Git 2.x
+    yum -y remove git # remove git 1.x
+    # dependancies
+    yum install -y wget openssl-devel libcurl-devel expat-devel
+    # git
+    VERSION=2.26.2
+    mkdir -p /usr/local/src
+    cd /usr/local/src
+    wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-${VERSION}.tar.gz
+    tar xf git-${VERSION}.tar.gz
+    rm -rf git-${VERSION}.tar.gz
+    # building git
+    cd git-${VERSION}
+    make prefix=/usr/local all
+    make prefix=/usr/local install
+    echo $(git --version)
+
+
+    ## Emacs 26.1
+    yum -y install gnutls gnutls-devel ncurses-devel
+    ## Install Emacs
+    VERSION=26.1
+    cd /tmp
+    echo $VERSION
+    curl -O http://ftp.gnu.org/pub/gnu/emacs/emacs-${VERSION}.tar.gz
+    tar xvf emacs-${VERSION}.tar.gz
+    cd emacs-$VERSION
+    ./configure --without-x
+    make -j 20
+    make install -j 20
+    echo `which emacs-$VERSION`
+    '''    
+
+    ################################################################################
+    ## Python
+    ################################################################################
+
+    ## pip
+    python3 -m pip install --upgrade pip
+    
+    ## packages
+    python -m pip install imgcat
+
+
+    ################################################################################
+    ## PS1
+    ################################################################################    
+    CUSTOM_PS1_FILE=/.singularity.d/env/99-zz-02_custom_ps1.sh
+    cat << "    EOH" | tr -d "[:blank:]" > $CUSTOM_PS1_FILE    
+    #!/bin/bash"
+    
+    PS1="(T)\W \$ "
+    
+    ## EOF
+    EOH
+
+    chmod 755 $CUSTOM_PS1_FILE
+
+
+%files
+
+
+%test
+
+
+%help
+    A container for tools.
+
+
+%labels
+    Author ywata1989@gmail.com
+    Version develop
+
+
+%environment
+    ## Meta data
+    export CONTAINER_BUILD_DATE=\"`date`\"
+
+
+%startscript
+
+
+%runscript
+
+
+
+'''
+# It might be useful if you would add thise lines in ~/.bashrc.
+alias tree='singularity exec $TOOLS_SIF tree'
+alias htop='singularity exec $TOOLS_SIF htop'
+alias sshpass='singularity exec $TOOLS_SIF sshpass'
+alias rg='singularity exec $TOOLS_SIF rg'
+alias imgcat='singularity exec $TOOLS_SIF imgcat'
+# alias emacs='singularity exec $TOOLS_SIF emacs-26.1'
+'''

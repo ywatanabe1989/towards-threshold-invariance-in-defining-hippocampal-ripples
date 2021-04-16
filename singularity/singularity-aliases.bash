@@ -4,8 +4,8 @@ export SINGULARITY_SIF_PATH=$SEMI_RIPPLE_HOME/singularity/${SINGULARITY_SIF_ROOT
 
 ## Using *.sif
 function sshell() {
-    echo singularity shell --nv $SINGULARITY_SIF_PATH
-    singularity shell --nv $SINGULARITY_SIF_PATH
+    echo singularity shell --nv $SINGULARITY_SIF_ROOT_PATH
+    singularity shell --nv $SINGULARITY_SIF_ROOT_PATH
 }
 
 

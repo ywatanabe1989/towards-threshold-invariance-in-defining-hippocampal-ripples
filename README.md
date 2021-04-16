@@ -7,6 +7,8 @@ export SINGULARITY_BINDPATH="/mnt,"
 export SINGULARITY_SHELL=/bin/bash
 ```
 
+export PYTHONPATH=/mnt/nvme/Semisupervised_Ripple
+
 
 ## Machine specs
 - CPU:
