@@ -1,0 +1,180 @@
+Bootstrap: docker
+From: centos/python-38-centos7
+
+
+%setup
+
+
+%post -c /bin/bash
+    ################################################################################
+    ## PATHs
+    ################################################################################    
+    . $SINGULARITY_ENVIRONMENT # . /.singularity.d/env/91-environment.sh
+
+
+    ################################################################################
+    ## CentOS
+    ################################################################################    
+    echo > /etc/hosts
+    yum -y install setup
+    yum -y update
+    yum -y groupinstall "Development Tools"
+    yum -y install epel-release
+    yum -y update
+    
+
+    ## Locale: en_US.UTF-8
+    yum -y install langpacks-en glibc-all-langpacks
+    export LC_ALL=en_US.UTF-8
+    echo export LC_ALL=$LC_ALL >> $SINGULARITY_ENVIRONMENT
+
+    ## Misc
+    yum -y install tkinter
+    yum -y install mesa-libGL
+    yum -y install tree
+    yum -y install htop
+    # ripgrep
+    RG_REPO_URL=https://copr.fedorainfracloud.org/coprs/carlwgeorge/ripgrep/repo/
+    RG_REPO_URL=${RG_REPO_URL}epel-7/carlwgeorge-ripgrep-epel-7.repo
+    yum-config-manager --add-repo=$RG_REPO_URL
+    yum -y install ripgrep
+
+
+    ################################################################################
+    ## Octave
+    ################################################################################
+    yum -y install lapack64-devel lapack64
+    yum -y install libblas-dev libatlas-dev liblapack-dev    
+    wget https://ftp.jaist.ac.jp/pub/GNU/octave/octave-5.2.0.tar.gz
+    tar xvf octave-5.2.0.tar.gz
+    cd octave-5.2.0
+    ./configure # --prefix=/opt/octave-5.2.0
+    make -j 20
+    make install
+
+
+
+    ################################################################################
+    ## Python
+    ################################################################################
+    ## pip
+    python3 -m pip install --upgrade pip
+    python -m pip install imgcat    
+    python3 -m pip install octave_kernel
+    
+    ## packages
+    python3 -m pip install matplotlib
+    python3 -m pip install natsort
+    python3 -m pip install numpy
+    python3 -m pip install obspy
+    python3 -m pip install pandas
+    # python3 -m pip install torch torchvision torchaudio
+    python3 -m pip install scikit-learn
+    python3 -m pip install seaborn
+    python3 -m pip install six
+    python3 -m pip install tqdm
+    python3 -m pip install h5py
+    python3 -m pip install black
+
+
+    ################################################################################
+    # ## Git 2.x
+    ################################################################################    
+    # yum -y remove git # remove git 1.x
+    # # dependancies
+    # yum install -y wget openssl-devel libcurl-devel expat-devel
+    # # git
+    # VERSION=2.26.2
+    # mkdir -p /usr/local/src
+    # cd /usr/local/src
+    # wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-${VERSION}.tar.gz
+    # tar xf git-${VERSION}.tar.gz
+    # rm -rf git-${VERSION}.tar.gz
+    # # building git
+    # cd git-${VERSION}
+    # make prefix=/usr/local all
+    # make prefix=/usr/local install
+    # echo $(git --version)
+    
+
+    ################################################################################
+    # ## Emacs 26.1
+    ################################################################################    
+    # yum -y install gnutls gnutls-devel ncurses-devel
+    # ## Install Emacs
+    # VERSION=26.1
+    # cd /tmp
+    # echo $VERSION
+    # curl -O http://ftp.gnu.org/pub/gnu/emacs/emacs-${VERSION}.tar.gz
+    # tar xvf emacs-${VERSION}.tar.gz
+    # cd emacs-$VERSION
+    # ./configure --without-x
+    # make -j 20
+    # make install -j 20
+    # echo `which emacs-$VERSION`
+
+
+    ################################################################################
+    ## PS1
+    ################################################################################
+    CUSTOM_PS1_FILE=/.singularity.d/env/99-zz-02_custom_ps1.sh
+    cat << "    EOH" | awk '{$1=$1;print}' > $CUSTOM_PS1_FILE        
+    #!/bin/bash"
+    
+    PS1="(S)\W \$ "
+    
+    ## EOF
+    EOH
+
+    chmod 755 $CUSTOM_PS1_FILE
+
+
+%files
+
+
+%test
+
+
+%help
+    The container for the paper "Semisupervised hippocampal ripples."
+
+
+%labels
+    Author XXXXX
+    Version 0.0.5
+
+
+%environment
+    # This section will be appended to the file /.singularity.d/env/90-environment.sh
+    # and files in /.singularity.d/env/ dir are sourced in alpha-numerical order
+
+    ## PATHs
+    export PATH=/opt/conda/condabin:/opt/conda/envs/rapids/bin:/opt/conda/bin:$HOME/.local/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/lib:/usr/local/lib64
+    export PYTHONPATH=''
+    export CUDA_HOME=/user/local/cuda
+
+    ## Meta data
+    export CONTAINER_BUILD_DATE=\"`date`\"
+
+
+%startscript
+
+
+%runscript
+
+
+
+'''
+sbuild ./singularity/semi_ripples_06.def -f
+sshell
+
+sshellw ./singularity/semi_ripples
+# It might be useful if you would add thise lines in ~/.bashrc.
+alias tree='singularity exec $TOOLS_SIF tree'
+alias htop='singularity exec $TOOLS_SIF htop'
+alias sshpass='singularity exec $TOOLS_SIF sshpass'
+alias rg='singularity exec $TOOLS_SIF rg'
+alias imgcat='singularity exec $TOOLS_SIF imgcat'
+# alias emacs='singularity exec $TOOLS_SIF emacs-26.1'
+'''

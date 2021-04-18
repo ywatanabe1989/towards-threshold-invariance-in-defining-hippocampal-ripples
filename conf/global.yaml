@@ -1,6 +1,5 @@
 BANDS_LIM_HZ_DICT:
   ripple: [150, 250]
-
 RGB_PALLETE_DICT:
     'blue':(0,128,192),
     'red':(255,70,50),

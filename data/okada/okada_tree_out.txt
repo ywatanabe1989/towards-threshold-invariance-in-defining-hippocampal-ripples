@@ -1,1774 +1,2148 @@
-01
-├── day1
-│   ├── split
-│   │   ├── LFP_MEP_1kHz_npy
-│   │   │   ├── tt1-3_fp16.npy
-│   │   │   ├── tt1-4_fp16.npy
-│   │   │   ├── tt2-1_fp16.npy
-│   │   │   ├── tt2-2_fp16.npy
-│   │   │   ├── tt2-3_fp16.npy
-│   │   │   ├── tt2-4_fp16.npy
-│   │   │   ├── tt3-1_fp16.npy
-│   │   │   ├── tt3-2_fp16.npy
-│   │   │   ├── tt5-3_fp16.npy
-│   │   │   ├── tt5-4_fp16.npy
-│   │   │   ├── tt6-1_fp16.npy
-│   │   │   ├── tt6-2_fp16.npy
-│   │   │   ├── tt6-3_fp16.npy
-│   │   │   ├── tt6-4_fp16.npy
-│   │   │   ├── tt7-1_fp16.npy
-│   │   │   ├── tt7-2_fp16.npy
-│   │   │   ├── tt8-1_fp16.npy
-│   │   │   └── tt8-2_fp16.npy
-│   │   ├── LFP_MEP_2kHz_mat
-│   │   │   ├── analog_input.mat
-│   │   │   ├── tt1-3.mat
-│   │   │   ├── tt1-4.mat
-│   │   │   ├── tt2-1.mat
-│   │   │   ├── tt2-2.mat
-│   │   │   ├── tt2-3.mat
-│   │   │   ├── tt2-4.mat
-│   │   │   ├── tt3-1.mat
-│   │   │   ├── tt3-2.mat
-│   │   │   ├── tt5-3.mat
-│   │   │   ├── tt5-4.mat
-│   │   │   ├── tt6-1.mat
-│   │   │   ├── tt6-2.mat
-│   │   │   ├── tt6-3.mat
-│   │   │   ├── tt6-4.mat
-│   │   │   ├── tt7-1.mat
-│   │   │   ├── tt7-2.mat
-│   │   │   ├── tt8-1.mat
-│   │   │   └── tt8-2.mat
-│   │   └── ripple_candi_1kHz_pkl
-│   │       ├── tt2-1_fp16.pkl
-│   │       ├── tt2-2_fp16.pkl
-│   │       ├── tt2-3_fp16.pkl
-│   │       ├── tt2-4_fp16.pkl
-│   │       ├── tt6-1_fp16.pkl
-│   │       ├── tt6-2_fp16.pkl
-│   │       ├── tt6-3_fp16.pkl
-│   │       └── tt6-4_fp16.pkl
-│   └── split_octave
-│       └── LFP_MEP_2kHz_mat
-│           ├── analog_input.mat
-│           ├── tt1-3.mat
-│           ├── tt1-4.mat
-│           ├── tt2-1.mat
-│           ├── tt2-2.mat
-│           ├── tt2-3.mat
-│           ├── tt2-4.mat
-│           ├── tt3-1.mat
-│           ├── tt3-2.mat
-│           ├── tt5-3.mat
-│           ├── tt5-4.mat
-│           ├── tt6-1.mat
-│           ├── tt6-2.mat
-│           ├── tt6-3.mat
-│           ├── tt6-4.mat
-│           ├── tt7-1.mat
-│           ├── tt7-2.mat
-│           ├── tt8-1.mat
-│           └── tt8-2.mat
-└── MouseInfo_en.md
-02
-├── day1
-│   ├── split
-│   │   ├── LFP_MEP_1kHz_npy
-│   │   │   ├── tt1-3_fp16.npy
-│   │   │   ├── tt1-4_fp16.npy
-│   │   │   ├── tt2-1_fp16.npy
-│   │   │   ├── tt2-2_fp16.npy
-│   │   │   ├── tt2-3_fp16.npy
-│   │   │   ├── tt2-4_fp16.npy
-│   │   │   ├── tt3-3_fp16.npy
-│   │   │   ├── tt3-4_fp16.npy
-│   │   │   ├── tt4-1_fp16.npy
-│   │   │   ├── tt4-2_fp16.npy
-│   │   │   ├── tt5-1_fp16.npy
-│   │   │   ├── tt5-2_fp16.npy
-│   │   │   ├── tt6-1_fp16.npy
-│   │   │   ├── tt6-2_fp16.npy
-│   │   │   ├── tt6-3_fp16.npy
-│   │   │   ├── tt6-4_fp16.npy
-│   │   │   ├── tt7-1_fp16.npy
-│   │   │   ├── tt7-2_fp16.npy
-│   │   │   ├── tt7-3_fp16.npy
-│   │   │   ├── tt7-4_fp16.npy
-│   │   │   ├── tt8-1_fp16.npy
-│   │   │   └── tt8-2_fp16.npy
-│   │   ├── LFP_MEP_2kHz_mat
-│   │   │   ├── analog_input.mat
-│   │   │   ├── tt1-3.mat
-│   │   │   ├── tt1_3.mat
-│   │   │   ├── tt1-4.mat
-│   │   │   ├── tt1_4.mat
-│   │   │   ├── tt2-1.mat
-│   │   │   ├── tt2_1.mat
-│   │   │   ├── tt2-2.mat
-│   │   │   ├── tt2_2.mat
-│   │   │   ├── tt2-3.mat
-│   │   │   ├── tt2_3.mat
-│   │   │   ├── tt2-4.mat
-│   │   │   ├── tt2_4.mat
-│   │   │   ├── tt3-3.mat
-│   │   │   ├── tt3_3.mat
-│   │   │   ├── tt3-4.mat
-│   │   │   ├── tt3_4.mat
-│   │   │   ├── tt4-1.mat
-│   │   │   ├── tt4_1.mat
-│   │   │   ├── tt4-2.mat
-│   │   │   ├── tt4_2.mat
-│   │   │   ├── tt5-1.mat
-│   │   │   ├── tt5_1.mat
-│   │   │   ├── tt5-2.mat
-│   │   │   ├── tt5_2.mat
-│   │   │   ├── tt6-1.mat
-│   │   │   ├── tt6_1.mat
-│   │   │   ├── tt6-2.mat
-│   │   │   ├── tt6_2.mat
-│   │   │   ├── tt6-3.mat
-│   │   │   ├── tt6_3.mat
-│   │   │   ├── tt6-4.mat
-│   │   │   ├── tt6_4.mat
-│   │   │   ├── tt7-1.mat
-│   │   │   ├── tt7_1.mat
-│   │   │   ├── tt7-2.mat
-│   │   │   ├── tt7_2.mat
-│   │   │   ├── tt7-3.mat
-│   │   │   ├── tt7_3.mat
-│   │   │   ├── tt7-4.mat
-│   │   │   ├── tt7_4.mat
-│   │   │   ├── tt8-1.mat
-│   │   │   ├── tt8_1.mat
-│   │   │   ├── tt8-2.mat
-│   │   │   └── tt8_2.mat
-│   │   └── ripple_candi_1kHz_pkl
-│   │       ├── tt2-1_fp16.pkl
-│   │       ├── tt2-2_fp16.pkl
-│   │       ├── tt2-3_fp16.pkl
-│   │       ├── tt2-4_fp16.pkl
-│   │       ├── tt6-1_fp16.pkl
-│   │       ├── tt6-2_fp16.pkl
-│   │       ├── tt6-3_fp16.pkl
-│   │       ├── tt6-4_fp16.pkl
-│   │       ├── tt7-1_fp16.pkl
-│   │       ├── tt7-2_fp16.pkl
-│   │       ├── tt7-3_fp16.pkl
-│   │       └── tt7-4_fp16.pkl
-│   └── split_octave
-│       └── LFP_MEP_2kHz_mat
-│           ├── analog_input.mat
-│           ├── tt1-3.mat
-│           ├── tt1-4.mat
-│           ├── tt2-1.mat
-│           ├── tt2-2.mat
-│           ├── tt2-3.mat
-│           ├── tt2-4.mat
-│           ├── tt3-3.mat
-│           ├── tt3-4.mat
-│           ├── tt4-1.mat
-│           ├── tt4-2.mat
-│           ├── tt5-1.mat
-│           ├── tt5-2.mat
-│           ├── tt6-1.mat
-│           ├── tt6-2.mat
-│           ├── tt6-3.mat
-│           ├── tt6-4.mat
-│           ├── tt7-1.mat
-│           ├── tt7-2.mat
-│           ├── tt7-3.mat
-│           ├── tt7-4.mat
-│           ├── tt8-1.mat
-│           └── tt8-2.mat
-├── day2
-│   ├── split
-│   │   ├── LFP_MEP_1kHz_npy
-│   │   │   ├── tt1-3_fp16.npy
-│   │   │   ├── tt1-4_fp16.npy
-│   │   │   ├── tt2-1_fp16.npy
-│   │   │   ├── tt2-2_fp16.npy
-│   │   │   ├── tt2-3_fp16.npy
-│   │   │   ├── tt2-4_fp16.npy
-│   │   │   ├── tt3-3_fp16.npy
-│   │   │   ├── tt3-4_fp16.npy
-│   │   │   ├── tt4-1_fp16.npy
-│   │   │   ├── tt4-2_fp16.npy
-│   │   │   ├── tt5-1_fp16.npy
-│   │   │   ├── tt5-2_fp16.npy
-│   │   │   ├── tt6-1_fp16.npy
-│   │   │   ├── tt6-2_fp16.npy
-│   │   │   ├── tt6-3_fp16.npy
-│   │   │   ├── tt6-4_fp16.npy
-│   │   │   ├── tt7-1_fp16.npy
-│   │   │   ├── tt7-2_fp16.npy
-│   │   │   ├── tt7-3_fp16.npy
-│   │   │   ├── tt7-4_fp16.npy
-│   │   │   ├── tt8-1_fp16.npy
-│   │   │   └── tt8-2_fp16.npy
-│   │   ├── LFP_MEP_2kHz_mat
-│   │   │   ├── analog_input.mat
-│   │   │   ├── tt10.mat
-│   │   │   ├── tt11.mat
-│   │   │   ├── tt12.mat
-│   │   │   ├── tt1-3.mat
-│   │   │   ├── tt13.mat
-│   │   │   ├── tt1-4.mat
-│   │   │   ├── tt14.mat
-│   │   │   ├── tt15.mat
-│   │   │   ├── tt16.mat
-│   │   │   ├── tt17.mat
-│   │   │   ├── tt18.mat
-│   │   │   ├── tt19.mat
-│   │   │   ├── tt1.mat
-│   │   │   ├── tt20.mat
-│   │   │   ├── tt2-1.mat
-│   │   │   ├── tt21.mat
-│   │   │   ├── tt2-2.mat
-│   │   │   ├── tt22.mat
-│   │   │   ├── tt2-3.mat
-│   │   │   ├── tt23.mat
-│   │   │   ├── tt2-4.mat
-│   │   │   ├── tt2.mat
-│   │   │   ├── tt3-3.mat
-│   │   │   ├── tt3-4.mat
-│   │   │   ├── tt3.mat
-│   │   │   ├── tt4-1.mat
-│   │   │   ├── tt4-2.mat
-│   │   │   ├── tt4.mat
-│   │   │   ├── tt5-1.mat
-│   │   │   ├── tt5-2.mat
-│   │   │   ├── tt5.mat
-│   │   │   ├── tt6-1.mat
-│   │   │   ├── tt6-2.mat
-│   │   │   ├── tt6-3.mat
-│   │   │   ├── tt6-4.mat
-│   │   │   ├── tt6.mat
-│   │   │   ├── tt7-1.mat
-│   │   │   ├── tt7-2.mat
-│   │   │   ├── tt7-3.mat
-│   │   │   ├── tt7-4.mat
-│   │   │   ├── tt7.mat
-│   │   │   ├── tt8-1.mat
-│   │   │   ├── tt8-2.mat
-│   │   │   ├── tt8.mat
-│   │   │   └── tt9.mat
-│   │   └── ripple_candi_1kHz_pkl
-│   │       ├── tt2-1_fp16.pkl
-│   │       ├── tt2-2_fp16.pkl
-│   │       ├── tt2-3_fp16.pkl
-│   │       ├── tt2-4_fp16.pkl
-│   │       ├── tt6-1_fp16.pkl
-│   │       ├── tt6-2_fp16.pkl
-│   │       ├── tt6-3_fp16.pkl
-│   │       ├── tt6-4_fp16.pkl
-│   │       ├── tt7-1_fp16.pkl
-│   │       ├── tt7-2_fp16.pkl
-│   │       ├── tt7-3_fp16.pkl
-│   │       └── tt7-4_fp16.pkl
-│   └── split_octave
-│       └── LFP_MEP_2kHz_mat
-│           ├── analog_input.mat
-│           ├── tt1-3.mat
-│           ├── tt1-4.mat
-│           ├── tt2-1.mat
-│           ├── tt2-2.mat
-│           ├── tt2-3.mat
-│           ├── tt2-4.mat
-│           ├── tt3-3.mat
-│           ├── tt3-4.mat
-│           ├── tt4-1.mat
-│           ├── tt4-2.mat
-│           ├── tt5-1.mat
-│           ├── tt5-2.mat
-│           ├── tt6-1.mat
-│           ├── tt6-2.mat
-│           ├── tt6-3.mat
-│           ├── tt6-4.mat
-│           ├── tt7-1.mat
-│           ├── tt7-2.mat
-│           ├── tt7-3.mat
-│           ├── tt7-4.mat
-│           ├── tt8-1.mat
-│           └── tt8-2.mat
-├── day3
-│   ├── split
-│   │   ├── LFP_MEP_1kHz_npy
-│   │   │   ├── tt1-3_fp16.npy
-│   │   │   ├── tt1-4_fp16.npy
-│   │   │   ├── tt2-1_fp16.npy
-│   │   │   ├── tt2-2_fp16.npy
-│   │   │   ├── tt2-3_fp16.npy
-│   │   │   ├── tt2-4_fp16.npy
-│   │   │   ├── tt3-3_fp16.npy
-│   │   │   ├── tt3-4_fp16.npy
-│   │   │   ├── tt4-1_fp16.npy
-│   │   │   ├── tt4-2_fp16.npy
-│   │   │   ├── tt5-1_fp16.npy
-│   │   │   ├── tt5-2_fp16.npy
-│   │   │   ├── tt6-1_fp16.npy
-│   │   │   ├── tt6-2_fp16.npy
-│   │   │   ├── tt6-3_fp16.npy
-│   │   │   ├── tt6-4_fp16.npy
-│   │   │   ├── tt7-1_fp16.npy
-│   │   │   ├── tt7-2_fp16.npy
-│   │   │   ├── tt7-3_fp16.npy
-│   │   │   ├── tt7-4_fp16.npy
-│   │   │   ├── tt8-1_fp16.npy
-│   │   │   └── tt8-2_fp16.npy
-│   │   ├── LFP_MEP_2kHz_mat
-│   │   │   ├── analog_input.mat
-│   │   │   ├── tt10.mat
-│   │   │   ├── tt11.mat
-│   │   │   ├── tt12.mat
-│   │   │   ├── tt1-3.mat
-│   │   │   ├── tt13.mat
-│   │   │   ├── tt1-4.mat
-│   │   │   ├── tt14.mat
-│   │   │   ├── tt15.mat
-│   │   │   ├── tt16.mat
-│   │   │   ├── tt17.mat
-│   │   │   ├── tt18.mat
-│   │   │   ├── tt19.mat
-│   │   │   ├── tt1.mat
-│   │   │   ├── tt20.mat
-│   │   │   ├── tt2-1.mat
-│   │   │   ├── tt21.mat
-│   │   │   ├── tt2-2.mat
-│   │   │   ├── tt22.mat
-│   │   │   ├── tt2-3.mat
-│   │   │   ├── tt23.mat
-│   │   │   ├── tt2-4.mat
-│   │   │   ├── tt2.mat
-│   │   │   ├── tt3-3.mat
-│   │   │   ├── tt3-4.mat
-│   │   │   ├── tt3.mat
-│   │   │   ├── tt4-1.mat
-│   │   │   ├── tt4-2.mat
-│   │   │   ├── tt4.mat
-│   │   │   ├── tt5-1.mat
-│   │   │   ├── tt5-2.mat
-│   │   │   ├── tt5.mat
-│   │   │   ├── tt6-1.mat
-│   │   │   ├── tt6-2.mat
-│   │   │   ├── tt6-3.mat
-│   │   │   ├── tt6-4.mat
-│   │   │   ├── tt6.mat
-│   │   │   ├── tt7-1.mat
-│   │   │   ├── tt7-2.mat
-│   │   │   ├── tt7-3.mat
-│   │   │   ├── tt7-4.mat
-│   │   │   ├── tt7.mat
-│   │   │   ├── tt8-1.mat
-│   │   │   ├── tt8-2.mat
-│   │   │   ├── tt8.mat
-│   │   │   └── tt9.mat
-│   │   └── ripple_candi_1kHz_pkl
-│   │       ├── tt2-1_fp16.pkl
-│   │       ├── tt2-2_fp16.pkl
-│   │       ├── tt2-3_fp16.pkl
-│   │       ├── tt2-4_fp16.pkl
-│   │       ├── tt6-1_fp16.pkl
-│   │       ├── tt6-2_fp16.pkl
-│   │       ├── tt6-3_fp16.pkl
-│   │       ├── tt6-4_fp16.pkl
-│   │       ├── tt7-1_fp16.pkl
-│   │       ├── tt7-2_fp16.pkl
-│   │       ├── tt7-3_fp16.pkl
-│   │       └── tt7-4_fp16.pkl
-│   └── split_octave
-│       └── LFP_MEP_2kHz_mat
-│           ├── analog_input.mat
-│           ├── tt1-3.mat
-│           ├── tt1-4.mat
-│           ├── tt2-1.mat
-│           ├── tt2-2.mat
-│           ├── tt2-3.mat
-│           ├── tt2-4.mat
-│           ├── tt3-3.mat
-│           ├── tt3-4.mat
-│           ├── tt4-1.mat
-│           ├── tt4-2.mat
-│           ├── tt5-1.mat
-│           ├── tt5-2.mat
-│           ├── tt6-1.mat
-│           ├── tt6-2.mat
-│           ├── tt6-3.mat
-│           ├── tt6-4.mat
-│           ├── tt7-1.mat
-│           ├── tt7-2.mat
-│           ├── tt7-3.mat
-│           ├── tt7-4.mat
-│           ├── tt8-1.mat
-│           └── tt8-2.mat
-├── day4
-│   ├── split
-│   │   ├── LFP_MEP_1kHz_npy
-│   │   │   ├── tt1-3_fp16.npy
-│   │   │   ├── tt1-4_fp16.npy
-│   │   │   ├── tt2-1_fp16.npy
-│   │   │   ├── tt2-2_fp16.npy
-│   │   │   ├── tt2-3_fp16.npy
-│   │   │   ├── tt2-4_fp16.npy
-│   │   │   ├── tt3-3_fp16.npy
-│   │   │   ├── tt3-4_fp16.npy
-│   │   │   ├── tt4-1_fp16.npy
-│   │   │   ├── tt4-2_fp16.npy
-│   │   │   ├── tt5-1_fp16.npy
-│   │   │   ├── tt5-2_fp16.npy
-│   │   │   ├── tt6-1_fp16.npy
-│   │   │   ├── tt6-2_fp16.npy
-│   │   │   ├── tt6-3_fp16.npy
-│   │   │   ├── tt6-4_fp16.npy
-│   │   │   ├── tt7-1_fp16.npy
-│   │   │   ├── tt7-2_fp16.npy
-│   │   │   ├── tt7-3_fp16.npy
-│   │   │   ├── tt7-4_fp16.npy
-│   │   │   ├── tt8-1_fp16.npy
-│   │   │   └── tt8-2_fp16.npy
-│   │   ├── LFP_MEP_2kHz_mat
-│   │   │   ├── analog_input.mat
-│   │   │   ├── tt10.mat
-│   │   │   ├── tt11.mat
-│   │   │   ├── tt12.mat
-│   │   │   ├── tt1-3.mat
-│   │   │   ├── tt13.mat
-│   │   │   ├── tt1-4.mat
-│   │   │   ├── tt14.mat
-│   │   │   ├── tt15.mat
-│   │   │   ├── tt16.mat
-│   │   │   ├── tt17.mat
-│   │   │   ├── tt18.mat
-│   │   │   ├── tt19.mat
-│   │   │   ├── tt1.mat
-│   │   │   ├── tt20.mat
-│   │   │   ├── tt2-1.mat
-│   │   │   ├── tt21.mat
-│   │   │   ├── tt2-2.mat
-│   │   │   ├── tt22.mat
-│   │   │   ├── tt2-3.mat
-│   │   │   ├── tt23.mat
-│   │   │   ├── tt2-4.mat
-│   │   │   ├── tt2.mat
-│   │   │   ├── tt3-3.mat
-│   │   │   ├── tt3-4.mat
-│   │   │   ├── tt3.mat
-│   │   │   ├── tt4-1.mat
-│   │   │   ├── tt4-2.mat
-│   │   │   ├── tt4.mat
-│   │   │   ├── tt5-1.mat
-│   │   │   ├── tt5-2.mat
-│   │   │   ├── tt5.mat
-│   │   │   ├── tt6-1.mat
-│   │   │   ├── tt6-2.mat
-│   │   │   ├── tt6-3.mat
-│   │   │   ├── tt6-4.mat
-│   │   │   ├── tt6.mat
-│   │   │   ├── tt7-1.mat
-│   │   │   ├── tt7-2.mat
-│   │   │   ├── tt7-3.mat
-│   │   │   ├── tt7-4.mat
-│   │   │   ├── tt7.mat
-│   │   │   ├── tt8-1.mat
-│   │   │   ├── tt8-2.mat
-│   │   │   ├── tt8.mat
-│   │   │   └── tt9.mat
-│   │   └── ripple_candi_1kHz_pkl
-│   │       ├── tt2-1_fp16.pkl
-│   │       ├── tt2-2_fp16.pkl
-│   │       ├── tt2-3_fp16.pkl
-│   │       ├── tt2-4_fp16.pkl
-│   │       ├── tt6-1_fp16.pkl
-│   │       ├── tt6-2_fp16.pkl
-│   │       ├── tt6-3_fp16.pkl
-│   │       ├── tt6-4_fp16.pkl
-│   │       ├── tt7-1_fp16.pkl
-│   │       ├── tt7-2_fp16.pkl
-│   │       ├── tt7-3_fp16.pkl
-│   │       └── tt7-4_fp16.pkl
-│   └── split_octave
-│       └── LFP_MEP_2kHz_mat
-│           ├── analog_input.mat
-│           ├── tt1-3.mat
-│           ├── tt1-4.mat
-│           ├── tt2-1.mat
-│           ├── tt2-2.mat
-│           ├── tt2-3.mat
-│           ├── tt2-4.mat
-│           ├── tt3-3.mat
-│           ├── tt3-4.mat
-│           ├── tt4-1.mat
-│           ├── tt4-2.mat
-│           ├── tt5-1.mat
-│           ├── tt5-2.mat
-│           ├── tt6-1.mat
-│           ├── tt6-2.mat
-│           ├── tt6-3.mat
-│           ├── tt6-4.mat
-│           ├── tt7-1.mat
-│           ├── tt7-2.mat
-│           ├── tt7-3.mat
-│           ├── tt7-4.mat
-│           ├── tt8-1.mat
-│           └── tt8-2.mat
-└── MouseInfo_en.md
-03
-├── day1
-│   ├── split
-│   │   ├── LFP_MEP_1kHz_npy
-│   │   │   ├── tt1-3_fp16.npy
-│   │   │   ├── tt1-4_fp16.npy
-│   │   │   ├── tt2-1_fp16.npy
-│   │   │   ├── tt2-4_fp16.npy
-│   │   │   ├── tt3-3_fp16.npy
-│   │   │   ├── tt3-4_fp16.npy
-│   │   │   ├── tt4-1_fp16.npy
-│   │   │   ├── tt4-2_fp16.npy
-│   │   │   ├── tt5-3_fp16.npy
-│   │   │   ├── tt5-4_fp16.npy
-│   │   │   ├── tt6-1_fp16.npy
-│   │   │   ├── tt6-2_fp16.npy
-│   │   │   ├── tt6-3_fp16.npy
-│   │   │   ├── tt6-4_fp16.npy
-│   │   │   ├── tt7-1_fp16.npy
-│   │   │   ├── tt7-2_fp16.npy
-│   │   │   ├── tt7-3_fp16.npy
-│   │   │   ├── tt7-4_fp16.npy
-│   │   │   ├── tt8-1_fp16.npy
-│   │   │   └── tt8-2_fp16.npy
-│   │   ├── LFP_MEP_2kHz_mat
-│   │   │   ├── analog_input.mat
-│   │   │   ├── tt1-3.mat
-│   │   │   ├── tt1_3.mat
-│   │   │   ├── tt1-4.mat
-│   │   │   ├── tt1_4.mat
-│   │   │   ├── tt2-1.mat
-│   │   │   ├── tt2_1.mat
-│   │   │   ├── tt2-4.mat
-│   │   │   ├── tt2_4.mat
-│   │   │   ├── tt3-3.mat
-│   │   │   ├── tt3_3.mat
-│   │   │   ├── tt3-4.mat
-│   │   │   ├── tt3_4.mat
-│   │   │   ├── tt4-1.mat
-│   │   │   ├── tt4_1.mat
-│   │   │   ├── tt4-2.mat
-│   │   │   ├── tt4_2.mat
-│   │   │   ├── tt5-3.mat
-│   │   │   ├── tt5_3.mat
-│   │   │   ├── tt5-4.mat
-│   │   │   ├── tt5_4.mat
-│   │   │   ├── tt6-1.mat
-│   │   │   ├── tt6_1.mat
-│   │   │   ├── tt6-2.mat
-│   │   │   ├── tt6_2.mat
-│   │   │   ├── tt6-3.mat
-│   │   │   ├── tt6_3.mat
-│   │   │   ├── tt6-4.mat
-│   │   │   ├── tt6_4.mat
-│   │   │   ├── tt7-1.mat
-│   │   │   ├── tt7_1.mat
-│   │   │   ├── tt7-2.mat
-│   │   │   ├── tt7_2.mat
-│   │   │   ├── tt7-3.mat
-│   │   │   ├── tt7_3.mat
-│   │   │   ├── tt7-4.mat
-│   │   │   ├── tt7_4.mat
-│   │   │   ├── tt8-1.mat
-│   │   │   ├── tt8_1.mat
-│   │   │   ├── tt8-2.mat
-│   │   │   └── tt8_2.mat
-│   │   └── ripple_candi_1kHz_pkl
-│   │       ├── tt2-1_fp16.pkl
-│   │       ├── tt2-4_fp16.pkl
-│   │       ├── tt6-1_fp16.pkl
-│   │       ├── tt6-2_fp16.pkl
-│   │       ├── tt6-3_fp16.pkl
-│   │       ├── tt6-4_fp16.pkl
-│   │       ├── tt7-1_fp16.pkl
-│   │       ├── tt7-2_fp16.pkl
-│   │       ├── tt7-3_fp16.pkl
-│   │       └── tt7-4_fp16.pkl
-│   └── split_octave
-│       └── LFP_MEP_2kHz_mat
-│           ├── analog_input.mat
-│           ├── tt1-3.mat
-│           ├── tt1-4.mat
-│           ├── tt2-1.mat
-│           ├── tt2-4.mat
-│           ├── tt3-3.mat
-│           ├── tt3-4.mat
-│           ├── tt4-1.mat
-│           ├── tt4-2.mat
-│           ├── tt5-3.mat
-│           ├── tt5-4.mat
-│           ├── tt6-1.mat
-│           ├── tt6-2.mat
-│           ├── tt6-3.mat
-│           ├── tt6-4.mat
-│           ├── tt7-1.mat
-│           ├── tt7-2.mat
-│           ├── tt7-3.mat
-│           ├── tt7-4.mat
-│           ├── tt8-1.mat
-│           └── tt8-2.mat
-├── day2
-│   ├── split
-│   │   ├── LFP_MEP_1kHz_npy
-│   │   │   ├── tt1-3_fp16.npy
-│   │   │   ├── tt1-4_fp16.npy
-│   │   │   ├── tt2-1_fp16.npy
-│   │   │   ├── tt2-4_fp16.npy
-│   │   │   ├── tt3-3_fp16.npy
-│   │   │   ├── tt3-4_fp16.npy
-│   │   │   ├── tt4-1_fp16.npy
-│   │   │   ├── tt4-2_fp16.npy
-│   │   │   ├── tt5-3_fp16.npy
-│   │   │   ├── tt5-4_fp16.npy
-│   │   │   ├── tt6-1_fp16.npy
-│   │   │   ├── tt6-2_fp16.npy
-│   │   │   ├── tt6-3_fp16.npy
-│   │   │   ├── tt6-4_fp16.npy
-│   │   │   ├── tt7-1_fp16.npy
-│   │   │   ├── tt7-2_fp16.npy
-│   │   │   ├── tt7-3_fp16.npy
-│   │   │   ├── tt7-4_fp16.npy
-│   │   │   ├── tt8-1_fp16.npy
-│   │   │   └── tt8-2_fp16.npy
-│   │   ├── LFP_MEP_2kHz_mat
-│   │   │   ├── analog_input.mat
-│   │   │   ├── tt1-3.mat
-│   │   │   ├── tt1_3.mat
-│   │   │   ├── tt1-4.mat
-│   │   │   ├── tt1_4.mat
-│   │   │   ├── tt2-1.mat
-│   │   │   ├── tt2_1.mat
-│   │   │   ├── tt2-4.mat
-│   │   │   ├── tt2_4.mat
-│   │   │   ├── tt3-3.mat
-│   │   │   ├── tt3_3.mat
-│   │   │   ├── tt3-4.mat
-│   │   │   ├── tt3_4.mat
-│   │   │   ├── tt4-1.mat
-│   │   │   ├── tt4_1.mat
-│   │   │   ├── tt4-2.mat
-│   │   │   ├── tt4_2.mat
-│   │   │   ├── tt5-3.mat
-│   │   │   ├── tt5_3.mat
-│   │   │   ├── tt5-4.mat
-│   │   │   ├── tt5_4.mat
-│   │   │   ├── tt6-1.mat
-│   │   │   ├── tt6_1.mat
-│   │   │   ├── tt6-2.mat
-│   │   │   ├── tt6_2.mat
-│   │   │   ├── tt6-3.mat
-│   │   │   ├── tt6_3.mat
-│   │   │   ├── tt6-4.mat
-│   │   │   ├── tt6_4.mat
-│   │   │   ├── tt7-1.mat
-│   │   │   ├── tt7_1.mat
-│   │   │   ├── tt7-2.mat
-│   │   │   ├── tt7_2.mat
-│   │   │   ├── tt7-3.mat
-│   │   │   ├── tt7_3.mat
-│   │   │   ├── tt7-4.mat
-│   │   │   ├── tt7_4.mat
-│   │   │   ├── tt8-1.mat
-│   │   │   ├── tt8_1.mat
-│   │   │   ├── tt8-2.mat
-│   │   │   └── tt8_2.mat
-│   │   └── ripple_candi_1kHz_pkl
-│   │       ├── tt2-1_fp16.pkl
-│   │       ├── tt2-4_fp16.pkl
-│   │       ├── tt6-1_fp16.pkl
-│   │       ├── tt6-2_fp16.pkl
-│   │       ├── tt6-3_fp16.pkl
-│   │       ├── tt6-4_fp16.pkl
-│   │       ├── tt7-1_fp16.pkl
-│   │       ├── tt7-2_fp16.pkl
-│   │       ├── tt7-3_fp16.pkl
-│   │       └── tt7-4_fp16.pkl
-│   └── split_octave
-│       └── LFP_MEP_2kHz_mat
-│           ├── analog_input.mat
-│           ├── tt1-3.mat
-│           ├── tt1-4.mat
-│           ├── tt2-1.mat
-│           ├── tt2-4.mat
-│           ├── tt3-3.mat
-│           ├── tt3-4.mat
-│           ├── tt4-1.mat
-│           ├── tt4-2.mat
-│           ├── tt5-3.mat
-│           ├── tt5-4.mat
-│           ├── tt6-1.mat
-│           ├── tt6-2.mat
-│           ├── tt6-3.mat
-│           ├── tt6-4.mat
-│           ├── tt7-1.mat
-│           ├── tt7-2.mat
-│           ├── tt7-3.mat
-│           ├── tt7-4.mat
-│           ├── tt8-1.mat
-│           └── tt8-2.mat
-├── day3
-│   ├── split
-│   │   ├── LFP_MEP_1kHz_npy
-│   │   │   ├── tt1-3_fp16.npy
-│   │   │   ├── tt1-4_fp16.npy
-│   │   │   ├── tt2-1_fp16.npy
-│   │   │   ├── tt2-4_fp16.npy
-│   │   │   ├── tt3-3_fp16.npy
-│   │   │   ├── tt3-4_fp16.npy
-│   │   │   ├── tt4-1_fp16.npy
-│   │   │   ├── tt4-2_fp16.npy
-│   │   │   ├── tt5-3_fp16.npy
-│   │   │   ├── tt5-4_fp16.npy
-│   │   │   ├── tt6-1_fp16.npy
-│   │   │   ├── tt6-2_fp16.npy
-│   │   │   ├── tt6-3_fp16.npy
-│   │   │   ├── tt6-4_fp16.npy
-│   │   │   ├── tt7-1_fp16.npy
-│   │   │   ├── tt7-2_fp16.npy
-│   │   │   ├── tt7-3_fp16.npy
-│   │   │   ├── tt7-4_fp16.npy
-│   │   │   ├── tt8-1_fp16.npy
-│   │   │   └── tt8-2_fp16.npy
-│   │   ├── LFP_MEP_2kHz_mat
-│   │   │   ├── analog_input.mat
-│   │   │   ├── tt1-3.mat
-│   │   │   ├── tt1_3.mat
-│   │   │   ├── tt1-4.mat
-│   │   │   ├── tt1_4.mat
-│   │   │   ├── tt2-1.mat
-│   │   │   ├── tt2_1.mat
-│   │   │   ├── tt2-4.mat
-│   │   │   ├── tt2_4.mat
-│   │   │   ├── tt3-3.mat
-│   │   │   ├── tt3_3.mat
-│   │   │   ├── tt3-4.mat
-│   │   │   ├── tt3_4.mat
-│   │   │   ├── tt4-1.mat
-│   │   │   ├── tt4_1.mat
-│   │   │   ├── tt4-2.mat
-│   │   │   ├── tt4_2.mat
-│   │   │   ├── tt5-3.mat
-│   │   │   ├── tt5_3.mat
-│   │   │   ├── tt5-4.mat
-│   │   │   ├── tt5_4.mat
-│   │   │   ├── tt6-1.mat
-│   │   │   ├── tt6_1.mat
-│   │   │   ├── tt6-2.mat
-│   │   │   ├── tt6_2.mat
-│   │   │   ├── tt6-3.mat
-│   │   │   ├── tt6_3.mat
-│   │   │   ├── tt6-4.mat
-│   │   │   ├── tt6_4.mat
-│   │   │   ├── tt7-1.mat
-│   │   │   ├── tt7_1.mat
-│   │   │   ├── tt7-2.mat
-│   │   │   ├── tt7_2.mat
-│   │   │   ├── tt7-3.mat
-│   │   │   ├── tt7_3.mat
-│   │   │   ├── tt7-4.mat
-│   │   │   ├── tt7_4.mat
-│   │   │   ├── tt8-1.mat
-│   │   │   ├── tt8_1.mat
-│   │   │   ├── tt8-2.mat
-│   │   │   └── tt8_2.mat
-│   │   └── ripple_candi_1kHz_pkl
-│   │       ├── tt2-1_fp16.pkl
-│   │       ├── tt2-4_fp16.pkl
-│   │       ├── tt6-1_fp16.pkl
-│   │       ├── tt6-2_fp16.pkl
-│   │       ├── tt6-3_fp16.pkl
-│   │       ├── tt6-4_fp16.pkl
-│   │       ├── tt7-1_fp16.pkl
-│   │       ├── tt7-2_fp16.pkl
-│   │       ├── tt7-3_fp16.pkl
-│   │       └── tt7-4_fp16.pkl
-│   └── split_octave
-│       └── LFP_MEP_2kHz_mat
-│           ├── analog_input.mat
-│           ├── tt1-3.mat
-│           ├── tt1-4.mat
-│           ├── tt2-1.mat
-│           ├── tt2-4.mat
-│           ├── tt3-3.mat
-│           ├── tt3-4.mat
-│           ├── tt4-1.mat
-│           ├── tt4-2.mat
-│           ├── tt5-3.mat
-│           ├── tt5-4.mat
-│           ├── tt6-1.mat
-│           ├── tt6-2.mat
-│           ├── tt6-3.mat
-│           ├── tt6-4.mat
-│           ├── tt7-1.mat
-│           ├── tt7-2.mat
-│           ├── tt7-3.mat
-│           ├── tt7-4.mat
-│           ├── tt8-1.mat
-│           └── tt8-2.mat
-├── day4
-│   ├── split
-│   │   ├── LFP_MEP_1kHz_npy
-│   │   │   ├── tt1-3_fp16.npy
-│   │   │   ├── tt1-4_fp16.npy
-│   │   │   ├── tt2-1_fp16.npy
-│   │   │   ├── tt2-4_fp16.npy
-│   │   │   ├── tt3-3_fp16.npy
-│   │   │   ├── tt3-4_fp16.npy
-│   │   │   ├── tt4-1_fp16.npy
-│   │   │   ├── tt4-2_fp16.npy
-│   │   │   ├── tt5-3_fp16.npy
-│   │   │   ├── tt5-4_fp16.npy
-│   │   │   ├── tt6-1_fp16.npy
-│   │   │   ├── tt6-2_fp16.npy
-│   │   │   ├── tt6-3_fp16.npy
-│   │   │   ├── tt6-4_fp16.npy
-│   │   │   ├── tt7-1_fp16.npy
-│   │   │   ├── tt7-2_fp16.npy
-│   │   │   ├── tt7-3_fp16.npy
-│   │   │   ├── tt7-4_fp16.npy
-│   │   │   ├── tt8-1_fp16.npy
-│   │   │   └── tt8-2_fp16.npy
-│   │   ├── LFP_MEP_2kHz_mat
-│   │   │   ├── analog_input.mat
-│   │   │   ├── tt1-3.mat
-│   │   │   ├── tt1_3.mat
-│   │   │   ├── tt1-4.mat
-│   │   │   ├── tt1_4.mat
-│   │   │   ├── tt2-1.mat
-│   │   │   ├── tt2_1.mat
-│   │   │   ├── tt2-4.mat
-│   │   │   ├── tt2_4.mat
-│   │   │   ├── tt3-3.mat
-│   │   │   ├── tt3_3.mat
-│   │   │   ├── tt3-4.mat
-│   │   │   ├── tt3_4.mat
-│   │   │   ├── tt4-1.mat
-│   │   │   ├── tt4_1.mat
-│   │   │   ├── tt4-2.mat
-│   │   │   ├── tt4_2.mat
-│   │   │   ├── tt5-3.mat
-│   │   │   ├── tt5_3.mat
-│   │   │   ├── tt5-4.mat
-│   │   │   ├── tt5_4.mat
-│   │   │   ├── tt6-1.mat
-│   │   │   ├── tt6_1.mat
-│   │   │   ├── tt6-2.mat
-│   │   │   ├── tt6_2.mat
-│   │   │   ├── tt6-3.mat
-│   │   │   ├── tt6_3.mat
-│   │   │   ├── tt6-4.mat
-│   │   │   ├── tt6_4.mat
-│   │   │   ├── tt7-1.mat
-│   │   │   ├── tt7_1.mat
-│   │   │   ├── tt7-2.mat
-│   │   │   ├── tt7_2.mat
-│   │   │   ├── tt7-3.mat
-│   │   │   ├── tt7_3.mat
-│   │   │   ├── tt7-4.mat
-│   │   │   ├── tt7_4.mat
-│   │   │   ├── tt8-1.mat
-│   │   │   ├── tt8_1.mat
-│   │   │   ├── tt8-2.mat
-│   │   │   └── tt8_2.mat
-│   │   └── ripple_candi_1kHz_pkl
-│   │       ├── tt2-1_fp16.pkl
-│   │       ├── tt2-4_fp16.pkl
-│   │       ├── tt6-1_fp16.pkl
-│   │       ├── tt6-2_fp16.pkl
-│   │       ├── tt6-3_fp16.pkl
-│   │       ├── tt6-4_fp16.pkl
-│   │       ├── tt7-1_fp16.pkl
-│   │       ├── tt7-2_fp16.pkl
-│   │       ├── tt7-3_fp16.pkl
-│   │       └── tt7-4_fp16.pkl
-│   └── split_octave
-│       └── LFP_MEP_2kHz_mat
-│           ├── analog_input.mat
-│           ├── tt1-3.mat
-│           ├── tt1-4.mat
-│           ├── tt2-1.mat
-│           ├── tt2-4.mat
-│           ├── tt3-3.mat
-│           ├── tt3-4.mat
-│           ├── tt4-1.mat
-│           ├── tt4-2.mat
-│           ├── tt5-3.mat
-│           ├── tt5-4.mat
-│           ├── tt6-1.mat
-│           ├── tt6-2.mat
-│           ├── tt6-3.mat
-│           ├── tt6-4.mat
-│           ├── tt7-1.mat
-│           ├── tt7-2.mat
-│           ├── tt7-3.mat
-│           ├── tt7-4.mat
-│           ├── tt8-1.mat
-│           └── tt8-2.mat
-└── MouseInfo_en.md
-04
-├── day1
-│   ├── split
-│   │   ├── LFP_MEP_1kHz_npy
-│   │   │   ├── tt1-3_fp16.npy
-│   │   │   ├── tt1-4_fp16.npy
-│   │   │   ├── tt2-1_fp16.npy
-│   │   │   ├── tt2-2_fp16.npy
-│   │   │   ├── tt2-3_fp16.npy
-│   │   │   ├── tt2-4_fp16.npy
-│   │   │   ├── tt3-3_fp16.npy
-│   │   │   ├── tt3-4_fp16.npy
-│   │   │   ├── tt4-1_fp16.npy
-│   │   │   ├── tt4-2_fp16.npy
-│   │   │   ├── tt5-3_fp16.npy
-│   │   │   ├── tt5-4_fp16.npy
-│   │   │   ├── tt6-1_fp16.npy
-│   │   │   ├── tt6-2_fp16.npy
-│   │   │   ├── tt6-3_fp16.npy
-│   │   │   ├── tt6-4_fp16.npy
-│   │   │   ├── tt7-1_fp16.npy
-│   │   │   ├── tt7-2_fp16.npy
-│   │   │   ├── tt7-3_fp16.npy
-│   │   │   ├── tt7-4_fp16.npy
-│   │   │   ├── tt8-1_fp16.npy
-│   │   │   └── tt8-2_fp16.npy
-│   │   ├── LFP_MEP_2kHz_mat
-│   │   │   ├── analog_input.mat
-│   │   │   ├── tt1-3.mat
-│   │   │   ├── tt1_3.mat
-│   │   │   ├── tt1-4.mat
-│   │   │   ├── tt1_4.mat
-│   │   │   ├── tt2-1.mat
-│   │   │   ├── tt2_1.mat
-│   │   │   ├── tt2-2.mat
-│   │   │   ├── tt2_2.mat
-│   │   │   ├── tt2-3.mat
-│   │   │   ├── tt2_3.mat
-│   │   │   ├── tt2-4.mat
-│   │   │   ├── tt2_4.mat
-│   │   │   ├── tt3-3.mat
-│   │   │   ├── tt3_3.mat
-│   │   │   ├── tt3-4.mat
-│   │   │   ├── tt3_4.mat
-│   │   │   ├── tt4-1.mat
-│   │   │   ├── tt4_1.mat
-│   │   │   ├── tt4-2.mat
-│   │   │   ├── tt4_2.mat
-│   │   │   ├── tt5-3.mat
-│   │   │   ├── tt5_3.mat
-│   │   │   ├── tt5-4.mat
-│   │   │   ├── tt5_4.mat
-│   │   │   ├── tt6-1.mat
-│   │   │   ├── tt6_1.mat
-│   │   │   ├── tt6-2.mat
-│   │   │   ├── tt6_2.mat
-│   │   │   ├── tt6-3.mat
-│   │   │   ├── tt6_3.mat
-│   │   │   ├── tt6-4.mat
-│   │   │   ├── tt6_4.mat
-│   │   │   ├── tt7-1.mat
-│   │   │   ├── tt7_1.mat
-│   │   │   ├── tt7-2.mat
-│   │   │   ├── tt7_2.mat
-│   │   │   ├── tt7-3.mat
-│   │   │   ├── tt7_3.mat
-│   │   │   ├── tt7-4.mat
-│   │   │   ├── tt7_4.mat
-│   │   │   ├── tt8-1.mat
-│   │   │   ├── tt8_1.mat
-│   │   │   ├── tt8-2.mat
-│   │   │   └── tt8_2.mat
-│   │   └── ripple_candi_1kHz_pkl
-│   │       ├── tt2-1_fp16.pkl
-│   │       ├── tt2-2_fp16.pkl
-│   │       ├── tt2-3_fp16.pkl
-│   │       ├── tt2-4_fp16.pkl
-│   │       ├── tt6-1_fp16.pkl
-│   │       ├── tt6-2_fp16.pkl
-│   │       ├── tt6-3_fp16.pkl
-│   │       ├── tt6-4_fp16.pkl
-│   │       ├── tt7-1_fp16.pkl
-│   │       ├── tt7-2_fp16.pkl
-│   │       ├── tt7-3_fp16.pkl
-│   │       └── tt7-4_fp16.pkl
-│   └── split_octave
-│       └── LFP_MEP_2kHz_mat
-│           ├── analog_input.mat
-│           ├── tt1-3.mat
-│           ├── tt1-4.mat
-│           ├── tt2-1.mat
-│           ├── tt2-2.mat
-│           ├── tt2-3.mat
-│           ├── tt2-4.mat
-│           ├── tt3-3.mat
-│           ├── tt3-4.mat
-│           ├── tt4-1.mat
-│           ├── tt4-2.mat
-│           ├── tt5-3.mat
-│           ├── tt5-4.mat
-│           ├── tt6-1.mat
-│           ├── tt6-2.mat
-│           ├── tt6-3.mat
-│           ├── tt6-4.mat
-│           ├── tt7-1.mat
-│           ├── tt7-2.mat
-│           ├── tt7-3.mat
-│           ├── tt7-4.mat
-│           ├── tt8-1.mat
-│           └── tt8-2.mat
-├── day2
-│   ├── split
-│   │   ├── LFP_MEP_1kHz_npy
-│   │   │   ├── tt1-3_fp16.npy
-│   │   │   ├── tt1-4_fp16.npy
-│   │   │   ├── tt2-1_fp16.npy
-│   │   │   ├── tt2-2_fp16.npy
-│   │   │   ├── tt2-3_fp16.npy
-│   │   │   ├── tt2-4_fp16.npy
-│   │   │   ├── tt3-3_fp16.npy
-│   │   │   ├── tt3-4_fp16.npy
-│   │   │   ├── tt4-1_fp16.npy
-│   │   │   ├── tt4-2_fp16.npy
-│   │   │   ├── tt5-3_fp16.npy
-│   │   │   ├── tt5-4_fp16.npy
-│   │   │   ├── tt6-1_fp16.npy
-│   │   │   ├── tt6-2_fp16.npy
-│   │   │   ├── tt6-3_fp16.npy
-│   │   │   ├── tt6-4_fp16.npy
-│   │   │   ├── tt7-1_fp16.npy
-│   │   │   ├── tt7-2_fp16.npy
-│   │   │   ├── tt7-3_fp16.npy
-│   │   │   ├── tt7-4_fp16.npy
-│   │   │   ├── tt8-1_fp16.npy
-│   │   │   └── tt8-2_fp16.npy
-│   │   ├── LFP_MEP_2kHz_mat
-│   │   │   ├── analog_input.mat
-│   │   │   ├── tt1-3.mat
-│   │   │   ├── tt1_3.mat
-│   │   │   ├── tt1-4.mat
-│   │   │   ├── tt1_4.mat
-│   │   │   ├── tt2-1.mat
-│   │   │   ├── tt2_1.mat
-│   │   │   ├── tt2-2.mat
-│   │   │   ├── tt2_2.mat
-│   │   │   ├── tt2-3.mat
-│   │   │   ├── tt2_3.mat
-│   │   │   ├── tt2-4.mat
-│   │   │   ├── tt2_4.mat
-│   │   │   ├── tt3-3.mat
-│   │   │   ├── tt3_3.mat
-│   │   │   ├── tt3-4.mat
-│   │   │   ├── tt3_4.mat
-│   │   │   ├── tt4-1.mat
-│   │   │   ├── tt4_1.mat
-│   │   │   ├── tt4-2.mat
-│   │   │   ├── tt4_2.mat
-│   │   │   ├── tt5-3.mat
-│   │   │   ├── tt5_3.mat
-│   │   │   ├── tt5-4.mat
-│   │   │   ├── tt5_4.mat
-│   │   │   ├── tt6-1.mat
-│   │   │   ├── tt6_1.mat
-│   │   │   ├── tt6-2.mat
-│   │   │   ├── tt6_2.mat
-│   │   │   ├── tt6-3.mat
-│   │   │   ├── tt6_3.mat
-│   │   │   ├── tt6-4.mat
-│   │   │   ├── tt6_4.mat
-│   │   │   ├── tt7-1.mat
-│   │   │   ├── tt7_1.mat
-│   │   │   ├── tt7-2.mat
-│   │   │   ├── tt7_2.mat
-│   │   │   ├── tt7-3.mat
-│   │   │   ├── tt7_3.mat
-│   │   │   ├── tt7-4.mat
-│   │   │   ├── tt7_4.mat
-│   │   │   ├── tt8-1.mat
-│   │   │   ├── tt8_1.mat
-│   │   │   ├── tt8-2.mat
-│   │   │   └── tt8_2.mat
-│   │   └── ripple_candi_1kHz_pkl
-│   │       ├── tt2-1_fp16.pkl
-│   │       ├── tt2-2_fp16.pkl
-│   │       ├── tt2-3_fp16.pkl
-│   │       ├── tt2-4_fp16.pkl
-│   │       ├── tt6-1_fp16.pkl
-│   │       ├── tt6-2_fp16.pkl
-│   │       ├── tt6-3_fp16.pkl
-│   │       ├── tt6-4_fp16.pkl
-│   │       ├── tt7-1_fp16.pkl
-│   │       ├── tt7-2_fp16.pkl
-│   │       ├── tt7-3_fp16.pkl
-│   │       └── tt7-4_fp16.pkl
-│   └── split_octave
-│       └── LFP_MEP_2kHz_mat
-│           ├── analog_input.mat
-│           ├── tt1-3.mat
-│           ├── tt1-4.mat
-│           ├── tt2-1.mat
-│           ├── tt2-2.mat
-│           ├── tt2-3.mat
-│           ├── tt2-4.mat
-│           ├── tt3-3.mat
-│           ├── tt3-4.mat
-│           ├── tt4-1.mat
-│           ├── tt4-2.mat
-│           ├── tt5-3.mat
-│           ├── tt5-4.mat
-│           ├── tt6-1.mat
-│           ├── tt6-2.mat
-│           ├── tt6-3.mat
-│           ├── tt6-4.mat
-│           ├── tt7-1.mat
-│           ├── tt7-2.mat
-│           ├── tt7-3.mat
-│           ├── tt7-4.mat
-│           ├── tt8-1.mat
-│           └── tt8-2.mat
-├── day3
-│   ├── split
-│   │   ├── LFP_MEP_1kHz_npy
-│   │   │   ├── tt1-3_fp16.npy
-│   │   │   ├── tt1-4_fp16.npy
-│   │   │   ├── tt2-1_fp16.npy
-│   │   │   ├── tt2-2_fp16.npy
-│   │   │   ├── tt2-3_fp16.npy
-│   │   │   ├── tt2-4_fp16.npy
-│   │   │   ├── tt3-3_fp16.npy
-│   │   │   ├── tt3-4_fp16.npy
-│   │   │   ├── tt4-1_fp16.npy
-│   │   │   ├── tt4-2_fp16.npy
-│   │   │   ├── tt5-3_fp16.npy
-│   │   │   ├── tt5-4_fp16.npy
-│   │   │   ├── tt6-1_fp16.npy
-│   │   │   ├── tt6-2_fp16.npy
-│   │   │   ├── tt6-3_fp16.npy
-│   │   │   ├── tt6-4_fp16.npy
-│   │   │   ├── tt7-1_fp16.npy
-│   │   │   ├── tt7-2_fp16.npy
-│   │   │   ├── tt7-3_fp16.npy
-│   │   │   ├── tt7-4_fp16.npy
-│   │   │   ├── tt8-1_fp16.npy
-│   │   │   └── tt8-2_fp16.npy
-│   │   ├── LFP_MEP_2kHz_mat
-│   │   │   ├── analog_input.mat
-│   │   │   ├── tt1-3.mat
-│   │   │   ├── tt1_3.mat
-│   │   │   ├── tt1-4.mat
-│   │   │   ├── tt1_4.mat
-│   │   │   ├── tt2-1.mat
-│   │   │   ├── tt2_1.mat
-│   │   │   ├── tt2-2.mat
-│   │   │   ├── tt2_2.mat
-│   │   │   ├── tt2-3.mat
-│   │   │   ├── tt2_3.mat
-│   │   │   ├── tt2-4.mat
-│   │   │   ├── tt2_4.mat
-│   │   │   ├── tt3-3.mat
-│   │   │   ├── tt3_3.mat
-│   │   │   ├── tt3-4.mat
-│   │   │   ├── tt3_4.mat
-│   │   │   ├── tt4-1.mat
-│   │   │   ├── tt4_1.mat
-│   │   │   ├── tt4-2.mat
-│   │   │   ├── tt4_2.mat
-│   │   │   ├── tt5-3.mat
-│   │   │   ├── tt5_3.mat
-│   │   │   ├── tt5-4.mat
-│   │   │   ├── tt5_4.mat
-│   │   │   ├── tt6-1.mat
-│   │   │   ├── tt6_1.mat
-│   │   │   ├── tt6-2.mat
-│   │   │   ├── tt6_2.mat
-│   │   │   ├── tt6-3.mat
-│   │   │   ├── tt6_3.mat
-│   │   │   ├── tt6-4.mat
-│   │   │   ├── tt6_4.mat
-│   │   │   ├── tt7-1.mat
-│   │   │   ├── tt7_1.mat
-│   │   │   ├── tt7-2.mat
-│   │   │   ├── tt7_2.mat
-│   │   │   ├── tt7-3.mat
-│   │   │   ├── tt7_3.mat
-│   │   │   ├── tt7-4.mat
-│   │   │   ├── tt7_4.mat
-│   │   │   ├── tt8-1.mat
-│   │   │   ├── tt8_1.mat
-│   │   │   ├── tt8-2.mat
-│   │   │   └── tt8_2.mat
-│   │   └── ripple_candi_1kHz_pkl
-│   │       ├── tt2-1_fp16.pkl
-│   │       ├── tt2-2_fp16.pkl
-│   │       ├── tt2-3_fp16.pkl
-│   │       ├── tt2-4_fp16.pkl
-│   │       ├── tt6-1_fp16.pkl
-│   │       ├── tt6-2_fp16.pkl
-│   │       ├── tt6-3_fp16.pkl
-│   │       ├── tt6-4_fp16.pkl
-│   │       ├── tt7-1_fp16.pkl
-│   │       ├── tt7-2_fp16.pkl
-│   │       ├── tt7-3_fp16.pkl
-│   │       └── tt7-4_fp16.pkl
-│   └── split_octave
-│       └── LFP_MEP_2kHz_mat
-│           ├── analog_input.mat
-│           ├── tt1-3.mat
-│           ├── tt1-4.mat
-│           ├── tt2-1.mat
-│           ├── tt2-2.mat
-│           ├── tt2-3.mat
-│           ├── tt2-4.mat
-│           ├── tt3-3.mat
-│           ├── tt3-4.mat
-│           ├── tt4-1.mat
-│           ├── tt4-2.mat
-│           ├── tt5-3.mat
-│           ├── tt5-4.mat
-│           ├── tt6-1.mat
-│           ├── tt6-2.mat
-│           ├── tt6-3.mat
-│           ├── tt6-4.mat
-│           ├── tt7-1.mat
-│           ├── tt7-2.mat
-│           ├── tt7-3.mat
-│           ├── tt7-4.mat
-│           ├── tt8-1.mat
-│           └── tt8-2.mat
-├── day4
-│   ├── split
-│   │   ├── LFP_MEP_1kHz_npy
-│   │   │   ├── tt1-3_fp16.npy
-│   │   │   ├── tt1-4_fp16.npy
-│   │   │   ├── tt2-1_fp16.npy
-│   │   │   ├── tt2-2_fp16.npy
-│   │   │   ├── tt2-3_fp16.npy
-│   │   │   ├── tt2-4_fp16.npy
-│   │   │   ├── tt3-3_fp16.npy
-│   │   │   ├── tt3-4_fp16.npy
-│   │   │   ├── tt4-1_fp16.npy
-│   │   │   ├── tt4-2_fp16.npy
-│   │   │   ├── tt5-3_fp16.npy
-│   │   │   ├── tt5-4_fp16.npy
-│   │   │   ├── tt6-1_fp16.npy
-│   │   │   ├── tt6-2_fp16.npy
-│   │   │   ├── tt6-3_fp16.npy
-│   │   │   ├── tt6-4_fp16.npy
-│   │   │   ├── tt7-1_fp16.npy
-│   │   │   ├── tt7-2_fp16.npy
-│   │   │   ├── tt7-3_fp16.npy
-│   │   │   ├── tt7-4_fp16.npy
-│   │   │   ├── tt8-1_fp16.npy
-│   │   │   └── tt8-2_fp16.npy
-│   │   ├── LFP_MEP_2kHz_mat
-│   │   │   ├── analog_input.mat
-│   │   │   ├── tt1-3.mat
-│   │   │   ├── tt1-4.mat
-│   │   │   ├── tt2-1.mat
-│   │   │   ├── tt2-2.mat
-│   │   │   ├── tt2-3.mat
-│   │   │   ├── tt2-4.mat
-│   │   │   ├── tt3-3.mat
-│   │   │   ├── tt3-4.mat
-│   │   │   ├── tt4-1.mat
-│   │   │   ├── tt4-2.mat
-│   │   │   ├── tt5-3.mat
-│   │   │   ├── tt5-4.mat
-│   │   │   ├── tt6-1.mat
-│   │   │   ├── tt6-2.mat
-│   │   │   ├── tt6-3.mat
-│   │   │   ├── tt6-4.mat
-│   │   │   ├── tt7-1.mat
-│   │   │   ├── tt7-2.mat
-│   │   │   ├── tt7-3.mat
-│   │   │   ├── tt7-4.mat
-│   │   │   ├── tt8-1.mat
-│   │   │   └── tt8-2.mat
-│   │   └── ripple_candi_1kHz_pkl
-│   │       ├── tt2-1_fp16.pkl
-│   │       ├── tt2-2_fp16.pkl
-│   │       ├── tt2-3_fp16.pkl
-│   │       ├── tt2-4_fp16.pkl
-│   │       ├── tt6-1_fp16.pkl
-│   │       ├── tt6-2_fp16.pkl
-│   │       ├── tt6-3_fp16.pkl
-│   │       ├── tt6-4_fp16.pkl
-│   │       ├── tt7-1_fp16.pkl
-│   │       ├── tt7-2_fp16.pkl
-│   │       ├── tt7-3_fp16.pkl
-│   │       └── tt7-4_fp16.pkl
-│   └── split_octave
-│       └── LFP_MEP_2kHz_mat
-│           ├── analog_input.mat
-│           ├── tt1-3.mat
-│           ├── tt1-4.mat
-│           ├── tt2-1.mat
-│           ├── tt2-2.mat
-│           ├── tt2-3.mat
-│           ├── tt2-4.mat
-│           ├── tt3-3.mat
-│           ├── tt3-4.mat
-│           ├── tt4-1.mat
-│           ├── tt4-2.mat
-│           ├── tt5-3.mat
-│           ├── tt5-4.mat
-│           ├── tt6-1.mat
-│           ├── tt6-2.mat
-│           ├── tt6-3.mat
-│           ├── tt6-4.mat
-│           ├── tt7-1.mat
-│           ├── tt7-2.mat
-│           ├── tt7-3.mat
-│           ├── tt7-4.mat
-│           ├── tt8-1.mat
-│           └── tt8-2.mat
-└── MouseInfo_en.md
-05
-├── day1
-│   ├── split
-│   │   ├── LFP_MEP_1kHz_npy
-│   │   │   ├── tt1-3_fp16.npy
-│   │   │   ├── tt1-4_fp16.npy
-│   │   │   ├── tt2-1_fp16.npy
-│   │   │   ├── tt2-2_fp16.npy
-│   │   │   ├── tt2-3_fp16.npy
-│   │   │   ├── tt2-4_fp16.npy
-│   │   │   ├── tt3-3_fp16.npy
-│   │   │   ├── tt3-4_fp16.npy
-│   │   │   ├── tt5-3_fp16.npy
-│   │   │   ├── tt5-4_fp16.npy
-│   │   │   ├── tt6-1_fp16.npy
-│   │   │   ├── tt6-2_fp16.npy
-│   │   │   ├── tt6-3_fp16.npy
-│   │   │   ├── tt6-4_fp16.npy
-│   │   │   ├── tt7-1_fp16.npy
-│   │   │   ├── tt7-2_fp16.npy
-│   │   │   ├── tt8-1_fp16.npy
-│   │   │   └── tt8-2_fp16.npy
-│   │   ├── LFP_MEP_2kHz_mat
-│   │   │   ├── analog_input.mat
-│   │   │   ├── tt1-3.mat
-│   │   │   ├── tt1_3.mat
-│   │   │   ├── tt1-4.mat
-│   │   │   ├── tt1_4.mat
-│   │   │   ├── tt2-1.mat
-│   │   │   ├── tt2_1.mat
-│   │   │   ├── tt2-2.mat
-│   │   │   ├── tt2_2.mat
-│   │   │   ├── tt2-3.mat
-│   │   │   ├── tt2_3.mat
-│   │   │   ├── tt2-4.mat
-│   │   │   ├── tt2_4.mat
-│   │   │   ├── tt3-3.mat
-│   │   │   ├── tt3_3.mat
-│   │   │   ├── tt3-4.mat
-│   │   │   ├── tt3_4.mat
-│   │   │   ├── tt5-3.mat
-│   │   │   ├── tt5_3.mat
-│   │   │   ├── tt5-4.mat
-│   │   │   ├── tt5_4.mat
-│   │   │   ├── tt6-1.mat
-│   │   │   ├── tt6_1.mat
-│   │   │   ├── tt6-2.mat
-│   │   │   ├── tt6_2.mat
-│   │   │   ├── tt6-3.mat
-│   │   │   ├── tt6_3.mat
-│   │   │   ├── tt6-4.mat
-│   │   │   ├── tt6_4.mat
-│   │   │   ├── tt7-1.mat
-│   │   │   ├── tt7_1.mat
-│   │   │   ├── tt7-2.mat
-│   │   │   ├── tt7_2.mat
-│   │   │   ├── tt8-1.mat
-│   │   │   ├── tt8_1.mat
-│   │   │   ├── tt8-2.mat
-│   │   │   └── tt8_2.mat
-│   │   └── ripple_candi_1kHz_pkl
-│   │       ├── tt2-1_fp16.pkl
-│   │       ├── tt2-2_fp16.pkl
-│   │       ├── tt2-3_fp16.pkl
-│   │       ├── tt2-4_fp16.pkl
-│   │       ├── tt6-1_fp16.pkl
-│   │       ├── tt6-2_fp16.pkl
-│   │       ├── tt6-3_fp16.pkl
-│   │       └── tt6-4_fp16.pkl
-│   └── split_octave
-│       └── LFP_MEP_2kHz_mat
-│           ├── analog_input.mat
-│           ├── tt1-3.mat
-│           ├── tt1-4.mat
-│           ├── tt2-1.mat
-│           ├── tt2-2.mat
-│           ├── tt2-3.mat
-│           ├── tt2-4.mat
-│           ├── tt3-3.mat
-│           ├── tt3-4.mat
-│           ├── tt5-3.mat
-│           ├── tt5-4.mat
-│           ├── tt6-1.mat
-│           ├── tt6-2.mat
-│           ├── tt6-3.mat
-│           ├── tt6-4.mat
-│           ├── tt7-1.mat
-│           ├── tt7-2.mat
-│           ├── tt8-1.mat
-│           └── tt8-2.mat
-├── day2
-│   ├── split
-│   │   ├── LFP_MEP_1kHz_npy
-│   │   │   ├── tt1-3_fp16.npy
-│   │   │   ├── tt1-4_fp16.npy
-│   │   │   ├── tt2-1_fp16.npy
-│   │   │   ├── tt2-2_fp16.npy
-│   │   │   ├── tt2-3_fp16.npy
-│   │   │   ├── tt2-4_fp16.npy
-│   │   │   ├── tt3-3_fp16.npy
-│   │   │   ├── tt3-4_fp16.npy
-│   │   │   ├── tt5-3_fp16.npy
-│   │   │   ├── tt5-4_fp16.npy
-│   │   │   ├── tt6-1_fp16.npy
-│   │   │   ├── tt6-2_fp16.npy
-│   │   │   ├── tt6-3_fp16.npy
-│   │   │   ├── tt6-4_fp16.npy
-│   │   │   ├── tt7-1_fp16.npy
-│   │   │   ├── tt7-2_fp16.npy
-│   │   │   ├── tt8-1_fp16.npy
-│   │   │   └── tt8-2_fp16.npy
-│   │   ├── LFP_MEP_2kHz_mat
-│   │   │   ├── analog_input.mat
-│   │   │   ├── tt1-3.mat
-│   │   │   ├── tt1_3.mat
-│   │   │   ├── tt1-4.mat
-│   │   │   ├── tt1_4.mat
-│   │   │   ├── tt2-1.mat
-│   │   │   ├── tt2_1.mat
-│   │   │   ├── tt2-2.mat
-│   │   │   ├── tt2_2.mat
-│   │   │   ├── tt2-3.mat
-│   │   │   ├── tt2_3.mat
-│   │   │   ├── tt2-4.mat
-│   │   │   ├── tt2_4.mat
-│   │   │   ├── tt3-3.mat
-│   │   │   ├── tt3_3.mat
-│   │   │   ├── tt3-4.mat
-│   │   │   ├── tt3_4.mat
-│   │   │   ├── tt5-3.mat
-│   │   │   ├── tt5_3.mat
-│   │   │   ├── tt5-4.mat
-│   │   │   ├── tt5_4.mat
-│   │   │   ├── tt6-1.mat
-│   │   │   ├── tt6_1.mat
-│   │   │   ├── tt6-2.mat
-│   │   │   ├── tt6_2.mat
-│   │   │   ├── tt6-3.mat
-│   │   │   ├── tt6_3.mat
-│   │   │   ├── tt6-4.mat
-│   │   │   ├── tt6_4.mat
-│   │   │   ├── tt7-1.mat
-│   │   │   ├── tt7_1.mat
-│   │   │   ├── tt7-2.mat
-│   │   │   ├── tt7_2.mat
-│   │   │   ├── tt8-1.mat
-│   │   │   ├── tt8_1.mat
-│   │   │   ├── tt8-2.mat
-│   │   │   └── tt8_2.mat
-│   │   └── ripple_candi_1kHz_pkl
-│   │       ├── tt2-1_fp16.pkl
-│   │       ├── tt2-2_fp16.pkl
-│   │       ├── tt2-3_fp16.pkl
-│   │       ├── tt2-4_fp16.pkl
-│   │       ├── tt6-1_fp16.pkl
-│   │       ├── tt6-2_fp16.pkl
-│   │       ├── tt6-3_fp16.pkl
-│   │       └── tt6-4_fp16.pkl
-│   └── split_octave
-│       └── LFP_MEP_2kHz_mat
-│           ├── analog_input.mat
-│           ├── tt1-3.mat
-│           ├── tt1-4.mat
-│           ├── tt2-1.mat
-│           ├── tt2-2.mat
-│           ├── tt2-3.mat
-│           ├── tt2-4.mat
-│           ├── tt3-3.mat
-│           ├── tt3-4.mat
-│           ├── tt5-3.mat
-│           ├── tt5-4.mat
-│           ├── tt6-1.mat
-│           ├── tt6-2.mat
-│           ├── tt6-3.mat
-│           ├── tt6-4.mat
-│           ├── tt7-1.mat
-│           ├── tt7-2.mat
-│           ├── tt8-1.mat
-│           └── tt8-2.mat
-├── day3
-│   ├── split
-│   │   ├── LFP_MEP_1kHz_npy
-│   │   │   ├── tt1-3_fp16.npy
-│   │   │   ├── tt1-4_fp16.npy
-│   │   │   ├── tt2-1_fp16.npy
-│   │   │   ├── tt2-2_fp16.npy
-│   │   │   ├── tt2-3_fp16.npy
-│   │   │   ├── tt2-4_fp16.npy
-│   │   │   ├── tt3-3_fp16.npy
-│   │   │   ├── tt3-4_fp16.npy
-│   │   │   ├── tt5-3_fp16.npy
-│   │   │   ├── tt5-4_fp16.npy
-│   │   │   ├── tt6-1_fp16.npy
-│   │   │   ├── tt6-2_fp16.npy
-│   │   │   ├── tt6-3_fp16.npy
-│   │   │   ├── tt6-4_fp16.npy
-│   │   │   ├── tt7-1_fp16.npy
-│   │   │   ├── tt7-2_fp16.npy
-│   │   │   ├── tt8-1_fp16.npy
-│   │   │   └── tt8-2_fp16.npy
-│   │   ├── LFP_MEP_2kHz_mat
-│   │   │   ├── analog_input.mat
-│   │   │   ├── tt1-3.mat
-│   │   │   ├── tt1_3.mat
-│   │   │   ├── tt1-4.mat
-│   │   │   ├── tt1_4.mat
-│   │   │   ├── tt2-1.mat
-│   │   │   ├── tt2_1.mat
-│   │   │   ├── tt2-2.mat
-│   │   │   ├── tt2_2.mat
-│   │   │   ├── tt2-3.mat
-│   │   │   ├── tt2_3.mat
-│   │   │   ├── tt2-4.mat
-│   │   │   ├── tt2_4.mat
-│   │   │   ├── tt3-3.mat
-│   │   │   ├── tt3_3.mat
-│   │   │   ├── tt3-4.mat
-│   │   │   ├── tt3_4.mat
-│   │   │   ├── tt5-3.mat
-│   │   │   ├── tt5_3.mat
-│   │   │   ├── tt5-4.mat
-│   │   │   ├── tt5_4.mat
-│   │   │   ├── tt6-1.mat
-│   │   │   ├── tt6_1.mat
-│   │   │   ├── tt6-2.mat
-│   │   │   ├── tt6_2.mat
-│   │   │   ├── tt6-3.mat
-│   │   │   ├── tt6_3.mat
-│   │   │   ├── tt6-4.mat
-│   │   │   ├── tt6_4.mat
-│   │   │   ├── tt7-1.mat
-│   │   │   ├── tt7_1.mat
-│   │   │   ├── tt7-2.mat
-│   │   │   ├── tt7_2.mat
-│   │   │   ├── tt8-1.mat
-│   │   │   ├── tt8_1.mat
-│   │   │   ├── tt8-2.mat
-│   │   │   └── tt8_2.mat
-│   │   └── ripple_candi_1kHz_pkl
-│   │       ├── tt2-1_fp16.pkl
-│   │       ├── tt2-2_fp16.pkl
-│   │       ├── tt2-3_fp16.pkl
-│   │       ├── tt2-4_fp16.pkl
-│   │       ├── tt6-1_fp16.pkl
-│   │       ├── tt6-2_fp16.pkl
-│   │       ├── tt6-3_fp16.pkl
-│   │       └── tt6-4_fp16.pkl
-│   └── split_octave
-│       └── LFP_MEP_2kHz_mat
-│           ├── analog_input.mat
-│           ├── tt1-3.mat
-│           ├── tt1-4.mat
-│           ├── tt2-1.mat
-│           ├── tt2-2.mat
-│           ├── tt2-3.mat
-│           ├── tt2-4.mat
-│           ├── tt3-3.mat
-│           ├── tt3-4.mat
-│           ├── tt5-3.mat
-│           ├── tt5-4.mat
-│           ├── tt6-1.mat
-│           ├── tt6-2.mat
-│           ├── tt6-3.mat
-│           ├── tt6-4.mat
-│           ├── tt7-1.mat
-│           ├── tt7-2.mat
-│           ├── tt8-1.mat
-│           └── tt8-2.mat
-├── day4
-│   ├── split
-│   │   ├── LFP_MEP_1kHz_npy
-│   │   │   ├── 1_tt1-3_fp16.npy
-│   │   │   ├── 1_tt1-4_fp16.npy
-│   │   │   ├── 1_tt2-1_fp16.npy
-│   │   │   ├── 1_tt2-2_fp16.npy
-│   │   │   ├── 1_tt2-3_fp16.npy
-│   │   │   ├── 1_tt2-4_fp16.npy
-│   │   │   ├── 1_tt3-3_fp16.npy
-│   │   │   ├── 1_tt3-4_fp16.npy
-│   │   │   ├── 1_tt5-3_fp16.npy
-│   │   │   ├── 1_tt5-4_fp16.npy
-│   │   │   ├── 1_tt6-1_fp16.npy
-│   │   │   ├── 1_tt6-2_fp16.npy
-│   │   │   ├── 1_tt6-3_fp16.npy
-│   │   │   ├── 1_tt6-4_fp16.npy
-│   │   │   ├── 1_tt7-1_fp16.npy
-│   │   │   ├── 1_tt7-2_fp16.npy
-│   │   │   ├── 1_tt8-1_fp16.npy
-│   │   │   ├── 1_tt8-2_fp16.npy
-│   │   │   ├── 2_tt1-3_fp16.npy
-│   │   │   ├── 2_tt1-4_fp16.npy
-│   │   │   ├── 2_tt2-1_fp16.npy
-│   │   │   ├── 2_tt2-2_fp16.npy
-│   │   │   ├── 2_tt2-3_fp16.npy
-│   │   │   ├── 2_tt2-4_fp16.npy
-│   │   │   ├── 2_tt3-3_fp16.npy
-│   │   │   ├── 2_tt3-4_fp16.npy
-│   │   │   ├── 2_tt5-3_fp16.npy
-│   │   │   ├── 2_tt5-4_fp16.npy
-│   │   │   ├── 2_tt6-1_fp16.npy
-│   │   │   ├── 2_tt6-2_fp16.npy
-│   │   │   ├── 2_tt6-3_fp16.npy
-│   │   │   ├── 2_tt6-4_fp16.npy
-│   │   │   ├── 2_tt7-1_fp16.npy
-│   │   │   ├── 2_tt7-2_fp16.npy
-│   │   │   ├── 2_tt8-1_fp16.npy
-│   │   │   ├── 2_tt8-2_fp16.npy
-│   │   │   ├── tt1-3_fp16.npy
-│   │   │   ├── tt1-4_fp16.npy
-│   │   │   ├── tt2-1_fp16.npy
-│   │   │   ├── tt2-2_fp16.npy
-│   │   │   ├── tt2-3_fp16.npy
-│   │   │   ├── tt2-4_fp16.npy
-│   │   │   ├── tt3-3_fp16.npy
-│   │   │   ├── tt3-4_fp16.npy
-│   │   │   ├── tt5-3_fp16.npy
-│   │   │   ├── tt5-4_fp16.npy
-│   │   │   ├── tt6-1_fp16.npy
-│   │   │   ├── tt6-2_fp16.npy
-│   │   │   ├── tt6-3_fp16.npy
-│   │   │   ├── tt6-4_fp16.npy
-│   │   │   ├── tt7-1_fp16.npy
-│   │   │   ├── tt7-2_fp16.npy
-│   │   │   ├── tt8-1_fp16.npy
-│   │   │   └── tt8-2_fp16.npy
-│   │   ├── LFP_MEP_2kHz_mat
-│   │   │   ├── 1_analog_input.mat
-│   │   │   ├── 1_tt1-3.mat
-│   │   │   ├── 1_tt1-4.mat
-│   │   │   ├── 1_tt2-1.mat
-│   │   │   ├── 1_tt2-2.mat
-│   │   │   ├── 1_tt2-3.mat
-│   │   │   ├── 1_tt2-4.mat
-│   │   │   ├── 1_tt3-3.mat
-│   │   │   ├── 1_tt3-4.mat
-│   │   │   ├── 1_tt5-3.mat
-│   │   │   ├── 1_tt5-4.mat
-│   │   │   ├── 1_tt6-1.mat
-│   │   │   ├── 1_tt6-2.mat
-│   │   │   ├── 1_tt6-3.mat
-│   │   │   ├── 1_tt6-4.mat
-│   │   │   ├── 1_tt7-1.mat
-│   │   │   ├── 1_tt7-2.mat
-│   │   │   ├── 1_tt8-1.mat
-│   │   │   ├── 1_tt8-2.mat
-│   │   │   ├── 2_analog_input.mat
-│   │   │   ├── 2_tt1-3.mat
-│   │   │   ├── 2_tt1-4.mat
-│   │   │   ├── 2_tt2-1.mat
-│   │   │   ├── 2_tt2-2.mat
-│   │   │   ├── 2_tt2-3.mat
-│   │   │   ├── 2_tt2-4.mat
-│   │   │   ├── 2_tt3-3.mat
-│   │   │   ├── 2_tt3-4.mat
-│   │   │   ├── 2_tt5-3.mat
-│   │   │   ├── 2_tt5-4.mat
-│   │   │   ├── 2_tt6-1.mat
-│   │   │   ├── 2_tt6-2.mat
-│   │   │   ├── 2_tt6-3.mat
-│   │   │   ├── 2_tt6-4.mat
-│   │   │   ├── 2_tt7-1.mat
-│   │   │   ├── 2_tt7-2.mat
-│   │   │   ├── 2_tt8-1.mat
-│   │   │   └── 2_tt8-2.mat
-│   │   └── ripple_candi_1kHz_pkl
-│   │       ├── tt2-1_fp16.pkl
-│   │       ├── tt2-2_fp16.pkl
-│   │       ├── tt2-3_fp16.pkl
-│   │       ├── tt2-4_fp16.pkl
-│   │       ├── tt6-1_fp16.pkl
-│   │       ├── tt6-2_fp16.pkl
-│   │       ├── tt6-3_fp16.pkl
-│   │       └── tt6-4_fp16.pkl
-│   └── split_octave
-│       └── LFP_MEP_2kHz_mat
-│           ├── 1_analog_input.mat
-│           ├── 1_tt1-3.mat
-│           ├── 1_tt1-4.mat
-│           ├── 1_tt2-1.mat
-│           ├── 1_tt2-2.mat
-│           ├── 1_tt2-3.mat
-│           ├── 1_tt2-4.mat
-│           ├── 1_tt3-3.mat
-│           ├── 1_tt3-4.mat
-│           ├── 1_tt5-3.mat
-│           ├── 1_tt5-4.mat
-│           ├── 1_tt6-1.mat
-│           ├── 1_tt6-2.mat
-│           ├── 1_tt6-3.mat
-│           ├── 1_tt6-4.mat
-│           ├── 1_tt7-1.mat
-│           ├── 1_tt7-2.mat
-│           ├── 1_tt8-1.mat
-│           ├── 1_tt8-2.mat
-│           ├── 2_analog_input.mat
-│           ├── 2_tt1-3.mat
-│           ├── 2_tt1-4.mat
-│           ├── 2_tt2-1.mat
-│           ├── 2_tt2-2.mat
-│           ├── 2_tt2-3.mat
-│           ├── 2_tt2-4.mat
-│           ├── 2_tt3-3.mat
-│           ├── 2_tt3-4.mat
-│           ├── 2_tt5-3.mat
-│           ├── 2_tt5-4.mat
-│           ├── 2_tt6-1.mat
-│           ├── 2_tt6-2.mat
-│           ├── 2_tt6-3.mat
-│           ├── 2_tt6-4.mat
-│           ├── 2_tt7-1.mat
-│           ├── 2_tt7-2.mat
-│           ├── 2_tt8-1.mat
-│           └── 2_tt8-2.mat
-├── day5
-│   └── split
-│       ├── LFP_MEP_1kHz_npy
-│       │   ├── tt1-3_fp16.npy
-│       │   ├── tt1-4_fp16.npy
-│       │   ├── tt2-1_fp16.npy
-│       │   ├── tt2-2_fp16.npy
-│       │   ├── tt2-3_fp16.npy
-│       │   ├── tt2-4_fp16.npy
-│       │   ├── tt3-3_fp16.npy
-│       │   ├── tt3-4_fp16.npy
-│       │   ├── tt5-3_fp16.npy
-│       │   ├── tt5-4_fp16.npy
-│       │   ├── tt6-1_fp16.npy
-│       │   ├── tt6-2_fp16.npy
-│       │   ├── tt6-3_fp16.npy
-│       │   ├── tt6-4_fp16.npy
-│       │   ├── tt7-1_fp16.npy
-│       │   ├── tt7-2_fp16.npy
-│       │   ├── tt8-1_fp16.npy
-│       │   └── tt8-2_fp16.npy
-│       └── ripple_candi_1kHz_pkl
-│           ├── tt2-1_fp16.pkl
-│           ├── tt2-2_fp16.pkl
-│           ├── tt2-3_fp16.pkl
-│           ├── tt2-4_fp16.pkl
-│           ├── tt6-1_fp16.pkl
-│           ├── tt6-2_fp16.pkl
-│           ├── tt6-3_fp16.pkl
-│           └── tt6-4_fp16.pkl
-└── MouseInfo_en.md
+okada
+├── 01
+│   ├── day1
+│   │   ├── split
+│   │   │   ├── LFP_MEP_1kHz_npy
+│   │   │   │   ├── tt1-3_fp16.npy
+│   │   │   │   ├── tt1-4_fp16.npy
+│   │   │   │   ├── tt2-1_fp16.npy
+│   │   │   │   ├── tt2-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_fp16.npy
+│   │   │   │   ├── tt2-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_fp16.npy
+│   │   │   │   ├── tt2-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_fp16.npy
+│   │   │   │   ├── tt2-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt3-1_fp16.npy
+│   │   │   │   ├── tt3-2_fp16.npy
+│   │   │   │   ├── tt5-3_fp16.npy
+│   │   │   │   ├── tt5-4_fp16.npy
+│   │   │   │   ├── tt6-1_fp16.npy
+│   │   │   │   ├── tt6-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_fp16.npy
+│   │   │   │   ├── tt6-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_fp16.npy
+│   │   │   │   ├── tt6-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_fp16.npy
+│   │   │   │   ├── tt6-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_fp16.npy
+│   │   │   │   ├── tt7-2_fp16.npy
+│   │   │   │   ├── tt8-1_fp16.npy
+│   │   │   │   └── tt8-2_fp16.npy
+│   │   │   ├── LFP_MEP_2kHz_mat
+│   │   │   │   ├── analog_input.mat
+│   │   │   │   ├── tt1-3.mat
+│   │   │   │   ├── tt1-4.mat
+│   │   │   │   ├── tt2-1.mat
+│   │   │   │   ├── tt2-2.mat
+│   │   │   │   ├── tt2-3.mat
+│   │   │   │   ├── tt2-4.mat
+│   │   │   │   ├── tt3-1.mat
+│   │   │   │   ├── tt3-2.mat
+│   │   │   │   ├── tt5-3.mat
+│   │   │   │   ├── tt5-4.mat
+│   │   │   │   ├── tt6-1.mat
+│   │   │   │   ├── tt6-2.mat
+│   │   │   │   ├── tt6-3.mat
+│   │   │   │   ├── tt6-4.mat
+│   │   │   │   ├── tt7-1.mat
+│   │   │   │   ├── tt7-2.mat
+│   │   │   │   ├── tt8-1.mat
+│   │   │   │   └── tt8-2.mat
+│   │   │   └── ripple_candi_1kHz_pkl
+│   │   │       ├── tt2-1_fp16.pkl
+│   │   │       ├── tt2-2_fp16.pkl
+│   │   │       ├── tt2-3_fp16.pkl
+│   │   │       ├── tt2-4_fp16.pkl
+│   │   │       ├── tt6-1_fp16.pkl
+│   │   │       ├── tt6-2_fp16.pkl
+│   │   │       ├── tt6-3_fp16.pkl
+│   │   │       └── tt6-4_fp16.pkl
+│   │   └── split_octave
+│   │       └── LFP_MEP_2kHz_mat
+│   │           ├── analog_input.mat
+│   │           ├── tt1-3.mat
+│   │           ├── tt1-4.mat
+│   │           ├── tt2-1.mat
+│   │           ├── tt2-2.mat
+│   │           ├── tt2-3.mat
+│   │           ├── tt2-4.mat
+│   │           ├── tt3-1.mat
+│   │           ├── tt3-2.mat
+│   │           ├── tt5-3.mat
+│   │           ├── tt5-4.mat
+│   │           ├── tt6-1.mat
+│   │           ├── tt6-2.mat
+│   │           ├── tt6-3.mat
+│   │           ├── tt6-4.mat
+│   │           ├── tt7-1.mat
+│   │           ├── tt7-2.mat
+│   │           ├── tt8-1.mat
+│   │           └── tt8-2.mat
+│   └── MouseInfo_en.md
+├── 02
+│   ├── day1
+│   │   ├── split
+│   │   │   ├── LFP_MEP_1kHz_npy
+│   │   │   │   ├── tt1-3_fp16.npy
+│   │   │   │   ├── tt1-4_fp16.npy
+│   │   │   │   ├── tt2-1_fp16.npy
+│   │   │   │   ├── tt2-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_fp16.npy
+│   │   │   │   ├── tt2-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_fp16.npy
+│   │   │   │   ├── tt2-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_fp16.npy
+│   │   │   │   ├── tt2-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt3-3_fp16.npy
+│   │   │   │   ├── tt3-4_fp16.npy
+│   │   │   │   ├── tt4-1_fp16.npy
+│   │   │   │   ├── tt4-2_fp16.npy
+│   │   │   │   ├── tt5-1_fp16.npy
+│   │   │   │   ├── tt5-2_fp16.npy
+│   │   │   │   ├── tt6-1_fp16.npy
+│   │   │   │   ├── tt6-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_fp16.npy
+│   │   │   │   ├── tt6-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_fp16.npy
+│   │   │   │   ├── tt6-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_fp16.npy
+│   │   │   │   ├── tt6-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_fp16.npy
+│   │   │   │   ├── tt7-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_fp16.npy
+│   │   │   │   ├── tt7-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_fp16.npy
+│   │   │   │   ├── tt7-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_fp16.npy
+│   │   │   │   ├── tt7-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt8-1_fp16.npy
+│   │   │   │   └── tt8-2_fp16.npy
+│   │   │   ├── LFP_MEP_2kHz_mat
+│   │   │   │   ├── analog_input.mat
+│   │   │   │   ├── tt1-3.mat
+│   │   │   │   ├── tt1_3.mat
+│   │   │   │   ├── tt1-4.mat
+│   │   │   │   ├── tt1_4.mat
+│   │   │   │   ├── tt2-1.mat
+│   │   │   │   ├── tt2_1.mat
+│   │   │   │   ├── tt2-2.mat
+│   │   │   │   ├── tt2_2.mat
+│   │   │   │   ├── tt2-3.mat
+│   │   │   │   ├── tt2_3.mat
+│   │   │   │   ├── tt2-4.mat
+│   │   │   │   ├── tt2_4.mat
+│   │   │   │   ├── tt3-3.mat
+│   │   │   │   ├── tt3_3.mat
+│   │   │   │   ├── tt3-4.mat
+│   │   │   │   ├── tt3_4.mat
+│   │   │   │   ├── tt4-1.mat
+│   │   │   │   ├── tt4_1.mat
+│   │   │   │   ├── tt4-2.mat
+│   │   │   │   ├── tt4_2.mat
+│   │   │   │   ├── tt5-1.mat
+│   │   │   │   ├── tt5_1.mat
+│   │   │   │   ├── tt5-2.mat
+│   │   │   │   ├── tt5_2.mat
+│   │   │   │   ├── tt6-1.mat
+│   │   │   │   ├── tt6_1.mat
+│   │   │   │   ├── tt6-2.mat
+│   │   │   │   ├── tt6_2.mat
+│   │   │   │   ├── tt6-3.mat
+│   │   │   │   ├── tt6_3.mat
+│   │   │   │   ├── tt6-4.mat
+│   │   │   │   ├── tt6_4.mat
+│   │   │   │   ├── tt7-1.mat
+│   │   │   │   ├── tt7_1.mat
+│   │   │   │   ├── tt7-2.mat
+│   │   │   │   ├── tt7_2.mat
+│   │   │   │   ├── tt7-3.mat
+│   │   │   │   ├── tt7_3.mat
+│   │   │   │   ├── tt7-4.mat
+│   │   │   │   ├── tt7_4.mat
+│   │   │   │   ├── tt8-1.mat
+│   │   │   │   ├── tt8_1.mat
+│   │   │   │   ├── tt8-2.mat
+│   │   │   │   └── tt8_2.mat
+│   │   │   └── ripple_candi_1kHz_pkl
+│   │   │       ├── tt2-1_fp16.pkl
+│   │   │       ├── tt2-2_fp16.pkl
+│   │   │       ├── tt2-3_fp16.pkl
+│   │   │       ├── tt2-4_fp16.pkl
+│   │   │       ├── tt6-1_fp16.pkl
+│   │   │       ├── tt6-2_fp16.pkl
+│   │   │       ├── tt6-3_fp16.pkl
+│   │   │       ├── tt6-4_fp16.pkl
+│   │   │       ├── tt7-1_fp16.pkl
+│   │   │       ├── tt7-2_fp16.pkl
+│   │   │       ├── tt7-3_fp16.pkl
+│   │   │       └── tt7-4_fp16.pkl
+│   │   └── split_octave
+│   │       └── LFP_MEP_2kHz_mat
+│   │           ├── analog_input.mat
+│   │           ├── tt1-3.mat
+│   │           ├── tt1-4.mat
+│   │           ├── tt2-1.mat
+│   │           ├── tt2-2.mat
+│   │           ├── tt2-3.mat
+│   │           ├── tt2-4.mat
+│   │           ├── tt3-3.mat
+│   │           ├── tt3-4.mat
+│   │           ├── tt4-1.mat
+│   │           ├── tt4-2.mat
+│   │           ├── tt5-1.mat
+│   │           ├── tt5-2.mat
+│   │           ├── tt6-1.mat
+│   │           ├── tt6-2.mat
+│   │           ├── tt6-3.mat
+│   │           ├── tt6-4.mat
+│   │           ├── tt7-1.mat
+│   │           ├── tt7-2.mat
+│   │           ├── tt7-3.mat
+│   │           ├── tt7-4.mat
+│   │           ├── tt8-1.mat
+│   │           └── tt8-2.mat
+│   ├── day2
+│   │   ├── split
+│   │   │   ├── LFP_MEP_1kHz_npy
+│   │   │   │   ├── tt1-3_fp16.npy
+│   │   │   │   ├── tt1-4_fp16.npy
+│   │   │   │   ├── tt2-1_fp16.npy
+│   │   │   │   ├── tt2-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_fp16.npy
+│   │   │   │   ├── tt2-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_fp16.npy
+│   │   │   │   ├── tt2-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_fp16.npy
+│   │   │   │   ├── tt2-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt3-3_fp16.npy
+│   │   │   │   ├── tt3-4_fp16.npy
+│   │   │   │   ├── tt4-1_fp16.npy
+│   │   │   │   ├── tt4-2_fp16.npy
+│   │   │   │   ├── tt5-1_fp16.npy
+│   │   │   │   ├── tt5-2_fp16.npy
+│   │   │   │   ├── tt6-1_fp16.npy
+│   │   │   │   ├── tt6-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_fp16.npy
+│   │   │   │   ├── tt6-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_fp16.npy
+│   │   │   │   ├── tt6-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_fp16.npy
+│   │   │   │   ├── tt6-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_fp16.npy
+│   │   │   │   ├── tt7-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_fp16.npy
+│   │   │   │   ├── tt7-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_fp16.npy
+│   │   │   │   ├── tt7-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_fp16.npy
+│   │   │   │   ├── tt7-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt8-1_fp16.npy
+│   │   │   │   └── tt8-2_fp16.npy
+│   │   │   ├── LFP_MEP_2kHz_mat
+│   │   │   │   ├── analog_input.mat
+│   │   │   │   ├── tt10.mat
+│   │   │   │   ├── tt11.mat
+│   │   │   │   ├── tt12.mat
+│   │   │   │   ├── tt1-3.mat
+│   │   │   │   ├── tt13.mat
+│   │   │   │   ├── tt1-4.mat
+│   │   │   │   ├── tt14.mat
+│   │   │   │   ├── tt15.mat
+│   │   │   │   ├── tt16.mat
+│   │   │   │   ├── tt17.mat
+│   │   │   │   ├── tt18.mat
+│   │   │   │   ├── tt19.mat
+│   │   │   │   ├── tt1.mat
+│   │   │   │   ├── tt20.mat
+│   │   │   │   ├── tt2-1.mat
+│   │   │   │   ├── tt21.mat
+│   │   │   │   ├── tt2-2.mat
+│   │   │   │   ├── tt22.mat
+│   │   │   │   ├── tt2-3.mat
+│   │   │   │   ├── tt23.mat
+│   │   │   │   ├── tt2-4.mat
+│   │   │   │   ├── tt2.mat
+│   │   │   │   ├── tt3-3.mat
+│   │   │   │   ├── tt3-4.mat
+│   │   │   │   ├── tt3.mat
+│   │   │   │   ├── tt4-1.mat
+│   │   │   │   ├── tt4-2.mat
+│   │   │   │   ├── tt4.mat
+│   │   │   │   ├── tt5-1.mat
+│   │   │   │   ├── tt5-2.mat
+│   │   │   │   ├── tt5.mat
+│   │   │   │   ├── tt6-1.mat
+│   │   │   │   ├── tt6-2.mat
+│   │   │   │   ├── tt6-3.mat
+│   │   │   │   ├── tt6-4.mat
+│   │   │   │   ├── tt6.mat
+│   │   │   │   ├── tt7-1.mat
+│   │   │   │   ├── tt7-2.mat
+│   │   │   │   ├── tt7-3.mat
+│   │   │   │   ├── tt7-4.mat
+│   │   │   │   ├── tt7.mat
+│   │   │   │   ├── tt8-1.mat
+│   │   │   │   ├── tt8-2.mat
+│   │   │   │   ├── tt8.mat
+│   │   │   │   └── tt9.mat
+│   │   │   └── ripple_candi_1kHz_pkl
+│   │   │       ├── tt2-1_fp16.pkl
+│   │   │       ├── tt2-2_fp16.pkl
+│   │   │       ├── tt2-3_fp16.pkl
+│   │   │       ├── tt2-4_fp16.pkl
+│   │   │       ├── tt6-1_fp16.pkl
+│   │   │       ├── tt6-2_fp16.pkl
+│   │   │       ├── tt6-3_fp16.pkl
+│   │   │       ├── tt6-4_fp16.pkl
+│   │   │       ├── tt7-1_fp16.pkl
+│   │   │       ├── tt7-2_fp16.pkl
+│   │   │       ├── tt7-3_fp16.pkl
+│   │   │       └── tt7-4_fp16.pkl
+│   │   └── split_octave
+│   │       └── LFP_MEP_2kHz_mat
+│   │           ├── analog_input.mat
+│   │           ├── tt1-3.mat
+│   │           ├── tt1-4.mat
+│   │           ├── tt2-1.mat
+│   │           ├── tt2-2.mat
+│   │           ├── tt2-3.mat
+│   │           ├── tt2-4.mat
+│   │           ├── tt3-3.mat
+│   │           ├── tt3-4.mat
+│   │           ├── tt4-1.mat
+│   │           ├── tt4-2.mat
+│   │           ├── tt5-1.mat
+│   │           ├── tt5-2.mat
+│   │           ├── tt6-1.mat
+│   │           ├── tt6-2.mat
+│   │           ├── tt6-3.mat
+│   │           ├── tt6-4.mat
+│   │           ├── tt7-1.mat
+│   │           ├── tt7-2.mat
+│   │           ├── tt7-3.mat
+│   │           ├── tt7-4.mat
+│   │           ├── tt8-1.mat
+│   │           └── tt8-2.mat
+│   ├── day3
+│   │   ├── split
+│   │   │   ├── LFP_MEP_1kHz_npy
+│   │   │   │   ├── tt1-3_fp16.npy
+│   │   │   │   ├── tt1-4_fp16.npy
+│   │   │   │   ├── tt2-1_fp16.npy
+│   │   │   │   ├── tt2-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_fp16.npy
+│   │   │   │   ├── tt2-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_fp16.npy
+│   │   │   │   ├── tt2-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_fp16.npy
+│   │   │   │   ├── tt2-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt3-3_fp16.npy
+│   │   │   │   ├── tt3-4_fp16.npy
+│   │   │   │   ├── tt4-1_fp16.npy
+│   │   │   │   ├── tt4-2_fp16.npy
+│   │   │   │   ├── tt5-1_fp16.npy
+│   │   │   │   ├── tt5-2_fp16.npy
+│   │   │   │   ├── tt6-1_fp16.npy
+│   │   │   │   ├── tt6-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_fp16.npy
+│   │   │   │   ├── tt6-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_fp16.npy
+│   │   │   │   ├── tt6-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_fp16.npy
+│   │   │   │   ├── tt6-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_fp16.npy
+│   │   │   │   ├── tt7-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_fp16.npy
+│   │   │   │   ├── tt7-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_fp16.npy
+│   │   │   │   ├── tt7-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_fp16.npy
+│   │   │   │   ├── tt7-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt8-1_fp16.npy
+│   │   │   │   └── tt8-2_fp16.npy
+│   │   │   ├── LFP_MEP_2kHz_mat
+│   │   │   │   ├── analog_input.mat
+│   │   │   │   ├── tt10.mat
+│   │   │   │   ├── tt11.mat
+│   │   │   │   ├── tt12.mat
+│   │   │   │   ├── tt1-3.mat
+│   │   │   │   ├── tt13.mat
+│   │   │   │   ├── tt1-4.mat
+│   │   │   │   ├── tt14.mat
+│   │   │   │   ├── tt15.mat
+│   │   │   │   ├── tt16.mat
+│   │   │   │   ├── tt17.mat
+│   │   │   │   ├── tt18.mat
+│   │   │   │   ├── tt19.mat
+│   │   │   │   ├── tt1.mat
+│   │   │   │   ├── tt20.mat
+│   │   │   │   ├── tt2-1.mat
+│   │   │   │   ├── tt21.mat
+│   │   │   │   ├── tt2-2.mat
+│   │   │   │   ├── tt22.mat
+│   │   │   │   ├── tt2-3.mat
+│   │   │   │   ├── tt23.mat
+│   │   │   │   ├── tt2-4.mat
+│   │   │   │   ├── tt2.mat
+│   │   │   │   ├── tt3-3.mat
+│   │   │   │   ├── tt3-4.mat
+│   │   │   │   ├── tt3.mat
+│   │   │   │   ├── tt4-1.mat
+│   │   │   │   ├── tt4-2.mat
+│   │   │   │   ├── tt4.mat
+│   │   │   │   ├── tt5-1.mat
+│   │   │   │   ├── tt5-2.mat
+│   │   │   │   ├── tt5.mat
+│   │   │   │   ├── tt6-1.mat
+│   │   │   │   ├── tt6-2.mat
+│   │   │   │   ├── tt6-3.mat
+│   │   │   │   ├── tt6-4.mat
+│   │   │   │   ├── tt6.mat
+│   │   │   │   ├── tt7-1.mat
+│   │   │   │   ├── tt7-2.mat
+│   │   │   │   ├── tt7-3.mat
+│   │   │   │   ├── tt7-4.mat
+│   │   │   │   ├── tt7.mat
+│   │   │   │   ├── tt8-1.mat
+│   │   │   │   ├── tt8-2.mat
+│   │   │   │   ├── tt8.mat
+│   │   │   │   └── tt9.mat
+│   │   │   └── ripple_candi_1kHz_pkl
+│   │   │       ├── tt2-1_fp16.pkl
+│   │   │       ├── tt2-2_fp16.pkl
+│   │   │       ├── tt2-3_fp16.pkl
+│   │   │       ├── tt2-4_fp16.pkl
+│   │   │       ├── tt6-1_fp16.pkl
+│   │   │       ├── tt6-2_fp16.pkl
+│   │   │       ├── tt6-3_fp16.pkl
+│   │   │       ├── tt6-4_fp16.pkl
+│   │   │       ├── tt7-1_fp16.pkl
+│   │   │       ├── tt7-2_fp16.pkl
+│   │   │       ├── tt7-3_fp16.pkl
+│   │   │       └── tt7-4_fp16.pkl
+│   │   └── split_octave
+│   │       └── LFP_MEP_2kHz_mat
+│   │           ├── analog_input.mat
+│   │           ├── tt1-3.mat
+│   │           ├── tt1-4.mat
+│   │           ├── tt2-1.mat
+│   │           ├── tt2-2.mat
+│   │           ├── tt2-3.mat
+│   │           ├── tt2-4.mat
+│   │           ├── tt3-3.mat
+│   │           ├── tt3-4.mat
+│   │           ├── tt4-1.mat
+│   │           ├── tt4-2.mat
+│   │           ├── tt5-1.mat
+│   │           ├── tt5-2.mat
+│   │           ├── tt6-1.mat
+│   │           ├── tt6-2.mat
+│   │           ├── tt6-3.mat
+│   │           ├── tt6-4.mat
+│   │           ├── tt7-1.mat
+│   │           ├── tt7-2.mat
+│   │           ├── tt7-3.mat
+│   │           ├── tt7-4.mat
+│   │           ├── tt8-1.mat
+│   │           └── tt8-2.mat
+│   ├── day4
+│   │   ├── split
+│   │   │   ├── LFP_MEP_1kHz_npy
+│   │   │   │   ├── tt1-3_fp16.npy
+│   │   │   │   ├── tt1-4_fp16.npy
+│   │   │   │   ├── tt2-1_fp16.npy
+│   │   │   │   ├── tt2-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_fp16.npy
+│   │   │   │   ├── tt2-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_fp16.npy
+│   │   │   │   ├── tt2-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_fp16.npy
+│   │   │   │   ├── tt2-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt3-3_fp16.npy
+│   │   │   │   ├── tt3-4_fp16.npy
+│   │   │   │   ├── tt4-1_fp16.npy
+│   │   │   │   ├── tt4-2_fp16.npy
+│   │   │   │   ├── tt5-1_fp16.npy
+│   │   │   │   ├── tt5-2_fp16.npy
+│   │   │   │   ├── tt6-1_fp16.npy
+│   │   │   │   ├── tt6-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_fp16.npy
+│   │   │   │   ├── tt6-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_fp16.npy
+│   │   │   │   ├── tt6-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_fp16.npy
+│   │   │   │   ├── tt6-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_fp16.npy
+│   │   │   │   ├── tt7-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_fp16.npy
+│   │   │   │   ├── tt7-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_fp16.npy
+│   │   │   │   ├── tt7-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_fp16.npy
+│   │   │   │   ├── tt7-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt8-1_fp16.npy
+│   │   │   │   └── tt8-2_fp16.npy
+│   │   │   ├── LFP_MEP_2kHz_mat
+│   │   │   │   ├── analog_input.mat
+│   │   │   │   ├── tt10.mat
+│   │   │   │   ├── tt11.mat
+│   │   │   │   ├── tt12.mat
+│   │   │   │   ├── tt1-3.mat
+│   │   │   │   ├── tt13.mat
+│   │   │   │   ├── tt1-4.mat
+│   │   │   │   ├── tt14.mat
+│   │   │   │   ├── tt15.mat
+│   │   │   │   ├── tt16.mat
+│   │   │   │   ├── tt17.mat
+│   │   │   │   ├── tt18.mat
+│   │   │   │   ├── tt19.mat
+│   │   │   │   ├── tt1.mat
+│   │   │   │   ├── tt20.mat
+│   │   │   │   ├── tt2-1.mat
+│   │   │   │   ├── tt21.mat
+│   │   │   │   ├── tt2-2.mat
+│   │   │   │   ├── tt22.mat
+│   │   │   │   ├── tt2-3.mat
+│   │   │   │   ├── tt23.mat
+│   │   │   │   ├── tt2-4.mat
+│   │   │   │   ├── tt2.mat
+│   │   │   │   ├── tt3-3.mat
+│   │   │   │   ├── tt3-4.mat
+│   │   │   │   ├── tt3.mat
+│   │   │   │   ├── tt4-1.mat
+│   │   │   │   ├── tt4-2.mat
+│   │   │   │   ├── tt4.mat
+│   │   │   │   ├── tt5-1.mat
+│   │   │   │   ├── tt5-2.mat
+│   │   │   │   ├── tt5.mat
+│   │   │   │   ├── tt6-1.mat
+│   │   │   │   ├── tt6-2.mat
+│   │   │   │   ├── tt6-3.mat
+│   │   │   │   ├── tt6-4.mat
+│   │   │   │   ├── tt6.mat
+│   │   │   │   ├── tt7-1.mat
+│   │   │   │   ├── tt7-2.mat
+│   │   │   │   ├── tt7-3.mat
+│   │   │   │   ├── tt7-4.mat
+│   │   │   │   ├── tt7.mat
+│   │   │   │   ├── tt8-1.mat
+│   │   │   │   ├── tt8-2.mat
+│   │   │   │   ├── tt8.mat
+│   │   │   │   └── tt9.mat
+│   │   │   └── ripple_candi_1kHz_pkl
+│   │   │       ├── tt2-1_fp16.pkl
+│   │   │       ├── tt2-2_fp16.pkl
+│   │   │       ├── tt2-3_fp16.pkl
+│   │   │       ├── tt2-4_fp16.pkl
+│   │   │       ├── tt6-1_fp16.pkl
+│   │   │       ├── tt6-2_fp16.pkl
+│   │   │       ├── tt6-3_fp16.pkl
+│   │   │       ├── tt6-4_fp16.pkl
+│   │   │       ├── tt7-1_fp16.pkl
+│   │   │       ├── tt7-2_fp16.pkl
+│   │   │       ├── tt7-3_fp16.pkl
+│   │   │       └── tt7-4_fp16.pkl
+│   │   └── split_octave
+│   │       └── LFP_MEP_2kHz_mat
+│   │           ├── analog_input.mat
+│   │           ├── tt1-3.mat
+│   │           ├── tt1-4.mat
+│   │           ├── tt2-1.mat
+│   │           ├── tt2-2.mat
+│   │           ├── tt2-3.mat
+│   │           ├── tt2-4.mat
+│   │           ├── tt3-3.mat
+│   │           ├── tt3-4.mat
+│   │           ├── tt4-1.mat
+│   │           ├── tt4-2.mat
+│   │           ├── tt5-1.mat
+│   │           ├── tt5-2.mat
+│   │           ├── tt6-1.mat
+│   │           ├── tt6-2.mat
+│   │           ├── tt6-3.mat
+│   │           ├── tt6-4.mat
+│   │           ├── tt7-1.mat
+│   │           ├── tt7-2.mat
+│   │           ├── tt7-3.mat
+│   │           ├── tt7-4.mat
+│   │           ├── tt8-1.mat
+│   │           └── tt8-2.mat
+│   └── MouseInfo_en.md
+├── 03
+│   ├── day1
+│   │   ├── split
+│   │   │   ├── LFP_MEP_1kHz_npy
+│   │   │   │   ├── tt1-3_fp16.npy
+│   │   │   │   ├── tt1-4_fp16.npy
+│   │   │   │   ├── tt2-1_fp16.npy
+│   │   │   │   ├── tt2-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_fp16.npy
+│   │   │   │   ├── tt2-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt3-3_fp16.npy
+│   │   │   │   ├── tt3-4_fp16.npy
+│   │   │   │   ├── tt4-1_fp16.npy
+│   │   │   │   ├── tt4-2_fp16.npy
+│   │   │   │   ├── tt5-3_fp16.npy
+│   │   │   │   ├── tt5-4_fp16.npy
+│   │   │   │   ├── tt6-1_fp16.npy
+│   │   │   │   ├── tt6-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_fp16.npy
+│   │   │   │   ├── tt6-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_fp16.npy
+│   │   │   │   ├── tt6-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_fp16.npy
+│   │   │   │   ├── tt6-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_fp16.npy
+│   │   │   │   ├── tt7-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_fp16.npy
+│   │   │   │   ├── tt7-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_fp16.npy
+│   │   │   │   ├── tt7-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_fp16.npy
+│   │   │   │   ├── tt7-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt8-1_fp16.npy
+│   │   │   │   └── tt8-2_fp16.npy
+│   │   │   ├── LFP_MEP_2kHz_mat
+│   │   │   │   ├── analog_input.mat
+│   │   │   │   ├── tt1-3.mat
+│   │   │   │   ├── tt1_3.mat
+│   │   │   │   ├── tt1-4.mat
+│   │   │   │   ├── tt1_4.mat
+│   │   │   │   ├── tt2-1.mat
+│   │   │   │   ├── tt2_1.mat
+│   │   │   │   ├── tt2-4.mat
+│   │   │   │   ├── tt2_4.mat
+│   │   │   │   ├── tt3-3.mat
+│   │   │   │   ├── tt3_3.mat
+│   │   │   │   ├── tt3-4.mat
+│   │   │   │   ├── tt3_4.mat
+│   │   │   │   ├── tt4-1.mat
+│   │   │   │   ├── tt4_1.mat
+│   │   │   │   ├── tt4-2.mat
+│   │   │   │   ├── tt4_2.mat
+│   │   │   │   ├── tt5-3.mat
+│   │   │   │   ├── tt5_3.mat
+│   │   │   │   ├── tt5-4.mat
+│   │   │   │   ├── tt5_4.mat
+│   │   │   │   ├── tt6-1.mat
+│   │   │   │   ├── tt6_1.mat
+│   │   │   │   ├── tt6-2.mat
+│   │   │   │   ├── tt6_2.mat
+│   │   │   │   ├── tt6-3.mat
+│   │   │   │   ├── tt6_3.mat
+│   │   │   │   ├── tt6-4.mat
+│   │   │   │   ├── tt6_4.mat
+│   │   │   │   ├── tt7-1.mat
+│   │   │   │   ├── tt7_1.mat
+│   │   │   │   ├── tt7-2.mat
+│   │   │   │   ├── tt7_2.mat
+│   │   │   │   ├── tt7-3.mat
+│   │   │   │   ├── tt7_3.mat
+│   │   │   │   ├── tt7-4.mat
+│   │   │   │   ├── tt7_4.mat
+│   │   │   │   ├── tt8-1.mat
+│   │   │   │   ├── tt8_1.mat
+│   │   │   │   ├── tt8-2.mat
+│   │   │   │   └── tt8_2.mat
+│   │   │   └── ripple_candi_1kHz_pkl
+│   │   │       ├── tt2-1_fp16.pkl
+│   │   │       ├── tt2-4_fp16.pkl
+│   │   │       ├── tt6-1_fp16.pkl
+│   │   │       ├── tt6-2_fp16.pkl
+│   │   │       ├── tt6-3_fp16.pkl
+│   │   │       ├── tt6-4_fp16.pkl
+│   │   │       ├── tt7-1_fp16.pkl
+│   │   │       ├── tt7-2_fp16.pkl
+│   │   │       ├── tt7-3_fp16.pkl
+│   │   │       └── tt7-4_fp16.pkl
+│   │   └── split_octave
+│   │       └── LFP_MEP_2kHz_mat
+│   │           ├── analog_input.mat
+│   │           ├── tt1-3.mat
+│   │           ├── tt1-4.mat
+│   │           ├── tt2-1.mat
+│   │           ├── tt2-4.mat
+│   │           ├── tt3-3.mat
+│   │           ├── tt3-4.mat
+│   │           ├── tt4-1.mat
+│   │           ├── tt4-2.mat
+│   │           ├── tt5-3.mat
+│   │           ├── tt5-4.mat
+│   │           ├── tt6-1.mat
+│   │           ├── tt6-2.mat
+│   │           ├── tt6-3.mat
+│   │           ├── tt6-4.mat
+│   │           ├── tt7-1.mat
+│   │           ├── tt7-2.mat
+│   │           ├── tt7-3.mat
+│   │           ├── tt7-4.mat
+│   │           ├── tt8-1.mat
+│   │           └── tt8-2.mat
+│   ├── day2
+│   │   ├── split
+│   │   │   ├── LFP_MEP_1kHz_npy
+│   │   │   │   ├── tt1-3_fp16.npy
+│   │   │   │   ├── tt1-4_fp16.npy
+│   │   │   │   ├── tt2-1_fp16.npy
+│   │   │   │   ├── tt2-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_fp16.npy
+│   │   │   │   ├── tt2-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt3-3_fp16.npy
+│   │   │   │   ├── tt3-4_fp16.npy
+│   │   │   │   ├── tt4-1_fp16.npy
+│   │   │   │   ├── tt4-2_fp16.npy
+│   │   │   │   ├── tt5-3_fp16.npy
+│   │   │   │   ├── tt5-4_fp16.npy
+│   │   │   │   ├── tt6-1_fp16.npy
+│   │   │   │   ├── tt6-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_fp16.npy
+│   │   │   │   ├── tt6-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_fp16.npy
+│   │   │   │   ├── tt6-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_fp16.npy
+│   │   │   │   ├── tt6-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_fp16.npy
+│   │   │   │   ├── tt7-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_fp16.npy
+│   │   │   │   ├── tt7-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_fp16.npy
+│   │   │   │   ├── tt7-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_fp16.npy
+│   │   │   │   ├── tt7-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt8-1_fp16.npy
+│   │   │   │   └── tt8-2_fp16.npy
+│   │   │   ├── LFP_MEP_2kHz_mat
+│   │   │   │   ├── analog_input.mat
+│   │   │   │   ├── tt1-3.mat
+│   │   │   │   ├── tt1_3.mat
+│   │   │   │   ├── tt1-4.mat
+│   │   │   │   ├── tt1_4.mat
+│   │   │   │   ├── tt2-1.mat
+│   │   │   │   ├── tt2_1.mat
+│   │   │   │   ├── tt2-4.mat
+│   │   │   │   ├── tt2_4.mat
+│   │   │   │   ├── tt3-3.mat
+│   │   │   │   ├── tt3_3.mat
+│   │   │   │   ├── tt3-4.mat
+│   │   │   │   ├── tt3_4.mat
+│   │   │   │   ├── tt4-1.mat
+│   │   │   │   ├── tt4_1.mat
+│   │   │   │   ├── tt4-2.mat
+│   │   │   │   ├── tt4_2.mat
+│   │   │   │   ├── tt5-3.mat
+│   │   │   │   ├── tt5_3.mat
+│   │   │   │   ├── tt5-4.mat
+│   │   │   │   ├── tt5_4.mat
+│   │   │   │   ├── tt6-1.mat
+│   │   │   │   ├── tt6_1.mat
+│   │   │   │   ├── tt6-2.mat
+│   │   │   │   ├── tt6_2.mat
+│   │   │   │   ├── tt6-3.mat
+│   │   │   │   ├── tt6_3.mat
+│   │   │   │   ├── tt6-4.mat
+│   │   │   │   ├── tt6_4.mat
+│   │   │   │   ├── tt7-1.mat
+│   │   │   │   ├── tt7_1.mat
+│   │   │   │   ├── tt7-2.mat
+│   │   │   │   ├── tt7_2.mat
+│   │   │   │   ├── tt7-3.mat
+│   │   │   │   ├── tt7_3.mat
+│   │   │   │   ├── tt7-4.mat
+│   │   │   │   ├── tt7_4.mat
+│   │   │   │   ├── tt8-1.mat
+│   │   │   │   ├── tt8_1.mat
+│   │   │   │   ├── tt8-2.mat
+│   │   │   │   └── tt8_2.mat
+│   │   │   └── ripple_candi_1kHz_pkl
+│   │   │       ├── tt2-1_fp16.pkl
+│   │   │       ├── tt2-4_fp16.pkl
+│   │   │       ├── tt6-1_fp16.pkl
+│   │   │       ├── tt6-2_fp16.pkl
+│   │   │       ├── tt6-3_fp16.pkl
+│   │   │       ├── tt6-4_fp16.pkl
+│   │   │       ├── tt7-1_fp16.pkl
+│   │   │       ├── tt7-2_fp16.pkl
+│   │   │       ├── tt7-3_fp16.pkl
+│   │   │       └── tt7-4_fp16.pkl
+│   │   └── split_octave
+│   │       └── LFP_MEP_2kHz_mat
+│   │           ├── analog_input.mat
+│   │           ├── tt1-3.mat
+│   │           ├── tt1-4.mat
+│   │           ├── tt2-1.mat
+│   │           ├── tt2-4.mat
+│   │           ├── tt3-3.mat
+│   │           ├── tt3-4.mat
+│   │           ├── tt4-1.mat
+│   │           ├── tt4-2.mat
+│   │           ├── tt5-3.mat
+│   │           ├── tt5-4.mat
+│   │           ├── tt6-1.mat
+│   │           ├── tt6-2.mat
+│   │           ├── tt6-3.mat
+│   │           ├── tt6-4.mat
+│   │           ├── tt7-1.mat
+│   │           ├── tt7-2.mat
+│   │           ├── tt7-3.mat
+│   │           ├── tt7-4.mat
+│   │           ├── tt8-1.mat
+│   │           └── tt8-2.mat
+│   ├── day3
+│   │   ├── split
+│   │   │   ├── LFP_MEP_1kHz_npy
+│   │   │   │   ├── tt1-3_fp16.npy
+│   │   │   │   ├── tt1-4_fp16.npy
+│   │   │   │   ├── tt2-1_fp16.npy
+│   │   │   │   ├── tt2-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_fp16.npy
+│   │   │   │   ├── tt2-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt3-3_fp16.npy
+│   │   │   │   ├── tt3-4_fp16.npy
+│   │   │   │   ├── tt4-1_fp16.npy
+│   │   │   │   ├── tt4-2_fp16.npy
+│   │   │   │   ├── tt5-3_fp16.npy
+│   │   │   │   ├── tt5-4_fp16.npy
+│   │   │   │   ├── tt6-1_fp16.npy
+│   │   │   │   ├── tt6-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_fp16.npy
+│   │   │   │   ├── tt6-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_fp16.npy
+│   │   │   │   ├── tt6-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_fp16.npy
+│   │   │   │   ├── tt6-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_fp16.npy
+│   │   │   │   ├── tt7-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_fp16.npy
+│   │   │   │   ├── tt7-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_fp16.npy
+│   │   │   │   ├── tt7-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_fp16.npy
+│   │   │   │   ├── tt7-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt8-1_fp16.npy
+│   │   │   │   └── tt8-2_fp16.npy
+│   │   │   ├── LFP_MEP_2kHz_mat
+│   │   │   │   ├── analog_input.mat
+│   │   │   │   ├── tt1-3.mat
+│   │   │   │   ├── tt1_3.mat
+│   │   │   │   ├── tt1-4.mat
+│   │   │   │   ├── tt1_4.mat
+│   │   │   │   ├── tt2-1.mat
+│   │   │   │   ├── tt2_1.mat
+│   │   │   │   ├── tt2-4.mat
+│   │   │   │   ├── tt2_4.mat
+│   │   │   │   ├── tt3-3.mat
+│   │   │   │   ├── tt3_3.mat
+│   │   │   │   ├── tt3-4.mat
+│   │   │   │   ├── tt3_4.mat
+│   │   │   │   ├── tt4-1.mat
+│   │   │   │   ├── tt4_1.mat
+│   │   │   │   ├── tt4-2.mat
+│   │   │   │   ├── tt4_2.mat
+│   │   │   │   ├── tt5-3.mat
+│   │   │   │   ├── tt5_3.mat
+│   │   │   │   ├── tt5-4.mat
+│   │   │   │   ├── tt5_4.mat
+│   │   │   │   ├── tt6-1.mat
+│   │   │   │   ├── tt6_1.mat
+│   │   │   │   ├── tt6-2.mat
+│   │   │   │   ├── tt6_2.mat
+│   │   │   │   ├── tt6-3.mat
+│   │   │   │   ├── tt6_3.mat
+│   │   │   │   ├── tt6-4.mat
+│   │   │   │   ├── tt6_4.mat
+│   │   │   │   ├── tt7-1.mat
+│   │   │   │   ├── tt7_1.mat
+│   │   │   │   ├── tt7-2.mat
+│   │   │   │   ├── tt7_2.mat
+│   │   │   │   ├── tt7-3.mat
+│   │   │   │   ├── tt7_3.mat
+│   │   │   │   ├── tt7-4.mat
+│   │   │   │   ├── tt7_4.mat
+│   │   │   │   ├── tt8-1.mat
+│   │   │   │   ├── tt8_1.mat
+│   │   │   │   ├── tt8-2.mat
+│   │   │   │   └── tt8_2.mat
+│   │   │   └── ripple_candi_1kHz_pkl
+│   │   │       ├── tt2-1_fp16.pkl
+│   │   │       ├── tt2-4_fp16.pkl
+│   │   │       ├── tt6-1_fp16.pkl
+│   │   │       ├── tt6-2_fp16.pkl
+│   │   │       ├── tt6-3_fp16.pkl
+│   │   │       ├── tt6-4_fp16.pkl
+│   │   │       ├── tt7-1_fp16.pkl
+│   │   │       ├── tt7-2_fp16.pkl
+│   │   │       ├── tt7-3_fp16.pkl
+│   │   │       └── tt7-4_fp16.pkl
+│   │   └── split_octave
+│   │       └── LFP_MEP_2kHz_mat
+│   │           ├── analog_input.mat
+│   │           ├── tt1-3.mat
+│   │           ├── tt1-4.mat
+│   │           ├── tt2-1.mat
+│   │           ├── tt2-4.mat
+│   │           ├── tt3-3.mat
+│   │           ├── tt3-4.mat
+│   │           ├── tt4-1.mat
+│   │           ├── tt4-2.mat
+│   │           ├── tt5-3.mat
+│   │           ├── tt5-4.mat
+│   │           ├── tt6-1.mat
+│   │           ├── tt6-2.mat
+│   │           ├── tt6-3.mat
+│   │           ├── tt6-4.mat
+│   │           ├── tt7-1.mat
+│   │           ├── tt7-2.mat
+│   │           ├── tt7-3.mat
+│   │           ├── tt7-4.mat
+│   │           ├── tt8-1.mat
+│   │           └── tt8-2.mat
+│   ├── day4
+│   │   ├── split
+│   │   │   ├── LFP_MEP_1kHz_npy
+│   │   │   │   ├── tt1-3_fp16.npy
+│   │   │   │   ├── tt1-4_fp16.npy
+│   │   │   │   ├── tt2-1_fp16.npy
+│   │   │   │   ├── tt2-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_fp16.npy
+│   │   │   │   ├── tt2-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt3-3_fp16.npy
+│   │   │   │   ├── tt3-4_fp16.npy
+│   │   │   │   ├── tt4-1_fp16.npy
+│   │   │   │   ├── tt4-2_fp16.npy
+│   │   │   │   ├── tt5-3_fp16.npy
+│   │   │   │   ├── tt5-4_fp16.npy
+│   │   │   │   ├── tt6-1_fp16.npy
+│   │   │   │   ├── tt6-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_fp16.npy
+│   │   │   │   ├── tt6-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_fp16.npy
+│   │   │   │   ├── tt6-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_fp16.npy
+│   │   │   │   ├── tt6-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_fp16.npy
+│   │   │   │   ├── tt7-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_fp16.npy
+│   │   │   │   ├── tt7-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_fp16.npy
+│   │   │   │   ├── tt7-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_fp16.npy
+│   │   │   │   ├── tt7-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt8-1_fp16.npy
+│   │   │   │   └── tt8-2_fp16.npy
+│   │   │   ├── LFP_MEP_2kHz_mat
+│   │   │   │   ├── analog_input.mat
+│   │   │   │   ├── tt1-3.mat
+│   │   │   │   ├── tt1_3.mat
+│   │   │   │   ├── tt1-4.mat
+│   │   │   │   ├── tt1_4.mat
+│   │   │   │   ├── tt2-1.mat
+│   │   │   │   ├── tt2_1.mat
+│   │   │   │   ├── tt2-4.mat
+│   │   │   │   ├── tt2_4.mat
+│   │   │   │   ├── tt3-3.mat
+│   │   │   │   ├── tt3_3.mat
+│   │   │   │   ├── tt3-4.mat
+│   │   │   │   ├── tt3_4.mat
+│   │   │   │   ├── tt4-1.mat
+│   │   │   │   ├── tt4_1.mat
+│   │   │   │   ├── tt4-2.mat
+│   │   │   │   ├── tt4_2.mat
+│   │   │   │   ├── tt5-3.mat
+│   │   │   │   ├── tt5_3.mat
+│   │   │   │   ├── tt5-4.mat
+│   │   │   │   ├── tt5_4.mat
+│   │   │   │   ├── tt6-1.mat
+│   │   │   │   ├── tt6_1.mat
+│   │   │   │   ├── tt6-2.mat
+│   │   │   │   ├── tt6_2.mat
+│   │   │   │   ├── tt6-3.mat
+│   │   │   │   ├── tt6_3.mat
+│   │   │   │   ├── tt6-4.mat
+│   │   │   │   ├── tt6_4.mat
+│   │   │   │   ├── tt7-1.mat
+│   │   │   │   ├── tt7_1.mat
+│   │   │   │   ├── tt7-2.mat
+│   │   │   │   ├── tt7_2.mat
+│   │   │   │   ├── tt7-3.mat
+│   │   │   │   ├── tt7_3.mat
+│   │   │   │   ├── tt7-4.mat
+│   │   │   │   ├── tt7_4.mat
+│   │   │   │   ├── tt8-1.mat
+│   │   │   │   ├── tt8_1.mat
+│   │   │   │   ├── tt8-2.mat
+│   │   │   │   └── tt8_2.mat
+│   │   │   └── ripple_candi_1kHz_pkl
+│   │   │       ├── tt2-1_fp16.pkl
+│   │   │       ├── tt2-4_fp16.pkl
+│   │   │       ├── tt6-1_fp16.pkl
+│   │   │       ├── tt6-2_fp16.pkl
+│   │   │       ├── tt6-3_fp16.pkl
+│   │   │       ├── tt6-4_fp16.pkl
+│   │   │       ├── tt7-1_fp16.pkl
+│   │   │       ├── tt7-2_fp16.pkl
+│   │   │       ├── tt7-3_fp16.pkl
+│   │   │       └── tt7-4_fp16.pkl
+│   │   └── split_octave
+│   │       └── LFP_MEP_2kHz_mat
+│   │           ├── analog_input.mat
+│   │           ├── tt1-3.mat
+│   │           ├── tt1-4.mat
+│   │           ├── tt2-1.mat
+│   │           ├── tt2-4.mat
+│   │           ├── tt3-3.mat
+│   │           ├── tt3-4.mat
+│   │           ├── tt4-1.mat
+│   │           ├── tt4-2.mat
+│   │           ├── tt5-3.mat
+│   │           ├── tt5-4.mat
+│   │           ├── tt6-1.mat
+│   │           ├── tt6-2.mat
+│   │           ├── tt6-3.mat
+│   │           ├── tt6-4.mat
+│   │           ├── tt7-1.mat
+│   │           ├── tt7-2.mat
+│   │           ├── tt7-3.mat
+│   │           ├── tt7-4.mat
+│   │           ├── tt8-1.mat
+│   │           └── tt8-2.mat
+│   └── MouseInfo_en.md
+├── 04
+│   ├── day1
+│   │   ├── split
+│   │   │   ├── LFP_MEP_1kHz_npy
+│   │   │   │   ├── tt1-3_fp16.npy
+│   │   │   │   ├── tt1-4_fp16.npy
+│   │   │   │   ├── tt2-1_fp16.npy
+│   │   │   │   ├── tt2-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_fp16.npy
+│   │   │   │   ├── tt2-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_fp16.npy
+│   │   │   │   ├── tt2-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_fp16.npy
+│   │   │   │   ├── tt2-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt3-3_fp16.npy
+│   │   │   │   ├── tt3-4_fp16.npy
+│   │   │   │   ├── tt4-1_fp16.npy
+│   │   │   │   ├── tt4-2_fp16.npy
+│   │   │   │   ├── tt5-3_fp16.npy
+│   │   │   │   ├── tt5-4_fp16.npy
+│   │   │   │   ├── tt6-1_fp16.npy
+│   │   │   │   ├── tt6-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_fp16.npy
+│   │   │   │   ├── tt6-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_fp16.npy
+│   │   │   │   ├── tt6-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_fp16.npy
+│   │   │   │   ├── tt6-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_fp16.npy
+│   │   │   │   ├── tt7-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_fp16.npy
+│   │   │   │   ├── tt7-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_fp16.npy
+│   │   │   │   ├── tt7-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_fp16.npy
+│   │   │   │   ├── tt7-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt8-1_fp16.npy
+│   │   │   │   └── tt8-2_fp16.npy
+│   │   │   ├── LFP_MEP_2kHz_mat
+│   │   │   │   ├── analog_input.mat
+│   │   │   │   ├── tt1-3.mat
+│   │   │   │   ├── tt1_3.mat
+│   │   │   │   ├── tt1-4.mat
+│   │   │   │   ├── tt1_4.mat
+│   │   │   │   ├── tt2-1.mat
+│   │   │   │   ├── tt2_1.mat
+│   │   │   │   ├── tt2-2.mat
+│   │   │   │   ├── tt2_2.mat
+│   │   │   │   ├── tt2-3.mat
+│   │   │   │   ├── tt2_3.mat
+│   │   │   │   ├── tt2-4.mat
+│   │   │   │   ├── tt2_4.mat
+│   │   │   │   ├── tt3-3.mat
+│   │   │   │   ├── tt3_3.mat
+│   │   │   │   ├── tt3-4.mat
+│   │   │   │   ├── tt3_4.mat
+│   │   │   │   ├── tt4-1.mat
+│   │   │   │   ├── tt4_1.mat
+│   │   │   │   ├── tt4-2.mat
+│   │   │   │   ├── tt4_2.mat
+│   │   │   │   ├── tt5-3.mat
+│   │   │   │   ├── tt5_3.mat
+│   │   │   │   ├── tt5-4.mat
+│   │   │   │   ├── tt5_4.mat
+│   │   │   │   ├── tt6-1.mat
+│   │   │   │   ├── tt6_1.mat
+│   │   │   │   ├── tt6-2.mat
+│   │   │   │   ├── tt6_2.mat
+│   │   │   │   ├── tt6-3.mat
+│   │   │   │   ├── tt6_3.mat
+│   │   │   │   ├── tt6-4.mat
+│   │   │   │   ├── tt6_4.mat
+│   │   │   │   ├── tt7-1.mat
+│   │   │   │   ├── tt7_1.mat
+│   │   │   │   ├── tt7-2.mat
+│   │   │   │   ├── tt7_2.mat
+│   │   │   │   ├── tt7-3.mat
+│   │   │   │   ├── tt7_3.mat
+│   │   │   │   ├── tt7-4.mat
+│   │   │   │   ├── tt7_4.mat
+│   │   │   │   ├── tt8-1.mat
+│   │   │   │   ├── tt8_1.mat
+│   │   │   │   ├── tt8-2.mat
+│   │   │   │   └── tt8_2.mat
+│   │   │   └── ripple_candi_1kHz_pkl
+│   │   │       ├── tt2-1_fp16.pkl
+│   │   │       ├── tt2-2_fp16.pkl
+│   │   │       ├── tt2-3_fp16.pkl
+│   │   │       ├── tt2-4_fp16.pkl
+│   │   │       ├── tt6-1_fp16.pkl
+│   │   │       ├── tt6-2_fp16.pkl
+│   │   │       ├── tt6-3_fp16.pkl
+│   │   │       ├── tt6-4_fp16.pkl
+│   │   │       ├── tt7-1_fp16.pkl
+│   │   │       ├── tt7-2_fp16.pkl
+│   │   │       ├── tt7-3_fp16.pkl
+│   │   │       └── tt7-4_fp16.pkl
+│   │   └── split_octave
+│   │       └── LFP_MEP_2kHz_mat
+│   │           ├── analog_input.mat
+│   │           ├── tt1-3.mat
+│   │           ├── tt1-4.mat
+│   │           ├── tt2-1.mat
+│   │           ├── tt2-2.mat
+│   │           ├── tt2-3.mat
+│   │           ├── tt2-4.mat
+│   │           ├── tt3-3.mat
+│   │           ├── tt3-4.mat
+│   │           ├── tt4-1.mat
+│   │           ├── tt4-2.mat
+│   │           ├── tt5-3.mat
+│   │           ├── tt5-4.mat
+│   │           ├── tt6-1.mat
+│   │           ├── tt6-2.mat
+│   │           ├── tt6-3.mat
+│   │           ├── tt6-4.mat
+│   │           ├── tt7-1.mat
+│   │           ├── tt7-2.mat
+│   │           ├── tt7-3.mat
+│   │           ├── tt7-4.mat
+│   │           ├── tt8-1.mat
+│   │           └── tt8-2.mat
+│   ├── day2
+│   │   ├── split
+│   │   │   ├── LFP_MEP_1kHz_npy
+│   │   │   │   ├── tt1-3_fp16.npy
+│   │   │   │   ├── tt1-4_fp16.npy
+│   │   │   │   ├── tt2-1_fp16.npy
+│   │   │   │   ├── tt2-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_fp16.npy
+│   │   │   │   ├── tt2-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_fp16.npy
+│   │   │   │   ├── tt2-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_fp16.npy
+│   │   │   │   ├── tt2-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt3-3_fp16.npy
+│   │   │   │   ├── tt3-4_fp16.npy
+│   │   │   │   ├── tt4-1_fp16.npy
+│   │   │   │   ├── tt4-2_fp16.npy
+│   │   │   │   ├── tt5-3_fp16.npy
+│   │   │   │   ├── tt5-4_fp16.npy
+│   │   │   │   ├── tt6-1_fp16.npy
+│   │   │   │   ├── tt6-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_fp16.npy
+│   │   │   │   ├── tt6-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_fp16.npy
+│   │   │   │   ├── tt6-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_fp16.npy
+│   │   │   │   ├── tt6-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_fp16.npy
+│   │   │   │   ├── tt7-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_fp16.npy
+│   │   │   │   ├── tt7-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_fp16.npy
+│   │   │   │   ├── tt7-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_fp16.npy
+│   │   │   │   ├── tt7-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt8-1_fp16.npy
+│   │   │   │   └── tt8-2_fp16.npy
+│   │   │   ├── LFP_MEP_2kHz_mat
+│   │   │   │   ├── analog_input.mat
+│   │   │   │   ├── tt1-3.mat
+│   │   │   │   ├── tt1_3.mat
+│   │   │   │   ├── tt1-4.mat
+│   │   │   │   ├── tt1_4.mat
+│   │   │   │   ├── tt2-1.mat
+│   │   │   │   ├── tt2_1.mat
+│   │   │   │   ├── tt2-2.mat
+│   │   │   │   ├── tt2_2.mat
+│   │   │   │   ├── tt2-3.mat
+│   │   │   │   ├── tt2_3.mat
+│   │   │   │   ├── tt2-4.mat
+│   │   │   │   ├── tt2_4.mat
+│   │   │   │   ├── tt3-3.mat
+│   │   │   │   ├── tt3_3.mat
+│   │   │   │   ├── tt3-4.mat
+│   │   │   │   ├── tt3_4.mat
+│   │   │   │   ├── tt4-1.mat
+│   │   │   │   ├── tt4_1.mat
+│   │   │   │   ├── tt4-2.mat
+│   │   │   │   ├── tt4_2.mat
+│   │   │   │   ├── tt5-3.mat
+│   │   │   │   ├── tt5_3.mat
+│   │   │   │   ├── tt5-4.mat
+│   │   │   │   ├── tt5_4.mat
+│   │   │   │   ├── tt6-1.mat
+│   │   │   │   ├── tt6_1.mat
+│   │   │   │   ├── tt6-2.mat
+│   │   │   │   ├── tt6_2.mat
+│   │   │   │   ├── tt6-3.mat
+│   │   │   │   ├── tt6_3.mat
+│   │   │   │   ├── tt6-4.mat
+│   │   │   │   ├── tt6_4.mat
+│   │   │   │   ├── tt7-1.mat
+│   │   │   │   ├── tt7_1.mat
+│   │   │   │   ├── tt7-2.mat
+│   │   │   │   ├── tt7_2.mat
+│   │   │   │   ├── tt7-3.mat
+│   │   │   │   ├── tt7_3.mat
+│   │   │   │   ├── tt7-4.mat
+│   │   │   │   ├── tt7_4.mat
+│   │   │   │   ├── tt8-1.mat
+│   │   │   │   ├── tt8_1.mat
+│   │   │   │   ├── tt8-2.mat
+│   │   │   │   └── tt8_2.mat
+│   │   │   └── ripple_candi_1kHz_pkl
+│   │   │       ├── tt2-1_fp16.pkl
+│   │   │       ├── tt2-2_fp16.pkl
+│   │   │       ├── tt2-3_fp16.pkl
+│   │   │       ├── tt2-4_fp16.pkl
+│   │   │       ├── tt6-1_fp16.pkl
+│   │   │       ├── tt6-2_fp16.pkl
+│   │   │       ├── tt6-3_fp16.pkl
+│   │   │       ├── tt6-4_fp16.pkl
+│   │   │       ├── tt7-1_fp16.pkl
+│   │   │       ├── tt7-2_fp16.pkl
+│   │   │       ├── tt7-3_fp16.pkl
+│   │   │       └── tt7-4_fp16.pkl
+│   │   └── split_octave
+│   │       └── LFP_MEP_2kHz_mat
+│   │           ├── analog_input.mat
+│   │           ├── tt1-3.mat
+│   │           ├── tt1-4.mat
+│   │           ├── tt2-1.mat
+│   │           ├── tt2-2.mat
+│   │           ├── tt2-3.mat
+│   │           ├── tt2-4.mat
+│   │           ├── tt3-3.mat
+│   │           ├── tt3-4.mat
+│   │           ├── tt4-1.mat
+│   │           ├── tt4-2.mat
+│   │           ├── tt5-3.mat
+│   │           ├── tt5-4.mat
+│   │           ├── tt6-1.mat
+│   │           ├── tt6-2.mat
+│   │           ├── tt6-3.mat
+│   │           ├── tt6-4.mat
+│   │           ├── tt7-1.mat
+│   │           ├── tt7-2.mat
+│   │           ├── tt7-3.mat
+│   │           ├── tt7-4.mat
+│   │           ├── tt8-1.mat
+│   │           └── tt8-2.mat
+│   ├── day3
+│   │   ├── split
+│   │   │   ├── LFP_MEP_1kHz_npy
+│   │   │   │   ├── tt1-3_fp16.npy
+│   │   │   │   ├── tt1-4_fp16.npy
+│   │   │   │   ├── tt2-1_fp16.npy
+│   │   │   │   ├── tt2-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_fp16.npy
+│   │   │   │   ├── tt2-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_fp16.npy
+│   │   │   │   ├── tt2-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_fp16.npy
+│   │   │   │   ├── tt2-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt3-3_fp16.npy
+│   │   │   │   ├── tt3-4_fp16.npy
+│   │   │   │   ├── tt4-1_fp16.npy
+│   │   │   │   ├── tt4-2_fp16.npy
+│   │   │   │   ├── tt5-3_fp16.npy
+│   │   │   │   ├── tt5-4_fp16.npy
+│   │   │   │   ├── tt6-1_fp16.npy
+│   │   │   │   ├── tt6-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_fp16.npy
+│   │   │   │   ├── tt6-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_fp16.npy
+│   │   │   │   ├── tt6-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_fp16.npy
+│   │   │   │   ├── tt6-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_fp16.npy
+│   │   │   │   ├── tt7-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_fp16.npy
+│   │   │   │   ├── tt7-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_fp16.npy
+│   │   │   │   ├── tt7-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_fp16.npy
+│   │   │   │   ├── tt7-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt8-1_fp16.npy
+│   │   │   │   └── tt8-2_fp16.npy
+│   │   │   ├── LFP_MEP_2kHz_mat
+│   │   │   │   ├── analog_input.mat
+│   │   │   │   ├── tt1-3.mat
+│   │   │   │   ├── tt1_3.mat
+│   │   │   │   ├── tt1-4.mat
+│   │   │   │   ├── tt1_4.mat
+│   │   │   │   ├── tt2-1.mat
+│   │   │   │   ├── tt2_1.mat
+│   │   │   │   ├── tt2-2.mat
+│   │   │   │   ├── tt2_2.mat
+│   │   │   │   ├── tt2-3.mat
+│   │   │   │   ├── tt2_3.mat
+│   │   │   │   ├── tt2-4.mat
+│   │   │   │   ├── tt2_4.mat
+│   │   │   │   ├── tt3-3.mat
+│   │   │   │   ├── tt3_3.mat
+│   │   │   │   ├── tt3-4.mat
+│   │   │   │   ├── tt3_4.mat
+│   │   │   │   ├── tt4-1.mat
+│   │   │   │   ├── tt4_1.mat
+│   │   │   │   ├── tt4-2.mat
+│   │   │   │   ├── tt4_2.mat
+│   │   │   │   ├── tt5-3.mat
+│   │   │   │   ├── tt5_3.mat
+│   │   │   │   ├── tt5-4.mat
+│   │   │   │   ├── tt5_4.mat
+│   │   │   │   ├── tt6-1.mat
+│   │   │   │   ├── tt6_1.mat
+│   │   │   │   ├── tt6-2.mat
+│   │   │   │   ├── tt6_2.mat
+│   │   │   │   ├── tt6-3.mat
+│   │   │   │   ├── tt6_3.mat
+│   │   │   │   ├── tt6-4.mat
+│   │   │   │   ├── tt6_4.mat
+│   │   │   │   ├── tt7-1.mat
+│   │   │   │   ├── tt7_1.mat
+│   │   │   │   ├── tt7-2.mat
+│   │   │   │   ├── tt7_2.mat
+│   │   │   │   ├── tt7-3.mat
+│   │   │   │   ├── tt7_3.mat
+│   │   │   │   ├── tt7-4.mat
+│   │   │   │   ├── tt7_4.mat
+│   │   │   │   ├── tt8-1.mat
+│   │   │   │   ├── tt8_1.mat
+│   │   │   │   ├── tt8-2.mat
+│   │   │   │   └── tt8_2.mat
+│   │   │   └── ripple_candi_1kHz_pkl
+│   │   │       ├── tt2-1_fp16.pkl
+│   │   │       ├── tt2-2_fp16.pkl
+│   │   │       ├── tt2-3_fp16.pkl
+│   │   │       ├── tt2-4_fp16.pkl
+│   │   │       ├── tt6-1_fp16.pkl
+│   │   │       ├── tt6-2_fp16.pkl
+│   │   │       ├── tt6-3_fp16.pkl
+│   │   │       ├── tt6-4_fp16.pkl
+│   │   │       ├── tt7-1_fp16.pkl
+│   │   │       ├── tt7-2_fp16.pkl
+│   │   │       ├── tt7-3_fp16.pkl
+│   │   │       └── tt7-4_fp16.pkl
+│   │   └── split_octave
+│   │       └── LFP_MEP_2kHz_mat
+│   │           ├── analog_input.mat
+│   │           ├── tt1-3.mat
+│   │           ├── tt1-4.mat
+│   │           ├── tt2-1.mat
+│   │           ├── tt2-2.mat
+│   │           ├── tt2-3.mat
+│   │           ├── tt2-4.mat
+│   │           ├── tt3-3.mat
+│   │           ├── tt3-4.mat
+│   │           ├── tt4-1.mat
+│   │           ├── tt4-2.mat
+│   │           ├── tt5-3.mat
+│   │           ├── tt5-4.mat
+│   │           ├── tt6-1.mat
+│   │           ├── tt6-2.mat
+│   │           ├── tt6-3.mat
+│   │           ├── tt6-4.mat
+│   │           ├── tt7-1.mat
+│   │           ├── tt7-2.mat
+│   │           ├── tt7-3.mat
+│   │           ├── tt7-4.mat
+│   │           ├── tt8-1.mat
+│   │           └── tt8-2.mat
+│   ├── day4
+│   │   ├── split
+│   │   │   ├── LFP_MEP_1kHz_npy
+│   │   │   │   ├── tt1-3_fp16.npy
+│   │   │   │   ├── tt1-4_fp16.npy
+│   │   │   │   ├── tt2-1_fp16.npy
+│   │   │   │   ├── tt2-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_fp16.npy
+│   │   │   │   ├── tt2-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_fp16.npy
+│   │   │   │   ├── tt2-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_fp16.npy
+│   │   │   │   ├── tt2-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt3-3_fp16.npy
+│   │   │   │   ├── tt3-4_fp16.npy
+│   │   │   │   ├── tt4-1_fp16.npy
+│   │   │   │   ├── tt4-2_fp16.npy
+│   │   │   │   ├── tt5-3_fp16.npy
+│   │   │   │   ├── tt5-4_fp16.npy
+│   │   │   │   ├── tt6-1_fp16.npy
+│   │   │   │   ├── tt6-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_fp16.npy
+│   │   │   │   ├── tt6-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_fp16.npy
+│   │   │   │   ├── tt6-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_fp16.npy
+│   │   │   │   ├── tt6-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_fp16.npy
+│   │   │   │   ├── tt7-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_fp16.npy
+│   │   │   │   ├── tt7-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_fp16.npy
+│   │   │   │   ├── tt7-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_fp16.npy
+│   │   │   │   ├── tt7-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt8-1_fp16.npy
+│   │   │   │   └── tt8-2_fp16.npy
+│   │   │   ├── LFP_MEP_2kHz_mat
+│   │   │   │   ├── analog_input.mat
+│   │   │   │   ├── tt1-3.mat
+│   │   │   │   ├── tt1-4.mat
+│   │   │   │   ├── tt2-1.mat
+│   │   │   │   ├── tt2-2.mat
+│   │   │   │   ├── tt2-3.mat
+│   │   │   │   ├── tt2-4.mat
+│   │   │   │   ├── tt3-3.mat
+│   │   │   │   ├── tt3-4.mat
+│   │   │   │   ├── tt4-1.mat
+│   │   │   │   ├── tt4-2.mat
+│   │   │   │   ├── tt5-3.mat
+│   │   │   │   ├── tt5-4.mat
+│   │   │   │   ├── tt6-1.mat
+│   │   │   │   ├── tt6-2.mat
+│   │   │   │   ├── tt6-3.mat
+│   │   │   │   ├── tt6-4.mat
+│   │   │   │   ├── tt7-1.mat
+│   │   │   │   ├── tt7-2.mat
+│   │   │   │   ├── tt7-3.mat
+│   │   │   │   ├── tt7-4.mat
+│   │   │   │   ├── tt8-1.mat
+│   │   │   │   └── tt8-2.mat
+│   │   │   └── ripple_candi_1kHz_pkl
+│   │   │       ├── tt2-1_fp16.pkl
+│   │   │       ├── tt2-2_fp16.pkl
+│   │   │       ├── tt2-3_fp16.pkl
+│   │   │       ├── tt2-4_fp16.pkl
+│   │   │       ├── tt6-1_fp16.pkl
+│   │   │       ├── tt6-2_fp16.pkl
+│   │   │       ├── tt6-3_fp16.pkl
+│   │   │       ├── tt6-4_fp16.pkl
+│   │   │       ├── tt7-1_fp16.pkl
+│   │   │       ├── tt7-2_fp16.pkl
+│   │   │       ├── tt7-3_fp16.pkl
+│   │   │       └── tt7-4_fp16.pkl
+│   │   └── split_octave
+│   │       └── LFP_MEP_2kHz_mat
+│   │           ├── analog_input.mat
+│   │           ├── tt1-3.mat
+│   │           ├── tt1-4.mat
+│   │           ├── tt2-1.mat
+│   │           ├── tt2-2.mat
+│   │           ├── tt2-3.mat
+│   │           ├── tt2-4.mat
+│   │           ├── tt3-3.mat
+│   │           ├── tt3-4.mat
+│   │           ├── tt4-1.mat
+│   │           ├── tt4-2.mat
+│   │           ├── tt5-3.mat
+│   │           ├── tt5-4.mat
+│   │           ├── tt6-1.mat
+│   │           ├── tt6-2.mat
+│   │           ├── tt6-3.mat
+│   │           ├── tt6-4.mat
+│   │           ├── tt7-1.mat
+│   │           ├── tt7-2.mat
+│   │           ├── tt7-3.mat
+│   │           ├── tt7-4.mat
+│   │           ├── tt8-1.mat
+│   │           └── tt8-2.mat
+│   └── MouseInfo_en.md
+├── 05
+│   ├── day1
+│   │   ├── split
+│   │   │   ├── LFP_MEP_1kHz_npy
+│   │   │   │   ├── tt1-3_fp16.npy
+│   │   │   │   ├── tt1-4_fp16.npy
+│   │   │   │   ├── tt2-1_fp16.npy
+│   │   │   │   ├── tt2-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_fp16.npy
+│   │   │   │   ├── tt2-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_fp16.npy
+│   │   │   │   ├── tt2-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_fp16.npy
+│   │   │   │   ├── tt2-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt3-3_fp16.npy
+│   │   │   │   ├── tt3-4_fp16.npy
+│   │   │   │   ├── tt5-3_fp16.npy
+│   │   │   │   ├── tt5-4_fp16.npy
+│   │   │   │   ├── tt6-1_fp16.npy
+│   │   │   │   ├── tt6-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_fp16.npy
+│   │   │   │   ├── tt6-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_fp16.npy
+│   │   │   │   ├── tt6-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_fp16.npy
+│   │   │   │   ├── tt6-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_fp16.npy
+│   │   │   │   ├── tt7-2_fp16.npy
+│   │   │   │   ├── tt8-1_fp16.npy
+│   │   │   │   └── tt8-2_fp16.npy
+│   │   │   ├── LFP_MEP_2kHz_mat
+│   │   │   │   ├── analog_input.mat
+│   │   │   │   ├── tt1-3.mat
+│   │   │   │   ├── tt1_3.mat
+│   │   │   │   ├── tt1-4.mat
+│   │   │   │   ├── tt1_4.mat
+│   │   │   │   ├── tt2-1.mat
+│   │   │   │   ├── tt2_1.mat
+│   │   │   │   ├── tt2-2.mat
+│   │   │   │   ├── tt2_2.mat
+│   │   │   │   ├── tt2-3.mat
+│   │   │   │   ├── tt2_3.mat
+│   │   │   │   ├── tt2-4.mat
+│   │   │   │   ├── tt2_4.mat
+│   │   │   │   ├── tt3-3.mat
+│   │   │   │   ├── tt3_3.mat
+│   │   │   │   ├── tt3-4.mat
+│   │   │   │   ├── tt3_4.mat
+│   │   │   │   ├── tt5-3.mat
+│   │   │   │   ├── tt5_3.mat
+│   │   │   │   ├── tt5-4.mat
+│   │   │   │   ├── tt5_4.mat
+│   │   │   │   ├── tt6-1.mat
+│   │   │   │   ├── tt6_1.mat
+│   │   │   │   ├── tt6-2.mat
+│   │   │   │   ├── tt6_2.mat
+│   │   │   │   ├── tt6-3.mat
+│   │   │   │   ├── tt6_3.mat
+│   │   │   │   ├── tt6-4.mat
+│   │   │   │   ├── tt6_4.mat
+│   │   │   │   ├── tt7-1.mat
+│   │   │   │   ├── tt7_1.mat
+│   │   │   │   ├── tt7-2.mat
+│   │   │   │   ├── tt7_2.mat
+│   │   │   │   ├── tt8-1.mat
+│   │   │   │   ├── tt8_1.mat
+│   │   │   │   ├── tt8-2.mat
+│   │   │   │   └── tt8_2.mat
+│   │   │   └── ripple_candi_1kHz_pkl
+│   │   │       ├── tt2-1_fp16.pkl
+│   │   │       ├── tt2-2_fp16.pkl
+│   │   │       ├── tt2-3_fp16.pkl
+│   │   │       ├── tt2-4_fp16.pkl
+│   │   │       ├── tt6-1_fp16.pkl
+│   │   │       ├── tt6-2_fp16.pkl
+│   │   │       ├── tt6-3_fp16.pkl
+│   │   │       └── tt6-4_fp16.pkl
+│   │   └── split_octave
+│   │       └── LFP_MEP_2kHz_mat
+│   │           ├── analog_input.mat
+│   │           ├── tt1-3.mat
+│   │           ├── tt1-4.mat
+│   │           ├── tt2-1.mat
+│   │           ├── tt2-2.mat
+│   │           ├── tt2-3.mat
+│   │           ├── tt2-4.mat
+│   │           ├── tt3-3.mat
+│   │           ├── tt3-4.mat
+│   │           ├── tt5-3.mat
+│   │           ├── tt5-4.mat
+│   │           ├── tt6-1.mat
+│   │           ├── tt6-2.mat
+│   │           ├── tt6-3.mat
+│   │           ├── tt6-4.mat
+│   │           ├── tt7-1.mat
+│   │           ├── tt7-2.mat
+│   │           ├── tt8-1.mat
+│   │           └── tt8-2.mat
+│   ├── day2
+│   │   ├── split
+│   │   │   ├── LFP_MEP_1kHz_npy
+│   │   │   │   ├── tt1-3_fp16.npy
+│   │   │   │   ├── tt1-4_fp16.npy
+│   │   │   │   ├── tt2-1_fp16.npy
+│   │   │   │   ├── tt2-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_fp16.npy
+│   │   │   │   ├── tt2-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_fp16.npy
+│   │   │   │   ├── tt2-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_fp16.npy
+│   │   │   │   ├── tt2-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt3-3_fp16.npy
+│   │   │   │   ├── tt3-4_fp16.npy
+│   │   │   │   ├── tt5-3_fp16.npy
+│   │   │   │   ├── tt5-4_fp16.npy
+│   │   │   │   ├── tt6-1_fp16.npy
+│   │   │   │   ├── tt6-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_fp16.npy
+│   │   │   │   ├── tt6-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_fp16.npy
+│   │   │   │   ├── tt6-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_fp16.npy
+│   │   │   │   ├── tt6-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_fp16.npy
+│   │   │   │   ├── tt7-2_fp16.npy
+│   │   │   │   ├── tt8-1_fp16.npy
+│   │   │   │   └── tt8-2_fp16.npy
+│   │   │   ├── LFP_MEP_2kHz_mat
+│   │   │   │   ├── analog_input.mat
+│   │   │   │   ├── tt1-3.mat
+│   │   │   │   ├── tt1_3.mat
+│   │   │   │   ├── tt1-4.mat
+│   │   │   │   ├── tt1_4.mat
+│   │   │   │   ├── tt2-1.mat
+│   │   │   │   ├── tt2_1.mat
+│   │   │   │   ├── tt2-2.mat
+│   │   │   │   ├── tt2_2.mat
+│   │   │   │   ├── tt2-3.mat
+│   │   │   │   ├── tt2_3.mat
+│   │   │   │   ├── tt2-4.mat
+│   │   │   │   ├── tt2_4.mat
+│   │   │   │   ├── tt3-3.mat
+│   │   │   │   ├── tt3_3.mat
+│   │   │   │   ├── tt3-4.mat
+│   │   │   │   ├── tt3_4.mat
+│   │   │   │   ├── tt5-3.mat
+│   │   │   │   ├── tt5_3.mat
+│   │   │   │   ├── tt5-4.mat
+│   │   │   │   ├── tt5_4.mat
+│   │   │   │   ├── tt6-1.mat
+│   │   │   │   ├── tt6_1.mat
+│   │   │   │   ├── tt6-2.mat
+│   │   │   │   ├── tt6_2.mat
+│   │   │   │   ├── tt6-3.mat
+│   │   │   │   ├── tt6_3.mat
+│   │   │   │   ├── tt6-4.mat
+│   │   │   │   ├── tt6_4.mat
+│   │   │   │   ├── tt7-1.mat
+│   │   │   │   ├── tt7_1.mat
+│   │   │   │   ├── tt7-2.mat
+│   │   │   │   ├── tt7_2.mat
+│   │   │   │   ├── tt8-1.mat
+│   │   │   │   ├── tt8_1.mat
+│   │   │   │   ├── tt8-2.mat
+│   │   │   │   └── tt8_2.mat
+│   │   │   └── ripple_candi_1kHz_pkl
+│   │   │       ├── tt2-1_fp16.pkl
+│   │   │       ├── tt2-2_fp16.pkl
+│   │   │       ├── tt2-3_fp16.pkl
+│   │   │       ├── tt2-4_fp16.pkl
+│   │   │       ├── tt6-1_fp16.pkl
+│   │   │       ├── tt6-2_fp16.pkl
+│   │   │       ├── tt6-3_fp16.pkl
+│   │   │       └── tt6-4_fp16.pkl
+│   │   └── split_octave
+│   │       └── LFP_MEP_2kHz_mat
+│   │           ├── analog_input.mat
+│   │           ├── tt1-3.mat
+│   │           ├── tt1-4.mat
+│   │           ├── tt2-1.mat
+│   │           ├── tt2-2.mat
+│   │           ├── tt2-3.mat
+│   │           ├── tt2-4.mat
+│   │           ├── tt3-3.mat
+│   │           ├── tt3-4.mat
+│   │           ├── tt5-3.mat
+│   │           ├── tt5-4.mat
+│   │           ├── tt6-1.mat
+│   │           ├── tt6-2.mat
+│   │           ├── tt6-3.mat
+│   │           ├── tt6-4.mat
+│   │           ├── tt7-1.mat
+│   │           ├── tt7-2.mat
+│   │           ├── tt8-1.mat
+│   │           └── tt8-2.mat
+│   ├── day3
+│   │   ├── split
+│   │   │   ├── LFP_MEP_1kHz_npy
+│   │   │   │   ├── tt1-3_fp16.npy
+│   │   │   │   ├── tt1-4_fp16.npy
+│   │   │   │   ├── tt2-1_fp16.npy
+│   │   │   │   ├── tt2-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_fp16.npy
+│   │   │   │   ├── tt2-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_fp16.npy
+│   │   │   │   ├── tt2-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_fp16.npy
+│   │   │   │   ├── tt2-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt3-3_fp16.npy
+│   │   │   │   ├── tt3-4_fp16.npy
+│   │   │   │   ├── tt5-3_fp16.npy
+│   │   │   │   ├── tt5-4_fp16.npy
+│   │   │   │   ├── tt6-1_fp16.npy
+│   │   │   │   ├── tt6-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_fp16.npy
+│   │   │   │   ├── tt6-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_fp16.npy
+│   │   │   │   ├── tt6-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_fp16.npy
+│   │   │   │   ├── tt6-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_fp16.npy
+│   │   │   │   ├── tt7-2_fp16.npy
+│   │   │   │   ├── tt8-1_fp16.npy
+│   │   │   │   └── tt8-2_fp16.npy
+│   │   │   ├── LFP_MEP_2kHz_mat
+│   │   │   │   ├── analog_input.mat
+│   │   │   │   ├── tt1-3.mat
+│   │   │   │   ├── tt1_3.mat
+│   │   │   │   ├── tt1-4.mat
+│   │   │   │   ├── tt1_4.mat
+│   │   │   │   ├── tt2-1.mat
+│   │   │   │   ├── tt2_1.mat
+│   │   │   │   ├── tt2-2.mat
+│   │   │   │   ├── tt2_2.mat
+│   │   │   │   ├── tt2-3.mat
+│   │   │   │   ├── tt2_3.mat
+│   │   │   │   ├── tt2-4.mat
+│   │   │   │   ├── tt2_4.mat
+│   │   │   │   ├── tt3-3.mat
+│   │   │   │   ├── tt3_3.mat
+│   │   │   │   ├── tt3-4.mat
+│   │   │   │   ├── tt3_4.mat
+│   │   │   │   ├── tt5-3.mat
+│   │   │   │   ├── tt5_3.mat
+│   │   │   │   ├── tt5-4.mat
+│   │   │   │   ├── tt5_4.mat
+│   │   │   │   ├── tt6-1.mat
+│   │   │   │   ├── tt6_1.mat
+│   │   │   │   ├── tt6-2.mat
+│   │   │   │   ├── tt6_2.mat
+│   │   │   │   ├── tt6-3.mat
+│   │   │   │   ├── tt6_3.mat
+│   │   │   │   ├── tt6-4.mat
+│   │   │   │   ├── tt6_4.mat
+│   │   │   │   ├── tt7-1.mat
+│   │   │   │   ├── tt7_1.mat
+│   │   │   │   ├── tt7-2.mat
+│   │   │   │   ├── tt7_2.mat
+│   │   │   │   ├── tt8-1.mat
+│   │   │   │   ├── tt8_1.mat
+│   │   │   │   ├── tt8-2.mat
+│   │   │   │   └── tt8_2.mat
+│   │   │   └── ripple_candi_1kHz_pkl
+│   │   │       ├── tt2-1_fp16.pkl
+│   │   │       ├── tt2-2_fp16.pkl
+│   │   │       ├── tt2-3_fp16.pkl
+│   │   │       ├── tt2-4_fp16.pkl
+│   │   │       ├── tt6-1_fp16.pkl
+│   │   │       ├── tt6-2_fp16.pkl
+│   │   │       ├── tt6-3_fp16.pkl
+│   │   │       └── tt6-4_fp16.pkl
+│   │   └── split_octave
+│   │       └── LFP_MEP_2kHz_mat
+│   │           ├── analog_input.mat
+│   │           ├── tt1-3.mat
+│   │           ├── tt1-4.mat
+│   │           ├── tt2-1.mat
+│   │           ├── tt2-2.mat
+│   │           ├── tt2-3.mat
+│   │           ├── tt2-4.mat
+│   │           ├── tt3-3.mat
+│   │           ├── tt3-4.mat
+│   │           ├── tt5-3.mat
+│   │           ├── tt5-4.mat
+│   │           ├── tt6-1.mat
+│   │           ├── tt6-2.mat
+│   │           ├── tt6-3.mat
+│   │           ├── tt6-4.mat
+│   │           ├── tt7-1.mat
+│   │           ├── tt7-2.mat
+│   │           ├── tt8-1.mat
+│   │           └── tt8-2.mat
+│   ├── day4
+│   │   ├── split
+│   │   │   ├── LFP_MEP_1kHz_npy
+│   │   │   │   ├── 1_tt1-3_fp16.npy
+│   │   │   │   ├── 1_tt1-4_fp16.npy
+│   │   │   │   ├── 1_tt2-1_fp16.npy
+│   │   │   │   ├── 1_tt2-2_fp16.npy
+│   │   │   │   ├── 1_tt2-3_fp16.npy
+│   │   │   │   ├── 1_tt2-4_fp16.npy
+│   │   │   │   ├── 1_tt3-3_fp16.npy
+│   │   │   │   ├── 1_tt3-4_fp16.npy
+│   │   │   │   ├── 1_tt5-3_fp16.npy
+│   │   │   │   ├── 1_tt5-4_fp16.npy
+│   │   │   │   ├── 1_tt6-1_fp16.npy
+│   │   │   │   ├── 1_tt6-2_fp16.npy
+│   │   │   │   ├── 1_tt6-3_fp16.npy
+│   │   │   │   ├── 1_tt6-4_fp16.npy
+│   │   │   │   ├── 1_tt7-1_fp16.npy
+│   │   │   │   ├── 1_tt7-2_fp16.npy
+│   │   │   │   ├── 1_tt8-1_fp16.npy
+│   │   │   │   ├── 1_tt8-2_fp16.npy
+│   │   │   │   ├── 2_tt1-3_fp16.npy
+│   │   │   │   ├── 2_tt1-4_fp16.npy
+│   │   │   │   ├── 2_tt2-1_fp16.npy
+│   │   │   │   ├── 2_tt2-2_fp16.npy
+│   │   │   │   ├── 2_tt2-3_fp16.npy
+│   │   │   │   ├── 2_tt2-4_fp16.npy
+│   │   │   │   ├── 2_tt3-3_fp16.npy
+│   │   │   │   ├── 2_tt3-4_fp16.npy
+│   │   │   │   ├── 2_tt5-3_fp16.npy
+│   │   │   │   ├── 2_tt5-4_fp16.npy
+│   │   │   │   ├── 2_tt6-1_fp16.npy
+│   │   │   │   ├── 2_tt6-2_fp16.npy
+│   │   │   │   ├── 2_tt6-3_fp16.npy
+│   │   │   │   ├── 2_tt6-4_fp16.npy
+│   │   │   │   ├── 2_tt7-1_fp16.npy
+│   │   │   │   ├── 2_tt7-2_fp16.npy
+│   │   │   │   ├── 2_tt8-1_fp16.npy
+│   │   │   │   ├── 2_tt8-2_fp16.npy
+│   │   │   │   ├── tt1-3_fp16.npy
+│   │   │   │   ├── tt1-4_fp16.npy
+│   │   │   │   ├── tt2-1_fp16.npy
+│   │   │   │   ├── tt2-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_fp16.npy
+│   │   │   │   ├── tt2-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_fp16.npy
+│   │   │   │   ├── tt2-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_fp16.npy
+│   │   │   │   ├── tt2-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt2-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt3-3_fp16.npy
+│   │   │   │   ├── tt3-4_fp16.npy
+│   │   │   │   ├── tt5-3_fp16.npy
+│   │   │   │   ├── tt5-4_fp16.npy
+│   │   │   │   ├── tt6-1_fp16.npy
+│   │   │   │   ├── tt6-1_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-1_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_fp16.npy
+│   │   │   │   ├── tt6-2_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-2_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_fp16.npy
+│   │   │   │   ├── tt6-3_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-3_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_fp16.npy
+│   │   │   │   ├── tt6-4_mep_magni_sd_fp16.npy
+│   │   │   │   ├── tt6-4_ripple_band_magni_sd_fp16.npy
+│   │   │   │   ├── tt7-1_fp16.npy
+│   │   │   │   ├── tt7-2_fp16.npy
+│   │   │   │   ├── tt8-1_fp16.npy
+│   │   │   │   └── tt8-2_fp16.npy
+│   │   │   ├── LFP_MEP_2kHz_mat
+│   │   │   │   ├── 1_analog_input.mat
+│   │   │   │   ├── 1_tt1-3.mat
+│   │   │   │   ├── 1_tt1-4.mat
+│   │   │   │   ├── 1_tt2-1.mat
+│   │   │   │   ├── 1_tt2-2.mat
+│   │   │   │   ├── 1_tt2-3.mat
+│   │   │   │   ├── 1_tt2-4.mat
+│   │   │   │   ├── 1_tt3-3.mat
+│   │   │   │   ├── 1_tt3-4.mat
+│   │   │   │   ├── 1_tt5-3.mat
+│   │   │   │   ├── 1_tt5-4.mat
+│   │   │   │   ├── 1_tt6-1.mat
+│   │   │   │   ├── 1_tt6-2.mat
+│   │   │   │   ├── 1_tt6-3.mat
+│   │   │   │   ├── 1_tt6-4.mat
+│   │   │   │   ├── 1_tt7-1.mat
+│   │   │   │   ├── 1_tt7-2.mat
+│   │   │   │   ├── 1_tt8-1.mat
+│   │   │   │   ├── 1_tt8-2.mat
+│   │   │   │   ├── 2_analog_input.mat
+│   │   │   │   ├── 2_tt1-3.mat
+│   │   │   │   ├── 2_tt1-4.mat
+│   │   │   │   ├── 2_tt2-1.mat
+│   │   │   │   ├── 2_tt2-2.mat
+│   │   │   │   ├── 2_tt2-3.mat
+│   │   │   │   ├── 2_tt2-4.mat
+│   │   │   │   ├── 2_tt3-3.mat
+│   │   │   │   ├── 2_tt3-4.mat
+│   │   │   │   ├── 2_tt5-3.mat
+│   │   │   │   ├── 2_tt5-4.mat
+│   │   │   │   ├── 2_tt6-1.mat
+│   │   │   │   ├── 2_tt6-2.mat
+│   │   │   │   ├── 2_tt6-3.mat
+│   │   │   │   ├── 2_tt6-4.mat
+│   │   │   │   ├── 2_tt7-1.mat
+│   │   │   │   ├── 2_tt7-2.mat
+│   │   │   │   ├── 2_tt8-1.mat
+│   │   │   │   └── 2_tt8-2.mat
+│   │   │   └── ripple_candi_1kHz_pkl
+│   │   │       ├── tt2-1_fp16.pkl
+│   │   │       ├── tt2-2_fp16.pkl
+│   │   │       ├── tt2-3_fp16.pkl
+│   │   │       ├── tt2-4_fp16.pkl
+│   │   │       ├── tt6-1_fp16.pkl
+│   │   │       ├── tt6-2_fp16.pkl
+│   │   │       ├── tt6-3_fp16.pkl
+│   │   │       └── tt6-4_fp16.pkl
+│   │   └── split_octave
+│   │       └── LFP_MEP_2kHz_mat
+│   │           ├── 1_analog_input.mat
+│   │           ├── 1_tt1-3.mat
+│   │           ├── 1_tt1-4.mat
+│   │           ├── 1_tt2-1.mat
+│   │           ├── 1_tt2-2.mat
+│   │           ├── 1_tt2-3.mat
+│   │           ├── 1_tt2-4.mat
+│   │           ├── 1_tt3-3.mat
+│   │           ├── 1_tt3-4.mat
+│   │           ├── 1_tt5-3.mat
+│   │           ├── 1_tt5-4.mat
+│   │           ├── 1_tt6-1.mat
+│   │           ├── 1_tt6-2.mat
+│   │           ├── 1_tt6-3.mat
+│   │           ├── 1_tt6-4.mat
+│   │           ├── 1_tt7-1.mat
+│   │           ├── 1_tt7-2.mat
+│   │           ├── 1_tt8-1.mat
+│   │           ├── 1_tt8-2.mat
+│   │           ├── 2_analog_input.mat
+│   │           ├── 2_tt1-3.mat
+│   │           ├── 2_tt1-4.mat
+│   │           ├── 2_tt2-1.mat
+│   │           ├── 2_tt2-2.mat
+│   │           ├── 2_tt2-3.mat
+│   │           ├── 2_tt2-4.mat
+│   │           ├── 2_tt3-3.mat
+│   │           ├── 2_tt3-4.mat
+│   │           ├── 2_tt5-3.mat
+│   │           ├── 2_tt5-4.mat
+│   │           ├── 2_tt6-1.mat
+│   │           ├── 2_tt6-2.mat
+│   │           ├── 2_tt6-3.mat
+│   │           ├── 2_tt6-4.mat
+│   │           ├── 2_tt7-1.mat
+│   │           ├── 2_tt7-2.mat
+│   │           ├── 2_tt8-1.mat
+│   │           └── 2_tt8-2.mat
+│   ├── day5
+│   │   └── split
+│   │       ├── LFP_MEP_1kHz_npy
+│   │       │   ├── tt1-3_fp16.npy
+│   │       │   ├── tt1-4_fp16.npy
+│   │       │   ├── tt2-1_fp16.npy
+│   │       │   ├── tt2-1_mep_magni_sd_fp16.npy
+│   │       │   ├── tt2-1_ripple_band_magni_sd_fp16.npy
+│   │       │   ├── tt2-2_fp16.npy
+│   │       │   ├── tt2-2_mep_magni_sd_fp16.npy
+│   │       │   ├── tt2-2_ripple_band_magni_sd_fp16.npy
+│   │       │   ├── tt2-3_fp16.npy
+│   │       │   ├── tt2-3_mep_magni_sd_fp16.npy
+│   │       │   ├── tt2-3_ripple_band_magni_sd_fp16.npy
+│   │       │   ├── tt2-4_fp16.npy
+│   │       │   ├── tt2-4_mep_magni_sd_fp16.npy
+│   │       │   ├── tt2-4_ripple_band_magni_sd_fp16.npy
+│   │       │   ├── tt3-3_fp16.npy
+│   │       │   ├── tt3-4_fp16.npy
+│   │       │   ├── tt5-3_fp16.npy
+│   │       │   ├── tt5-4_fp16.npy
+│   │       │   ├── tt6-1_fp16.npy
+│   │       │   ├── tt6-1_mep_magni_sd_fp16.npy
+│   │       │   ├── tt6-1_ripple_band_magni_sd_fp16.npy
+│   │       │   ├── tt6-2_fp16.npy
+│   │       │   ├── tt6-2_mep_magni_sd_fp16.npy
+│   │       │   ├── tt6-2_ripple_band_magni_sd_fp16.npy
+│   │       │   ├── tt6-3_fp16.npy
+│   │       │   ├── tt6-3_mep_magni_sd_fp16.npy
+│   │       │   ├── tt6-3_ripple_band_magni_sd_fp16.npy
+│   │       │   ├── tt6-4_fp16.npy
+│   │       │   ├── tt6-4_mep_magni_sd_fp16.npy
+│   │       │   ├── tt6-4_ripple_band_magni_sd_fp16.npy
+│   │       │   ├── tt7-1_fp16.npy
+│   │       │   ├── tt7-2_fp16.npy
+│   │       │   ├── tt8-1_fp16.npy
+│   │       │   └── tt8-2_fp16.npy
+│   │       └── ripple_candi_1kHz_pkl
+│   │           ├── tt2-1_fp16.pkl
+│   │           ├── tt2-2_fp16.pkl
+│   │           ├── tt2-3_fp16.pkl
+│   │           ├── tt2-4_fp16.pkl
+│   │           ├── tt6-1_fp16.pkl
+│   │           ├── tt6-2_fp16.pkl
+│   │           ├── tt6-3_fp16.pkl
+│   │           └── tt6-4_fp16.pkl
+│   └── MouseInfo_en.md
+├── FPATH_LISTS
+│   ├── HIPPO_LFP_TT_NPYs.txt
+│   └── TRAPE_MEP_TT_NPYs.txt
+├── okada_tree_out.txt
+└── orig -> /mnt/nvme/data_raw
 
-123 directories, 1644 files
+130 directories, 2015 files

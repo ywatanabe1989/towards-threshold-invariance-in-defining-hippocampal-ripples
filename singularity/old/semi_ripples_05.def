@@ -1,0 +1,159 @@
+Bootstrap: docker
+From: rapidsai/rapidsai:cuda10.2-base-centos7-py3.8
+
+
+# %setup → %post → %files → %test → [RUN] → $help →
+# %labels → %environment → % startscript→ %runscript
+
+
+%setup
+
+
+%post -c /bin/bash
+    ################################################################################
+    ## PATHs
+    ################################################################################    
+    . $SINGULARITY_ENVIRONMENT # . /.singularity.d/env/91-environment.sh
+
+
+    ################################################################################
+    ## CentOS
+    ################################################################################    
+    echo > /etc/hosts
+    yum -y install setup
+    yum -y update
+    yum -y groupinstall "Development Tools"
+    yum install epel-release
+    yum update -y
+
+
+    ## Locale: en_US.UTF-8
+    yum -y install langpacks-en glibc-all-langpacks
+    export LC_ALL=en_US.UTF-8
+    echo export LC_ALL=$LC_ALL >> $SINGULARITY_ENVIRONMENT
+
+
+    ## Misc
+    yum -y install tkinter
+    yum -y install mesa-libGL
+
+
+    ################################################################################
+    ## Octave
+    ################################################################################
+    wget https://ftp.jaist.ac.jp/pub/GNU/octave/octave-5.2.0.tar.gz
+    tar xvf octave-5.2.0.tar.gz
+    cd octave-5.2.0
+    ./configure --prefix=/opt/octave-5.2.0
+    make -j 20
+    make install
+    # yum install octave
+    # yum install octave-devel    
+
+
+    ################################################################################
+    ## Python
+    ################################################################################
+    ## Conda rapids environemnt
+    CUSTOM_RAPIDS_ENV_FILE=/.singularity.d/env/99-zz-01_custom_activate_rapids_env.sh
+    cat << "    EOH"  | sed 's/^ *//g' > $CUSTOM_RAPIDS_ENV_FILE    
+    #!/bin/bash
+    
+    source activate rapids # /mnt/nvme/Semisupervised_Ripples/activate: no such file or directory
+    echo -e "\n --- Rapids environment was activated --- \n"
+    
+    ## EOF
+    EOH
+
+    chmod 755 $CUSTOM_RAPIDS_ENV_FILE
+    
+    ## conda
+    . $CUSTOM_RAPIDS_ENV_FILE # source activate rapids
+    conda update -n base -c defaults conda
+    conda config --append channels conda-forge
+
+    ## pip
+    python3 -m pip install --upgrade pip
+    pip install octave_kernel
+    
+    ## packages
+    conda install -y matplotlib
+    conda install -y natsort
+    conda install -y numpy
+    conda install -y obspy
+    conda install -y pandas
+    conda install -y pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+    conda install -y scikit-learn
+    conda install -y seaborn
+    conda install -y six
+    conda install -y tqdm
+    conda install -y h5py
+    conda install -y black
+    
+
+    ################################################################################
+    ## PS1
+    ################################################################################    
+    CUSTOM_PS1_FILE=/.singularity.d/env/99-zz-02_custom_ps1.sh
+    cat << "    EOH" | tr -d "[:blank:]" > $CUSTOM_PS1_FILE    
+    #!/bin/bash"
+    
+    PS1="(S)\W \$ "
+    
+    ## EOF
+    EOH
+
+    chmod 755 $CUSTOM_PS1_FILE
+
+
+%files
+
+
+%test
+
+
+%help
+    The container for the paper "Semisupervised hippocampal ripples."
+    '''
+    ## How to build
+    $ SIF_ROOT_NAME=${SEMI_RIPPLE_HOME}/singularity/semi_ripples
+    $ singularity build --sandbox --fakeroot $SIF_ROOT_NAME ${SIF_ROOT_NAME}.def
+    '''
+
+
+%labels
+    Author XXXXX
+    Version 0.0.4
+
+
+%environment
+    # This section will be appended to the file /.singularity.d/env/90-environment.sh
+    # and files in /.singularity.d/env/ dir are sourced in alpha-numerical order
+
+    ## PATHs
+    export PATH=/opt/conda/condabin:/opt/conda/envs/rapids/bin:/opt/conda/bin:$HOME/.local/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/lib:/usr/local/lib64
+    export PYTHONPATH=''
+    export CUDA_HOME=/user/local/cuda
+
+    ## Meta data
+    export CONTAINER_BUILD_DATE=\"`date`\"
+    
+    
+%startscript
+
+
+%runscript
+    # This section will be written in "/singularity" file.
+    # This file is run with the following one line shell script.
+    # $ singularity run centos7.img
+    # or the above one is identical with the below one.
+    # $ singularity exec centos7.img cat /singularity
+
+'''
+sudo /opt/bin/singularity exec --writable ./singularity/semi_ripples yum epel-release
+sudo /opt/bin/singularity exec --writable ./singularity/semi_ripples yum update
+sudo /opt/bin/singularity exec --writable ./singularity/semi_ripples yum remove octave
+sudo /opt/bin/singularity exec --writable ./singularity/semi_ripples yum install octave-5.2
+
+'''
