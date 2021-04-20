@@ -5,7 +5,7 @@
 *.mat
 *.npy
 *.pkl
-
+*.pdf
 
 
 ## Containers and Images but Definition Files to Reproduce them

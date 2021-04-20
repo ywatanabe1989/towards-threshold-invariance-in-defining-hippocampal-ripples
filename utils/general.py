@@ -233,3 +233,48 @@ def connect_str_list_with_hyphens(str_list):
     for s in str_list:
         connected += '-' + s
     return connected[1:]
+
+def take_closest(list_obj, num_insert):
+    """
+    Assumes list_obj is sorted. Returns closest value to num.
+    If two numbers are equally close, return the smallest number.
+    list_obj = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+    num = 3.5
+    mf.take_closest(list_obj, num)
+    # output example (3, 3)
+    """
+    if math.isnan(num_insert):
+      return np.nan, np.nan
+
+    pos_num_insert = bisect_left(list_obj, num_insert)
+
+    if pos_num_insert == 0: # When the insertion is at the first position
+        closest_num = list_obj[0]
+        closest_pos = pos_num_insert # 0
+        return closest_num, closest_pos
+
+    if pos_num_insert == len(list_obj): # When the insertion is at the last position
+        closest_num = list_obj[-1]
+        closest_pos = pos_num_insert # len(list_obj)
+        return closest_num, closest_pos
+
+    else: # When the insertion is anywhere between the first and the last positions
+      pos_before = pos_num_insert - 1
+
+      before_num = list_obj[pos_before]
+      after_num = list_obj[pos_num_insert]
+
+      delta_after = abs(after_num - num_insert)
+      delta_before = abs(before_num - num_insert)
+
+      if delta_after < delta_before:
+         closest_num = after_num
+         closest_pos = pos_num_insert
+
+      else: # if delta_before <= delta_after:
+         closest_num = before_num
+         closest_pos = pos_before
+
+      return closest_num, closest_pos
+
+  

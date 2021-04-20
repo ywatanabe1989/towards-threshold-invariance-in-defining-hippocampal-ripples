@@ -52,17 +52,20 @@ if __name__ == '__main__':
     from scipy.signal import decimate
 
     import sys; sys.path.append('.')
-    from progs.utils.general import (split_fpath,
-                                     to_str_dtype,
-                                     to_str_samp_rate
-                                     )
+    from utils.general import (split_fpath,
+                               to_str_dtype,
+                               to_str_samp_rate,
+                               get_samp_rate_str_from_fpath,
+                               to_int_samp_rate,
+                               )
 
 
     ## Parse command line arguments
     ap = argparse.ArgumentParser()
-    ap.add_argument("-l", "--lpath_mat", default='./data/01/day1/split/LFP_MEP_2kHz_mat/tt8-2.mat', \
+    ap.add_argument("-l", "--lpath_mat",
+                    default='./data/okada/01/day1/split/LFP_MEP_2kHz_mat/tt8-2.mat', \
                     help="path to input .mat file")
-    ap.add_argument("--dtype", default=np.float16, \
+    ap.add_argument("--dtype", default='np.float16', type=str, \
                     help=" ")
     ap.add_argument("-ts", "--tgt_samp_rate", default=1000, type=int, \
                     help=" ")
@@ -75,22 +78,23 @@ if __name__ == '__main__':
 
     
     ## Load
-    data_2kHz = load_a_prepared_mat_file_as_an_arr(args.lpath_mat, dtype=np.float32)
+    data_2kHz = load_a_prepared_mat_file_as_an_arr(args.lpath_mat, dtype=np.float32) # (183421162,)
 
 
     ## Down samplingg
-    SRC_SAMP_RATE = 2000
-    TGT_SAMP_RATE = args.tgt_samp_rate
-    DOWN_SAMP_FACTOR = int(SRC_SAMP_RATE/TGT_SAMP_RATE)
-    data_xHz = decimate(data_2kHz, DOWN_SAMP_FACTOR).astype(args.dtype)
+    SRC_SAMP_RATE = to_int_samp_rate(get_samp_rate_str_from_fpath(args.lpath_mat)) # 2000
+    TGT_SAMP_RATE = args.tgt_samp_rate # 1000
+    DOWN_SAMP_FACTOR = int(SRC_SAMP_RATE/TGT_SAMP_RATE) # 2
+    data_xHz = decimate(data_2kHz, DOWN_SAMP_FACTOR).astype(args.dtype) # (91710581,)
     
     
     ## Save
     dtype_str = to_str_dtype(args.dtype)
-    samp_rate_str = to_str_samp_rate(args.tgt_samp_rate)    
-    sdir = ldir.replace('2kHz_mat', '{}_npy'.format(samp_rate_str))
+    tgt_samp_rate_str = to_str_samp_rate(args.tgt_samp_rate)    
+    sdir = ldir.replace('LFP_MEP_2kHz_mat', 'LFP_MEP_{}_npy/orig'.format(tgt_samp_rate_str))
+    os.makedirs(sdir, exist_ok=True)    
     spath = sdir + fname + '_' + dtype_str + ".npy"
-    os.makedirs(sdir, exist_ok=True)
+    # './data/okada/01/day1/split/LFP_MEP_1kHz_npy/orig/tt8-2_fp16.npy'
     np.save(spath, data_xHz)
     print('Saved to: {}'.format(spath))
 
