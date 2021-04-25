@@ -299,23 +299,22 @@ def save(obj, sfname):
     import pickle
     import numpy as np
     import pandas as pd
-    import inspect
     import os
     
-    ## for ipython
-    try:
-        __file__ = inspect.stack()[1].filename
-    except NameError:
-        __file__ = '/tmp/fake.py'
+    # ## for ipython
+    # __file__ = inspect.stack()[1].filename
+    # if 'ipython' in __file__:
+    #     __file__ = '/tmp/fake.py'
 
-    ## spath
-    fpath = __file__
-    fdir, fname, _ = split_fpath(fpath)
-    sdir = fdir + fname + '/'
-    spath = sdir + sfname
+    # ## spath
+    # fpath = __file__
+    # fdir, fname, _ = split_fpath(fpath)
+    # sdir = fdir + fname + '/'
+    # spath = sdir + sfname
+    spath = mk_spath(sfname, makedirs=True)
     
     ## save
-    os.makedirs(sdir, exist_ok=True)
+    # os.makedirs(sdir, exist_ok=True)
     # csv
     if '.csv' in spath:
         obj.to_csv(spath)
@@ -323,7 +322,46 @@ def save(obj, sfname):
     if '.npy' in spath:
         np.save(obj, spath)
     # pkl
-    with open(spath, 'wb') as s: # 'w'
-        pickle.dump(obj, s)
+    if '.pkl' in spath:    
+        with open(spath, 'wb') as s: # 'w'
+            pickle.dump(obj, s)
+
+    print('\nSaved to: {s}\n'.format(s=spath))
+
     
-    print('Saved to: {s}'.format(s=spath))
+def mk_spath(sfname, makedirs=False):
+    import os
+    import inspect
+    
+    __file__ = inspect.stack()[1].filename
+    if 'ipython' in __file__: # for ipython
+        __file__ = '/tmp/fake.py'
+
+    ## spath
+    fpath = __file__
+    fdir, fname, _ = split_fpath(fpath)
+    sdir = fdir + fname + '/'
+    spath = sdir + sfname
+
+    if makedirs:
+        os.makedirs(sdir, exist_ok=True)
+    return spath
+
+
+def load(lpath):
+    import pickle
+    import numpy as np
+    import pandas as pd
+    
+    # csv
+    if '.csv' in lpath:
+        obj = pd.read_csv(lpath)
+    # numpy
+    if '.npy' in lpath:
+        obj = np.load(obj, lpath)
+    # pkl
+    if '.pkl' in lpath:        
+        with open(lpath, 'rb') as l: # 'r'
+            obj = pickle.load(l)
+
+    return obj

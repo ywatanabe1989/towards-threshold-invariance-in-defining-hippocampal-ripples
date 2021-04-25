@@ -36,42 +36,72 @@ rip_sec_df = rip_sec_df[['ln(duration_ms)',
                          'ln(ripple peak magni. / SD)']]
 
 ## Plots
-plot = False
+hist_df = pd.DataFrame()
+plot = True
 if plot:
-    n_bins = 500
+    ################################################################################
+    ## Sets a figure
+    ################################################################################    
+    n_bins = 600
     fig, ax = plt.subplots(1,3)
     plt.title('Mouse#{}'.format(args.num_mouse))
-    ax[0].hist(rip_sec_df['ln(duration_ms)'], bins=n_bins, label='ln(Duration) [a.u.]')
-    ax[0].set_ylim(0, 60000)
-    ax[0].set_xlim(3, 9)
+
+    ################################################################################
+    ## 'ln(duration_ms)'
+    ################################################################################    
+    key = 'ln(duration_ms)'
+    counts, bin_edges, patches = ax[0].hist(rip_sec_df[key],
+                                            range=(2.7, 9.3),
+                                            bins=n_bins,
+                                            label='ln(Duration) [a.u.]')
+    bin_centers = (np.array(bin_edges[:-1]) + np.array(bin_edges[1:])) / 2
+    hist_df[key + '_bin_centers'] = bin_centers    
+    hist_df[key + '_counts'] = counts
+
+    ax[0].set_ylim(0, 65000)
     ax[0].legend()
 
-    ax[1].hist(rip_sec_df['mean ln(MEP magni. / SD)'], bins=n_bins,
-               label='ln(Mean normalized magnitude of MEP) [a.u.]')
+    ################################################################################
+    ## 'mean ln(MEP magni. / SD)'
+    ################################################################################    
+    key = 'mean ln(MEP magni. / SD)'
+    counts, bin_edges, patches = ax[1].hist(rip_sec_df[key],
+                                            range=(-3.3, 3.3),               
+                                            bins=n_bins,
+                                            label='ln(Mean normalized magnitude of MEP) [a.u.]')
+    bin_centers = (np.array(bin_edges[:-1]) + np.array(bin_edges[1:])) / 2    
+    hist_df[key + '_bin_centers'] = bin_centers    
+    hist_df[key + '_counts'] = counts
+    
     ax[1].set_ylim(0, 40000)
-
-    ax[1].set_xlim(-3, 3)
     ax[1].legend()
 
-
-    ax[2].hist(rip_sec_df['ln(ripple peak magni. / SD)'], bins=n_bins,
-               label='ln(Normalized ripple peak magnitude) [a.u.]')
+    ################################################################################
+    ## 'ln(ripple peak magni. / SD)'
+    ################################################################################
+    key = 'ln(ripple peak magni. / SD)'
+    counts, bin_edges, patches = ax[2].hist(rip_sec_df[key],
+                                            range=(-0.7, 2.7),               
+                                            bins=n_bins,
+                                            label='ln(Normalized ripple peak magnitude) [a.u.]')
+    bin_centers = (np.array(bin_edges[:-1]) + np.array(bin_edges[1:])) / 2    
+    hist_df[key + '_bin_centers'] = bin_centers    
+    hist_df[key + '_counts'] = counts
+    
     ax[2].set_ylim(0, 40000)
-    ax[2].set_xlim(-1, 3)
     ax[2].legend()
 
+    ################################################################################
+    ## Plots
+    ################################################################################    
     plt.show()
 
+    
 
 ## Saves
-## Saves only 10% of all samples
-perc = 10
-indi_random_10_perc = ug.get_random_indi(rip_sec_df, perc=perc)
-rip_sec_df = rip_sec_df.iloc[indi_random_10_perc]
-ug.save(rip_sec_df, 'rip_sec_df_mouse_{n}_{p}_perc.csv'\
-        .format(n=args.num_mouse, p=perc))
+ug.save(hist_df, 'hist_df_mouse_{n}.csv'\
+        .format(n=args.num_mouse))
 
-
-
+# ug.load('/tmp/fake/rip_sec_df_mouse_01_10_perc.csv')
 
 ## EOF

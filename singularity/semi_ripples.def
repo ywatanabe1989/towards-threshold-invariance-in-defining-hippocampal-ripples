@@ -53,6 +53,13 @@ From: centos:centos8
     yum config-manager --add-repo=$RIP_GREP_REPO_URL
     yum -y install ripgrep
 
+    ################################################################################
+    ## FFMpeg
+    ################################################################################
+    yum config-manager --add-repo=https://negativo17.org/repos/epel-multimedia.repo
+    yum install -y ffmpeg ffmpeg-devel
+    echo `which ffmpeg`
+
 
     ################################################################################
     ## Octave
@@ -87,6 +94,8 @@ From: centos:centos8
     python3 -m pip install black
     python3 -m pip install numba
     python3 -m pip install PyYAML
+    python3 -m pip install ffmpeg-python
+    python3 -m pip install ipython
 
 
     # ################################################################################
@@ -180,8 +189,10 @@ From: centos:centos8
 '''
 sudo /opt/bin/singularity exec --writable ./singularity/semi_ripples python3 -m pip install PyYAML
 
-sbuild ./singularity/semi_ripples_06.def -f
+sbuild ./singularity/semi_ripples.def -f
 sshell
+
+sbuildw ./singularity/semi_ripples.def
 
 sshellw ./singularity/semi_ripples
 # It might be useful if you would add thise lines in ~/.bashrc.
@@ -191,4 +202,12 @@ alias sshpass='singularity exec $TOOLS_SIF sshpass'
 alias rg='singularity exec $TOOLS_SIF rg'
 alias imgcat='singularity exec $TOOLS_SIF imgcat'
 # alias emacs='singularity exec $TOOLS_SIF emacs-26.1'
+
+
+WARNING: Permission handling has changed in Singularity 3.5 for improved OCI compatibility
+WARNING: The sandbox will contain files/dirs that cannot be removed until permissions are modified
+WARNING: Use 'chmod -R u+rwX' to set permissions that allow removal
+WARNING: Use the '--fix-perms' option to 'singularity build' to modify permissions at build time
+WARNING: You can provide feedback about this change at https://github.com/sylabs/singularity/issues/4671    
 '''
+

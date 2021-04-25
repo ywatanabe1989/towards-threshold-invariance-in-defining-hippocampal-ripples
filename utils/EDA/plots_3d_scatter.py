@@ -3,10 +3,7 @@ import argparse
 import sys
 sys.path.append('.')
 import numpy as np
-
 import pandas as pd
-
-import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib import animation
 plt.rcParams['font.size'] = 20
@@ -16,25 +13,23 @@ from scipy.stats import chi2
 
 import utils.general as ug
 import utils.semi_ripple as us
-
+import ffmpeg
 
 
 ## Funcs
-def plot_3d_scatter(cls1_sparse_df,
+def plot_3d_scatter(cls0_sparse_df,
                     ftr1,
                     ftr2,
                     ftr3,
+                    cls0_label=None,
+                    cls1_sparse_df=None,
                     cls1_label=None,
-                    cls2_sparse_df=None,
-                    cls2_label=None,
                     title=None,
-                    perc=.5,
-                    plot=True,
-                    plot_ellipsoid=False,
                     spath_mp4=False,
                     spath_png=False,
                     theta=30,
                     phi=30,
+                    size=10,
                     ):
 
     fig = plt.figure()
@@ -48,27 +43,41 @@ def plot_3d_scatter(cls1_sparse_df,
     ax.view_init(phi, theta)
 
     alpha = .3
-    ax.scatter(cls1_sparse_df[ftr1], cls1_sparse_df[ftr2], cls1_sparse_df[ftr3],
-               marker='o', label=cls1_label, alpha=alpha)
+    ax.scatter(cls0_sparse_df[ftr1], cls0_sparse_df[ftr2], cls0_sparse_df[ftr3],
+               marker='o', label=cls0_label, alpha=alpha, s=size)
 
-    if cls2_sparse_df is not None:
-        ax.scatter(cls2_sparse_df[ftr1], cls2_sparse_df[ftr2], cls2_sparse_df[ftr3],
-                   marker='o', label=cls2_label, alpha=alpha)
+    if cls1_sparse_df is not None:
+        ax.scatter(cls1_sparse_df[ftr1], cls1_sparse_df[ftr2], cls1_sparse_df[ftr3],
+                   marker='o', label=cls1_label, alpha=alpha, s=size)
     plt.legend(loc='upper left')
 
-    
-    if spath_png:
+    if spath_png: # Saves as a Figure
         plt.savefig(spath_png)
-        print("Saved to: {}".format(spath_png))
+        print("\nSaved to: {}\n".format(spath_png))
 
-    if spath_mp4:
-        anim = animation.FuncAnimation(fig, animate, init_func=init,
-                                       frames=360, interval=20, blit=True)
-        print('Saving to: {}'.format(spath_mp4))
-        anim.save(spath_mp4, fps=30, extra_args=['-vcodec', 'libx264'])
+    if spath_mp4: # Saves as a movie
+        def init():
+            return fig,
+
+        def animate(i):
+            ax.view_init(elev=10., azim=i)
+            return fig,
+      
+        anim = animation.FuncAnimation(fig,
+                                       animate,
+                                       init_func=init,
+                                       frames=360,
+                                       interval=20,
+                                       blit=True)
         
-    else:
+        writermp4 = animation.FFMpegWriter(fps=60, extra_args=['-vcodec', 'libx264'])
+        anim.save(spath_mp4, writer=writermp4)
+        print('\nSaving to: {}\n'.format(spath_mp4))        
+
+    else: # Just plots
       plt.show()
+
+      
 
 
 
@@ -90,17 +99,16 @@ if __name__ == '__main__':
     rips_df = pd.concat(_rips_df)
 
 
-    # Prepares sparse Data Frame for visualization
-    perc = .2 if args.n_mouse == '01' else .05
-    N = int(len(rips_df) * perc / 100)
-    indi_sparse = np.random.permutation(len(rips_df))[:N]
-    sparse_rips_df = rips_df.iloc[indi_sparse]
-
+    # # Prepares sparse Data Frame for visualization
+    # perc = .2 if args.n_mouse == '01' else .05
+    # N = int(len(rips_df) * perc / 100)
+    # indi_sparse = np.random.permutation(len(rips_df))[:N]
+    # sparse_rips_df = rips_df.iloc[indi_sparse]
 
     ## Plots
     theta, phi = 165, 3
     ftr1, ftr2, ftr3 = 'ln(duration_ms)', 'mean ln(MEP magni. / SD)', 'ln(ripple peak magni. / SD)'
-    plot_3d_scatter(sparse_rips_df, cls1_label=None, spath_png=None, spath_mp4=None,
+    plot_3d_scatter(sparse_rips_df, cls0_label=None, spath_png=None, spath_mp4=None,
                     theta=theta, phi=phi, perc=perc)
 
 
