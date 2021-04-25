@@ -90,10 +90,10 @@ ts('')
 
 ## Save
 ldir, fname, ext = split_fpath(fpath)
-sdir = ldir.replace('LFP_MEP', 'ripple_candi').replace('npy', 'pkl')#.replace('orig/', '')
+sdir = ldir.replace('LFP_MEP', 'ripple_candi').replace('npy', 'pkl').replace('orig/', '')
 spath = sdir + fname + '.pkl' # .format(sd_thresh)
 os.makedirs(sdir, exist_ok=True)
 save_pkl(rip_sec, spath)
-# Saved to: './data/okada/01/day1/split/ripple_candi_1kHz_pkl/orig/tt2-1_fp16.pkl'
+# Saved to: './data/okada/01/day1/split/ripple_candi_1kHz_pkl/tt2-1_fp16.pkl'
 
 ## EOF

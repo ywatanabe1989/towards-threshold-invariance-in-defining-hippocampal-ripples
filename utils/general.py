@@ -3,6 +3,7 @@
 import numpy as np
 import re
 import time
+import yaml
 
 def split_fpath(fpath):
     '''Split a file path to (1) the directory path, (2) the file name, and (3) the file extention
@@ -46,6 +47,9 @@ def get_samp_rate_str_from_fpath(fpath):
         if is_matched:
             return samp_rate_str
 
+def get_samp_rate_int_from_fpath(fpath):
+    return to_int_samp_rate(get_samp_rate_str_from_fpath(fpath))
+        
 
 def calc_h(data, sampling_rate):
     return len(data) / sampling_rate / 60 / 60
@@ -278,3 +282,48 @@ def take_closest(list_obj, num_insert):
       return closest_num, closest_pos
 
   
+def get_random_indi(data, perc=10):
+    indi = np.arange(len(data))
+    N_all = len(indi)
+    indi_random = np.random.permutation(indi)[:int(N_all*perc/100)]
+    return indi_random
+
+
+def save(obj, sfname):
+    '''
+    Example
+      save(arr, 'data.npy')
+      save(df, 'df.csv')
+      save(serializable, 'serializable.pkl')    
+    '''
+    import pickle
+    import numpy as np
+    import pandas as pd
+    import inspect
+    import os
+    
+    ## for ipython
+    try:
+        __file__ = inspect.stack()[1].filename
+    except NameError:
+        __file__ = '/tmp/fake.py'
+
+    ## spath
+    fpath = __file__
+    fdir, fname, _ = split_fpath(fpath)
+    sdir = fdir + fname + '/'
+    spath = sdir + sfname
+    
+    ## save
+    os.makedirs(sdir, exist_ok=True)
+    # csv
+    if '.csv' in spath:
+        obj.to_csv(spath)
+    # numpy
+    if '.npy' in spath:
+        np.save(obj, spath)
+    # pkl
+    with open(spath, 'wb') as s: # 'w'
+        pickle.dump(obj, s)
+    
+    print('Saved to: {s}'.format(s=spath))

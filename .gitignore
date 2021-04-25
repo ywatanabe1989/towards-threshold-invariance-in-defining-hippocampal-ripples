@@ -6,6 +6,7 @@
 *.npy
 *.pkl
 *.pdf
+*.csv
 
 
 ## Containers and Images but Definition Files to Reproduce them

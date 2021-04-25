@@ -1,19 +1,18 @@
-BANDS_LIM_HZ_DICT:
-  ripple: [150, 250]
+RIPPLE_CANDI_LIM_HZ: [150, 250]
 RGB_PALLETE_DICT:
-    'blue':(0,128,192),
-    'red':(255,70,50),
-    'pink':(255,150,200),
-    'green':(20,180,20),
-    'yellow':(230,160,20),
-    'glay':(128,128,128),
-    'parple':(200,50,255),
-    'light_blue':(20,200,200),
-    'blown':(128,0,0),
-    'navy':(0,0,100),
+    'blue': [0,128,192]
+    'red': [255,70,50]
+    'pink': [255,150,200]
+    'green': [20,180,20]
+    'yellow': [230,160,20]
+    'glay': [128,128,128]
+    'parple': [200,50,255]
+    'light_blue': [20,200,200]
+    'blown': [128,0,0]
+    'navy': [0,0,100]
 RANDOM_STATE:
   42
-SAMP_RATE:
+SAMP_RATE_ORIG:
   2000
 DTYPE:
   fp16

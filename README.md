@@ -20,6 +20,30 @@ export PYTHONPATH=/mnt/nvme/Semisupervised_Ripple
 
 
 ## To-do
+- [x] Fig.01
+- [x] Fig.02; axes are wrong.
+- [ ] Fig.03
+- [x] Fig.04; xlabels are wrong. scales are wrong.
+- [ ] Fig.05
+- [x] Fig.06
+- [ ] Fig.07
+- [x] Fig.08
+- [ ] Fig.09
+- [ ] Fig.10
+- [ ] Fig.11
+- [ ] Fig.12
+- [ ] Fig.13
+- [ ] Fig.14
+- [ ] Fig.15
+- [x] Fig.16
+- [ ] Fig.17
+- [ ] Fig.18
+- [ ] Fig.19
+- [ ] Fig.20
+- [ ] Fig.21
+
+
+
 - [ ] Fig.01-02_Ripple candidates
 - [ ] Fig.03_ Relationship between the hippocampal LFP and animal movement
 - [ ] Fig.04_Ripple_candidates_EDA
@@ -28,3 +52,7 @@ export PYTHONPATH=/mnt/nvme/Semisupervised_Ripple
 - [ ] Fig.17-20_Detecting_Ripples_usign_a_CNN
 - [ ] Fig.21_Estimating_Optimal_Threshold_for_the_Ripple_Peak_Magnitude
 
+
+## sh_scripts template
+cat $SEMI_RIPPLE_HOME/data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt |
+xargs -P $N_CPUS -n 1 python3 ./ripples/define_ripples/candidates/detects_ripple_candidates.py -n 2>&1 | tee $0.log

@@ -86,6 +86,7 @@ From: centos:centos8
     python3 -m pip install h5py
     python3 -m pip install black
     python3 -m pip install numba
+    python3 -m pip install PyYAML
 
 
     # ################################################################################
@@ -177,6 +178,8 @@ From: centos:centos8
 
 
 '''
+sudo /opt/bin/singularity exec --writable ./singularity/semi_ripples python3 -m pip install PyYAML
+
 sbuild ./singularity/semi_ripples_06.def -f
 sshell
 
