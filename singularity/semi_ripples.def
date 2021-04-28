@@ -96,6 +96,7 @@ From: centos:centos8
     python3 -m pip install PyYAML
     python3 -m pip install ffmpeg-python
     python3 -m pip install ipython
+    python3 -m pip install scikit-image    
 
 
     # ################################################################################

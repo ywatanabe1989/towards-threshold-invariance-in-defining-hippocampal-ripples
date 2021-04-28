@@ -3,8 +3,8 @@
 import torch.nn as nn
 import math
 import torch
-from models.modules.act_funcs.swish import Swish
-from models.modules.act_funcs.Mish.mish import Mish
+# from models.ResNet1D.modules.act_funcs.swish import Swish
+# from models.ResNet1Dd.modules.act_funcs.Mish.mish import Mish
 
 
 def calc_out_len(i, k, s, p, d=1):

@@ -7,6 +7,6 @@ echo -e '\nRun ./mouse05_48h_to_2days.py on each file written in $SEMI_RIPPLE_HO
 N_CPUS=18
 
 cat $SEMI_RIPPLE_HOME/data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt |
-xargs -P $N_CPUS -n 1 python3 ./ripples/define_ripples/candidates/detects_ripple_candidates.py -n 2>&1 | tee $0.log
+xargs -P $N_CPUS -n 1 python3 ./ripples/define_ripples/conventional/defines_ripple_candidates.py -n 2>&1 | tee $0.log
 
 ## EOF

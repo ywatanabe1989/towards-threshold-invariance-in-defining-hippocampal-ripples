@@ -7,6 +7,7 @@ import pandas as pd
 from tqdm import tqdm
 
 import utils.general as ug
+import utils.path_converters as upcvt
 
 
 def calc_ripple_properties(rip_sec_df, lpath_lfp):
@@ -22,11 +23,13 @@ def calc_ripple_properties(rip_sec_df, lpath_lfp):
     ################################################################################
     ## PATHs
     ################################################################################
-    lpath_mep_magni_sd_normed = lpath_lfp.replace('orig', 'magni')\
-                               .replace('_fp16.npy', '_mep_magni_sd_fp16.npy')
-    lpath_ripple_magni_sd_normed = lpath_lfp.replace('orig', 'magni')\
-                                  .replace('_fp16.npy', '_ripple_band_magni_sd_fp16.npy')
+    # lpath_mep_magni_sd_normed = lpath_lfp.replace('orig', 'magni')\
+    #                            .replace('_fp16.npy', '_mep_magni_sd_fp16.npy')
+    # lpath_ripple_magni_sd_normed = lpath_lfp.replace('orig', 'magni')\
+    #                               .replace('_fp16.npy', '_ripple_band_magni_sd_fp16.npy')
 
+    lpath_mep_magni_sd_normed = upcvt.LFP_to_MEP_magni(lpath_lfp)
+    lpath_ripple_magni_sd_normed = upcvt.LFP_to_ripple_magni(lpath_lfp)
     ################################################################################
     ## Loads
     ################################################################################

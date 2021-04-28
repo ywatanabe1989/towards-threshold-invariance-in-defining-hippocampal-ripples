@@ -8,6 +8,7 @@ from glob import glob
 import sys; sys.path.append('.')
 import utils.general as ug
 import utils.dsp as ud
+import utils.path_converters as upcvt
 
 
 ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -45,10 +46,8 @@ ripple_band_magni_sd = ud.calc_band_magnitude(lfp, SAMP_RATE,
 
 
 ## Save
-SPATH_MEP_MAGNI_SD = LPATH_LFP.replace('orig', 'magni')\
-                              .replace('_fp16.npy', '_mep_magni_sd_fp16.npy')
-SPATH_RIPPLE_BAND_MAGNI = LPATH_LFP.replace('orig', 'magni')\
-                                   .replace('_fp16.npy', '_ripple_band_magni_sd_fp16.npy')
+SPATH_MEP_MAGNI_SD = upcvt.LFP_to_MEP_magni(LPATH_LFP)
+SPATH_RIPPLE_BAND_MAGNI = upcvt.LFP_to_ripple_magni(LPATH_LFP)
 
 ug.save_npy(mep_magni_sd, SPATH_MEP_MAGNI_SD)
 ug.save_npy(ripple_band_magni_sd, SPATH_RIPPLE_BAND_MAGNI)

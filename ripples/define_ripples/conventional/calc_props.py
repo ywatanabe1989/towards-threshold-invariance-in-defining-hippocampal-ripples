@@ -4,7 +4,7 @@ import sys; sys.path.append('.')
 import os
 
 import utils.general as ug
-from utils.EDA.calc_ripple_properties import calc_ripple_properties
+from utils.EDA_funcs.calc_ripple_properties import calc_ripple_properties
 
 
 
@@ -18,7 +18,7 @@ args = ap.parse_args()
 ## PATHs
 lpath_lfp = args.npy_fpath
 lpath_rip = lpath_lfp.replace('LFP_MEP_1kHz_npy', 'ripple_candi_1kHz_pkl')\
-                         .replace('.npy', '.pkl')
+                     .replace('.npy', '.pkl')
 
 
 ## Loads

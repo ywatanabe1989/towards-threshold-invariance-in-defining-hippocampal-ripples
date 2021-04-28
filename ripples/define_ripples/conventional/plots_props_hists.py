@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 import utils.general as ug
-import utils.path_changers as up
+import utils.path_translator as up
 
 
 ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)

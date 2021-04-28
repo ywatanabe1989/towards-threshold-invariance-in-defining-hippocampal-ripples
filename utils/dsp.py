@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import numpy as np
 from modules.rippledetection.core import gaussian_smooth
 
 def bandpass(data, lo_hz, hi_hz, fs, order=5):

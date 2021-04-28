@@ -289,7 +289,7 @@ def get_random_indi(data, perc=10):
     return indi_random
 
 
-def save(obj, sfname):
+def save(obj, sfname_or_spath, makedirs=True):
     '''
     Example
       save(arr, 'data.npy')
@@ -300,21 +300,34 @@ def save(obj, sfname):
     import numpy as np
     import pandas as pd
     import os
-    
-    # ## for ipython
-    # __file__ = inspect.stack()[1].filename
-    # if 'ipython' in __file__:
-    #     __file__ = '/tmp/fake.py'
+    import inspect
 
-    # ## spath
-    # fpath = __file__
-    # fdir, fname, _ = split_fpath(fpath)
-    # sdir = fdir + fname + '/'
-    # spath = sdir + sfname
-    spath = mk_spath(sfname, makedirs=True)
+    spath, sfname = None, None
     
-    ## save
-    # os.makedirs(sdir, exist_ok=True)
+    if '/' in sfname_or_spath:
+        spath = sfname_or_spath
+    else:
+        sfname = sfname_or_spath
+
+    if (spath is None) and (sfname is not None):
+        ## for ipython
+        __file__ = inspect.stack()[1].filename
+        if 'ipython' in __file__:
+            __file__ = '/tmp/fake.py'
+
+        ## spath
+        fpath = __file__
+        fdir, fname, _ = split_fpath(fpath)
+        sdir = fdir + fname + '/'
+        spath = sdir + sfname
+        # spath = mk_spath(sfname, makedirs=True)
+
+    ## Make directory
+    if makedirs:
+        sdir = os.path.dirname(spath)
+        os.makedirs(sdir, exist_ok=True)
+        
+    ## Saves
     # csv
     if '.csv' in spath:
         obj.to_csv(spath)
@@ -325,6 +338,11 @@ def save(obj, sfname):
     if '.pkl' in spath:    
         with open(spath, 'wb') as s: # 'w'
             pickle.dump(obj, s)
+
+    # png
+    if '.png' in spath: # here, obj is matplotlib.plt
+        obj.savefig(spath)
+        obj.close()
 
     print('\nSaved to: {s}\n'.format(s=spath))
 
@@ -358,10 +376,20 @@ def load(lpath):
         obj = pd.read_csv(lpath)
     # numpy
     if '.npy' in lpath:
-        obj = np.load(obj, lpath)
+        obj = np.load(lpath)
     # pkl
     if '.pkl' in lpath:        
         with open(lpath, 'rb') as l: # 'r'
             obj = pickle.load(l)
 
     return obj
+
+
+def configure_mpl(plt):
+    plt.rcParams['font.size'] = 20
+    plt.rcParams["figure.figsize"] = (16*1.2, 9*1.2)
+
+def makedirs_from_spath(spath):
+    import os
+    sdir = os.path.dirname(spath)
+    os.makedirs(sdir, exist_ok=True)

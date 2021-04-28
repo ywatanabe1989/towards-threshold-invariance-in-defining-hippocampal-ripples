@@ -1,4 +1,4 @@
-## Set envirionment variables
+## Sget envirionment variables
 ``` bash
 export SEMI_RIPPLE_HOME=/mnt/nvme/Semisupervised_Ripple
 export SINGULARITY_SIF_ROOT_NAME=semi_ripples
@@ -21,10 +21,10 @@ export PYTHONPATH=/mnt/nvme/Semisupervised_Ripple
 
 ## To-do
 - [x] Fig.01
-- [x] Fig.02; axes are wrong.
-- [ ] Fig.03
-- [x] Fig.04; xlabels are wrong. scales are wrong.
-- [ ] Fig.05
+- [x] Fig.02
+- [x] Fig.03
+- [x] Fig.04
+- [x] Fig.05
 - [x] Fig.06
 - [ ] Fig.07
 - [x] Fig.08
@@ -35,8 +35,8 @@ export PYTHONPATH=/mnt/nvme/Semisupervised_Ripple
 - [ ] Fig.13
 - [ ] Fig.14
 - [ ] Fig.15
-- [x] Fig.16
-- [ ] Fig.17
+- [ ] Fig.16
+- [x] Fig.17
 - [ ] Fig.18
 - [ ] Fig.19
 - [ ] Fig.20

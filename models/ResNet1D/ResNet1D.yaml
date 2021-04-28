@@ -1,9 +1,7 @@
-n_filters_per_ch:
-  4
 activation_str:
-  'relu'
+  'leaky-relu'
 n_blks:
-  50
+  3
 global_pooling_str:
   'average'
 n_fc1:
@@ -15,6 +13,6 @@ n_fc2:
 d_ratio2:
   0.5
 SAMP_RATE_ORIG:
-  500
-samp_rate_tgt:
-  250
+  1000
+seq_len:
+  400

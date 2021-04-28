@@ -6,9 +6,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib import animation
-plt.rcParams['font.size'] = 20
-plt.rcParams["figure.figsize"] = (20, 20)
 from mpl_toolkits.mplot3d import Axes3D
+from matplotlib.ticker import MultipleLocator
 from scipy.stats import chi2
 
 import utils.general as ug
@@ -22,16 +21,33 @@ def plot_3d_scatter(cls0_sparse_df,
                     ftr2,
                     ftr3,
                     cls0_label=None,
+                    cls0_color_str='blue',
                     cls1_sparse_df=None,
                     cls1_label=None,
+                    cls1_color_str='red',                    
                     title=None,
                     spath_mp4=False,
                     spath_png=False,
                     theta=30,
                     phi=30,
                     size=10,
+                    xmin=2.5,
+                    xmax=8.,
+                    ymin=-2.5,
+                    ymax=3.,
+                    zmin=0.,
+                    zmax=3.5,
+                    alpha=.3,
                     ):
+    
+    ##############################
+    ## Parameters
+    ##############################        
+    RGB_PALLETE_DICT = ug.load_yaml_as_dict('./conf/global.yaml')['RGB_PALLETE_DICT']
 
+    ##############################
+    ## Preparation
+    ##############################        
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
     ax.set_xlabel(ftr1)
@@ -42,20 +58,60 @@ def plot_3d_scatter(cls0_sparse_df,
     ax.set_zlim3d(bottom=0., top=3.5)
     ax.view_init(phi, theta)
 
-    alpha = .3
+    ##############################
+    ## Plots
+    ##############################        
     ax.scatter(cls0_sparse_df[ftr1], cls0_sparse_df[ftr2], cls0_sparse_df[ftr3],
-               marker='o', label=cls0_label, alpha=alpha, s=size)
+               marker='o', label=cls0_label, alpha=alpha, s=size,
+               c=(np.array(RGB_PALLETE_DICT[cls0_color_str]) / 255)[np.newaxis, ...])
 
     if cls1_sparse_df is not None:
         ax.scatter(cls1_sparse_df[ftr1], cls1_sparse_df[ftr2], cls1_sparse_df[ftr3],
-                   marker='o', label=cls1_label, alpha=alpha, s=size)
+                   marker='o', label=cls1_label, alpha=alpha, s=size,
+                   c=(np.array(RGB_PALLETE_DICT[cls1_color_str]) / 255)[np.newaxis, ...])
+
     plt.legend(loc='upper left')
 
-    if spath_png: # Saves as a Figure
+    ax.axis((xmin, xmax, ymin, ymax))
+    ax.set_zlim3d(bottom=zmin, top=zmax)
+    ax.yaxis.set_major_locator(MultipleLocator(1.))
+    ax.zaxis.set_major_locator(MultipleLocator(1.))
+
+    ##############################
+    ## Draws Cubes
+    ##############################    
+    def draw_cube(r1, r2, r3, c='blue', alpha=1.):
+        from itertools import product, combinations
+        for s, e in combinations(np.array(list(product(r1, r2, r3))), 2):
+            if np.sum(np.abs(s-e)) == r1[1]-r1[0]:
+                ax.plot3D(*zip(s, e), c=c, linewidth=3, alpha=alpha)
+            if np.sum(np.abs(s-e)) == r2[1]-r2[0]:
+                ax.plot3D(*zip(s, e), c=c, linewidth=3, alpha=alpha)
+            if np.sum(np.abs(s-e)) == r3[1]-r3[0]:
+                ax.plot3D(*zip(s, e), c=c, linewidth=3, alpha=alpha)
+    
+
+    r1, r2, r3 = [np.log(15), xmax], [ymin, np.log(1)], [np.log(2), zmax]
+    draw_cube(r1, r2, r3,
+              c=tuple(np.array(RGB_PALLETE_DICT['green']) / 255),
+              alpha=alpha,
+              )
+  
+    r1, r2, r3 = [np.log(15), xmax], [ymin, np.log(1*5/4)], [np.log(4), zmax]
+    draw_cube(r1, r2, r3,
+              c=tuple(np.array(RGB_PALLETE_DICT['purple']) / 255),
+              alpha=alpha,
+              )
+
+    ##############################
+    ## Saves
+    ##############################    
+    if spath_png: # as a Figure
         plt.savefig(spath_png)
+        plt.close()
         print("\nSaved to: {}\n".format(spath_png))
 
-    if spath_mp4: # Saves as a movie
+    if spath_mp4: # as a movie
         def init():
             return fig,
 
@@ -72,10 +128,13 @@ def plot_3d_scatter(cls0_sparse_df,
         
         writermp4 = animation.FFMpegWriter(fps=60, extra_args=['-vcodec', 'libx264'])
         anim.save(spath_mp4, writer=writermp4)
-        print('\nSaving to: {}\n'.format(spath_mp4))        
+        print('\nSaving to: {}\n'.format(spath_mp4))
 
-    else: # Just plots
-      plt.show()
+    ##############################
+    ## Just plots
+    ##############################    
+    else:
+        plt.show()
 
       
 
