@@ -35,7 +35,7 @@ LPATH_HIPPO_LFP_NPY_LIST_MOUSE = ug.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, ar
 
 ## Loads
 lfps, rips_df_list = us.load_lfps_rips_sec(LPATH_HIPPO_LFP_NPY_LIST_MOUSE,
-                                           rip_sec_ver='GMM_labeled'
+                                           rip_sec_ver='GMM_labeled/D{}+'.format(args.n_mouse)
                                            )
 # len_rips = [len(_rips_df_tt) for _rips_df_tt in rips_df_list]
 rips_df = pd.concat(rips_df_list)
@@ -56,8 +56,8 @@ indi_sparse = indi_sparse.astype(bool)
 ## Defines clusters
 cls0_sparse_rips_df = rips_df[~are_ripple_GMM & indi_sparse]
 cls1_sparse_rips_df = rips_df[are_ripple_GMM & indi_sparse]
-print(cls0_sparse_rips_df.iloc[:10])
-print(cls1_sparse_rips_df.iloc[:10])
+# print(cls0_sparse_rips_df.iloc[:10])
+# print(cls1_sparse_rips_df.iloc[:10])
 
 
 ## Plots

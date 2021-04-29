@@ -81,8 +81,19 @@ def isolates_rip_row(rip_row, lfp=None, max_duration_pts=400):
         start = rip_row['ripple_peak_posi_pts'] - 200
         end = rip_row['ripple_peak_posi_pts'] + 200        
         trimmed = lfp[start:end]
+
+        len_trimmed = len(trimmed)
+        if len_trimmed < max_duration_pts: # pad
+            pad_all = max_duration_pts - len_trimmed
+            pad1, pad2 = math.floor(pad_all/2), math.floor(pad_all/2)
+            if pad_all % 2 == 1:
+                pad1 += 1
+            trimmed = np.pad(trimmed, [pad1, pad2], 'constant', constant_values=(0))
+
         isolated = trimmed # alias
 
+    assert len(isolated) == max_duration_pts
+    
     return isolated
 
 

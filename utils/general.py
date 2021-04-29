@@ -380,23 +380,23 @@ def load(lpath):
     import yaml
     
     # csv
-    if spath.endswith('.csv'):#    if '.csv' in lpath:
+    if lpath.endswith('.csv'):#    if '.csv' in lpath:
         obj = pd.read_csv(lpath)
     # numpy
-    if spath.endswith('.npy'):#    if '.npy' in lpath:
+    if lpath.endswith('.npy'):#    if '.npy' in lpath:
         obj = np.load(lpath)
     # pkl
-    if spath.endswith('.pkl'):#    if '.pkl' in lpath:        
+    if lpath.endswith('.pkl'):#    if '.pkl' in lpath:        
         with open(lpath, 'rb') as l: # 'r'
             obj = pickle.load(l)
     # png
-    if spath.endswith('.png'): # '.png' in spath:
+    if lpath.endswith('.png'): # '.png' in lpath:
         pass
 
     # yaml
-    if spath.endswith('.yaml'):
+    if lpath.endswith('.yaml'):
         obj = {}
-        with open(yaml_path) as f:
+        with open(lpath) as f:
             _obj = yaml.safe_load(f)
             obj.update(_obj)
     
