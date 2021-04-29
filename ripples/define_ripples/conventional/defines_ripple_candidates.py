@@ -92,10 +92,12 @@ del rip_sec['start_time'], rip_sec['end_time'], rip_sec['duration']
 
 ## Save
 ldir, fname, ext = ug.split_fpath(fpath)
-sdir = ldir.replace('LFP_MEP', 'ripple_candi').replace('npy', 'pkl')#.replace('orig/', '')
-spath = sdir + fname + '.pkl' # .format(sd_thresh)
+sdir = ldir.replace('LFP_MEP', 'ripples')\
+           .replace('/orig/', '/candi_orig/')\
+           .replace('npy', 'pkl')
+spath = sdir + fname + '.pkl'
 os.makedirs(sdir, exist_ok=True)
 ug.save_pkl(rip_sec, spath)
-# Saved to: './data/okada/01/day1/split/ripple_candi_1kHz_pkl/orig/tt2-1_fp16.pkl'
+# Saved to: './data/okada/01/day1/split/ripples_1kHz_pkl/candi_orig/tt2-1_fp16.pkl'
 
 ## EOF

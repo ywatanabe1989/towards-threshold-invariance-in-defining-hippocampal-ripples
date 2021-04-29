@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
+rm $0.log
 
 for nm in 01 02 03 04 05; do
-    python3 ./ripples/define_ripples/using_GMM/make_labels.py -nm $nm 2>&1 | tee $0.log
+    python3 ./ripples/define_ripples/using_GMM/make_labels.py -nm $nm 2>&1 | tee -a $0.log
 done
 
 

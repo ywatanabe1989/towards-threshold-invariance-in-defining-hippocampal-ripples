@@ -24,7 +24,7 @@ ug.configure_mpl(plt)
 
 
 ## Fixes random seed
-ug.fix_seed(seed=42)
+ug.fix_seeds(seed=42, np=np)
 
 
 ## FPATHs
@@ -34,7 +34,7 @@ LPATH_HIPPO_LFP_NPY_LIST_MOUSE = ug.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, ar
 
 ## Loads
 lfps, rips_df_list = us.load_lfps_rips_sec(LPATH_HIPPO_LFP_NPY_LIST_MOUSE,
-                                       rip_sec_ver='with_props'
+                                       rip_sec_ver='candi_with_props'
                                        )
 len_rips = [len(_rips_df_tt) for _rips_df_tt in rips_df_list]
 rips_df = pd.concat(rips_df_list)
@@ -46,6 +46,10 @@ rips_df = rips_df[[ftr1, ftr2, ftr3]]
 gmm = GaussianMixture(n_components=2, covariance_type='full')
 gmm.fit(rips_df)
 cls1_proba = gmm.predict_proba(rips_df)[:, 1]
+# print(cls1_proba[:10])
+# [2.46912665e-04 1.14925911e-02 2.48437815e-11 2.71876322e-15
+#  3.65223435e-04 3.50178720e-02 9.65142726e-01 1.22712540e-04
+#  1.42235252e-06 8.56084091e-08]
 are_ripple_GMM = (cls1_proba >= .5) if gmm.means_[0,1] < gmm.means_[1,1] else (cls1_proba < .5)
 
 
@@ -57,12 +61,18 @@ for i_tt in range(len(rips_df_list)):
     start = end
 
 
+
     
 ## Saves
 for i_tt, lfp_path in enumerate(LPATH_HIPPO_LFP_NPY_LIST_MOUSE):
-    spath = upcvt.LFP_to_ripple_candi_with_props(lfp_path)
-    spath = spath.replace('with_props', 'with_GMM_preds')
+    spath = upcvt.LFP_to_ripples(lfp_path, rip_sec_ver='GMM_labeled')
     ug.save(rips_df_list[i_tt], spath)
+
+
+    
+    # spath = upcvt.LFP_to_ripple_candi_with_props(lfp_path)
+    # spath = spath.replace('candi_with_props', 'GMM_labeled')
+    # ug.save(rips_df_list[i_tt], spath)
 
 
 ## EOF

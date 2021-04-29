@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import argparse
-from sklearn.mixture import GaussianMixture
 import sys
 sys.path.append('.')
 import numpy as np
@@ -26,7 +25,7 @@ ug.configure_mpl(plt)
 
 
 ## Fixes random seed
-ug.fix_seed(seed=42)
+ug.fix_seeds(seed=42, np=np)
 
 
 ## FPATHs
@@ -36,7 +35,7 @@ LPATH_HIPPO_LFP_NPY_LIST_MOUSE = ug.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, ar
 
 ## Loads
 lfps, rips_df_list = us.load_lfps_rips_sec(LPATH_HIPPO_LFP_NPY_LIST_MOUSE,
-                                           rip_sec_ver='with_GMM_preds'
+                                           rip_sec_ver='GMM_labeled'
                                            )
 # len_rips = [len(_rips_df_tt) for _rips_df_tt in rips_df_list]
 rips_df = pd.concat(rips_df_list)
@@ -57,6 +56,8 @@ indi_sparse = indi_sparse.astype(bool)
 ## Defines clusters
 cls0_sparse_rips_df = rips_df[~are_ripple_GMM & indi_sparse]
 cls1_sparse_rips_df = rips_df[are_ripple_GMM & indi_sparse]
+print(cls0_sparse_rips_df.iloc[:10])
+print(cls1_sparse_rips_df.iloc[:10])
 
 
 ## Plots

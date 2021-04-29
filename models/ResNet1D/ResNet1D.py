@@ -16,9 +16,8 @@ class ResNet1D(nn.Module):
         super().__init__()
 
         self.config = config
-
         
-        self.input_bn = nn.BatchNorm1d(config['seq_len']) # fixme
+        self.input_bn = nn.BatchNorm1d(config['seq_len'])
         
         ## Residual Convolutional Layers
         n_filters = 64
@@ -48,19 +47,19 @@ class ResNet1D(nn.Module):
             nn.Linear(self.config['n_fc2'], len(self.config['labels'])),
         )
         
-
-    def znorm(self, x):
-        dtype = x.dtype
-        x = x.to(torch.float32)
-        stds = x.std(dim=-1, keepdims=True)
-        means = x.mean(dim=-1, keepdims=True)
-        x = (x - means) / stds
-        return x.to(dtype)
+    # def znorm(self, x):
+    #     dtype = x.dtype
+    #     x = x.to(torch.float32)
+    #     stds = x.std(dim=-1, keepdims=True)
+    #     means = x.mean(dim=-1, keepdims=True)
+    #     x = (x - means) / stds
+    #     return x.to(dtype)
         
     def forward(self, x):
-        x = self.znorm(x)
+        x = x.squeeze() # [bs, seq_len]
+        x = self.input_bn(x)
+        x = x.unsqueeze(1) # [bs, 1, seq_len] # 1 is n_chs
         x = self.res_conv_blk_layers(x)
-        # (7-5-3)*n_blocks => -12*n_blocks => -12*80 => -960
         x = self.gap_layer(x).squeeze(-1) # [16, 304]
         y = self.fc_layer(x)
         return y

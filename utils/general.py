@@ -4,6 +4,16 @@ import numpy as np
 import re
 import time
 import yaml
+import csv
+import pandas as pd
+
+
+def gen_timestamp():
+    from datetime import datetime
+    now = datetime.now()
+    now_str = now.strftime('%Y-%m%d-%H%M')
+    return now_str
+
 
 def split_fpath(fpath):
     '''Split a file path to (1) the directory path, (2) the file name, and (3) the file extention
@@ -163,50 +173,50 @@ def fix_seeds(os=None, random=None, np=None, torch=None, tf=None, seed=42):
    print('\nRandom seeds has been fixed as {}\n'.format(seed))
 
 
-# def torch_to_arr(x):
-#     is_arr = isinstance(x, (np.ndarray, np.generic) )
-#     if is_arr: # when x is np.array
-#         return x
-#     if torch.is_tensor(x): # when x is torch.tensor
-#         return x.detach().numpy().cpu()
+def torch_to_arr(x):
+    is_arr = isinstance(x, (np.ndarray, np.generic) )
+    if is_arr: # when x is np.array
+        return x
+    if torch.is_tensor(x): # when x is torch.tensor
+        return x.detach().numpy().cpu()
     
-# def save_listed_scalars_as_csv(listed_scalars, spath_csv, column_name='_',
-#                                indi_suffix=None, overwrite=False):
-#     '''Puts to df and save it as csv'''
-#     if overwrite == True:
-#         mv_to_tmp(spath_csv, L=2)
-#     indi_suffix = np.arange(len(listed_scalars)) if indi_suffix is None else indi_suffix
-#     df = pd.DataFrame({'{}'.format(column_name):listed_scalars}
-#                       , index=indi_suffix)
-#     df.to_csv(spath_csv)
-#     print('Saved to: {}'.format(spath_csv))
+def save_listed_scalars_as_csv(listed_scalars, spath_csv, column_name='_',
+                               indi_suffix=None, overwrite=False):
+    '''Puts to df and save it as csv'''
+    if overwrite == True:
+        mv_to_tmp(spath_csv, L=2)
+    indi_suffix = np.arange(len(listed_scalars)) if indi_suffix is None else indi_suffix
+    df = pd.DataFrame({'{}'.format(column_name):listed_scalars}
+                      , index=indi_suffix)
+    df.to_csv(spath_csv)
+    print('Saved to: {}'.format(spath_csv))
 
     
-# def save_listed_dfs_as_csv(listed_dfs, spath_csv, indi_suffix=None, overwrite=False):
-#     '''listed_dfs:
-#            [df1, df2, df3, ..., dfN]. They will be written vertically in the order.
+def save_listed_dfs_as_csv(listed_dfs, spath_csv, indi_suffix=None, overwrite=False):
+    '''listed_dfs:
+           [df1, df2, df3, ..., dfN]. They will be written vertically in the order.
     
-#        spath_csv:
-#            /hoge/fuga/foo.csv
-#        indi_suffix:
-#            At the left top cell on the output csv file, '{}'.format(indi_suffix[i])
-#            will be added, where i is the index of the df.On the other hand,
-#            when indi_suffix=None is passed, only '{}'.format(i) will be added.
-#     '''
-#     if overwrite == True:
-#         mv_to_tmp(spath_csv, L=2)
+       spath_csv:
+           /hoge/fuga/foo.csv
+       indi_suffix:
+           At the left top cell on the output csv file, '{}'.format(indi_suffix[i])
+           will be added, where i is the index of the df.On the other hand,
+           when indi_suffix=None is passed, only '{}'.format(i) will be added.
+    '''
+    if overwrite == True:
+        mv_to_tmp(spath_csv, L=2)
     
-#     indi_suffix = np.arange(len(listed_dfs)) if indi_suffix is None else indi_suffix
-#     for i, df in enumerate(listed_dfs):
-#         with open(spath_csv, mode='a') as f:
-#             f_writer = csv.writer(f)
-#             i_suffix = indi_suffix[i]
-#             f_writer.writerow(['{}'.format(indi_suffix[i])])
-#         df.to_csv(spath_csv, mode='a', index=True, header=True)
-#         with open(spath_csv, mode='a') as f:
-#             f_writer = csv.writer(f)
-#             f_writer.writerow([''])
-#     print('Saved to: {}'.format(spath_csv))
+    indi_suffix = np.arange(len(listed_dfs)) if indi_suffix is None else indi_suffix
+    for i, df in enumerate(listed_dfs):
+        with open(spath_csv, mode='a') as f:
+            f_writer = csv.writer(f)
+            i_suffix = indi_suffix[i]
+            f_writer.writerow(['{}'.format(indi_suffix[i])])
+        df.to_csv(spath_csv, mode='a', index=True, header=True)
+        with open(spath_csv, mode='a') as f:
+            f_writer = csv.writer(f)
+            f_writer.writerow([''])
+    print('Saved to: {}'.format(spath_csv))
     
 
 # def take_N_percentile(data, perc=25):
@@ -217,9 +227,10 @@ def mv_to_tmp(fpath, L=2):
     import os
     try:
         tgt_fname = connect_str_list_with_hyphens(fpath.split('/')[-L:])
-        tgt_fpath = '/tmp/{}'.format(tgt_fname)
+        ts = gen_timestamp()
+        tgt_fpath = '/tmp/{}-{}'.format(ts, tgt_fname)
         move(fpath, tgt_fpath)
-        print('Moved to: {}'.format(tgt_fpath))
+        print('(Moved to: {})'.format(tgt_fpath))
     except:
         pass
 

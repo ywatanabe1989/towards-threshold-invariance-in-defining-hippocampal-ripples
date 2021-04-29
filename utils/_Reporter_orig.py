@@ -1,60 +1,65 @@
 #!/usr/bin/env python
 
+from natsort import natsorted
 import numpy as np
-import os
 from sklearn.metrics import (confusion_matrix,
                              classification_report,
                              roc_auc_score,
-                             precision_recall_curve,
-                             auc,
                              )
 import pandas as pd
+import torch
 import yaml
 
 
 from utils.general import (mv_to_tmp,
                            torch_to_arr,
+                           gen_timestamp,
                            save_listed_scalars_as_csv,
                            save_listed_dfs_as_csv,
+                           connect_str_list_with_hyphens,
                            )
 from utils.ml import plot_cm
 
-
 class Reporter():
-    '''Saved Confusion Matrix, Classification Report, and ROC-AUC score under self.sdir.
+    '''model_name and window_size_sec [sec] is required for instantiation.
+       Author name is fetched from environmental viriable "USER" (i.g., ywatanabe).
+       Summaried data will be saved under
+       '/storage/data/EEG/EEG_DiagnosisFromRawSignals/for_0416_AMED/\
+        "USER"/ML/"model_name"_WS-"window_size_sec"sec_"timestamp"/'
+
+       labels:
     '''
-    def __init__(self, sdir):
+    def __init__(self, model_name, window_size_sec, load_diags_str):
         ## Make save dir
-        self.sdir = sdir
+        clf_combi = connect_str_list_with_hyphens(natsorted(set(load_diags_str)))
+        AUTHOR = os.environ['USER']
+        self.sdir = '/storage/data/EEG/EEG_DiagnosisFromRawSignals/for_0416_AMED/\
+                     {}/ML/{}/_{}_WS-{}sec_{}/'\
+            .format(AUTHOR, clf_combi, model_name,
+                    window_size_sec, gen_timestamp()).replace(' ', '')
+
         self.conf_mats_folds = []
         self.clf_reports_folds = []
-        self.pr_aucs_folds = []        
         self.roc_aucs_folds = []
+        
 
     def calc_metrics(self, true_class, pred_class, pred_proba, labels=None, i_fold=None):
         '''Calculates ACC, Confusion Matrix, Classification Report, and ROC-AUC score.'''
-        print('\n ---------------------------------------------------------------------- \n')
         self.labels = labels
         
         true_class, pred_class, pred_proba = \
             torch_to_arr(true_class), torch_to_arr(pred_class), torch_to_arr(pred_proba)
-        
-        ##############################
+
         ## ACC ##
-        ##############################        
         acc = (true_class.reshape(-1) == pred_class.reshape(-1)).mean()
         print('\nACC in fold#{} was {:.3f}\n'.format(i_fold, acc))
 
-        ##############################
         ## Confusion Matrix ##
-        ##############################        
         conf_mat = confusion_matrix(true_class, pred_class)
         conf_mat = pd.DataFrame(data=conf_mat, columns=labels).set_index(pd.Series(list(labels)))
         print('\nConfusion Matrix in fold#{}: \n{}\n'.format(i_fold, conf_mat))
 
-        ##############################
         ## Classification Report ##
-        ##############################        
         clf_report = \
             pd.DataFrame(
             classification_report(true_class, pred_class,
@@ -69,20 +74,7 @@ class Reporter():
         clf_report.index.name = None
         print('\nClassification Report in fold#{}: \n{}\n'.format(i_fold, clf_report))
 
-        ##############################        
-        ## PRE-REC-AUC score ##
-        ##############################
-        n_classes = len(labels)
-        if n_classes == 2:        
-            pre, rec, thres = precision_recall_curve(true_class, pred_proba[:, 1])
-            pr_auc = auc(rec, pre) # auc(pre, rec)
-        else:
-            pr_auc = None
-        print('\nPR_AUC in fold#{} was {:.3f}\n'.format(i_fold, pr_auc))
-        
-        ##############################        
         ## ROC-AUC score ##
-        ##############################        
         n_classes = len(labels)
         if n_classes == 2:
             multi_class = 'raise'
@@ -100,23 +92,17 @@ class Reporter():
         '''
         print('\nROC_AUC in fold#{} was {:.3f}\n'.format(i_fold, roc_auc))
 
-        ## To attributes
         self.conf_mats_folds.append(conf_mat)
         self.clf_reports_folds.append(clf_report)
-        self.pr_aucs_folds.append(pr_auc)
         self.roc_aucs_folds.append(roc_auc)
 
-        print('\n ---------------------------------------------------------------------- \n')
+        # return acc, conf_mat, clf_report, roc_auc
 
     def summarize(self,):
         ## Summarize each fold's metirics
         self.conf_mat_cv_sum = summarize_dfs(self.conf_mats_folds, method='sum')
-        
         self.clf_report_cv_mean, self.clf_report_cv_std = \
             summarize_dfs(self.clf_reports_folds, method='mean')
-
-        self.pr_auc_cv_mean, self.pr_auc_cv_std = take_mean_and_std(self.pr_aucs_folds)        
-
         self.roc_auc_cv_mean, self.roc_auc_cv_std = take_mean_and_std(self.roc_aucs_folds)
 
         self.num_folds = len(self.conf_mats_folds)
@@ -128,40 +114,35 @@ class Reporter():
               .format(self.num_folds, self.clf_report_cv_mean))
         print('\nClassification Report (Test; std; num. folds={})\n{}\n'\
               .format(self.num_folds, self.clf_report_cv_std))
-        print('\nPRE-REC AUC Score: {} +/- {} (mean +/- std.; n={})\n'\
-              .format(self.pr_auc_cv_mean, self.pr_auc_cv_std, self.num_folds))
         print('\nROC AUC Score: {} +/- {} (mean +/- std.; n={})\n'\
               .format(self.roc_auc_cv_mean, self.roc_auc_cv_std, self.num_folds))
 
     def save(self, meta_dict=None, labels=None):
         os.makedirs(self.sdir, exist_ok=True)        
         
+        # labels = list(dlpacker.diag_str_to_int_dict.keys())
+        # {'HV': 0, 'DLB': 1, 'iNPH': 2, 'AD': 3}
+
         if meta_dict is not None:
             spath_meta_yaml = self.sdir + 'meta.yaml'
             with open(spath_meta_yaml, 'w') as f:
                 yaml.dump(meta_dict, f)
             print('Saved to: {}'.format(spath_meta_yaml))
         
-        ##############################        
+        
         ## Confusion Matrix
-        ##############################
-        ##########        
         # Values
-        ##########        
         conf_mats_cat = [self.conf_mat_cv_sum] + self.conf_mats_folds
         indi_suffix_cat = ['{}-fold CV SUM'.format(self.num_folds)] \
                         + ['fold#{}'.format(i) for i in range(self.num_folds)]
         save_listed_dfs_as_csv(conf_mats_cat, self.sdir + 'conf_mats.csv',
                                indi_suffix=indi_suffix_cat, overwrite=True)
-        ##########
         # Figures; fixme; each fold
-        ##########
         spath = self.sdir + 'conf_mat_overall_sum.png'
         plot_cm(self.conf_mat_cv_sum, labels=labels, spath=spath)
 
-        ##############################
+
         ## Classification Matrix
-        ##############################        
         clf_reports_cat = [self.clf_report_cv_mean] \
                         + [self.clf_report_cv_std] \
                         + self.clf_reports_folds
@@ -171,9 +152,8 @@ class Reporter():
         save_listed_dfs_as_csv(clf_reports_cat, self.sdir + 'clf_reports.csv',
                                indi_suffix=indi_suffix_cat, overwrite=True)
 
-        ##############################
+
         ## ROC-AUC
-        ##############################        
         roc_aucs_cat = [self.roc_auc_cv_mean, self.roc_auc_cv_std] + self.roc_aucs_folds
         indi_suffix_cat = ['{}-fold CV mean'.format(self.num_folds)] \
                         + ['{}-fold CV std.'.format(self.num_folds)] \
@@ -198,33 +178,3 @@ def summarize_dfs(dfs_list, method='sum', n_round=3):
         df_std = arr.std(axis=0).round(n_round)
         return df_zero + df_mean, df_zero + df_std
 
-
-
-if __name__ == '__main__':
-    '''A minimal example for using the Reporter class.'''
-    import numpy as np
-    import scipy
-    
-    reporter = Reporter('/tmp/')
-    N_FOLDS = 5
-    bs = 64
-    labels = ['class_0', 'class_1']
-    n_classes = len(labels)
-
-    for i_fold in range(N_FOLDS):
-        ## Test Step in the k-fold CV loop
-        true_class_tes = np.random.randint(0, n_classes, size=bs)
-        pred_class_tes = np.random.randint(0, n_classes, size=bs)
-        pred_proba_tes = scipy.special.softmax(np.random.rand(bs, n_classes), axis=-1)
-        reporter.calc_metrics(true_class_tes,
-                              pred_class_tes,
-                              pred_proba_tes,
-                              labels=labels,
-                              i_fold=i_fold
-                              )
-
-    reporter.summarize()
-    meta_dict = dict(aaa=1, bbb=2) # if you have additional meta data to save
-    reporter.save(meta_dict)
-
-    ## EOF

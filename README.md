@@ -26,7 +26,7 @@ export PYTHONPATH=/mnt/nvme/Semisupervised_Ripple
 - [x] Fig.04
 - [x] Fig.05
 - [x] Fig.06
-- [ ] Fig.07
+- [ ] Fig.07; the logic to trimming has been changed.
 - [x] Fig.08
 - [ ] Fig.09
 - [ ] Fig.10

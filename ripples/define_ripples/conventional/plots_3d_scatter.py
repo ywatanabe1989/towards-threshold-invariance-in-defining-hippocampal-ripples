@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import argparse
-from sklearn.mixture import GaussianMixture
 import sys
 sys.path.append('.')
 import numpy as np
@@ -25,7 +24,7 @@ ug.configure_mpl(plt)
 
 
 ## Fixes random seed
-ug.fix_seed(seed=42)
+ug.fix_seeds(seed=42, np=np)
 
 
 ## FPATHs
@@ -35,19 +34,12 @@ LPATH_HIPPO_LFP_NPY_LIST_MOUSE = ug.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, ar
 
 ## Loads
 lfps, rips_df_list = us.load_lfps_rips_sec(LPATH_HIPPO_LFP_NPY_LIST_MOUSE,
-                                       rip_sec_ver='with_props'
+                                       rip_sec_ver='candi_with_props'
                                        )
 rips_df = pd.concat(rips_df_list)
 ftr1, ftr2, ftr3 = 'ln(duration_ms)', 'mean ln(MEP magni. / SD)', 'ln(ripple peak magni. / SD)'
 rips_df = rips_df[[ftr1, ftr2, ftr3]]
 
-
-
-# ## GMM Clustering
-# gmm = GaussianMixture(n_components=2, covariance_type='full')
-# gmm.fit(rips_df)
-# cls1_proba = gmm.predict_proba(rips_df)[:, 1]
-# are_cls1 = (cls1_proba >= .5) if gmm.means_[0,1] < gmm.means_[1,1] else (cls1_proba < .5)
 
 
 ## Prepares sparse Data Frame for visualization
@@ -61,6 +53,8 @@ indi_sparse = indi_sparse.astype(bool)
 
 ## Defines clusters
 cls0_sparse_rips_df = rips_df[indi_sparse]
+# print(cls0_sparse_rips_df.iloc[:10])
+
 
 
 ## Plots

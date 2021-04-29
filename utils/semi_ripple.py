@@ -3,18 +3,16 @@ import numpy as np
 import utils.general as ug
 
 
-def load_lfps_rips_sec(fpaths_lfp, rip_sec_ver='orig'):
+def load_lfps_rips_sec(fpaths_lfp, rip_sec_ver='candi_orig'):
     '''
     '''
-    rip_sec_versions_list = ['orig', 'with_props', 'with_GMM_preds']
+    rip_sec_versions_list = ['candi_orig', 'candi_with_props', 'GMM_labeled', 'CNN_labeled']
     assert rip_sec_ver in rip_sec_versions_list
-    # assert (rip_sec_ver == 'orig') \
-    #     or (rip_sec_ver == 'with_props') \
-    #     or (rip_sec_ver == 'with_GMM_preds')
     
     lfps, rips_sec = [], []
     for f in fpaths_lfp:
-        f_rip = f.replace('LFP_MEP_1kHz_npy/orig', 'ripple_candi_1kHz_pkl/' + rip_sec_ver)\
+        f_rip = f.replace('LFP_MEP_1kHz_npy', 'ripples_1kHz_pkl')\
+                 .replace('/orig/', '/{}/'.format(rip_sec_ver))\
                  .replace('.npy', '.pkl')
         lfps.append(np.load(f).squeeze())
         rips_sec.append(ug.load_pkl(f_rip))

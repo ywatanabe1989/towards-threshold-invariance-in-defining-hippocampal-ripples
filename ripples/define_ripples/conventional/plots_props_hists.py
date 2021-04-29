@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 import utils.general as ug
-import utils.path_translator as up
+import utils.path_converters as upcvt
 
 
 ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -22,7 +22,7 @@ hipp_lfp_paths_npy_mouse_i = ug.search_str_list(hipp_lfp_paths_npy, args.num_mou
 
 
 ## Loads
-rip_sec_df = [ug.load_pkl(up.to_ripple_candi_with_props_lpath(f))
+rip_sec_df = [ug.load_pkl(upcvt.LFP_to_ripples(f, rip_sec_ver='candi_orig'))
               for f in hipp_lfp_paths_npy_mouse_i]
 rip_sec_df = pd.concat(rip_sec_df)
 
