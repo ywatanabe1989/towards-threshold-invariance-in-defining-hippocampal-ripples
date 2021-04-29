@@ -320,20 +320,25 @@ def save(obj, sfname_or_spath, makedirs=True):
         
     ## Saves
     # csv
-    if '.csv' in spath:
+    
+    if spath.endswith('.csv'): # '.csv' in spath:
         obj.to_csv(spath)
     # numpy
-    if '.npy' in spath:
+    if spath.endswith('.npy'): # '.npy' in spath:    
         np.save(obj, spath)
     # pkl
-    if '.pkl' in spath:    
+    if spath.endswith('.pkl'): # '.pkl' in spath:        
         with open(spath, 'wb') as s: # 'w'
             pickle.dump(obj, s)
-
     # png
-    if '.png' in spath: # here, obj is matplotlib.plt
-        obj.savefig(spath)
+    if spath.endswith('.png'): # '.png' in spath:
+        obj.savefig(spath) # obj is matplotlib.pyplot object
         obj.close()
+
+    if spath.endswith('.yaml'):
+        spath_meta_yaml = self.sdir + 'meta.yaml'
+        with open(spath_meta_yaml, 'w') as f:
+            yaml.dump(meta_dict, f)
 
     print('\nSaved to: {s}\n'.format(s=spath))
 
@@ -358,21 +363,32 @@ def mk_spath(sfname, makedirs=False):
 
 
 def load(lpath):
-    import pickle
-    import numpy as np
     import pandas as pd
+    import numpy as np    
+    import pickle
+    import yaml
     
     # csv
-    if '.csv' in lpath:
+    if spath.endswith('.csv'):#    if '.csv' in lpath:
         obj = pd.read_csv(lpath)
     # numpy
-    if '.npy' in lpath:
+    if spath.endswith('.npy'):#    if '.npy' in lpath:
         obj = np.load(lpath)
     # pkl
-    if '.pkl' in lpath:        
+    if spath.endswith('.pkl'):#    if '.pkl' in lpath:        
         with open(lpath, 'rb') as l: # 'r'
             obj = pickle.load(l)
+    # png
+    if spath.endswith('.png'): # '.png' in spath:
+        pass
 
+    # yaml
+    if spath.endswith('.yaml'):
+        obj = {}
+        with open(yaml_path) as f:
+            _obj = yaml.safe_load(f)
+            obj.update(_obj)
+    
     return obj
 
 
