@@ -139,37 +139,28 @@ def load_yaml_as_dict(yaml_path = './config.yaml'):
     return config
 
 
-def fix_seed(seed=42):
-    # https://github.com/lucidrains/vit-pytorch/blob/main/examples/cats_and_dogs.ipynb
-    import os
-    os.environ['PYTHONHASHSEED'] = str(seed)
+def fix_seeds(os=None, random=None, np=None, torch=None, tf=None, seed=42):
+   # https://github.com/lucidrains/vit-pytorch/blob/main/examples/cats_and_dogs.ipynb
+   if os is not None:
+       import os
+       os.environ['PYTHONHASHSEED'] = str(seed)
 
-    
-    try:
-        random.seed(seed)
-    except:
-        pass
+   if random is not None:
+       random.seed(seed)
 
-    
-    try:
-        np.random.seed(seed)
-    except:
-        pass
+   if np is not None:
+       np.random.seed(seed)
 
-    
-    try:
-        torch.manual_seed(seed)
-        torch.cuda.manual_seed(seed)        
-        torch.cuda.manual_seed_all(seed)
-        torch.backends.cudnn.deterministic = True
-    except:
-        pass
+   if torch is not None:
+       torch.manual_seed(seed)
+       torch.cuda.manual_seed(seed)        
+       torch.cuda.manual_seed_all(seed)
+       torch.backends.cudnn.deterministic = True
 
-    
-    try:
-        tf.random.set_seed(seed)
-    except:
-        pass
+   if tf is not None:
+       tf.random.set_seed(seed)
+
+   print('\nRandom seeds has been fixed as {}\n'.format(seed))
 
 
 # def torch_to_arr(x):
