@@ -30,6 +30,6 @@ max_epochs:
 ## Pytorch dataloader
 dataloader:
   batch_size:
-    2048
+    1024
   num_workers:
     8
