@@ -3,6 +3,7 @@
 import numpy as np
 import re
 import time
+import torch
 import yaml
 import csv
 import pandas as pd
@@ -149,28 +150,29 @@ def load_yaml_as_dict(yaml_path = './config.yaml'):
     return config
 
 
-def fix_seeds(os=None, random=None, np=None, torch=None, tf=None, seed=42):
-   # https://github.com/lucidrains/vit-pytorch/blob/main/examples/cats_and_dogs.ipynb
-   if os is not None:
-       import os
-       os.environ['PYTHONHASHSEED'] = str(seed)
+def fix_seeds(os=None, random=None, np=None, torch=None, tf=None, seed=42, show=True):
+    # https://github.com/lucidrains/vit-pytorch/blob/main/examples/cats_and_dogs.ipynb
+    if os is not None:
+        import os
+        os.environ['PYTHONHASHSEED'] = str(seed)
 
-   if random is not None:
-       random.seed(seed)
+    if random is not None:
+        random.seed(seed)
 
-   if np is not None:
-       np.random.seed(seed)
+    if np is not None:
+        np.random.seed(seed)
 
-   if torch is not None:
-       torch.manual_seed(seed)
-       torch.cuda.manual_seed(seed)        
-       torch.cuda.manual_seed_all(seed)
-       torch.backends.cudnn.deterministic = True
+    if torch is not None:
+        torch.manual_seed(seed)
+        torch.cuda.manual_seed(seed)        
+        torch.cuda.manual_seed_all(seed)
+        torch.backends.cudnn.deterministic = True
 
-   if tf is not None:
-       tf.random.set_seed(seed)
+    if tf is not None:
+        tf.random.set_seed(seed)
 
-   print('\nRandom seeds has been fixed as {}\n'.format(seed))
+    if print:
+        print('\nRandom seeds has been fixed as {}\n'.format(seed))
 
 
 def torch_to_arr(x):
@@ -178,7 +180,7 @@ def torch_to_arr(x):
     if is_arr: # when x is np.array
         return x
     if torch.is_tensor(x): # when x is torch.tensor
-        return x.detach().numpy().cpu()
+        return x.detach().cpu().numpy()
     
 def save_listed_scalars_as_csv(listed_scalars, spath_csv, column_name='_',
                                indi_suffix=None, overwrite=False):
@@ -336,7 +338,7 @@ def save(obj, sfname_or_spath, makedirs=True):
         obj.to_csv(spath)
     # numpy
     if spath.endswith('.npy'): # '.npy' in spath:    
-        np.save(obj, spath)
+        np.save(spath, obj)
     # pkl
     if spath.endswith('.pkl'): # '.pkl' in spath:        
         with open(spath, 'wb') as s: # 'w'
@@ -407,6 +409,7 @@ def configure_mpl(plt):
     plt.rcParams['font.size'] = 20
     plt.rcParams["figure.figsize"] = (16*1.2, 9*1.2)
 
+    
 def makedirs_from_spath(spath):
     import os
     sdir = os.path.dirname(spath)

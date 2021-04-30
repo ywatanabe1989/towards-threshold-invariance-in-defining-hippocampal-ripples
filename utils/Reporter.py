@@ -12,12 +12,15 @@ import pandas as pd
 import yaml
 
 
-from utils.general import (mv_to_tmp,
-                           torch_to_arr,
-                           save_listed_scalars_as_csv,
-                           save_listed_dfs_as_csv,
-                           )
-from utils.ml import plot_cm
+# from utils.general import (mv_to_tmp,
+#                            torch_to_arr,
+#                            save_listed_scalars_as_csv,
+#                            save_listed_dfs_as_csv,
+#                            TimeStamper,
+#                            )
+import utils.general as ug
+# from utils.ml import plot_cm
+import utils.ml as um
 
 
 class Reporter():
@@ -25,11 +28,14 @@ class Reporter():
     '''
     def __init__(self, sdir):
         ## Make save dir
+        self.ts = ug.TimeStamper()
         self.sdir = sdir
         self.conf_mats_folds = []
         self.clf_reports_folds = []
         self.pr_aucs_folds = []        
         self.roc_aucs_folds = []
+
+        self.ts('Reporter has been initialized.')
 
     def calc_metrics(self, true_class, pred_class, pred_proba, labels=None, i_fold=None):
         '''Calculates ACC, Confusion Matrix, Classification Report, and ROC-AUC score.'''
@@ -37,7 +43,7 @@ class Reporter():
         self.labels = labels
         
         true_class, pred_class, pred_proba = \
-            torch_to_arr(true_class), torch_to_arr(pred_class), torch_to_arr(pred_proba)
+            ug.torch_to_arr(true_class), ug.torch_to_arr(pred_class), ug.torch_to_arr(pred_proba)
         
         ##############################
         ## ACC ##
@@ -106,6 +112,8 @@ class Reporter():
         self.pr_aucs_folds.append(pr_auc)
         self.roc_aucs_folds.append(roc_auc)
 
+        self.ts('\ni_fold={} ends.\n'.format(i_fold))
+
         print('\n ---------------------------------------------------------------------- \n')
 
     def summarize(self,):
@@ -133,8 +141,12 @@ class Reporter():
         print('\nROC AUC Score: {} +/- {} (mean +/- std.; n={})\n'\
               .format(self.roc_auc_cv_mean, self.roc_auc_cv_std, self.num_folds))
 
-    def save(self, meta_dict=None, labels=None):
-        os.makedirs(self.sdir, exist_ok=True)        
+    def save(self, others_dict=None, meta_dict=None, labels=None):
+        os.makedirs(self.sdir, exist_ok=True)
+
+        for k,v in others_dict.items():
+            spath = self.sdir + k
+            ug.save(v, spath)
         
         if meta_dict is not None:
             spath_meta_yaml = self.sdir + 'meta.yaml'
@@ -151,13 +163,13 @@ class Reporter():
         conf_mats_cat = [self.conf_mat_cv_sum] + self.conf_mats_folds
         indi_suffix_cat = ['{}-fold CV SUM'.format(self.num_folds)] \
                         + ['fold#{}'.format(i) for i in range(self.num_folds)]
-        save_listed_dfs_as_csv(conf_mats_cat, self.sdir + 'conf_mats.csv',
+        ug.save_listed_dfs_as_csv(conf_mats_cat, self.sdir + 'conf_mats.csv',
                                indi_suffix=indi_suffix_cat, overwrite=True)
         ##########
         # Figures; fixme; each fold
         ##########
         spath = self.sdir + 'conf_mat_overall_sum.png'
-        plot_cm(self.conf_mat_cv_sum, labels=labels, spath=spath)
+        um.plot_cm(self.conf_mat_cv_sum, labels=labels, spath=spath)
 
         ##############################
         ## Classification Matrix
@@ -168,7 +180,7 @@ class Reporter():
         indi_suffix_cat = ['{}-fold CV mean'.format(self.num_folds)] \
                         + ['{}-fold CV std.'.format(self.num_folds)] \
                         + ['fold#{}'.format(i) for i in range(self.num_folds)]
-        save_listed_dfs_as_csv(clf_reports_cat, self.sdir + 'clf_reports.csv',
+        ug.save_listed_dfs_as_csv(clf_reports_cat, self.sdir + 'clf_reports.csv',
                                indi_suffix=indi_suffix_cat, overwrite=True)
 
         ##############################
@@ -178,7 +190,7 @@ class Reporter():
         indi_suffix_cat = ['{}-fold CV mean'.format(self.num_folds)] \
                         + ['{}-fold CV std.'.format(self.num_folds)] \
                         + ['fold#{}'.format(i) for i in range(self.num_folds)]
-        save_listed_scalars_as_csv(roc_aucs_cat, self.sdir + 'roc-auc.csv', column_name='ROC-AUC',
+        ug.save_listed_scalars_as_csv(roc_aucs_cat, self.sdir + 'roc-auc.csv', column_name='ROC-AUC',
                                    indi_suffix=indi_suffix_cat, overwrite=True)
 
 

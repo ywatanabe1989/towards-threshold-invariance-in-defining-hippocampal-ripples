@@ -1,18 +1,35 @@
-activation_str:
-  'lrelu'
-n_blks:
-  3
-global_pooling_str:
-  'average'
-n_fc1:
-  256
-d_ratio1:
-  0.5
-n_fc2:
-  64
-d_ratio2:
-  0.5
-SAMP_RATE_ORIG:
-  1000
-seq_len:
-  400
+## Model
+ResNet1D:
+  device:
+    'cuda'
+  SEQ_LEN:
+    400
+  N_CHS:
+    1
+  activation_str:
+    'lrelu'
+  n_blks:
+    3
+  n_first_filters_res:
+    256
+  global_pooling_str:
+    'average'
+  n_fc1:
+    256
+  d_ratio1:
+    0.5
+  LABELS:
+    ['nonRipple', 'Ripple']
+
+## Training
+lr:
+  0.001
+max_epochs:
+  2
+
+## Pytorch dataloader
+dataloader:
+  batch_size:
+    2048
+  num_workers:
+    8

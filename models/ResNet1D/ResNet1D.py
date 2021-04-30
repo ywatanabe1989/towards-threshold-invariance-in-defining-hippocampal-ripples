@@ -17,34 +17,29 @@ class ResNet1D(nn.Module):
 
         self.config = config
         
-        self.input_bn = nn.BatchNorm1d(config['seq_len'])
+        self.input_bn = nn.BatchNorm1d(config['SEQ_LEN'])
         
         ## Residual Convolutional Layers
-        n_filters = 64
-        
+        n_first_filters_res = config['n_first_filters_res']
         self.res_conv_blk_layers = nn.Sequential(
-              BasicBlock(config['n_chs'], n_filters,
+              BasicBlock(config['N_CHS'], n_first_filters_res,
                          activation_str=config['activation_str']),
-              BasicBlock(n_filters, n_filters*2,
+              BasicBlock(n_first_filters_res, n_first_filters_res*2,
                          activation_str=config['activation_str']),
-              BasicBlock(n_filters*2, n_filters*2,
+              BasicBlock(n_first_filters_res*2, n_first_filters_res*2,
                          activation_str=config['activation_str']),
-             ) # SecondLevel
-
+             )
 
         ## Global Pooling Layer
         self.gap_layer = nn.AdaptiveAvgPool1d(1)
 
         ## FC layer
-        n_fc_in = n_filters*2
+        n_fc_in = n_first_filters_res*2
         self.fc_layer = nn.Sequential(
             nn.Linear(n_fc_in, self.config['n_fc1']),
             init_act_layer(self.config['activation_str']),
             nn.Dropout(self.config['d_ratio1']),
-            nn.Linear(self.config['n_fc1'], self.config['n_fc2']),
-            init_act_layer(self.config['activation_str']),
-            nn.Dropout(self.config['d_ratio2']),            
-            nn.Linear(self.config['n_fc2'], len(self.config['labels'])),
+            nn.Linear(self.config['n_fc1'], len(self.config['LABELS'])),            
         )
         
     # def znorm(self, x):
@@ -56,9 +51,9 @@ class ResNet1D(nn.Module):
     #     return x.to(dtype)
         
     def forward(self, x):
-        x = x.squeeze() # [bs, seq_len]
+        x = x.squeeze() # [BS, SEQ_LEN]
         x = self.input_bn(x)
-        x = x.unsqueeze(1) # [bs, 1, seq_len] # 1 is n_chs
+        x = x.unsqueeze(1) # [BS, 1, SEQ_LEN] # 1 is N_CHS
         x = self.res_conv_blk_layers(x)
         x = self.gap_layer(x).squeeze(-1) # [16, 304]
         y = self.fc_layer(x)
@@ -66,18 +61,17 @@ class ResNet1D(nn.Module):
 
 
 if __name__ == '__main__':
-    from utils.general import load_yaml_as_dict
-    
-    bs, n_chs, seq_len = 16, 1, 400
-    inp = torch.rand(bs, n_chs, seq_len)
+    import utils.general as ug
 
-    model_config = load_yaml_as_dict('./models/ResNet1D/ResNet1D.yaml')
-    model_config['labels'] = ['nonRipple', 'Ripple']
-    model_config['n_chs'] = 1
-    model_config['seq_len'] = seq_len
-    
+    ## Data
+    BS, N_CHS, SEQ_LEN = 16, 1, 400
+    inp = torch.rand(BS, N_CHS, SEQ_LEN)
+
+    ## Model
+    model_config = ug.load('./models/ResNet1D/ResNet1D.yaml')
     model = ResNet1D(model_config)
 
+    ## Forward
     y = model(inp)
 
     # import matplotlib.pyplot as plt

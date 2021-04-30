@@ -3,6 +3,9 @@
 import numpy as np
 import torch
 import torch.nn as nn
+from torch.cuda.amp import (autocast,
+                            GradScaler)
+
 from sklearn.base import BaseEstimator
 
 import sys; sys.path.append('.')
@@ -17,6 +20,7 @@ import utils.general as ug
 ## Fix seeds
 ug.fix_seeds(os=None, random=None, np=np, torch=torch, tf=None, seed=42)
 
+
 class CleanLabelResNet1D(BaseEstimator):
     '''Wraps ResNet1D written in PyTorch for okada's ripple dataset within an sklearn template
     by defining the following methods: self.fit(), self.predict(), and self.predict_proba().
@@ -24,20 +28,26 @@ class CleanLabelResNet1D(BaseEstimator):
     passed to functions like cross_val_predict. The cleanlab library requires all models adhere to
     this basic sklearn template to use their providing functions easily.
     '''
-    def __init__(self, resnet1d_conf, dl_conf):
-        self.resnet1d_conf = resnet1d_conf
-        self.dl_conf = dl_conf
-        
-        self.resnet1d = ResNet1D(self.resnet1d_conf).to(self.resnet1d_conf['device'])
-        n_classes = len(self.resnet1d_conf['labels'])
+    def __init__(self, cl_conf):
+        self.cl_conf = cl_conf
+        self.resnet1d_conf = cl_conf['ResNet1D'] # resnet1d_conf
+        self.dl_conf = cl_conf['dataloader'] # dl_conf
+
+        ## Model
+        self.resnet1d = ResNet1D(self.resnet1d_conf) # .to(self.resnet1d_conf['device'])
+        self.resnet1d = nn.DataParallel(self.resnet1d)
+        self.resnet1d = self.resnet1d.to(self.resnet1d_conf['device'])
+
+        ## Training
         self.softmax = nn.Softmax(dim=-1)
         self.xentropy_criterion = nn.CrossEntropyLoss(reduction='none')
-        self.loss_balancer = LossBalancer(n_classes, dl_conf['batch_size'])
+        self.loss_balancer = LossBalancer(len(self.resnet1d_conf['LABELS']),
+                                          self.dl_conf['batch_size'],
+                                          )
         self.loss_tra = []
-        self.log_interval = 50
-        
-        
-    def fit(self, X, T, sample_weight=None, max_epochs=30):
+        self.log_interval_batch = 50
+
+    def fit(self, X, T, sample_weight=None):
         '''This method adheres to sklearn's "fit(X, y)" format for compatibility with scikit-learn.
         All inputs should be numpy arrays (not PyTorch Tensors).
         train_idx is not X, but instead a list of indices for X (and y if train_labels is None).
@@ -51,26 +61,33 @@ class CleanLabelResNet1D(BaseEstimator):
                                              drop_last=True,
                                   )    
         
-        optimizer = Ranger(self.resnet1d.parameters(), lr=self.resnet1d_conf['lr'])
+        optimizer = Ranger(self.resnet1d.parameters(), lr=self.cl_conf['lr'])
+
+        scaler = GradScaler()
 
         # Train for self.epochs epochs
         self.resnet1d.train()        
-        for i_epoch in range(1, max_epochs + 1):
+        for i_epoch in range(1, self.cl_conf['max_epochs'] + 1):
             for i_batch, batch in enumerate(dl_tra):
                 Xb, Tb = batch
-                Xb, Tb = Xb.to(self.resnet1d_conf['device']), Tb.to(self.resnet1d_conf['device'])
+
+                Xb = Xb.to(self.resnet1d_conf['device'])
+                Tb = Tb.to(self.resnet1d_conf['device'])
                     
-                # Xb, Tb = Variable(Xb), Variable(Tb)
                 optimizer.zero_grad()
-                y = self.resnet1d(Xb)
-                loss = self.xentropy_criterion(y, Tb.long())
-                loss = self.loss_balancer(loss, Tb, i_epoch, train=True).mean()
-                self.loss_tra.append(loss.item())
-                loss.backward()
-                optimizer.step()
                 
-                # if self.log_interval is not None and i_batch % self.log_interval == 0:
-                if i_batch % self.log_interval == 0:
+                with autocast():
+                    y = self.resnet1d(Xb)
+                    loss = self.xentropy_criterion(y, Tb.long())
+                    loss = self.loss_balancer(loss, Tb, i_epoch, train=True).mean()
+                    self.loss_tra.append(loss.item())
+                    
+                
+                scaler.scale(loss).backward() # loss.backward()
+                scaler.step(optimizer) # optimizer.step()
+                scaler.update()
+                
+                if i_batch % self.log_interval_batch == 0:
                     print('Train Epoch: {} [{}/{} ({:.1f}%)]\tLoss: {:.6f}'\
                           .format(i_epoch,
                                   (i_batch+1) * len(Xb),
@@ -83,11 +100,12 @@ class CleanLabelResNet1D(BaseEstimator):
     
     def predict(self, X):
         pass
+    
     # def predict(self, idx = None, loader = None):
     #     # get the index of the max probability
     #     probs = self.predict_proba(idx, loader)
     #     return probs.argmax(axis=1)
-    
+
     def predict_proba(self, X):
         ## Create Dataloader
         ds_tes = torch.utils.data.TensorDataset(torch.FloatTensor(X))
@@ -104,13 +122,14 @@ class CleanLabelResNet1D(BaseEstimator):
         outs = []
         for i_batch, batch in enumerate(dl_tes):
             Xb = batch[0]
-            Xb = Xb.to(self.resnet1d_conf['device'])
+            Xb = Xb.to(self.resnet1d_conf['device'])                
 
-            y = self.resnet1d(Xb)
-            outs.append(y.detach().cpu())
+            with autocast():
+                y = self.resnet1d(Xb)
+                outs.append(y.detach().cpu())
 
         outs = torch.cat(outs, dim=0)
-        pred = self.softmax(outs)
+        pred = self.softmax(outs.float())
 
         return pred
     
@@ -127,7 +146,7 @@ if __name__ == '__main__':
     from sklearn.model_selection import train_test_split, StratifiedKFold
     from sklearn.datasets import load_digits
 
-    from utils.general import load_yaml_as_dict
+    import utils.general as ug
     from utils.Reporter import Reporter
 
 
@@ -137,36 +156,56 @@ if __name__ == '__main__':
     
     ## Data
     mnist = load_digits(n_class=2)
-    X_all, T_all = mnist.data, mnist.target
+    X_all, T_all = mnist.data, mnist.target # float64
     labels= ['0', '1']
-    n_classes = len(np.unique(T_all))
     bs, n_chs, seq_len = 16, 1, X_all.shape[-1]
 
     ################################################################################    
     ## Model
     ################################################################################    
-    model_conf = load_yaml_as_dict('./models/ResNet1D/CleanLabelResNet1D.yaml')
-    model_conf['labels'] = labels
-    model_conf['n_chs'] = 1
-    model_conf['seq_len'] = seq_len
-    model_conf['lr'] = 1e-3
-    model_conf['device'] = 'cuda'
+    cl_conf = ug.load('./models/ResNet1D/CleanLabelResNet1D.yaml')
+    cl_conf['ResNet1D']['SEQ_LEN'] = X_all.shape[-1]
+    cl_conf['ResNet1D']['LABELS'] = labels
+    cl_conf['max_epochs'] = 30
+    cl_conf['dataloader']['batch_size'] = 32
+    
+    model = CleanLabelResNet1D(cl_conf)
 
-    dl_conf = {'batch_size': bs,
-               'num_workers': 10,
-               }
-
-    ################################################################################
-    ## Confident Learning using cleanlab
     ################################################################################    
-    model = CleanLabelResNet1D(model_conf, dl_conf)
-    # Compute the confident joint and the n x m predicted probabilities matrix (psx),
-    # for n examples, m classes. Stop here if all you need is the confident joint.
-    confident_joint, psx = estimate_confident_joint_and_cv_pred_proba(
-        X=X_all,
-        s=T_all,
-        clf=model, # default, you can use any classifier
-    )
+    ## Main; just trains the model and predicts test data as usual
+    ################################################################################
+    ## https://github.com/cgnorthcutt/cleanlab/blob/master/cleanlab/latent_estimation.py
+    ## estimate_confident_joint_and_cv_pred_proba()
+    
+    ## Paramters
+    N_FOLDS = 5
+    reporter = Reporter(sdir='/tmp/')
+    skf = StratifiedKFold(n_splits=N_FOLDS)
+    N_CLASSES = len(np.unique(T_all))
+    psx = np.zeros((len(T_all), N_CLASSES))
+    for i_fold, (indi_tra, indi_tes) in enumerate(skf.split(X_all, T_all)):
+        X_tra, T_tra = X_all[indi_tra], T_all[indi_tra]
+        X_tes, T_tes = X_all[indi_tes], T_all[indi_tes]
+
+        ## Instantiates a Model
+        model = CleanLabelResNet1D(cl_conf)
+
+        ## Training
+        model.fit(X_tra, T_tra)
+        
+        ## Prediction
+        pred_proba_tes_fold = model.predict_proba(X_tes)
+        pred_class_tes_fold = pred_proba_tes_fold.argmax(dim=-1)
+        T_tes_fold = torch.tensor(T_tes)
+        
+        reporter.calc_metrics(T_tes_fold,
+                              pred_class_tes_fold,
+                              pred_proba_tes_fold,
+                              labels=cl_conf['ResNet1D']['LABELS'],
+                              i_fold=i_fold,
+                              )
+        ## to the buffer
+        psx[indi_tes] = pred_proba_tes_fold
 
     are_errors = get_noise_indices(T_all,
                                    psx,
@@ -177,45 +216,41 @@ if __name__ == '__main__':
 
     print('\nLabel Errors Indice:\n{}\n'.format(are_errors))
 
-    ## imshow
-    indi = np.where(np.array(are_errors) == True)[0]
-    for ii in indi:
-        Xi, Ti = X_all[ii], T_all[ii]
-        plt.imshow(Xi.reshape(8,8))
-        plt.title(Ti)
-        plt.show()
-    
+    reporter.summarize()
+    others_dict = {'are_errors.npy': are_errors}
+    reporter.save(others_dict=others_dict)
 
     '''
-    ################################################################################    
-    ## Main; just trains the model and predicts test data as usual
     ################################################################################
-    ## Paramters
-    N_FOLDS = 5
+    ## Confident Learning using cleanlab
+    ################################################################################    
+    # Compute the confident joint and the n x m predicted probabilities matrix (psx),
+    # for n examples, m classes. Stop here if all you need is the confident joint.
+    confident_joint, psx = estimate_confident_joint_and_cv_pred_proba(
+        X=X_all,
+        s=T_all,
+        clf=model, # default, you can use any classifier
+    )
+
+
+    are_errors = get_noise_indices(T_all,
+                                   psx,
+                                   inverse_noise_matrix=None,
+                                   prune_method='prune_by_noise_rate',
+                                   n_jobs=20,
+                                   )
+
+    print('\nLabel Errors Indice:\n{}\n'.format(are_errors))
+
+    # ## imshow
+    # indi = np.where(np.array(are_errors) == True)[0]
+    # for ii in indi:
+    #     Xi, Ti = X_all[ii], T_all[ii]
+    #     plt.imshow(Xi.reshape(8,8))
+    #     plt.title(Ti)
+    #     plt.show()
+    '''    
     
-    reporter = Reporter(sdir='/tmp/')
-    skf = StratifiedKFold(n_splits=N_FOLDS)
-    # for i_fold in range(N_FOLDS):
-    #     X_tra, X_tes, T_tra, T_tes = train_test_split(X_all, T_all) #, random_state=42)
-    for i_fold, (indi_tra, indi_tes) in enumerate(skf.split(X_all, T_all)):
-        X_tra, T_tra = X_all[indi_tra], T_all[indi_tra]
-        X_tes, T_tes = X_all[indi_tes], T_all[indi_tes]
-        
-        model = CleanLabelResNet1D(model_conf, dl_conf)
-
-        ## Training
-        model.fit(X_tra, T_tra, max_epochs=5)
-
-        ## Prediction
-        pred_class_tes = model.predict_proba(X_tes).argmax(dim=-1)
-        T_tes = torch.tensor(T_tes)
-        acc_tes = (pred_class_tes == T_tes).float().mean()
-        print(acc_tes)
-    '''
-        
-
-    
-
     ## EOF
 
         
