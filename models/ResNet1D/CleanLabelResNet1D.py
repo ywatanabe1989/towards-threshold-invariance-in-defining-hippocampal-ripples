@@ -7,6 +7,7 @@ from torch.cuda.amp import (autocast,
                             GradScaler)
 
 from sklearn.base import BaseEstimator
+from sklearn.utils import shuffle
 
 import sys; sys.path.append('.')
 from models.ResNet1D.ResNet1D import ResNet1D
@@ -52,6 +53,9 @@ class CleanLabelResNet1D(BaseEstimator):
         All inputs should be numpy arrays (not PyTorch Tensors).
         train_idx is not X, but instead a list of indices for X (and y if train_labels is None).
         '''
+
+        X, T = shuffle(X, T)
+        
         ds_tra = torch.utils.data.TensorDataset(torch.FloatTensor(X),
                                                 torch.LongTensor(T))
         
@@ -213,12 +217,18 @@ if __name__ == '__main__':
                                    prune_method='prune_by_noise_rate',
                                    n_jobs=20,
                                    )
+    are_ones = psx[:, 1]
 
     print('\nLabel Errors Indice:\n{}\n'.format(are_errors))
 
     reporter.summarize()
-    others_dict = {'are_errors.npy': are_errors}
+    others_dict = {'are_errors.npy': are_errors,
+                   'are_ones.npy': are_ones,
+                   }
     reporter.save(others_dict=others_dict)
+
+    
+    
 
     '''
     ################################################################################

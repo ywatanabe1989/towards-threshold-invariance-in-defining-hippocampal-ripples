@@ -25,11 +25,11 @@ ResNet1D:
 lr:
   0.001
 max_epochs:
-  2
+  1
 
 ## Pytorch dataloader
 dataloader:
   batch_size:
     1024
   num_workers:
-    8
+    10

@@ -2,9 +2,9 @@
 import argparse
 from cleanlab.latent_estimation import estimate_confident_joint_and_cv_pred_proba
 from cleanlab.pruning import get_noise_indices
-from sklearn.model_selection import StratifiedKFold # train_test_split, 
-import sys
-sys.path.append('.')
+from sklearn.model_selection import StratifiedKFold # train_test_split,
+import sys; sys.path.append('.')
+import torch
 import numpy as np
 import pandas as pd
 
@@ -115,7 +115,6 @@ model = CleanLabelResNet1D(cl_conf)
 ## estimate_confident_joint_and_cv_pred_proba()
 
 ## Calculates predicted probabilities psx.
-# fixme; data/okada/01/day1/split/ripples_1kHz_pkl/CNN_labeled/D01+/cleanlab_results/
 reporter = Reporter(sdir=SDIR_CLEANLAB) 
 psx = np.zeros((len(T_all), N_CLASSES))
 for i_fold, (indi_tra, indi_tes) in enumerate(skf.split(X_all, T_all)):
@@ -142,11 +141,6 @@ for i_fold, (indi_tra, indi_tes) in enumerate(skf.split(X_all, T_all)):
     ## to the buffer
     psx[indi_tes] = pred_proba_tes_fold
 
-## Saves the k-fold CV training
-reporter.summarize()
-others_dict = {'are_errors.npy': are_errors}
-reporter.save(others_dict=others_dict)
-
 ## Calculates latent error indice
 are_errors = get_noise_indices(T_all,
                                psx,
@@ -157,12 +151,25 @@ are_errors = get_noise_indices(T_all,
 # print('\nLabel Errors Indice:\n{}\n'.format(are_errors))
 
 
+
+
 ## Cleans labels
 cleaned_labels = T_all.copy()
 error_rate = are_errors.mean()
 print('\nLabel Errors Rate:\n{:.3f}\n'.format(error_rate))
 cleaned_labels[are_errors] = 1 - cleaned_labels[are_errors] # cleaning
-assert np.all(cleaned_labels == T_all)
+assert ~np.all(cleaned_labels == T_all)
+
+pred_props_ripples = psx[:, 1]
+
+## Saves the k-fold CV training
+reporter.summarize()
+others_dict = {'are_errors.npy': are_errors,
+               'cleaned_labels.npy': cleaned_labels,
+               'pred_probs_ripples.npy': pred_probs_ripples,
+               }
+reporter.save(others_dict=others_dict)
+
 
 
 ################################################################################
@@ -181,6 +188,7 @@ for i_tt in range(len(rips_df_list)):
     end += len_rips[i_tt]
     rips_df_list[i_tt] = rips_df_list[i_tt][['start_sec', 'end_sec']]
     rips_df_list[i_tt]['are_ripple_CNN'] = cleaned_labels[start:end]
+    rips_df_list[i_tt]['pred_probs_ripple_CNN'] = pred_probs_ripples[start:end]    
     start = end
 
 ## Saves
