@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 
-'''Finding sharp-wave ripple events (150-250 Hz) from local field
-potentials.
-'''
 from os.path import abspath, dirname, join
 
 import numpy as np
@@ -15,19 +12,50 @@ from scipy.stats import zscore
 from numba import jit
 
 
-def _bandpass_filter(sampling_frequency, lo_hz=100, hi_hz=250, order=100):
+def filter_band(data, sampling_frequency=1000, lo_hz=150, hi_hz=250):
+    '''Returns a bandpass filtered signal between [lo_hz, hi_hz]
+
+    Parameters
+    ----------
+    data : array_like, shape (n_time,)
+
+    Returns
+    -------
+    filtered_data : array_like, shape (n_time,)
+
+    '''
+    filter_numerator, filter_denominator = _mk_bandpass_filter(
+        sampling_frequency, lo_hz=lo_hz, hi_hz=hi_hz)
+    is_nan = np.isnan(data)
+    filtered_data = np.full_like(data, np.nan)
+    filtered_data[~is_nan] = filtfilt(
+        filter_numerator, filter_denominator, data[~is_nan], axis=0)
+    return filtered_data
+
+
+def _mk_bandpass_filter(samp_rate, lo_hz=150, hi_hz=250, order=100):
+    # Calculate the filter-coefficients for the finite impulse response (FIR) filter
+    # whose transfer function minimizes the maximum error between the desired gain and
+    # the realized gain in the specified frequency bands using the Remez exchange algorithm.
+    
     num_taps = order + 1
-    nyquist = 0.5 * sampling_frequency
+    nyq = 0.5 * samp_rate
     TRANSITION_BAND = 25
-    RIPPLE_BAND = [lo_hz, hi_hz]
-    # print("Band Range: {}".format(RIPPLE_BAND))
-    desired = [0,
-               RIPPLE_BAND[0] - TRANSITION_BAND,
-               RIPPLE_BAND[0],
-               RIPPLE_BAND[1],
-               RIPPLE_BAND[1] + TRANSITION_BAND,
-               nyquist]
-    return remez(num_taps, desired, [0, 1, 0], Hz=sampling_frequency), 1.0
+    bands = [0,
+             lo_hz - TRANSITION_BAND,
+             lo_hz,
+             hi_hz,
+             hi_hz + TRANSITION_BAND,
+             nyq
+             ]
+
+    # A sequence half the size of bands containing the desired gain in each of the specified bands.
+    desired = [0, 1, 0]
+
+    ## Calculate the minimax optimal filter using the Remez exchange algorithm.
+    minimax_optimal_filter = remez(num_taps, bands, desired, Hz=samp_rate)
+
+    return minimax_optimal_filter, 1.0
 
 
 def _get_series_start_end_times(series):
@@ -56,7 +84,7 @@ def _get_series_start_end_times(series):
     return start_times, end_times
 
 
-def segment_boolean_series(series, minimum_duration=0.015):
+def _segment_boolean_series(series, minimum_duration=0.015):
     '''Returns a list of tuples where each tuple contains the start time of
      segement and end time of segment. It takes a boolean pandas series as
      input where the index is time.
@@ -79,50 +107,6 @@ def segment_boolean_series(series, minimum_duration=0.015):
             for start_time, end_time in zip(start_times, end_times)
             if end_time >= (start_time + minimum_duration)]
 
-
-# def filter_ripple_band(data, sampling_frequency=1500):
-#     # '''Returns a bandpass filtered signal between 100-250 Hz
-#     '''Returns a bandpass filtered signal between [lo_hz, hi_hz]
-
-#     Parameters
-#     ----------
-#     data : array_like, shape (n_time,)
-
-#     Returns
-#     -------
-#     filtered_data : array_like, shape (n_time,)
-
-#     '''
-#     lo_hz = 100
-#     hi_hz = 250
-#     filter_numerator, filter_denominator = _bandpass_filter(
-#         sampling_frequency, lo_hz=lo_hz, hi_hz=hi_hz)
-#     is_nan = np.isnan(data)
-#     filtered_data = np.full_like(data, np.nan)
-#     filtered_data[~is_nan] = filtfilt(
-#         filter_numerator, filter_denominator, data[~is_nan], axis=0)
-#     return filtered_data
-
-
-def filter_band(data, sampling_frequency=1500, lo_hz=100, hi_hz=250):
-    '''Returns a bandpass filtered signal between [lo_hz, hi_hz]
-
-    Parameters
-    ----------
-    data : array_like, shape (n_time,)
-
-    Returns
-    -------
-    filtered_data : array_like, shape (n_time,)
-
-    '''
-    filter_numerator, filter_denominator = _bandpass_filter(
-        sampling_frequency, lo_hz=lo_hz, hi_hz=hi_hz)
-    is_nan = np.isnan(data)
-    filtered_data = np.full_like(data, np.nan)
-    filtered_data[~is_nan] = filtfilt(
-        filter_numerator, filter_denominator, data[~is_nan], axis=0)
-    return filtered_data
 
 
 def _get_ripplefilter_kernel():
@@ -158,9 +142,9 @@ def extend_threshold_to_mean(is_above_mean, is_above_threshold, time,
     '''
     is_above_threshold = pd.Series(is_above_threshold, index=time)
     is_above_mean = pd.Series(is_above_mean, index=time)
-    above_mean_segments = segment_boolean_series(
+    above_mean_segments = _segment_boolean_series(
         is_above_mean, minimum_duration=minimum_duration)
-    above_threshold_segments = segment_boolean_series(
+    above_threshold_segments = _segment_boolean_series(
         is_above_threshold, minimum_duration=minimum_duration)
     return sorted(
         _extend_segment(above_threshold_segments, above_mean_segments))
