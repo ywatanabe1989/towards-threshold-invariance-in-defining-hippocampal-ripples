@@ -8,7 +8,7 @@ import pandas as pd
 import sys; sys.path.append('.')
 import utils.general as ug
 from modules.rippledetection.core import (exclude_close_events,
-                                          filter_ripple_band,
+                                          filter_band,
                                           gaussian_smooth,
                                           threshold_by_zscore)
                            
@@ -24,7 +24,7 @@ args = ap.parse_args()
 
 ## Functions
 def define_ripple_candidates(time_x, lfp, samp_rate,
-                             lo_hz=150,
+                             lo_hz=100,
                              hi_hz=250,
                              minimum_duration=0.015,
                              zscore_threshold=1.0,
@@ -36,7 +36,7 @@ def define_ripple_candidates(time_x, lfp, samp_rate,
     lfp, time_x = lfp[not_null], time_x[not_null]
 
     filtered_lfps = np.stack(
-        [filter_ripple_band(lfp, samp_rate, lo_hz=100, hi_hz=250) for lfp in lfp.T])
+        [filter_band(lfp, samp_rate, lo_hz=lo_hz, hi_hz=hi_hz) for lfp in lfp.T])
 
     combined_filtered_lfps = np.sum(filtered_lfps ** 2, axis=0)
 
@@ -66,7 +66,7 @@ def define_ripple_candidates(time_x, lfp, samp_rate,
 samp_rate = ug.to_int_samp_rate(ug.get_samp_rate_str_from_fpath(args.npy_fpath))
 
 
-## Load
+## Loads
 fpath = args.npy_fpath
 lfp = np.load(fpath).squeeze().astype(np.float32)
 lfp = lfp[:, np.newaxis]
@@ -76,28 +76,32 @@ time_x = np.arange(start_sec, end_sec, step_sec)
 # lfp = lfp[int(start_sec*samp_rate):int(end_sec*samp_rate)]
 
 
-## Detect Ripple Candidates
+## Detects Ripple Candidates
 print('Detecting ripples from {} (Length: {:.1f}h)'.format(fpath, len(lfp)/samp_rate/3600))
 lo_hz_ripple, hi_hz_ripple = ug.load_yaml_as_dict('./conf/global.yaml')['RIPPLE_CANDI_LIM_HZ']
-_, _, rip_sec = detect_ripple_candidates(time_x, lfp, samp_rate,
-                                         lo_hz=lo_hz_ripple, hi_hz=hi_hz_ripple, zscore_threshold=1)
+# 150 Hz, 250 Hz
+_, _, rip_sec = detect_ripple_candidates(time_x,
+                                         lfp,
+                                         samp_rate,
+                                         lo_hz=lo_hz_ripple,
+                                         hi_hz=hi_hz_ripple,
+                                         zscore_threshold=1)
 ts('')
 
 
-## Rename columns
+## Renames columns
 rip_sec['start_sec'] = rip_sec['start_time']
 rip_sec['end_sec'] = rip_sec['end_time']
 del rip_sec['start_time'], rip_sec['end_time'], rip_sec['duration']
 
 
-## Save
+## Save the ripple candidates
 ldir, fname, ext = ug.split_fpath(fpath)
 sdir = ldir.replace('LFP_MEP', 'ripples')\
            .replace('/orig/', '/candi_orig/')\
            .replace('npy', 'pkl')
 spath = sdir + fname + '.pkl'
-os.makedirs(sdir, exist_ok=True)
-ug.save_pkl(rip_sec, spath)
+ug.save(rip_sec, spath)
 # Saved to: './data/okada/01/day1/split/ripples_1kHz_pkl/candi_orig/tt2-1_fp16.pkl'
 
 ## EOF

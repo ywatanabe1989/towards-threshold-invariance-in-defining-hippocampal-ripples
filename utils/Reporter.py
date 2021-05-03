@@ -47,7 +47,10 @@ class Reporter():
         
         ##############################
         ## ACC ##
-        ##############################        
+        ##############################
+        # import pdb; pdb.set_trace()
+        # from sklearn.metrics import accuracy_score
+        # acc = accuracy_score(true_class.reshape(-1), pred_class.reshape(-1))
         acc = (true_class.reshape(-1) == pred_class.reshape(-1)).mean()
         print('\nACC in fold#{} was {:.3f}\n'.format(i_fold, acc))
 

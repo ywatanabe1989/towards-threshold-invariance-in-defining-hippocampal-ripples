@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 '''Finding sharp-wave ripple events (150-250 Hz) from local field
 potentials.
 '''
@@ -13,16 +15,19 @@ from scipy.stats import zscore
 from numba import jit
 
 
-def ripple_bandpass_filter(sampling_frequency, lo_hz=100, hi_hz=250):
-    ORDER = 101
+def _bandpass_filter(sampling_frequency, lo_hz=100, hi_hz=250, order=100):
+    num_taps = order + 1
     nyquist = 0.5 * sampling_frequency
     TRANSITION_BAND = 25
-    # RIPPLE_BAND = [150, 250]
     RIPPLE_BAND = [lo_hz, hi_hz]
     # print("Band Range: {}".format(RIPPLE_BAND))
-    desired = [0, RIPPLE_BAND[0] - TRANSITION_BAND, RIPPLE_BAND[0],
-               RIPPLE_BAND[1], RIPPLE_BAND[1] + TRANSITION_BAND, nyquist]
-    return remez(ORDER, desired, [0, 1, 0], Hz=sampling_frequency), 1.0
+    desired = [0,
+               RIPPLE_BAND[0] - TRANSITION_BAND,
+               RIPPLE_BAND[0],
+               RIPPLE_BAND[1],
+               RIPPLE_BAND[1] + TRANSITION_BAND,
+               nyquist]
+    return remez(num_taps, desired, [0, 1, 0], Hz=sampling_frequency), 1.0
 
 
 def _get_series_start_end_times(series):
@@ -75,26 +80,29 @@ def segment_boolean_series(series, minimum_duration=0.015):
             if end_time >= (start_time + minimum_duration)]
 
 
-def filter_ripple_band(data, sampling_frequency=1500, lo_hz=100, hi_hz=250):
-    # '''Returns a bandpass filtered signal between 150-250 Hz
-    '''Returns a bandpass filtered signal between [lo_hz, hi_hz]
+# def filter_ripple_band(data, sampling_frequency=1500):
+#     # '''Returns a bandpass filtered signal between 100-250 Hz
+#     '''Returns a bandpass filtered signal between [lo_hz, hi_hz]
 
-    Parameters
-    ----------
-    data : array_like, shape (n_time,)
+#     Parameters
+#     ----------
+#     data : array_like, shape (n_time,)
 
-    Returns
-    -------
-    filtered_data : array_like, shape (n_time,)
+#     Returns
+#     -------
+#     filtered_data : array_like, shape (n_time,)
 
-    '''
-    filter_numerator, filter_denominator = ripple_bandpass_filter(
-        sampling_frequency, lo_hz=lo_hz, hi_hz=hi_hz)
-    is_nan = np.isnan(data)
-    filtered_data = np.full_like(data, np.nan)
-    filtered_data[~is_nan] = filtfilt(
-        filter_numerator, filter_denominator, data[~is_nan], axis=0)
-    return filtered_data
+#     '''
+#     lo_hz = 100
+#     hi_hz = 250
+#     filter_numerator, filter_denominator = _bandpass_filter(
+#         sampling_frequency, lo_hz=lo_hz, hi_hz=hi_hz)
+#     is_nan = np.isnan(data)
+#     filtered_data = np.full_like(data, np.nan)
+#     filtered_data[~is_nan] = filtfilt(
+#         filter_numerator, filter_denominator, data[~is_nan], axis=0)
+#     return filtered_data
+
 
 def filter_band(data, sampling_frequency=1500, lo_hz=100, hi_hz=250):
     '''Returns a bandpass filtered signal between [lo_hz, hi_hz]
@@ -108,7 +116,7 @@ def filter_band(data, sampling_frequency=1500, lo_hz=100, hi_hz=250):
     filtered_data : array_like, shape (n_time,)
 
     '''
-    filter_numerator, filter_denominator = ripple_bandpass_filter(
+    filter_numerator, filter_denominator = _bandpass_filter(
         sampling_frequency, lo_hz=lo_hz, hi_hz=hi_hz)
     is_nan = np.isnan(data)
     filtered_data = np.full_like(data, np.nan)

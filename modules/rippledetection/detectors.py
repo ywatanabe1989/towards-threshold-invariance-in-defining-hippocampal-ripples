@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from itertools import chain
 
 import numpy as np

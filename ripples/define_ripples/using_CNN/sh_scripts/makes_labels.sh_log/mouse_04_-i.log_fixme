@@ -1,0 +1,98 @@
+
+Random seeds has been fixed as 42
+
+
+Random seeds has been fixed as 42
+
+Indice of mice to load: 04
+Time (id:0): tot 00:00:00, prev 00:00:00 [hh:mm:ss]: Reporter has been initialized.
+
+Ranger optimizer loaded. 
+Gradient Centralization usage = True
+GC applied to both conv and fc layers
+Train Epoch: 1 [1024/2777098 (0.0%)]	Loss: 0.343021
+Train Epoch: 1 [52224/2777098 (1.9%)]	Loss: 0.193827
+Train Epoch: 1 [103424/2777098 (3.7%)]	Loss: 0.149739
+Train Epoch: 1 [154624/2777098 (5.6%)]	Loss: 0.144227
+Train Epoch: 1 [205824/2777098 (7.4%)]	Loss: 0.148498
+Train Epoch: 1 [257024/2777098 (9.3%)]	Loss: 0.133427
+Train Epoch: 1 [308224/2777098 (11.1%)]	Loss: 0.130374
+Train Epoch: 1 [359424/2777098 (12.9%)]	Loss: 0.140803
+Train Epoch: 1 [410624/2777098 (14.8%)]	Loss: 0.137284
+Train Epoch: 1 [461824/2777098 (16.6%)]	Loss: 0.125115
+Train Epoch: 1 [513024/2777098 (18.5%)]	Loss: 0.134912
+Train Epoch: 1 [564224/2777098 (20.3%)]	Loss: 0.136117
+Train Epoch: 1 [615424/2777098 (22.2%)]	Loss: 0.132749
+Train Epoch: 1 [666624/2777098 (24.0%)]	Loss: 0.115681
+Train Epoch: 1 [717824/2777098 (25.8%)]	Loss: 0.130346
+Train Epoch: 1 [769024/2777098 (27.7%)]	Loss: 0.121018
+Train Epoch: 1 [820224/2777098 (29.5%)]	Loss: 0.143650
+Train Epoch: 1 [871424/2777098 (31.4%)]	Loss: 0.132332
+Train Epoch: 1 [922624/2777098 (33.2%)]	Loss: 0.136800
+Train Epoch: 1 [973824/2777098 (35.1%)]	Loss: 0.127993
+Train Epoch: 1 [1025024/2777098 (36.9%)]	Loss: 0.122895
+Train Epoch: 1 [1076224/2777098 (38.8%)]	Loss: 0.118802
+Train Epoch: 1 [1127424/2777098 (40.6%)]	Loss: 0.116561
+Train Epoch: 1 [1178624/2777098 (42.4%)]	Loss: 0.132913
+Train Epoch: 1 [1229824/2777098 (44.3%)]	Loss: 0.112588
+Train Epoch: 1 [1281024/2777098 (46.1%)]	Loss: 0.129540
+Train Epoch: 1 [1332224/2777098 (48.0%)]	Loss: 0.124579
+Train Epoch: 1 [1383424/2777098 (49.8%)]	Loss: 0.125506
+Train Epoch: 1 [1434624/2777098 (51.7%)]	Loss: 0.129635
+Train Epoch: 1 [1485824/2777098 (53.5%)]	Loss: 0.120581
+Train Epoch: 1 [1537024/2777098 (55.3%)]	Loss: 0.126191
+Train Epoch: 1 [1588224/2777098 (57.2%)]	Loss: 0.146004
+Train Epoch: 1 [1639424/2777098 (59.0%)]	Loss: 0.136845
+Train Epoch: 1 [1690624/2777098 (60.9%)]	Loss: 0.126099
+Train Epoch: 1 [1741824/2777098 (62.7%)]	Loss: 0.121025
+Train Epoch: 1 [1793024/2777098 (64.6%)]	Loss: 0.104869
+Train Epoch: 1 [1844224/2777098 (66.4%)]	Loss: 0.118248
+Train Epoch: 1 [1895424/2777098 (68.3%)]	Loss: 0.121064
+Train Epoch: 1 [1946624/2777098 (70.1%)]	Loss: 0.123153
+Train Epoch: 1 [1997824/2777098 (71.9%)]	Loss: 0.121222
+Train Epoch: 1 [2049024/2777098 (73.8%)]	Loss: 0.132233
+Train Epoch: 1 [2100224/2777098 (75.6%)]	Loss: 0.119860
+Train Epoch: 1 [2151424/2777098 (77.5%)]	Loss: 0.126094
+Train Epoch: 1 [2202624/2777098 (79.3%)]	Loss: 0.131775
+Train Epoch: 1 [2253824/2777098 (81.2%)]	Loss: 0.121927
+Train Epoch: 1 [2305024/2777098 (83.0%)]	Loss: 0.118469
+Train Epoch: 1 [2356224/2777098 (84.8%)]	Loss: 0.109002
+Train Epoch: 1 [2407424/2777098 (86.7%)]	Loss: 0.110123
+Train Epoch: 1 [2458624/2777098 (88.5%)]	Loss: 0.133465
+Train Epoch: 1 [2509824/2777098 (90.4%)]	Loss: 0.117446
+Train Epoch: 1 [2561024/2777098 (92.2%)]	Loss: 0.124567
+Train Epoch: 1 [2612224/2777098 (94.1%)]	Loss: 0.117855
+Train Epoch: 1 [2663424/2777098 (95.9%)]	Loss: 0.116491
+Train Epoch: 1 [2714624/2777098 (97.8%)]	Loss: 0.126255
+Train Epoch: 1 [2765824/2777098 (99.6%)]	Loss: 0.136659
+Traceback (most recent call last):
+  File "./ripples/define_ripples/using_CNN/makes_labels.py", line 131, in <module>
+    pred_proba_tes_fold = model.predict_proba(X_tes)
+  File "./models/ResNet1D/CleanLabelResNet1D.py", line 132, in predict_proba
+    y = self.resnet1d(Xb)
+  File "/usr/local/lib64/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/usr/local/lib64/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 167, in forward
+    outputs = self.parallel_apply(replicas, inputs, kwargs)
+  File "/usr/local/lib64/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 177, in parallel_apply
+    return parallel_apply(replicas, inputs, kwargs, self.device_ids[:len(replicas)])
+  File "/usr/local/lib64/python3.8/site-packages/torch/nn/parallel/parallel_apply.py", line 86, in parallel_apply
+    output.reraise()
+  File "/usr/local/lib64/python3.8/site-packages/torch/_utils.py", line 429, in reraise
+    raise self.exc_type(msg)
+ValueError: Caught ValueError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/usr/local/lib64/python3.8/site-packages/torch/nn/parallel/parallel_apply.py", line 61, in _worker
+    output = module(*input, **kwargs)
+  File "/usr/local/lib64/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "./models/ResNet1D/ResNet1D.py", line 55, in forward
+    x = self.input_bn(x)
+  File "/usr/local/lib64/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/usr/local/lib64/python3.8/site-packages/torch/nn/modules/batchnorm.py", line 100, in forward
+    self._check_input_dim(input)
+  File "/usr/local/lib64/python3.8/site-packages/torch/nn/modules/batchnorm.py", line 212, in _check_input_dim
+    raise ValueError('expected 2D or 3D input (got {}D input)'
+ValueError: expected 2D or 3D input (got 1D input)
+

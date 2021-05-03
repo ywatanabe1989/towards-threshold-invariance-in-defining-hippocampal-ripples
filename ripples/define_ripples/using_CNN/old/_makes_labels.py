@@ -121,6 +121,14 @@ for i_fold, (indi_tra, indi_tes) in enumerate(skf.split(X_all, T_all)):
     X_tra, T_tra = X_all[indi_tra], T_all[indi_tra]
     X_tes, T_tes = X_all[indi_tes], T_all[indi_tes]
 
+    # while len(X_tra) % 4 == 0:
+    #     X_tra = X_tra[:-1]
+    #     T_tra = T_tra[:-1]        
+
+    # while len(X_tes) % 4 == 0:
+    #     X_tes = X_tes[:-1]
+    #     T_tes = T_tes[:-1]        
+
     ## Instantiates a Model
     model = CleanLabelResNet1D(cl_conf)
 

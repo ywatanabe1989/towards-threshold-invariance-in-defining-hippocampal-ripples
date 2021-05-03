@@ -31,11 +31,11 @@ class CleanLabelResNet1D(BaseEstimator):
     '''
     def __init__(self, cl_conf):
         self.cl_conf = cl_conf
-        self.resnet1d_conf = cl_conf['ResNet1D'] # resnet1d_conf
-        self.dl_conf = cl_conf['dataloader'] # dl_conf
+        self.resnet1d_conf = cl_conf['ResNet1D']
+        self.dl_conf = cl_conf['dataloader']
 
         ## Model
-        self.resnet1d = ResNet1D(self.resnet1d_conf) # .to(self.resnet1d_conf['device'])
+        self.resnet1d = ResNet1D(self.resnet1d_conf)
         self.resnet1d = nn.DataParallel(self.resnet1d)
         self.resnet1d = self.resnet1d.to(self.resnet1d_conf['device'])
 
@@ -48,6 +48,7 @@ class CleanLabelResNet1D(BaseEstimator):
         self.loss_tra = []
         self.log_interval_batch = 50
 
+        
     def fit(self, X, T, sample_weight=None):
         '''This method adheres to sklearn's "fit(X, y)" format for compatibility with scikit-learn.
         All inputs should be numpy arrays (not PyTorch Tensors).
@@ -86,7 +87,6 @@ class CleanLabelResNet1D(BaseEstimator):
                     loss = self.loss_balancer(loss, Tb, i_epoch, train=True).mean()
                     self.loss_tra.append(loss.item())
                     
-                
                 scaler.scale(loss).backward() # loss.backward()
                 scaler.step(optimizer) # optimizer.step()
                 scaler.update()
@@ -105,15 +105,21 @@ class CleanLabelResNet1D(BaseEstimator):
     def predict(self, X):
         pass
     
-    # def predict(self, idx = None, loader = None):
-    #     # get the index of the max probability
-    #     probs = self.predict_proba(idx, loader)
-    #     return probs.argmax(axis=1)
 
     def predict_proba(self, X):
+        ## Adds shadow rows for the multi GPU model
+        residue = len(X) % self.cl_conf['dataloader']['batch_size']
+        n_added = self.cl_conf['dataloader']['batch_size'] - residue
+        shadow_rows = np.zeros([n_added, X.shape[1]])
+        X = np.concatenate([X, shadow_rows], axis=0)
+        # print('{} shadow rows were aded.'.format(n_added))    
+        # check
+        residue = len(X) % self.cl_conf['dataloader']['batch_size']
+        assert residue == 0
+
+        
         ## Create Dataloader
         ds_tes = torch.utils.data.TensorDataset(torch.FloatTensor(X))
-        
         dl_tes = torch.utils.data.DataLoader(dataset=ds_tes,
                                              **self.dl_conf,
                                              shuffle=False,
@@ -129,13 +135,15 @@ class CleanLabelResNet1D(BaseEstimator):
             Xb = Xb.to(self.resnet1d_conf['device'])                
 
             with autocast():
+                # print(Xb.shape)
                 y = self.resnet1d(Xb)
                 outs.append(y.detach().cpu())
 
-        outs = torch.cat(outs, dim=0)
+        outs = torch.cat(outs, dim=0)[:-n_added] # Excludes the results of shadow rows
         pred = self.softmax(outs.float())
 
         return pred
+
     
     def score(self, X, y, sample_weight=None):
         pass    
@@ -170,7 +178,7 @@ if __name__ == '__main__':
     cl_conf = ug.load('./models/ResNet1D/CleanLabelResNet1D.yaml')
     cl_conf['ResNet1D']['SEQ_LEN'] = X_all.shape[-1]
     cl_conf['ResNet1D']['LABELS'] = labels
-    cl_conf['max_epochs'] = 30
+    cl_conf['max_epochs'] = 2
     cl_conf['dataloader']['batch_size'] = 32
     
     model = CleanLabelResNet1D(cl_conf)
@@ -200,6 +208,7 @@ if __name__ == '__main__':
         ## Prediction
         pred_proba_tes_fold = model.predict_proba(X_tes)
         pred_class_tes_fold = pred_proba_tes_fold.argmax(dim=-1)
+        len_tes_dropped = len(pred_proba_tes_fold)
         T_tes_fold = torch.tensor(T_tes)
         
         reporter.calc_metrics(T_tes_fold,
@@ -228,8 +237,6 @@ if __name__ == '__main__':
     reporter.save(others_dict=others_dict)
 
     
-    
-
     '''
     ################################################################################
     ## Confident Learning using cleanlab
@@ -262,6 +269,3 @@ if __name__ == '__main__':
     '''    
     
     ## EOF
-
-        
-        
