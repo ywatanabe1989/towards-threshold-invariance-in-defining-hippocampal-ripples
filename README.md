@@ -1,11 +1,11 @@
 ## Sets envirionment variables
 ``` bash
-export SEMI_RIPPLE_HOME=/mnt/nvme/Semisupervised_Ripple
-export SINGULARITY_SIF_ROOT_NAME=semi_ripples
-export SINGULARITY_BINDPATH="/mnt,"
-. $SEMI_RIPPLE_HOME/singularity/singularity-aliases.bash # aliases
-export SINGULARITY_SHELL=/bin/bash
-# export PYTHONPATH=$SEMI_RIPPLE_HOME:$PYTHONPATH
+$ export SEMI_RIPPLE_HOME=/mnt/nvme/Semisupervised_Ripple
+$ export SINGULARITY_SIF_ROOT_NAME=semi_ripples
+$ export SINGULARITY_BINDPATH="/mnt,"
+$ . $SEMI_RIPPLE_HOME/singularity/singularity-aliases.bash # aliases
+$ export SINGULARITY_SHELL=/bin/bash
+$ # export PYTHONPATH=$SEMI_RIPPLE_HOME:$PYTHONPATH
 ```
 
 ## Our machine specs
@@ -40,6 +40,9 @@ export SINGULARITY_SHELL=/bin/bash
 ./ripples/define_ripples/using_CNN/plots_3d_scatter.py
 
 
+## ./data dir tree 
+$ tree ./data > ./data/data_tree.txt
+
 
 ## To-do
 - [x] Fig.01
@@ -63,3 +66,4 @@ export SINGULARITY_SHELL=/bin/bash
 - [ ] Fig.19
 - [ ] Fig.20
 - [ ] Fig.21
+
