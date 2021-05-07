@@ -5,9 +5,8 @@ export SINGULARITY_SIF_ROOT_NAME=semi_ripples
 export SINGULARITY_BINDPATH="/mnt,"
 . $SEMI_RIPPLE_HOME/singularity/singularity-aliases.bash # aliases
 export SINGULARITY_SHELL=/bin/bash
+# export PYTHONPATH=$SEMI_RIPPLE_HOME:$PYTHONPATH
 ```
-
-export PYTHONPATH=/mnt/nvme/Semisupervised_Ripple
 
 
 ## Machine specs
@@ -28,9 +27,9 @@ export PYTHONPATH=/mnt/nvme/Semisupervised_Ripple
 - [x] Fig.06
 - [x] Fig.07
 - [x] Fig.08
-- [ ] Fig.09
-- [ ] Fig.10
-- [ ] Fig.11
+- [x] Fig.09
+- [x] Fig.10
+- [x] Fig.11
 - [ ] Fig.12
 - [ ] Fig.13
 - [ ] Fig.14
