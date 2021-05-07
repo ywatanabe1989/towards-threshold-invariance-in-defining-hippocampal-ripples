@@ -1,6 +1,3 @@
-## Logging
-
-
 ## Data
 *.mat
 *.npy
@@ -12,12 +9,8 @@
 
 ## Containers and Images but Definition Files to Reproduce them
 *.sif
-# ~singularity/semi_ripples
 ~*.def
-# singularity/*semi_ripples*/
-# ~singularity/*semi_ripples*.def
 *semi_ripples*/
-# ~*semi_ripples*.def
 
 
 ## octave
@@ -29,7 +22,7 @@ octave-workspace
 
 
 ## for convenience
-.old
+*.old*
 
 
 #################################################################33333

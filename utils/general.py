@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+from collections import defaultdict
 import numpy as np
 import re
 import time
@@ -415,3 +416,11 @@ def makedirs_from_spath(spath):
     import os
     sdir = os.path.dirname(spath)
     os.makedirs(sdir, exist_ok=True)
+
+def listed_dict(keys=None):
+    dict_list = defaultdict(list)
+    # initialize with keys if possible
+    if keys is not None:
+        for k in keys:
+            dict_list[k] = []
+    return dict_list
