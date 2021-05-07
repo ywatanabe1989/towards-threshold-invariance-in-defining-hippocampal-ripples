@@ -8,7 +8,8 @@
 *.tiff
 
 
-## Containers and Images but Definition Files to Reproduce them
+## Singularity
+# Ignore image files and sandbox containers but definition files
 *.sif
 ~*.def
 *semi_ripples*/
