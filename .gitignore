@@ -5,6 +5,7 @@
 *.pdf
 *.csv
 *.mp4
+*.tiff
 
 
 ## Containers and Images but Definition Files to Reproduce them

@@ -335,18 +335,22 @@ def save(obj, sfname_or_spath, makedirs=True):
     ## Saves
     # csv
     
-    if spath.endswith('.csv'): # '.csv' in spath:
+    if spath.endswith('.csv'):
         obj.to_csv(spath)
     # numpy
-    if spath.endswith('.npy'): # '.npy' in spath:    
+    if spath.endswith('.npy'):
         np.save(spath, obj)
     # pkl
-    if spath.endswith('.pkl'): # '.pkl' in spath:        
+    if spath.endswith('.pkl'):
         with open(spath, 'wb') as s: # 'w'
             pickle.dump(obj, s)
     # png
-    if spath.endswith('.png'): # '.png' in spath:
+    if spath.endswith('.png'):
         obj.savefig(spath) # obj is matplotlib.pyplot object
+        obj.close()
+    # tiff
+    if spath.endswith('.tiff') or spath.endswith('.tif'):
+        obj.savefig(spath, dpi=300, format='tiff') # obj is matplotlib.pyplot object
         obj.close()
 
     if spath.endswith('.yaml'):
