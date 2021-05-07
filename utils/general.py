@@ -172,7 +172,7 @@ def fix_seeds(os=None, random=None, np=None, torch=None, tf=None, seed=42, show=
         tf.random.set_seed(seed)
 
     if print:
-        print('\nRandom seeds has been fixed as {}\n'.format(seed))
+        print('\nRandom seeds have been fixed as {}\n'.format(seed))
 
 
 def torch_to_arr(x):
@@ -372,6 +372,7 @@ def mk_spath(sfname, makedirs=False):
 
     if makedirs:
         os.makedirs(sdir, exist_ok=True)
+        print(sdir) # delete me
     return spath
 
 
