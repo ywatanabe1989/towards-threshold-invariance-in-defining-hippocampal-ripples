@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 import argparse
 from sklearn.mixture import GaussianMixture
-from sklearn import metrics
+import sys
+sys.path.append('.')
 import numpy as np
 import pandas as pd
 
-import sys; sys.path.append('.')
 import utils.general as ug
 import utils.semi_ripple as us
 import utils.path_converters as upcvt
@@ -41,6 +41,8 @@ LPATH_HIPPO_LFP_NPY_LIST_MICE = list(np.hstack(
                 [ug.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, nm)[1] for nm in N_MICE]
 ))
 
+# LPATH_HIPPO_LFP_NPY_LIST_MOUSE = ug.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, args.n_mouse)[1]
+
 
 ## Loads
 lfps, rips_df_list = us.load_lfps_rips_sec(LPATH_HIPPO_LFP_NPY_LIST_MICE,
@@ -58,19 +60,13 @@ for i_rips in range(len(rips_df_list)):
 ## GMM Clustering
 gmm = GaussianMixture(n_components=2, covariance_type='full')
 gmm.fit(rips_df)
-
-
-
-
-
 cls1_proba = gmm.predict_proba(rips_df)[:, 1]
+
+
 # print(cls1_proba[:10])
 # [0.97624474 0.99284637 0.99984701 0.99918557 0.94821748 0.92253847
 #  0.98240508 0.62239122 0.96525563 0.84800725]
 are_ripple_GMM = (cls1_proba >= .5) if gmm.means_[0,1] < gmm.means_[1,1] else (cls1_proba < .5) # fixme
-
-
-np.argmax(gmm.means_[0,1], gmm.means_[1,1])
 
 
 ## Appends the GMM's predictions on original rips_df_list

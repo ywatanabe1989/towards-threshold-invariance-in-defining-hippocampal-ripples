@@ -22,6 +22,15 @@ def define_ripple_candidates(time_x, lfp, samp_rate,
                              smoothing_sigma=0.004,
                              close_ripple_threshold=0.0):
 
+    ## Checks signal shape 
+    if lfp.ndim == 1:
+        lfp = lfp[:, np.newaxis]
+    assert lfp.ndim == 2
+
+    ## Checks signal dtype
+    if lfp.dtype == np.float16:
+        lfp = lfp.astype(np.float32)
+
     not_null = np.all(pd.notnull(lfp), axis=1)
 
     lfp, time_x = lfp[not_null], time_x[not_null]
@@ -49,7 +58,7 @@ def define_ripple_candidates(time_x, lfp, samp_rate,
     rip_sec = pd.DataFrame(ripple_times, columns=['start_sec', 'end_sec'],
                         index=index)
 
-    return filtered_lfps, filted_magni, rip_sec
+    return filtered_lfps.squeeze(), filted_magni, rip_sec
 
 
 if __name__ == '__main__':

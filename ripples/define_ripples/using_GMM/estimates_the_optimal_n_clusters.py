@@ -2,14 +2,14 @@
 import argparse
 from sklearn.mixture import GaussianMixture
 from sklearn import metrics
+import sys
+sys.path.append('.')
 import numpy as np
 import pandas as pd
 
-import sys; sys.path.append('.')
 import utils.general as ug
 import utils.semi_ripple as us
 import utils.path_converters as upcvt
-
 
 
 ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -22,6 +22,32 @@ args = ap.parse_args()
 
 ## Fixes random seed
 ug.fix_seeds(seed=42, np=np)
+
+
+## Functions
+def estimates_the_optimal_n_clusters_of_GMM(X, show=False):
+    from sklearn.mixture import GaussianMixture
+    from sklearn import metrics
+    import matplotlib.pyplot as plt
+    n_clusters = np.arange(2, 5)
+    scores = []
+    scores_err = []
+    for n in n_clusters:
+        gmm = GaussianMixture(n_components=n, n_init=2, covariance_type='full').fit(X) 
+        labels = gmm.predict(X)
+        score = metrics.calinski_harabasz_score(X, labels)
+        scores.append(score)
+
+    if show:
+        fig, ax = plt.subplots()
+        ax.plot(n_clusters, scores)
+        ax.set_title("Scores")
+        ax.set_xticks(n_clusters)
+        ax.set_xlabel("N. of clusters")
+        ax.set_ylabel("Score")
+        fig.show()
+
+    return n_clusters[np.argmax(scores)]
 
 
 ## FPATHs
@@ -55,36 +81,18 @@ for i_rips in range(len(rips_df_list)):
     rips_df_list[i_rips] = rips_df_list[i_rips][keys_to_remain]
 
 
-## GMM Clustering
-gmm = GaussianMixture(n_components=2, covariance_type='full')
-gmm.fit(rips_df)
-
-
-
-
-
-cls1_proba = gmm.predict_proba(rips_df)[:, 1]
-# print(cls1_proba[:10])
-# [0.97624474 0.99284637 0.99984701 0.99918557 0.94821748 0.92253847
-#  0.98240508 0.62239122 0.96525563 0.84800725]
-are_ripple_GMM = (cls1_proba >= .5) if gmm.means_[0,1] < gmm.means_[1,1] else (cls1_proba < .5) # fixme
-
-
-np.argmax(gmm.means_[0,1], gmm.means_[1,1])
-
-
-## Appends the GMM's predictions on original rips_df_list
-start, end = 0, 0
-for i_tt in range(len(rips_df_list)):
-    end += len_rips[i_tt]
-    rips_df_list[i_tt]['are_ripple_GMM'] = are_ripple_GMM[start:end]
-    start = end
+################################################################################
+## Finds the optimal number of clusters
+################################################################################
+# https://towardsdatascience.com/cheat-sheet-to-implementing-7-methods-for-selecting-optimal-number-of-clusters-in-python-898241e1d6ad
+X = np.array(rips_df, dtype=np.float32)
+n_optimal = estimates_the_optimal_n_clusters_of_GMM(X)
+n_optimal_df = pd.DataFrame({'The Optimal # of Clusters for GMM': n_optimal},
+                            index=np.arange(1))
+print('\nOptimal Number of Clusters of GMM is {}'.format(n_optimal))
 
 
 ## Saves
-for i_tt, lfp_path in enumerate(LPATH_HIPPO_LFP_NPY_LIST_MICE):
-    spath = upcvt.LFP_to_ripples(lfp_path, rip_sec_ver='GMM_labeled/{}'.format(dataset_key)) # fixme
-    ug.save(rips_df_list[i_tt], spath)
-
+ug.save(n_optimal_df, 'optimal_n_clusters_GMM_{}.csv'.format(dataset_key))
 
 ## EOF

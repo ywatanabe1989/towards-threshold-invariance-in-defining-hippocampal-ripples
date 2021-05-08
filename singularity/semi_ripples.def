@@ -98,6 +98,7 @@ From: centos:centos8
     python3 -m pip install ipython
     python3 -m pip install scikit-image
     python3 -m pip install cleanlab
+    python3 -m pip install yellowbrick
 
 
     # ################################################################################
