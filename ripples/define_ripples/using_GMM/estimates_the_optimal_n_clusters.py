@@ -54,7 +54,7 @@ def estimates_the_optimal_n_clusters_of_GMM(X, show=False):
 N_MICE_CANDIDATES = ['01', '02', '03', '04', '05']
 i_mouse_tgt = ug.search_str_list(N_MICE_CANDIDATES, args.n_mouse)[0][0]
 if args.include:
-    N_MICE = N_MICE_CANDIDATES[i_mouse_tgt]
+    N_MICE = [args.n_mouse] # N_MICE_CANDIDATES[i_mouse_tgt]
     dataset_key = 'D' + args.n_mouse + '+'
 if not args.include:
     N_MICE = N_MICE_CANDIDATES.copy()

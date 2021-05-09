@@ -54,10 +54,8 @@ indi_sparse = indi_sparse.astype(bool)
 
 
 ## Defines clusters
-cls0_sparse_rips_df = rips_df[~are_ripple_GMM & indi_sparse]
-cls1_sparse_rips_df = rips_df[are_ripple_GMM & indi_sparse]
-# print(cls0_sparse_rips_df.iloc[:10])
-# print(cls1_sparse_rips_df.iloc[:10])
+T_GMM_sparse_rips_df = rips_df[are_ripple_GMM & indi_sparse]
+F_GMM_sparse_rips_df = rips_df[~are_ripple_GMM & indi_sparse]
 
 
 ## Plots
@@ -65,13 +63,13 @@ spath_mp4 = ug.mk_spath('mouse_{n}.mp4'.format(n=args.n_mouse), makedirs=True) \
             if args.save == 'mp4' else None
 spath_png = ug.mk_spath('mouse_{n}.png'.format(n=args.n_mouse), makedirs=True) \
             if args.save == 'png' else None    
-plot_3d_scatter(cls0_sparse_rips_df,
+plot_3d_scatter(T_GMM_sparse_rips_df,
                 ftr1,
                 ftr2,
                 ftr3,
                 cls0_label='Cluster T',
                 cls0_color_str='blue',
-                cls1_sparse_df=cls1_sparse_rips_df,
+                cls1_sparse_df=F_GMM_sparse_rips_df,
                 cls1_label='Cluster F',
                 cls1_color_str='red',                
                 spath_png=spath_png,

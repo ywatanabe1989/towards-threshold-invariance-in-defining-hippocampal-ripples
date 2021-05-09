@@ -19,8 +19,6 @@ ap.add_argument("-i", "--include", action='store_true', default=False,
                 help=" ")
 args = ap.parse_args()
 
-args.include = True
-
 
 ## Fixes random seed
 ug.fix_seeds(seed=42, np=np)

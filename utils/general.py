@@ -377,7 +377,6 @@ def mk_spath(sfname, makedirs=False):
 
     if makedirs:
         os.makedirs(sdir, exist_ok=True)
-        print(sdir) # delete me
     return spath
 
 

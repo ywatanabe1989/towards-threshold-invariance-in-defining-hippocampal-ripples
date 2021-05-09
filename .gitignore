@@ -6,6 +6,7 @@
 *.csv
 *.mp4
 *.tiff
+*.png
 
 
 ## Singularity

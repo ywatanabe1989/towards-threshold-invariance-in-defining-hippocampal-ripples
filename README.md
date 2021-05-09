@@ -73,14 +73,3 @@ $ tree ./data > ./data/data_tree.txt
 
 - [ ] checks if GMM labels were wrongly saved
 - [ ] transfer learning on hc-22/25 (CRCNS.org)
-
-
-## fixes GMM labels are inversed
-- [ ] ./ripples/define_ripples/using_GMM/makes_labels.py
-  - [x] script itself
-  - [ ] D0?+ were wrong
-- [ ] ./ripples/define_ripples/using_GMM/plots_3d_scatter.py
-
-- [ ] ./ripples/define_ripples/using_CNN/isolates_candidates.py
-- [ ] ./ripples/define_ripples/using_CNN/makes_labels.py
-- [ ] ./ripples/define_ripples/using_CNN/plots_3d_scatter.py
