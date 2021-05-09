@@ -19,6 +19,7 @@ ap.add_argument("-i", "--include", action='store_true', default=False,
                 help=" ")
 args = ap.parse_args()
 
+args.include = True # fixme
 
 ## Fixes random seed
 ug.fix_seeds(seed=42, np=np)
@@ -59,18 +60,9 @@ for i_rips in range(len(rips_df_list)):
 gmm = GaussianMixture(n_components=2, covariance_type='full')
 gmm.fit(rips_df)
 
-
-
-
-
-cls1_proba = gmm.predict_proba(rips_df)[:, 1]
-# print(cls1_proba[:10])
-# [0.97624474 0.99284637 0.99984701 0.99918557 0.94821748 0.92253847
-#  0.98240508 0.62239122 0.96525563 0.84800725]
-are_ripple_GMM = (cls1_proba >= .5) if gmm.means_[0,1] < gmm.means_[1,1] else (cls1_proba < .5) # fixme
-
-
-np.argmax(gmm.means_[0,1], gmm.means_[1,1])
+rip_cls_idx = np.argmin([gmm.means_[0,1], gmm.means_[1,1]])
+pred_proba_ripple_GMM = gmm.predict_proba(rips_df)[:, rip_cls_idx]
+are_ripple_GMM = (pred_proba_ripple_GMM >= .5)
 
 
 ## Appends the GMM's predictions on original rips_df_list
@@ -88,3 +80,4 @@ for i_tt, lfp_path in enumerate(LPATH_HIPPO_LFP_NPY_LIST_MICE):
 
 
 ## EOF
+
