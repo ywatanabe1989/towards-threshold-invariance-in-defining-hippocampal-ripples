@@ -78,7 +78,7 @@ $ tree ./data > ./data/data_tree.txt
 ## fixes GMM labels are inversed
 - [ ] ./ripples/define_ripples/using_GMM/makes_labels.py
   - [x] script itself
-  - [ ] 
+  - [ ] D0?+ were wrong
 - [ ] ./ripples/define_ripples/using_GMM/plots_3d_scatter.py
 
 - [ ] ./ripples/define_ripples/using_CNN/isolates_candidates.py
