@@ -88,10 +88,10 @@ if __name__ == '__main__':
 
 
     ## Detects Ripple Candidates
-    print('Detecting ripples from {} (Length: {:.1f}h)'.format(fpath, len(lfp)/samp_rate/3600))
+    print('\nDetecting ripples from {} (Length: {:.1f}h\n)'.format(fpath, len(lfp)/samp_rate/3600))
     lo_hz_ripple, hi_hz_ripple = ug.load_yaml_as_dict('./conf/global.yaml')['RIPPLE_CANDI_LIM_HZ']
     # 150 Hz, 250 Hz
-    _, _, rip_sec = detect_ripple_candidates(time_x,
+    _, _, rip_sec = define_ripple_candidates(time_x,
                                              lfp,
                                              samp_rate,
                                              lo_hz=lo_hz_ripple,
@@ -100,10 +100,10 @@ if __name__ == '__main__':
     ts('')
 
 
-    ## Renames columns
-    rip_sec['start_sec'] = rip_sec['start_time']
-    rip_sec['end_sec'] = rip_sec['end_time']
-    del rip_sec['start_time'], rip_sec['end_time'], rip_sec['duration']
+    # ## Renames columns
+    # rip_sec['start_sec'] = rip_sec['start_time']
+    # rip_sec['end_sec'] = rip_sec['end_time']
+    # del rip_sec['start_time'], rip_sec['end_time'], rip_sec['duration']
 
 
     ## Save the ripple candidates

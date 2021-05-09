@@ -67,3 +67,18 @@ $ tree ./data > ./data/data_tree.txt
 - [ ] Fig.20
 - [ ] Fig.21
 
+- [x] Estimates the optimal number of GMM clusters
+- [ ] Enables ripple_detection module to enjoy GPU acceleration
+
+
+- [ ] checks if GMM labels were wrongly saved
+- [ ] transfer learning on hc-22/25 (CRCNS.org)
+
+
+## fixes GMM labels are inversed
+- [ ] ./ripples/define_ripples/using_GMM/makes_labels.py
+- [ ] ./ripples/define_ripples/using_GMM/plots_3d_scatter.py
+
+- [ ] ./ripples/define_ripples/using_CNN/isolates_candidates.py
+- [ ] ./ripples/define_ripples/using_CNN/makes_labels.py
+- [ ] ./ripples/define_ripples/using_CNN/plots_3d_scatter.py
