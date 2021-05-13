@@ -100,3 +100,4 @@ $ tree ./data > ./data/data_tree.txt
   - [ ] downloads hc-25  
 
 
+- [ ] organize utils
