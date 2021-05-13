@@ -10,8 +10,9 @@ from mpl_toolkits.mplot3d import Axes3D
 from matplotlib.ticker import MultipleLocator
 from scipy.stats import chi2
 
-import utils.general as ug
-import utils.semi_ripple as us
+import utils
+# import utils.general as ug
+# import utils.semi_ripple as us
 import ffmpeg
 
 
@@ -43,7 +44,7 @@ def plot_3d_scatter(cls0_sparse_df,
     ##############################
     ## Parameters
     ##############################        
-    RGB_PALLETE_DICT = ug.load_yaml_as_dict('./conf/global.yaml')['RGB_PALLETE_DICT']
+    RGB_PALLETE_DICT = utils.general.load_yaml_as_dict('./conf/global.yaml')['RGB_PALLETE_DICT']
 
     ##############################
     ## Preparation
@@ -147,11 +148,11 @@ if __name__ == '__main__':
     args = ap.parse_args()
     
     ## Parse File Path
-    LPATH_HIPPO_LFP_NPY_LIST = ug.read_txt('./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt')
-    LPATHS_MOUSE = ug.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, args.n_mouse)[1]
+    LPATH_HIPPO_LFP_NPY_LIST = utils.general.read_txt('./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt')
+    LPATHS_MOUSE = utils.general.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, args.n_mouse)[1]
     
     ## Loads
-    lfps, _rips_df = us.load_lfps_rips_sec(LPATHS_MOUSE,
+    lfps, _rips_df = utils.pj.load_lfps_rips_sec(LPATHS_MOUSE,
                                            rip_sec_ver='ripple_candi_1kHz_pkl/with_props'
                                            )
     len_rips_df = np.array([len(_rip) for _rip in _rips_df]) 

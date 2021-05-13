@@ -42,26 +42,26 @@ def calc_band_magnitude(
     devide_by_std=False,
     smoothing_sigma=0.004,
 ):
-    if (lo_hz, hi_hz) != (None, None):
-        filted = bandpass(data, lo_hz, hi_hz, samp_rate)
-    else:
-        _, filted, _ = define_ripple_candidates(None,
-                                                data,
-                                                samp_rate,
-                                                lo_hz=lo_hz,
-                                                hi_hz=hi_hz,
-                                                smoothing_sigma=smoothing_sigma,
-                                                only_calc_filted_magni=True,
-                                                )
-
-    # power = filted ** 2
-    # smoothed_power = gaussian_smooth(power, smoothing_sigma, samp_rate)
-    # magnitude = np.sqrt(smoothed_power)
-
+    if (lo_hz, hi_hz) != (None, None): # Ripple band
+        _, filted_magni, _ = define_ripple_candidates(None,
+                                                      data,
+                                                      samp_rate,
+                                                      lo_hz=lo_hz,
+                                                      hi_hz=hi_hz,
+                                                      smoothing_sigma=smoothing_sigma,
+                                                      only_calc_filted_magni=True,
+                                                      )
+        # filted = bandpass(data, lo_hz, hi_hz, samp_rate)
+    else: # MEP
+        filted = data
+        power = filted ** 2
+        smoothed_power = gaussian_smooth(power, smoothing_sigma, samp_rate)
+        filted_magni = np.sqrt(smoothed_power).squeeze()
+        
     if devide_by_std:
-        magnitude /= magnitude.std()  # Normalize
+        filted_magni /= filted_magni.std()  # Normalize
 
-    return magnitude
+    return filted_magni
     
 
 
@@ -126,7 +126,9 @@ def define_ripple_candidates(
 
         rip_sec = pd.DataFrame(ripple_times, columns=["start_sec", "end_sec"], index=index)
 
-    return filtered_lfps.squeeze(), filted_magni, rip_sec
+        filtered_lfps = filtered_lfps.squeeze()
+
+    return filtered_lfps, filted_magni, rip_sec
 
 
 def bandpass(data, lo_hz, hi_hz, fs, order=5):

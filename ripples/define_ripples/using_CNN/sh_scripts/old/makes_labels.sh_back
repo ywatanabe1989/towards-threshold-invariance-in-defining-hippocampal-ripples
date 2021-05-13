@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+# rm -r $0.log $0_log/
+# mkdir $0_log
+
+################################################################################
+## D0?+
+################################################################################
+# nm=01; i=-i
+
+for nm in 01 02 03 04 05; do
+    for i in -i ''; do
+        python3 ./ripples/define_ripples/using_CNN/makes_labels.py -nm $nm $i
+    done
+done
+
+
+# nm=02; i=-i
+# python3 ./ripples/define_ripples/using_CNN/makes_labels.py -nm $nm $i
+
+# nm=03; i=-i
+# python3 ./ripples/define_ripples/using_CNN/makes_labels.py -nm $nm $i
+
+# nm=04; i=-i
+# python3 ./ripples/define_ripples/using_CNN/makes_labels.py -nm $nm $i
+
+# nm=05; i=-i
+# python3 ./ripples/define_ripples/using_CNN/makes_labels.py -nm $nm $i
+
+
+# ################################################################################
+# ## D0?-
+# ################################################################################
+# nm=01; i=''
+# python3 ./ripples/define_ripples/using_CNN/makes_labels.py -nm $nm $i
+
+# nm=02; i=''
+# python3 ./ripples/define_ripples/using_CNN/makes_labels.py -nm $nm $i
+
+# nm=03; i=''
+# python3 ./ripples/define_ripples/using_CNN/makes_labels.py -nm $nm $i
+
+# nm=04; i=''
+# python3 ./ripples/define_ripples/using_CNN/makes_labels.py -nm $nm $i
+
+# nm=05; i=''
+# python3 ./ripples/define_ripples/using_CNN/makes_labels.py -nm $nm $i
+
+
+# logthis sh ripples/define_ripples/using_CNN/sh_scripts/makes_labels.sh
+
+## EOF
+

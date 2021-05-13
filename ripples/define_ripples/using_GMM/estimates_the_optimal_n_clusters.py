@@ -2,14 +2,12 @@
 import argparse
 from sklearn.mixture import GaussianMixture
 from sklearn import metrics
-import sys
-sys.path.append('.')
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-import utils.general as ug
-import utils.semi_ripple as us
-import utils.path_converters as upcvt
+import sys; sys.path.append('.')
+import utils
 
 
 ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -19,57 +17,72 @@ ap.add_argument("-i", "--include", action='store_true', default=False,
                 help=" ")
 args = ap.parse_args()
 
+## Configure matplotlib
+utils.general.configure_mpl(plt)
 
 ## Fixes random seed
-ug.fix_seeds(seed=42, np=np)
+utils.general.fix_seeds(seed=42, np=np)
 
 
 ## Functions
-def estimates_the_optimal_n_clusters_of_GMM(X, show=False):
+def estimates_the_optimal_n_clusters_of_GMM(X, show=True, spath=None, n_rep=5):
     from sklearn.mixture import GaussianMixture
     from sklearn import metrics
     import matplotlib.pyplot as plt
-    n_clusters = np.arange(2, 5)
-    scores = []
-    scores_err = []
+    n_clusters = np.arange(2, 6)
+    
+    scores_mean = []
+    scores_std = []
+
     for n in n_clusters:
-        gmm = GaussianMixture(n_components=n, n_init=2, covariance_type='full').fit(X) 
-        labels = gmm.predict(X)
-        score = metrics.calinski_harabasz_score(X, labels)
-        scores.append(score)
+        score_n_cluster = []
+        for i_rep in range(n_rep):
+            gmm = GaussianMixture(n_components=n, n_init=2, covariance_type='full').fit(X) 
+            labels = gmm.predict(X)
+            score = metrics.calinski_harabasz_score(X, labels)
+            score_n_cluster.append(score)
+        scores_mean.append(np.mean(score_n_cluster))
+        scores_std.append(np.std(score_n_cluster))        
 
     if show:
         fig, ax = plt.subplots()
-        ax.plot(n_clusters, scores)
-        ax.set_title("Scores")
+        ax.errorbar(n_clusters, scores_mean, yerr=scores_std)        
+        ax.plot(n_clusters, scores_mean)
+        score_str = 'Calinski Harabasz Score'
+        ax.set_title(score_str)
         ax.set_xticks(n_clusters)
         ax.set_xlabel("N. of clusters")
-        ax.set_ylabel("Score")
-        fig.show()
+        ax.set_ylabel("{} (mean +/- std.; n={})".format(score_str, n_rep))
+        if spath is not None:
+            utils.general.save(plt, spath)
+        else:
+            fig.show()
 
-    return n_clusters[np.argmax(scores)]
+    return n_clusters[np.argmax(scores_mean)]
 
 
 ## FPATHs
 N_MICE_CANDIDATES = ['01', '02', '03', '04', '05']
-i_mouse_tgt = ug.search_str_list(N_MICE_CANDIDATES, args.n_mouse)[0][0]
+i_mouse_tgt = utils.general.search_str_list(N_MICE_CANDIDATES, args.n_mouse)[0][0]
 if args.include:
-    N_MICE = [args.n_mouse] # N_MICE_CANDIDATES[i_mouse_tgt]
+    N_MICE = [args.n_mouse]
     dataset_key = 'D' + args.n_mouse + '+'
 if not args.include:
     N_MICE = N_MICE_CANDIDATES.copy()
     N_MICE.pop(i_mouse_tgt)
-    dataset_key = 'D' + args.n_mouse + '-' # ug.connect_str_list_with_hyphens(N_MICE)
-print('Indice of mice to load: {}'.format(N_MICE))
+    dataset_key = 'D' + args.n_mouse + '-'
 
-LPATH_HIPPO_LFP_NPY_LIST = ug.read_txt('./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt')
+
+LPATH_HIPPO_LFP_NPY_LIST = utils.general.read_txt('./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt')
 LPATH_HIPPO_LFP_NPY_LIST_MICE = list(np.hstack(
-                [ug.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, nm)[1] for nm in N_MICE]
+                [utils.general.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, nm)[1] for nm in N_MICE]
 ))
+print('Indice of mice to load: {}'.format(N_MICE))
+print(len(LPATH_HIPPO_LFP_NPY_LIST_MICE))
 
 
 ## Loads
-lfps, rips_df_list = us.load_lfps_rips_sec(LPATH_HIPPO_LFP_NPY_LIST_MICE,
+lfps, rips_df_list = utils.pj.load_lfps_rips_sec(LPATH_HIPPO_LFP_NPY_LIST_MICE,
                                            rip_sec_ver='candi_with_props'
                                            )
 len_rips = [len(_rips_df_tt) for _rips_df_tt in rips_df_list]
@@ -86,13 +99,14 @@ for i_rips in range(len(rips_df_list)):
 ################################################################################
 # https://towardsdatascience.com/cheat-sheet-to-implementing-7-methods-for-selecting-optimal-number-of-clusters-in-python-898241e1d6ad
 X = np.array(rips_df, dtype=np.float32)
-n_optimal = estimates_the_optimal_n_clusters_of_GMM(X)
+spath = 'elbow_method_{}_n_mouse_{}.png'.format(dataset_key, args.n_mouse)
+n_optimal = estimates_the_optimal_n_clusters_of_GMM(X, show=True, spath=spath)
 n_optimal_df = pd.DataFrame({'The Optimal # of Clusters for GMM': n_optimal},
                             index=np.arange(1))
 print('\nOptimal Number of Clusters of GMM is {}'.format(n_optimal))
 
 
 ## Saves
-ug.save(n_optimal_df, 'optimal_n_clusters_GMM_{}.csv'.format(dataset_key))
+utils.general.save(n_optimal_df, 'optimal_n_clusters_GMM_{}.csv'.format(dataset_key))
 
 ## EOF

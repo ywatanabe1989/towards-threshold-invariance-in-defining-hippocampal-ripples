@@ -1,18 +1,12 @@
 #!/usr/bin/env python
 import argparse
 from functools import partial
-import sys
-sys.path.append('.')
 import math
 import numpy as np
 import pandas as pd
 
-
-import utils.general as ug
-import utils.semi_ripple as us
-import utils.path_converters as upcvt
-
-
+import sys; sys.path.append('.')
+import utils
 
 ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 ap.add_argument("-l", "--lpath_lfp",
@@ -100,18 +94,18 @@ def isolates_rip_row(rip_row, lfp=None, max_duration_pts=400):
 
 ## FPATHs
 lpath_lfp = args.lpath_lfp
-lpath_rip = upcvt.LFP_to_ripples(lpath_lfp, rip_sec_ver='candi_orig')
-lpath_rip_magni = upcvt.LFP_to_ripple_magni(lpath_lfp)
+lpath_rip = utils.path_converters.LFP_to_ripples(lpath_lfp, rip_sec_ver='candi_orig')
+lpath_rip_magni = utils.path_converters.LFP_to_ripple_magni(lpath_lfp)
 
 
 ## Loads
-lfp = ug.load(lpath_lfp).squeeze()
-rips = ug.load(lpath_rip)
-rip_magni = ug.load(lpath_rip_magni).squeeze()
+lfp = utils.general.load(lpath_lfp).squeeze()
+rips = utils.general.load(lpath_rip)
+rip_magni = utils.general.load(lpath_rip_magni).squeeze()
 
 
 ## Gets Parameters
-SAMP_RATE = ug.get_samp_rate_int_from_fpath(lpath_lfp) # 1000
+SAMP_RATE = utils.general.get_samp_rate_int_from_fpath(lpath_lfp) # 1000
 
 
 ## Isolates each ripple candidate
@@ -147,7 +141,7 @@ for k in keys_to_del:
 
 ## Saves
 spath_rip = lpath_rip.replace('candi_orig', 'isolated')
-ug.save(rips, spath_rip)
+utils.general.save(rips, spath_rip)
 
 
 ## EOF

@@ -334,7 +334,6 @@ def save(obj, sfname_or_spath, makedirs=True):
         
     ## Saves
     # csv
-    
     if spath.endswith('.csv'):
         obj.to_csv(spath)
     # numpy
@@ -420,6 +419,7 @@ def makedirs_from_spath(spath):
     sdir = os.path.dirname(spath)
     os.makedirs(sdir, exist_ok=True)
 
+    
 def listed_dict(keys=None):
     dict_list = defaultdict(list)
     # initialize with keys if possible

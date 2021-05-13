@@ -4,11 +4,8 @@ import argparse
 import numpy as np
 from glob import glob
 
-
 import sys; sys.path.append('.')
-import utils.general as ug
-import utils.dsp as ud
-import utils.path_converters as upcvt
+import utils
 
 
 ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -20,15 +17,15 @@ args = ap.parse_args()
 
 
 ## Parameters
-SAMP_RATE = ug.get_samp_rate_int_from_fpath(args.lfp_fpath)
-LOW_HZ_RIPPLE, HIGH_HZ_RIPPLE = 150, 250
+SAMP_RATE = utils.general.get_samp_rate_int_from_fpath(args.lfp_fpath)
+RIPPLE_CANDI_LIM_HZ = utils.general.load_yaml_as_dict('./conf/global.yaml')['RIPPLE_CANDI_LIM_HZ']
 
 
 ## PATHs
 LPATH_LFP = args.lfp_fpath
-_LDIR, _, _ = ug.split_fpath(LPATH_LFP)
-_FPATHS_TRAPE_MEP = ug.read_txt('./data/okada/FPATH_LISTS/TRAPE_MEP_TT_NPYs.txt')
-LPATHs_MEP = ug.search_str_list(_FPATHS_TRAPE_MEP, _LDIR)[1]
+_LDIR, _, _ = utils.general.split_fpath(LPATH_LFP)
+_FPATHS_TRAPE_MEP = utils.general.read_txt('./data/okada/FPATH_LISTS/TRAPE_MEP_TT_NPYs.txt')
+LPATHs_MEP = utils.general.search_str_list(_FPATHS_TRAPE_MEP, _LDIR)[1]
 
 
 ## Load
@@ -39,17 +36,24 @@ assert len(lfp) == len(mep)
 
 
 ## Magnitudes
-mep_magni_sd = ud.calc_band_magnitude(mep, SAMP_RATE,
-                                   lo_hz=None, hi_hz=None, devide_by_std=True).astype(np.float16)
-ripple_band_magni_sd = ud.calc_band_magnitude(lfp, SAMP_RATE,
-                lo_hz=LOW_HZ_RIPPLE, hi_hz=HIGH_HZ_RIPPLE, devide_by_std=True).astype(np.float16)
+norm_mep_magni = utils.dsp.calc_band_magnitude(mep,
+                                      SAMP_RATE,
+                                      lo_hz=None,
+                                      hi_hz=None,
+                                      devide_by_std=True).astype(np.float16)
+
+norm_rip_magni = utils.dsp.calc_band_magnitude(lfp,
+                                              SAMP_RATE,
+                                              lo_hz=RIPPLE_CANDI_LIM_HZ[0],
+                                              hi_hz=RIPPLE_CANDI_LIM_HZ[1],
+                                              devide_by_std=True).astype(np.float16) # 150, 250
 
 
 ## Save
-SPATH_MEP_MAGNI_SD = upcvt.LFP_to_MEP_magni(LPATH_LFP)
-SPATH_RIPPLE_BAND_MAGNI = upcvt.LFP_to_ripple_magni(LPATH_LFP)
+SPATH_NORM_MEP_MAGNI = utils.path_converters.LFP_to_MEP_magni(LPATH_LFP)
+SPATH_NORM_RIP_MAGNI = utils.path_converters.LFP_to_ripple_magni(LPATH_LFP)
 
-ug.save_npy(mep_magni_sd, SPATH_MEP_MAGNI_SD)
-ug.save_npy(ripple_band_magni_sd, SPATH_RIPPLE_BAND_MAGNI)
+utils.general.save(norm_mep_magni, SPATH_NORM_MEP_MAGNI)
+utils.general.save(norm_rip_magni, SPATH_NORM_RIP_MAGNI)
 
 ## EOF

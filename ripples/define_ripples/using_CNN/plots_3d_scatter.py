@@ -13,13 +13,15 @@ from utils.EDA_funcs.plot_3d_scatter import plot_3d_scatter
 
 
 ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-ap.add_argument("-nm", "--n_mouse", default='04', choices=['01', '02', '03', '04', '05'], \
+ap.add_argument("-nm", "--n_mouse", default='01', choices=['01', '02', '03', '04', '05'], \
                 help=" ")
 ap.add_argument("-i", "--include", action='store_true', default=False,
                 help=" ")
 ap.add_argument("-s", "--save", default=False, choices=[False, 'png', 'mp4'], \
                 help=" ")
 args = ap.parse_args()
+
+args.include = True
 
 
 ## Configure Matplotlib
@@ -53,7 +55,7 @@ ftr1, ftr2, ftr3 = 'ln(duration_ms)', 'mean ln(MEP magni. / SD)', 'ln(ripple pea
 rips_df = pd.concat([rips_df_CNN, _rips_df_GMM[[ftr1, ftr2, ftr3]]], axis=1)
 are_ripple_CNN = rips_df['are_ripple_CNN']
 ftr1, ftr2, ftr3 = 'ln(duration_ms)', 'mean ln(MEP magni. / SD)', 'ln(ripple peak magni. / SD)'
-rips_df = rips_df[[ftr1, ftr2, ftr3]] # fixme
+rips_df = rips_df[[ftr1, ftr2, ftr3]]
 
 
 ## Prepares sparse Data Frame for visualization
@@ -66,10 +68,10 @@ indi_sparse = indi_sparse.astype(bool)
 
 
 ## Defines clusters
-cls0_sparse_rips_df = rips_df[~are_ripple_CNN & indi_sparse]
-cls1_sparse_rips_df = rips_df[are_ripple_CNN & indi_sparse]
-# print(cls0_sparse_rips_df.iloc[:10])
-# print(cls1_sparse_rips_df.iloc[:10])
+T_CNN_sparse_rips_df = rips_df[are_ripple_CNN & indi_sparse]
+F_CNN_sparse_rips_df = rips_df[~are_ripple_CNN & indi_sparse]
+# print(T_CNN_sparse_rips_df.iloc[:10])
+# print(F_CNN_sparse_rips_df.iloc[:10])
 
 
 ## Plots
@@ -79,13 +81,13 @@ spath_mp4 = ug.mk_spath('{ds}_mouse_{n}.mp4'.format(ds=dataset_str, n=args.n_mou
 spath_png = ug.mk_spath('{ds}_mouse_{n}.png'.format(ds=dataset_str, n=args.n_mouse), makedirs=True) \
             if args.save == 'png' else None
 
-plot_3d_scatter(cls0_sparse_rips_df,
+plot_3d_scatter(T_CNN_sparse_rips_df,
                 ftr1,
                 ftr2,
                 ftr3,
                 cls0_label='Cleaned Cluster T',
                 cls0_color_str='blue',
-                cls1_sparse_df=cls1_sparse_rips_df,
+                cls1_sparse_df=F_CNN_sparse_rips_df,
                 cls1_label='Cleaned Cluster F',
                 cls1_color_str='red',                
                 spath_png=spath_png,

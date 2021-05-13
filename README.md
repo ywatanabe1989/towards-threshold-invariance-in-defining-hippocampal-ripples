@@ -24,19 +24,32 @@ $ # export PYTHONPATH=$SEMI_RIPPLE_HOME:$PYTHONPATH
 ./data/okada/preprocessing/mouse05_48h_to_2days.py
 ./data/okada/preprocessing/mk_fpaths_list_of_hippo_LFP_and_trape_MEP_tets.sh
 
-./ripples/define_ripples/conventional/define_ripple_candidates.py
-./ripples/define_ripples/conventional/extracts_bands_magnitude.py
 
-./EDA/MEP_FFT_pow_corr.py
+./ripples/define_ripples/conventional/sh_scripts/make_labels.sh
+./ripples/define_ripples/conventional/sh_scripts/extracts_bands_magnitude.sh
+./ripples/define_ripples/conventional/sh_scripts/calc_props.sh
 
-./ripples/define_ripples/conventional/plots_props_hists.py
-./ripples/define_ripples/conventional/plots_3d_scatter.py
-  
-./ripples/define_ripples/using_GMM/makes_labels.py
-./ripples/define_ripples/using_GMM/plots_3d_scatter.py
 
-./ripples/define_ripples/using_CNN/isolates_candidates.py
-./ripples/define_ripples/using_CNN/makes_labels.py
+./EDA/sh_scripts/MEP_FFT_pow_corr.sh
+
+
+./ripples/define_ripples/conventional/sh_scripts/plots_prop_hists.sh
+./ripples/define_ripples/conventional/sh_scripts/plots_3d_scatter.sh
+
+
+./ripples/define_ripples/using_GMM/sh_scripts/estimates_the_optimal_n_clusters.sh
+./ripples/define_ripples/using_GMM/sh_scripts/makes_labels.sh
+./ripples/define_ripples/using_GMM/sh_scripts/plots_3d_scatter.sh
+
+
+./ripples/define_ripples/using_CNN/sh_scripts/isolates_candidates.sh
+./ripples/define_ripples/using_CNN/sh_scripts/makes_labels.sh (from May 11 15:00 -> May 19?)
+
+
+
+
+
+
 ./ripples/define_ripples/using_CNN/plots_3d_scatter.py
 
 
@@ -67,9 +80,23 @@ $ tree ./data > ./data/data_tree.txt
 - [ ] Fig.20
 - [ ] Fig.21
 
+
 - [x] Estimates the optimal number of GMM clusters
+  - [ ] D01+: 3
+  - [ ] D01-:  
+  - [ ] D02+: 2
+  - [ ] D02-: 2
+  - [ ] D03+: 2
+  - [ ] D03-: 2
+  - [ ] D04+: 2
+  - [ ] D04-: 2
+  - [ ] D05+: 2
+  - [ ] D05-: 2
+
 - [ ] Enables ripple_detection module to enjoy GPU acceleration
 
-
-- [ ] checks if GMM labels were wrongly saved
 - [ ] transfer learning on hc-22/25 (CRCNS.org)
+  - [ ] downloads hc-22
+  - [ ] downloads hc-25  
+
+

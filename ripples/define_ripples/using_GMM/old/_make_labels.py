@@ -6,7 +6,10 @@ import numpy as np
 import pandas as pd
 
 import sys; sys.path.append('.')
-import utils
+import utils.general as ug
+import utils.semi_ripple as us
+import utils.path_converters as upcvt
+
 
 
 ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -18,32 +21,32 @@ args = ap.parse_args()
 
 
 ## Fixes random seed
-utils.general.fix_seeds(seed=42, np=np)
+ug.fix_seeds(seed=42, np=np)
 
 
 ## FPATHs
 N_MICE_CANDIDATES = ['01', '02', '03', '04', '05']
-i_mouse_tgt = utils.general.search_str_list(N_MICE_CANDIDATES, args.n_mouse)[0][0]
+i_mouse_tgt = ug.search_str_list(N_MICE_CANDIDATES, args.n_mouse)[0][0]
 if args.include:
-    N_MICE = [args.n_mouse]
+    N_MICE = [args.n_mouse] # N_MICE_CANDIDATES[i_mouse_tgt]
     dataset_key = 'D' + args.n_mouse + '+'
 if not args.include:
     N_MICE = N_MICE_CANDIDATES.copy()
     N_MICE.pop(i_mouse_tgt)
-    dataset_key = 'D' + args.n_mouse + '-'
+    dataset_key = 'D' + args.n_mouse + '-' # ug.connect_str_list_with_hyphens(N_MICE)
 print('Indice of mice to load: {}'.format(N_MICE))
 
-LPATH_HIPPO_LFP_NPY_LIST = utils.general.read_txt('./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt')
+LPATH_HIPPO_LFP_NPY_LIST = ug.read_txt('./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt')
 LPATH_HIPPO_LFP_NPY_LIST_MICE = list(np.hstack(
-                [utils.general.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, nm)[1] for nm in N_MICE]
+                [ug.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, nm)[1] for nm in N_MICE]
 ))
 print(len(LPATH_HIPPO_LFP_NPY_LIST_MICE))
 
 
 ## Loads
-lfps, rips_df_list = utils.pj.load_lfps_rips_sec(LPATH_HIPPO_LFP_NPY_LIST_MICE,
-                                                 rip_sec_ver='candi_with_props'
-                                                 )
+lfps, rips_df_list = us.load_lfps_rips_sec(LPATH_HIPPO_LFP_NPY_LIST_MICE,
+                                           rip_sec_ver='candi_with_props'
+                                           )
 len_rips = [len(_rips_df_tt) for _rips_df_tt in rips_df_list]
 rips_df = pd.concat(rips_df_list)
 ftr1, ftr2, ftr3 = 'ln(duration_ms)', 'mean ln(MEP magni. / SD)', 'ln(ripple peak magni. / SD)'
@@ -72,9 +75,9 @@ for i_tt in range(len(rips_df_list)):
 
 ## Saves
 for i_tt, lfp_path in enumerate(LPATH_HIPPO_LFP_NPY_LIST_MICE):
-    spath = utils.path_converters.LFP_to_ripples(lfp_path,
-                                                 rip_sec_ver='GMM_labeled/{}'.format(dataset_key))
-    utils.general.save(rips_df_list[i_tt], spath)
+    spath = upcvt.LFP_to_ripples(lfp_path, rip_sec_ver='GMM_labeled/{}'.format(dataset_key))
+    ug.save(rips_df_list[i_tt], spath)
 
 
 ## EOF
+

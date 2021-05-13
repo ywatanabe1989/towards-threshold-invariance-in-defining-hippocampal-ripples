@@ -10,10 +10,7 @@ from scipy import stats
 import skimage
 import sys; sys.path.append('.')
 
-import utils.general as ug
-import utils.path_converters as upcvt
-
-# echo 01 02 03 04 05 | xargs -P 5 -n 1 python3 ./EDA/MEP_FFT_pow_corr.py -nm 
+import utils
 
 ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 ap.add_argument("-nm", "--n_mouse", default='01', choices=['01', '02', '03', '04', '05'], \
@@ -22,11 +19,11 @@ args = ap.parse_args()
 
 
 ## Configure Matplotlib
-ug.configure_mpl(plt)
+utils.general.configure_mpl(plt)
 
 
 ## Fixes random seed
-ug.fix_seed(seed=42)
+utils.general.fix_seeds(seed=42, np=np)
 
 
 ## Funcs
@@ -46,16 +43,16 @@ WINDOW_SIZE_PTS = 1024
 
 
 ## FPATHs
-LPATH_HIPPO_LFP_NPY_LIST = ug.read_txt('./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt')
-LPATH_HIPPO_LFP_NPY_LIST_MOUSE = ug.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, args.n_mouse)[1]
-LPATH_TRAPE_MEP_NPY_LIST_MOUSE = [upcvt.LFP_to_MEP_magni(f)
+LPATH_HIPPO_LFP_NPY_LIST = utils.general.read_txt('./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt')
+LPATH_HIPPO_LFP_NPY_LIST_MOUSE = utils.general.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, args.n_mouse)[1]
+LPATH_TRAPE_MEP_NPY_LIST_MOUSE = [utils.path_converters.LFP_to_MEP_magni(f)
                                   for f in LPATH_HIPPO_LFP_NPY_LIST_MOUSE]
 
 
 
 ## Loads
-lfps = [ug.load(f).squeeze() for f in LPATH_HIPPO_LFP_NPY_LIST_MOUSE]
-meps = [ug.load(f).squeeze() for f in LPATH_TRAPE_MEP_NPY_LIST_MOUSE]
+lfps = [utils.general.load(f).squeeze() for f in LPATH_HIPPO_LFP_NPY_LIST_MOUSE]
+meps = [utils.general.load(f).squeeze() for f in LPATH_TRAPE_MEP_NPY_LIST_MOUSE]
 
 
 
@@ -110,9 +107,11 @@ plt.axhline(t_005, label='0.05 t-value', color='orange')
 plt.axhline(t_001, label='0.01 t-value', color='red')
 plt.xlabel('r value')
 plt.ylabel('t value')
-plt.title('The relationship between r values (= the correlation coefficients) and t values (n={})'.format(len(fft_df)))
+plt.title('The relationship between r values (= the correlation coefficients) and t values (n={:,})'.format(len(fft_df)))
 plt.legend()
-plt.show()
+# plt.show()
+spath = 'r_and_t_mouse_#{}.png'.format(args.n_mouse)
+utils.general.save(plt, spath)
 
 # Finds not significant t-values and the FFT frequencies
 ns_freqs_001 = fft_freqs.copy()[ts < t_001]
@@ -130,9 +129,12 @@ plt.plot(corr_coeffs)
 plt.ylim(-1, 1)
 plt.xlabel('Frequency [Hz]')
 plt.ylabel('Corr. coeff.')
-plt.title('Mouse#{nm} (n={n}); {ns_txt}'\
+plt.title('Mouse#{nm} (n={n:,}); {ns_txt}'\
           .format(nm=args.n_mouse, n=len(fft_df), ns_txt=ns_freq_005_txt))
-plt.show()
+# plt.show()
+spath = 'corr_coeff_mouse_#{}.png'.format(args.n_mouse)
+utils.general.save(plt, spath)
+
 
 
 ## Saves
@@ -145,7 +147,7 @@ df = pd.DataFrame({
   'are_significant_001': (t_001 <= ts),
   })
 
-ug.save(df, 'mouse#{nm}.csv'.format(nm=args.n_mouse))
+utils.general.save(df, 'mouse_#{nm}.csv'.format(nm=args.n_mouse))
 
 
 ## EOF

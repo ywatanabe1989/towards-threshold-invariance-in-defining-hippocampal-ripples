@@ -2,17 +2,15 @@
 import argparse
 from cleanlab.latent_estimation import estimate_confident_joint_and_cv_pred_proba
 from cleanlab.pruning import get_noise_indices
-from sklearn.model_selection import StratifiedKFold # train_test_split,
-import sys; sys.path.append('.')
+from sklearn.model_selection import StratifiedKFold
 import torch
 import numpy as np
 import pandas as pd
 
-import utils.general as ug
-import utils.semi_ripple as us
-import utils.path_converters as upcvt
-from utils.Reporter import Reporter
+import sys; sys.path.append('.')
+import utils
 from models.ResNet1D.CleanLabelResNet1D import CleanLabelResNet1D
+from utils.Reporter import Reporter
 
 
 ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -26,41 +24,40 @@ args = ap.parse_args()
 ################################################################################
 ## Fixes random seeds
 ################################################################################
-ug.fix_seeds(seed=42, np=np)
+utils.general.fix_seeds(seed=42, np=np, torch=torch)
 
 
 ################################################################################
 ## FPATHs
 ################################################################################
-LPATH_HIPPO_LFP_NPY_LIST = ug.read_txt('./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt')
+LPATH_HIPPO_LFP_NPY_LIST = utils.general.read_txt('./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt')
 # Determines LPATH_HIPPO_LFP_NPY_LIST_MICE and dataset_key
 N_MICE_CANDIDATES = ['01', '02', '03', '04', '05']
-i_mouse_tgt = ug.search_str_list(N_MICE_CANDIDATES, args.n_mouse)[0][0]
+i_mouse_tgt = utils.general.search_str_list(N_MICE_CANDIDATES, args.n_mouse)[0][0]
 if args.include:
-    N_MICE = N_MICE_CANDIDATES[i_mouse_tgt]
+    N_MICE = [args.n_mouse]
     dataset_key = 'D' + args.n_mouse + '+'
-    LPATH_HIPPO_LFP_NPY_LIST_MICE = ug.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, N_MICE)[1]
-
 if not args.include:
     N_MICE = N_MICE_CANDIDATES.copy()
     N_MICE.pop(i_mouse_tgt)
     dataset_key = 'D' + args.n_mouse + '-'
-    LPATH_HIPPO_LFP_NPY_LIST_MICE = list(np.hstack(
-                [ug.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, nm)[1] for nm in N_MICE]
-    ))
-    
+
+LPATH_HIPPO_LFP_NPY_LIST_MICE = list(np.hstack(
+            [utils.general.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, nm)[1] for nm in N_MICE]
+))
 print('Indice of mice to load: {}'.format(N_MICE))
+print(len(LPATH_HIPPO_LFP_NPY_LIST_MICE))    
 
 SDIR_CLEANLAB = './data/okada/cleanlab_results/{}/'.format(dataset_key)
 
 ################################################################################
 ## Loads
 ################################################################################
-lfps, rips_df_list_GMM_labeled = us.load_lfps_rips_sec(LPATH_HIPPO_LFP_NPY_LIST_MICE,
+lfps, rips_df_list_GMM_labeled = utils.pj.load_lfps_rips_sec(LPATH_HIPPO_LFP_NPY_LIST_MICE,
                                            rip_sec_ver='GMM_labeled/{}'.format(dataset_key)
                                            ) # includes labels using GMM on the dataset
 del lfps
-lfps, rips_df_list_isolated = us.load_lfps_rips_sec(LPATH_HIPPO_LFP_NPY_LIST_MICE,
+lfps, rips_df_list_isolated = utils.pj.load_lfps_rips_sec(LPATH_HIPPO_LFP_NPY_LIST_MICE,
                                            rip_sec_ver='isolated'
                                            ) # includes isolated LFP during each ripple candidate
 del lfps
@@ -94,7 +91,7 @@ import gc; gc.collect()
 ################################################################################
 ## Parameters
 ################################################################################
-# SAMP_RATE = ug.get_samp_rate_int_from_fpath(LPATH_HIPPO_LFP_NPY_LIST_MICE[0])
+# SAMP_RATE = utils.general.get_samp_rate_int_from_fpath(LPATH_HIPPO_LFP_NPY_LIST_MICE[0])
 N_FOLDS = 5
 skf = StratifiedKFold(n_splits=N_FOLDS)
 N_CLASSES = len(np.unique(T_all))
@@ -103,7 +100,7 @@ N_CLASSES = len(np.unique(T_all))
 ################################################################################
 ## Model
 ################################################################################
-cl_conf = ug.load('./models/ResNet1D/CleanLabelResNet1D.yaml')
+cl_conf = utils.general.load('./models/ResNet1D/CleanLabelResNet1D.yaml')
 cl_conf['ResNet1D']['SEQ_LEN'] = X_all.shape[-1]
 model = CleanLabelResNet1D(cl_conf)
 
@@ -176,7 +173,7 @@ reporter.save(others_dict=others_dict)
 ## Saves
 ################################################################################
 ## Loads original rips_sec
-lfps, rips_df_list = us.load_lfps_rips_sec(LPATH_HIPPO_LFP_NPY_LIST_MICE,
+lfps, rips_df_list = utils.pj.load_lfps_rips_sec(LPATH_HIPPO_LFP_NPY_LIST_MICE,
                                            rip_sec_ver='candi_with_props'
                                            )
 del lfps
@@ -193,8 +190,9 @@ for i_tt in range(len(rips_df_list)):
 
 ## Saves
 for i_tt, lfp_path in enumerate(LPATH_HIPPO_LFP_NPY_LIST_MICE):
-    spath = upcvt.LFP_to_ripples(lfp_path, rip_sec_ver='CNN_labeled/{}'.format(dataset_key))
-    ug.save(rips_df_list[i_tt], spath)
+    spath = utils.path_converters.LFP_to_ripples(lfp_path,
+                                                 rip_sec_ver='CNN_labeled/{}'.format(dataset_key))
+    utils.general.save(rips_df_list[i_tt], spath)
 
 
 ## EOF

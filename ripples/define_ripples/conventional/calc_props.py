@@ -3,7 +3,8 @@ import argparse
 import sys; sys.path.append('.')
 import os
 
-import utils.general as ug
+import utils
+# import utils.general as ug
 from utils.EDA_funcs.calc_ripple_properties import calc_ripple_properties
 
 
@@ -17,23 +18,17 @@ args = ap.parse_args()
 
 ## PATHs
 lpath_lfp = args.npy_fpath
-lpath_rip = lpath_lfp.replace('LFP_MEP_1kHz_npy', 'ripple_candi_1kHz_pkl')\
-                     .replace('.npy', '.pkl')
-
-
-## Loads
-rip_sec_df = ug.load_pkl(lpath_rip)
 
 
 ## Calculates ripple properties
-rip_sec_with_props_df = calc_ripple_properties(rip_sec_df, lpath_lfp)
+rip_sec_with_props_df = calc_ripple_properties(lpath_lfp)
 
 
 ## Saves
-spath = lpath_rip.replace('orig', 'with_props')
-sdir, _, _ = ug.split_fpath(spath)
+spath = utils.path_converters.LFP_to_ripples(lpath_lfp, rip_sec_ver='candi_with_props')
+sdir, _, _ = utils.general.split_fpath(spath)
 os.makedirs(sdir, exist_ok=True)
-ug.save_pkl(rip_sec_with_props_df, spath)
+utils.general.save(rip_sec_with_props_df, spath)
 
 
 ## EOF

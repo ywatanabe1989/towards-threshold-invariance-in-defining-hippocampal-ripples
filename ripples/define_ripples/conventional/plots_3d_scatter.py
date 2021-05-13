@@ -6,8 +6,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-import utils.general as ug
-import utils.semi_ripple as us
+import utils
 from utils.EDA_funcs.plot_3d_scatter import plot_3d_scatter
 
 
@@ -20,20 +19,20 @@ args = ap.parse_args()
 
 
 ## Configure Matplotlib
-ug.configure_mpl(plt)
+utils.general.configure_mpl(plt)
 
 
 ## Fixes random seed
-ug.fix_seeds(seed=42, np=np)
+utils.general.fix_seeds(seed=42, np=np)
 
 
 ## FPATHs
-LPATH_HIPPO_LFP_NPY_LIST = ug.read_txt('./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt')
-LPATH_HIPPO_LFP_NPY_LIST_MOUSE = ug.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, args.n_mouse)[1]
+LPATH_HIPPO_LFP_NPY_LIST = utils.general.read_txt('./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt')
+LPATH_HIPPO_LFP_NPY_LIST_MOUSE = utils.general.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, args.n_mouse)[1]
 
 
 ## Loads
-lfps, rips_df_list = us.load_lfps_rips_sec(LPATH_HIPPO_LFP_NPY_LIST_MOUSE,
+lfps, rips_df_list = utils.pj.load_lfps_rips_sec(LPATH_HIPPO_LFP_NPY_LIST_MOUSE,
                                        rip_sec_ver='candi_with_props'
                                        )
 rips_df = pd.concat(rips_df_list)
@@ -58,9 +57,9 @@ cls0_sparse_rips_df = rips_df[indi_sparse]
 
 
 ## Plots
-spath_mp4 = ug.mk_spath('mouse_{n}.mp4'.format(n=args.n_mouse), makedirs=True) \
+spath_mp4 = utils.general.mk_spath('mouse_{n}.mp4'.format(n=args.n_mouse), makedirs=True) \
             if args.save == 'mp4' else None
-spath_png = ug.mk_spath('mouse_{n}.png'.format(n=args.n_mouse), makedirs=True) \
+spath_png = utils.general.mk_spath('mouse_{n}.png'.format(n=args.n_mouse), makedirs=True) \
             if args.save == 'png' else None    
 plot_3d_scatter(cls0_sparse_rips_df,
                 ftr1,
