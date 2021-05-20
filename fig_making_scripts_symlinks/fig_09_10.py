@@ -1,1 +1,1 @@
-../ripples/define_ripples/using_CNN/checks_labels.py
+../ripples/define_ripples/using_CNN/makes_labels.py

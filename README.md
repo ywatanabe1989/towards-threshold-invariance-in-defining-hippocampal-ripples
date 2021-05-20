@@ -43,14 +43,10 @@ $ # export PYTHONPATH=$SEMI_RIPPLE_HOME:$PYTHONPATH
 
 
 ./ripples/define_ripples/using_CNN/sh_scripts/isolates_candidates.sh
-./ripples/define_ripples/using_CNN/sh_scripts/makes_labels.sh (from May 11 15:00 -> May 19?)
-
-
-
-
-
-
-./ripples/define_ripples/using_CNN/plots_3d_scatter.py
+./ripples/define_ripples/using_CNN/sh_scripts/makes_labels.sh
+./ripples/define_ripples/using_CNN/sh_scripts/plots_3d_scatter.py
+./ripples/define_ripples/using_CNN/checks_traces.py; TP, TN, FP, FN
+./ripples/define_ripples/using_CNN/checks_avg_traces.py
 
 
 ## ./data dir tree 
@@ -69,7 +65,7 @@ $ tree ./data > ./data/data_tree.txt
 - [x] Fig.09
 - [x] Fig.10
 - [x] Fig.11
-- [ ] Fig.12
+- [x] Fig.12
 - [ ] Fig.13
 - [ ] Fig.14
 - [ ] Fig.15
@@ -81,23 +77,13 @@ $ tree ./data > ./data/data_tree.txt
 - [ ] Fig.21
 
 
-- [x] Estimates the optimal number of GMM clusters
-  - [ ] D01+: 3
-  - [ ] D01-:  
-  - [ ] D02+: 2
-  - [ ] D02-: 2
-  - [ ] D03+: 2
-  - [ ] D03-: 2
-  - [ ] D04+: 2
-  - [ ] D04-: 2
-  - [ ] D05+: 2
-  - [ ] D05-: 2
-
 - [ ] Enables ripple_detection module to enjoy GPU acceleration
 
 - [ ] transfer learning on hc-22/25 (CRCNS.org)
-  - [ ] downloads hc-22
+  - [x] downloads hc-22
   - [ ] downloads hc-25  
 
 
 - [ ] organize utils
+
+- [ ] makes labels with existing methods
