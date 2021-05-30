@@ -54,23 +54,9 @@ $ tree ./data > ./data/data_tree.txt
 
 
 ## To-do
-- [x] Fig.01
-- [x] Fig.02
-- [x] Fig.03
-- [x] Fig.04
-- [x] Fig.05
-- [x] Fig.06
-- [x] Fig.07
-- [x] Fig.08
-- [x] Fig.09
-- [x] Fig.10
-- [x] Fig.11
-- [x] Fig.12
-- [ ] Fig.13
 - [ ] Fig.14
 - [ ] Fig.15
 - [ ] Fig.16
-- [x] Fig.17
 - [ ] Fig.18
 - [ ] Fig.19
 - [ ] Fig.20
