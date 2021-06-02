@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 import argparse
 import os
 import sys
@@ -7,9 +8,11 @@ from itertools import combinations
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import scipy
 
 sys.path.append(".")
 import utils
+from modules.cliffsDelta.cliffsDelta import cliffsDelta
 
 ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 ap.add_argument(
@@ -128,7 +131,8 @@ colors2str = {
 dfs = []
 alpha = 0.5
 ticks = []
-for i_label, label in enumerate(["T2T", "F2T", "T2F", "F2F"]):
+groups = ["T2T", "F2T", "T2F", "F2F"]
+for i_label, label in enumerate(groups):
     df = pd.DataFrame(rip_sec[rip_sec[label]][ftr_str])
     ticks.append("{}\n(n = {:,})".format(label, len(df)))
     RGBA = utils.plt.colors.to_RGBA(colors2str[label], alpha=alpha)
@@ -153,11 +157,89 @@ ax.set_title("Mouse #{}".format(args.n_mouse))
 
 ystart, yend = ax.get_ylim()
 ax.yaxis.set_ticks(np.linspace(ystart, np.round(yend, 0), n_yticks))
-fig.show()
+# fig.show()
 
 utils.general.save(
     fig, "mouse_#{}_{}.png".format(args.n_mouse, args.ftr.replace(" ", "_"))
 )
+
+
+################################################################################
+## Kruskal-Wallis test (, which is often regarded as a nonparametric version of the ANOVA test.)
+################################################################################
+data = {g: rip_sec[rip_sec[g]][ftr_str] for g in groups}
+H_statistic, p_value = scipy.stats.kruskal(*data.values())  # one-way ANOVA on RANKs
+print(
+    "\nKruskal-Wallis test:\nH_statistic: {}\np-value: {}\n".format(
+        H_statistic, p_value
+    )
+)
+
+
+################################################################################
+## Brunner-Munzel test (post-hoc test; with Bonferroni correction)
+################################################################################
+pvals_bm_df = pd.DataFrame(index=groups, columns=groups)
+
+for combi in combinations(groups, 2):
+    i_str, j_str = combi
+    pvals_bm_df.loc[i_str, j_str] = utils.stats.brunner_munzel_test(
+        data[i_str], data[j_str]
+    )[1]
+
+NaN_mask = pvals_bm_df.isna()
+nonNaN_mask = ~NaN_mask
+n_nonNaN = (nonNaN_mask).sum().sum()
+## Bonferroni correction
+pvals_bm_bonf_df = pvals_bm_df.copy()
+pvals_bm_bonf_df[nonNaN_mask] = pvals_bm_bonf_df[nonNaN_mask] * n_nonNaN
+## Significant or not
+alpha = 0.05
+significant_mask = pvals_bm_bonf_df < alpha
+significant_mask[NaN_mask] = "-"
+print(
+    "\nBrunner-Munzel test with Bonferroni correction:\n{}\n".format(significant_mask.T)
+)
+# out = utils.stats.multicompair(data, groups, testfunc=utils.stats.brunner_munzel_test)
+
+################################################################################
+## Cliff's delta values (effect size)
+################################################################################
+cliff_df = pd.DataFrame(index=groups, columns=groups)
+
+for combi in combinations(groups, 2):
+    i_str, j_str = combi
+    cliff_df.loc[i_str, j_str] = cliffsDelta(data[i_str], data[j_str])[0]
+
+abs_cliff_df = cliff_df.abs()
+
+## 3d-barplot
+# setup the figure and axes
+utils.general.configure_mpl(plt, figscale=10)
+fig = plt.figure()
+ax = fig.add_subplot(projection="3d")
+## coordinates
+_x = np.arange(abs_cliff_df.shape[0])
+_y = np.arange(abs_cliff_df.shape[1])
+_xx, _yy = np.meshgrid(_x, _y)
+x, y = _xx.ravel(), _yy.ravel()
+dz = [abs_cliff_df.iloc[xi, yi] for xi, yi in zip(x, y)]
+dx = dy = 1
+z = np.zeros_like(x)
+## plot
+ax.bar3d(x, y, z, dx, dy, dz, shade=True)
+ax.set_zlim(0, 1)
+ax.set_xticks(np.arange(len(groups)) + 0.5)
+ax.set_xticklabels(groups)
+ax.set_yticks(np.arange(len(groups)) + 0.5)
+ax.set_yticklabels(groups)
+ax.set_title(
+    "Absolute cliffs delta values for {ftr_str}\nMouse #{nm}".format(
+        ftr_str=ftr_str, nm=args.n_mouse
+    )
+)
+# fig.show()
+utils.general.save(fig, "abs_cliffs_delta_mouse_#{}.png".format(args.n_mouse))
 
 
 ## EOF

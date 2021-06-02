@@ -1,1 +1,1 @@
-../ripples/define_ripples/using_CNN/checks_avg_traces.py
+../ripples/define_ripples/summary/checks_avg_traces.py

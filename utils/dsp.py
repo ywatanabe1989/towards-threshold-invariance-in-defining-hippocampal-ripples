@@ -1,14 +1,9 @@
 #!/usr/bin/env python
 
 import numpy as np
-from modules.rippledetection.core import (
-    exclude_close_events,
-    filter_band,
-    gaussian_smooth,
-    threshold_by_zscore,
-)
 import pandas as pd
-
+from modules.rippledetection.core import (exclude_close_events, filter_band,
+                                          gaussian_smooth, threshold_by_zscore)
 
 # def calc_band_magnitude(
 #     data,
@@ -42,30 +37,27 @@ def calc_band_magnitude(
     devide_by_std=False,
     smoothing_sigma=0.004,
 ):
-    if (lo_hz, hi_hz) != (None, None): # Ripple band
-        _, filted_magni, _ = define_ripple_candidates(None,
-                                                      data,
-                                                      samp_rate,
-                                                      lo_hz=lo_hz,
-                                                      hi_hz=hi_hz,
-                                                      smoothing_sigma=smoothing_sigma,
-                                                      only_calc_filted_magni=True,
-                                                      )
+    if (lo_hz, hi_hz) != (None, None):  # Ripple band
+        _, filted_magni, _ = define_ripple_candidates(
+            None,
+            data,
+            samp_rate,
+            lo_hz=lo_hz,
+            hi_hz=hi_hz,
+            smoothing_sigma=smoothing_sigma,
+            only_calc_filted_magni=True,
+        )
         # filted = bandpass(data, lo_hz, hi_hz, samp_rate)
-    else: # MEP
+    else:  # MEP
         filted = data
         power = filted ** 2
         smoothed_power = gaussian_smooth(power, smoothing_sigma, samp_rate)
         filted_magni = np.sqrt(smoothed_power).squeeze()
-        
+
     if devide_by_std:
         filted_magni /= filted_magni.std()  # Normalize
 
     return filted_magni
-    
-
-
-
 
 
 def define_ripple_candidates(
@@ -112,19 +104,23 @@ def define_ripple_candidates(
     filted_magni = combined_filtered_lfps  # alias
 
     if only_calc_filted_magni:
-         filtered_lfps = None
-         rip_sec = None
+        filtered_lfps = None
+        rip_sec = None
 
     else:
         candidate_ripple_times = threshold_by_zscore(
             combined_filtered_lfps, time_x, minimum_duration, zscore_threshold
         )
 
-        ripple_times = exclude_close_events(candidate_ripple_times, close_ripple_threshold)
+        ripple_times = exclude_close_events(
+            candidate_ripple_times, close_ripple_threshold
+        )
 
         index = pd.Index(np.arange(len(ripple_times)) + 1, name="ripple_number")
 
-        rip_sec = pd.DataFrame(ripple_times, columns=["start_sec", "end_sec"], index=index)
+        rip_sec = pd.DataFrame(
+            ripple_times, columns=["start_sec", "end_sec"], index=index
+        )
 
         filtered_lfps = filtered_lfps.squeeze()
 

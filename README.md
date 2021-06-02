@@ -45,7 +45,7 @@ $ # export PYTHONPATH=$SEMI_RIPPLE_HOME:$PYTHONPATH
 ./ripples/define_ripples/using_CNN/sh_scripts/isolates_candidates.sh
 ./ripples/define_ripples/using_CNN/sh_scripts/makes_labels.sh
 ./ripples/define_ripples/using_CNN/sh_scripts/plots_3d_scatter.py
-./ripples/define_ripples/using_CNN/checks_traces.py; TP, TN, FP, FN
+./ripples/define_ripples/using_CNN/checks_traces.py
 ./ripples/define_ripples/using_CNN/checks_avg_traces.py
 
 
@@ -54,9 +54,6 @@ $ tree ./data > ./data/data_tree.txt
 
 
 ## To-do
-- [ ] Fig.14
-- [ ] Fig.15
-- [ ] Fig.16
 - [ ] Fig.18
 - [ ] Fig.19
 - [ ] Fig.20

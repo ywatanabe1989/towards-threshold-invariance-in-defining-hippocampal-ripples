@@ -100,6 +100,8 @@ From: centos:centos8
     python3 -m pip install cleanlab
     python3 -m pip install yellowbrick
     python3 -m pip install ipdb
+    python3 -m pip install statsmodels
+    
 
 
     # ################################################################################
