@@ -64,7 +64,7 @@ $ tree ./data > ./data/data_tree.txt
 
 - [ ] transfer learning on hc-22/25 (CRCNS.org)
   - [x] downloads hc-22
-  - [ ] downloads hc-25  
+  - [x] downloads hc-25  
 
 
 - [ ] organize utils
