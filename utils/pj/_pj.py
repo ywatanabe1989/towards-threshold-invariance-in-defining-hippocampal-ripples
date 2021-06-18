@@ -1,15 +1,15 @@
 #!/usr/bin/env python
+
 import numpy as np
 import utils.general as ug
 import utils.path_converters as upcvt
 
 
-def load_lfps_rips_sec(fpaths_lfp, rip_sec_ver='candi_orig'):
-    '''
-    '''
+def load_lfps_rips_sec(fpaths_lfp, rip_sec_ver="candi_orig"):
+    """ """
     # rip_sec_versions_list = ['candi_orig', 'candi_with_props', 'GMM_labeled', 'CNN_labeled']
     # assert rip_sec_ver in rip_sec_versions_list
-    
+
     lfps, rips_sec = [], []
     for f in fpaths_lfp:
         # f_rip = f.replace('LFP_MEP_1kHz_npy', 'ripples_1kHz_pkl')\
@@ -19,7 +19,6 @@ def load_lfps_rips_sec(fpaths_lfp, rip_sec_ver='candi_orig'):
         lfps.append(np.load(f).squeeze())
         rips_sec.append(ug.load_pkl(f_rip))
     return lfps, rips_sec
-
 
 
 # def pad_sequence(listed_1Darrays, padding_value=0):

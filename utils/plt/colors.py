@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+import numpy as np
+
 
 def RGB2RGBA(RGB, alpha=0, round=3):
     RGB = np.array(RGB).astype(float)
@@ -19,6 +21,12 @@ RGB_d = {
     "blown": [128, 0, 0],
     "navy": [0, 0, 100],
 }
+
+
+def cycle_color(i_color):
+    COLORS_10_STR = list(RGB_d.keys())
+    n_colors = len(COLORS_10_STR)
+    return COLORS_10_STR[i_color % n_colors]
 
 
 def to_RGB(c):
