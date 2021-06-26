@@ -57,21 +57,13 @@ $ # export PYTHONPATH=$SEMI_RIPPLE_HOME:$PYTHONPATH
 ## ./data dir tree 
 $ tree ./data > ./data/data_tree.txt
 
-
-## To-do
-- [ ] Fig.18
-- [ ] Fig.19
-- [ ] Fig.20
-- [ ] Fig.21
+## To-Dos
+- [ ] Open model and weight
+- [ ] make code available with pip
 
 
-- [ ] Enables ripple_detection module to enjoy GPU acceleration
+~~- [ ] Enables ripple_detection module to enjoy GPU acceleration~~
 
 - [ ] transfer learning on hc-22/25 (CRCNS.org)
   - [x] downloads hc-22
-  - [x] downloads hc-25  
-
-
-- [ ] organize utils
-
-- [ ] makes labels with existing methods
+  - [x] downloads hc-25
