@@ -30,7 +30,69 @@ utils.general.fix_seeds(seed=42, np=np, torch=torch)
 ################################################################################
 ## Functions
 ################################################################################
-class DataLoaderFiller:
+class DataLoaderFiller(object):
+    """A helper class for providing training and test dataloaders.
+    The "fill" method enables re-sampling training data at each epoch.
+
+    kwargs:
+        "i_mouse_test":
+            the index of mouse for test
+
+        "batch_size":
+            default: 64
+
+        "num_workers":
+            default: 10
+
+        "do_under_sampling":
+            whether or not doing under sampling (default: True)
+
+        "use_classes_str":
+            a combination of ["n", "s", "r"],
+
+        "samp_rate":
+            1000
+
+        "window_size_pts":
+            window size [points] (or you might call it sliding window size, crop size,
+            segment size, epoch size, ...; default: 400).
+
+        "use_random_start":
+            True or False. To reduce the sampling bias regarding cropping, "True" turns on
+            random starts at the first of every training epoch.
+
+        "lower_SD_thres_for_reasonable_ripple":
+            The lower threshold for defining reasonbale ripples [SD] (default: 7).
+
+        "do_under_sampling":
+            "True" turns on under sampling on "Training" step after shuffling.
+
+    Example:
+        dlf = DataLoaderFiller(
+            i_mouse_test=0,
+            use_classes_str=["n", "r"],
+        )
+        dl_tra = dlf.fill("Training")
+        dl_test = dlf.fill("Test")
+
+        batch = next(iter(dl_tra))
+
+
+        for epoch in range(10):
+            dl_tra = dlf.fill("Training")
+            for i_batch, batch in enumerate(dl_tra):
+                Xb_tra, Pb_tra = batch
+                print(i_batch)
+                print(Pb_tra)
+
+        dl_tes = dlf.fill("Test")
+        for i_batch, batch in enumerate(dl_tra):
+            Xb_tra, Pb_tra = batch
+            print(i_batch)
+            print(Pb_tra)
+
+    """
+
     def __init__(
         self,
         i_mouse_test=0,
@@ -40,6 +102,10 @@ class DataLoaderFiller:
         RANDOM_STATE=42,
         **kwargs,
     ):
+        """
+        A docstring for init method.
+        """
+
         ## Merges kwargs
         _kwargs = dict(
             i_mouse_test=i_mouse_test,
@@ -71,15 +137,19 @@ class DataLoaderFiller:
         self.is_filled_test = False
 
     def fill(self, step):
-        if (step == "test") & self.is_filled_test:
+        """
+        step is eather "Training" or "Test."
+        """
+        if (step == "Test") & self.is_filled_test:
             dl_test = deepcopy(self.dl_test_back)
             return dl_test
 
-        if step == "training":
+        ## Switches lfps and rips in depending on step
+        if step == "Training":
             lfps = self.lfps_tra
             rips = self.rips_tra
 
-        if step == "test":
+        if step == "Test":
             lfps = self.lfps_tes
             rips = self.rips_tes
 
@@ -96,7 +166,7 @@ class DataLoaderFiller:
             drop_last=True,
         )
 
-        if step == "test":
+        if step == "Test":
             self.is_filled_test = True
             self.dl_test_back = deepcopy(dl)
 
@@ -118,9 +188,10 @@ def _define_X_P_electrode(
     Also, each segment is allocated ripple peak power ['uV'] (P) as a target label.
     When kwargs['step'] is 'test', under sampling and shuffle is not conducted.
 
+
     args:
         step:
-            'training' or 'test' is permitted.
+            'Training' or 'Test' is permitted.
 
     kwargs:
         "use_classes_str":
@@ -142,7 +213,7 @@ def _define_X_P_electrode(
             The lower threshold for defining reasonbale ripples [SD] (default: 7).
 
         "do_under_sampling":
-            "True" turns on under sampling on "training" step after shuffling.
+            "True" turns on under sampling on "Training" step after shuffling.
 
     Outputs:
         X:
@@ -168,7 +239,7 @@ def _define_X_P_electrode(
             kwargs = {
                "use_classes_str": ["n", "r"],
                "lower_SD_thres_for_reasonable_ripple": 7,
-               "step": 'training',
+               "step": 'Training',
                "do_under_sampling": True,
             }
             X_el_tra, P_el_tra = _define_X_P_electrode(lfp, rip_sec, 'train', **kwargs)
@@ -178,7 +249,7 @@ def _define_X_P_electrode(
     """
 
     ## Check an argument
-    assert (step == "training") or (step == "test")
+    assert (step == "Training") or (step == "Test")
 
     ## Merges kwargs
     _kwargs = dict(
@@ -326,13 +397,13 @@ def _define_X_P_electrode(
     X_el, P_el, T_el = X_el[indi_b], P_el[indi_b], T_el[indi_b]
 
     ## Shuffle within electrode for under sampling
-    if step == "training":
+    if step == "Training":
         X_el, P_el, T_el = shuffle(X_el, P_el, T_el)
 
     ##############################
     # Under Sampilng
     ##############################
-    if kwargs["do_under_sampling"] & (step == "training"):
+    if kwargs["do_under_sampling"] & (step == "Training"):
         N_min = np.min([(T_el == c).sum() for c in kwargs["use_classes_str"]])
         indi_classes = [np.where(T_el == c)[0] for c in kwargs["use_classes_str"]]
         indi_pick = np.hstack([ic[:N_min] for ic in indi_classes])
@@ -369,13 +440,13 @@ if __name__ == "__main__":
         i_mouse_test=0,
         use_classes_str=["n", "r"],
     )
-    dl_tra = dlf.fill("training")
-    dl_test = dlf.fill("test")
+    dl_tra = dlf.fill("Training")
+    dl_test = dlf.fill("Test")
 
     batch = next(iter(dl_tra))
 
     for epoch in range(10):
-        dl_tra = dlf.fill("training")
+        dl_tra = dlf.fill("Training")
         for i_batch, batch in enumerate(dl_tra):
             Xb_tra, Pb_tra = batch
             print(i_batch)

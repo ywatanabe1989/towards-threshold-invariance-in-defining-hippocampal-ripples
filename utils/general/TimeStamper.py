@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import time
+
 
 class TimeStamper:
     def __init__(self):

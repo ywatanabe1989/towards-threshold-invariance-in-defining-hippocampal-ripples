@@ -44,9 +44,14 @@ $ # export PYTHONPATH=$SEMI_RIPPLE_HOME:$PYTHONPATH
 
 ./ripples/define_ripples/using_CNN/sh_scripts/isolates_candidates.sh
 ./ripples/define_ripples/using_CNN/sh_scripts/makes_labels.sh
-./ripples/define_ripples/using_CNN/sh_scripts/plots_3d_scatter.py
+./ripples/define_ripples/using_CNN/sh_scripts/plots_3d_scatter.sh
 ./ripples/define_ripples/using_CNN/checks_traces.py
 ./ripples/define_ripples/using_CNN/checks_avg_traces.py
+
+./ripples/detect_ripples/CNN/train_n_vs_r.py
+./ripples/detect_ripples/CNN/sh_scripts/predict_n_s_r.sh
+./ripples/detect_ripples/CNN/sh_scripts/fit_sigmoid_on_the_predicted_scores_of_s.sh
+
 
 
 ## ./data dir tree 

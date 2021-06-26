@@ -9,4 +9,4 @@ def torch_to_arr(x):
     if is_arr:  # when x is np.array
         return x
     if torch.is_tensor(x):  # when x is torch.tensor
-        return x.detach().numpy().cpu()
+        return x.detach().cpu().numpy()
