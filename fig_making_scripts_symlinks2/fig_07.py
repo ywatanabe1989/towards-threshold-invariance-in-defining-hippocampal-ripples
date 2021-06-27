@@ -1,1 +1,0 @@
-../ripples/define_ripples/using_CNN/isolates_candidates.py

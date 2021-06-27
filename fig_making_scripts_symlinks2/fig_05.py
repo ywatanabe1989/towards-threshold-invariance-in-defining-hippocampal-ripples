@@ -1,1 +1,0 @@
-../ripples/define_ripples/using_GMM/plots_3d_scatter.py

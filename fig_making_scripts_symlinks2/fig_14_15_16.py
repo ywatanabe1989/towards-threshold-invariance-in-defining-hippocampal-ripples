@@ -1,1 +1,0 @@
-/mnt/nvme/proj/Semisupervised_Ripples/ripples/define_ripples/summary/checks_ripple_props.py
