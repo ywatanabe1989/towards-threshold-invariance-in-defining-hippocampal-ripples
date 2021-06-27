@@ -19,6 +19,10 @@ ap.add_argument(
 )
 args = ap.parse_args()
 
+################################################################################
+## Sets tee
+################################################################################
+sys.stdout, sys.stderr = utils.general.tee(sys)
 
 ## Functions
 def isolates_rip_row(rip_row, lfp=None, max_duration_pts=400):
@@ -98,8 +102,8 @@ def isolates_rip_row(rip_row, lfp=None, max_duration_pts=400):
 
 ## FPATHs
 lpath_lfp = args.lpath_lfp
-lpath_rip = utils.path_converters.LFP_to_ripples(lpath_lfp, rip_sec_ver="candi_orig")
-
+lpath_rip = utils.pj.path_converters.LFP_to_ripples(lpath_lfp, rip_sec_ver="candi_orig")
+lpath_rip_magni = utils.pj.path_converters.LFP_to_MEP_magni(lpath_lfp)
 
 ## Loads
 lfp = utils.general.load(lpath_lfp).squeeze()
@@ -108,7 +112,7 @@ rip_magni = utils.general.load(lpath_rip_magni).squeeze()
 
 
 ## Gets Parameters
-SAMP_RATE = utils.general.get_samp_rate_int_from_fpath(lpath_lfp)  # 1000
+SAMP_RATE = utils.pj.get_samp_rate_int_from_fpath(lpath_lfp)  # 1000
 
 
 ## Isolates each ripple candidate

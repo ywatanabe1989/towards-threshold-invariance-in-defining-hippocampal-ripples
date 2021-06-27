@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+
 import argparse
 import os
 import sys
@@ -27,7 +28,7 @@ utils.general.fix_seeds(seed=42, np=np)
 ################################################################################
 ## Configures matplotlib
 ################################################################################
-utils.general.configure_mpl(plt)
+utils.plt.configure_mpl(plt)
 
 
 ################################################################################
@@ -39,23 +40,23 @@ sys.stdout, sys.stderr = utils.general.tee(sys)
 ################################################################################
 ## FPATHs
 ################################################################################
-LPATH_HIPPO_LFP_NPY_LIST = utils.general.read_txt(
+LPATH_HIPPO_LFP_NPY_LIST = utils.general.load(
     "./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt"
 )
-LPATH_HIPPO_LFP_NPY_LIST_MICE = utils.general.search_str_list(
+LPATH_HIPPO_LFP_NPY_LIST_MICE = utils.general.grep(
     LPATH_HIPPO_LFP_NPY_LIST, args.n_mouse
 )[1]
 
 lpath_lfp = LPATH_HIPPO_LFP_NPY_LIST_MICE[0]
-lpath_rip_sec = utils.path_converters.LFP_to_ripples(
+lpath_rip_sec = utils.pj.path_converters.LFP_to_ripples(
     lpath_lfp,
     rip_sec_ver="CNN_labeled/D{}+".format(args.n_mouse),
 )
-lpath_rip_magni = utils.path_converters.LFP_to_ripple_magni(lpath_lfp)
-lpath_mep_magni = utils.path_converters.LFP_to_MEP_magni(lpath_lfp)
+lpath_rip_magni = utils.pj.path_converters.LFP_to_ripple_magni(lpath_lfp)
+lpath_mep_magni = utils.pj.path_converters.LFP_to_MEP_magni(lpath_lfp)
 
 ## Gets Parameters
-samp_rate = utils.general.get_samp_rate_int_from_fpath(lpath_lfp)
+samp_rate = utils.pj.get_samp_rate_int_from_fpath(lpath_lfp)
 dt_sec = 1.0 / samp_rate
 
 
@@ -105,7 +106,8 @@ def plot_traces(start_sec=6516, dur_sec=3):
     RIPPLE_CANDI_LIM_HZ = utils.general.load("./conf/global.yaml")[
         "RIPPLE_CANDI_LIM_HZ"
     ]
-    filted_plt, _, _ = utils.dsp.define_ripple_candidates(
+    # filted_plt, _, _ = utils.dsp.define_ripple_candidates(
+    filted_plt, _, _ = utils.pj.define_ripple_candidates(
         x_sec,
         lfp_plt,
         samp_rate,

@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+import utils
+
+
 ################################################################################
 ## Reproducibility
 ################################################################################
@@ -79,7 +82,7 @@ class Tee(object):
         return g
 
 
-def tee(sys, spath=None):
+def tee(sys, sdir=None):
     """
     import sys
 
@@ -93,26 +96,36 @@ def tee(sys, spath=None):
     import os
 
     ####################
-    ## Determines spath
+    ## Determines sdir
     ####################
-    if spath is None:
+    if sdir is None:
         __file__ = inspect.stack()[1].filename
         if "ipython" in __file__:
             __file__ = "/tmp/fake.py"
         spath = __file__
-    else:
-        os.makedirs(os.path.dirname(spath), exist_ok=True)
 
-    root, ext = os.path.splitext(spath)
+        _sdir, sfname, _ = utils.general.split_fpath(spath)
+        sdir = _sdir + sfname + "/"
+        # sdir = os.path.dirname(spath)
+    #     sdir = utils.general.split_fpath(spath)[0]
+    # else:
 
-    ## Checks spath ext
-    permitted_exts_list = [".txt", ".log"]
-    if not ext in permitted_exts_list:
-        root = root + ext.replace(".", "_")
-        ext = ".log"
+    os.makedirs(sdir, exist_ok=True)
 
-    spath_stdout = root + "_stdout" + ext
-    spath_stderr = root + "_stderr" + ext
+    # # root, ext = os.path.splitext(spath)
+
+    # ## Checks spath ext
+    # permitted_exts_list = [".txt", ".log"]
+    # if not ext in permitted_exts_list:
+    #     root = root + ext.replace(".", "_")
+    #     ext = ".log"
+
+    # spath_stdout = root + "_stdout" + ext
+    # spath_stderr = root + "_stderr" + ext
+    spath_stdout = sdir + "log/stdout.log"
+    spath_stderr = sdir + "log/stderr.log"
+    os.makedirs(utils.general.split_fpath(spath_stdout)[0], exist_ok=True)
+
     sys_stdout = Tee(sys.stdout, spath_stdout)
     sys_stderr = Tee(sys.stdout, spath_stderr)
 

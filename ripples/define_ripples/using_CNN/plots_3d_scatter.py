@@ -8,7 +8,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import utils
-from utils.EDA_funcs.plot_3d_scatter import plot_3d_scatter
+
+# from utils.EDA_funcs.plot_3d_scatter import plot_3d_scatter
 
 ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 ap.add_argument(
@@ -22,7 +23,7 @@ args.include = True
 
 
 ## Configure Matplotlib
-utils.general.configure_mpl(plt)
+utils.plt.configure_mpl(plt)
 
 
 ## Fixes random seed
@@ -30,10 +31,10 @@ utils.general.fix_seeds(seed=42, np=np)
 
 
 ## FPATHs
-LPATH_HIPPO_LFP_NPY_LIST = utils.general.read_txt(
+LPATH_HIPPO_LFP_NPY_LIST = utils.general.load(
     "./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt"
 )
-LPATH_HIPPO_LFP_NPY_LIST_MOUSE = utils.general.search_str_list(
+LPATH_HIPPO_LFP_NPY_LIST_MOUSE = utils.general.grep(
     LPATH_HIPPO_LFP_NPY_LIST, args.n_mouse
 )[1]
 
@@ -43,11 +44,11 @@ dataset_str = (
     "D{}+".format(args.n_mouse) if args.include else "D{}-".format(args.n_mouse)
 )
 rip_sec_ver = "CNN_labeled/{}".format(dataset_str)
-lfps, rips_df_list_CNN = utils.pj.load_lfps_rips_sec(
+lfps, rips_df_list_CNN = utils.pj.load.lfps_rips_sec(
     LPATH_HIPPO_LFP_NPY_LIST_MOUSE,
     rip_sec_ver=rip_sec_ver,
 )
-lfps, _rips_df_list_GMM = utils.pj.load_lfps_rips_sec(
+lfps, _rips_df_list_GMM = utils.pj.load.lfps_rips_sec(
     LPATH_HIPPO_LFP_NPY_LIST_MOUSE,
     rip_sec_ver=rip_sec_ver.replace("CNN", "GMM"),
 )  # to get the tree features
@@ -104,7 +105,7 @@ spath_png = (
     else None
 )
 
-plot_3d_scatter(
+utils.pj.plot_3d_scatter(
     T_CNN_sparse_rips_df,
     ftr1,
     ftr2,

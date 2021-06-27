@@ -3,6 +3,7 @@
 import csv
 
 import pandas as pd
+import utils
 
 
 def save(obj, sfname_or_spath, makedirs=True, show=True, **kwargs):
@@ -37,7 +38,7 @@ def save(obj, sfname_or_spath, makedirs=True, show=True, **kwargs):
 
         ## spath
         fpath = __file__
-        fdir, fname, _ = split_fpath(fpath)
+        fdir, fname, _ = utils.general.split_fpath(fpath)
         sdir = fdir + fname + "/"
         spath = sdir + sfname
         # spath = mk_spath(sfname, makedirs=True)

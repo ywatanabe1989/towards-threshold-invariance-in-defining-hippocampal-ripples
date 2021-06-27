@@ -10,7 +10,7 @@ ResNet1D:
     'lrelu'
   n_blks:
     3
-  n_first_filters_res:
+  n_first_filters:
     256
   global_pooling_str:
     'average'

@@ -13,7 +13,8 @@ from sklearn.model_selection import StratifiedKFold
 sys.path.append(".")
 import utils
 from models.ResNet1D.CleanLabelResNet1D import CleanLabelResNet1D
-from utils.Reporter import Reporter
+
+# from utils.Reporter import Reporter
 
 ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 ap.add_argument(
@@ -32,12 +33,12 @@ utils.general.fix_seeds(seed=42, np=np, torch=torch)
 ################################################################################
 ## FPATHs
 ################################################################################
-LPATH_HIPPO_LFP_NPY_LIST = utils.general.read_txt(
+LPATH_HIPPO_LFP_NPY_LIST = utils.general.load(
     "./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt"
 )
 # Determines LPATH_HIPPO_LFP_NPY_LIST_MICE and dataset_key
 N_MICE_CANDIDATES = ["01", "02", "03", "04", "05"]
-i_mouse_tgt = utils.general.search_str_list(N_MICE_CANDIDATES, args.n_mouse)[0][0]
+i_mouse_tgt = utils.general.grep(N_MICE_CANDIDATES, args.n_mouse)[0][0]
 if args.include:
     N_MICE = [args.n_mouse]
     dataset_key = "D" + args.n_mouse + "+"
@@ -47,12 +48,7 @@ if not args.include:
     dataset_key = "D" + args.n_mouse + "-"
 
 LPATH_HIPPO_LFP_NPY_LIST_MICE = list(
-    np.hstack(
-        [
-            utils.general.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, nm)[1]
-            for nm in N_MICE
-        ]
-    )
+    np.hstack([utils.general.grep(LPATH_HIPPO_LFP_NPY_LIST, nm)[1] for nm in N_MICE])
 )
 print("Indice of mice to load: {}".format(N_MICE))
 print(len(LPATH_HIPPO_LFP_NPY_LIST_MICE))
@@ -62,11 +58,11 @@ SDIR_CLEANLAB = "./data/okada/cleanlab_results/{}/".format(dataset_key)
 ################################################################################
 ## Loads
 ################################################################################
-lfps, rips_df_list_GMM_labeled = utils.pj.load_lfps_rips_sec(
+lfps, rips_df_list_GMM_labeled = utils.pj.load.lfps_rips_sec(
     LPATH_HIPPO_LFP_NPY_LIST_MICE, rip_sec_ver="GMM_labeled/{}".format(dataset_key)
 )  # includes labels using GMM on the dataset
 del lfps
-lfps, rips_df_list_isolated = utils.pj.load_lfps_rips_sec(
+lfps, rips_df_list_isolated = utils.pj.load.lfps_rips_sec(
     LPATH_HIPPO_LFP_NPY_LIST_MICE, rip_sec_ver="isolated"
 )  # includes isolated LFP during each ripple candidate
 del lfps
@@ -83,7 +79,7 @@ rips_df = pd.concat([rips_df_list_GMM_labeled, rips_df_list_isolated], axis=1)  
 rips_df = rips_df.loc[:, ~rips_df.columns.duplicated()]  # delete duplicated columns
 rips_df = rips_df[["start_sec", "end_sec", "are_ripple_GMM", "isolated"]]
 # 'start_sec', 'end_sec',
-# 'ln(duration_ms)', 'mean ln(MEP magni. / SD)', 'ln(ripple peak magni. / SD)',
+# 'ln(duration_ms)', 'ln(mean MEP magni. / SD)', 'ln(ripple peak magni. / SD)',
 # 'are_ripple_GMM'
 
 
@@ -122,7 +118,7 @@ model = CleanLabelResNet1D(cl_conf)
 ## estimate_confident_joint_and_cv_pred_proba()
 
 ## Calculates predicted probabilities psx.
-reporter = Reporter(sdir=SDIR_CLEANLAB)
+reporter = utils.ml.Reporter(sdir=SDIR_CLEANLAB)
 psx = np.zeros((len(T_all), N_CLASSES))
 for i_fold, (indi_tra, indi_tes) in enumerate(skf.split(X_all, T_all)):
     X_tra, T_tra = X_all[indi_tra], T_all[indi_tra]
@@ -183,7 +179,7 @@ reporter.save(others_dict=others_dict)
 ## Saves
 ################################################################################
 ## Loads original rips_sec
-lfps, rips_df_list = utils.pj.load_lfps_rips_sec(
+lfps, rips_df_list = utils.pj.load.lfps_rips_sec(
     LPATH_HIPPO_LFP_NPY_LIST_MICE, rip_sec_ver="candi_with_props"
 )
 del lfps

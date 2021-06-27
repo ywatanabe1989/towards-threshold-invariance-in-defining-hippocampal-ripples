@@ -24,7 +24,7 @@ utils.general.fix_seeds(seed=42, np=np)
 
 ## FPATHs
 N_MICE_CANDIDATES = ["01", "02", "03", "04", "05"]
-i_mouse_tgt = utils.general.search_str_list(N_MICE_CANDIDATES, args.n_mouse)[0][0]
+i_mouse_tgt = utils.general.grep(N_MICE_CANDIDATES, args.n_mouse)[0][0]
 if args.include:
     N_MICE = [args.n_mouse]
     dataset_key = "D" + args.n_mouse + "+"
@@ -34,29 +34,24 @@ if not args.include:
     dataset_key = "D" + args.n_mouse + "-"
 print("Indice of mice to load: {}".format(N_MICE))
 
-LPATH_HIPPO_LFP_NPY_LIST = utils.general.read_txt(
+LPATH_HIPPO_LFP_NPY_LIST = utils.general.load(
     "./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt"
 )
 LPATH_HIPPO_LFP_NPY_LIST_MICE = list(
-    np.hstack(
-        [
-            utils.general.search_str_list(LPATH_HIPPO_LFP_NPY_LIST, nm)[1]
-            for nm in N_MICE
-        ]
-    )
+    np.hstack([utils.general.grep(LPATH_HIPPO_LFP_NPY_LIST, nm)[1] for nm in N_MICE])
 )
 print(len(LPATH_HIPPO_LFP_NPY_LIST_MICE))
 
 
 ## Loads
-lfps, rips_df_list = utils.pj.load_lfps_rips_sec(
+lfps, rips_df_list = utils.pj.load.lfps_rips_sec(
     LPATH_HIPPO_LFP_NPY_LIST_MICE, rip_sec_ver="candi_with_props"
 )
 len_rips = [len(_rips_df_tt) for _rips_df_tt in rips_df_list]
 rips_df = pd.concat(rips_df_list)
 ftr1, ftr2, ftr3 = (
     "ln(duration_ms)",
-    "mean ln(MEP magni. / SD)",
+    "ln(mean MEP magni. / SD)",
     "ln(ripple peak magni. / SD)",
 )
 rips_df = rips_df[[ftr1, ftr2, ftr3]]
@@ -84,7 +79,7 @@ for i_tt in range(len(rips_df_list)):
 
 ## Saves
 for i_tt, lfp_path in enumerate(LPATH_HIPPO_LFP_NPY_LIST_MICE):
-    spath = utils.path_converters.LFP_to_ripples(
+    spath = utils.pj.path_converters.LFP_to_ripples(
         lfp_path, rip_sec_ver="GMM_labeled/{}".format(dataset_key)
     )
     utils.general.save(rips_df_list[i_tt], spath)
