@@ -37,7 +37,7 @@ def plot_3d_scatter(
     ymax=3.0,
     zmin=0.0,
     zmax=3.5,
-    alpha=0.3,
+    alpha=0.35,
 ):
 
     ##############################
@@ -69,7 +69,11 @@ def plot_3d_scatter(
         label=cls0_label,
         alpha=alpha,
         s=size,
-        c=(np.array(RGB_PALLETE_DICT[cls0_color_str]) / 255)[np.newaxis, ...],
+        c=utils.plt.colors.to_RGBA(
+            cls0_color_str,
+            alpha=alpha,
+        )
+        # c=(np.array(RGB_PALLETE_DICT[cls0_color_str]) / 255)[np.newaxis, ...],
     )
 
     if cls1_sparse_df is not None:
@@ -81,7 +85,11 @@ def plot_3d_scatter(
             label=cls1_label,
             alpha=alpha,
             s=size,
-            c=(np.array(RGB_PALLETE_DICT[cls1_color_str]) / 255)[np.newaxis, ...],
+            c=utils.plt.colors.to_RGBA(
+                cls1_color_str,
+                alpha=alpha,
+            )
+            # c=(np.array(RGB_PALLETE_DICT[cls1_color_str]) / 255)[np.newaxis, ...],
         )
 
     plt.legend(loc="upper left")
@@ -110,8 +118,12 @@ def plot_3d_scatter(
         r1,
         r2,
         r3,
-        c=tuple(np.array(RGB_PALLETE_DICT["green"]) / 255),
-        alpha=alpha,
+        c=utils.plt.colors.to_RGBA(
+            "green",
+            alpha=alpha,
+        ),
+        # c=tuple(np.array(RGB_PALLETE_DICT["green"]) / 255),
+        alpha=0.5,
     )
 
     r1, r2, r3 = [np.log(15), xmax], [ymin, np.log(1 * 5 / 4)], [np.log(4), zmax]
@@ -119,8 +131,12 @@ def plot_3d_scatter(
         r1,
         r2,
         r3,
-        c=tuple(np.array(RGB_PALLETE_DICT["purple"]) / 255),
-        alpha=alpha,
+        c=utils.plt.colors.to_RGBA(
+            "purple",
+            alpha=alpha,
+        ),
+        # c=tuple(np.array(RGB_PALLETE_DICT["purple"]) / 255),
+        alpha=0.5,
     )
 
     ##############################

@@ -1,0 +1,12 @@
+# CRCNS.org 'tools' dataset files
+# To use this for fetching files, comment out files that are
+# not needed by putting a '#' as the first character on the line (default mode)
+# or put a '+' as the first character to specifiy files to be fetched (+ mode).
+# mode='default' (change to '+' for + mode).
+ 00-README.txt	200
+ download/crcns-account.txt	165
+ download/crcns-download-tools-instuctions.docx	99860 (97.5 KB)
+ download/crcns-download-tools-instuctions.pdf	62848 (61.3 KB)
+ download/download.sh	10385 (10.1 KB)
+ download/verify.sh	1800 (1.7 KB)
+ checksums.md5	425

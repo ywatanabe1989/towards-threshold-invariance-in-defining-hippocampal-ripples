@@ -1,0 +1,1 @@
+/mnt/nvme/proj/Semisupervised_Ripples/data/batch_download/download/ywatanabe/crcns-account.txt

@@ -10,3 +10,4 @@ from .misc import (calc_h, get_samp_rate_int_from_fpath,
                    get_samp_rate_str_from_fpath, to_int_samp_rate,
                    to_str_samp_rate)
 from .plot_3d_scatter import plot_3d_scatter
+from .plot_traces_X2X import plot_traces_X2X

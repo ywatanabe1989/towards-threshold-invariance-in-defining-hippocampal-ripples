@@ -61,7 +61,9 @@ DL_CONF = {
     "samp_rate": SAMP_RATE,
     "window_size_pts": WINDOW_SIZE_PTS,
     "use_random_start": True,
-    "lower_SD_thres_for_reasonable_ripple": 7,
+    # "lower_SD_thres_for_reasonable_ripple": 7,
+    # "lower_SD_thres_for_reasonable_ripple": 5,
+    "lower_SD_thres_for_reasonable_ripple": 1,
     "MAX_EPOCHS": 3,
 }
 window_size_sec = DL_CONF["window_size_pts"] / DL_CONF["samp_rate"]
@@ -196,7 +198,6 @@ for i_mouse_test in ["01", "02", "03", "04", "05"]:
         true_class_tes,
         pred_class_tes,
         pred_proba_tes,
-        # labels=["n", "r"],
         labels=["R0", "R1"],
         i_mouse_test=dlf.kwargs["i_mouse_test"],
     )

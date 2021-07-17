@@ -101,3 +101,19 @@ def listed_dict(keys=None):  # Is there a better name?
         for k in keys:
             dict_list[k] = []
     return dict_list
+
+
+################################################################################
+## variables
+################################################################################
+def does_exist(suspicious_var_str):
+    """
+    Example:
+        print(does_exist('a'))
+        # False
+
+        a = 5
+        print(does_exist('a'))
+        # True
+    """
+    return suspicious_var_str in globals()

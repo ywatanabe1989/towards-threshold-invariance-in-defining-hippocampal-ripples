@@ -8,9 +8,6 @@ import os
 
 import utils
 
-# import utils.general as ug
-# from utils.EDA_funcs.calc_ripple_properties import calc_ripple_properties
-
 ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 ap.add_argument(
     "-n",
@@ -21,9 +18,7 @@ ap.add_argument(
 args = ap.parse_args()
 
 
-################################################################################
 ## Sets tee
-################################################################################
 sys.stdout, sys.stderr = utils.general.tee(sys)
 
 
@@ -39,8 +34,6 @@ rip_sec_with_props_df = utils.pj.calc_ripple_properties(lpath_lfp)
 spath = utils.pj.path_converters.LFP_to_ripples(
     lpath_lfp, rip_sec_ver="candi_with_props"
 )
-# sdir, _, _ = utils.general.split_fpath(spath)
-# os.makedirs(sdir, exist_ok=True)
 utils.general.save(rip_sec_with_props_df, spath)
 
 

@@ -75,7 +75,10 @@ def save(obj, sfname_or_spath, makedirs=True, show=True, **kwargs):
             joblib.dump(obj, s, compress=3)
     # png
     if spath.endswith(".png"):
-        obj.savefig(spath)
+        try:
+            obj.savefig(spath)
+        except:
+            obj.figure.savefig(spath)
         del obj
     # tiff
     if spath.endswith(".tiff") or spath.endswith(".tif"):

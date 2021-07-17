@@ -64,6 +64,15 @@ for _ in range(N_ELECTRODES):
     lpath_lfp = random.choice(LPATH_HIPPO_LFP_NPY_LIST_MICE)
     lpath_rip_magni = utils.pj.path_converters.LFP_to_ripple_magni(lpath_lfp)
     lpath_mep_magni = utils.pj.path_converters.LFP_to_MEP_magni(lpath_lfp)
+    # rip_sec
+    lpath_rip_sec_CNN = utils.pj.path_converters.LFP_to_ripples(
+        lpath_lfp,
+        rip_sec_ver="CNN_labeled/D{}-".format(args.n_mouse),
+    )
+    lpath_rip_sec_CNN = utils.pj.path_converters.cycle_dataset(
+        lpath_rip_sec_CNN, args.n_mouse
+    )
+    lpath_rip_sec_GMM = lpath_rip_sec_CNN.replace("CNN", "GMM")
 
     ################################################################################
     ## Loads
@@ -72,29 +81,27 @@ for _ in range(N_ELECTRODES):
     rip_magni = utils.general.load(lpath_rip_magni)
     mep_magni = utils.general.load(lpath_mep_magni)
     # rip_sec
-    rip_sec = utils.pj.load.rip_sec(
-        lpath_lfp,
-        rip_sec_ver="CNN_labeled/D{}-".format(args.n_mouse),
-        cycle_dataset=True,
-        n_mouse=args.n_mouse,
-    )
-
+    _rip_sec_CNN = utils.general.load(lpath_rip_sec_CNN)
+    _rip_sec_GMM = utils.general.load(lpath_rip_sec_GMM)
+    rip_sec = _rip_sec_CNN[["start_sec", "end_sec", "pred_probas_ripple_CNN"]]
     # makes X2X column
     rip_sec["X2X"] = np.nan  # init
-    are_T2T = rip_sec["are_ripple_GMM"] & rip_sec["are_ripple_CNN"].astype(bool)
-    are_F2T = ~rip_sec["are_ripple_GMM"] & rip_sec["are_ripple_CNN"].astype(bool)
-    are_T2F = rip_sec["are_ripple_GMM"] & ~rip_sec["are_ripple_CNN"].astype(bool)
-    are_F2F = ~rip_sec["are_ripple_GMM"] & ~rip_sec["are_ripple_CNN"].astype(bool)
-
-    rip_sec.loc[are_T2T, "X2X"] = "T2T"
-    rip_sec.loc[are_F2T, "X2X"] = "F2T"
-    rip_sec.loc[are_T2F, "X2X"] = "T2F"
-    rip_sec.loc[are_F2F, "X2X"] = "F2F"
-
-    # rip_sec["X2X"][are_T2T] = "T2T"
-    # rip_sec["X2X"][are_F2T] = "F2T"
-    # rip_sec["X2X"][are_T2F] = "T2F"
-    # rip_sec["X2X"][are_F2F] = "F2F"
+    are_T2T = _rip_sec_GMM["are_ripple_GMM"] & _rip_sec_CNN["are_ripple_CNN"].astype(
+        bool
+    )
+    are_F2T = ~_rip_sec_GMM["are_ripple_GMM"] & _rip_sec_CNN["are_ripple_CNN"].astype(
+        bool
+    )
+    are_T2F = _rip_sec_GMM["are_ripple_GMM"] & ~_rip_sec_CNN["are_ripple_CNN"].astype(
+        bool
+    )
+    are_F2F = ~_rip_sec_GMM["are_ripple_GMM"] & ~_rip_sec_CNN["are_ripple_CNN"].astype(
+        bool
+    )
+    rip_sec["X2X"][are_T2T] = "T2T"
+    rip_sec["X2X"][are_F2T] = "F2T"
+    rip_sec["X2X"][are_T2F] = "T2F"
+    rip_sec["X2X"][are_F2F] = "F2F"
 
     ################################################################################
     ## Makes ripple analog signal
@@ -105,9 +112,7 @@ for _ in range(N_ELECTRODES):
         start_pts = int(rip["start_sec"] * SAMP_RATE)
         end_pts = int(rip["end_sec"] * SAMP_RATE)
         rip_analog_sig[start_pts:end_pts] = 1
-        rip_pred_proba_sig[start_pts:end_pts] = rip[
-            "psx_ripple"
-        ]  # rip["pred_probas_ripple_CNN"]
+        rip_pred_proba_sig[start_pts:end_pts] = rip["pred_probas_ripple_CNN"]
 
     ################################################################################
     ## Plots

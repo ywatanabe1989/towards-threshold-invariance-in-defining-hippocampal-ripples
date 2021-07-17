@@ -100,7 +100,7 @@ class Reporter:
         pred_class,
         pred_proba,
         labels=None,
-        i_mouse_test=None,
+        i_fold=None,
         show=True,
         plot=False,
     ):
@@ -118,23 +118,19 @@ class Reporter:
         ####################
         acc = (true_class.reshape(-1) == pred_class.reshape(-1)).mean()
         if show:
-            print("\nACC in fold#{} was {:.3f}\n".format(i_mouse_test, acc))
+            print("\nACC in fold#{} was {:.3f}\n".format(i_fold, acc))
         balanced_acc = balanced_accuracy_score(
             true_class.reshape(-1), pred_class.reshape(-1)
         )
         if show:
-            print(
-                "\nBalanced ACC in fold#{} was {:.3f}\n".format(
-                    i_mouse_test, balanced_acc
-                )
-            )
+            print("\nBalanced ACC in fold#{} was {:.3f}\n".format(i_fold, balanced_acc))
 
         ####################
         ## MCC
         ####################
         mcc = matthews_corrcoef(true_class.reshape(-1), pred_class.reshape(-1))
         if show:
-            print("\nMCC in fold#{} was {:.3f}\n".format(i_mouse_test, mcc))
+            print("\nMCC in fold#{} was {:.3f}\n".format(i_fold, mcc))
 
         ####################
         ## Confusion Matrix
@@ -144,9 +140,7 @@ class Reporter:
             pd.Series(list(labels))
         )
         if show:
-            print(
-                "\nConfusion Matrix in fold#{}: \n{}\n".format(i_mouse_test, conf_mat)
-            )
+            print("\nConfusion Matrix in fold#{}: \n{}\n".format(i_fold, conf_mat))
 
         ####################
         ## Classification Report
@@ -170,9 +164,7 @@ class Reporter:
         clf_report.index.name = None
         if show:
             print(
-                "\nClassification Report in fold#{}: \n{}\n".format(
-                    i_mouse_test, clf_report
-                )
+                "\nClassification Report in fold#{}: \n{}\n".format(i_fold, clf_report)
             )
 
         ####################
@@ -431,9 +423,9 @@ class Reporter:
             for i_cm, cm in enumerate(self.conf_mats_folds)
         ]
 
-        for i_mouse_test, cm in enumerate(self.conf_mats_folds_fig):
+        for i_fold, cm in enumerate(self.conf_mats_folds_fig):
             utils.general.save(
-                cm, self.sdir + "conf_mat/" + "fold#{}.png".format(i_mouse_test)
+                cm, self.sdir + "conf_mat/" + "fold#{}.png".format(i_fold)
             )
         self.save_listed_dfs(
             self.conf_mats_folds,
@@ -497,16 +489,16 @@ class Reporter:
         aucs_df.index = _indi_suffix_cat  # fixme
         utils.general.save(aucs_df, self.sdir + "aucs.csv", makedirs=makedirs)
 
-        for i_mouse_test in range(len(self.roc_aucs_figs_folds)):
-            spath = self.sdir + "roc_curves/fold#{}.png".format(i_mouse_test)
+        for i_fold in range(len(self.roc_aucs_figs_folds)):
+            spath = self.sdir + "roc_curves/fold#{}.png".format(i_fold)
             utils.general.save(
-                self.roc_aucs_figs_folds[i_mouse_test], spath, makedirs=makedirs
+                self.roc_aucs_figs_folds[i_fold], spath, makedirs=makedirs
             )
 
-        for i_mouse_test in range(len(self.pr_aucs_figs_folds)):
-            spath = self.sdir + "pr_curves/fold#{}.png".format(i_mouse_test)
+        for i_fold in range(len(self.pr_aucs_figs_folds)):
+            spath = self.sdir + "pr_curves/fold#{}.png".format(i_fold)
             utils.general.save(
-                self.pr_aucs_figs_folds[i_mouse_test], spath, makedirs=makedirs
+                self.pr_aucs_figs_folds[i_fold], spath, makedirs=makedirs
             )
 
         ## Manually added scalars, dfs, and figures
@@ -558,8 +550,8 @@ if __name__ == "__main__":
 
     ## Main
     reporter = Reporter(sdir)
-    for i_mouse_test, (indi_tra, indi_tes) in enumerate(skf.split(X, T)):
-        print(i_mouse_test)
+    for i_fold, (indi_tra, indi_tes) in enumerate(skf.split(X, T)):
+        print(i_fold)
         ## koko
         X_tra, T_tra = X[indi_tra], T[indi_tra]
         X_tes, T_tes = X[indi_tes], T[indi_tes]
@@ -605,7 +597,7 @@ if __name__ == "__main__":
             pred_cls_tes,
             pred_proba_tes,
             labels=labels,
-            i_mouse_test=i_mouse_test,
+            i_fold=i_fold,
         )
 
     reporter.summarize()

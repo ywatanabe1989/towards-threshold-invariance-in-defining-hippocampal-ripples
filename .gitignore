@@ -7,6 +7,8 @@
 *.mp4
 *.tiff
 *.png
+*.tar.gz
+*flycheck*.py
 
 
 ## Singularity
@@ -26,6 +28,10 @@ octave-workspace
 
 ## for convenience
 *.old*
+
+## Privacy
+data/CRCN_batch_download/download/ywatanabe/crcns-account.txt
+data/hc-19
 
 
 #################################################################33333

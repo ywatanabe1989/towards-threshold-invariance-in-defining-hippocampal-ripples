@@ -18,8 +18,14 @@ ap.add_argument(
 ap.add_argument("-i", "--include", action="store_true", default=False, help=" ")
 args = ap.parse_args()
 
+
+## Sets tee
+sys.stdout, sys.stderr = utils.general.tee(sys)
+
+
 ## Configure matplotlib
 utils.plt.configure_mpl(plt)
+
 
 ## Fixes random seed
 utils.general.fix_seeds(seed=42, np=np)

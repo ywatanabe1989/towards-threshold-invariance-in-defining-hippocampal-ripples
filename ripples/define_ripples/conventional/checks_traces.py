@@ -108,7 +108,6 @@ for i in range(len(ax)):
             alpha=0.1,
             color="red",
             zorder=1000,
-            # label="Ripple candi.",
         )
 handles_d = utils.general.listed_dict()
 labels_d = utils.general.listed_dict()
@@ -131,15 +130,27 @@ spath_tiff = "traces_{}-{}_sec.tiff".format(start_sec_plt, end_sec_plt)
 utils.general.save(plt, spath_tiff)
 
 
+rip_sec_plt_digi = np.zeros_like(x_plt)
+x_plt_start = int(x_plt[0] * samp_rate)
+for ripple in rip_sec_plt.itertuples():
+    rip_sec_plt_digi[
+        int(ripple.start_sec * samp_rate)
+        - x_plt_start : int(ripple.end_sec * samp_rate)
+        - x_plt_start
+    ] = 1
+
+
 ################################################################################
 ## Saves
 ################################################################################
 df = pd.DataFrame(
     {
+        "x_plt": x_plt.squeeze(),
         "lfp_plt": lfp_plt.squeeze(),
         "filted_plt": filted_plt.squeeze(),
         "ripple_magni_plt": ripple_magni_plt.squeeze(),
         "ripple_magni_std_plt": ripple_magni_std_plt.squeeze(),
+        "ripple_digi": rip_sec_plt_digi,
     }
 )
 spath_csv = spath_tiff.replace(".tiff", ".csv")

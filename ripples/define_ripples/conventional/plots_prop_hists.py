@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 import argparse
 import sys
 
@@ -13,28 +14,24 @@ ap.add_argument("-nm", "--num_mouse", default="01", help=" ")
 args = ap.parse_args()
 
 
+## Sets tee
+sys.stdout, sys.stderr = utils.general.tee(sys)
+
+
 ## Configure Matplotlib
 utils.plt.configure_mpl(plt)
 
 
 ## PATHs
-hipp_lfp_paths_npy = utils.general.load(
-    "./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt"
-)
-hipp_lfp_paths_npy_mouse_i = utils.general.grep(hipp_lfp_paths_npy, args.num_mouse)[1]
+PATHs_HIPP_LFP_NPY_MICE = utils.pj.load.get_hipp_lfp_fpaths(["01"])
+LPATHs_RIP_MICE = [
+    utils.pj.path_converters.LFP_to_ripples(f, rip_sec_ver="candi_with_props")
+    for f in PATHs_HIPP_LFP_NPY_MICE
+]
 
 
 ## Loads
-rip_sec_df = pd.concat(
-    [
-        utils.general.load(
-            utils.pj.path_converters.LFP_to_ripples(f, rip_sec_ver="candi_with_props")
-        )
-        for f in hipp_lfp_paths_npy_mouse_i
-    ]
-)
-
-
+rip_sec_df = pd.concat([utils.general.load(lpath) for lpath in LPATHs_RIP_MICE])
 ## Excludes columns
 rip_sec_df = rip_sec_df[
     ["ln(duration_ms)", "ln(mean MEP magni. / SD)", "ln(ripple peak magni. / SD)"]
@@ -112,7 +109,5 @@ if plot:
 
 ## Saves
 utils.general.save(hist_df, "hist_df_mouse_{n}.csv".format(n=args.num_mouse))
-
-# utils.general.load('/tmp/fake/rip_sec_df_mouse_01_10_perc.csv')
 
 ## EOF

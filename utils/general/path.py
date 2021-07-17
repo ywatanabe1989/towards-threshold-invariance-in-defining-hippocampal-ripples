@@ -3,6 +3,8 @@
 import inspect
 import os
 
+import utils
+
 # import git
 
 
@@ -22,7 +24,8 @@ def mk_spath(sfname, makedirs=False):
     spath = sdir + sfname
 
     if makedirs:
-        os.makedirs(sdir, exist_ok=True)
+        os.makedirs(utils.general.split_fpath(spath)[0], exist_ok=True)
+
     return spath
 
 

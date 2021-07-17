@@ -4,17 +4,119 @@ import numpy as np
 import utils
 
 
-def lfps_rips_sec(fpaths_lfp, rip_sec_ver="candi_orig"):
-    """ """
+def rip_sec(lpath_lfp, rip_sec_ver="candi_orig", cycle_dataset=False, n_mouse=None):
+    lpath_rip = utils.pj.path_converters.LFP_to_ripples(
+        lpath_lfp, rip_sec_ver=rip_sec_ver
+    )
+
+    if cycle_dataset:
+        lpath_rip = utils.pj.path_converters.cycle_dataset(lpath_rip, n_mouse)
+
+    ## Loads
+    rip_sec = utils.general.load(lpath_rip)
+
+    if "CNN_labeled" in rip_sec_ver:
+        ## Inverse psx
+        are_errors = rip_sec["are_errors"]
+        rip_sec.loc[are_errors, "psx_ripple"] = 1 - rip_sec["psx_ripple"][are_errors]
+
+        ## Adds columns: "are_ripple_CNN",
+        #                "inversed_by_Confident_Learning",
+        #                "ln(duration_ms)",
+        #                "ln(mean MEP magni. / SD)",
+        #                "ln(ripple peak magni. / SD)",
+        rip_sec["are_ripple_CNN"] = 0.5 <= rip_sec["psx_ripple"]
+        rip_sec["inversed_using_Confident_Learning"] = True
+        rip_sec_GMM = utils.general.load(lpath_rip.replace("CNN", "GMM"))
+        assert (rip_sec["are_ripple_GMM"] == rip_sec_GMM["are_ripple_GMM"]).all()
+        ftr1, ftr2, ftr3 = (
+            "ln(duration_ms)",
+            "ln(mean MEP magni. / SD)",
+            "ln(ripple peak magni. / SD)",
+        )
+        rip_sec[ftr1] = rip_sec_GMM[ftr1]
+        rip_sec[ftr2] = rip_sec_GMM[ftr2]
+        rip_sec[ftr3] = rip_sec_GMM[ftr3]
+
+    return rip_sec
+
+
+def lfps_rips_sec(
+    lpaths_lfp, rip_sec_ver="candi_orig", cycle_dataset=False, n_mouse=None
+):
+    """
     # rip_sec_versions_list = ['candi_orig', 'candi_with_props', 'GMM_labeled', 'CNN_labeled']
     # assert rip_sec_ver in rip_sec_versions_list
+    """
 
     lfps, rips_sec = [], []
-    for f in fpaths_lfp:
-        f_rip = utils.pj.path_converters.LFP_to_ripples(f, rip_sec_ver=rip_sec_ver)
-        lfps.append(np.load(f).squeeze())
-        rips_sec.append(utils.general.load(f_rip))
+    for lpath_lfp in lpaths_lfp:
+        lpath_rip = utils.pj.path_converters.LFP_to_ripples(
+            lpath_lfp, rip_sec_ver=rip_sec_ver
+        )
+
+        ## Loads
+        lfp = np.load(lpath_lfp).squeeze()
+        rip_sec = utils.pj.load.rip_sec(
+            lpath_rip, cycle_dataset=cycle_dataset, n_mouse=n_mouse
+        )
+
+        lfps.append(lfp)
+        rips_sec.append(rip_sec)
+
     return lfps, rips_sec
+
+
+# def lfps_rips_sec(
+#     lpaths_lfp, rip_sec_ver="candi_orig", cycle_dataset=False, n_mouse=None
+# ):
+#     """
+#     # rip_sec_versions_list = ['candi_orig', 'candi_with_props', 'GMM_labeled', 'CNN_labeled']
+#     # assert rip_sec_ver in rip_sec_versions_list
+#     """
+
+#     lfps, rips_sec = [], []
+#     for lpath_lfp in lpaths_lfp:
+#         lpath_rip = utils.pj.path_converters.LFP_to_ripples(
+#             lpath_lfp, rip_sec_ver=rip_sec_ver
+#         )
+
+#         if cycle_dataset:
+#             lpath_rip = utils.pj.path_converters.cycle_dataset(lpath_rip, n_mouse)
+
+#         ## Loads
+#         lfp = np.load(lpath_lfp).squeeze()
+#         rip_sec = utils.general.load(lpath_rip)
+
+#         if "CNN_labeled" in rip_sec_ver:
+#             ## Inverse psx
+#             are_errors = rip_sec["are_errors"]
+#             rip_sec.loc[are_errors, "psx_ripple"] = (
+#                 1 - rip_sec["psx_ripple"][are_errors]
+#             )
+
+#             ## Adds columns: "are_ripple_CNN",
+#             #                "inversed_by_Confident_Learning",
+#             #                "ln(duration_ms)",
+#             #                "ln(mean MEP magni. / SD)",
+#             #                "ln(ripple peak magni. / SD)",
+#             rip_sec["are_ripple_CNN"] = 0.5 <= rip_sec["psx_ripple"]
+#             rip_sec["inversed_using_Confident_Learning"] = True
+#             rip_sec_GMM = utils.general.load(lpath_rip.replace("CNN", "GMM"))
+#             assert (rip_sec["are_ripple_GMM"] == rip_sec_GMM["are_ripple_GMM"]).all()
+#             ftr1, ftr2, ftr3 = (
+#                 "ln(duration_ms)",
+#                 "ln(mean MEP magni. / SD)",
+#                 "ln(ripple peak magni. / SD)",
+#             )
+#             rip_sec[ftr1] = rip_sec_GMM[ftr1]
+#             rip_sec[ftr2] = rip_sec_GMM[ftr2]
+#             rip_sec[ftr3] = rip_sec_GMM[ftr3]
+
+#         lfps.append(lfp)
+#         rips_sec.append(rip_sec)
+
+#     return lfps, rips_sec
 
 
 def rips_sec(fpaths_lfp, rip_sec_ver="candi_orig"):
@@ -97,64 +199,18 @@ def lfps_rips_tra_or_tes(
     return lfps, rips
 
 
-# def load_mouse_lfp_rip(
-#     mouse_num="01", dataset_plus_or_minus="+", rip_sec_ver="GMM_labeled"
-# ):
-#     LPATH_HIPPO_LFP_NPY_LIST = utils.general.load(
-#         "./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt"
-#     )
+def get_hipp_lfp_fpaths(mouse_ids):
+    if not isinstance(mouse_ids, list):
+        mouse_ids = [mouse_ids]
 
-#     ##############################
-#     mouse_num = "01"
-#     dataset_plus_or_minus = "+"
-#     ##############################
+    HIPP_LFP_PATHS_NPY_ALL = utils.general.load(
+        "./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt"
+    )
 
-#     lpath_hippo_lfp_npy_list_mouse = utils.general.grep(LPATH_HIPPO_LFP_NPY_LIST, mouse_num)[1]
+    HIPP_LFP_PATHS_NPY_MICE = [
+        utils.general.grep(HIPP_LFP_PATHS_NPY_ALL, nm)[1] for nm in mouse_ids
+    ]
 
-#     dataset_key = "D" + mouse_num + dataset_plus_or_minus
+    HIPP_LFP_PATHS_NPY_MICE = list(np.hstack(HIPP_LFP_PATHS_NPY_MICE))
 
-#     lfps_mouse, rips_df_list = load_lfps_rips_sec(
-#         lpath_hippo_lfp_npy_list_mouse, rip_sec_ver="{}/{}".format(rip_sec_ver, dataset_key)
-#     )
-
-#     return lfps_mouse, rips_df_list
-
-
-# # def load_mouse_lfp_rip(
-# #     mouse_num="01", dataset_plus_or_minus="+", rip_sec_ver="GMM_labeled"
-# # ):
-# #     LPATH_HIPPO_LFP_NPY_LIST = utils.general.load(
-# #         "./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt"
-# #     )
-
-# #     # mouse_num = "01"
-# #     # dataset_plus_or_minus = "+"
-# #     dataset_key = "D" + mouse_num + dataset_plus_or_minus
-# #     lfp_fpaths_mouse = utils.general.grep(LPATH_HIPPO_LFP_NPY_LIST, mouse_num)[1]
-
-# #     lfps_mouse, rips_df_list = load_lfps_rips_sec(
-# #         lfp_fpaths_mouse, rip_sec_ver="{}/{}".format(rip_sec_ver, dataset_key)
-# #     )  # includes labels using GMM on the dataset
-# #     return lfps_mouse, rips_df_list
-
-
-# # def pad_sequence(listed_1Darrays, padding_value=0):
-# #     '''
-# #     listed_1Darrays = rips_level_in_slices
-# #     '''
-# #     listed_1Darrays = listed_1Darrays.copy()
-# #     dtype = listed_1Darrays[0].dtype
-# #     # get max_len
-# #     max_len = 0
-# #     for i in range(len(listed_1Darrays)):
-# #       max_len = max(max_len, len(listed_1Darrays[i]))
-# #     # padding
-# #     for i in range(len(listed_1Darrays)):
-# #       # pad = (np.ones(max_len - len(listed_1Darrays[i])) * padding_value).astype(dtype)
-# #       # listed_1Darrays[i] = np.concatenate([listed_1Darrays[i], pad])
-# #       pad1 = int((max_len - len(listed_1Darrays[i])) / 2)
-# #       pad2 = max_len - len(listed_1Darrays[i]) - pad1
-# #       listed_1Darrays[i] = np.pad(listed_1Darrays[i], [pad1, pad2],
-# #                                   'constant', constant_values=(padding_value))
-# #     listed_1Darrays = np.array(listed_1Darrays)
-# #     return listed_1Darrays
+    return HIPP_LFP_PATHS_NPY_MICE

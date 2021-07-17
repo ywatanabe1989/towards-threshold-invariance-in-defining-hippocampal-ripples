@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import argparse
 import os
@@ -36,7 +36,7 @@ utils.general.fix_seeds(seed=42, np=np)
 ################################################################################
 ## Configures matplotlib
 ################################################################################
-utils.general.configure_mpl(plt)
+utils.plt.configure_mpl(plt)
 
 
 ################################################################################

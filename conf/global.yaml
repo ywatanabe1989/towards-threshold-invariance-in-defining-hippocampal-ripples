@@ -1,4 +1,9 @@
 RIPPLE_CANDI_LIM_HZ: [150, 250]
+GROUP_COLORS:
+  'T2T': 'blue'
+  'F2T': 'light_blue'
+  'T2F': 'pink'
+  'F2F': 'red'
 RGB_PALLETE_DICT:
     'blue': [0,128,192]
     'red': [255,70,50]

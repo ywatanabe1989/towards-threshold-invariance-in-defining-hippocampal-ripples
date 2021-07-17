@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 import argparse
+import gc
 import sys
+from pprint import pprint
 
 import numpy as np
 import pandas as pd
@@ -14,44 +16,38 @@ sys.path.append(".")
 import utils
 from models.ResNet1D.CleanLabelResNet1D import CleanLabelResNet1D
 
-# from utils.Reporter import Reporter
-
 ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 ap.add_argument(
-    "-nm", "--n_mouse", default="01", choices=["01", "02", "03", "04", "05"], help=" "
+    "-nm", "--n_mouse", default="05", choices=["01", "02", "03", "04", "05"], help=" "
 )
 ap.add_argument("-i", "--include", action="store_true", default=False, help=" ")
 args = ap.parse_args()
 
 
-################################################################################
+## Sets tee
+sys.stdout, sys.stderr = utils.general.tee(sys)
+
+
 ## Fixes random seeds
-################################################################################
 utils.general.fix_seeds(seed=42, np=np, torch=torch)
 
 
-################################################################################
 ## FPATHs
-################################################################################
 LPATH_HIPPO_LFP_NPY_LIST = utils.general.load(
     "./data/okada/FPATH_LISTS/HIPPO_LFP_TT_NPYs.txt"
 )
-# Determines LPATH_HIPPO_LFP_NPY_LIST_MICE and dataset_key
-N_MICE_CANDIDATES = ["01", "02", "03", "04", "05"]
-i_mouse_tgt = utils.general.grep(N_MICE_CANDIDATES, args.n_mouse)[0][0]
-if args.include:
-    N_MICE = [args.n_mouse]
-    dataset_key = "D" + args.n_mouse + "+"
-if not args.include:
-    N_MICE = N_MICE_CANDIDATES.copy()
-    N_MICE.pop(i_mouse_tgt)
-    dataset_key = "D" + args.n_mouse + "-"
 
-LPATH_HIPPO_LFP_NPY_LIST_MICE = list(
-    np.hstack([utils.general.grep(LPATH_HIPPO_LFP_NPY_LIST, nm)[1] for nm in N_MICE])
+dataset_key = "D" + args.n_mouse + "+" if args.include else "D" + args.n_mouse + "-"
+LPATH_HIPPO_LFP_NPY_LIST_MICE = (
+    utils.pj.load.get_hipp_lfp_fpaths(args.n_mouse)
+    if args.include
+    else utils.pj.load.get_hipp_lfp_fpaths(
+        utils.general.pop_keys(["01", "02", "03", "04", "05"], args.n_mouse)
+    )
 )
-print("Indice of mice to load: {}".format(N_MICE))
-print(len(LPATH_HIPPO_LFP_NPY_LIST_MICE))
+print(dataset_key)
+pprint(LPATH_HIPPO_LFP_NPY_LIST_MICE)
+
 
 SDIR_CLEANLAB = "./data/okada/cleanlab_results/{}/".format(dataset_key)
 
@@ -71,7 +67,9 @@ del lfps
 ################################################################################
 ## Organizes rips_df
 ################################################################################
-len_rips = [len(_rips_df_tt) for _rips_df_tt in rips_df_list_GMM_labeled]
+len_rips = [
+    len(_rips_df_tt) for _rips_df_tt in rips_df_list_GMM_labeled
+]  # to save at last
 rips_df_list_GMM_labeled = pd.concat(rips_df_list_GMM_labeled)
 rips_df_list_isolated = pd.concat(rips_df_list_isolated)
 rips_df = pd.concat([rips_df_list_GMM_labeled, rips_df_list_isolated], axis=1)  # concat
@@ -89,15 +87,12 @@ rips_df = rips_df[["start_sec", "end_sec", "are_ripple_GMM", "isolated"]]
 X_all = np.vstack(rips_df["isolated"])
 T_all = np.hstack(rips_df["are_ripple_GMM"]).astype(int)
 del rips_df_list_GMM_labeled, rips_df_list_isolated, rips_df
-import gc
-
 gc.collect()
 
 
 ################################################################################
 ## Parameters
 ################################################################################
-# SAMP_RATE = utils.general.get_samp_rate_int_from_fpath(LPATH_HIPPO_LFP_NPY_LIST_MICE[0])
 N_FOLDS = 5
 skf = StratifiedKFold(n_splits=N_FOLDS)
 N_CLASSES = len(np.unique(T_all))
@@ -153,24 +148,27 @@ are_errors = get_noise_indices(
     prune_method="prune_by_noise_rate",
     n_jobs=20,
 )
+error_rate = are_errors.mean()
+print("\nLabel Errors Rate:\n{:.3f}\n".format(error_rate))
 # print('\nLabel Errors Indice:\n{}\n'.format(are_errors))
 
 
-## Cleans labels
-cleaned_labels = T_all.copy()
-error_rate = are_errors.mean()
-print("\nLabel Errors Rate:\n{:.3f}\n".format(error_rate))
-cleaned_labels[are_errors] = 1 - cleaned_labels[are_errors]  # cleaning
-assert ~np.all(cleaned_labels == T_all)
+# ## Cleans labels
+# cleaned_labels = T_all.copy()
+# cleaned_labels[are_errors] = 1 - cleaned_labels[are_errors]  # cleaning
+# assert ~np.all(cleaned_labels == T_all)
 
-pred_probas_ripples = psx[:, 1]
+# ## Pred probas ripples
+# pred_probas_ripples = psx[:, 1].copy()
+
 
 ## Saves the k-fold CV training
 reporter.summarize()
+are_ripple_GMM = T_all.astype(bool)
 others_dict = {
     "are_errors.npy": are_errors,
-    "cleaned_labels.npy": cleaned_labels,
-    "pred_probas_ripples.npy": pred_probas_ripples,
+    "are_ripple_GMM.npy": are_ripple_GMM,
+    "psx_ripple.npy": psx[:, 1],
 }
 reporter.save(others_dict=others_dict)
 
@@ -185,21 +183,20 @@ lfps, rips_df_list = utils.pj.load.lfps_rips_sec(
 del lfps
 len_rips = [len(_rips_df_tt) for _rips_df_tt in rips_df_list]
 
-## Appends the found label errors on rips_df_list
+# Saves
 start, end = 0, 0
-for i_tt in range(len(rips_df_list)):
+for i_tt, lfp_path in enumerate(LPATH_HIPPO_LFP_NPY_LIST_MICE):
     end += len_rips[i_tt]
     rips_df_list[i_tt] = rips_df_list[i_tt][["start_sec", "end_sec"]]
-    rips_df_list[i_tt]["are_ripple_CNN"] = cleaned_labels[start:end]
-    rips_df_list[i_tt]["pred_probas_ripple_CNN"] = pred_probas_ripples[start:end]
-    start = end
-
-## Saves
-for i_tt, lfp_path in enumerate(LPATH_HIPPO_LFP_NPY_LIST_MICE):
-    spath = utils.path_converters.LFP_to_ripples(
+    rips_df_list[i_tt]["are_ripple_GMM"] = are_ripple_GMM[start:end]
+    rips_df_list[i_tt]["psx_ripple"] = psx[:, 1][start:end]
+    rips_df_list[i_tt]["are_errors"] = are_errors[start:end]
+    # rips_df_list[i_tt]["are_ripple_CNN"] = cleaned_labels[start:end]
+    # rips_df_list[i_tt]["pred_probas_ripple_CNN"] = pred_probas_ripples[start:end]
+    spath = utils.pj.path_converters.LFP_to_ripples(
         lfp_path, rip_sec_ver="CNN_labeled/{}".format(dataset_key)
     )
     utils.general.save(rips_df_list[i_tt], spath)
-
+    start = end
 
 ## EOF
