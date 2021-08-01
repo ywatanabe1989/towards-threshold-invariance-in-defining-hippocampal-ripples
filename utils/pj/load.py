@@ -51,14 +51,17 @@ def lfps_rips_sec(
 
     lfps, rips_sec = [], []
     for lpath_lfp in lpaths_lfp:
-        lpath_rip = utils.pj.path_converters.LFP_to_ripples(
-            lpath_lfp, rip_sec_ver=rip_sec_ver
-        )
+        # lpath_rip = utils.pj.path_converters.LFP_to_ripples(
+        #     lpath_lfp, rip_sec_ver=rip_sec_ver
+        # )
 
         ## Loads
         lfp = np.load(lpath_lfp).squeeze()
         rip_sec = utils.pj.load.rip_sec(
-            lpath_rip, cycle_dataset=cycle_dataset, n_mouse=n_mouse
+            lpath_lfp,
+            rip_sec_ver=rip_sec_ver,
+            cycle_dataset=cycle_dataset,
+            n_mouse=n_mouse,
         )
 
         lfps.append(lfp)

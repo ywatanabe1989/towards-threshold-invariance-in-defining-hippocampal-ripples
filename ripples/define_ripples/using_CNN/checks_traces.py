@@ -16,7 +16,7 @@ import utils
 
 ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 ap.add_argument(
-    "-nm", "--n_mouse", default="02", choices=["01", "02", "03", "04", "05"], help=" "
+    "-nm", "--n_mouse", default="01", choices=["01", "02", "03", "04", "05"], help=" "
 )
 ap.add_argument("-dur", "--duration_sec", default=3, type=int, help=" ")
 args = ap.parse_args()
@@ -31,7 +31,7 @@ utils.general.fix_seeds(seed=42, np=np, random=random)
 ################################################################################
 ## Configures matplotlib
 ################################################################################
-utils.plt.configure_mpl(plt)
+utils.plt.configure_mpl(plt, figsize=(18.1, 12.0), fontsize=8, legendfontsize="small")
 
 
 ################################################################################
@@ -43,9 +43,9 @@ sys.stdout, sys.stderr = utils.general.tee(sys)
 ################################################################################
 ## Parameters
 ################################################################################
-N_ELECTRODES = 5
-N_PERIODS_PER_ELECTRODE = 30
-DURATION_SEC = args.duration_sec  # 3
+N_ELECTRODES = -1  # 2  # 5
+N_PERIODS_PER_ELECTRODE = 3  # 30
+DURATION_SEC = args.duration_sec
 
 
 ################################################################################
@@ -54,12 +54,14 @@ DURATION_SEC = args.duration_sec  # 3
 LPATH_HIPPO_LFP_NPY_LIST_MICE = utils.pj.load.get_hipp_lfp_fpaths(args.n_mouse)
 ## Gets Parameters
 SAMP_RATE = utils.pj.get_samp_rate_int_from_fpath(LPATH_HIPPO_LFP_NPY_LIST_MICE[0])
-
+LPATH_LFP_ELECTRODES = np.random.permutation(LPATH_HIPPO_LFP_NPY_LIST_MICE)[
+    :N_ELECTRODES
+]
 
 ################################################################################
 ## Main
 ################################################################################
-for _ in range(N_ELECTRODES):
+for lpath_lfp in LPATH_LFP_ELECTRODES:
     ## FPATHs
     lpath_lfp = random.choice(LPATH_HIPPO_LFP_NPY_LIST_MICE)
     lpath_rip_magni = utils.pj.path_converters.LFP_to_ripple_magni(lpath_lfp)
@@ -91,20 +93,23 @@ for _ in range(N_ELECTRODES):
     rip_sec.loc[are_T2F, "X2X"] = "T2F"
     rip_sec.loc[are_F2F, "X2X"] = "F2F"
 
-    # rip_sec["X2X"][are_T2T] = "T2T"
-    # rip_sec["X2X"][are_F2T] = "F2T"
-    # rip_sec["X2X"][are_T2F] = "T2F"
-    # rip_sec["X2X"][are_F2F] = "F2F"
-
     ################################################################################
     ## Makes ripple analog signal
     ################################################################################
     rip_analog_sig = np.zeros_like(lfp)
+    rip_analog_sig_T2T = np.zeros_like(lfp)
+    rip_analog_sig_F2T = np.zeros_like(lfp)
+    rip_analog_sig_T2F = np.zeros_like(lfp)
+    rip_analog_sig_F2F = np.zeros_like(lfp)
     rip_pred_proba_sig = np.zeros_like(lfp)
     for i_rip, rip in rip_sec.iterrows():
         start_pts = int(rip["start_sec"] * SAMP_RATE)
         end_pts = int(rip["end_sec"] * SAMP_RATE)
         rip_analog_sig[start_pts:end_pts] = 1
+        rip_analog_sig_T2T[start_pts:end_pts] = 1 if rip["X2X"] == "T2T" else 0
+        rip_analog_sig_F2T[start_pts:end_pts] = 1 if rip["X2X"] == "F2T" else 0
+        rip_analog_sig_T2F[start_pts:end_pts] = 1 if rip["X2X"] == "T2F" else 0
+        rip_analog_sig_F2F[start_pts:end_pts] = 1 if rip["X2X"] == "F2F" else 0
         rip_pred_proba_sig[start_pts:end_pts] = rip[
             "psx_ripple"
         ]  # rip["pred_probas_ripple_CNN"]
@@ -112,9 +117,13 @@ for _ in range(N_ELECTRODES):
     ################################################################################
     ## Plots
     ################################################################################
-    signals_dict = {
+    input_signals_dict = {
         "lfp": lfp.squeeze(),
         "rip_analog_sig": rip_analog_sig.squeeze(),
+        "rip_analog_sig_T2T": rip_analog_sig_T2T.squeeze(),
+        "rip_analog_sig_F2T": rip_analog_sig_F2T.squeeze(),
+        "rip_analog_sig_T2F": rip_analog_sig_T2F.squeeze(),
+        "rip_analog_sig_F2F": rip_analog_sig_F2F.squeeze(),
         "rip_magni": rip_magni.squeeze(),
         "mep_magni": mep_magni.squeeze(),
         "rip_sec": rip_sec,
@@ -123,24 +132,26 @@ for _ in range(N_ELECTRODES):
 
     for _ in range(N_PERIODS_PER_ELECTRODE):
         rand_start_sec = np.random.randint(len(lfp) / SAMP_RATE - DURATION_SEC - 1)
-        # fig = utils.pj.plt.plot_signals(signals_dict, lpath_lfp, start_sec=s, dur_sec=d)
         fig, out_sig = utils.pj.plot_traces_X2X(
-            signals_dict, lpath_lfp, start_sec=rand_start_sec, dur_sec=DURATION_SEC
+            input_signals_dict,
+            lpath_lfp,
+            start_sec=rand_start_sec,
+            dur_sec=DURATION_SEC,
         )
-        sfname_png = lpath_lfp.replace("./", "|").replace("/", "|")
-        sfname_png = sfname_png + "_start_{}_sec.png".format(rand_start_sec)
-        spath_png = utils.general.mk_spath(
+
+        fig.show()
+
+        sfname_tiff = lpath_lfp.replace("./", "|").replace("/", "|")
+        sfname_tiff = sfname_tiff + "_start_{}_sec.tiff".format(rand_start_sec)
+        spath_tiff = utils.general.mk_spath(
             "mouse#{}/duration_{}_sec/fig/{}".format(
-                args.n_mouse, DURATION_SEC, sfname_png
+                args.n_mouse, DURATION_SEC, sfname_tiff
             )
         )
-        utils.general.save(fig, spath_png)
+        utils.general.save(fig, spath_tiff)
 
-        spath_csv = spath_png.replace(".png", ".csv").replace("/fig/", "/csv/")
+        spath_csv = spath_tiff.replace(".tiff", ".csv").replace("/fig/", "/csv/")
         utils.general.save(out_sig, spath_csv)
-        # spath = "./ripples/define_ripples/using_CNN/checks_traces/mouse#{}/duration_{}_sec/{}".format(
-        #     args.n_mouse, DURATION_SEC, sfname
-        # )
 
         plt.close()
 

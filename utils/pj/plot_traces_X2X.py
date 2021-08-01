@@ -31,6 +31,10 @@ def plot_traces_X2X(signals_dict, lpath_lfp, start_sec=6516, dur_sec=3, samp_rat
         hi_hz=RIP_HI_HZ,
     )
     rip_analog_sig_plt = signals_dict["rip_analog_sig"][start_pts:end_pts]
+    rip_analog_sig_T2T_plt = signals_dict["rip_analog_sig_T2T"][start_pts:end_pts]
+    rip_analog_sig_F2T_plt = signals_dict["rip_analog_sig_F2T"][start_pts:end_pts]
+    rip_analog_sig_T2F_plt = signals_dict["rip_analog_sig_T2F"][start_pts:end_pts]
+    rip_analog_sig_F2F_plt = signals_dict["rip_analog_sig_F2F"][start_pts:end_pts]
     rip_magni_plt = signals_dict["rip_magni"][start_pts:end_pts]
     mep_magni_plt = signals_dict["mep_magni"][start_pts:end_pts]
     rip_pred_proba_sig_plt = signals_dict["rip_pred_proba_sig"][start_pts:end_pts]
@@ -83,33 +87,37 @@ def plot_traces_X2X(signals_dict, lpath_lfp, start_sec=6516, dur_sec=3, samp_rat
     ## Plots
     fig, axes = plt.subplots(df.shape[0], 1, sharex=True)
     out_sig = pd.DataFrame({"x_sec": x_sec})
+    legends_1 = []
     for i_ax, ax in enumerate(axes):
         row = df.iloc[i_ax, :]
         label = row.name
         ax.plot(x_sec, row.signal, linewidth=row.linewidth, label=label, color="black")
-        out_sig[label] = row.signal
         ax.set_ylim(row.ylim)
-        ax.legend(loc="upper left")
-        ax.set_ylabel("Amp. [uV]")
-    title = "file: {}".format(lpath_lfp)
-    axes[0].set_title(title)
+        leg1 = ax.legend(
+            loc="upper left",
+            framealpha=0,
+            edgecolor=None,
+            facecolor=None,
+            shadow=False,
+        )
+        legends_1.append(leg1)  # for multiple legends; here, trace only
+        out_sig[label] = row.signal  # to save
 
-    # axes[0].set_yticks([0.0, 0.5, 1.0])
-    # axes[0].axhline(0.5, color="gray", linestyle="--", alpha=0.5)
+    title = "file: {}".format(lpath_lfp)
+    fig.suptitle(title)
+    axes[-1].set_xlabel("Time [sec]")
+    fig.text(0.02, 0.5, "Amplitude [$\mu$V]", va="center", rotation="vertical")
 
     ################################################################################
     ## Fills ripple periods
     ################################################################################
     rip_sec = signals_dict["rip_sec"]
-    # rip_sec_plt = rip_sec[
-    #     (start_sec < rip_sec["start_sec"]) & (rip_sec["end_sec"] < end_sec)
-    # ]
     rip_sec_plt = signals_dict["rip_sec"][
         (start_sec < signals_dict["rip_sec"]["start_sec"])
         & (rip_sec["end_sec"] < end_sec)
     ]
 
-    for ax in axes:
+    for i_ax, ax in enumerate(axes):
         for ripple in rip_sec_plt.itertuples():
             c = utils.plt.colors.to_RGBA(
                 utils.general.load("./conf/global.yaml")["GROUP_COLORS"][ripple.X2X],
@@ -123,14 +131,29 @@ def plot_traces_X2X(signals_dict, lpath_lfp, start_sec=6516, dur_sec=3, samp_rat
                 zorder=1000,
             )
 
-        handles, labels = ax.get_legend_handles_labels()
-        for x2x in ["T2T", "F2T", "T2F", "F2F"]:
-            c = utils.plt.colors.to_RGBA(
-                utils.general.load("./conf/global.yaml")["GROUP_COLORS"][x2x],
-                alpha=0.3,
-            )
-            handles.append(matplotlib.patches.Patch(facecolor=c, alpha=0.1))
-            labels.append(x2x)
-            ax.legend(handles, labels, loc="upper left")
+        if i_ax == 0:
+            ## multiple legends; out of the figure
+            handles, labels = [], []
+            for x2x in ["T2T", "F2T", "T2F", "F2F"]:
+                c = utils.plt.colors.to_RGBA(
+                    utils.general.load("./conf/global.yaml")["GROUP_COLORS"][x2x],
+                    alpha=0.3,
+                )
+                handles.append(matplotlib.patches.Patch(facecolor=c, alpha=0.1))
+                labels.append(x2x)
+
+            leg2 = ax.legend(handles, labels, loc="upper left", bbox_to_anchor=(1, 1))
+            ax.add_artist(legends_1[i_ax])
+
+        # else:
+        #     import pdb
+
+        #     pdb.set_trace()
+        #     ax.legend()
+
+    out_sig["rip_analog_sig_T2T_plt"] = rip_analog_sig_T2T_plt
+    out_sig["rip_analog_sig_F2T_plt"] = rip_analog_sig_F2T_plt
+    out_sig["rip_analog_sig_T2F_plt"] = rip_analog_sig_T2F_plt
+    out_sig["rip_analog_sig_F2F_plt"] = rip_analog_sig_F2F_plt
 
     return fig, out_sig

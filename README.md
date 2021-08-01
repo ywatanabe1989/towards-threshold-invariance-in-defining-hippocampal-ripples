@@ -83,8 +83,12 @@ sys.stdout, sys.stderr = utils.general.tee(sys)
 ./ripples/define_ripples/using_GMM/sh_scripts/plots_3d_scatter.sh
 
 ./ripples/define_ripples/using_CNN/sh_scripts/isolates_candidates.sh
-./ripples/define_ripples/using_CNN/sh_scripts/makes_labels.sh # 05, 08:19~starts; 16:12 fold#1 ends.
+./ripples/define_ripples/using_CNN/sh_scripts/makes_labels.sh
 
+
+
+### From here!!! ###
+./ripples/define_ripples/using_CNN/plots_3d_scatter.py
 ./ripples/define_ripples/using_CNN/sh_scripts/plots_3d_scatter.sh
 
 
@@ -113,8 +117,10 @@ $ tree ./data > ./data/data_tree.txt
     - [x] D04-
     - [x] D05-
 
-- [ ] Fig.12: Represent traces for defining ripples using CNN (confident learning)
+- [x] Fig.12: Represent traces for defining ripples using CNN (confident learning)
     - [x] fixed
+    
+- [ ] Fig. 13: Ripple props
 
 - [ ] Experiment on hc-19
     - [x] downloads hc-19

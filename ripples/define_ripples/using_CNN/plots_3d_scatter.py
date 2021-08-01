@@ -12,12 +12,10 @@ import utils
 
 ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 ap.add_argument(
-    "-nm", "--n_mouse", default="02", choices=["01", "02", "03", "04", "05"], help=" "
+    "-nm", "--n_mouse", default="01", choices=["01", "02", "03", "04", "05"], help=" "
 )
 ap.add_argument("-s", "--save", default=False, choices=[False, "png", "mp4"], help=" ")
 args = ap.parse_args()
-
-args.include = True
 
 
 ## Sets tee
@@ -44,14 +42,17 @@ lfps, rips_df_list_CNN = utils.pj.load.lfps_rips_sec(
     n_mouse=args.n_mouse,
 )
 
+
 rips_df = pd.concat(rips_df_list_CNN)
 are_ripple_CNN = rips_df["are_ripple_CNN"]
-ftr1, ftr2, ftr3 = (
+
+## Parameters
+FTR1, FTR2, FTR3 = (
     "ln(duration_ms)",
     "ln(mean MEP magni. / SD)",
     "ln(ripple peak magni. / SD)",
 )
-rips_df = rips_df[[ftr1, ftr2, ftr3]]
+rips_df = rips_df[[FTR1, FTR2, FTR3]]
 
 
 ## Prepares sparse Data Frame for visualization
@@ -83,9 +84,9 @@ spath_png = (
 
 utils.pj.plot_3d_scatter(
     T_CNN_sparse_rips_df,
-    ftr1,
-    ftr2,
-    ftr3,
+    FTR1,
+    FTR2,
+    FTR3,
     cls0_label="Cleaned Cluster T",
     cls0_color_str="blue",
     cls1_sparse_df=F_CNN_sparse_rips_df,
