@@ -22,7 +22,7 @@ sys.stdout, sys.stderr = utils.general.tee(sys)
 
 
 ## Configure Matplotlib
-utils.plt.configure_mpl(plt, legendfontsize="small")
+utils.plt.configure_mpl(plt, legendfontsize="small", figscale=2.822)
 
 
 ## Fixes random seed
@@ -74,7 +74,7 @@ spath_png = (
 )
 
 
-utils.pj.plot_3d_scatter(
+fig = utils.pj.plot_3d_scatter(
     cls0_sparse_rips_df,
     ftr1,
     ftr2,

@@ -23,7 +23,7 @@ sys.stdout, sys.stderr = utils.general.tee(sys)
 
 
 ## Configure Matplotlib
-utils.plt.configure_mpl(plt, legendfontsize="small")
+utils.plt.configure_mpl(plt, legendfontsize="small", figscale=2.822)
 
 
 ## Fixes random seed
@@ -37,13 +37,12 @@ LPATH_HIPPO_LFP_NPY_LIST_MOUSE = utils.pj.load.get_hipp_lfp_fpaths(args.n_mouse)
 ## Loads
 lfps, rips_df_list_CNN = utils.pj.load.lfps_rips_sec(
     LPATH_HIPPO_LFP_NPY_LIST_MOUSE,
-    rip_sec_ver="CNN_labeled/D{}-".format(args.n_mouse),
-    cycle_dataset=True,
+    rip_sec_ver="CNN_labeled/D{}+".format(args.n_mouse),
+    cycle_dataset=False,
     n_mouse=args.n_mouse,
 )
-
-
 rips_df = pd.concat(rips_df_list_CNN)
+
 are_ripple_CNN = rips_df["are_ripple_CNN"]
 
 ## Parameters

@@ -16,6 +16,7 @@ def LFP_to_ripples(fpath_lfp, rip_sec_ver="candi_orig"):
             ]
         )
     )
+
     CNN_vers = list(
         np.hstack(
             [

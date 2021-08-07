@@ -10,15 +10,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import scipy
+from matplotlib import colors
 
 sys.path.append(".")
 import utils
 from modules.cliffsDelta.cliffsDelta import cliffsDelta
 
 ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-# ap.add_argument(
-#     "-nm", "--n_mouse", default="02", choices=["01", "02", "03", "04", "05"], help=" "
-# )
 ap.add_argument(
     "-ftr",
     default="duration",
@@ -33,6 +31,20 @@ args = ap.parse_args()
 def take_mean_and_std(obj_list, n_round=3):
     arr = np.array(obj_list).astype(float)
     return np.nanmean(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(n_round)
+
+
+def judge_cliff(cliff_val):
+    abs_cliff_val = abs(cliff_val)
+    if 1.0 < abs_cliff_val:
+        return "Error; Cliff's delta value must be [-1, 1]"
+    if 0.474 <= abs_cliff_val:
+        return "large"
+    if 0.330 <= abs_cliff_val:
+        return "medium"
+    if 0.147 <= abs_cliff_val:
+        return "small"
+    if 0.0 <= abs_cliff_val:
+        return "negligible"
 
 
 ################################################################################
@@ -67,7 +79,6 @@ sys.stdout, sys.stderr = utils.general.tee(sys)
 ################################################################################
 if args.ftr == "duration":
     ftr_str = "ln(duration_ms)"
-    # ylabel = "ln(Duration [ms]) [a.u.]"
     ylabel = "Duration [ms]"
     ylim = 0, 630
     yticks = [0, 150, 300, 450, 600]
@@ -75,23 +86,24 @@ if args.ftr == "duration":
 
 if args.ftr == "mep":
     ftr_str = "ln(mean MEP magni. / SD)"
-    ylabel = "Mean normalized magnitude of MEP [a.u.]"
+    ylabel = "ln(Mean normalized \nmagnitude of MEP) [a.u.]"
     ylim = (-2, 4.1)
     n_yticks = 4
     yticks = np.linspace(ylim[0], np.round(ylim[1], 0), n_yticks)
 
 if args.ftr == "ripple peak magnitude":
     ftr_str = "ln(ripple peak magni. / SD)"
-    ylabel = "Normalized ripple peak magnitude [a.u.]"
+    ylabel = "ln(Normalized ripple \npeak magnitude) [a.u.]"
     ylim = (0, 3.1)
     n_yticks = 4
     yticks = np.linspace(ylim[0], np.round(ylim[1], 0), n_yticks)
 
 
-fig, axes = plt.subplots(1, 5, sharey=True)
+n_mice_str = ["01", "02", "03", "04", "05"]
+fig, axes = plt.subplots(1, len(n_mice_str))
 rips_sec_all_mice = []
 abs_cliffs = []
-for i_mouse, n_mouse_str in enumerate(["01", "02", "03", "04", "05"]):
+for i_mouse, n_mouse_str in enumerate(n_mice_str):
     print(
         "\n--------------------------------------------------\nn_mouse: {}\n".format(
             n_mouse_str
@@ -127,7 +139,8 @@ for i_mouse, n_mouse_str in enumerate(["01", "02", "03", "04", "05"]):
     ## Plots
     ################################################################################
     ax = axes[i_mouse]
-    ax = utils.plt.ax_set_position(fig, ax, 0.3 * i_mouse - 0.8, 7.0, dragv=True)
+    # ax = utils.plt.ax_set_position(fig, ax, 0.1 * i_mouse - 0.8, 7.0, dragv=True)
+    ax = utils.plt.ax_set_position(fig, ax, 0.0, 7.0, dragv=True)
 
     colors2str = {
         "T2T": "blue",
@@ -164,10 +177,6 @@ for i_mouse, n_mouse_str in enumerate(["01", "02", "03", "04", "05"]):
     ax.set_ylim(*ylim)
 
     ax.set_title("Mouse #{}".format(n_mouse_str))
-
-    # ax.yaxis.set_ticks(yticks)
-    # if i_mouse != 0:
-    #     ax.yaxis.set_ticks([])
 
     ################################################################################
     ## Kruskal-Wallis test (, which is often regarded as a nonparametric version of the ANOVA test.)
@@ -217,7 +226,6 @@ for i_mouse, n_mouse_str in enumerate(["01", "02", "03", "04", "05"]):
 
     for combi in combinations(groups, 2):
         i_str, j_str = combi
-        # cliff_df.loc[i_str, j_str] = round(cliffsDelta(data[i_str], data[j_str])[0], 3)
         abs_cliff_df.loc[i_str, j_str] = "{:.3f}".format(
             abs(cliffsDelta(data[i_str], data[j_str])[0])
         )
@@ -225,39 +233,167 @@ for i_mouse, n_mouse_str in enumerate(["01", "02", "03", "04", "05"]):
     print("\nAbsolute Cliff's delta values:\n{}".format(abs_cliff_df))
     abs_cliffs.append(abs_cliff_df)
 
-    # 0.147, 0.330, 0.474
+    ax.yaxis.set_ticks(yticks)
+    ax.set_yticklabels([])
 
-axes[0].yaxis.set_ticks(yticks)
+# axes[0].yaxis.set_ticks(yticks)
+axes[0].set_yticklabels(yticks)
 fig.axes[0].set_ylabel(ylabel)
 # fig.show()
 ## Saves
-utils.general.save(fig, "{}.png".format(args.ftr.replace(" ", "_")))
+spath = utils.general.mk_spath(
+    "distribution/{}.tiff".format(args.ftr.replace(" ", "_"))
+)
+utils.general.save(fig, spath)
+# utils.general.save(fig, "{}_distribution.tiff".format(args.ftr.replace(" ", "_")))
 
 
 ################################################################################
 ## Calculates mean and std of absolute Cliff's delta values
 ################################################################################
 abs_cliff_mean, abs_cliff_std = take_mean_and_std(abs_cliffs)
+judge_arr = (
+    np.array(["-" for _ in range(abs_cliff_mean.size)])
+    .reshape(abs_cliff_mean.shape)
+    .astype(object)
+)
+
+for i in range(abs_cliff_mean.shape[0]):
+    for j in range(abs_cliff_mean.shape[1]):
+        if not np.isnan(abs_cliff_mean[i, j]):
+            judge_arr[i, j] = judge_cliff(abs_cliff_mean[i, j])
+
+
 abs_cliff_mean_plus_minus_std = pd.DataFrame(
     data=np.array(
         [
             format(m, ".3f") + " +/- " + format(s, ".3f")
-            # format(m, '.3f') + " +/- " + format(s, '.3f')
             for m, s in zip(abs_cliff_mean.flatten(), abs_cliff_std.flatten())
         ]
     ).reshape(abs_cliff_mean.shape),
     index=groups,
     columns=groups,
-)
-abs_cliff_mean_plus_minus_std = abs_cliff_mean_plus_minus_std.replace(
-    "nan +/- nan", "-"
-)
+).replace("nan +/- nan", "-")
+
+# abs_cliff_mean_plus_minus_std = abs_cliff_mean_plus_minus_std.replace("nan +/- nan", "-")
+
+## Adds judges for the mean cliff's delta values
+abs_cliff_mean_plus_minus_std_and_judge = abs_cliff_mean_plus_minus_std.copy()
+for i in range(abs_cliff_mean_plus_minus_std_and_judge.shape[0]):
+    for j in range(abs_cliff_mean_plus_minus_std_and_judge.shape[1]):
+        mean_plus_minus_std = abs_cliff_mean_plus_minus_std_and_judge.iloc[i, j]
+        m = mean_plus_minus_std.split(" ")[0]
+
+        if m != "-":
+            judge = judge_cliff(float(m))
+
+            abs_cliff_mean_plus_minus_std_and_judge.iloc[
+                i, j
+            ] = mean_plus_minus_std + " ({})".format(judge)
+
+
 print(abs_cliff_mean_plus_minus_std)
-## Saves
-utils.general.save(
-    abs_cliff_mean_plus_minus_std,
-    "{}_abs_cliff_mean_plus_minus_std.csv".format(args.ftr),
+print(abs_cliff_mean_plus_minus_std_and_judge)
+
+################################################################################
+## Plots abs_cliff_mean_plus_minus_std_and_judge as a colormap
+################################################################################
+utils.plt.configure_mpl(
+    plt,
+    dpi=100,
+    figsize=(8.7, 8.7),
+    fontsize=7,
+    legendfontsize="xx-small",
+    hide_spines=True,
+    tick_size=0.8,
+    tick_width=0.2,
 )
+abs_cliff_mean = pd.DataFrame(data=abs_cliff_mean, index=groups, columns=groups)
+
+
+fig, ax = plt.subplots()
+bounds = [0, 0.147, 0.330, 0.474, 1]
+RGBA_colors = [utils.plt.get_RGBA_from_colormap(v) for v in bounds][1:]
+cmap = colors.ListedColormap(RGBA_colors)
+norm = colors.BoundaryNorm(bounds, cmap.N)
+im = ax.imshow(abs_cliff_mean, cmap=cmap, norm=norm)
+ax.set_yticks([0, 1, 2, 3])
+ax.set_yticklabels(groups)
+ax.set_xticks([0, 1, 2, 3])
+ax.set_xticklabels(groups)
+ax.invert_yaxis()
+fig.colorbar(im, ax=ax, spacing="proportional", shrink=0.82)
+# Makes the frame invisible
+for _, spine in ax.spines.items():
+    spine.set_visible(False)
+# Loop over data dimensions and create text annotations.
+for i in range(len(groups)):
+    for j in range(len(groups)):
+        annot_val = abs_cliff_mean.iloc[i, j]
+        annot_color = "black" if annot_val <= bounds[3] else "white"
+        annot_text = (
+            abs_cliff_mean_plus_minus_std_and_judge.iloc[i, j]
+            .replace(" +/- ", "\n+/-\n")
+            .replace(" (", "\n(")
+        )
+        text = ax.text(
+            j,
+            i,
+            annot_text,
+            ha="center",
+            va="center",
+            color=annot_color,
+        )
+# fig.show()
+
+## Saves
+spath_csv = utils.general.mk_spath(
+    "abs_cliff_mean_plus_minus_std/{}.csv".format(args.ftr)
+)
+utils.general.save(abs_cliff_mean_plus_minus_std_and_judge, spath_csv)
+
+spath_tiff = spath_csv.replace(".csv", ".tiff")
+utils.general.save(fig, spath_tiff)
+
+# ## Saves
+# utils.general.save(
+#     abs_cliff_mean_plus_minus_std,
+#     "{}_abs_cliff_mean_plus_minus_std.csv".format(args.ftr),
+# )
+# ## Saves
+# utils.general.save(
+#     fig,
+#     "{}_abs_cliff_mean_plus_minus_std.tiff".format(args.ftr),
+# )
+
+
+# koko
+
+
+# utils.plt.annotated_heatmap = annotated_heatmap
+# from matplotlib import colors
+
+# bounds = [0, 0.147, 0.330, 0.474, 1]
+# RGBA_colors = [utils.plt.get_RGBA_from_colormap(v) for v in bounds][1:]
+# # cmap = colors.ListedColormap(
+# #     ["navy", "royalblue", "lightsteelblue", "beige"],
+# # )
+# cmap = colors.ListedColormap(RGBA_colors)
+
+# # norm = colors.BoundaryNorm([2, 4, 6, 8], cmap.N - 1)
+# norm = colors.BoundaryNorm(bounds, cmap.N)
+
+# fig = utils.plt.annotated_heatmap(abs_cliff_mean, cmap=cmap, norm=norm, labels=groups)
+# from matplotlib.cm import ScalarMappable, get_cmap
+
+# # fig.colorbar(get_cmap(fig), ax=fig.axes[0], spacing='proportional')
+# # fig.colorbar(ScalarMappable(get_cmap(fig)), ax=fig.axes[0], spacing='uniform')
+# fig.colorbar(ScalarMappable(get_cmap(fig)), ax=fig.axes[0], spacing="proportional")
+# fig.show()
+
+# import seaborn as sns
+
+# sns.heatmap(abs_cliff_mean, spacing="proportional")
 
 
 # ## 3d-barplot

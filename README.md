@@ -76,27 +76,43 @@ sys.stdout, sys.stderr = utils.general.tee(sys)
 ./EDA/sh_scripts/MEP_FFT_pow_corr.sh
 
 ./ripples/define_ripples/conventional/sh_scripts/plots_prop_hists.sh
+./ripples/define_ripples/using_GMM/estimates_the_optimal_n_clusters.py
+
 ./ripples/define_ripples/conventional/sh_scripts/plots_3d_scatter.sh
 
-./ripples/define_ripples/using_GMM/sh_scripts/estimates_the_optimal_n_clusters.sh
+
 ./ripples/define_ripples/using_GMM/sh_scripts/makes_labels.sh
-./ripples/define_ripples/using_GMM/sh_scripts/plots_3d_scatter.sh
+./ripples/define_ripples/using_CNN/sh_scripts/makes_labels_D0X-.sh
+./ripples/define_ripples/using_GMM/sh_scripts/plots_3d_scatter.sh # fixme; mpl config
 
 ./ripples/define_ripples/using_CNN/sh_scripts/isolates_candidates.sh
-./ripples/define_ripples/using_CNN/sh_scripts/makes_labels.sh
 
+
+
+
+
+
+
+
+
+
+
+
+
+./ripples/define_ripples/using_CNN/sh_scripts/makes_labels.sh # fixed??
+./ripples/define_ripples/using_CNN/sh_scripts/makes_labels2.sh.sh # 20210807-18:00~
+./ripples/define_ripples/using_CNN/sh_scripts/makes_labels1.sh # 20210808-01:20~
+
+
+./ripples/define_ripples/using_CNN/plots_3d_scatter.py # fixme; mpl config
+./ripples/define_ripples/using_CNN/sh_scripts/plots_3d_scatter.sh
+./ripples/define_ripples/using_CNN/sh_scripts/checks_traces.sh
+
+./ripples/define_ripples/summary/sh_scripts/checks_ripple_props.sh
+./ripples/define_ripples/using_CNN/calcs_corr_of_labels.py
 
 
 ### From here!!! ###
-./ripples/define_ripples/using_CNN/plots_3d_scatter.py
-./ripples/define_ripples/using_CNN/sh_scripts/plots_3d_scatter.sh
-
-
-./ripples/define_ripples/using_CNN/sh_scripts/checks_traces.sh # fixed
-
-./ripples/define_ripples/summary/checks_avg_traces.py
-./ripples/define_ripples/summary/checks_ripple_props.py
-
 ./ripples/detect_ripples/CNN/train_n_vs_r.py
 ./ripples/detect_ripples/CNN/sh_scripts/predict_n_s_r.sh
 ./ripples/detect_ripples/CNN/sh_scripts/fit_sigmoid_on_the_predicted_scores_of_s.sh
@@ -110,17 +126,8 @@ sys.stdout, sys.stderr = utils.general.tee(sys)
 $ tree ./data > ./data/data_tree.txt
 
 ## To-Dos
-- [x] Fix Confident Learning
-    - [x] D01-
-    - [x] D02-
-    - [x] D03
-    - [x] D04-
-    - [x] D05-
-
-- [x] Fig.12: Represent traces for defining ripples using CNN (confident learning)
-    - [x] fixed
-    
-- [ ] Fig. 13: Ripple props
+- [ ] Fig. t9, 10
+    - fontsize to 7
 
 - [ ] Experiment on hc-19
     - [x] downloads hc-19
@@ -128,3 +135,6 @@ $ tree ./data > ./data/data_tree.txt
 - [ ] to fix ripples/define_ripples/using_CNN/checks_traces.py
 - [ ] to open source models and weights with pip
 
+
+
+LPATH_HIPPO_LFP_NPY_LIST_MOUSE = utils.pj.load.get_hipp_lfp_fpaths(args.n_mouse)

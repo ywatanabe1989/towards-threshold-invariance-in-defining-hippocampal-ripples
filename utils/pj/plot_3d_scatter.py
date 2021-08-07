@@ -1,8 +1,11 @@
 #!/usr/bin/env python
+
 import argparse
 import sys
 
 sys.path.append(".")
+from itertools import combinations, product
+
 import ffmpeg
 import matplotlib.pyplot as plt
 import numpy as np
@@ -15,6 +18,17 @@ from scipy.stats import chi2
 
 
 ## Funcs
+def draw_a_cube(ax, r1, r2, r3, c="blue", alpha=1.0):
+    for s, e in combinations(np.array(list(product(r1, r2, r3))), 2):
+        if np.sum(np.abs(s - e)) == r1[1] - r1[0]:
+            ax.plot3D(*zip(s, e), c=c, linewidth=3, alpha=alpha)
+        if np.sum(np.abs(s - e)) == r2[1] - r2[0]:
+            ax.plot3D(*zip(s, e), c=c, linewidth=3, alpha=alpha)
+        if np.sum(np.abs(s - e)) == r3[1] - r3[0]:
+            ax.plot3D(*zip(s, e), c=c, linewidth=3, alpha=alpha)
+    return ax
+
+
 def plot_3d_scatter(
     cls0_sparse_df,
     ftr1,
@@ -25,6 +39,9 @@ def plot_3d_scatter(
     cls1_sparse_df=None,
     cls1_label=None,
     cls1_color_str="red",
+    cls2_sparse_df=None,
+    cls2_label=None,
+    cls2_color_str="yellow",
     title=None,
     spath_mp4=False,
     spath_png=False,
@@ -61,6 +78,28 @@ def plot_3d_scatter(
     ##############################
     ## Plots
     ##############################
+    # for sd, l, c in zip(
+    #     [cls0_sparse_df, cls1_sparse_df, cls2_sparse_df],
+    #     [cls0_label, cls1_label, cls2_label],
+    #     [cls0_color_str, cls1_color_str, cls2_color_str],
+    # ):
+    #     try:
+    #         ax.scatter(
+    #             sd[ftr1],
+    #             sd[ftr2],
+    #             sd[ftr3],
+    #             marker="o",
+    #             label=l,
+    #             alpha=alpha,
+    #             s=size,
+    #             c=utils.plt.colors.to_RGBA(
+    #                 c,
+    #                 alpha=alpha,
+    #             ),
+    #         )
+    #     except:
+    #         pass
+
     ax.scatter(
         cls0_sparse_df[ftr1],
         cls0_sparse_df[ftr2],
@@ -72,8 +111,7 @@ def plot_3d_scatter(
         c=utils.plt.colors.to_RGBA(
             cls0_color_str,
             alpha=alpha,
-        )
-        # c=(np.array(RGB_PALLETE_DICT[cls0_color_str]) / 255)[np.newaxis, ...],
+        ),
     )
 
     if cls1_sparse_df is not None:
@@ -88,8 +126,22 @@ def plot_3d_scatter(
             c=utils.plt.colors.to_RGBA(
                 cls1_color_str,
                 alpha=alpha,
-            )
-            # c=(np.array(RGB_PALLETE_DICT[cls1_color_str]) / 255)[np.newaxis, ...],
+            ),
+        )
+
+    if cls2_sparse_df is not None:
+        ax.scatter(
+            cls2_sparse_df[ftr1],
+            cls2_sparse_df[ftr2],
+            cls2_sparse_df[ftr3],
+            marker="o",
+            label=cls2_label,
+            alpha=alpha,
+            s=size,
+            c=utils.plt.colors.to_RGBA(
+                cls2_color_str,
+                alpha=alpha,
+            ),
         )
 
     plt.legend(loc="upper left")
@@ -102,40 +154,27 @@ def plot_3d_scatter(
     ##############################
     ## Draws Cubes
     ##############################
-    def draw_cube(r1, r2, r3, c="blue", alpha=1.0):
-        from itertools import combinations, product
-
-        for s, e in combinations(np.array(list(product(r1, r2, r3))), 2):
-            if np.sum(np.abs(s - e)) == r1[1] - r1[0]:
-                ax.plot3D(*zip(s, e), c=c, linewidth=3, alpha=alpha)
-            if np.sum(np.abs(s - e)) == r2[1] - r2[0]:
-                ax.plot3D(*zip(s, e), c=c, linewidth=3, alpha=alpha)
-            if np.sum(np.abs(s - e)) == r3[1] - r3[0]:
-                ax.plot3D(*zip(s, e), c=c, linewidth=3, alpha=alpha)
-
-    r1, r2, r3 = [np.log(15), xmax], [ymin, np.log(1)], [np.log(2), zmax]
-    draw_cube(
-        r1,
-        r2,
-        r3,
+    ax = draw_a_cube(
+        ax,
+        [np.log(15), xmax],
+        [ymin, np.log(1)],
+        [np.log(2), zmax],
         c=utils.plt.colors.to_RGBA(
             "green",
             alpha=alpha,
         ),
-        # c=tuple(np.array(RGB_PALLETE_DICT["green"]) / 255),
         alpha=0.5,
     )
 
-    r1, r2, r3 = [np.log(15), xmax], [ymin, np.log(1 * 5 / 4)], [np.log(4), zmax]
-    draw_cube(
-        r1,
-        r2,
-        r3,
+    ax = draw_a_cube(
+        ax,
+        [np.log(15), xmax],
+        [ymin, np.log(1 * 5 / 4)],
+        [np.log(4), zmax],
         c=utils.plt.colors.to_RGBA(
             "purple",
             alpha=alpha,
         ),
-        # c=tuple(np.array(RGB_PALLETE_DICT["purple"]) / 255),
         alpha=0.5,
     )
 
@@ -148,27 +187,34 @@ def plot_3d_scatter(
         print("\nSaved to: {}\n".format(spath_png))
 
     if spath_mp4:  # as a movie
-
-        def init():
-            return (fig,)
-
-        def animate(i):
-            ax.view_init(elev=10.0, azim=i)
-            return (fig,)
-
-        anim = animation.FuncAnimation(
-            fig, animate, init_func=init, frames=360, interval=20, blit=True
-        )
-
-        writermp4 = animation.FFMpegWriter(fps=60, extra_args=["-vcodec", "libx264"])
-        anim.save(spath_mp4, writer=writermp4)
-        print("\nSaving to: {}\n".format(spath_mp4))
+        mk_mp4(fig, spath_mp4)
 
     ##############################
-    ## Just plots
+    ## or Just return the fig object
     ##############################
     else:
-        plt.show()
+        return fig
+
+
+def mk_mp4(fig, spath_mp4):
+    axes = fig.get_axes()
+
+    def init():
+        return (fig,)
+
+    def animate(i):
+        for ax in axes:
+            ax.view_init(elev=10.0, azim=i)
+        # ax.view_init(elev=10.0, azim=i)
+        return (fig,)
+
+    anim = animation.FuncAnimation(
+        fig, animate, init_func=init, frames=360, interval=20, blit=True
+    )
+
+    writermp4 = animation.FFMpegWriter(fps=60, extra_args=["-vcodec", "libx264"])
+    anim.save(spath_mp4, writer=writermp4)
+    print("\nSaving to: {}\n".format(spath_mp4))
 
 
 if __name__ == "__main__":

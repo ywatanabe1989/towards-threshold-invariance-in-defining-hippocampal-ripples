@@ -84,6 +84,10 @@ def save(obj, sfname_or_spath, makedirs=True, show=True, **kwargs):
     if spath.endswith(".tiff") or spath.endswith(".tif"):
         obj.savefig(spath, dpi=300, format="tiff")  # obj is matplotlib.pyplot object
         del obj
+    # mp4
+    if spath.endswith(".mp4"):
+        mk_mp4(obj, spath)  # obj is matplotlib.pyplot.figure object
+        del obj
     # yaml
     if spath.endswith(".yaml"):
         with open(spath, "w") as f:
@@ -204,6 +208,28 @@ def save_listed_dfs_as_csv(
             f_writer.writerow([""])
     if show:
         print("Saved to: {}".format(spath_csv))
+
+
+def mk_mp4(fig, spath_mp4):
+    from matplotlib import animation
+
+    axes = fig.get_axes()
+
+    def init():
+        return (fig,)
+
+    def animate(i):
+        for ax in axes:
+            ax.view_init(elev=10.0, azim=i)
+        return (fig,)
+
+    anim = animation.FuncAnimation(
+        fig, animate, init_func=init, frames=360, interval=20, blit=True
+    )
+
+    writermp4 = animation.FFMpegWriter(fps=60, extra_args=["-vcodec", "libx264"])
+    anim.save(spath_mp4, writer=writermp4)
+    print("\nSaving to: {}\n".format(spath_mp4))
 
 
 def mv_to_tmp(fpath, L=2):

@@ -11,7 +11,7 @@ import torch
 ################################################################################
 ## strings
 ################################################################################
-def connect_strs(strs, filler="_"):
+def connect_strs(strs, filler="_"):  # connect_nums also works as connect_strs
     """
     Example:
         print(connect_strs(['a', 'b', 'c'], filler='_'))
@@ -24,6 +24,21 @@ def connect_strs(strs, filler="_"):
         return connected[len(filler) :]
     else:
         return strs
+
+
+def connect_nums(nums, filler="_"):
+    """
+    Example:
+        print(connect_nums([1, 2, 3], filler='_'))
+        # '1_2_3'
+    """
+    if isinstance(nums, list) or isinstance(nums, tuple):
+        connected = ""
+        for n in nums:
+            connected += filler + str(n)
+        return connected[len(filler) :]
+    else:
+        return nums
 
 
 def squeeze_spaces(string, pattern=" +", repl=" "):

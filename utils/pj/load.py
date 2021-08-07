@@ -5,6 +5,7 @@ import utils
 
 
 def rip_sec(lpath_lfp, rip_sec_ver="candi_orig", cycle_dataset=False, n_mouse=None):
+
     lpath_rip = utils.pj.path_converters.LFP_to_ripples(
         lpath_lfp, rip_sec_ver=rip_sec_ver
     )
@@ -16,29 +17,21 @@ def rip_sec(lpath_lfp, rip_sec_ver="candi_orig", cycle_dataset=False, n_mouse=No
     rip_sec = utils.general.load(lpath_rip)
 
     if "CNN_labeled" in rip_sec_ver:
-        ## Inverse psx
-        are_errors = rip_sec["are_errors"]
-        rip_sec.loc[are_errors, "psx_ripple"] = 1 - rip_sec["psx_ripple"][are_errors]
-
-        ## Adds columns: "are_ripple_CNN",
-        #                "inversed_by_Confident_Learning",
-        #                "ln(duration_ms)",
-        #                "ln(mean MEP magni. / SD)",
-        #                "ln(ripple peak magni. / SD)",
-        rip_sec["are_ripple_CNN"] = 0.5 <= rip_sec["psx_ripple"]
-        rip_sec["inversed_using_Confident_Learning"] = True
-        rip_sec_GMM = utils.general.load(lpath_rip.replace("CNN", "GMM"))
-        assert (rip_sec["are_ripple_GMM"] == rip_sec_GMM["are_ripple_GMM"]).all()
-        ftr1, ftr2, ftr3 = (
-            "ln(duration_ms)",
-            "ln(mean MEP magni. / SD)",
-            "ln(ripple peak magni. / SD)",
-        )
-        rip_sec[ftr1] = rip_sec_GMM[ftr1]
-        rip_sec[ftr2] = rip_sec_GMM[ftr2]
-        rip_sec[ftr3] = rip_sec_GMM[ftr3]
+        rip_sec = utils.pj.invert_ripple_labels(rip_sec)
+        rip_sec = utils.pj.add_ripple_props(lpath_lfp, rip_sec)
 
     return rip_sec
+
+
+def rips_sec(fpaths_lfp, rip_sec_ver="candi_orig", cycle_dataset=False, n_mouse=None):
+    rips_sec = []
+    for f in fpaths_lfp:
+        f_rip = utils.pj.path_converters.LFP_to_ripples(f, rip_sec_ver=rip_sec_ver)
+        rip_sec = utils.pj.load.rip_sec(
+            f, rip_sec_ver=rip_sec_ver, cycle_dataset=False, n_mouse=None
+        )
+        rips_sec.append(utils.general.load(f_rip))
+    return rips_sec
 
 
 def lfps_rips_sec(
@@ -120,14 +113,6 @@ def lfps_rips_sec(
 #         rips_sec.append(rip_sec)
 
 #     return lfps, rips_sec
-
-
-def rips_sec(fpaths_lfp, rip_sec_ver="candi_orig"):
-    rips_sec = []
-    for f in fpaths_lfp:
-        f_rip = utils.pj.path_converters.LFP_to_ripples(f, rip_sec_ver=rip_sec_ver)
-        rips_sec.append(utils.general.load(f_rip))
-    return rips_sec
 
 
 def split_n_mice_tra_tes(i_mouse_test=0):

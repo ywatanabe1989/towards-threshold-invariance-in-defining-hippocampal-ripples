@@ -105,25 +105,12 @@ def tee(sys, sdir=None):
         spath = __file__
 
         _sdir, sfname, _ = utils.general.split_fpath(spath)
-        sdir = _sdir + sfname + "/"
-        # sdir = os.path.dirname(spath)
-    #     sdir = utils.general.split_fpath(spath)[0]
-    # else:
+        sdir = _sdir + sfname + "/log/"
 
     os.makedirs(sdir, exist_ok=True)
 
-    # # root, ext = os.path.splitext(spath)
-
-    # ## Checks spath ext
-    # permitted_exts_list = [".txt", ".log"]
-    # if not ext in permitted_exts_list:
-    #     root = root + ext.replace(".", "_")
-    #     ext = ".log"
-
-    # spath_stdout = root + "_stdout" + ext
-    # spath_stderr = root + "_stderr" + ext
-    spath_stdout = sdir + "log/stdout.log"
-    spath_stderr = sdir + "log/stderr.log"
+    spath_stdout = sdir + "stdout.log"
+    spath_stderr = sdir + "stderr.log"
     os.makedirs(utils.general.split_fpath(spath_stdout)[0], exist_ok=True)
 
     sys_stdout = Tee(sys.stdout, spath_stdout)

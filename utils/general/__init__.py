@@ -4,8 +4,8 @@ from .cuda_collect_env import main as cuda_collect_env
 from .debug import paste, reload
 from .load import load
 from .mat2py import *
-from .misc import (connect_strs, does_exist, grep, listed_dict, pop_keys,
-                   squeeze_spaces)
+from .misc import (connect_nums, connect_strs, does_exist, grep, listed_dict,
+                   pop_keys, squeeze_spaces)
 from .pandas import col_to_last, col_to_top
 from .path import *
 from .repro import *
