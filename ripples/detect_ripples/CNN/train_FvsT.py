@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Trains binary classifier for not-ripple-including group ("n") vs reasonable-ripple-including group ("r").
+Trains binary classifier for one-false-ripple-including group ("f") vs one-true-ripple-including group ("t").
 """
 
 import argparse
@@ -12,13 +12,25 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 import torch.nn as nn
+
+sys.path.append(".")
 import utils
 from models.ResNet1D.ResNet1D import ResNet1D
+from modules.ranger2020 import Ranger
+
+################################################################################
+## Debug mode
+################################################################################
+IS_DEBUG = False
+if IS_DEBUG:
+    print("\n##################################################\n")
+    print("!!! DEBUG MODE !!!")
+    print("\n##################################################\n")
 
 ################################################################################
 ## Save dir
 ################################################################################
-SDIR = "./ripples/detect_ripples/CNN/train_n_vs_r/"
+SDIR = "./ripples/detect_ripples/CNN/train_FvsT/"
 
 ################################################################################
 ## Sets tee
@@ -30,13 +42,6 @@ sys.stdout, sys.stderr = utils.general.tee(sys, SDIR + "out")
 ## Fixes random seed
 ################################################################################
 utils.general.fix_seeds(seed=42, np=np, torch=torch)
-
-
-################################################################################
-## Configures matplotlib
-################################################################################
-figscale = 4.0 / 11
-utils.plt.configure_mpl(plt, figscale=figscale)
 
 
 ################################################################################
@@ -57,14 +62,13 @@ DL_CONF = {
     "batch_size": 1024,
     "num_workers": 10,
     "do_under_sampling": True,
-    "use_classes_str": ["n", "r"],
+    "use_classes_str": ["f", "t"],
     "samp_rate": SAMP_RATE,
     "window_size_pts": WINDOW_SIZE_PTS,
     "use_random_start": True,
-    # "lower_SD_thres_for_reasonable_ripple": 7,
-    # "lower_SD_thres_for_reasonable_ripple": 5,
     "lower_SD_thres_for_reasonable_ripple": 1,
-    "MAX_EPOCHS": 3,
+    "MAX_EPOCHS": 1,
+    "is_debug": IS_DEBUG,
 }
 window_size_sec = DL_CONF["window_size_pts"] / DL_CONF["samp_rate"]
 
@@ -77,25 +81,33 @@ device = "cuda"
 ################################################################################
 ## Main
 ################################################################################
-for i_mouse_test in ["01", "02", "03", "04", "05"]:
+i_MICE_TEST = ["01", "02", "03", "04", "05"]
+if IS_DEBUG:
+    i_MICE_TEST = i_MICE_TEST[:2]
+
+for i_mouse_test in i_MICE_TEST:
+    """
+    i_mouse_test = '01'
+    """
+    i_mouse_test = int(i_mouse_test) - 1
     lc_logger = utils.ml.LearningCurveLogger()
-    # for i_mouse_test in ["01", "02"]:
 
     ################################################################################
     ## Initializes model
     ################################################################################
     MODEL_CONF = utils.general.load("./models/ResNet1D/ResNet1D.yaml")
     model = ResNet1D(MODEL_CONF)
+
     if torch.cuda.device_count() > 1:
         print("Let's use", torch.cuda.device_count(), "GPUs.")
         model = nn.DataParallel(model)
+
     model = model.to(device)
-    optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
+    optimizer = Ranger(model.parameters(), lr=1e-3)
 
     i_global = 0
-    i_mouse_test = int(i_mouse_test) - 1
     DL_CONF["i_mouse_test"] = i_mouse_test
-    dlf = utils.pj.DataLoaderFiller(**DL_CONF)
+    dlf = utils.pj.DataLoaderFillerFvsT(**DL_CONF)
 
     ## Training
     step = "Training"
@@ -104,10 +116,13 @@ for i_mouse_test in ["01", "02", "03", "04", "05"]:
         for i_batch, batch in enumerate(dl_tra):
             optimizer.zero_grad()
 
-            Xb_tra, _Pb_tra = batch  # Pb: batched peak ripple amplitude [SD]
-            Xb_tra, _Pb_tra = Xb_tra.to(device), _Pb_tra.to(device)
+            """
+            batch  = next(iter(dl_tra))
+            Xb_tra, Tb_tra = batch
+            Xb_tra, Tb_tra = Xb_tra.to(device), Tb_tra.to(device)
+            """
 
-            loss, lc_logger = utils.pj.base_step(
+            loss, lc_logger = utils.pj.base_step_FvsT(
                 model,
                 optimizer,
                 step,
@@ -121,19 +136,41 @@ for i_mouse_test in ["01", "02", "03", "04", "05"]:
             )
 
             i_global += 1
+            # /usr/local/lib64/python3.8/site-packages/sklearn/metrics/_classification.py:1850: UserWarning: y_pred contains classes not in y_true
+            #   warnings.warn('y_pred contains classes not in y_true')
+
+            # step: Training, i_batch: 0, loss: 0.685, Balanced ACC: 0.502
+            if IS_DEBUG == True and i_global == 10:
+                break
 
     ## Test
     step = "Test"
     dl_tes = dlf.fill(step)
     for i_batch, batch in enumerate(dl_tes):
-        Xb_tes, _Pb_tes = batch  # Pb: batched peak ripple amplitude [SD]
-        Xb_tes, _Pb_tes = Xb_tes.to(device), _Pb_tes.to(device)
+        """
+        Xb_tes, Tb_tes = batch  # Pb: batched peak ripple amplitude [SD]
+        Xb_tes, Tb_tes = Xb_tes.to(device), Tb_tes.to(device)
+        from torch.cuda.amp import autocast
+        from sklearn.metrics import balanced_accuracy_score
+        softmax = torch.nn.Softmax(dim=-1)
+        with autocast():
+            logits_tes = model(Xb_tes)
+
+        pred_proba_tes = softmax(logits_tes)
+        pred_class_tes = pred_proba_tes.argmax(dim=-1)
+        bACC = balanced_accuracy_score(
+            utils.general.torch_to_arr(Tb_tes.squeeze()),
+            utils.general.torch_to_arr(pred_class_tes.squeeze()),
+        )
+
+        """
+
         try:
             i_epoch = i_epoch
         except:
             i_epoch = 0
 
-        _, lc_logger = utils.pj.base_step(
+        _, lc_logger = utils.pj.base_step_FvsT(
             model,
             optimizer,
             step,
@@ -169,13 +206,24 @@ for i_mouse_test in ["01", "02", "03", "04", "05"]:
     ####################
     ## Learning Curve ##
     ####################
-    utils.plt.configure_mpl(plt, legendfontsize="small")
+    utils.plt.configure_mpl(
+        plt,
+        figsize=(8.7, 10),
+        labelsize=8,
+        fontsize=7,
+        legendfontsize=6,
+        tick_size=0.8,
+        tick_width=0.2,
+        n_xticks=4,
+        n_yticks=4,
+    )
+
     lc_fig = lc_logger.plot_learning_curves(
+        plt,
         i_mouse_test=i_mouse_test,
         max_epochs=DL_CONF["MAX_EPOCHS"],
         window_size_sec=window_size_sec,
     )
-    utils.plt.configure_mpl(plt)
 
     reporter.add(
         "Learning Curve",
@@ -198,8 +246,8 @@ for i_mouse_test in ["01", "02", "03", "04", "05"]:
         true_class_tes,
         pred_class_tes,
         pred_proba_tes,
-        labels=["R0", "R1"],
-        i_mouse_test=dlf.kwargs["i_mouse_test"],
+        labels=["F", "T"],
+        i_fold=dlf.kwargs["i_mouse_test"],
     )
 
 reporter.summarize()
@@ -212,5 +260,11 @@ others_dict = {
     "dataloader_conf.yaml": DL_CONF,
 }
 reporter.save(others_dict=others_dict)
+
+
+"""
+sshell
+python3 ripples/detect_ripples/CNN/train_FvsT.py
+"""
 
 ## EOF

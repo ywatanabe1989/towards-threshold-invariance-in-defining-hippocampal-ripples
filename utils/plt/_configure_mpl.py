@@ -7,10 +7,13 @@ def configure_mpl(
     figsize=(16.2, 10),
     figscale=1.0,
     fontsize=20,
+    labelsize="same",
     legendfontsize="xx-small",
     tick_size="auto",
     tick_width="auto",
     hide_spines=False,
+    n_xticks="auto",
+    n_yticks="auto",
 ):
     """
     Configures matplotlib for often used format.
@@ -23,6 +26,9 @@ def configure_mpl(
         fontsize:
             Default: 20
 
+        labelsize:
+            int (Default: 'same' as the fontsize)
+
         legendfontsize:
             Default: "xx-small"
 
@@ -34,6 +40,7 @@ def configure_mpl(
 
         hide_spines:
             Hides the top and right spines of the axes. (Default: False)
+
 
 
     Example:
@@ -64,20 +71,35 @@ def configure_mpl(
     dots_on_1_cm_line = dots_on_1_inch_line / 2.54
     dots_on_1_mm_line = dots_on_1_cm_line / 10.0
 
-    if tick_size is not "auto":
+    if tick_size != "auto":
         tick_size /= dots_on_1_mm_line
-    if tick_width is not "auto":
+    if tick_width != "auto":
         tick_width /= dots_on_1_mm_line
+
+    """
+    ## scientific notation
+    g = lambda x,pos : "${}$".format(f._formatSciNotation('%1.10e' % x))
+    ax.xaxis.set_major_formatter(mticker.FuncFormatter(g))        
+    ax.yaxis.set_major_formatter(mticker.FuncFormatter(g))
+
+    # plt.ticklabel_format(axis="both", style="plain", scilimits=(-3, 3))
+
+    
+    """
 
     ## Summarize the props as updater_dict
     updater_dict = {
         "figure.dpi": dpi,
-        "savefig.dpi": dpi,
+        "savefig.dpi": 300,
         "figure.figsize": (
             figsize_inch[0] * shrink_scale,
             figsize_inch[1] * shrink_scale,
         ),
         "font.size": fontsize,
+        "axes.labelsize": fontsize if labelsize == "same" else labelsize,
+        "xtick.labelsize": fontsize if labelsize == "same" else labelsize,
+        "ytick.labelsize": fontsize if labelsize == "same" else labelsize,
+        "axes.titlesize": fontsize if labelsize == "same" else labelsize,
         "legend.fontsize": legendfontsize,
         "pdf.fonttype": 42,
         "ps.fonttype": 42,
@@ -86,12 +108,21 @@ def configure_mpl(
         # "figure.autolayout": True,
     }
 
-    if tick_size is not "auto":
+    ## Tick
+    if tick_size != "auto":
         updater_dict["xtick.major.size"] = tick_size
         updater_dict["ytick.major.size"] = tick_size
-    if tick_width is not "auto":
+    if tick_width != "auto":
         updater_dict["xtick.major.width"] = tick_width
         updater_dict["ytick.major.width"] = tick_width
+    """
+    ## As the example below, number of ticks can be set for each "ax" object.
+    max_n_xticks = 4
+    max_n_yticks = 4    
+    for ax in axes:
+        ax.xaxis.set_major_locator(matplotlib.ticker.MaxNLocator(max_n_xticks))
+        ax.yaxis.set_major_locator(matplotlib.ticker.MaxNLocator(max_n_yticks))
+    """
 
     for k, v in updater_dict.items():
         plt.rcParams[k] = v

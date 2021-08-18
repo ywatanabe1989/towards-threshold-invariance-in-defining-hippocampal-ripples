@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 
 from . import load, path_converters
-from ._base_step import base_step
+from ._base_step import base_step_FvsT, base_step_NvsR
 from .add_ripple_props import add_ripple_props
 from .calc_ripple_properties import calc_ripple_properties
-from .DataLoaderFiller import DataLoaderFiller
+from .DataLoaderFillerFvsT import DataLoaderFillerFvsT
+from .DataLoaderFillerNvsR import DataLoaderFillerNvsR
 from .define_ripple_candidates import define_ripple_candidates
 from .fill_rip_sec import fill_rip_sec
 from .invert_ripple_labels import invert_ripple_labels

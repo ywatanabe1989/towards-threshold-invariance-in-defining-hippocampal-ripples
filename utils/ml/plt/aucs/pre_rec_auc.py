@@ -2,13 +2,31 @@
 
 from itertools import cycle
 
-import matplotlib.pyplot as plt
 import numpy as np
-from sklearn.metrics import roc_auc_score, roc_curve
+from sklearn.metrics import average_precision_score, precision_recall_curve
 
 
-def calc_roc_auc(true_class, pred_proba, labels, plot=False):
+def solve_the_intersection_of_a_line_and_iso_f1_curve(f1, a, b):
+    """
+    Determines the intersection of the following lines:
+        1) a line: y = a * x + b
+        2) the iso-f1 curve: y = f1 * x / (2 * x - f1)
+    , where a, b, and f1 are the constant values.
+    """
+    _a = 2 * a
+    _b = -a * f1 + 2 * b - f1
+    _c = -b * f1
 
+    x_f = (-_b + np.sqrt(_b ** 2 - 4 * _a * _c)) / (2 * _a)
+    y_f = a * x_f + b
+
+    return (x_f, y_f)
+
+
+def pre_rec_auc(plt, true_class, pred_proba, labels):
+    """
+    Calculates the precision recall curve.
+    """
     ## One-hot encoding
     def to_onehot(labels, n_classes):
         eye = np.eye(n_classes, dtype=int)
@@ -19,64 +37,81 @@ def calc_roc_auc(true_class, pred_proba, labels, plot=False):
     true_class = to_onehot(true_class, n_classes)
 
     # For each class
-    fpr = dict()
-    tpr = dict()
+    precision = dict()
+    recall = dict()
     threshold = dict()
-    roc_auc = dict()  # fixme; auc
+    pre_rec_auc = dict()
     for i in range(n_classes):
-        fpr[i], tpr[i], threshold[i] = roc_curve(true_class[:, i], pred_proba[:, i])
-        roc_auc[i] = roc_auc_score(true_class[:, i], pred_proba[:, i])
+        precision[i], recall[i], threshold[i] = precision_recall_curve(
+            true_class[:, i], pred_proba[:, i]
+        )
+        pre_rec_auc[i] = average_precision_score(true_class[:, i], pred_proba[:, i])
 
     ################################################################################
-    ## Average fpr: micro and macro
+    ## Average precision: micro and macro
     ################################################################################
     # A "micro-average": quantifying score on all classes jointly
-    fpr["micro"], tpr["micro"], threshold["micro"] = roc_curve(
+    precision["micro"], recall["micro"], threshold["micro"] = precision_recall_curve(
         true_class.ravel(), pred_proba.ravel()
     )
-    roc_auc["micro"] = roc_auc_score(true_class, pred_proba, average="micro")
+    pre_rec_auc["micro"] = average_precision_score(
+        true_class, pred_proba, average="micro"
+    )
     # print(
-    #     "Average fpr score, micro-averaged over all classes: {0:0.2f}".format(
-    #         roc_auc["micro"]
+    #     "Average precision score, micro-averaged over all classes: {0:0.2f}".format(
+    #         pre_rec_auc["micro"]
     #     )
     # )
 
     # macro
-    roc_auc["macro"] = roc_auc_score(true_class, pred_proba, average="macro")
+    pre_rec_auc["macro"] = average_precision_score(
+        true_class, pred_proba, average="macro"
+    )
     # print(
-    #     "Average fpr score, macro-averaged over all classes: {0:0.2f}".format(
-    #         roc_auc["macro"]
+    #     "Average precision score, macro-averaged over all classes: {0:0.2f}".format(
+    #         pre_rec_auc["macro"]
     #     )
     # )
 
     ################################################################################
     ## Plot
     ################################################################################
-    # Plot Fpr-Tpr curve for each class and iso-f1 curves
+    # Plot Precision-Recall curve for each class and iso-f1 curves
     colors = cycle(["navy", "turquoise", "darkorange", "cornflowerblue", "teal"])
-
     fig, ax = plt.subplots()
     ax.set_box_aspect(1)
     lines = []
     legends = []
 
-    ## Chance Level (the diagonal line)
-    (l,) = ax.plot(
-        np.linspace(0.01, 1),
-        np.linspace(0.01, 1),
-        color="gray",
-        lw=2,
-        linestyle="--",
-        alpha=0.8,
-    )
+    # iso-F1: By definition, an iso-F1 curve contains all points
+    #         in the precision/recall space whose F1 scores are the same.
+    f_scores = np.linspace(0.2, 0.8, num=4)
+    # for f_score in f_scores:
+    for i_f, f_score in enumerate(f_scores):
+        x = np.linspace(0.01, 1)  # num=50
+        y = f_score * x / (2 * x - f_score)
+        (l,) = ax.plot(x[y >= 0], y[y >= 0], color="gray", alpha=0.2)
+
+        # ax.annotate("f1={0:0.1f}".format(f_score), xy=(0.9, y[45] + 0.02))
+        x_f, y_f = solve_the_intersection_of_a_line_and_iso_f1_curve(f_score, 0.5, 0.5)
+        ax.annotate("f1={0:0.1f}".format(f_score), xy=(x_f - 0.1, y_f - 0.1 * 0.5))
+        # ax.annotate("f1={0:0.1f}".format(f_score), xy=(y[35] - 0.02 * (3 - i_f), 0.85))
+
     lines.append(l)
-    legends.append("Chance")
+    legends.append("iso-f1 curves")
+
+    """
+    ## In this project, average precision-recall curve is not drawn.
+    (l,) = ax.plot(recall["micro"], precision["micro"], color="gold", lw=2)
+    lines.append(l)
+    legends.append("micro-average\n(AUC = {0:0.2f})" "".format(pre_rec_auc["micro"]))
+    """
 
     ## Each Class
     for i, color in zip(range(n_classes), colors):
-        (l,) = plt.plot(fpr[i], tpr[i], color=color, lw=2)
+        (l,) = ax.plot(recall[i], precision[i], color=color, lw=2)
         lines.append(l)
-        legends.append("{0} (area = {1:0.2f})" "".format(labels[i], roc_auc[i]))
+        legends.append("{0} (AUC = {1:0.2f})" "".format(labels[i], pre_rec_auc[i]))
 
     # fig = plt.gcf()
     fig.subplots_adjust(bottom=0.25)
@@ -84,18 +119,23 @@ def calc_roc_auc(true_class, pred_proba, labels, plot=False):
     ax.set_ylim([-0.01, 1.01])
     ax.set_xticks([0.0, 0.5, 1.0])
     ax.set_yticks([0.0, 0.5, 1.0])
-    ax.set_xlabel("FPR")
-    ax.set_ylabel("TPR")
-    ax.set_title("ROC Curve")
-    ax.legend(lines, legends, loc="lower right")
+    ax.set_xlabel("Recall")
+    ax.set_ylabel("Precision")
+    ax.set_title("Precision-Recall Curve")
+    ax.legend(lines, legends, loc="lower left")
 
-    if plot:
-        fig.show()
+    metrics = dict(
+        pre_rec_auc=pre_rec_auc,
+        precision=precision,
+        recall=recall,
+        threshold=threshold,
+    )
 
-    return roc_auc, fpr, tpr, threshold, fig
+    return fig, metrics
 
 
 if __name__ == "__main__":
+    import matplotlib.pyplot as plt
     import numpy as np
     from scipy.special import softmax
     from sklearn import datasets, svm
@@ -118,8 +158,8 @@ if __name__ == "__main__":
     labels, true_class, pred_proba, pred_class = \
         mk_demo_data(n_classes=10, batch_size=256)
 
-    roc_auc, fpr, tpr, threshold = \
-        calc_roc_auc(true_class, pred_proba, labels, plot=False)
+    pre_rec_auc, precision, recall, threshold = \
+        calc_pre_rec_auc(true_class, pred_proba, labels, plot=False)
     """
 
     ################################################################################
@@ -158,6 +198,9 @@ if __name__ == "__main__":
     plt.rcParams["figure.figsize"] = (16 * 1.2, 9 * 1.2)
 
     ## Main
-    roc_auc, fpr, tpr, threshold, fig = calc_roc_auc(
-        y_test, predicted_proba, labels, plot=True
-    )
+    fig, metrics_dict = pre_rec_auc(plt, y_test, predicted_proba, labels)
+
+    fig.show()
+
+    print(metrics_dict.keys())
+    # dict_keys(['pre_rec_auc', 'precision', 'recall', 'threshold'])

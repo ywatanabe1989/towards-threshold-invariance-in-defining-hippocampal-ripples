@@ -5,6 +5,7 @@ import sys
 sys.path.append(".")
 from itertools import combinations
 
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -17,9 +18,12 @@ ap.add_argument(
 )
 args = ap.parse_args()
 
-################################################################################
+
+## Sets tee
+sys.stdout, sys.stderr = utils.general.tee(sys)
+
+
 ## Configures matplotlib
-################################################################################
 utils.plt.configure_mpl(
     plt,
     dpi=100,
@@ -62,7 +66,7 @@ for i_mouse, args.n_mouse in enumerate(["01", "02", "03", "04", "05"]):
         rips_df = pd.concat(rips_df)
         rips_df = utils.pj.invert_ripple_labels(rips_df)
         labels_dict[dk] = rips_df["are_ripple_CNN"]
-        pred_probas_dict[dk] = rips_df["pred_probas_ripple_CNN"]
+        pred_probas_dict[dk] = rips_df["psx_ripple"]
 
     ################################################################################
     ## Label concordance rate
@@ -132,10 +136,11 @@ for i_mouse, args.n_mouse in enumerate(["01", "02", "03", "04", "05"]):
     ax_prob.set_aspect(1)
 
     cbar = False if not args.n_mouse == "05" else False
+    seismic_r = matplotlib.cm.get_cmap("seismic_r")
     ax_prob = sns.heatmap(
         corr_pred_probas_df,
         mask=label_concordance_rates_df == 0,
-        cmap="Blues",
+        cmap=seismic_r,
         annot=True,
         annot_kws={"fontsize": 6},
         ax=ax_prob,
@@ -154,12 +159,15 @@ for i_mouse, args.n_mouse in enumerate(["01", "02", "03", "04", "05"]):
     dx = 0.3
     ax_prob = utils.plt.ax_set_position(fig_label, ax_prob, -2 * dx + dx * i_mouse, 0)
 
-
-# fig_label.show()
-# fig_prob.show()
+"""
+fig_label.show()
+fig_prob.show()
+"""
 
 ## Saves
 utils.general.save(fig_label, SDIR + "label_concordance_rates.png")
 utils.general.save(fig_prob, SDIR + "corr_coef_pred_proba.png")
+
+# python3 ./ripples/define_ripples/using_CNN/calcs_corr_of_labels.py
 
 ## EOF

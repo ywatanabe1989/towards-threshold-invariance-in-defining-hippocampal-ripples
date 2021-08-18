@@ -83,28 +83,12 @@ sys.stdout, sys.stderr = utils.general.tee(sys)
 
 ./ripples/define_ripples/using_GMM/sh_scripts/makes_labels.sh
 ./ripples/define_ripples/using_GMM/sh_scripts/makes_labels_D0X-.sh
-./ripples/define_ripples/using_GMM/sh_scripts/plots_3d_scatter.sh # fixme; mpl config
+./ripples/define_ripples/using_GMM/sh_scripts/plots_3d_scatter.sh
 
 ./ripples/define_ripples/using_CNN/sh_scripts/isolates_candidates.sh
-./ripples/define_ripples/using_CNN/sh_scripts/makes_labels.sh # fixed??
+./ripples/define_ripples/using_CNN/sh_scripts/makes_labels.sh
 
-
-
-
-
-<!-- ./ripples/define_ripples/using_CNN/sh_scripts/makes_labels2.sh.sh # 20210807-18:00~
- !-- ./ripples/define_ripples/using_CNN/sh_scripts/makes_labels1.sh # 20210808-01:20~ -->
- 
-./ripples/define_ripples/using_CNN/sh_scripts/makes_labels1.sh # 20210808-22:00 ~
-
-| D0?? | Finished? |      | Finished? |
-|:-----|:----------|:-----|:----------|
-| D01+ | x         | D01- | x         |
-| D02+ | x         | D02- | x         |
-| D03+ | x         | D03- | x         |
-| D04+ | x         | D04- | x         |
-| D05+ | x         | D05- | x         |
-
+--------------------------------------------------------------------------------
 
  
 

@@ -21,16 +21,11 @@ from sklearn.model_selection import StratifiedKFold, train_test_split
 from sklearn.utils import shuffle
 from torch.utils.data import DataLoader, TensorDataset
 
-################################################################################
-## Fixes random seeds
-################################################################################
-utils.general.fix_seeds(seed=42, np=np, torch=torch)
-
 
 ################################################################################
 ## Functions
 ################################################################################
-class DataLoaderFiller(object):
+class DataLoaderFillerFvsT(object):
     """A helper class for providing training and test dataloaders.
     The "fill" method enables re-sampling training data at each epoch.
 
@@ -48,7 +43,7 @@ class DataLoaderFiller(object):
             whether or not doing under sampling (default: True)
 
         "use_classes_str":
-            a combination of ["n", "s", "r"],
+            a combination of ["t", "f"], for consistency with DataLoaderFillerNvsR.
 
         "samp_rate":
             1000
@@ -67,16 +62,19 @@ class DataLoaderFiller(object):
         "do_under_sampling":
             "True" turns on under sampling on "Training" step after shuffling.
 
+        "is_debug":
+            If "True", only a part of the training data are loaded.
+
+
     Example:
         dlf = DataLoaderFiller(
             i_mouse_test=0,
-            use_classes_str=["n", "r"],
+            use_classes_str=["t", "f"],
         )
         dl_tra = dlf.fill("Training")
         dl_test = dlf.fill("Test")
 
         batch = next(iter(dl_tra))
-
 
         for epoch in range(10):
             dl_tra = dlf.fill("Training")
@@ -99,12 +97,13 @@ class DataLoaderFiller(object):
         batch_size=64,
         num_workers=10,
         do_under_sampling=True,
+        is_debug=False,
         RANDOM_STATE=42,
         **kwargs,
     ):
-        """
-        A docstring for init method.
-        """
+
+        ## Fixes random seeds
+        utils.general.fix_seeds(seed=42, np=np, torch=torch)
 
         ## Merges kwargs
         _kwargs = dict(
@@ -118,7 +117,7 @@ class DataLoaderFiller(object):
         self.kwargs = _kwargs
 
         ################################################################################
-        ## Fix random seed
+        ## Fixes random seed
         ################################################################################
         utils.general.fix_seeds(
             seed=self.kwargs["RANDOM_STATE"], random=random, np=np, torch=torch
@@ -128,21 +127,25 @@ class DataLoaderFiller(object):
         ## Loads dataset and splits_dataset
         ################################################################################
         self.lfps_tra, self.rips_tra = utils.pj.load.lfps_rips_tra_or_tes(
-            "tra", self.kwargs["i_mouse_test"]
+            "tra",
+            self.kwargs["i_mouse_test"],
+            is_debug=is_debug,
         )
         self.lfps_tes, self.rips_tes = utils.pj.load.lfps_rips_tra_or_tes(
-            "tes", self.kwargs["i_mouse_test"]
+            "tes",
+            self.kwargs["i_mouse_test"],
+            is_debug=is_debug,
         )
 
-        self.is_filled_test = False
+        self.is_already_filled_test = False
 
     def fill(self, step):
         """
         step is eather "Training" or "Test."
         """
-        if (step == "Test") & self.is_filled_test:
-            dl_test = deepcopy(self.dl_test_back)
-            return dl_test
+        if (step == "Test") & self.is_already_filled_test:
+            dl = deepcopy(self.dl_test_back)
+            return dl
 
         ## Switches lfps and rips in depending on step
         if step == "Training":
@@ -153,27 +156,33 @@ class DataLoaderFiller(object):
             lfps = self.lfps_tes
             rips = self.rips_tes
 
-        X, P = define_X_P_electrodes_mp_and_organize_them(
+        ## To chunked and labeled surpervised data
+        X, T = define_X_T_electrodes_mp_and_organize_them(
             lfps, rips, step, **self.kwargs
         )
 
-        arrs_list_to_pack = [X, P]
         dl = DataLoader(
-            TensorDataset(*[torch.tensor(d) for d in arrs_list_to_pack]),
+            TensorDataset(*[torch.tensor(d) for d in [X, T]]),
             batch_size=self.kwargs["batch_size"],
+            # shuffle=True if step == "Training" else False,
             shuffle=True,
             num_workers=self.kwargs["num_workers"],
             drop_last=True,
         )
+        """
+        # Even when step != "Training", to disable the following warning, data were shuffled.
+        /usr/local/lib64/python3.8/site-packages/sklearn/metrics/_classification.py:1850: UserWarning: y_pred contains classes not in y_true
+          warnings.warn('y_pred contains classes not in y_true')
+         """
 
         if step == "Test":
-            self.is_filled_test = True
+            self.is_already_filled_test = True
             self.dl_test_back = deepcopy(dl)
 
         return dl
 
 
-def _define_X_P_electrode(
+def _define_X_T_electrode(
     lfp,
     rip_sec,
     step,
@@ -195,7 +204,7 @@ def _define_X_P_electrode(
 
     kwargs:
         "use_classes_str":
-            a combination of ["n", "s", "r"],
+            a combination of ["t", "f"], for consistency with DataLoaderFillerNvsR.
 
         "samp_rate":
             1000
@@ -203,7 +212,6 @@ def _define_X_P_electrode(
         "window_size_pts":
             window size [points] (or you might call it sliding window size, crop size,
             segment size, epoch size, ...).
-
 
         "use_random_start":
             True or False. To reduce the sampling bias regarding cropping, "True" turns on
@@ -215,37 +223,33 @@ def _define_X_P_electrode(
         "do_under_sampling":
             "True" turns on under sampling on "Training" step after shuffling.
 
-    Outputs:
+    Returns:
         X:
-            Cropped LFP signals.
+            Cropped LFP signals [uV].
 
-        P:
-            P means "peak ripple ampiltude [uV]."
-            To save the memory usage, depending on the P values,
-            as informative labels for EEG data X,
-            the following rules are implicitly applied.
+        T:
+            True label as a Ripple labeled by CNN on Confident Learning after GMM clustering.
+            0: False ripple (labeled by CNN)
+            1: True ripple (labeled by CNN)
 
-            if P == -1,
-                X is "not ripple including LFP segment", "n"
+    Example:
+        i_mouse_test = 0
+        lfps, rips = utils.pj.load.lfps_rips_tra_or_tes(
+            "tra",
+            i_mouse_test,
+            is_debug=True,
+        )
 
-            if 1 < P <= kwargs["lower_SD_thres_for_reasonable_ripple"],
-                X is "just one suspicioius ripple including LFP segment", "s"
-
-            if kwargs["lower_SD_thres_for_reasonable_ripple"] <= P,
-                X is "just one reasonable ripple including LFP segment", "r"
-
-    Example Usage:
-            lfp, rip_sec = lfps_tra[0], rips_tra[0]
+        for i in range(len(lfps)):
+            lfp, rip = lfps[i], rips[i]
             kwargs = {
-               "use_classes_str": ["n", "r"],
-               "lower_SD_thres_for_reasonable_ripple": 7,
-               "step": 'Training',
-               "do_under_sampling": True,
+                # "use_classes_str": ["t", "f"],
+                "use_classes_str": ["f", "t"],
+                "lower_SD_thres_for_reasonable_ripple": 1,
+                "do_under_sampling": True,
             }
-            X_el_tra, P_el_tra = _define_X_P_electrode(lfp, rip_sec, 'train', **kwargs)
-            print(np.isnan(P_el_tra).sum()) # 29
-            print(((3 < P_el_tra) & (P_el_tra < 6)).sum()) # 0
-            print((7 <= P_el_tra).sum()) # 29
+            X_el_tra, T_el_tra = _define_X_T_electrode(lfp, rip, "Training", **kwargs)
+            print(np.unique(T_el_tra, return_counts=True))
     """
 
     ## Check an argument
@@ -313,13 +317,29 @@ def _define_X_P_electrode(
     the_2nd_filled_rips = rip_filled.iloc[the_2nd_indi]
     the_3rd_filled_rips = rip_filled.iloc[the_3rd_indi]
 
+    ## condition one candidate including # fixme
+    # is_only_one_candidate
+
     ##############################
     ## T_electrode
     ##############################
     ## Base conditions
-    are_the_1st_ripple_CNN = the_1st_filled_rips["are_ripple_CNN"] == 1.0
+
+    # np.unique(the_1st_filled_rips["are_ripple_CNN"])
+    # (the_1st_filled_rips["are_ripple_CNN"] == 1.0).sum()  # 3335
+    # (the_1st_filled_rips["are_ripple_CNN"] == 0).sum()  # 17650
+
+    # are_the_1st_ripple_candi = (the_1st_filled_rips["are_ripple_CNN"] == 1.0) | (
+    #     the_1st_filled_rips["are_ripple_CNN"] == 0
+    # )  # 20985
+
+    are_the_1st_ripple_base = the_1st_filled_rips["are_ripple_CNN"].isna()  # 198641
+    # len(are_the_1st_ripple_base)  # 219626
+
     are_the_2nd_ripple_CNN = the_2nd_filled_rips["are_ripple_CNN"] == 1.0
-    are_the_3rd_ripple_CNN = the_3rd_filled_rips["are_ripple_CNN"] == 1.0
+
+    # are_the_3rd_ripple_CNN = the_3rd_filled_rips["are_ripple_CNN"] == 1.0
+    are_the_3rd_ripple_base = the_3rd_filled_rips["are_ripple_CNN"].isna()
 
     are_the_1st_over_the_slice_end = segs_end_sec < the_1st_filled_rips["end_sec"]
     are_the_2nd_over_the_slice_end = segs_end_sec < the_2nd_filled_rips["end_sec"]
@@ -329,125 +349,196 @@ def _define_X_P_electrode(
         the_2nd_filled_rips["ln(ripple peak magni. / SD)"]
     )
 
-    a_condition_for_s_or_r = np.vstack(
+    ##############################
+    ## Conditions
+    ##############################
+    are_t = np.vstack(
         [
-            ~are_the_1st_ripple_CNN,
+            are_the_1st_ripple_base,
             ~are_the_1st_over_the_slice_end,
             are_the_2nd_ripple_CNN,
             ~are_the_2nd_over_the_slice_end,
-            ~are_the_3rd_ripple_CNN,
+            are_the_3rd_ripple_base,
             are_the_3rd_over_the_slice_end,
         ]
     ).all(axis=0)
 
-    ##############################
-    ## Conditions
-    ##############################
-    # "n" / "not ripple including LFP segment"
-    are_n = np.vstack(
+    are_f = np.vstack(
         [
-            ~are_the_1st_ripple_CNN,
-            are_the_1st_over_the_slice_end,
-            np.isnan(the_2nd_ripple_peak_magnitude_SD),
+            are_the_1st_ripple_base,
+            ~are_the_1st_over_the_slice_end,
+            ~are_the_2nd_ripple_CNN,
+            ~are_the_2nd_over_the_slice_end,
+            are_the_3rd_ripple_base,
+            are_the_3rd_over_the_slice_end,
         ]
     ).all(axis=0)
 
-    # "s" / just one suspicioius ripple including LFP segment
-    are_s = (
-        a_condition_for_s_or_r
-        & (1 <= the_2nd_ripple_peak_magnitude_SD)
-        & (
-            the_2nd_ripple_peak_magnitude_SD
-            < kwargs["lower_SD_thres_for_reasonable_ripple"]
-        )
-    )
+    # a_condition_for_s_or_r = np.vstack(
+    #     [
+    #         ~are_the_1st_ripple_CNN,
+    #         ~are_the_1st_over_the_slice_end,
+    #         are_the_2nd_ripple_CNN,
+    #         ~are_the_2nd_over_the_slice_end,
+    #         ~are_the_3rd_ripple_CNN,
+    #         are_the_3rd_over_the_slice_end,
+    #     ]
+    # ).all(axis=0)
 
-    # "r" / just one reasonable ripple including LFP segment
-    are_r = a_condition_for_s_or_r & (
-        kwargs["lower_SD_thres_for_reasonable_ripple"]
-        <= the_2nd_ripple_peak_magnitude_SD
-    )
+    ################################################################################
+    ##############################
+    ## Conditions
+    ##############################
+    # # "n": "not ripple including LFP segment"
+    # are_n = np.vstack(
+    #     [
+    #         ~are_the_1st_ripple_CNN,
+    #         are_the_1st_over_the_slice_end,
+    #         np.isnan(the_2nd_ripple_peak_magnitude_SD),
+    #     ]
+    # ).all(axis=0)
+
+    # # "s": just one suspicioius ripple including LFP segment
+    # are_s = (
+    #     a_condition_for_s_or_r
+    #     & (1 <= the_2nd_ripple_peak_magnitude_SD)
+    #     & (
+    #         the_2nd_ripple_peak_magnitude_SD
+    #         < kwargs["lower_SD_thres_for_reasonable_ripple"]
+    #     )
+    # )
+
+    # # "r": just one reasonable ripple including LFP segment
+    # are_r = a_condition_for_s_or_r & (
+    #     kwargs["lower_SD_thres_for_reasonable_ripple"]
+    #     <= the_2nd_ripple_peak_magnitude_SD
+    # )
+
+    # # fix1
+    # # "rf": just one reasonable false ripple including LFP segment
+    # are_fr = a_condition_for_s_or_r & (
+    #     kwargs["lower_SD_thres_for_reasonable_ripple"]
+    #     <= the_2nd_ripple_peak_magnitude_SD
+    # )
+
+    # # "sf": just one suspicioius false ripple including LFP segment
+    # are_s = (
+    #     a_condition_for_s_or_r
+    #     & (1 <= the_2nd_ripple_peak_magnitude_SD)
+    #     & (
+    #         the_2nd_ripple_peak_magnitude_SD
+    #         < kwargs["lower_SD_thres_for_reasonable_ripple"]
+    #     )
+    # )
 
     ###################################
-    ## Allocates informative labels, P
+    ## Allocates labels, T
     ###################################
-    segs_n = segs[are_n]
-    segs_s = segs[are_s]
-    segs_r = segs[are_r]
+    segs_t = segs[are_t]
+    segs_f = segs[are_f]
+    # segs_n = segs[are_n]
+    # segs_s = segs[are_s]
+    # segs_r = segs[are_r]
 
-    X_el = np.vstack([segs_n, segs_s, segs_r])
+    # X_el = np.vstack([segs_n, segs_s, segs_r])
+    X_el = np.vstack([segs_t, segs_f])
 
-    P_n = the_2nd_ripple_peak_magnitude_SD[are_n]
-    P_s = the_2nd_ripple_peak_magnitude_SD[are_s]
-    P_r = the_2nd_ripple_peak_magnitude_SD[are_r]
-    P_el = np.hstack([P_n, P_s, P_r])
+    P_t = the_2nd_ripple_peak_magnitude_SD[are_t]
+    P_f = the_2nd_ripple_peak_magnitude_SD[are_f]
+    P_el = np.hstack([P_t, P_f])
 
-    # Converts the dtype of P_el from float to int
+    # Converts the dtype of P_el float16
     P_el = P_el.astype(np.float16)
 
     # Target labels to find only necessary segments
     T_el = np.array(
-        ["n" for _ in range(len(segs_n))]
-        + ["s" for _ in range(len(segs_s))]
-        + ["r" for _ in range(len(segs_r))]
+        ["t" for _ in range(len(segs_t))] + ["f" for _ in range(len(segs_f))]
     )
 
-    # Excludes unnecessary segments depending on kwargments
-    indi_b = np.vstack([T_el == c for c in kwargs["use_classes_str"]]).any(axis=0)
-    X_el, P_el, T_el = X_el[indi_b], P_el[indi_b], T_el[indi_b]
+    # Excludes unnecessary segments depending on kwargs
+    indi = np.vstack([T_el == c for c in kwargs["use_classes_str"]]).any(axis=0)
+    X_el, T_el = X_el[indi], T_el[indi]
 
     ## Shuffle within electrode for under sampling
     if step == "Training":
-        X_el, P_el, T_el = shuffle(X_el, P_el, T_el)
+        X_el, T_el = shuffle(X_el, T_el)
 
-    ##############################
-    # Under Sampilng
-    ##############################
+    ##################
+    # Under Sampling #
+    ##################
     if kwargs["do_under_sampling"] & (step == "Training"):
         N_min = np.min([(T_el == c).sum() for c in kwargs["use_classes_str"]])
         indi_classes = [np.where(T_el == c)[0] for c in kwargs["use_classes_str"]]
         indi_pick = np.hstack([ic[:N_min] for ic in indi_classes])
-        X_el, P_el, T_el = X_el[indi_pick], P_el[indi_pick], T_el[indi_pick]
+        X_el, T_el = X_el[indi_pick], T_el[indi_pick]
 
-    return X_el, P_el
+    ################################################################################
+
+    for i_k, k in enumerate(kwargs["use_classes_str"]):
+        T_el[T_el == k] = i_k
+
+    T_el = T_el.astype(int)  # OK
+
+    return X_el, T_el
 
 
-def _define_X_P_electrode_wrapper(arg_list):
+def _define_X_T_electrode_wrapper(arg_list):
     args, kwargs = arg_list
-    return _define_X_P_electrode(*args, **kwargs)
+    return _define_X_T_electrode(*args, **kwargs)
 
 
-def _define_X_P_electrodes_mp(arg_list):
+def _define_X_T_electrodes_mp(arg_list):
     p = mp.Pool(mp.cpu_count())
-    output = p.map(_define_X_P_electrode_wrapper, arg_list)
+    output = p.map(_define_X_T_electrode_wrapper, arg_list)
     p.close()
     return output
 
 
-def define_X_P_electrodes_mp_and_organize_them(lfps, rips_sec, step, **kwargs):
+def define_X_T_electrodes_mp_and_organize_them(lfps, rips_sec, step, **kwargs):
     arg_list = [((lfps[i], rips_sec[i], step), kwargs) for i in range(len(lfps))]
 
-    X_P_mapped = _define_X_P_electrodes_mp(arg_list)  # too big
+    X_T_mapped = _define_X_T_electrodes_mp(arg_list)
 
-    X = np.vstack([m[0] for m in X_P_mapped])
-    P = np.hstack([m[1] for m in X_P_mapped])
+    X = np.vstack([m[0] for m in X_T_mapped])
+    T = np.hstack([m[1] for m in X_T_mapped])
 
-    return X, P
+    return X, T
 
 
 if __name__ == "__main__":
-    dlf = DataLoaderFiller(
-        i_mouse_test=0,
-        use_classes_str=["n", "r"],
-    )
+    DL_CONF = {
+        "batch_size": 1024,
+        "num_workers": 10,
+        "do_under_sampling": True,
+        "use_classes_str": ["f", "t"],
+        # "use_classes_str": ["t", "f"],
+        "samp_rate": 1000,
+        "window_size_pts": 400,
+        "use_random_start": True,
+        "lower_SD_thres_for_reasonable_ripple": 1,
+        "MAX_EPOCHS": 1,
+        "is_debug": False,
+        "i_mouse_test": 0,
+    }  # same as the first fold
+
+    dlf = DataLoaderFillerFvsT(**DL_CONF)
+
     dl_tra = dlf.fill("Training")
     dl_test = dlf.fill("Test")
 
-    batch = next(iter(dl_tra))
+    # ## Checks whether any same data exist on both training and test dataset
+    # print(len(dl_tra.dataset.tensors[0]))
+    # print(len(dl_test.dataset.tensors[0]))
 
-    for epoch in range(10):
-        dl_tra = dlf.fill("Training")
-        for i_batch, batch in enumerate(dl_tra):
-            Xb_tra, Pb_tra = batch
-            print(i_batch)
-            print(Pb_tra)
+    # ## Checks the dataleak regarding mouse ID
+    # dl_tra.dataset.tensors
+
+    batch = next(iter(dl_tra))
+    print(batch[1].unique(return_counts=True))
+
+    # for epoch in range(10):
+    #     dl_tra = dlf.fill("Training")
+    #     for i_batch, batch in enumerate(dl_tra):
+    #         Xb_tra, Tb_tra = batch
+    #         print(i_batch)
+    #         print(Tb_tra)

@@ -2,9 +2,6 @@
 
 
 def ax_extend(ax, x_extend_ratio=1.0, y_extend_ratio=1.0):
-    # y_extend_ratio = 2.0
-    # x_extend_ratio = 1.5
-
     ## Original coordinates
     bbox = ax.get_position()
     left_orig = bbox.x0

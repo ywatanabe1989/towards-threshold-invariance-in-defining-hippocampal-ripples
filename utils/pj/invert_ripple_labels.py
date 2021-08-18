@@ -11,13 +11,16 @@ def invert_ripple_labels(_rips_df):
         _already_inverted = rips_df["are_errors"].copy()
 
         ## Prob.
-        rips_df["pred_probas_ripple_CNN"] = rips_df["psx_ripple"].copy()  # initializes
-        pred_probas_ripple_CNN = np.array(
-            1 - rips_df["psx_ripple"][rips_df["are_errors"]].copy()
-        )  # inverts
-        rips_df.loc[
-            rips_df["are_errors"], "pred_probas_ripple_CNN"
-        ] = pred_probas_ripple_CNN.copy()
+        """
+        psx should not be inverted.
+        """
+        # rips_df["pred_probas_ripple_CNN"] = rips_df["psx_ripple"].copy()  # initializes
+        # pred_probas_ripple_CNN = np.array(
+        #     1 - rips_df["psx_ripple"][rips_df["are_errors"]].copy()
+        # )  # inverts
+        # rips_df.loc[
+        #     rips_df["are_errors"], "pred_probas_ripple_CNN"
+        # ] = pred_probas_ripple_CNN.copy()
 
         ## Label
         rips_df["are_ripple_CNN"] = rips_df["are_ripple_GMM"].copy()  # initializes

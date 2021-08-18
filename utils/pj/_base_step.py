@@ -11,7 +11,17 @@ loss_fn = nn.CrossEntropyLoss()
 scaler = GradScaler()
 
 
-def base_step(
+def base_step_FvsT(*args, **kwargs):
+    kwargs["FvsT_or_NvsR"] = "FvsT"
+    return _base_step(*args, **kwargs)
+
+
+def base_step_NvsR(*args, **kwargs):
+    kwargs["FvsT_or_NvsR"] = "NvsR"
+    return _base_step(*args, **kwargs)
+
+
+def _base_step(
     model,
     optimizer,
     step,
@@ -25,6 +35,7 @@ def base_step(
     print_batch_interval=100,
     temperature=1.0,
     loss_weight=None,
+    FvsT_or_NvsR="FvsT",
 ):
     if step == "Training":
         model.train()
@@ -34,11 +45,16 @@ def base_step(
         print("step is either Training, Validation, or Test.")
         raise
 
-    Xb, _Pb = batch  # Pb: batched peak ripple amplitude [SD]
-    ## To Target labels
-    # 0: 'n'/not-ripple-including group
-    # 1: 'r'/reasonable one-ripple-including group
-    Tb = (~_Pb.isnan()).long()
+    if FvsT_or_NvsR == "FvsT":
+        Xb, Tb = batch
+
+    if FvsT_or_NvsR == "NvsR":
+        Xb, _Pb = batch  # Pb: batched peak ripple amplitude [SD]
+        ## To Target labels
+        # 0: 'n'/not-ripple-including group
+        # 1: 'r'/reasonable one-ripple-including group
+        Tb = (~_Pb.isnan()).long()
+
     Xb, Tb = Xb.cuda(), Tb.cuda()
 
     with autocast():
@@ -49,12 +65,6 @@ def base_step(
         scaler.scale(loss).backward()
         scaler.step(optimizer)
         scaler.update()
-
-    # logits = model(Xb)
-    # loss = loss_fn(logits, Tb)
-
-    # pred_proba = softmax(logits)
-    # pred_class = pred_proba.argmax(dim=-1)
 
     logits /= temperature
 
@@ -91,7 +101,6 @@ def base_step(
         print(utils.general.squeeze_spaces(print_txt))
 
     return loss, lc_logger
-    # return Tb, pred_proba, pred_class
 
 
 ## EOF

@@ -87,8 +87,9 @@ if args.ftr == "duration":
 if args.ftr == "mep":
     ftr_str = "ln(mean MEP magni. / SD)"
     ylabel = "ln(Mean normalized \nmagnitude of MEP) [a.u.]"
-    ylim = (-2, 4.1)
-    n_yticks = 4
+    # ylim = (-2, 4.1)
+    ylim = (-2, 2.2)
+    n_yticks = 3
     yticks = np.linspace(ylim[0], np.round(ylim[1], 0), n_yticks)
 
 if args.ftr == "ripple peak magnitude":

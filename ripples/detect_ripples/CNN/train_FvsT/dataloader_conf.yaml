@@ -1,0 +1,13 @@
+MAX_EPOCHS: 1
+batch_size: 1024
+do_under_sampling: true
+i_global: 1622
+is_debug: false
+lower_SD_thres_for_reasonable_ripple: 1
+num_workers: 10
+samp_rate: 1000
+use_classes_str:
+- f
+- t
+use_random_start: true
+window_size_pts: 400

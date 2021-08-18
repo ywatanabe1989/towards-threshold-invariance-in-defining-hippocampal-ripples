@@ -9,6 +9,7 @@
 *.png
 *.tar.gz
 *flycheck*.py
+*.pth
 
 
 ## Singularity

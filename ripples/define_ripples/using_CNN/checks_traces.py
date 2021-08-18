@@ -62,8 +62,9 @@ LPATH_LFP_ELECTRODES = np.random.permutation(LPATH_HIPPO_LFP_NPY_LIST_MICE)[
 ## Main
 ################################################################################
 for lpath_lfp in LPATH_LFP_ELECTRODES:
+    # lpath_lfp = LPATH_LFP_ELECTRODES[0]
     ## FPATHs
-    lpath_lfp = random.choice(LPATH_HIPPO_LFP_NPY_LIST_MICE)
+    # lpath_lfp = random.choice(LPATH_HIPPO_LFP_NPY_LIST_MICE)
     lpath_rip_magni = utils.pj.path_converters.LFP_to_ripple_magni(lpath_lfp)
     lpath_mep_magni = utils.pj.path_converters.LFP_to_MEP_magni(lpath_lfp)
 
@@ -93,6 +94,15 @@ for lpath_lfp in LPATH_LFP_ELECTRODES:
     rip_sec.loc[are_T2F, "X2X"] = "T2F"
     rip_sec.loc[are_F2F, "X2X"] = "F2F"
 
+    """
+    Regarding 'psx_ripple' for X2X groups, the result below seems wrong.
+    # print(rip_sec["psx_ripple"][rip_sec["X2X"] == "T2T"].min()) # 0.29
+    # print(rip_sec["psx_ripple"][rip_sec["X2X"] == "F2F"].max()) # 0.66
+    However, it's OK. 'psx_ripple' is calculated for each fold and
+    the threshold for them are independently determined
+    by the cleanlab, a package for Confident Learning.
+    """
+
     ################################################################################
     ## Makes ripple analog signal
     ################################################################################
@@ -110,9 +120,7 @@ for lpath_lfp in LPATH_LFP_ELECTRODES:
         rip_analog_sig_F2T[start_pts:end_pts] = 1 if rip["X2X"] == "F2T" else 0
         rip_analog_sig_T2F[start_pts:end_pts] = 1 if rip["X2X"] == "T2F" else 0
         rip_analog_sig_F2F[start_pts:end_pts] = 1 if rip["X2X"] == "F2F" else 0
-        rip_pred_proba_sig[start_pts:end_pts] = rip[
-            "psx_ripple"
-        ]  # rip["pred_probas_ripple_CNN"]
+        rip_pred_proba_sig[start_pts:end_pts] = rip["psx_ripple"]
 
     ################################################################################
     ## Plots
@@ -139,7 +147,7 @@ for lpath_lfp in LPATH_LFP_ELECTRODES:
             dur_sec=DURATION_SEC,
         )
 
-        fig.show()
+        # fig.show()
 
         sfname_tiff = lpath_lfp.replace("./", "|").replace("/", "|")
         sfname_tiff = sfname_tiff + "_start_{}_sec.tiff".format(rand_start_sec)

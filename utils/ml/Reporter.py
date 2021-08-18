@@ -66,9 +66,9 @@ class Reporter:
         self.roc_aucs_macro_folds = []
         self.roc_aucs_micro_folds = []
         self.roc_aucs_figs_folds = []
-        self.pr_aucs_macro_folds = []
-        self.pr_aucs_micro_folds = []
-        self.pr_aucs_figs_folds = []
+        self.pre_rec_aucs_macro_folds = []
+        self.pre_rec_aucs_micro_folds = []
+        self.pre_rec_aucs_figs_folds = []
 
         ## for more flexible collection
         self.added_folds_obj_dict = utils.general.listed_dict()
@@ -170,8 +170,21 @@ class Reporter:
         ####################
         ## ROC-AUC score
         ####################
-        roc_auc, fpr, tpr, threshold, fig_roc = utils.ml.aucs.calc_roc_auc(
-            true_class, pred_proba, labels, plot=False
+        utils.plt.configure_mpl(
+            plt,
+            figsize=(7, 7),
+            labelsize=8,
+            fontsize=7,
+            legendfontsize=6,
+            tick_size=0.8,
+            tick_width=0.2,
+        )
+
+        fig_roc, metrics_roc_auc_dict = utils.ml.plt.roc_auc(
+            plt,
+            true_class,
+            pred_proba,
+            labels,
         )
         if plot:
             fig_roc.plot()
@@ -181,12 +194,11 @@ class Reporter:
         ####################
         ## PRE-REC AUC score
         ####################
-        pr_auc, pre, rec, threshold, fig_pr = utils.ml.aucs.calc_pr_auc(
-            true_class, pred_proba, labels, plot=False
+        fig_pre_rec, metrics_pre_rec_auc_dict = utils.ml.plt.pre_rec_auc(
+            plt, true_class, pred_proba, labels
         )
-        # print("pr_auc: {}".format(pr_auc["micro"], pr_auc["macro"]))
         if plot:
-            fig_pr.plot()
+            fig_pre_rec.plot()
         else:
             plt.close()
 
@@ -197,13 +209,17 @@ class Reporter:
         self.balanced_accs_folds.append(balanced_acc)
         self.conf_mats_folds.append(conf_mat)
         self.clf_reports_folds.append(clf_report)
-        self.roc_aucs_micro_folds.append(roc_auc["micro"])
-        self.roc_aucs_macro_folds.append(roc_auc["macro"])
+        self.roc_aucs_micro_folds.append(metrics_roc_auc_dict["roc_auc"]["micro"])
+        self.roc_aucs_macro_folds.append(metrics_roc_auc_dict["roc_auc"]["macro"])
         self.roc_aucs_figs_folds.append(fig_roc)
-        self.pr_aucs_micro_folds.append(pr_auc["micro"])
-        self.pr_aucs_macro_folds.append(pr_auc["macro"])
-        self.pr_aucs_figs_folds.append(fig_pr)
-        del fig_roc, fig_pr
+        self.pre_rec_aucs_micro_folds.append(
+            metrics_pre_rec_auc_dict["pre_rec_auc"]["micro"]
+        )
+        self.pre_rec_aucs_macro_folds.append(
+            metrics_pre_rec_auc_dict["pre_rec_auc"]["macro"]
+        )
+        self.pre_rec_aucs_figs_folds.append(fig_pre_rec)
+        del fig_roc, fig_pre_rec
 
     def summarize(
         self,
@@ -225,12 +241,14 @@ class Reporter:
         self.roc_auc_macro_cv_mean, self.roc_auc_macro_cv_std = self.take_mean_and_std(
             self.roc_aucs_macro_folds
         )
-        self.pr_auc_micro_cv_mean, self.pr_auc_micro_cv_std = self.take_mean_and_std(
-            self.pr_aucs_micro_folds
-        )
-        self.pr_auc_macro_cv_mean, self.pr_auc_macro_cv_std = self.take_mean_and_std(
-            self.pr_aucs_macro_folds
-        )
+        (
+            self.pre_rec_auc_micro_cv_mean,
+            self.pre_rec_auc_micro_cv_std,
+        ) = self.take_mean_and_std(self.pre_rec_aucs_micro_folds)
+        (
+            self.pre_rec_auc_macro_cv_mean,
+            self.pre_rec_auc_macro_cv_std,
+        ) = self.take_mean_and_std(self.pre_rec_aucs_macro_folds)
 
         self.num_folds = len(self.conf_mats_folds)
         self.print_metrics()
@@ -276,12 +294,16 @@ class Reporter:
         )
         print(
             "\nPrecision-Recall AUC micro Score: {} +/- {} (mean +/- std.; n={})\n".format(
-                self.pr_auc_micro_cv_mean, self.pr_auc_micro_cv_std, self.num_folds
+                self.pre_rec_auc_micro_cv_mean,
+                self.pre_rec_auc_micro_cv_std,
+                self.num_folds,
             )
         )
         print(
             "\nPrecision-Recall AUC macro Score: {} +/- {} (mean +/- std.; n={})\n".format(
-                self.pr_auc_macro_cv_mean, self.pr_auc_macro_cv_std, self.num_folds
+                self.pre_rec_auc_macro_cv_mean,
+                self.pre_rec_auc_macro_cv_std,
+                self.num_folds,
             )
         )
 
@@ -379,7 +401,7 @@ class Reporter:
             utils.general.save(obj, spath, show=show, makedirs=makedirs)
         # print("\nSaved to: {s}\n".format(s=dirname))
 
-    def save(self, others_dict=None, labels=None, makedirs=True):
+    def save(self, others_dict=None, makedirs=True):
         # if makedirs:
         #     os.makedirs(self.sdir, exist_ok=True)
 
@@ -415,13 +437,36 @@ class Reporter:
         ####################
         ## Confusion Matrix
         ####################
+        utils.plt.configure_mpl(
+            plt,
+            figsize=(8, 8),
+            labelsize=8,
+            fontsize=6,
+            legendfontsize=6,
+            tick_size=0.8,
+            tick_width=0.2,
+        )
 
+        # each fold
         self.conf_mats_folds_fig = [
             utils.ml.plt.confusion_matrix(
-                cm, labels=labels, title="Confusion matrix; Test mouse#{}".format(i_cm)
+                plt,
+                cm,
+                labels=self.labels,
+                title="Test Mouse#{}".format(i_cm + 1),
+                extend_ratio=0.4,
+                colorbar=True,
             )
             for i_cm, cm in enumerate(self.conf_mats_folds)
         ]
+
+        for fig_cm_fold in self.conf_mats_folds_fig:
+            fig_cm_fold.axes[-1] = utils.plt.ax_scientific_notation(
+                fig_cm_fold.axes[-1],
+                3,
+                fformat="%3.1f",
+                y=True,
+            )
 
         for i_fold, cm in enumerate(self.conf_mats_folds_fig):
             utils.general.save(
@@ -433,12 +478,26 @@ class Reporter:
             fname="conf_mat/conf_mats.csv",
             makedirs=makedirs,
         )
-        title = "Confusion Matrix; Overall-sum of the Cross-Validation folds"
+        # kCV overall-sum
+        title = "{}-CV overall-sum".format(len(self.conf_mats_folds))
+
         fig_cm = utils.ml.plt.confusion_matrix(
+            plt,
             self.conf_mat_cv_sum,
-            labels=labels,
+            labels=self.labels,
             title=title,
+            extend_ratio=0.4,
+            colorbar=True,
         )
+
+        # fixme
+        fig_cm.axes[-1] = utils.plt.ax_scientific_notation(
+            fig_cm.axes[-1],
+            3,
+            fformat="%3.1f",
+            y=True,
+        )
+
         utils.general.save(
             fig_cm, self.sdir + "conf_mat/overall_sum.png", makedirs=makedirs
         )
@@ -464,14 +523,14 @@ class Reporter:
             self.roc_auc_macro_cv_mean,
             self.roc_auc_macro_cv_std,
         ] + self.roc_aucs_macro_folds
-        _pr_aucs_micro_cat = [
-            self.pr_auc_micro_cv_mean,
-            self.pr_auc_micro_cv_std,
-        ] + self.pr_aucs_micro_folds
-        _pr_aucs_macro_cat = [
-            self.pr_auc_macro_cv_mean,
-            self.pr_auc_macro_cv_std,
-        ] + self.pr_aucs_macro_folds
+        _pre_rec_aucs_micro_cat = [
+            self.pre_rec_auc_micro_cv_mean,
+            self.pre_rec_auc_micro_cv_std,
+        ] + self.pre_rec_aucs_micro_folds
+        _pre_rec_aucs_macro_cat = [
+            self.pre_rec_auc_macro_cv_mean,
+            self.pre_rec_auc_macro_cv_std,
+        ] + self.pre_rec_aucs_macro_folds
         _indi_suffix_cat = (
             ["{}-fold CV mean".format(self.num_folds)]
             + ["{}-fold CV std.".format(self.num_folds)]
@@ -482,11 +541,11 @@ class Reporter:
             {
                 "ROC AUC micro": _roc_aucs_micro_cat,
                 "ROC AUC macro": _roc_aucs_macro_cat,
-                "PRE-REC AUC micro": _pr_aucs_micro_cat,
-                "PRE-REC AUC macro": _pr_aucs_macro_cat,
+                "PRE-REC AUC micro": _pre_rec_aucs_micro_cat,
+                "PRE-REC AUC macro": _pre_rec_aucs_macro_cat,
             }
         )
-        aucs_df.index = _indi_suffix_cat  # fixme
+        aucs_df.index = _indi_suffix_cat
         utils.general.save(aucs_df, self.sdir + "aucs.csv", makedirs=makedirs)
 
         for i_fold in range(len(self.roc_aucs_figs_folds)):
@@ -495,10 +554,10 @@ class Reporter:
                 self.roc_aucs_figs_folds[i_fold], spath, makedirs=makedirs
             )
 
-        for i_fold in range(len(self.pr_aucs_figs_folds)):
-            spath = self.sdir + "pr_curves/fold#{}.png".format(i_fold)
+        for i_fold in range(len(self.pre_rec_aucs_figs_folds)):
+            spath = self.sdir + "pre_rec_curves/fold#{}.png".format(i_fold)
             utils.general.save(
-                self.pr_aucs_figs_folds[i_fold], spath, makedirs=makedirs
+                self.pre_rec_aucs_figs_folds[i_fold], spath, makedirs=makedirs
             )
 
         ## Manually added scalars, dfs, and figures
@@ -522,9 +581,6 @@ class Reporter:
                 self.save_listed_figures(
                     listed_obj, show=True, makedirs=makedirs, **meta
                 )
-
-        # for _ in range(10):
-        #     plt.close()
 
 
 if __name__ == "__main__":
@@ -562,8 +618,6 @@ if __name__ == "__main__":
 
         ## Prediction
         pred_proba_tes = clf.predict_proba(X_tes)
-        # from scipy.special import softmax
-        # pred_proba_tes = softmax(np.random.rand(len(X_tes), len(labels)), axis=-1)
         pred_cls_tes = np.argmax(pred_proba_tes, axis=1)
 
         ##############################
@@ -601,6 +655,6 @@ if __name__ == "__main__":
         )
 
     reporter.summarize()
-    reporter.save(labels=labels)
+    reporter.save()
 
     ## EOF

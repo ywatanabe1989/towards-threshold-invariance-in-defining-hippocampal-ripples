@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from . import aucs, plt
+from . import plt
 from .LearningCurveLogger import LearningCurveLogger
 from .merge_labels import merge_labels
 from .Reporter import Reporter

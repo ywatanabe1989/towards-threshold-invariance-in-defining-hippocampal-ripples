@@ -35,15 +35,16 @@ LPATH_HIPPO_LFP_NPY_LIST_MOUSE = utils.pj.load.get_hipp_lfp_fpaths(args.n_mouse)
 
 
 ## Loads
-lfps, rips_df_list_CNN = utils.pj.load.lfps_rips_sec(
+rips_df_list_CNN = utils.pj.load.rips_sec(
     LPATH_HIPPO_LFP_NPY_LIST_MOUSE,
-    rip_sec_ver="CNN_labeled/D{}+".format(args.n_mouse),
-    cycle_dataset=False,
+    rip_sec_ver="CNN_labeled/D{}-".format(args.n_mouse),
+    cycle_dataset=True,
     n_mouse=args.n_mouse,
 )
 rips_df = pd.concat(rips_df_list_CNN)
 
 are_ripple_CNN = rips_df["are_ripple_CNN"]
+
 
 ## Parameters
 FTR1, FTR2, FTR3 = (
@@ -81,7 +82,7 @@ spath_png = (
     else None
 )
 
-utils.pj.plot_3d_scatter(
+fig = utils.pj.plot_3d_scatter(
     T_CNN_sparse_rips_df,
     FTR1,
     FTR2,
@@ -100,4 +101,5 @@ utils.pj.plot_3d_scatter(
     alpha=0.35,
 )
 
+fig.show()
 ## EOF

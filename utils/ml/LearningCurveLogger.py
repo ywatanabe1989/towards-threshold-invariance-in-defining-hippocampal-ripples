@@ -2,7 +2,8 @@
 
 from pprint import pprint
 
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
+import matplotlib
 import pandas as pd
 import utils
 
@@ -76,10 +77,11 @@ class LearningCurveLogger(object):
 
     def plot_learning_curves(
         self,
+        plt,
         i_mouse_test=None,
         max_epochs=None,
         window_size_sec=None,
-        figscale=10,
+        max_n_ticks=4,
     ):
 
         self.to_dfs()
@@ -106,7 +108,8 @@ class LearningCurveLogger(object):
                         self.dfs_pivot[step_k][plt_k],
                         label=step_k,
                         color=COLOR_DICT[step_k],
-                        linewidth=3,
+                        linewidth=1,
+                        # linewidth=3,
                     )
 
                 if step_k == "Test":  # scatter
@@ -115,7 +118,8 @@ class LearningCurveLogger(object):
                         self.dfs_pivot[step_k][plt_k],
                         label=step_k,
                         color=COLOR_DICT[step_k],
-                        s=150,
+                        # s=150,
+                        s=50,
                         alpha=0.9,
                     )
 
@@ -130,10 +134,15 @@ class LearningCurveLogger(object):
         ax[0].set_ylabel("Loss")
         ax[1].set_ylabel("Balanced Accuracy")
 
+        for a in ax:
+            a.xaxis.set_major_locator(matplotlib.ticker.MaxNLocator(max_n_ticks))
+            a.yaxis.set_major_locator(matplotlib.ticker.MaxNLocator(max_n_ticks))
+
         return fig
 
 
 if __name__ == "__main__":
+    import matplotlib.pyplot as plt
     import torch
     from scipy.special import softmax
 
@@ -177,10 +186,20 @@ if __name__ == "__main__":
 
         lc_logger(log_dict, step=step)
 
+    utils.plt.configure_mpl(
+        plt,
+        figsize=(8.7, 10),
+        labelsize=8,
+        fontsize=7,
+        legendfontsize=6,
+        tick_size=0.8,
+        tick_width=0.2,
+    )
+
     fig = lc_logger.plot_learning_curves(
+        plt,
         i_mouse_test=i_mouse_test,
         max_epochs=max_epochs,
         window_size_sec=1024,
-        figscale=10,
     )
     fig.show()
