@@ -1,1 +1,0 @@
-../ripples/define_ripples/using_CNN/calcs_corr_of_labels.py

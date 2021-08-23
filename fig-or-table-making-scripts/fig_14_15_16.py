@@ -1,0 +1,1 @@
+../ripples/define_ripples/summary/checks_ripple_props.py

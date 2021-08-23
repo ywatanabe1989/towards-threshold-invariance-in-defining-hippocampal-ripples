@@ -1,1 +1,0 @@
-/mnt/nvme/proj/Semisupervised_Ripples/ripples/detect_ripples/CNN/train_n_vs_r.py

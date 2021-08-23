@@ -1,1 +1,0 @@
-../ripples/define_ripples/conventional/plots_prop_hists.py

@@ -4,6 +4,7 @@ import csv
 
 import pandas as pd
 import utils
+import numpy as np
 
 
 def save(obj, sfname_or_spath, makedirs=True, show=True, **kwargs):
@@ -164,6 +165,8 @@ def save_listed_scalars_as_csv(
     show=False,
 ):
     """Puts to df and save it as csv"""
+    import numpy as np
+
     if overwrite == True:
         mv_to_tmp(spath_csv, L=2)
     indi_suffix = np.arange(len(listed_scalars)) if indi_suffix is None else indi_suffix
@@ -193,6 +196,8 @@ def save_listed_dfs_as_csv(
         will be added, where i is the index of the df.On the other hand,
         when indi_suffix=None is passed, only '{}'.format(i) will be added.
     """
+    import numpy as np
+
     if overwrite == True:
         mv_to_tmp(spath_csv, L=2)
 

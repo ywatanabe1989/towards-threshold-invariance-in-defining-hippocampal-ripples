@@ -33,6 +33,13 @@ def take_mean_and_std(obj_list, n_round=3):
     return np.nanmean(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(n_round)
 
 
+def take_median_and_std(obj_list, n_round=3):
+    arr = np.array(obj_list).astype(float)
+    return np.nanmedian(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(
+        n_round
+    )
+
+
 def judge_cliff(cliff_val):
     abs_cliff_val = abs(cliff_val)
     if 1.0 < abs_cliff_val:
@@ -45,6 +52,23 @@ def judge_cliff(cliff_val):
         return "small"
     if 0.0 <= abs_cliff_val:
         return "negligible"
+
+
+def to_med_mad_df(listed_scalars):
+    df = pd.DataFrame(listed_scalars)
+    med = pd.DataFrame(df.median()).T
+    mad = pd.DataFrame(data=scipy.stats.median_abs_deviation(df), index=med.columns).T
+
+    out_df = med.append(mad)
+    out_df = out_df.append(df)
+
+    index = ["median", "median absolute deviation"] + list(
+        np.arange(len(df)).astype(int)
+    )
+
+    out_df.index = index
+
+    return out_df
 
 
 ################################################################################
@@ -88,8 +112,8 @@ if args.ftr == "mep":
     ftr_str = "ln(mean MEP magni. / SD)"
     ylabel = "ln(Mean normalized \nmagnitude of MEP) [a.u.]"
     # ylim = (-2, 4.1)
-    ylim = (-2, 2.2)
-    n_yticks = 3
+    ylim = (-2, 4.1)
+    n_yticks = 4
     yticks = np.linspace(ylim[0], np.round(ylim[1], 0), n_yticks)
 
 if args.ftr == "ripple peak magnitude":
@@ -104,6 +128,8 @@ n_mice_str = ["01", "02", "03", "04", "05"]
 fig, axes = plt.subplots(1, len(n_mice_str))
 rips_sec_all_mice = []
 abs_cliffs = []
+groups = ["T2T", "F2T", "T2F", "F2F"]
+meds_dict = utils.general.listed_dict(groups)
 for i_mouse, n_mouse_str in enumerate(n_mice_str):
     print(
         "\n--------------------------------------------------\nn_mouse: {}\n".format(
@@ -158,6 +184,9 @@ for i_mouse, n_mouse_str in enumerate(n_mice_str):
         df = pd.DataFrame(rips_sec[rips_sec[label]][ftr_str])
         if ftr_str == "ln(duration_ms)":  # to duration [ms]
             df = np.exp(df)
+
+        meds_dict[label].append(np.median(df))
+
         ticks.append("($n$" + " = {:,}) {}".format(len(df), label))
         RGBA = utils.plt.colors.to_RGBA(colors2str[label], alpha=alpha)
         dfs.append(df)
@@ -348,6 +377,10 @@ for i in range(len(groups)):
 # fig.show()
 
 ## Saves
+med_mad_df = to_med_mad_df(meds_dict)
+spath_csv = utils.general.mk_spath("med_mad/{}.csv".format(args.ftr))
+utils.general.save(med_mad_df, spath_csv)
+
 spath_csv = utils.general.mk_spath(
     "abs_cliff_mean_plus_minus_std/{}.csv".format(args.ftr)
 )
