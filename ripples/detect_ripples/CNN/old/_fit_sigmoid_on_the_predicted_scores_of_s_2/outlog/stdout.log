@@ -1,0 +1,14 @@
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+[0.1        0.10476158 0.10974988 0.1149757  0.12045035 0.12618569
+ 0.13219411 0.13848864 0.14508288 0.15199111]
+[0.10476158 0.10974988 0.1149757  0.12045035 0.12618569 0.13219411
+ 0.13848864 0.14508288 0.15199111 0.15922828]
+
+Saved to: ./ripples/detect_ripples/CNN/fit_sigmoid_on_the_predicted_scores_of_s/mouse#05_mean_std_and_fitted_sigmoid.png
+
