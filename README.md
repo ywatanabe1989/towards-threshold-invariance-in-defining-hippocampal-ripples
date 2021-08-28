@@ -1,25 +1,21 @@
 ## Installation
-To run the code, please download or clone this repository and add this repositories top directory (./DL_REPO/) to the PYTHONPATH. To check which paths are recognized from your python environment, executing the following 2-line python code would be the easiest.
+To run the code, please clone this repository and add to the PATH this repository's top directory (.towards-threshold-invariance-in-defining-hippocampal-ripples). To check if it is correctly recognized from your python environment, executing the following python code would be helpful.
 
 ``` python
 import sys
 print(sys.path)
 '''
 ['/usr/local/bin',
- '/usr/lib64/python38.zip',
- '/usr/lib64/python3.8',
- '/usr/lib64/python3.8/lib-dynload',
- '',
- '/home/ywatanabe/.local/lib/python3.8/site-packages',
- '/usr/local/lib64/python3.8/site-packages',
- '/usr/local/lib/python3.8/site-packages',
- '/usr/lib64/python3.8/site-packages',
- '/usr/lib/python3.8/site-packages',
- '/usr/local/lib/python3.8/site-packages/IPython/extensions',
- '/home/ywatanabe/.ipython',
- '.',
+ ...
+ '/home/<USERNAME>/.ipython',
  '.']
 '''
+```
+
+## Building .sif file (Singularity Image File)
+
+``` bash
+$ singularity build .singularity/towards_threshold_invariance_in_defining_hippocampal_ripples.sif
 ```
 
 ## Our machine specs
@@ -32,26 +28,19 @@ print(sys.path)
 - CUDA version: V10.1.243
 
 
-
-``` python
-## Sets tee
-sys.stdout, sys.stderr = utils.general.tee(sys)
-```
-
-
 ## File/directory description (only major ones)
 ```
-.DL_REPO
+.towards-threshold-invariance-in-defining-hippocampal-ripples
 ├── conf (Globally used configuration files)
 ├── fig_making_scripts (Softlinks to scripts to make figures for a paper)
 ├── models (Definition files (.py) and configuration files (.yaml) for deep learning models and modules for them)
 ├── README.md (This file.)
 ├── singularity 
-│   ├── singularity.bash (Bash aliases for using singularity as lasy as possible for each project)
+│   ├── singularity.bash (Bash aliases for using the singularity container)
 ├── ripples
 │   ├── detect_ripples
 │   ├── define_ripples
-├── **utils (Ideally, this directory "utils" would be transfererable to any project other than ./utils/pj/ ("p"ro"j"ect). However, there remain some dependancy problems.)**
+├── utils
 │   ├── dsp.py ("D"igital "S"ignal "P"rocessing)
 │   ├── general.py (general code which are always written by pythonista)
 │   ├── ml ("M"achine "L"earning)
@@ -60,7 +49,6 @@ sys.stdout, sys.stderr = utils.general.tee(sys)
 │   └── stats ("Stat"i"s"tics)
 ├── paper (info for this paper)
 ```
-
 
 
 ## The order scripts were executed.
@@ -80,18 +68,12 @@ sys.stdout, sys.stderr = utils.general.tee(sys)
 
 ./ripples/define_ripples/conventional/sh_scripts/plots_3d_scatter.sh
 
-
 ./ripples/define_ripples/using_GMM/sh_scripts/makes_labels.sh
 ./ripples/define_ripples/using_GMM/sh_scripts/makes_labels_D0X-.sh
 ./ripples/define_ripples/using_GMM/sh_scripts/plots_3d_scatter.sh
 
 ./ripples/define_ripples/using_CNN/sh_scripts/isolates_candidates.sh
 ./ripples/define_ripples/using_CNN/sh_scripts/makes_labels.sh
-
---------------------------------------------------------------------------------
-
- 
-
 
 ./ripples/define_ripples/using_CNN/plots_3d_scatter.py
 ./ripples/define_ripples/using_CNN/sh_scripts/plots_3d_scatter.sh
@@ -101,18 +83,8 @@ sys.stdout, sys.stderr = utils.general.tee(sys)
 ./ripples/define_ripples/using_CNN/calcs_corr_of_labels.py
 
 
-### From here!!! ###
-./ripples/detect_ripples/CNN/train_n_vs_r.py
-./ripples/detect_ripples/CNN/sh_scripts/predict_n_s_r.sh
-./ripples/detect_ripples/CNN/sh_scripts/fit_sigmoid_on_the_predicted_scores_of_s.sh
+./ripples/detect_ripples/CNN/train_FvsT.py  
 
-
-
-  
-
-
-## ./data dir tree 
-$ tree ./data > ./data/data_tree.txt
 
 ## To-Dos
 - [ ] Fig. t9, 10
@@ -121,9 +93,4 @@ $ tree ./data > ./data/data_tree.txt
 - [ ] Experiment on hc-19
     - [x] downloads hc-19
     
-- [ ] to fix ripples/define_ripples/using_CNN/checks_traces.py
 - [ ] to open source models and weights with pip
-
-
-
-LPATH_HIPPO_LFP_NPY_LIST_MOUSE = utils.pj.load.get_hipp_lfp_fpaths(args.n_mouse)
