@@ -116,12 +116,6 @@ for i_mouse_test in i_MICE_TEST:
         for i_batch, batch in enumerate(dl_tra):
             optimizer.zero_grad()
 
-            """
-            batch  = next(iter(dl_tra))
-            Xb_tra, Tb_tra = batch
-            Xb_tra, Tb_tra = Xb_tra.to(device), Tb_tra.to(device)
-            """
-
             loss, lc_logger = utils.pj.base_step_FvsT(
                 model,
                 optimizer,
@@ -136,10 +130,7 @@ for i_mouse_test in i_MICE_TEST:
             )
 
             i_global += 1
-            # /usr/local/lib64/python3.8/site-packages/sklearn/metrics/_classification.py:1850: UserWarning: y_pred contains classes not in y_true
-            #   warnings.warn('y_pred contains classes not in y_true')
 
-            # step: Training, i_batch: 0, loss: 0.685, Balanced ACC: 0.502
             if IS_DEBUG == True and i_global == 10:
                 break
 
@@ -147,23 +138,6 @@ for i_mouse_test in i_MICE_TEST:
     step = "Test"
     dl_tes = dlf.fill(step)
     for i_batch, batch in enumerate(dl_tes):
-        """
-        Xb_tes, Tb_tes = batch  # Pb: batched peak ripple amplitude [SD]
-        Xb_tes, Tb_tes = Xb_tes.to(device), Tb_tes.to(device)
-        from torch.cuda.amp import autocast
-        from sklearn.metrics import balanced_accuracy_score
-        softmax = torch.nn.Softmax(dim=-1)
-        with autocast():
-            logits_tes = model(Xb_tes)
-
-        pred_proba_tes = softmax(logits_tes)
-        pred_class_tes = pred_proba_tes.argmax(dim=-1)
-        bACC = balanced_accuracy_score(
-            utils.general.torch_to_arr(Tb_tes.squeeze()),
-            utils.general.torch_to_arr(pred_class_tes.squeeze()),
-        )
-
-        """
 
         try:
             i_epoch = i_epoch
