@@ -1,1521 +1,0 @@
-
-Random seeds have been fixed as 42
-
-
-Random seeds have been fixed as 42
-
-
-Matplotilb has been configured as follows:
-{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(18.1, 6.0) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
-
-
-Standard Output/Error are going to be logged in the followings: 
-  - ./ripples/define_ripples/summary/checks_ripple_props/log/stdout.log
-  - ./ripples/define_ripples/summary/checks_ripple_props/log/stderr.log
-
-
---------------------------------------------------
-n_mouse: 01
-
-  0%|          | 0/8 [00:00<?, ?it/s] 25%|##5       | 2/8 [00:00<00:00, 18.19it/s] 50%|#####     | 4/8 [00:00<00:00, 18.55it/s] 75%|#######5  | 6/8 [00:00<00:00, 18.45it/s]100%|##########| 8/8 [00:00<00:00, 18.49it/s]100%|##########| 8/8 [00:00<00:00, 18.46it/s]
-
-Kruskal-Wallis test:
-H_statistic: 226001.95645016732
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-       T2T   F2T   T2F F2F
-T2T      -     -     -   -
-F2T  False     -     -   -
-T2F   True  True     -   -
-F2F   True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.007  0.224  0.717
-F2T  NaN    NaN  0.211  0.697
-T2F  NaN    NaN    NaN  0.602
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 02
-
-  0%|          | 0/48 [00:00<?, ?it/s]  6%|6         | 3/48 [00:00<00:02, 21.62it/s] 12%|#2        | 6/48 [00:00<00:01, 21.05it/s] 19%|#8        | 9/48 [00:00<00:01, 21.36it/s] 25%|##5       | 12/48 [00:00<00:01, 21.29it/s] 31%|###1      | 15/48 [00:00<00:01, 21.35it/s] 38%|###7      | 18/48 [00:00<00:01, 20.95it/s] 44%|####3     | 21/48 [00:01<00:01, 20.51it/s] 50%|#####     | 24/48 [00:01<00:01, 20.52it/s] 56%|#####6    | 27/48 [00:01<00:01, 20.78it/s] 62%|######2   | 30/48 [00:01<00:00, 20.90it/s] 69%|######8   | 33/48 [00:01<00:00, 20.74it/s] 75%|#######5  | 36/48 [00:01<00:00, 20.71it/s] 81%|########1 | 39/48 [00:01<00:00, 20.83it/s] 88%|########7 | 42/48 [00:02<00:00, 20.88it/s] 94%|#########3| 45/48 [00:02<00:00, 20.95it/s]100%|##########| 48/48 [00:02<00:00, 20.92it/s]100%|##########| 48/48 [00:02<00:00, 20.90it/s]
-
-Kruskal-Wallis test:
-H_statistic: 616281.2417095018
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.006  0.034  0.482
-F2T  NaN    NaN  0.039  0.460
-T2F  NaN    NaN    NaN  0.513
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 03
-
-  0%|          | 0/40 [00:00<?, ?it/s]  8%|7         | 3/40 [00:00<00:01, 22.61it/s] 15%|#5        | 6/40 [00:00<00:01, 21.82it/s] 22%|##2       | 9/40 [00:00<00:01, 22.04it/s] 30%|###       | 12/40 [00:00<00:01, 22.05it/s] 38%|###7      | 15/40 [00:00<00:01, 22.34it/s] 45%|####5     | 18/40 [00:00<00:00, 22.26it/s] 52%|#####2    | 21/40 [00:00<00:00, 21.74it/s] 60%|######    | 24/40 [00:01<00:00, 21.67it/s] 68%|######7   | 27/40 [00:01<00:00, 21.85it/s] 75%|#######5  | 30/40 [00:01<00:00, 21.90it/s] 82%|########2 | 33/40 [00:01<00:00, 21.70it/s] 90%|######### | 36/40 [00:01<00:00, 21.84it/s] 98%|#########7| 39/40 [00:01<00:00, 21.93it/s]100%|##########| 40/40 [00:01<00:00, 21.90it/s]
-
-Kruskal-Wallis test:
-H_statistic: 363876.63097248506
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.048  0.118  0.404
-F2T  NaN    NaN  0.166  0.376
-T2F  NaN    NaN    NaN  0.469
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 04
-
-  0%|          | 0/48 [00:00<?, ?it/s]  6%|6         | 3/48 [00:00<00:01, 22.59it/s] 12%|#2        | 6/48 [00:00<00:01, 21.84it/s] 19%|#8        | 9/48 [00:00<00:01, 22.41it/s] 25%|##5       | 12/48 [00:00<00:01, 22.26it/s] 31%|###1      | 15/48 [00:00<00:01, 22.59it/s] 38%|###7      | 18/48 [00:00<00:01, 22.36it/s] 44%|####3     | 21/48 [00:00<00:01, 21.67it/s] 50%|#####     | 24/48 [00:01<00:01, 21.63it/s] 56%|#####6    | 27/48 [00:01<00:00, 21.74it/s] 62%|######2   | 30/48 [00:01<00:00, 21.89it/s] 69%|######8   | 33/48 [00:01<00:00, 21.72it/s] 75%|#######5  | 36/48 [00:01<00:00, 21.69it/s] 81%|########1 | 39/48 [00:01<00:00, 21.88it/s] 88%|########7 | 42/48 [00:01<00:00, 21.80it/s] 94%|#########3| 45/48 [00:02<00:00, 21.84it/s]100%|##########| 48/48 [00:02<00:00, 21.97it/s]100%|##########| 48/48 [00:02<00:00, 21.95it/s]
-
-Kruskal-Wallis test:
-H_statistic: 1707525.426290036
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.670  0.457  0.977
-F2T  NaN    NaN  0.288  0.685
-T2F  NaN    NaN    NaN  0.899
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 05
-
-  0%|          | 0/40 [00:00<?, ?it/s]  8%|7         | 3/40 [00:00<00:01, 21.06it/s] 15%|#5        | 6/40 [00:00<00:01, 20.93it/s] 22%|##2       | 9/40 [00:00<00:01, 21.08it/s] 30%|###       | 12/40 [00:00<00:01, 21.42it/s] 38%|###7      | 15/40 [00:00<00:01, 21.38it/s] 45%|####5     | 18/40 [00:00<00:01, 21.59it/s] 52%|#####2    | 21/40 [00:00<00:00, 21.77it/s] 60%|######    | 24/40 [00:01<00:00, 21.43it/s] 68%|######7   | 27/40 [00:01<00:00, 21.43it/s] 75%|#######5  | 30/40 [00:01<00:00, 21.40it/s] 82%|########2 | 33/40 [00:01<00:00, 21.20it/s] 90%|######### | 36/40 [00:01<00:00, 21.20it/s] 98%|#########7| 39/40 [00:01<00:00, 21.95it/s]100%|##########| 40/40 [00:01<00:00, 21.54it/s]
-
-Kruskal-Wallis test:
-H_statistic: 550963.9524326781
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.111  0.069  0.469
-F2T  NaN    NaN  0.033  0.525
-T2F  NaN    NaN    NaN  0.480
-F2F  NaN    NaN    NaN    NaN
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/distribution/duration.tiff
-
-./ripples/define_ripples/summary/checks_ripple_props.py:33: RuntimeWarning: Mean of empty slice
-  return np.nanmean(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(n_round)
-/home/ywatanabe/.local/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1664: RuntimeWarning: Degrees of freedom <= 0 for slice.
-  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
-    T2T              F2T              T2F              F2F
-T2T   -  0.168 +/- 0.254  0.180 +/- 0.152  0.610 +/- 0.212
-F2T   -                -  0.147 +/- 0.099  0.549 +/- 0.126
-T2F   -                -                -  0.593 +/- 0.160
-F2F   -                -                -                -
-    T2T  ...                      F2F
-T2T   -  ...  0.610 +/- 0.212 (large)
-F2T   -  ...  0.549 +/- 0.126 (large)
-T2F   -  ...  0.593 +/- 0.160 (large)
-F2F   -  ...                        -
-
-[4 rows x 4 columns]
-
-Matplotilb has been configured as follows:
-{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(8.7, 8.7) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
-
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/duration.csv
-
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/duration.tiff
-
-
-Random seeds have been fixed as 42
-
-
-Random seeds have been fixed as 42
-
-
-Matplotilb has been configured as follows:
-{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(18.1, 6.0) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
-
-
-Standard Output/Error are going to be logged in the followings: 
-  - ./ripples/define_ripples/summary/checks_ripple_props/log/stdout.log
-  - ./ripples/define_ripples/summary/checks_ripple_props/log/stderr.log
-
-
---------------------------------------------------
-n_mouse: 01
-
-  0%|          | 0/8 [00:00<?, ?it/s] 25%|##5       | 2/8 [00:00<00:00, 18.14it/s] 50%|#####     | 4/8 [00:00<00:00, 18.52it/s] 75%|#######5  | 6/8 [00:00<00:00, 18.77it/s]100%|##########| 8/8 [00:00<00:00, 19.03it/s]
-
-Kruskal-Wallis test:
-H_statistic: 403003.6719586418
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.940  0.730  0.944
-F2T  NaN    NaN  0.712  0.146
-T2F  NaN    NaN    NaN  0.729
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 02
-
-  0%|          | 0/48 [00:00<?, ?it/s]  6%|6         | 3/48 [00:00<00:02, 21.57it/s] 12%|#2        | 6/48 [00:00<00:01, 21.82it/s] 19%|#8        | 9/48 [00:00<00:01, 21.78it/s] 25%|##5       | 12/48 [00:00<00:01, 21.84it/s] 31%|###1      | 15/48 [00:00<00:01, 21.68it/s] 38%|###7      | 18/48 [00:00<00:01, 21.37it/s] 44%|####3     | 21/48 [00:00<00:01, 21.41it/s] 50%|#####     | 24/48 [00:01<00:01, 21.52it/s] 56%|#####6    | 27/48 [00:01<00:00, 21.66it/s] 62%|######2   | 30/48 [00:01<00:00, 21.71it/s] 69%|######8   | 33/48 [00:01<00:00, 21.70it/s] 75%|#######5  | 36/48 [00:01<00:00, 21.56it/s] 81%|########1 | 39/48 [00:01<00:00, 21.64it/s] 88%|########7 | 42/48 [00:01<00:00, 21.65it/s] 94%|#########3| 45/48 [00:02<00:00, 21.71it/s]100%|##########| 48/48 [00:02<00:00, 21.63it/s]100%|##########| 48/48 [00:02<00:00, 21.63it/s]
-
-Kruskal-Wallis test:
-H_statistic: 2706637.5478280075
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.969  0.565  0.985
-F2T  NaN    NaN  0.905  0.120
-T2F  NaN    NaN    NaN  0.955
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 03
-
-  0%|          | 0/40 [00:00<?, ?it/s]  8%|7         | 3/40 [00:00<00:01, 22.58it/s] 15%|#5        | 6/40 [00:00<00:01, 22.65it/s] 22%|##2       | 9/40 [00:00<00:01, 22.47it/s] 30%|###       | 12/40 [00:00<00:01, 22.61it/s] 38%|###7      | 15/40 [00:00<00:01, 22.70it/s] 45%|####5     | 18/40 [00:00<00:00, 22.74it/s] 52%|#####2    | 21/40 [00:00<00:00, 22.77it/s] 60%|######    | 24/40 [00:01<00:00, 22.84it/s] 68%|######7   | 27/40 [00:01<00:00, 22.95it/s] 75%|#######5  | 30/40 [00:01<00:00, 22.98it/s] 82%|########2 | 33/40 [00:01<00:00, 22.89it/s] 90%|######### | 36/40 [00:01<00:00, 22.88it/s] 98%|#########7| 39/40 [00:01<00:00, 22.91it/s]100%|##########| 40/40 [00:01<00:00, 22.82it/s]
-
-Kruskal-Wallis test:
-H_statistic: 2208294.3300579414
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.959  0.497  0.993
-F2T  NaN    NaN  0.935  0.556
-T2F  NaN    NaN    NaN  0.989
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 04
-
-  0%|          | 0/48 [00:00<?, ?it/s]  6%|6         | 3/48 [00:00<00:01, 22.55it/s] 12%|#2        | 6/48 [00:00<00:01, 22.77it/s] 19%|#8        | 9/48 [00:00<00:01, 22.94it/s] 25%|##5       | 12/48 [00:00<00:01, 22.87it/s] 31%|###1      | 15/48 [00:00<00:01, 22.96it/s] 38%|###7      | 18/48 [00:00<00:01, 22.87it/s] 44%|####3     | 21/48 [00:00<00:01, 22.78it/s] 50%|#####     | 24/48 [00:01<00:01, 22.90it/s] 56%|#####6    | 27/48 [00:01<00:00, 22.79it/s] 62%|######2   | 30/48 [00:01<00:00, 22.85it/s] 69%|######8   | 33/48 [00:01<00:00, 22.85it/s] 75%|#######5  | 36/48 [00:01<00:00, 22.71it/s] 81%|########1 | 39/48 [00:01<00:00, 22.83it/s] 88%|########7 | 42/48 [00:01<00:00, 22.68it/s] 94%|#########3| 45/48 [00:01<00:00, 22.67it/s]100%|##########| 48/48 [00:02<00:00, 22.78it/s]100%|##########| 48/48 [00:02<00:00, 22.80it/s]
-
-Kruskal-Wallis test:
-H_statistic: 1155246.7272681145
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.787  0.461  0.796
-F2T  NaN    NaN  0.602  0.205
-T2F  NaN    NaN    NaN  0.599
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 05
-
-  0%|          | 0/40 [00:00<?, ?it/s]  8%|7         | 3/40 [00:00<00:01, 21.01it/s] 15%|#5        | 6/40 [00:00<00:01, 21.69it/s] 22%|##2       | 9/40 [00:00<00:01, 21.47it/s] 30%|###       | 12/40 [00:00<00:01, 21.97it/s] 38%|###7      | 15/40 [00:00<00:01, 21.71it/s] 45%|####5     | 18/40 [00:00<00:00, 22.01it/s] 52%|#####2    | 21/40 [00:00<00:00, 22.74it/s] 60%|######    | 24/40 [00:01<00:00, 22.54it/s] 68%|######7   | 27/40 [00:01<00:00, 22.37it/s] 75%|#######5  | 30/40 [00:01<00:00, 22.25it/s] 82%|########2 | 33/40 [00:01<00:00, 22.24it/s] 90%|######### | 36/40 [00:01<00:00, 22.12it/s] 98%|#########7| 39/40 [00:01<00:00, 22.84it/s]100%|##########| 40/40 [00:01<00:00, 22.35it/s]
-
-Kruskal-Wallis test:
-H_statistic: 2259502.3416818716
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.851  0.232  0.978
-F2T  NaN    NaN  0.631  0.619
-T2F  NaN    NaN    NaN  0.908
-F2F  NaN    NaN    NaN    NaN
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/distribution/mep.tiff
-
-./ripples/define_ripples/summary/checks_ripple_props.py:33: RuntimeWarning: Mean of empty slice
-  return np.nanmean(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(n_round)
-/home/ywatanabe/.local/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1664: RuntimeWarning: Degrees of freedom <= 0 for slice.
-  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
-    T2T              F2T              T2F              F2F
-T2T   -  0.901 +/- 0.071  0.497 +/- 0.162  0.939 +/- 0.074
-F2T   -                -  0.757 +/- 0.138  0.329 +/- 0.214
-T2F   -                -                -  0.836 +/- 0.149
-F2F   -                -                -                -
-    T2T  ...                      F2F
-T2T   -  ...  0.939 +/- 0.074 (large)
-F2T   -  ...  0.329 +/- 0.214 (small)
-T2F   -  ...  0.836 +/- 0.149 (large)
-F2F   -  ...                        -
-
-[4 rows x 4 columns]
-
-Matplotilb has been configured as follows:
-{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(8.7, 8.7) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
-
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/mep.csv
-
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/mep.tiff
-
-
-Random seeds have been fixed as 42
-
-
-Random seeds have been fixed as 42
-
-
-Matplotilb has been configured as follows:
-{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(18.1, 6.0) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
-
-
-Standard Output/Error are going to be logged in the followings: 
-  - ./ripples/define_ripples/summary/checks_ripple_props/log/stdout.log
-  - ./ripples/define_ripples/summary/checks_ripple_props/log/stderr.log
-
-
---------------------------------------------------
-n_mouse: 01
-
-  0%|          | 0/8 [00:00<?, ?it/s] 25%|##5       | 2/8 [00:00<00:00, 18.21it/s] 50%|#####     | 4/8 [00:00<00:00, 18.55it/s] 75%|#######5  | 6/8 [00:00<00:00, 18.85it/s]100%|##########| 8/8 [00:00<00:00, 19.12it/s]
-
-Kruskal-Wallis test:
-H_statistic: 26870.051343002808
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.137  0.377  0.212
-F2T  NaN    NaN  0.277  0.345
-T2F  NaN    NaN    NaN  0.539
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 02
-
-  0%|          | 0/48 [00:00<?, ?it/s]  6%|6         | 3/48 [00:00<00:02, 21.69it/s] 12%|#2        | 6/48 [00:00<00:01, 21.93it/s] 19%|#8        | 9/48 [00:00<00:01, 21.89it/s] 25%|##5       | 12/48 [00:00<00:01, 21.92it/s] 31%|###1      | 15/48 [00:00<00:01, 21.74it/s] 38%|###7      | 18/48 [00:00<00:01, 21.47it/s] 44%|####3     | 21/48 [00:00<00:01, 21.54it/s] 50%|#####     | 24/48 [00:01<00:01, 21.66it/s] 56%|#####6    | 27/48 [00:01<00:00, 21.80it/s] 62%|######2   | 30/48 [00:01<00:00, 21.86it/s] 69%|######8   | 33/48 [00:01<00:00, 21.86it/s] 75%|#######5  | 36/48 [00:01<00:00, 21.73it/s] 81%|########1 | 39/48 [00:01<00:00, 21.79it/s] 88%|########7 | 42/48 [00:01<00:00, 21.78it/s] 94%|#########3| 45/48 [00:02<00:00, 21.85it/s]100%|##########| 48/48 [00:02<00:00, 21.76it/s]100%|##########| 48/48 [00:02<00:00, 21.76it/s]
-
-Kruskal-Wallis test:
-H_statistic: 77013.52762049183
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.202  0.519  0.081
-F2T  NaN    NaN  0.341  0.121
-T2F  NaN    NaN    NaN  0.454
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 03
-
-  0%|          | 0/40 [00:00<?, ?it/s]  8%|7         | 3/40 [00:00<00:01, 22.61it/s] 15%|#5        | 6/40 [00:00<00:01, 22.76it/s] 22%|##2       | 9/40 [00:00<00:01, 22.56it/s] 30%|###       | 12/40 [00:00<00:01, 22.65it/s] 38%|###7      | 15/40 [00:00<00:01, 22.77it/s] 45%|####5     | 18/40 [00:00<00:00, 22.83it/s] 52%|#####2    | 21/40 [00:00<00:00, 22.90it/s] 60%|######    | 24/40 [00:01<00:00, 22.98it/s] 68%|######7   | 27/40 [00:01<00:00, 23.07it/s] 75%|#######5  | 30/40 [00:01<00:00, 23.17it/s] 82%|########2 | 33/40 [00:01<00:00, 23.24it/s] 90%|######### | 36/40 [00:01<00:00, 23.30it/s] 98%|#########7| 39/40 [00:01<00:00, 23.27it/s]100%|##########| 40/40 [00:01<00:00, 23.03it/s]
-
-Kruskal-Wallis test:
-H_statistic: 34256.34308695574
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.210  0.535  0.051
-F2T  NaN    NaN  0.388  0.135
-T2F  NaN    NaN    NaN  0.463
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 04
-
-  0%|          | 0/48 [00:00<?, ?it/s]  6%|6         | 3/48 [00:00<00:01, 22.67it/s] 12%|#2        | 6/48 [00:00<00:01, 22.87it/s] 19%|#8        | 9/48 [00:00<00:01, 22.99it/s] 25%|##5       | 12/48 [00:00<00:01, 22.92it/s] 31%|###1      | 15/48 [00:00<00:01, 23.04it/s] 38%|###7      | 18/48 [00:00<00:01, 22.94it/s] 44%|####3     | 21/48 [00:00<00:01, 22.91it/s] 50%|#####     | 24/48 [00:01<00:01, 23.04it/s] 56%|#####6    | 27/48 [00:01<00:00, 22.92it/s] 62%|######2   | 30/48 [00:01<00:00, 22.98it/s] 69%|######8   | 33/48 [00:01<00:00, 22.99it/s] 75%|#######5  | 36/48 [00:01<00:00, 22.85it/s] 81%|########1 | 39/48 [00:01<00:00, 22.95it/s] 88%|########7 | 42/48 [00:01<00:00, 22.79it/s] 94%|#########3| 45/48 [00:01<00:00, 22.79it/s]100%|##########| 48/48 [00:02<00:00, 22.89it/s]100%|##########| 48/48 [00:02<00:00, 22.91it/s]
-
-Kruskal-Wallis test:
-H_statistic: 517687.92037309456
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.590  0.157  0.528
-F2T  NaN    NaN  0.696  0.055
-T2F  NaN    NaN    NaN  0.651
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 05
-
-  0%|          | 0/40 [00:00<?, ?it/s]  8%|7         | 3/40 [00:00<00:01, 21.05it/s] 15%|#5        | 6/40 [00:00<00:01, 21.77it/s] 22%|##2       | 9/40 [00:00<00:01, 21.55it/s] 30%|###       | 12/40 [00:00<00:01, 21.92it/s] 38%|###7      | 15/40 [00:00<00:01, 21.70it/s] 45%|####5     | 18/40 [00:00<00:00, 22.03it/s] 52%|#####2    | 21/40 [00:00<00:00, 22.83it/s] 60%|######    | 24/40 [00:01<00:00, 22.67it/s] 68%|######7   | 27/40 [00:01<00:00, 22.53it/s] 75%|#######5  | 30/40 [00:01<00:00, 22.40it/s] 82%|########2 | 33/40 [00:01<00:00, 22.40it/s] 90%|######### | 36/40 [00:01<00:00, 22.27it/s] 98%|#########7| 39/40 [00:01<00:00, 22.99it/s]100%|##########| 40/40 [00:01<00:00, 22.46it/s]
-
-Kruskal-Wallis test:
-H_statistic: 178139.0867011977
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.494  0.336  0.156
-F2T  NaN    NaN  0.119  0.309
-T2F  NaN    NaN    NaN  0.177
-F2F  NaN    NaN    NaN    NaN
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/distribution/ripple_peak_magnitude.tiff
-
-./ripples/define_ripples/summary/checks_ripple_props.py:33: RuntimeWarning: Mean of empty slice
-  return np.nanmean(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(n_round)
-/home/ywatanabe/.local/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1664: RuntimeWarning: Degrees of freedom <= 0 for slice.
-  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
-    T2T              F2T              T2F              F2F
-T2T   -  0.327 +/- 0.180  0.385 +/- 0.138  0.206 +/- 0.171
-F2T   -                -  0.364 +/- 0.189  0.193 +/- 0.113
-T2F   -                -                -  0.457 +/- 0.157
-F2F   -                -                -                -
-    T2T  ...                       F2F
-T2T   -  ...   0.206 +/- 0.171 (small)
-F2T   -  ...   0.193 +/- 0.113 (small)
-T2F   -  ...  0.457 +/- 0.157 (medium)
-F2F   -  ...                         -
-
-[4 rows x 4 columns]
-
-Matplotilb has been configured as follows:
-{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(8.7, 8.7) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
-
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/ripple peak magnitude.csv
-
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/ripple peak magnitude.tiff
-
-
-Random seeds have been fixed as 42
-
-
-Random seeds have been fixed as 42
-
-
-Matplotilb has been configured as follows:
-{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(18.1, 6.0) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
-
-
-Standard Output/Error are going to be logged in the followings: 
-  - ./ripples/define_ripples/summary/checks_ripple_props/log/stdout.log
-  - ./ripples/define_ripples/summary/checks_ripple_props/log/stderr.log
-
-
---------------------------------------------------
-n_mouse: 01
-
-  0%|          | 0/8 [00:00<?, ?it/s] 25%|##5       | 2/8 [00:00<00:00, 18.20it/s] 50%|#####     | 4/8 [00:00<00:00, 18.54it/s] 75%|#######5  | 6/8 [00:00<00:00, 18.84it/s]100%|##########| 8/8 [00:00<00:00, 19.12it/s]
-
-Kruskal-Wallis test:
-H_statistic: 226001.95645016732
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-       T2T   F2T   T2F F2F
-T2T      -     -     -   -
-F2T  False     -     -   -
-T2F   True  True     -   -
-F2F   True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.007  0.224  0.717
-F2T  NaN    NaN  0.211  0.697
-T2F  NaN    NaN    NaN  0.602
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 02
-
-  0%|          | 0/48 [00:00<?, ?it/s]  6%|6         | 3/48 [00:00<00:02, 21.62it/s] 12%|#2        | 6/48 [00:00<00:01, 21.92it/s] 19%|#8        | 9/48 [00:00<00:01, 21.83it/s] 25%|##5       | 12/48 [00:00<00:01, 21.92it/s] 31%|###1      | 15/48 [00:00<00:01, 21.73it/s] 38%|###7      | 18/48 [00:00<00:01, 21.44it/s] 44%|####3     | 21/48 [00:00<00:01, 21.52it/s] 50%|#####     | 24/48 [00:01<00:01, 21.64it/s] 56%|#####6    | 27/48 [00:01<00:00, 21.78it/s] 62%|######2   | 30/48 [00:01<00:00, 21.83it/s] 69%|######8   | 33/48 [00:01<00:00, 21.84it/s] 75%|#######5  | 36/48 [00:01<00:00, 21.68it/s] 81%|########1 | 39/48 [00:01<00:00, 21.76it/s] 88%|########7 | 42/48 [00:01<00:00, 21.74it/s] 94%|#########3| 45/48 [00:02<00:00, 21.79it/s]100%|##########| 48/48 [00:02<00:00, 21.72it/s]100%|##########| 48/48 [00:02<00:00, 21.73it/s]
-
-Kruskal-Wallis test:
-H_statistic: 616281.2417095018
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.006  0.034  0.482
-F2T  NaN    NaN  0.039  0.460
-T2F  NaN    NaN    NaN  0.513
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 03
-
-  0%|          | 0/40 [00:00<?, ?it/s]  8%|7         | 3/40 [00:00<00:01, 22.62it/s] 15%|#5        | 6/40 [00:00<00:01, 22.77it/s] 22%|##2       | 9/40 [00:00<00:01, 22.53it/s] 30%|###       | 12/40 [00:00<00:01, 22.67it/s] 38%|###7      | 15/40 [00:00<00:01, 22.74it/s] 45%|####5     | 18/40 [00:00<00:00, 22.79it/s] 52%|#####2    | 21/40 [00:00<00:00, 22.88it/s] 60%|######    | 24/40 [00:01<00:00, 22.95it/s] 68%|######7   | 27/40 [00:01<00:00, 23.05it/s] 75%|#######5  | 30/40 [00:01<00:00, 23.12it/s] 82%|########2 | 33/40 [00:01<00:00, 23.20it/s] 90%|######### | 36/40 [00:01<00:00, 23.27it/s] 98%|#########7| 39/40 [00:01<00:00, 23.32it/s]100%|##########| 40/40 [00:01<00:00, 23.03it/s]
-
-Kruskal-Wallis test:
-H_statistic: 363876.63097248506
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.048  0.118  0.404
-F2T  NaN    NaN  0.166  0.376
-T2F  NaN    NaN    NaN  0.469
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 04
-
-  0%|          | 0/48 [00:00<?, ?it/s]  6%|6         | 3/48 [00:00<00:01, 22.58it/s] 12%|#2        | 6/48 [00:00<00:01, 22.86it/s] 19%|#8        | 9/48 [00:00<00:01, 23.02it/s] 25%|##5       | 12/48 [00:00<00:01, 22.94it/s] 31%|###1      | 15/48 [00:00<00:01, 23.05it/s] 38%|###7      | 18/48 [00:00<00:01, 22.96it/s] 44%|####3     | 21/48 [00:00<00:01, 22.89it/s] 50%|#####     | 24/48 [00:01<00:01, 22.95it/s] 56%|#####6    | 27/48 [00:01<00:00, 22.91it/s] 62%|######2   | 30/48 [00:01<00:00, 22.94it/s] 69%|######8   | 33/48 [00:01<00:00, 22.98it/s] 75%|#######5  | 36/48 [00:01<00:00, 22.79it/s] 81%|########1 | 39/48 [00:01<00:00, 22.90it/s] 88%|########7 | 42/48 [00:01<00:00, 22.76it/s] 94%|#########3| 45/48 [00:01<00:00, 22.74it/s]100%|##########| 48/48 [00:02<00:00, 22.83it/s]100%|##########| 48/48 [00:02<00:00, 22.88it/s]
-
-Kruskal-Wallis test:
-H_statistic: 1707525.426290036
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.670  0.457  0.977
-F2T  NaN    NaN  0.288  0.685
-T2F  NaN    NaN    NaN  0.899
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 05
-
-  0%|          | 0/40 [00:00<?, ?it/s]  8%|7         | 3/40 [00:00<00:01, 21.06it/s] 15%|#5        | 6/40 [00:00<00:01, 21.79it/s] 22%|##2       | 9/40 [00:00<00:01, 21.56it/s] 30%|###       | 12/40 [00:00<00:01, 22.04it/s] 38%|###7      | 15/40 [00:00<00:01, 21.77it/s] 45%|####5     | 18/40 [00:00<00:00, 22.07it/s] 52%|#####2    | 21/40 [00:00<00:00, 22.85it/s] 60%|######    | 24/40 [00:01<00:00, 22.65it/s] 68%|######7   | 27/40 [00:01<00:00, 22.44it/s] 75%|#######5  | 30/40 [00:01<00:00, 22.31it/s] 82%|########2 | 33/40 [00:01<00:00, 22.34it/s] 90%|######### | 36/40 [00:01<00:00, 22.21it/s] 98%|#########7| 39/40 [00:01<00:00, 22.93it/s]100%|##########| 40/40 [00:01<00:00, 22.44it/s]
-
-Kruskal-Wallis test:
-H_statistic: 550963.9524326781
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.111  0.069  0.469
-F2T  NaN    NaN  0.033  0.525
-T2F  NaN    NaN    NaN  0.480
-F2F  NaN    NaN    NaN    NaN
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/distribution/duration.tiff
-
-./ripples/define_ripples/summary/checks_ripple_props.py:33: RuntimeWarning: Mean of empty slice
-  return np.nanmean(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(n_round)
-/home/ywatanabe/.local/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1664: RuntimeWarning: Degrees of freedom <= 0 for slice.
-  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
-    T2T              F2T              T2F              F2F
-T2T   -  0.168 +/- 0.254  0.180 +/- 0.152  0.610 +/- 0.212
-F2T   -                -  0.147 +/- 0.099  0.549 +/- 0.126
-T2F   -                -                -  0.593 +/- 0.160
-F2F   -                -                -                -
-    T2T  ...                      F2F
-T2T   -  ...  0.610 +/- 0.212 (large)
-F2T   -  ...  0.549 +/- 0.126 (large)
-T2F   -  ...  0.593 +/- 0.160 (large)
-F2F   -  ...                        -
-
-[4 rows x 4 columns]
-
-Matplotilb has been configured as follows:
-{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(8.7, 8.7) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
-
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/duration.csv
-
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/duration.tiff
-
-
-Random seeds have been fixed as 42
-
-
-Random seeds have been fixed as 42
-
-
-Matplotilb has been configured as follows:
-{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(18.1, 6.0) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
-
-
-Standard Output/Error are going to be logged in the followings: 
-  - ./ripples/define_ripples/summary/checks_ripple_props/log/stdout.log
-  - ./ripples/define_ripples/summary/checks_ripple_props/log/stderr.log
-
-
---------------------------------------------------
-n_mouse: 01
-
-  0%|          | 0/8 [00:00<?, ?it/s] 25%|##5       | 2/8 [00:00<00:00, 18.21it/s] 50%|#####     | 4/8 [00:00<00:00, 18.55it/s] 75%|#######5  | 6/8 [00:00<00:00, 18.82it/s]100%|##########| 8/8 [00:00<00:00, 19.11it/s]
-
-Kruskal-Wallis test:
-H_statistic: 403003.6719586418
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.940  0.730  0.944
-F2T  NaN    NaN  0.712  0.146
-T2F  NaN    NaN    NaN  0.729
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 02
-
-  0%|          | 0/48 [00:00<?, ?it/s]  6%|6         | 3/48 [00:00<00:02, 21.60it/s] 12%|#2        | 6/48 [00:00<00:01, 21.90it/s] 19%|#8        | 9/48 [00:00<00:01, 21.86it/s] 25%|##5       | 12/48 [00:00<00:01, 21.96it/s] 31%|###1      | 15/48 [00:00<00:01, 21.76it/s] 38%|###7      | 18/48 [00:00<00:01, 21.46it/s] 44%|####3     | 21/48 [00:00<00:01, 21.54it/s] 50%|#####     | 24/48 [00:01<00:01, 21.66it/s] 56%|#####6    | 27/48 [00:01<00:00, 21.78it/s] 62%|######2   | 30/48 [00:01<00:00, 21.83it/s] 69%|######8   | 33/48 [00:01<00:00, 21.84it/s] 75%|#######5  | 36/48 [00:01<00:00, 21.72it/s] 81%|########1 | 39/48 [00:01<00:00, 21.75it/s] 88%|########7 | 42/48 [00:01<00:00, 21.75it/s] 94%|#########3| 45/48 [00:02<00:00, 21.81it/s]100%|##########| 48/48 [00:02<00:00, 21.73it/s]100%|##########| 48/48 [00:02<00:00, 21.74it/s]
-
-Kruskal-Wallis test:
-H_statistic: 2706637.5478280075
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.969  0.565  0.985
-F2T  NaN    NaN  0.905  0.120
-T2F  NaN    NaN    NaN  0.955
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 03
-
-  0%|          | 0/40 [00:00<?, ?it/s]  8%|7         | 3/40 [00:00<00:01, 22.60it/s] 15%|#5        | 6/40 [00:00<00:01, 22.77it/s] 22%|##2       | 9/40 [00:00<00:01, 22.59it/s] 30%|###       | 12/40 [00:00<00:01, 22.70it/s] 38%|###7      | 15/40 [00:00<00:01, 22.79it/s] 45%|####5     | 18/40 [00:00<00:00, 22.84it/s] 52%|#####2    | 21/40 [00:00<00:00, 22.90it/s] 60%|######    | 24/40 [00:01<00:00, 22.97it/s] 68%|######7   | 27/40 [00:01<00:00, 23.05it/s] 75%|#######5  | 30/40 [00:01<00:00, 23.15it/s] 82%|########2 | 33/40 [00:01<00:00, 23.10it/s] 90%|######### | 36/40 [00:01<00:00, 23.07it/s] 98%|#########7| 39/40 [00:01<00:00, 23.05it/s]100%|##########| 40/40 [00:01<00:00, 22.95it/s]
-
-Kruskal-Wallis test:
-H_statistic: 2208294.3300579414
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.959  0.497  0.993
-F2T  NaN    NaN  0.935  0.556
-T2F  NaN    NaN    NaN  0.989
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 04
-
-  0%|          | 0/48 [00:00<?, ?it/s]  6%|6         | 3/48 [00:00<00:01, 22.65it/s] 12%|#2        | 6/48 [00:00<00:01, 22.84it/s] 19%|#8        | 9/48 [00:00<00:01, 22.99it/s] 25%|##5       | 12/48 [00:00<00:01, 22.93it/s] 31%|###1      | 15/48 [00:00<00:01, 23.05it/s] 38%|###7      | 18/48 [00:00<00:01, 22.96it/s] 44%|####3     | 21/48 [00:00<00:01, 22.89it/s] 50%|#####     | 24/48 [00:01<00:01, 23.01it/s] 56%|#####6    | 27/48 [00:01<00:00, 22.92it/s] 62%|######2   | 30/48 [00:01<00:00, 22.96it/s] 69%|######8   | 33/48 [00:01<00:00, 22.96it/s] 75%|#######5  | 36/48 [00:01<00:00, 22.81it/s] 81%|########1 | 39/48 [00:01<00:00, 22.94it/s] 88%|########7 | 42/48 [00:01<00:00, 22.80it/s] 94%|#########3| 45/48 [00:01<00:00, 22.77it/s]100%|##########| 48/48 [00:02<00:00, 22.86it/s]100%|##########| 48/48 [00:02<00:00, 22.90it/s]
-
-Kruskal-Wallis test:
-H_statistic: 1155246.7272681145
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.787  0.461  0.796
-F2T  NaN    NaN  0.602  0.205
-T2F  NaN    NaN    NaN  0.599
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 05
-
-  0%|          | 0/40 [00:00<?, ?it/s]  8%|7         | 3/40 [00:00<00:01, 21.07it/s] 15%|#5        | 6/40 [00:00<00:01, 21.79it/s] 22%|##2       | 9/40 [00:00<00:01, 21.58it/s] 30%|###       | 12/40 [00:00<00:01, 22.04it/s] 38%|###7      | 15/40 [00:00<00:01, 21.78it/s] 45%|####5     | 18/40 [00:00<00:00, 22.10it/s] 52%|#####2    | 21/40 [00:00<00:00, 22.88it/s] 60%|######    | 24/40 [00:01<00:00, 22.68it/s] 68%|######7   | 27/40 [00:01<00:00, 22.53it/s] 75%|#######5  | 30/40 [00:01<00:00, 22.37it/s] 82%|########2 | 33/40 [00:01<00:00, 22.36it/s] 90%|######### | 36/40 [00:01<00:00, 22.22it/s] 98%|#########7| 39/40 [00:01<00:00, 22.94it/s]100%|##########| 40/40 [00:01<00:00, 22.47it/s]
-
-Kruskal-Wallis test:
-H_statistic: 2259502.3416818716
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.851  0.232  0.978
-F2T  NaN    NaN  0.631  0.619
-T2F  NaN    NaN    NaN  0.908
-F2F  NaN    NaN    NaN    NaN
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/distribution/mep.tiff
-
-./ripples/define_ripples/summary/checks_ripple_props.py:33: RuntimeWarning: Mean of empty slice
-  return np.nanmean(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(n_round)
-/home/ywatanabe/.local/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1664: RuntimeWarning: Degrees of freedom <= 0 for slice.
-  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
-    T2T              F2T              T2F              F2F
-T2T   -  0.901 +/- 0.071  0.497 +/- 0.162  0.939 +/- 0.074
-F2T   -                -  0.757 +/- 0.138  0.329 +/- 0.214
-T2F   -                -                -  0.836 +/- 0.149
-F2F   -                -                -                -
-    T2T  ...                      F2F
-T2T   -  ...  0.939 +/- 0.074 (large)
-F2T   -  ...  0.329 +/- 0.214 (small)
-T2F   -  ...  0.836 +/- 0.149 (large)
-F2F   -  ...                        -
-
-[4 rows x 4 columns]
-
-Matplotilb has been configured as follows:
-{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(8.7, 8.7) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
-
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/mep.csv
-
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/mep.tiff
-
-
-Random seeds have been fixed as 42
-
-
-Random seeds have been fixed as 42
-
-
-Matplotilb has been configured as follows:
-{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(18.1, 6.0) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
-
-
-Standard Output/Error are going to be logged in the followings: 
-  - ./ripples/define_ripples/summary/checks_ripple_props/log/stdout.log
-  - ./ripples/define_ripples/summary/checks_ripple_props/log/stderr.log
-
-
---------------------------------------------------
-n_mouse: 01
-
-  0%|          | 0/8 [00:00<?, ?it/s] 25%|##5       | 2/8 [00:00<00:00, 18.17it/s] 50%|#####     | 4/8 [00:00<00:00, 18.55it/s] 75%|#######5  | 6/8 [00:00<00:00, 18.84it/s]100%|##########| 8/8 [00:00<00:00, 19.12it/s]
-
-Kruskal-Wallis test:
-H_statistic: 26870.051343002808
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.137  0.377  0.212
-F2T  NaN    NaN  0.277  0.345
-T2F  NaN    NaN    NaN  0.539
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 02
-
-  0%|          | 0/48 [00:00<?, ?it/s]  6%|6         | 3/48 [00:00<00:02, 21.61it/s] 12%|#2        | 6/48 [00:00<00:01, 21.88it/s] 19%|#8        | 9/48 [00:00<00:01, 21.86it/s] 25%|##5       | 12/48 [00:00<00:01, 21.97it/s] 31%|###1      | 15/48 [00:00<00:01, 21.78it/s] 38%|###7      | 18/48 [00:00<00:01, 21.47it/s] 44%|####3     | 21/48 [00:00<00:01, 21.54it/s] 50%|#####     | 24/48 [00:01<00:01, 21.65it/s] 56%|#####6    | 27/48 [00:01<00:00, 21.79it/s] 62%|######2   | 30/48 [00:01<00:00, 21.83it/s] 69%|######8   | 33/48 [00:01<00:00, 21.85it/s] 75%|#######5  | 36/48 [00:01<00:00, 21.70it/s] 81%|########1 | 39/48 [00:01<00:00, 21.78it/s] 88%|########7 | 42/48 [00:01<00:00, 21.75it/s] 94%|#########3| 45/48 [00:02<00:00, 21.81it/s]100%|##########| 48/48 [00:02<00:00, 21.73it/s]100%|##########| 48/48 [00:02<00:00, 21.74it/s]
-
-Kruskal-Wallis test:
-H_statistic: 77013.52762049183
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.202  0.519  0.081
-F2T  NaN    NaN  0.341  0.121
-T2F  NaN    NaN    NaN  0.454
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 03
-
-  0%|          | 0/40 [00:00<?, ?it/s]  8%|7         | 3/40 [00:00<00:01, 22.64it/s] 15%|#5        | 6/40 [00:00<00:01, 22.77it/s] 22%|##2       | 9/40 [00:00<00:01, 22.58it/s] 30%|###       | 12/40 [00:00<00:01, 22.68it/s] 38%|###7      | 15/40 [00:00<00:01, 22.77it/s] 45%|####5     | 18/40 [00:00<00:00, 22.82it/s] 52%|#####2    | 21/40 [00:00<00:00, 22.91it/s] 60%|######    | 24/40 [00:01<00:00, 22.99it/s] 68%|######7   | 27/40 [00:01<00:00, 23.08it/s] 75%|#######5  | 30/40 [00:01<00:00, 23.15it/s] 82%|########2 | 33/40 [00:01<00:00, 23.22it/s] 90%|######### | 36/40 [00:01<00:00, 23.30it/s] 98%|#########7| 39/40 [00:01<00:00, 23.36it/s]100%|##########| 40/40 [00:01<00:00, 23.06it/s]
-
-Kruskal-Wallis test:
-H_statistic: 34256.34308695574
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.210  0.535  0.051
-F2T  NaN    NaN  0.388  0.135
-T2F  NaN    NaN    NaN  0.463
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 04
-
-  0%|          | 0/48 [00:00<?, ?it/s]  6%|6         | 3/48 [00:00<00:01, 22.53it/s] 12%|#2        | 6/48 [00:00<00:01, 22.81it/s] 19%|#8        | 9/48 [00:00<00:01, 22.96it/s] 25%|##5       | 12/48 [00:00<00:01, 22.90it/s] 31%|###1      | 15/48 [00:00<00:01, 23.03it/s] 38%|###7      | 18/48 [00:00<00:01, 22.96it/s] 44%|####3     | 21/48 [00:00<00:01, 22.90it/s] 50%|#####     | 24/48 [00:01<00:01, 23.02it/s] 56%|#####6    | 27/48 [00:01<00:00, 22.93it/s] 62%|######2   | 30/48 [00:01<00:00, 22.98it/s] 69%|######8   | 33/48 [00:01<00:00, 22.99it/s] 75%|#######5  | 36/48 [00:01<00:00, 22.83it/s] 81%|########1 | 39/48 [00:01<00:00, 22.93it/s] 88%|########7 | 42/48 [00:01<00:00, 22.76it/s] 94%|#########3| 45/48 [00:01<00:00, 22.74it/s]100%|##########| 48/48 [00:02<00:00, 22.85it/s]100%|##########| 48/48 [00:02<00:00, 22.89it/s]
-
-Kruskal-Wallis test:
-H_statistic: 517687.92037309456
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.590  0.157  0.528
-F2T  NaN    NaN  0.696  0.055
-T2F  NaN    NaN    NaN  0.651
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 05
-
-  0%|          | 0/40 [00:00<?, ?it/s]  8%|7         | 3/40 [00:00<00:01, 21.09it/s] 15%|#5        | 6/40 [00:00<00:01, 21.80it/s] 22%|##2       | 9/40 [00:00<00:01, 21.55it/s] 30%|###       | 12/40 [00:00<00:01, 22.02it/s] 38%|###7      | 15/40 [00:00<00:01, 21.78it/s] 45%|####5     | 18/40 [00:00<00:00, 22.09it/s] 52%|#####2    | 21/40 [00:00<00:00, 22.86it/s] 60%|######    | 24/40 [00:01<00:00, 22.69it/s] 68%|######7   | 27/40 [00:01<00:00, 22.55it/s] 75%|#######5  | 30/40 [00:01<00:00, 22.40it/s] 82%|########2 | 33/40 [00:01<00:00, 22.40it/s] 90%|######### | 36/40 [00:01<00:00, 22.27it/s] 98%|#########7| 39/40 [00:01<00:00, 22.98it/s]100%|##########| 40/40 [00:01<00:00, 22.48it/s]
-
-Kruskal-Wallis test:
-H_statistic: 178139.0867011977
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.494  0.336  0.156
-F2T  NaN    NaN  0.119  0.309
-T2F  NaN    NaN    NaN  0.177
-F2F  NaN    NaN    NaN    NaN
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/distribution/ripple_peak_magnitude.tiff
-
-./ripples/define_ripples/summary/checks_ripple_props.py:33: RuntimeWarning: Mean of empty slice
-  return np.nanmean(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(n_round)
-/home/ywatanabe/.local/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1664: RuntimeWarning: Degrees of freedom <= 0 for slice.
-  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
-    T2T              F2T              T2F              F2F
-T2T   -  0.327 +/- 0.180  0.385 +/- 0.138  0.206 +/- 0.171
-F2T   -                -  0.364 +/- 0.189  0.193 +/- 0.113
-T2F   -                -                -  0.457 +/- 0.157
-F2F   -                -                -                -
-    T2T  ...                       F2F
-T2T   -  ...   0.206 +/- 0.171 (small)
-F2T   -  ...   0.193 +/- 0.113 (small)
-T2F   -  ...  0.457 +/- 0.157 (medium)
-F2F   -  ...                         -
-
-[4 rows x 4 columns]
-
-Matplotilb has been configured as follows:
-{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(8.7, 8.7) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
-
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/ripple peak magnitude.csv
-
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/ripple peak magnitude.tiff
-
-
-Random seeds have been fixed as 42
-
-
-Random seeds have been fixed as 42
-
-
-Matplotilb has been configured as follows:
-{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(18.1, 6.0) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
-
-
-Standard Output/Error are going to be logged in the followings: 
-  - ./ripples/define_ripples/summary/checks_ripple_props/log/stdout.log
-  - ./ripples/define_ripples/summary/checks_ripple_props/log/stderr.log
-
-
---------------------------------------------------
-n_mouse: 01
-
-  0%|          | 0/8 [00:00<?, ?it/s] 25%|##5       | 2/8 [00:00<00:00, 18.18it/s] 50%|#####     | 4/8 [00:00<00:00, 18.51it/s] 75%|#######5  | 6/8 [00:00<00:00, 18.83it/s]100%|##########| 8/8 [00:00<00:00, 19.11it/s]
-
-Kruskal-Wallis test:
-H_statistic: 226001.95645016732
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-       T2T   F2T   T2F F2F
-T2T      -     -     -   -
-F2T  False     -     -   -
-T2F   True  True     -   -
-F2F   True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.007  0.224  0.717
-F2T  NaN    NaN  0.211  0.697
-T2F  NaN    NaN    NaN  0.602
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 02
-
-  0%|          | 0/48 [00:00<?, ?it/s]  6%|6         | 3/48 [00:00<00:02, 21.61it/s] 12%|#2        | 6/48 [00:00<00:01, 21.88it/s] 19%|#8        | 9/48 [00:00<00:01, 21.84it/s] 25%|##5       | 12/48 [00:00<00:01, 21.87it/s] 31%|###1      | 15/48 [00:00<00:01, 21.72it/s] 38%|###7      | 18/48 [00:00<00:01, 21.43it/s] 44%|####3     | 21/48 [00:00<00:01, 21.49it/s] 50%|#####     | 24/48 [00:01<00:01, 21.64it/s] 56%|#####6    | 27/48 [00:01<00:00, 21.77it/s] 62%|######2   | 30/48 [00:01<00:00, 21.80it/s] 69%|######8   | 33/48 [00:01<00:00, 21.82it/s] 75%|#######5  | 36/48 [00:01<00:00, 21.69it/s] 81%|########1 | 39/48 [00:01<00:00, 21.76it/s] 88%|########7 | 42/48 [00:01<00:00, 21.73it/s] 94%|#########3| 45/48 [00:02<00:00, 21.80it/s]100%|##########| 48/48 [00:02<00:00, 21.73it/s]100%|##########| 48/48 [00:02<00:00, 21.72it/s]
-
-Kruskal-Wallis test:
-H_statistic: 616281.2417095018
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.006  0.034  0.482
-F2T  NaN    NaN  0.039  0.460
-T2F  NaN    NaN    NaN  0.513
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 03
-
-  0%|          | 0/40 [00:00<?, ?it/s]  8%|7         | 3/40 [00:00<00:01, 22.63it/s] 15%|#5        | 6/40 [00:00<00:01, 22.78it/s] 22%|##2       | 9/40 [00:00<00:01, 22.56it/s] 30%|###       | 12/40 [00:00<00:01, 22.70it/s] 38%|###7      | 15/40 [00:00<00:01, 22.76it/s] 45%|####5     | 18/40 [00:00<00:00, 22.80it/s] 52%|#####2    | 21/40 [00:00<00:00, 22.87it/s] 60%|######    | 24/40 [00:01<00:00, 22.95it/s] 68%|######7   | 27/40 [00:01<00:00, 23.06it/s] 75%|#######5  | 30/40 [00:01<00:00, 23.12it/s] 82%|########2 | 33/40 [00:01<00:00, 23.21it/s] 90%|######### | 36/40 [00:01<00:00, 23.27it/s] 98%|#########7| 39/40 [00:01<00:00, 23.32it/s]100%|##########| 40/40 [00:01<00:00, 23.04it/s]
-
-Kruskal-Wallis test:
-H_statistic: 363876.63097248506
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.048  0.118  0.404
-F2T  NaN    NaN  0.166  0.376
-T2F  NaN    NaN    NaN  0.469
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 04
-
-  0%|          | 0/48 [00:00<?, ?it/s]  6%|6         | 3/48 [00:00<00:01, 22.55it/s] 12%|#2        | 6/48 [00:00<00:01, 22.82it/s] 19%|#8        | 9/48 [00:00<00:01, 22.99it/s] 25%|##5       | 12/48 [00:00<00:01, 22.95it/s] 31%|###1      | 15/48 [00:00<00:01, 23.03it/s] 38%|###7      | 18/48 [00:00<00:01, 22.93it/s] 44%|####3     | 21/48 [00:00<00:01, 22.87it/s] 50%|#####     | 24/48 [00:01<00:01, 22.96it/s] 56%|#####6    | 27/48 [00:01<00:00, 22.91it/s] 62%|######2   | 30/48 [00:01<00:00, 22.97it/s] 69%|######8   | 33/48 [00:01<00:00, 22.97it/s] 75%|#######5  | 36/48 [00:01<00:00, 22.80it/s] 81%|########1 | 39/48 [00:01<00:00, 22.93it/s] 88%|########7 | 42/48 [00:01<00:00, 22.77it/s] 94%|#########3| 45/48 [00:01<00:00, 22.76it/s]100%|##########| 48/48 [00:02<00:00, 22.87it/s]100%|##########| 48/48 [00:02<00:00, 22.89it/s]
-
-Kruskal-Wallis test:
-H_statistic: 1707525.426290036
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.670  0.457  0.977
-F2T  NaN    NaN  0.288  0.685
-T2F  NaN    NaN    NaN  0.899
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 05
-
-  0%|          | 0/40 [00:00<?, ?it/s]  8%|7         | 3/40 [00:00<00:01, 21.02it/s] 15%|#5        | 6/40 [00:00<00:01, 21.80it/s] 22%|##2       | 9/40 [00:00<00:01, 21.55it/s] 30%|###       | 12/40 [00:00<00:01, 22.02it/s] 38%|###7      | 15/40 [00:00<00:01, 21.74it/s] 45%|####5     | 18/40 [00:00<00:00, 22.06it/s] 52%|#####2    | 21/40 [00:00<00:00, 22.84it/s] 60%|######    | 24/40 [00:01<00:00, 22.65it/s] 68%|######7   | 27/40 [00:01<00:00, 22.51it/s] 75%|#######5  | 30/40 [00:01<00:00, 22.37it/s] 82%|########2 | 33/40 [00:01<00:00, 22.36it/s] 90%|######### | 36/40 [00:01<00:00, 22.20it/s] 98%|#########7| 39/40 [00:01<00:00, 22.92it/s]100%|##########| 40/40 [00:01<00:00, 22.44it/s]
-
-Kruskal-Wallis test:
-H_statistic: 550963.9524326781
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.111  0.069  0.469
-F2T  NaN    NaN  0.033  0.525
-T2F  NaN    NaN    NaN  0.480
-F2F  NaN    NaN    NaN    NaN
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/distribution/duration.tiff
-
-./ripples/define_ripples/summary/checks_ripple_props.py:33: RuntimeWarning: Mean of empty slice
-  return np.nanmean(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(n_round)
-/home/ywatanabe/.local/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1664: RuntimeWarning: Degrees of freedom <= 0 for slice.
-  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
-    T2T              F2T              T2F              F2F
-T2T   -  0.168 +/- 0.254  0.180 +/- 0.152  0.610 +/- 0.212
-F2T   -                -  0.147 +/- 0.099  0.549 +/- 0.126
-T2F   -                -                -  0.593 +/- 0.160
-F2F   -                -                -                -
-    T2T  ...                      F2F
-T2T   -  ...  0.610 +/- 0.212 (large)
-F2T   -  ...  0.549 +/- 0.126 (large)
-T2F   -  ...  0.593 +/- 0.160 (large)
-F2F   -  ...                        -
-
-[4 rows x 4 columns]
-
-Matplotilb has been configured as follows:
-{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(8.7, 8.7) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
-
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/duration.csv
-
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/duration.tiff
-
-
-Random seeds have been fixed as 42
-
-
-Random seeds have been fixed as 42
-
-
-Matplotilb has been configured as follows:
-{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(18.1, 6.0) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
-
-
-Standard Output/Error are going to be logged in the followings: 
-  - ./ripples/define_ripples/summary/checks_ripple_props/log/stdout.log
-  - ./ripples/define_ripples/summary/checks_ripple_props/log/stderr.log
-
-
---------------------------------------------------
-n_mouse: 01
-
-  0%|          | 0/8 [00:00<?, ?it/s] 25%|##5       | 2/8 [00:00<00:00, 18.14it/s] 50%|#####     | 4/8 [00:00<00:00, 18.48it/s] 75%|#######5  | 6/8 [00:00<00:00, 18.76it/s]100%|##########| 8/8 [00:00<00:00, 19.06it/s]
-
-Kruskal-Wallis test:
-H_statistic: 403003.6719586418
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.940  0.730  0.944
-F2T  NaN    NaN  0.712  0.146
-T2F  NaN    NaN    NaN  0.729
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 02
-
-  0%|          | 0/48 [00:00<?, ?it/s]  6%|6         | 3/48 [00:00<00:02, 21.62it/s] 12%|#2        | 6/48 [00:00<00:01, 21.88it/s] 19%|#8        | 9/48 [00:00<00:01, 21.82it/s] 25%|##5       | 12/48 [00:00<00:01, 21.91it/s] 31%|###1      | 15/48 [00:00<00:01, 21.71it/s] 38%|###7      | 18/48 [00:00<00:01, 21.41it/s] 44%|####3     | 21/48 [00:00<00:01, 21.49it/s] 50%|#####     | 24/48 [00:01<00:01, 21.61it/s] 56%|#####6    | 27/48 [00:01<00:00, 21.73it/s] 62%|######2   | 30/48 [00:01<00:00, 21.78it/s] 69%|######8   | 33/48 [00:01<00:00, 21.79it/s] 75%|#######5  | 36/48 [00:01<00:00, 21.66it/s] 81%|########1 | 39/48 [00:01<00:00, 21.71it/s] 88%|########7 | 42/48 [00:01<00:00, 21.70it/s] 94%|#########3| 45/48 [00:02<00:00, 21.77it/s]100%|##########| 48/48 [00:02<00:00, 21.68it/s]100%|##########| 48/48 [00:02<00:00, 21.69it/s]
-
-Kruskal-Wallis test:
-H_statistic: 2706637.5478280075
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.969  0.565  0.985
-F2T  NaN    NaN  0.905  0.120
-T2F  NaN    NaN    NaN  0.955
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 03
-
-  0%|          | 0/40 [00:00<?, ?it/s]  8%|7         | 3/40 [00:00<00:01, 22.64it/s] 15%|#5        | 6/40 [00:00<00:01, 22.76it/s] 22%|##2       | 9/40 [00:00<00:01, 22.51it/s] 30%|###       | 12/40 [00:00<00:01, 22.66it/s] 38%|###7      | 15/40 [00:00<00:01, 22.73it/s] 45%|####5     | 18/40 [00:00<00:00, 22.76it/s] 52%|#####2    | 21/40 [00:00<00:00, 22.85it/s] 60%|######    | 24/40 [00:01<00:00, 22.90it/s] 68%|######7   | 27/40 [00:01<00:00, 23.02it/s] 75%|#######5  | 30/40 [00:01<00:00, 23.11it/s] 82%|########2 | 33/40 [00:01<00:00, 23.06it/s] 90%|######### | 36/40 [00:01<00:00, 23.03it/s] 98%|#########7| 39/40 [00:01<00:00, 22.99it/s]100%|##########| 40/40 [00:01<00:00, 22.90it/s]
-
-Kruskal-Wallis test:
-H_statistic: 2208294.3300579414
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.959  0.497  0.993
-F2T  NaN    NaN  0.935  0.556
-T2F  NaN    NaN    NaN  0.989
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 04
-
-  0%|          | 0/48 [00:00<?, ?it/s]  6%|6         | 3/48 [00:00<00:01, 22.59it/s] 12%|#2        | 6/48 [00:00<00:01, 22.83it/s] 19%|#8        | 9/48 [00:00<00:01, 22.92it/s] 25%|##5       | 12/48 [00:00<00:01, 22.88it/s] 31%|###1      | 15/48 [00:00<00:01, 22.98it/s] 38%|###7      | 18/48 [00:00<00:01, 22.90it/s] 44%|####3     | 21/48 [00:00<00:01, 22.83it/s] 50%|#####     | 24/48 [00:01<00:01, 22.94it/s] 56%|#####6    | 27/48 [00:01<00:00, 22.86it/s] 62%|######2   | 30/48 [00:01<00:00, 22.91it/s] 69%|######8   | 33/48 [00:01<00:00, 22.92it/s] 75%|#######5  | 36/48 [00:01<00:00, 22.77it/s] 81%|########1 | 39/48 [00:01<00:00, 22.89it/s] 88%|########7 | 42/48 [00:01<00:00, 22.72it/s] 94%|#########3| 45/48 [00:01<00:00, 22.71it/s]100%|##########| 48/48 [00:02<00:00, 22.80it/s]100%|##########| 48/48 [00:02<00:00, 22.84it/s]
-
-Kruskal-Wallis test:
-H_statistic: 1155246.7272681145
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.787  0.461  0.796
-F2T  NaN    NaN  0.602  0.205
-T2F  NaN    NaN    NaN  0.599
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 05
-
-  0%|          | 0/40 [00:00<?, ?it/s]  8%|7         | 3/40 [00:00<00:01, 21.00it/s] 15%|#5        | 6/40 [00:00<00:01, 21.74it/s] 22%|##2       | 9/40 [00:00<00:01, 21.49it/s] 30%|###       | 12/40 [00:00<00:01, 21.95it/s] 38%|###7      | 15/40 [00:00<00:01, 21.70it/s] 45%|####5     | 18/40 [00:00<00:00, 22.01it/s] 52%|#####2    | 21/40 [00:00<00:00, 22.78it/s] 60%|######    | 24/40 [00:01<00:00, 22.60it/s] 68%|######7   | 27/40 [00:01<00:00, 22.44it/s] 75%|#######5  | 30/40 [00:01<00:00, 22.32it/s] 82%|########2 | 33/40 [00:01<00:00, 22.29it/s] 90%|######### | 36/40 [00:01<00:00, 22.17it/s] 98%|#########7| 39/40 [00:01<00:00, 22.88it/s]100%|##########| 40/40 [00:01<00:00, 22.39it/s]
-
-Kruskal-Wallis test:
-H_statistic: 2259502.3416818716
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.851  0.232  0.978
-F2T  NaN    NaN  0.631  0.619
-T2F  NaN    NaN    NaN  0.908
-F2F  NaN    NaN    NaN    NaN
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/distribution/mep.tiff
-
-./ripples/define_ripples/summary/checks_ripple_props.py:33: RuntimeWarning: Mean of empty slice
-  return np.nanmean(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(n_round)
-/home/ywatanabe/.local/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1664: RuntimeWarning: Degrees of freedom <= 0 for slice.
-  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
-    T2T              F2T              T2F              F2F
-T2T   -  0.901 +/- 0.071  0.497 +/- 0.162  0.939 +/- 0.074
-F2T   -                -  0.757 +/- 0.138  0.329 +/- 0.214
-T2F   -                -                -  0.836 +/- 0.149
-F2F   -                -                -                -
-    T2T  ...                      F2F
-T2T   -  ...  0.939 +/- 0.074 (large)
-F2T   -  ...  0.329 +/- 0.214 (small)
-T2F   -  ...  0.836 +/- 0.149 (large)
-F2F   -  ...                        -
-
-[4 rows x 4 columns]
-
-Matplotilb has been configured as follows:
-{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(8.7, 8.7) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
-
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/mep.csv
-
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/mep.tiff
-
-
-Random seeds have been fixed as 42
-
-
-Random seeds have been fixed as 42
-
-
-Matplotilb has been configured as follows:
-{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(18.1, 6.0) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
-
-
-Standard Output/Error are going to be logged in the followings: 
-  - ./ripples/define_ripples/summary/checks_ripple_props/log/stdout.log
-  - ./ripples/define_ripples/summary/checks_ripple_props/log/stderr.log
-
-
---------------------------------------------------
-n_mouse: 01
-
-  0%|          | 0/8 [00:00<?, ?it/s] 25%|##5       | 2/8 [00:00<00:00, 18.20it/s] 50%|#####     | 4/8 [00:00<00:00, 18.54it/s] 75%|#######5  | 6/8 [00:00<00:00, 18.85it/s]100%|##########| 8/8 [00:00<00:00, 19.13it/s]
-
-Kruskal-Wallis test:
-H_statistic: 26870.051343002808
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.137  0.377  0.212
-F2T  NaN    NaN  0.277  0.345
-T2F  NaN    NaN    NaN  0.539
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 02
-
-  0%|          | 0/48 [00:00<?, ?it/s]  6%|6         | 3/48 [00:00<00:02, 21.62it/s] 12%|#2        | 6/48 [00:00<00:01, 21.93it/s] 19%|#8        | 9/48 [00:00<00:01, 21.85it/s] 25%|##5       | 12/48 [00:00<00:01, 21.85it/s] 31%|###1      | 15/48 [00:00<00:01, 21.70it/s] 38%|###7      | 18/48 [00:00<00:01, 21.42it/s] 44%|####3     | 21/48 [00:00<00:01, 21.51it/s] 50%|#####     | 24/48 [00:01<00:01, 21.64it/s] 56%|#####6    | 27/48 [00:01<00:00, 21.77it/s] 62%|######2   | 30/48 [00:01<00:00, 21.83it/s] 69%|######8   | 33/48 [00:01<00:00, 21.82it/s] 75%|#######5  | 36/48 [00:01<00:00, 21.68it/s] 81%|########1 | 39/48 [00:01<00:00, 21.77it/s] 88%|########7 | 42/48 [00:01<00:00, 21.77it/s] 94%|#########3| 45/48 [00:02<00:00, 21.82it/s]100%|##########| 48/48 [00:02<00:00, 21.76it/s]100%|##########| 48/48 [00:02<00:00, 21.73it/s]
-
-Kruskal-Wallis test:
-H_statistic: 77013.52762049183
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.202  0.519  0.081
-F2T  NaN    NaN  0.341  0.121
-T2F  NaN    NaN    NaN  0.454
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 03
-
-  0%|          | 0/40 [00:00<?, ?it/s]  8%|7         | 3/40 [00:00<00:01, 22.67it/s] 15%|#5        | 6/40 [00:00<00:01, 22.82it/s] 22%|##2       | 9/40 [00:00<00:01, 22.60it/s] 30%|###       | 12/40 [00:00<00:01, 22.71it/s] 38%|###7      | 15/40 [00:00<00:01, 22.75it/s] 45%|####5     | 18/40 [00:00<00:00, 22.81it/s] 52%|#####2    | 21/40 [00:00<00:00, 22.89it/s] 60%|######    | 24/40 [00:01<00:00, 22.96it/s] 68%|######7   | 27/40 [00:01<00:00, 23.07it/s] 75%|#######5  | 30/40 [00:01<00:00, 23.13it/s] 82%|########2 | 33/40 [00:01<00:00, 23.22it/s] 90%|######### | 36/40 [00:01<00:00, 23.29it/s] 98%|#########7| 39/40 [00:01<00:00, 23.34it/s]100%|##########| 40/40 [00:01<00:00, 23.05it/s]
-
-Kruskal-Wallis test:
-H_statistic: 34256.34308695574
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.210  0.535  0.051
-F2T  NaN    NaN  0.388  0.135
-T2F  NaN    NaN    NaN  0.463
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 04
-
-  0%|          | 0/48 [00:00<?, ?it/s]  6%|6         | 3/48 [00:00<00:01, 22.58it/s] 12%|#2        | 6/48 [00:00<00:01, 22.87it/s] 19%|#8        | 9/48 [00:00<00:01, 23.00it/s] 25%|##5       | 12/48 [00:00<00:01, 22.93it/s] 31%|###1      | 15/48 [00:00<00:01, 23.06it/s] 38%|###7      | 18/48 [00:00<00:01, 22.94it/s] 44%|####3     | 21/48 [00:00<00:01, 22.88it/s] 50%|#####     | 24/48 [00:01<00:01, 23.01it/s] 56%|#####6    | 27/48 [00:01<00:00, 22.93it/s] 62%|######2   | 30/48 [00:01<00:00, 22.95it/s] 69%|######8   | 33/48 [00:01<00:00, 22.97it/s] 75%|#######5  | 36/48 [00:01<00:00, 22.81it/s] 81%|########1 | 39/48 [00:01<00:00, 22.92it/s] 88%|########7 | 42/48 [00:01<00:00, 22.78it/s] 94%|#########3| 45/48 [00:01<00:00, 22.76it/s]100%|##########| 48/48 [00:02<00:00, 22.87it/s]100%|##########| 48/48 [00:02<00:00, 22.89it/s]
-
-Kruskal-Wallis test:
-H_statistic: 517687.92037309456
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.590  0.157  0.528
-F2T  NaN    NaN  0.696  0.055
-T2F  NaN    NaN    NaN  0.651
-F2F  NaN    NaN    NaN    NaN
-
---------------------------------------------------
-n_mouse: 05
-
-  0%|          | 0/40 [00:00<?, ?it/s]  8%|7         | 3/40 [00:00<00:01, 21.05it/s] 15%|#5        | 6/40 [00:00<00:01, 21.80it/s] 22%|##2       | 9/40 [00:00<00:01, 21.56it/s] 30%|###       | 12/40 [00:00<00:01, 22.03it/s] 38%|###7      | 15/40 [00:00<00:01, 21.77it/s] 45%|####5     | 18/40 [00:00<00:00, 22.09it/s] 52%|#####2    | 21/40 [00:00<00:00, 22.86it/s] 60%|######    | 24/40 [00:01<00:00, 22.68it/s] 68%|######7   | 27/40 [00:01<00:00, 22.52it/s] 75%|#######5  | 30/40 [00:01<00:00, 22.39it/s] 82%|########2 | 33/40 [00:01<00:00, 22.37it/s] 90%|######### | 36/40 [00:01<00:00, 22.23it/s] 98%|#########7| 39/40 [00:01<00:00, 22.95it/s]100%|##########| 40/40 [00:01<00:00, 22.46it/s]
-
-Kruskal-Wallis test:
-H_statistic: 178139.0867011977
-p-value: 0.0
-
-
-Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
-      T2T   F2T   T2F F2F
-T2T     -     -     -   -
-F2T  True     -     -   -
-T2F  True  True     -   -
-F2F  True  True  True   -
-
-
-Absolute Cliff's delta values:
-     T2T    F2T    T2F    F2F
-T2T  NaN  0.494  0.336  0.156
-F2T  NaN    NaN  0.119  0.309
-T2F  NaN    NaN    NaN  0.177
-F2F  NaN    NaN    NaN    NaN
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/distribution/ripple_peak_magnitude.tiff
-
-./ripples/define_ripples/summary/checks_ripple_props.py:33: RuntimeWarning: Mean of empty slice
-  return np.nanmean(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(n_round)
-/home/ywatanabe/.local/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1664: RuntimeWarning: Degrees of freedom <= 0 for slice.
-  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
-    T2T              F2T              T2F              F2F
-T2T   -  0.327 +/- 0.180  0.385 +/- 0.138  0.206 +/- 0.171
-F2T   -                -  0.364 +/- 0.189  0.193 +/- 0.113
-T2F   -                -                -  0.457 +/- 0.157
-F2F   -                -                -                -
-    T2T  ...                       F2F
-T2T   -  ...   0.206 +/- 0.171 (small)
-F2T   -  ...   0.193 +/- 0.113 (small)
-T2F   -  ...  0.457 +/- 0.157 (medium)
-F2F   -  ...                         -
-
-[4 rows x 4 columns]
-
-Matplotilb has been configured as follows:
-{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(8.7, 8.7) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
-
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/ripple peak magnitude.csv
-
-
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/ripple peak magnitude.tiff
-

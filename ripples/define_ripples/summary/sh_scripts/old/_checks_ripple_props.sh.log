@@ -1,15 +1,3 @@
-Traceback (most recent call last):
-  File "./ripples/define_ripples/summary/checks_ripple_props.py", line 8, in <module>
-    import matplotlib
-ModuleNotFoundError: No module named 'matplotlib'
-Traceback (most recent call last):
-  File "./ripples/define_ripples/summary/checks_ripple_props.py", line 8, in <module>
-    import matplotlib
-ModuleNotFoundError: No module named 'matplotlib'
-Traceback (most recent call last):
-  File "./ripples/define_ripples/summary/checks_ripple_props.py", line 8, in <module>
-    import matplotlib
-ModuleNotFoundError: No module named 'matplotlib'
 
 Random seeds have been fixed as 42
 
@@ -146,7 +134,7 @@ F2T  NaN    NaN  0.412  0.741
 T2F  NaN    NaN    NaN  0.627
 F2F  NaN    NaN    NaN    NaN
 
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/duration_distribution.png
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/distribution/duration.tiff
 
 ./ripples/define_ripples/summary/checks_ripple_props.py:33: RuntimeWarning: Mean of empty slice
   return np.nanmean(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(n_round)
@@ -157,15 +145,22 @@ T2T   -  0.403 +/- 0.279  0.528 +/- 0.333  0.856 +/- 0.111
 F2T   -                -  0.343 +/- 0.181  0.810 +/- 0.091
 T2F   -                -                -  0.762 +/- 0.099
 F2F   -                -                -                -
+    T2T  ...                      F2F
+T2T   -  ...  0.856 +/- 0.111 (large)
+F2T   -  ...  0.810 +/- 0.091 (large)
+T2F   -  ...  0.762 +/- 0.099 (large)
+F2F   -  ...                        -
+
+[4 rows x 4 columns]
 
 Matplotilb has been configured as follows:
 {'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(8.7, 8.7) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
 
 
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/duration_abs_cliff_mean_plus_minus_std.csv
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/duration.csv
 
 
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/duration_abs_cliff_mean_plus_minus_std.png
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/duration.tiff
 
 
 Random seeds have been fixed as 42
@@ -303,7 +298,7 @@ F2T  NaN    NaN  0.429  0.144
 T2F  NaN    NaN    NaN  0.454
 F2F  NaN    NaN    NaN    NaN
 
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/mep_distribution.png
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/distribution/mep.tiff
 
 ./ripples/define_ripples/summary/checks_ripple_props.py:33: RuntimeWarning: Mean of empty slice
   return np.nanmean(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(n_round)
@@ -314,15 +309,22 @@ T2T   -  0.906 +/- 0.052  0.612 +/- 0.090  0.891 +/- 0.048
 F2T   -                -  0.717 +/- 0.160  0.166 +/- 0.107
 T2F   -                -                -  0.665 +/- 0.129
 F2F   -                -                -                -
+    T2T  ...                      F2F
+T2T   -  ...  0.891 +/- 0.048 (large)
+F2T   -  ...  0.166 +/- 0.107 (small)
+T2F   -  ...  0.665 +/- 0.129 (large)
+F2F   -  ...                        -
+
+[4 rows x 4 columns]
 
 Matplotilb has been configured as follows:
 {'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(8.7, 8.7) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
 
 
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/mep_abs_cliff_mean_plus_minus_std.csv
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/mep.csv
 
 
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/mep_abs_cliff_mean_plus_minus_std.png
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/mep.tiff
 
 
 Random seeds have been fixed as 42
@@ -460,7 +462,7 @@ F2T  NaN    NaN  0.003  0.372
 T2F  NaN    NaN    NaN  0.371
 F2F  NaN    NaN    NaN    NaN
 
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/ripple_peak_magnitude_distribution.png
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/distribution/ripple_peak_magnitude.tiff
 
 ./ripples/define_ripples/summary/checks_ripple_props.py:33: RuntimeWarning: Mean of empty slice
   return np.nanmean(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(n_round)
@@ -471,13 +473,20 @@ T2T   -  0.137 +/- 0.107  0.129 +/- 0.109  0.344 +/- 0.093
 F2T   -                -  0.029 +/- 0.030  0.420 +/- 0.080
 T2F   -                -                -  0.436 +/- 0.054
 F2F   -                -                -                -
+    T2T  ...                       F2F
+T2T   -  ...  0.344 +/- 0.093 (medium)
+F2T   -  ...  0.420 +/- 0.080 (medium)
+T2F   -  ...  0.436 +/- 0.054 (medium)
+F2F   -  ...                         -
+
+[4 rows x 4 columns]
 
 Matplotilb has been configured as follows:
 {'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(8.7, 8.7) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
 
 
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/ripple peak magnitude_abs_cliff_mean_plus_minus_std.csv
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/ripple peak magnitude.csv
 
 
-Saved to: ./ripples/define_ripples/summary/checks_ripple_props/ripple peak magnitude_abs_cliff_mean_plus_minus_std.png
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/ripple peak magnitude.tiff
 
