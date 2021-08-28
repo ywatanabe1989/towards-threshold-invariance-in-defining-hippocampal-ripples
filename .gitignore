@@ -28,7 +28,7 @@ octave-workspace
 
 ## for convenience
 *.old*
-# *old*
+*old*
 
 ## Privacy
 data/CRCN_batch_download/download/ywatanabe/crcns-account.txt

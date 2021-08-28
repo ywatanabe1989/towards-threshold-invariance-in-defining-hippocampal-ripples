@@ -4,11 +4,11 @@
 - [CUDA Toolkit Documentation v10.1.243](https://docs.nvidia.com/cuda/archive/10.1/)
 - [Singularity GPU Support](https://sylabs.io/guides/3.6/user-guide/gpu.html)
 
-## ./semi_ripples.def
-**./semi_ripples.def** is the singularity definition file for **semi_ripples.sif**.
+## ./towards_threshold_invariance_in_defining_hippocampal_ripples.def
+**./towards_threshold_invariance_in_defining_hippocampal_ripples.def** is the singularity definition file for **towards_threshold_invariance_in_defining_hippocampal_ripples.sif**.
 
-## ./semi_ripples.sif
-**./semi_ripples.sif** is the singularity image file to run our python scripts.
+## ./towards_threshold_invariance_in_defining_hippocampal_ripples.sif
+**./towards_threshold_invariance_in_defining_hippocampal_ripples.sif** is the singularity image file to run our python scripts.
 
 ## ./singularity-aliases.bash
 **./singularity-aliases.bash** contains bash aliases to use singularity casually.
@@ -17,13 +17,12 @@
 $ sshell # move into the shell in the singularity environment (**s**ingularity **shell**).
 $ sipy # starts ipython in the singularity environment (**s**ingularity **ipy**ton).
 $ spy *.py # executs a python program in the singularity environment (**s**ingularity **py**thon).
-$ sbuild *.py # build a *def file or something and the second arguments takes --fakeroot (-f) or --remote (-r) to build to *sif file. e.g.) $ sbuild A.def --fakeroot # A.sif will be built.
+$ sbuild *.def # build a singularity Definition file. The second arguments takes --fakeroot (-f) or --remote (-r) to build to *sif file (e.g., $ sbuild <FILENAME>.def --fakeroot).
 
 $ sshellw # writable sshell
+$ sipyw # writable sipy
+$ spyw *.py # writable spy
 $ sbuildw # writable sbuild
-gggg$ sipy # writable sipy
-$ spy *.py # writable spy
-
 ```
 
 
