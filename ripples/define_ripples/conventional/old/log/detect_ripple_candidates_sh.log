@@ -1,0 +1,88 @@
+Detecting ripples from ./data/02/day3/split/LFP_MEP_1kHz_npy/tt2-1_fp16.npy (Length: 24.0h)
+Time (id:0): tot 14:44:54, prev 14:44:54 [hh:mm:ss]
+
+Saved to: ./data/02/day3/split/ripple_candi_1kHz_pkl/tt2-1_fp16.pkl
+Detecting ripples from ./data/02/day2/split/LFP_MEP_1kHz_npy/tt2-1_fp16.npy (Length: 24.0h)
+Time (id:0): tot 17:07:19, prev 17:07:19 [hh:mm:ss]
+
+Saved to: ./data/02/day2/split/ripple_candi_1kHz_pkl/tt2-1_fp16.pkl
+Detecting ripples from ./data/02/day1/split/LFP_MEP_1kHz_npy/tt2-1_fp16.npy (Length: 24.4h)
+Time (id:0): tot 19:04:28, prev 19:04:28 [hh:mm:ss]
+
+Saved to: ./data/02/day1/split/ripple_candi_1kHz_pkl/tt2-1_fp16.pkl
+Detecting ripples from ./data/01/day1/split/LFP_MEP_1kHz_npy/tt6-1_fp16.npy (Length: 25.5h)
+Time (id:0): tot 23:22:11, prev 23:22:11 [hh:mm:ss]
+
+Saved to: ./data/01/day1/split/ripple_candi_1kHz_pkl/tt6-1_fp16.pkl
+Detecting ripples from ./data/01/day1/split/LFP_MEP_1kHz_npy/tt6-4_fp16.npy (Length: 25.5h)
+Time (id:0): tot 23:36:34, prev 23:36:34 [hh:mm:ss]
+
+Saved to: ./data/01/day1/split/ripple_candi_1kHz_pkl/tt6-4_fp16.pkl
+Detecting ripples from ./data/01/day1/split/LFP_MEP_1kHz_npy/tt6-2_fp16.npy (Length: 25.5h)
+Time (id:0): tot 02:01:34, prev 02:01:34 [hh:mm:ss]
+
+Saved to: ./data/01/day1/split/ripple_candi_1kHz_pkl/tt6-2_fp16.pkl
+Detecting ripples from ./data/01/day1/split/LFP_MEP_1kHz_npy/tt6-3_fp16.npy (Length: 25.5h)
+Time (id:0): tot 03:18:40, prev 03:18:40 [hh:mm:ss]
+
+Saved to: ./data/01/day1/split/ripple_candi_1kHz_pkl/tt6-3_fp16.pkl
+Detecting ripples from ./data/02/day2/split/LFP_MEP_1kHz_npy/tt2-2_fp16.npy (Length: 24.0h)
+Time (id:0): tot 03:24:07, prev 03:24:07 [hh:mm:ss]
+
+Saved to: ./data/02/day2/split/ripple_candi_1kHz_pkl/tt2-2_fp16.pkl
+Detecting ripples from ./data/01/day1/split/LFP_MEP_1kHz_npy/tt2-3_fp16.npy (Length: 25.5h)
+Time (id:0): tot 03:24:16, prev 03:24:16 [hh:mm:ss]
+
+Saved to: ./data/01/day1/split/ripple_candi_1kHz_pkl/tt2-3_fp16.pkl
+Detecting ripples from ./data/02/day3/split/LFP_MEP_1kHz_npy/tt2-2_fp16.npy (Length: 24.0h)
+Time (id:0): tot 04:09:19, prev 04:09:19 [hh:mm:ss]
+
+Saved to: ./data/02/day3/split/ripple_candi_1kHz_pkl/tt2-2_fp16.pkl
+Detecting ripples from ./data/01/day1/split/LFP_MEP_1kHz_npy/tt2-4_fp16.npy (Length: 25.5h)
+Time (id:0): tot 04:18:05, prev 04:18:05 [hh:mm:ss]
+
+Saved to: ./data/01/day1/split/ripple_candi_1kHz_pkl/tt2-4_fp16.pkl
+Detecting ripples from ./data/01/day1/split/LFP_MEP_1kHz_npy/tt2-1_fp16.npy (Length: 25.5h)
+Time (id:0): tot 04:41:27, prev 04:41:27 [hh:mm:ss]
+
+Saved to: ./data/01/day1/split/ripple_candi_1kHz_pkl/tt2-1_fp16.pkl
+Detecting ripples from ./data/01/day1/split/LFP_MEP_1kHz_npy/tt2-2_fp16.npy (Length: 25.5h)
+Time (id:0): tot 05:09:53, prev 05:09:53 [hh:mm:ss]
+
+Saved to: ./data/01/day1/split/ripple_candi_1kHz_pkl/tt2-2_fp16.pkl
+Detecting ripples from ./data/02/day2/split/LFP_MEP_1kHz_npy/tt2-3_fp16.npy (Length: 24.0h)
+Time (id:0): tot 05:29:10, prev 05:29:10 [hh:mm:ss]
+
+Saved to: ./data/02/day2/split/ripple_candi_1kHz_pkl/tt2-3_fp16.pkl
+Detecting ripples from ./data/02/day2/split/LFP_MEP_1kHz_npy/tt2-4_fp16.npy (Length: 24.0h)
+Time (id:0): tot 06:27:51, prev 06:27:51 [hh:mm:ss]
+
+Saved to: ./data/02/day2/split/ripple_candi_1kHz_pkl/tt2-4_fp16.pkl
+Detecting ripples from ./data/02/day1/split/LFP_MEP_1kHz_npy/tt2-3_fp16.npy (Length: 24.4h)
+Time (id:0): tot 08:01:04, prev 08:01:04 [hh:mm:ss]
+
+Saved to: ./data/02/day1/split/ripple_candi_1kHz_pkl/tt2-3_fp16.pkl
+Detecting ripples from ./data/02/day1/split/LFP_MEP_1kHz_npy/tt2-4_fp16.npy (Length: 24.4h)
+Time (id:0): tot 08:14:48, prev 08:14:48 [hh:mm:ss]
+
+Saved to: ./data/02/day1/split/ripple_candi_1kHz_pkl/tt2-4_fp16.pkl
+Detecting ripples from ./data/02/day1/split/LFP_MEP_1kHz_npy/tt2-2_fp16.npy (Length: 24.4h)
+Time (id:0): tot 10:00:02, prev 10:00:02 [hh:mm:ss]
+
+Saved to: ./data/02/day1/split/ripple_candi_1kHz_pkl/tt2-2_fp16.pkl
+Detecting ripples from ./data/02/day4/split/LFP_MEP_1kHz_npy/tt2-1_fp16.npy (Length: 23.9h)
+Time (id:0): tot 18:16:36, prev 18:16:36 [hh:mm:ss]
+
+Saved to: ./data/02/day4/split/ripple_candi_1kHz_pkl/tt2-1_fp16.pkl
+Detecting ripples from ./data/02/day3/split/LFP_MEP_1kHz_npy/tt2-3_fp16.npy (Length: 24.0h)
+Time (id:0): tot 06:19:03, prev 06:19:03 [hh:mm:ss]
+
+Saved to: ./data/02/day3/split/ripple_candi_1kHz_pkl/tt2-3_fp16.pkl
+Detecting ripples from ./data/02/day3/split/LFP_MEP_1kHz_npy/tt2-4_fp16.npy (Length: 24.0h)
+Time (id:0): tot 05:16:10, prev 05:16:10 [hh:mm:ss]
+
+Saved to: ./data/02/day3/split/ripple_candi_1kHz_pkl/tt2-4_fp16.pkl
+Detecting ripples from ./data/02/day4/split/LFP_MEP_1kHz_npy/tt2-4_fp16.npy (Length: 23.9h)
+Time (id:0): tot 02:27:43, prev 02:27:43 [hh:mm:ss]
+
+Saved to: ./data/02/day4/split/ripple_candi_1kHz_pkl/tt2-4_fp16.pkl

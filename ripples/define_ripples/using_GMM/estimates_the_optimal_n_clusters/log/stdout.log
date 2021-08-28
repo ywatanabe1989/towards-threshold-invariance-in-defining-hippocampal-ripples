@@ -1,0 +1,23 @@
+
+Matplotilb has been configured as follows:
+{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(18.1, 4.0) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
+
+
+Random seeds have been fixed as 42
+
+Indice of mice to load: 01
+8
+Indice of mice to load: 02
+48
+Indice of mice to load: 03
+40
+Indice of mice to load: 04
+48
+Indice of mice to load: 05
+40
+
+Saved to: ./ripples/define_ripples/using_GMM/estimates_the_optimal_n_clusters/elbow.png
+
+
+Saved to: ./ripples/define_ripples/using_GMM/estimates_the_optimal_n_clusters/elbow.csv
+

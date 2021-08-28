@@ -1,0 +1,4 @@
+./ripples/define_ripples/summary/checks_ripple_props.py:33: RuntimeWarning: Mean of empty slice
+  return np.nanmean(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(n_round)
+/home/ywatanabe/.local/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1664: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,

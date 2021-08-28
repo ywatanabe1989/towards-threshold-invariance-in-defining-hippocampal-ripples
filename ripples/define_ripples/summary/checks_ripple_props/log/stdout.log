@@ -1,0 +1,163 @@
+
+--------------------------------------------------
+n_mouse: 01
+
+
+Loading ...
+
+
+Kruskal-Wallis test:
+H_statistic: 26870.051343002808
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.137  0.377  0.212
+F2T  NaN    NaN  0.277  0.345
+T2F  NaN    NaN    NaN  0.539
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 02
+
+
+Loading ...
+
+
+Kruskal-Wallis test:
+H_statistic: 77013.52762049183
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.202  0.519  0.081
+F2T  NaN    NaN  0.341  0.121
+T2F  NaN    NaN    NaN  0.454
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 03
+
+
+Loading ...
+
+
+Kruskal-Wallis test:
+H_statistic: 34256.34308695574
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.210  0.535  0.051
+F2T  NaN    NaN  0.388  0.135
+T2F  NaN    NaN    NaN  0.463
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 04
+
+
+Loading ...
+
+
+Kruskal-Wallis test:
+H_statistic: 517687.92037309456
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.590  0.157  0.528
+F2T  NaN    NaN  0.696  0.055
+T2F  NaN    NaN    NaN  0.651
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 05
+
+
+Loading ...
+
+
+Kruskal-Wallis test:
+H_statistic: 178139.0867011977
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.494  0.336  0.156
+F2T  NaN    NaN  0.119  0.309
+T2F  NaN    NaN    NaN  0.177
+F2F  NaN    NaN    NaN    NaN
+
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/distribution/ripple_peak_magnitude.tiff
+
+    T2T              F2T              T2F              F2F
+T2T   -  0.327 +/- 0.180  0.385 +/- 0.138  0.206 +/- 0.171
+F2T   -                -  0.364 +/- 0.189  0.193 +/- 0.113
+T2F   -                -                -  0.457 +/- 0.157
+F2F   -                -                -                -
+    T2T  ...                       F2F
+T2T   -  ...   0.206 +/- 0.171 (small)
+F2T   -  ...   0.193 +/- 0.113 (small)
+T2F   -  ...  0.457 +/- 0.157 (medium)
+F2F   -  ...                         -
+
+[4 rows x 4 columns]
+
+Matplotilb has been configured as follows:
+{'figure.dpi': 100, 'savefig.dpi': 300, 'figure.figsize': '(8.7, 8.7) [cm]', 'font.size': 7, 'axes.labelsize': 7, 'xtick.labelsize': 7, 'ytick.labelsize': 7, 'axes.titlesize': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
+
+
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/med_mad/ripple peak magnitude.csv
+
+
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/ripple peak magnitude.csv
+
+
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/abs_cliff_mean_plus_minus_std/ripple peak magnitude.tiff
+

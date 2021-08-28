@@ -1,0 +1,10 @@
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Random seeds have been fixed as 42
+
+
+Saving to: ./ripples/define_ripples/conventional/plots_3d_scatter/videos/mouse#05.mp4
+

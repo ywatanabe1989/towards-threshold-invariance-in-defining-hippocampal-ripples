@@ -1,0 +1,372 @@
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+2021-0624-0516
+
+Time (id:0): tot 00:00:00, prev 00:00:00 [hh:mm:ss]: 
+Reporter has been initialized.
+
+
+Let's use 4 GPUs.
+
+Random seeds have been fixed as 42
+
+
+step: Training, i_batch: 0, loss: 0.728, Balanced ACC: 0.445
+
+
+step: Training, i_batch: 100, loss: 0.341, Balanced ACC: 0.972
+
+
+step: Training, i_batch: 200, loss: 0.221, Balanced ACC: 0.985
+
+
+step: Training, i_batch: 300, loss: 0.153, Balanced ACC: 0.981
+
+
+step: Training, i_batch: 400, loss: 0.129, Balanced ACC: 0.980
+
+
+step: Test, i_batch: 0, loss: 0.072, Balanced ACC: 0.998
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/checkpoints/mouse_test#01_epoch#000.pth
+
+
+ACC in fold#0 was 0.997
+
+
+Balanced ACC in fold#0 was 0.998
+
+
+MCC in fold#0 was 0.993
+
+
+Confusion Matrix in fold#0: 
+       n      r
+n  25646     91
+r     14  11113
+
+
+Classification Report in fold#0: 
+                     n          r  balanced accuracy  macro avg  weighted avg
+precision        0.999      0.992              0.998      0.996         0.997
+recall           0.996      0.999              0.998      0.998         0.997
+f1-score         0.998      0.995              0.998      0.997         0.997
+sample size  25737.000  11127.000              0.998  36864.000     36864.000
+
+Let's use 4 GPUs.
+
+Random seeds have been fixed as 42
+
+
+step: Training, i_batch: 0, loss: 0.709, Balanced ACC: 0.467
+
+
+step: Training, i_batch: 100, loss: 0.372, Balanced ACC: 0.968
+
+
+step: Training, i_batch: 200, loss: 0.231, Balanced ACC: 0.985
+
+
+step: Test, i_batch: 0, loss: 0.194, Balanced ACC: 0.972
+
+
+step: Test, i_batch: 100, loss: 0.204, Balanced ACC: 0.959
+
+
+step: Test, i_batch: 200, loss: 0.198, Balanced ACC: 0.966
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/checkpoints/mouse_test#02_epoch#000.pth
+
+
+ACC in fold#1 was 0.975
+
+
+Balanced ACC in fold#1 was 0.970
+
+
+MCC in fold#1 was 0.949
+
+
+Confusion Matrix in fold#1: 
+       n       r
+n  92401    5794
+r     73  134180
+
+
+Classification Report in fold#1: 
+                     n           r  balanced accuracy   macro avg  weighted avg
+precision        0.999       0.959               0.97       0.979         0.976
+recall           0.941       0.999               0.97       0.970         0.975
+f1-score         0.969       0.979               0.97       0.974         0.975
+sample size  98195.000  134253.000               0.97  232448.000    232448.000
+
+Let's use 4 GPUs.
+
+Random seeds have been fixed as 42
+
+
+step: Training, i_batch: 0, loss: 0.703, Balanced ACC: 0.521
+
+
+step: Training, i_batch: 100, loss: 0.378, Balanced ACC: 0.969
+
+
+step: Training, i_batch: 200, loss: 0.235, Balanced ACC: 0.983
+
+
+step: Training, i_batch: 300, loss: 0.172, Balanced ACC: 0.986
+
+
+step: Test, i_batch: 0, loss: 0.123, Balanced ACC: 0.995
+
+
+step: Test, i_batch: 100, loss: 0.122, Balanced ACC: 0.994
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/checkpoints/mouse_test#03_epoch#000.pth
+
+
+ACC in fold#2 was 0.985
+
+
+Balanced ACC in fold#2 was 0.988
+
+
+MCC in fold#2 was 0.968
+
+
+Confusion Matrix in fold#2: 
+       n      r
+n  82783   1929
+r     13  46347
+
+
+Classification Report in fold#2: 
+                     n          r  balanced accuracy   macro avg  weighted avg
+precision        1.000      0.960              0.988       0.980         0.986
+recall           0.977      1.000              0.988       0.988         0.985
+f1-score         0.988      0.979              0.988       0.984         0.985
+sample size  84712.000  46360.000              0.988  131072.000    131072.000
+
+Let's use 4 GPUs.
+
+Random seeds have been fixed as 42
+
+
+step: Training, i_batch: 0, loss: 0.687, Balanced ACC: 0.544
+
+
+step: Training, i_batch: 100, loss: 0.327, Balanced ACC: 0.983
+
+
+step: Training, i_batch: 200, loss: 0.199, Balanced ACC: 0.993
+
+
+step: Training, i_batch: 300, loss: 0.142, Balanced ACC: 0.990
+
+
+step: Test, i_batch: 0, loss: 0.143, Balanced ACC: 0.973
+
+
+step: Test, i_batch: 100, loss: 0.120, Balanced ACC: 0.978
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/checkpoints/mouse_test#04_epoch#000.pth
+
+
+ACC in fold#3 was 0.983
+
+
+Balanced ACC in fold#3 was 0.982
+
+
+MCC in fold#3 was 0.954
+
+
+Confusion Matrix in fold#3: 
+        n      r
+n  149392   2564
+r     959  48813
+
+
+Classification Report in fold#3: 
+                      n          r  balanced accuracy   macro avg  weighted avg
+precision         0.994      0.950              0.982       0.972         0.983
+recall            0.983      0.981              0.982       0.982         0.983
+f1-score          0.988      0.965              0.982       0.977         0.983
+sample size  151956.000  49772.000              0.982  201728.000    201728.000
+
+Let's use 4 GPUs.
+
+Random seeds have been fixed as 42
+
+
+step: Training, i_batch: 0, loss: 0.782, Balanced ACC: 0.449
+
+
+step: Training, i_batch: 100, loss: 0.334, Balanced ACC: 0.967
+
+
+step: Training, i_batch: 200, loss: 0.231, Balanced ACC: 0.979
+
+
+step: Training, i_batch: 300, loss: 0.140, Balanced ACC: 0.985
+
+
+step: Test, i_batch: 0, loss: 0.160, Balanced ACC: 0.970
+
+
+step: Test, i_batch: 100, loss: 0.163, Balanced ACC: 0.970
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/checkpoints/mouse_test#05_epoch#000.pth
+
+
+ACC in fold#4 was 0.964
+
+
+Balanced ACC in fold#4 was 0.972
+
+
+MCC in fold#4 was 0.926
+
+
+Confusion Matrix in fold#4: 
+       n      r
+n  98281   5728
+r    107  57676
+
+
+Classification Report in fold#4: 
+                      n          r  balanced accuracy   macro avg  weighted avg
+precision         0.999      0.910              0.972       0.954         0.967
+recall            0.945      0.998              0.972       0.972         0.964
+f1-score          0.971      0.952              0.972       0.962         0.964
+sample size  104009.000  57783.000              0.972  161792.000    161792.000
+
+
+ --- 5-fold CV overall metrics --- 
+
+
+The Mattews correlation coefficient: 0.958 +/- 0.022 (mean +/- std.; n=5)
+
+
+Balanced Accuracy Score: 0.982 +/- 0.01 (mean +/- std.; n=5)
+
+
+Confusion Matrix (Test; sum; num. folds=5)
+        n       r
+n  448503   16106
+r    1166  298129
+
+
+Classification Report (Test; mean; num. folds=5)
+                     n          r  balanced accuracy   macro avg  weighted avg
+precision        0.998      0.954              0.982       0.976         0.982
+recall           0.968      0.995              0.982       0.982         0.981
+f1-score         0.983      0.974              0.982       0.979         0.981
+sample size  92921.800  59859.000              0.982  152780.800    152780.800
+
+
+Classification Report (Test; std; num. folds=5)
+                     n          r  balanced accuracy  macro avg  weighted avg
+precision        0.002      0.026               0.01      0.014         0.010
+recall           0.022      0.007               0.01      0.010         0.011
+f1-score         0.011      0.015               0.01      0.012         0.011
+sample size  40538.790  40490.877               0.01  67426.804     67426.804
+
+
+ROC AUC micro Score: 0.994 +/- 0.005 (mean +/- std.; n=5)
+
+
+ROC AUC macro Score: 0.995 +/- 0.006 (mean +/- std.; n=5)
+
+
+Precision-Recall AUC micro Score: 0.993 +/- 0.006 (mean +/- std.; n=5)
+
+
+Precision-Recall AUC macro Score: 0.985 +/- 0.018 (mean +/- std.; n=5)
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/global_conf_used.yaml
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/model_conf.yaml
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/dataloader_conf.yaml
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/mccs.csv
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/balanced_accs.csv
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/conf_mats.csv
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/conf_mat_overall_sum.png
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/clf_reports.csv
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/aucs.csv
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/roc_curves/fold#0.png
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/roc_curves/fold#1.png
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/roc_curves/fold#2.png
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/roc_curves/fold#3.png
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/roc_curves/fold#4.png
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/pr_curves/fold#0.png
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/pr_curves/fold#1.png
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/pr_curves/fold#2.png
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/pr_curves/fold#3.png
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/pr_curves/fold#4.png
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/learning_curves/fold#0.png
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/learning_curves/fold#1.png
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/learning_curves/fold#2.png
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/learning_curves/fold#3.png
+
+
+Saved to: ./ripples/detect_ripples/CNN/train_n_vs_r/results/learning_curves/fold#4.png
+
+
+
+Do you really want to exit ([y]/n)? 

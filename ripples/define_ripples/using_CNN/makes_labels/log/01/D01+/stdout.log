@@ -1,0 +1,370 @@
+
+Random seeds have been fixed as 42
+
+
+dataset_key: D01+
+
+['./data/okada/01/day1/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy',
+ './data/okada/01/day1/split/LFP_MEP_1kHz_npy/orig/tt2-2_fp16.npy',
+ './data/okada/01/day1/split/LFP_MEP_1kHz_npy/orig/tt2-3_fp16.npy',
+ './data/okada/01/day1/split/LFP_MEP_1kHz_npy/orig/tt2-4_fp16.npy',
+ './data/okada/01/day1/split/LFP_MEP_1kHz_npy/orig/tt6-1_fp16.npy',
+ './data/okada/01/day1/split/LFP_MEP_1kHz_npy/orig/tt6-2_fp16.npy',
+ './data/okada/01/day1/split/LFP_MEP_1kHz_npy/orig/tt6-3_fp16.npy',
+ './data/okada/01/day1/split/LFP_MEP_1kHz_npy/orig/tt6-4_fp16.npy']
+
+2021-0807-1809
+
+Ranger optimizer loaded. 
+Gradient Centralization usage = True
+GC applied to both conv and fc layers
+Train Epoch: 1 [1024/409302 (0.3%)]	Loss: 0.356386
+Train Epoch: 1 [52224/409302 (12.8%)]	Loss: 0.156358
+Train Epoch: 1 [103424/409302 (25.3%)]	Loss: 0.128182
+Train Epoch: 1 [154624/409302 (37.8%)]	Loss: 0.103374
+Train Epoch: 1 [205824/409302 (50.3%)]	Loss: 0.108194
+Train Epoch: 1 [257024/409302 (62.8%)]	Loss: 0.109043
+Train Epoch: 1 [308224/409302 (75.3%)]	Loss: 0.107686
+Train Epoch: 1 [359424/409302 (87.8%)]	Loss: 0.110541
+Train Epoch: 2 [1024/409302 (0.3%)]	Loss: 0.110387
+Train Epoch: 2 [52224/409302 (12.8%)]	Loss: 0.099673
+Train Epoch: 2 [103424/409302 (25.3%)]	Loss: 0.112752
+Train Epoch: 2 [154624/409302 (37.8%)]	Loss: 0.107399
+Train Epoch: 2 [205824/409302 (50.3%)]	Loss: 0.113651
+Train Epoch: 2 [257024/409302 (62.8%)]	Loss: 0.095427
+Train Epoch: 2 [308224/409302 (75.3%)]	Loss: 0.101614
+Train Epoch: 2 [359424/409302 (87.8%)]	Loss: 0.102813
+
+ACC in fold#0 was 0.919
+
+
+Balanced ACC in fold#0 was 0.910
+
+
+MCC in fold#0 was 0.824
+
+
+Confusion Matrix in fold#0: 
+           nonRipple  Ripple
+nonRipple      39243    5401
+Ripple          4660   75034
+
+
+Classification Report in fold#0: 
+             nonRipple     Ripple  balanced accuracy   macro avg  weighted avg
+precision        0.894      0.933               0.91       0.913         0.919
+recall           0.879      0.942               0.91       0.910         0.919
+f1-score         0.886      0.937               0.91       0.912         0.919
+sample size  44644.000  79694.000               0.91  124338.000    124338.000
+
+Ranger optimizer loaded. 
+Gradient Centralization usage = True
+GC applied to both conv and fc layers
+Train Epoch: 1 [1024/408056 (0.3%)]	Loss: 0.351290
+Train Epoch: 1 [52224/408056 (12.8%)]	Loss: 0.148931
+Train Epoch: 1 [103424/408056 (25.3%)]	Loss: 0.131351
+Train Epoch: 1 [154624/408056 (37.9%)]	Loss: 0.107556
+Train Epoch: 1 [205824/408056 (50.4%)]	Loss: 0.125537
+Train Epoch: 1 [257024/408056 (63.0%)]	Loss: 0.106507
+Train Epoch: 1 [308224/408056 (75.5%)]	Loss: 0.105369
+Train Epoch: 1 [359424/408056 (88.1%)]	Loss: 0.119761
+Train Epoch: 2 [1024/408056 (0.3%)]	Loss: 0.113791
+Train Epoch: 2 [52224/408056 (12.8%)]	Loss: 0.105215
+Train Epoch: 2 [103424/408056 (25.3%)]	Loss: 0.107505
+Train Epoch: 2 [154624/408056 (37.9%)]	Loss: 0.104261
+Train Epoch: 2 [205824/408056 (50.4%)]	Loss: 0.111085
+Train Epoch: 2 [257024/408056 (63.0%)]	Loss: 0.109484
+Train Epoch: 2 [308224/408056 (75.5%)]	Loss: 0.114844
+Train Epoch: 2 [359424/408056 (88.1%)]	Loss: 0.117737
+
+ACC in fold#1 was 0.919
+
+
+Balanced ACC in fold#1 was 0.915
+
+
+MCC in fold#1 was 0.827
+
+
+Confusion Matrix in fold#1: 
+           nonRipple  Ripple
+nonRipple      40719    4548
+Ripple          5483   73588
+
+
+Classification Report in fold#1: 
+             nonRipple     Ripple  balanced accuracy   macro avg  weighted avg
+precision        0.881      0.942              0.915       0.912         0.920
+recall           0.900      0.931              0.915       0.915         0.919
+f1-score         0.890      0.936              0.915       0.913         0.919
+sample size  45267.000  79071.000              0.915  124338.000    124338.000
+
+Ranger optimizer loaded. 
+Gradient Centralization usage = True
+GC applied to both conv and fc layers
+Train Epoch: 1 [1024/404978 (0.3%)]	Loss: 0.374873
+Train Epoch: 1 [52224/404978 (12.9%)]	Loss: 0.157673
+Train Epoch: 1 [103424/404978 (25.5%)]	Loss: 0.142590
+Train Epoch: 1 [154624/404978 (38.2%)]	Loss: 0.110138
+Train Epoch: 1 [205824/404978 (50.8%)]	Loss: 0.107898
+Train Epoch: 1 [257024/404978 (63.5%)]	Loss: 0.099800
+Train Epoch: 1 [308224/404978 (76.1%)]	Loss: 0.100429
+Train Epoch: 1 [359424/404978 (88.8%)]	Loss: 0.103960
+Train Epoch: 2 [1024/404978 (0.3%)]	Loss: 0.096386
+Train Epoch: 2 [52224/404978 (12.9%)]	Loss: 0.117165
+Train Epoch: 2 [103424/404978 (25.5%)]	Loss: 0.118476
+Train Epoch: 2 [154624/404978 (38.2%)]	Loss: 0.111903
+Train Epoch: 2 [205824/404978 (50.8%)]	Loss: 0.112828
+Train Epoch: 2 [257024/404978 (63.5%)]	Loss: 0.095116
+Train Epoch: 2 [308224/404978 (76.1%)]	Loss: 0.110586
+Train Epoch: 2 [359424/404978 (88.8%)]	Loss: 0.099174
+
+ACC in fold#2 was 0.903
+
+
+Balanced ACC in fold#2 was 0.909
+
+
+MCC in fold#2 was 0.802
+
+
+Confusion Matrix in fold#2: 
+           nonRipple  Ripple
+nonRipple      43635    3171
+Ripple          8907   68625
+
+
+Classification Report in fold#2: 
+             nonRipple     Ripple  balanced accuracy   macro avg  weighted avg
+precision        0.830      0.956              0.909       0.893         0.909
+recall           0.932      0.885              0.909       0.909         0.903
+f1-score         0.878      0.919              0.909       0.899         0.904
+sample size  46806.000  77532.000              0.909  124338.000    124338.000
+
+Ranger optimizer loaded. 
+Gradient Centralization usage = True
+GC applied to both conv and fc layers
+Train Epoch: 1 [1024/386766 (0.3%)]	Loss: 0.348842
+Train Epoch: 1 [52224/386766 (13.5%)]	Loss: 0.151951
+Train Epoch: 1 [103424/386766 (26.7%)]	Loss: 0.115808
+Train Epoch: 1 [154624/386766 (40.0%)]	Loss: 0.105947
+Train Epoch: 1 [205824/386766 (53.2%)]	Loss: 0.100244
+Train Epoch: 1 [257024/386766 (66.5%)]	Loss: 0.099735
+Train Epoch: 1 [308224/386766 (79.7%)]	Loss: 0.101607
+Train Epoch: 1 [359424/386766 (92.9%)]	Loss: 0.101595
+Train Epoch: 2 [1024/386766 (0.3%)]	Loss: 0.104178
+Train Epoch: 2 [52224/386766 (13.5%)]	Loss: 0.090570
+Train Epoch: 2 [103424/386766 (26.7%)]	Loss: 0.087508
+Train Epoch: 2 [154624/386766 (40.0%)]	Loss: 0.101952
+Train Epoch: 2 [205824/386766 (53.2%)]	Loss: 0.103672
+Train Epoch: 2 [257024/386766 (66.5%)]	Loss: 0.101470
+Train Epoch: 2 [308224/386766 (79.7%)]	Loss: 0.097584
+Train Epoch: 2 [359424/386766 (92.9%)]	Loss: 0.102727
+
+ACC in fold#3 was 0.880
+
+
+Balanced ACC in fold#3 was 0.886
+
+
+MCC in fold#3 was 0.768
+
+
+Confusion Matrix in fold#3: 
+           nonRipple  Ripple
+nonRipple      52685    3227
+Ripple         11714   56712
+
+
+Classification Report in fold#3: 
+             nonRipple     Ripple  balanced accuracy   macro avg  weighted avg
+precision        0.818      0.946              0.886       0.882         0.889
+recall           0.942      0.829              0.886       0.886         0.880
+f1-score         0.876      0.884              0.886       0.880         0.880
+sample size  55912.000  68426.000              0.886  124338.000    124338.000
+
+Ranger optimizer loaded. 
+Gradient Centralization usage = True
+GC applied to both conv and fc layers
+Train Epoch: 1 [1024/385258 (0.3%)]	Loss: 0.345159
+Train Epoch: 1 [52224/385258 (13.6%)]	Loss: 0.156217
+Train Epoch: 1 [103424/385258 (26.8%)]	Loss: 0.117384
+Train Epoch: 1 [154624/385258 (40.1%)]	Loss: 0.107297
+Train Epoch: 1 [205824/385258 (53.4%)]	Loss: 0.108263
+Train Epoch: 1 [257024/385258 (66.7%)]	Loss: 0.115233
+Train Epoch: 1 [308224/385258 (80.0%)]	Loss: 0.099850
+Train Epoch: 1 [359424/385258 (93.3%)]	Loss: 0.118672
+Train Epoch: 2 [1024/385258 (0.3%)]	Loss: 0.122106
+Train Epoch: 2 [52224/385258 (13.6%)]	Loss: 0.086816
+Train Epoch: 2 [103424/385258 (26.8%)]	Loss: 0.116573
+Train Epoch: 2 [154624/385258 (40.1%)]	Loss: 0.111969
+Train Epoch: 2 [205824/385258 (53.4%)]	Loss: 0.110273
+Train Epoch: 2 [257024/385258 (66.7%)]	Loss: 0.115552
+Train Epoch: 2 [308224/385258 (80.0%)]	Loss: 0.103161
+Train Epoch: 2 [359424/385258 (93.3%)]	Loss: 0.105613
+
+ACC in fold#4 was 0.884
+
+
+Balanced ACC in fold#4 was 0.888
+
+
+MCC in fold#4 was 0.773
+
+
+Confusion Matrix in fold#4: 
+           nonRipple  Ripple
+nonRipple      53050    3616
+Ripple         10837   56834
+
+
+Classification Report in fold#4: 
+             nonRipple     Ripple  balanced accuracy   macro avg  weighted avg
+precision        0.830      0.940              0.888       0.885         0.890
+recall           0.936      0.840              0.888       0.888         0.884
+f1-score         0.880      0.887              0.888       0.884         0.884
+sample size  56666.000  67671.000              0.888  124337.000    124337.000
+
+
+Label Errors Rate:
+0.019
+
+
+ --- 5-fold CV overall metrics --- 
+
+
+The Mattews correlation coefficient: 0.799 +/- 0.025 (mean +/- std.; n=5)
+
+
+Balanced Accuracy Score: 0.902 +/- 0.012 (mean +/- std.; n=5)
+
+
+Confusion Matrix (Test; sum; num. folds=5)
+           nonRipple  Ripple
+nonRipple     229332   19963
+Ripple         41601  330793
+
+
+Classification Report (Test; mean; num. folds=5)
+             nonRipple     Ripple  balanced accuracy   macro avg  weighted avg
+precision        0.851      0.943              0.902       0.897         0.905
+recall           0.918      0.885              0.902       0.902         0.901
+f1-score         0.882      0.913              0.902       0.898         0.901
+sample size  49859.000  74478.800              0.902  124337.800    124337.800
+
+
+Classification Report (Test; std; num. folds=5)
+             nonRipple    Ripple  balanced accuracy  macro avg  weighted avg
+precision        0.031     0.008              0.012      0.013         0.014
+recall           0.024     0.046              0.012      0.012         0.017
+f1-score         0.005     0.023              0.012      0.014         0.017
+sample size   5302.406  5302.663              0.012      0.400         0.400
+
+
+ROC AUC micro Score: 0.972 +/- 0.006 (mean +/- std.; n=5)
+
+
+ROC AUC macro Score: 0.972 +/- 0.004 (mean +/- std.; n=5)
+
+
+Precision-Recall AUC micro Score: 0.972 +/- 0.006 (mean +/- std.; n=5)
+
+
+Precision-Recall AUC macro Score: 0.971 +/- 0.003 (mean +/- std.; n=5)
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/are_errors.npy
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/are_ripple_GMM.npy
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/psx_ripple.npy
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/mccs.csv
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/balanced_accs.csv
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/conf_mat/fold#0.png
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/conf_mat/fold#1.png
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/conf_mat/fold#2.png
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/conf_mat/fold#3.png
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/conf_mat/fold#4.png
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/conf_mat/conf_mats.csv
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/conf_mat/overall_sum.png
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/clf_reports.csv
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/aucs.csv
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/roc_curves/fold#0.png
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/roc_curves/fold#1.png
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/roc_curves/fold#2.png
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/roc_curves/fold#3.png
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/roc_curves/fold#4.png
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/pr_curves/fold#0.png
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/pr_curves/fold#1.png
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/pr_curves/fold#2.png
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/pr_curves/fold#3.png
+
+
+Saved to: ./data/okada/cleanlab_results/D01+/pr_curves/fold#4.png
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/CNN_labeled/D01+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/CNN_labeled/D01+/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/CNN_labeled/D01+/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/CNN_labeled/D01+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/CNN_labeled/D01+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/CNN_labeled/D01+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/CNN_labeled/D01+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/CNN_labeled/D01+/tt6-4_fp16.pkl
+

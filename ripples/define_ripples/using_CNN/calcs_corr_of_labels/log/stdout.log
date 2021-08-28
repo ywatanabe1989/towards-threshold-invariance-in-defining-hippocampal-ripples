@@ -1,0 +1,125 @@
+
+Matplotilb has been configured as follows:
+{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(20.0, 7.0) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
+
+
+----------------------------------------
+Target Mouse: 01
+Dataset Keys: ['D01+', 'D02-', 'D03-', 'D04-', 'D05-']
+
+
+Labels Concordance Rates:
+      D01+  D02-  D03-  D04-  D05-
+D05-   0.0  0.00  0.00  0.00  1.00
+D04-   0.0  0.00  0.00  1.00  0.94
+D03-   0.0  0.00  1.00  0.95  0.97
+D02-   0.0  1.00  0.98  0.94  0.97
+D01+   1.0  0.97  0.97  0.95  0.97
+
+
+Correlation Coefficients of Predicted Probabilities for Ripples by CNN:
+      D01+  D02-  D03-  D04-  D05-
+D05-   0.0  0.00  0.00  0.00  1.00
+D04-   0.0  0.00  0.00  1.00  0.94
+D03-   0.0  0.00  1.00  0.96  0.97
+D02-   0.0  1.00  0.98  0.95  0.98
+D01+   1.0  0.95  0.96  0.96  0.95
+
+
+----------------------------------------
+Target Mouse: 02
+Dataset Keys: ['D01-', 'D02+', 'D03-', 'D04-', 'D05-']
+
+
+Labels Concordance Rates:
+      D01-  D02+  D03-  D04-  D05-
+D05-   0.0  0.00  0.00  0.00  1.00
+D04-   0.0  0.00  0.00  1.00  0.96
+D03-   0.0  0.00  1.00  0.96  0.97
+D02+   0.0  1.00  0.96  0.97  0.96
+D01-   1.0  0.96  0.97  0.97  0.96
+
+
+Correlation Coefficients of Predicted Probabilities for Ripples by CNN:
+      D01-  D02+  D03-  D04-  D05-
+D05-   0.0  0.00  0.00  0.00  1.00
+D04-   0.0  0.00  0.00  1.00  0.95
+D03-   0.0  0.00  1.00  0.96  0.97
+D02+   0.0  1.00  0.94  0.97  0.93
+D01-   1.0  0.95  0.96  0.97  0.96
+
+
+----------------------------------------
+Target Mouse: 03
+Dataset Keys: ['D01-', 'D02-', 'D03+', 'D04-', 'D05-']
+
+
+Labels Concordance Rates:
+      D01-  D02-  D03+  D04-  D05-
+D05-   0.0  0.00  0.00  0.00  1.00
+D04-   0.0  0.00  0.00  1.00  0.96
+D03+   0.0  0.00  1.00  0.98  0.96
+D02-   0.0  1.00  0.96  0.97  0.98
+D01-   1.0  0.97  0.97  0.98  0.97
+
+
+Correlation Coefficients of Predicted Probabilities for Ripples by CNN:
+      D01-  D02-  D03+  D04-  D05-
+D05-   0.0  0.00  0.00  0.00  1.00
+D04-   0.0  0.00  0.00  1.00  0.95
+D03+   0.0  0.00  1.00  0.97  0.92
+D02-   0.0  1.00  0.94  0.96  0.97
+D01-   1.0  0.96  0.95  0.97  0.96
+
+
+----------------------------------------
+Target Mouse: 04
+Dataset Keys: ['D01-', 'D02-', 'D03-', 'D04+', 'D05-']
+
+
+Labels Concordance Rates:
+      D01-  D02-  D03-  D04+  D05-
+D05-   0.0   0.0  0.00  0.00  1.00
+D04+   0.0   0.0  0.00  1.00  0.92
+D03-   0.0   0.0  1.00  0.92  0.95
+D02-   0.0   1.0  0.93  0.89  0.94
+D01-   1.0   0.9  0.90  0.85  0.90
+
+
+Correlation Coefficients of Predicted Probabilities for Ripples by CNN:
+      D01-  D02-  D03-  D04+  D05-
+D05-   0.0  0.00  0.00  0.00  1.00
+D04+   0.0  0.00  0.00  1.00  0.75
+D03-   0.0  0.00  1.00  0.76  0.96
+D02-   0.0  1.00  0.97  0.73  0.97
+D01-   1.0  0.94  0.95  0.66  0.95
+
+
+----------------------------------------
+Target Mouse: 05
+Dataset Keys: ['D01-', 'D02-', 'D03-', 'D04-', 'D05+']
+
+
+Labels Concordance Rates:
+      D01-  D02-  D03-  D04-  D05+
+D05+   0.0  0.00  0.00  0.00  1.00
+D04-   0.0  0.00  0.00  1.00  0.96
+D03-   0.0  0.00  1.00  0.95  0.92
+D02-   0.0  1.00  0.97  0.95  0.92
+D01-   1.0  0.96  0.97  0.96  0.93
+
+
+Correlation Coefficients of Predicted Probabilities for Ripples by CNN:
+      D01-  D02-  D03-  D04-  D05+
+D05+   0.0  0.00  0.00  0.00  1.00
+D04-   0.0  0.00  0.00  1.00  0.96
+D03-   0.0  0.00  1.00  0.95  0.91
+D02-   0.0  1.00  0.97  0.95  0.92
+D01-   1.0  0.95  0.95  0.95  0.94
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/label_concordance_rates.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/corr_coef_pred_proba.png
+

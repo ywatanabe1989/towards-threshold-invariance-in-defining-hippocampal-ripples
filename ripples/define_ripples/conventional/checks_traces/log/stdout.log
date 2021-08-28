@@ -1,0 +1,16 @@
+
+Detecting ripples from ./data/okada/01/day1/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy (Length: 0.6h)
+
+
+Ripple Band 150-250 Hz
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Saved to: ./ripples/define_ripples/conventional/checks_traces/traces_1175.8-1178.0_sec.tiff
+
+
+Saved to: ./ripples/define_ripples/conventional/checks_traces/traces_1175.8-1178.0_sec.csv
+

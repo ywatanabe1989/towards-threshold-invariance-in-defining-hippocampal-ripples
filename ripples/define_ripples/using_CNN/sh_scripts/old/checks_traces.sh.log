@@ -1,0 +1,1035 @@
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stdout.log
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stderr.log
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_3_sec/fig/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_15795_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_3_sec/csv/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_15795_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_3_sec/fig/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_860_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_3_sec/csv/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_860_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_3_sec/fig/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_76820_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_3_sec/csv/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_76820_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_3_sec/fig/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-1_fp16.npy_start_54886_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_3_sec/csv/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-1_fp16.npy_start_54886_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_3_sec/fig/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-1_fp16.npy_start_6265_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_3_sec/csv/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-1_fp16.npy_start_6265_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_3_sec/fig/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-1_fp16.npy_start_82386_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_3_sec/csv/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-1_fp16.npy_start_82386_sec.csv
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stdout.log
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stderr.log
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_5_sec/fig/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_15795_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_5_sec/csv/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_15795_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_5_sec/fig/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_860_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_5_sec/csv/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_860_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_5_sec/fig/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_76820_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_5_sec/csv/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_76820_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_5_sec/fig/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-1_fp16.npy_start_54886_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_5_sec/csv/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-1_fp16.npy_start_54886_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_5_sec/fig/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-1_fp16.npy_start_6265_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_5_sec/csv/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-1_fp16.npy_start_6265_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_5_sec/fig/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-1_fp16.npy_start_82386_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_5_sec/csv/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-1_fp16.npy_start_82386_sec.csv
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stdout.log
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stderr.log
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_10_sec/fig/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_15795_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_10_sec/csv/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_15795_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_10_sec/fig/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_860_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_10_sec/csv/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_860_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_10_sec/fig/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_76820_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_10_sec/csv/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_76820_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_10_sec/fig/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-1_fp16.npy_start_54886_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_10_sec/csv/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-1_fp16.npy_start_54886_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_10_sec/fig/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-1_fp16.npy_start_6265_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_10_sec/csv/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-1_fp16.npy_start_6265_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_10_sec/fig/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-1_fp16.npy_start_82386_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#01/duration_10_sec/csv/|data|okada|01|day1|split|LFP_MEP_1kHz_npy|orig|tt2-1_fp16.npy_start_82386_sec.csv
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stdout.log
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stderr.log
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_3_sec/fig/|data|okada|02|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_15795_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_3_sec/csv/|data|okada|02|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_15795_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_3_sec/fig/|data|okada|02|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_860_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_3_sec/csv/|data|okada|02|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_860_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_3_sec/fig/|data|okada|02|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_76820_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_3_sec/csv/|data|okada|02|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_76820_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_3_sec/fig/|data|okada|02|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_54886_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_3_sec/csv/|data|okada|02|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_54886_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_3_sec/fig/|data|okada|02|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_6265_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_3_sec/csv/|data|okada|02|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_6265_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_3_sec/fig/|data|okada|02|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_82386_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_3_sec/csv/|data|okada|02|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_82386_sec.csv
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stdout.log
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stderr.log
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_5_sec/fig/|data|okada|02|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_15795_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_5_sec/csv/|data|okada|02|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_15795_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_5_sec/fig/|data|okada|02|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_860_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_5_sec/csv/|data|okada|02|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_860_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_5_sec/fig/|data|okada|02|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_76820_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_5_sec/csv/|data|okada|02|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_76820_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_5_sec/fig/|data|okada|02|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_54886_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_5_sec/csv/|data|okada|02|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_54886_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_5_sec/fig/|data|okada|02|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_6265_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_5_sec/csv/|data|okada|02|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_6265_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_5_sec/fig/|data|okada|02|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_82386_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_5_sec/csv/|data|okada|02|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_82386_sec.csv
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stdout.log
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stderr.log
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_10_sec/fig/|data|okada|02|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_15795_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_10_sec/csv/|data|okada|02|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_15795_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_10_sec/fig/|data|okada|02|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_860_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_10_sec/csv/|data|okada|02|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_860_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_10_sec/fig/|data|okada|02|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_76820_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_10_sec/csv/|data|okada|02|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_76820_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_10_sec/fig/|data|okada|02|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_54886_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_10_sec/csv/|data|okada|02|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_54886_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_10_sec/fig/|data|okada|02|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_6265_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_10_sec/csv/|data|okada|02|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_6265_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_10_sec/fig/|data|okada|02|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_82386_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#02/duration_10_sec/csv/|data|okada|02|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_82386_sec.csv
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stdout.log
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stderr.log
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_3_sec/fig/|data|okada|03|day4|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_15795_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_3_sec/csv/|data|okada|03|day4|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_15795_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_3_sec/fig/|data|okada|03|day4|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_860_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_3_sec/csv/|data|okada|03|day4|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_860_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_3_sec/fig/|data|okada|03|day4|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_76820_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_3_sec/csv/|data|okada|03|day4|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_76820_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_3_sec/fig/|data|okada|03|day1|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_54886_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_3_sec/csv/|data|okada|03|day1|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_54886_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_3_sec/fig/|data|okada|03|day1|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_6265_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_3_sec/csv/|data|okada|03|day1|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_6265_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_3_sec/fig/|data|okada|03|day1|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_82386_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_3_sec/csv/|data|okada|03|day1|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_82386_sec.csv
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stdout.log
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stderr.log
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_5_sec/fig/|data|okada|03|day4|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_15795_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_5_sec/csv/|data|okada|03|day4|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_15795_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_5_sec/fig/|data|okada|03|day4|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_860_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_5_sec/csv/|data|okada|03|day4|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_860_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_5_sec/fig/|data|okada|03|day4|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_76820_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_5_sec/csv/|data|okada|03|day4|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_76820_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_5_sec/fig/|data|okada|03|day1|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_54886_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_5_sec/csv/|data|okada|03|day1|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_54886_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_5_sec/fig/|data|okada|03|day1|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_6265_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_5_sec/csv/|data|okada|03|day1|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_6265_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_5_sec/fig/|data|okada|03|day1|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_82386_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_5_sec/csv/|data|okada|03|day1|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_82386_sec.csv
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stdout.log
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stderr.log
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_10_sec/fig/|data|okada|03|day4|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_15795_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_10_sec/csv/|data|okada|03|day4|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_15795_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_10_sec/fig/|data|okada|03|day4|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_860_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_10_sec/csv/|data|okada|03|day4|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_860_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_10_sec/fig/|data|okada|03|day4|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_76820_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_10_sec/csv/|data|okada|03|day4|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_76820_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_10_sec/fig/|data|okada|03|day1|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_54886_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_10_sec/csv/|data|okada|03|day1|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_54886_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_10_sec/fig/|data|okada|03|day1|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_6265_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_10_sec/csv/|data|okada|03|day1|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_6265_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_10_sec/fig/|data|okada|03|day1|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_82386_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#03/duration_10_sec/csv/|data|okada|03|day1|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_82386_sec.csv
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stdout.log
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stderr.log
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_3_sec/fig/|data|okada|04|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_15795_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_3_sec/csv/|data|okada|04|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_15795_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_3_sec/fig/|data|okada|04|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_860_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_3_sec/csv/|data|okada|04|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_860_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_3_sec/fig/|data|okada|04|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_76820_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_3_sec/csv/|data|okada|04|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_76820_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_3_sec/fig/|data|okada|04|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_54886_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_3_sec/csv/|data|okada|04|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_54886_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_3_sec/fig/|data|okada|04|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_6265_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_3_sec/csv/|data|okada|04|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_6265_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_3_sec/fig/|data|okada|04|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_82386_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_3_sec/csv/|data|okada|04|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_82386_sec.csv
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stdout.log
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stderr.log
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_5_sec/fig/|data|okada|04|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_15795_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_5_sec/csv/|data|okada|04|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_15795_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_5_sec/fig/|data|okada|04|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_860_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_5_sec/csv/|data|okada|04|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_860_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_5_sec/fig/|data|okada|04|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_76820_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_5_sec/csv/|data|okada|04|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_76820_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_5_sec/fig/|data|okada|04|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_54886_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_5_sec/csv/|data|okada|04|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_54886_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_5_sec/fig/|data|okada|04|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_6265_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_5_sec/csv/|data|okada|04|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_6265_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_5_sec/fig/|data|okada|04|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_82386_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_5_sec/csv/|data|okada|04|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_82386_sec.csv
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stdout.log
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stderr.log
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_10_sec/fig/|data|okada|04|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_15795_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_10_sec/csv/|data|okada|04|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_15795_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_10_sec/fig/|data|okada|04|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_860_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_10_sec/csv/|data|okada|04|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_860_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_10_sec/fig/|data|okada|04|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_76820_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_10_sec/csv/|data|okada|04|day3|split|LFP_MEP_1kHz_npy|orig|tt7-1_fp16.npy_start_76820_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_10_sec/fig/|data|okada|04|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_54886_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_10_sec/csv/|data|okada|04|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_54886_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_10_sec/fig/|data|okada|04|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_6265_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_10_sec/csv/|data|okada|04|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_6265_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_10_sec/fig/|data|okada|04|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_82386_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#04/duration_10_sec/csv/|data|okada|04|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_82386_sec.csv
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stdout.log
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stderr.log
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_3_sec/fig/|data|okada|05|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_15795_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_3_sec/csv/|data|okada|05|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_15795_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_3_sec/fig/|data|okada|05|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_860_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_3_sec/csv/|data|okada|05|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_860_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_3_sec/fig/|data|okada|05|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_76820_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_3_sec/csv/|data|okada|05|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_76820_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_3_sec/fig/|data|okada|05|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_54886_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_3_sec/csv/|data|okada|05|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_54886_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_3_sec/fig/|data|okada|05|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_6265_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_3_sec/csv/|data|okada|05|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_6265_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_3_sec/fig/|data|okada|05|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_82386_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_3_sec/csv/|data|okada|05|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_82386_sec.csv
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stdout.log
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stderr.log
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_5_sec/fig/|data|okada|05|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_15795_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_5_sec/csv/|data|okada|05|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_15795_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_5_sec/fig/|data|okada|05|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_860_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_5_sec/csv/|data|okada|05|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_860_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_5_sec/fig/|data|okada|05|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_76820_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_5_sec/csv/|data|okada|05|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_76820_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_5_sec/fig/|data|okada|05|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_54886_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_5_sec/csv/|data|okada|05|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_54886_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_5_sec/fig/|data|okada|05|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_6265_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_5_sec/csv/|data|okada|05|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_6265_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_5_sec/fig/|data|okada|05|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_82386_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_5_sec/csv/|data|okada|05|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_82386_sec.csv
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stdout.log
+  - ./ripples/define_ripples/using_CNN/checks_traces/log/stderr.log
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_10_sec/fig/|data|okada|05|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_15795_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_10_sec/csv/|data|okada|05|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_15795_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_10_sec/fig/|data|okada|05|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_860_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_10_sec/csv/|data|okada|05|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_860_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_10_sec/fig/|data|okada|05|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_76820_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_10_sec/csv/|data|okada|05|day2|split|LFP_MEP_1kHz_npy|orig|tt2-4_fp16.npy_start_76820_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_10_sec/fig/|data|okada|05|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_54886_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_10_sec/csv/|data|okada|05|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_54886_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_10_sec/fig/|data|okada|05|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_6265_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_10_sec/csv/|data|okada|05|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_6265_sec.csv
+
+
+Ripple Band 150-250 Hz
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_10_sec/fig/|data|okada|05|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_82386_sec.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/checks_traces/mouse#05/duration_10_sec/csv/|data|okada|05|day1|split|LFP_MEP_1kHz_npy|orig|tt2-2_fp16.npy_start_82386_sec.csv
+

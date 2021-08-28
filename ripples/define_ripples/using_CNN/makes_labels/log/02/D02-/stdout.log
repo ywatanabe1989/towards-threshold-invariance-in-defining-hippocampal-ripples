@@ -1,0 +1,1130 @@
+
+Random seeds have been fixed as 42
+
+
+dataset_key: D02-
+
+['./data/okada/01/day1/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy',
+ './data/okada/01/day1/split/LFP_MEP_1kHz_npy/orig/tt2-2_fp16.npy',
+ './data/okada/01/day1/split/LFP_MEP_1kHz_npy/orig/tt2-3_fp16.npy',
+ './data/okada/01/day1/split/LFP_MEP_1kHz_npy/orig/tt2-4_fp16.npy',
+ './data/okada/01/day1/split/LFP_MEP_1kHz_npy/orig/tt6-1_fp16.npy',
+ './data/okada/01/day1/split/LFP_MEP_1kHz_npy/orig/tt6-2_fp16.npy',
+ './data/okada/01/day1/split/LFP_MEP_1kHz_npy/orig/tt6-3_fp16.npy',
+ './data/okada/01/day1/split/LFP_MEP_1kHz_npy/orig/tt6-4_fp16.npy',
+ './data/okada/03/day1/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy',
+ './data/okada/03/day1/split/LFP_MEP_1kHz_npy/orig/tt2-4_fp16.npy',
+ './data/okada/03/day2/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy',
+ './data/okada/03/day2/split/LFP_MEP_1kHz_npy/orig/tt2-4_fp16.npy',
+ './data/okada/03/day3/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy',
+ './data/okada/03/day3/split/LFP_MEP_1kHz_npy/orig/tt2-4_fp16.npy',
+ './data/okada/03/day4/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy',
+ './data/okada/03/day4/split/LFP_MEP_1kHz_npy/orig/tt2-4_fp16.npy',
+ './data/okada/03/day1/split/LFP_MEP_1kHz_npy/orig/tt6-1_fp16.npy',
+ './data/okada/03/day1/split/LFP_MEP_1kHz_npy/orig/tt6-2_fp16.npy',
+ './data/okada/03/day1/split/LFP_MEP_1kHz_npy/orig/tt6-3_fp16.npy',
+ './data/okada/03/day1/split/LFP_MEP_1kHz_npy/orig/tt6-4_fp16.npy',
+ './data/okada/03/day2/split/LFP_MEP_1kHz_npy/orig/tt6-1_fp16.npy',
+ './data/okada/03/day2/split/LFP_MEP_1kHz_npy/orig/tt6-2_fp16.npy',
+ './data/okada/03/day2/split/LFP_MEP_1kHz_npy/orig/tt6-3_fp16.npy',
+ './data/okada/03/day2/split/LFP_MEP_1kHz_npy/orig/tt6-4_fp16.npy',
+ './data/okada/03/day3/split/LFP_MEP_1kHz_npy/orig/tt6-1_fp16.npy',
+ './data/okada/03/day3/split/LFP_MEP_1kHz_npy/orig/tt6-2_fp16.npy',
+ './data/okada/03/day3/split/LFP_MEP_1kHz_npy/orig/tt6-3_fp16.npy',
+ './data/okada/03/day3/split/LFP_MEP_1kHz_npy/orig/tt6-4_fp16.npy',
+ './data/okada/03/day4/split/LFP_MEP_1kHz_npy/orig/tt6-1_fp16.npy',
+ './data/okada/03/day4/split/LFP_MEP_1kHz_npy/orig/tt6-2_fp16.npy',
+ './data/okada/03/day4/split/LFP_MEP_1kHz_npy/orig/tt6-3_fp16.npy',
+ './data/okada/03/day4/split/LFP_MEP_1kHz_npy/orig/tt6-4_fp16.npy',
+ './data/okada/03/day1/split/LFP_MEP_1kHz_npy/orig/tt7-1_fp16.npy',
+ './data/okada/03/day1/split/LFP_MEP_1kHz_npy/orig/tt7-2_fp16.npy',
+ './data/okada/03/day1/split/LFP_MEP_1kHz_npy/orig/tt7-3_fp16.npy',
+ './data/okada/03/day1/split/LFP_MEP_1kHz_npy/orig/tt7-4_fp16.npy',
+ './data/okada/03/day2/split/LFP_MEP_1kHz_npy/orig/tt7-1_fp16.npy',
+ './data/okada/03/day2/split/LFP_MEP_1kHz_npy/orig/tt7-2_fp16.npy',
+ './data/okada/03/day2/split/LFP_MEP_1kHz_npy/orig/tt7-3_fp16.npy',
+ './data/okada/03/day2/split/LFP_MEP_1kHz_npy/orig/tt7-4_fp16.npy',
+ './data/okada/03/day3/split/LFP_MEP_1kHz_npy/orig/tt7-1_fp16.npy',
+ './data/okada/03/day3/split/LFP_MEP_1kHz_npy/orig/tt7-2_fp16.npy',
+ './data/okada/03/day3/split/LFP_MEP_1kHz_npy/orig/tt7-3_fp16.npy',
+ './data/okada/03/day3/split/LFP_MEP_1kHz_npy/orig/tt7-4_fp16.npy',
+ './data/okada/03/day4/split/LFP_MEP_1kHz_npy/orig/tt7-1_fp16.npy',
+ './data/okada/03/day4/split/LFP_MEP_1kHz_npy/orig/tt7-2_fp16.npy',
+ './data/okada/03/day4/split/LFP_MEP_1kHz_npy/orig/tt7-3_fp16.npy',
+ './data/okada/03/day4/split/LFP_MEP_1kHz_npy/orig/tt7-4_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt2-2_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt2-3_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt2-4_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt2-2_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt2-3_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt2-4_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt2-2_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt2-3_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt2-4_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt2-2_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt2-3_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt2-4_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt6-1_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt6-2_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt6-3_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt6-4_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt6-1_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt6-2_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt6-3_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt6-4_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt6-1_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt6-2_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt6-3_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt6-4_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt6-1_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt6-2_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt6-3_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt6-4_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt7-1_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt7-2_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt7-3_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt7-4_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt7-1_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt7-2_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt7-3_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt7-4_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt7-1_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt7-2_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt7-3_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt7-4_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt7-1_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt7-2_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt7-3_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt7-4_fp16.npy',
+ './data/okada/05/day1/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy',
+ './data/okada/05/day1/split/LFP_MEP_1kHz_npy/orig/tt2-2_fp16.npy',
+ './data/okada/05/day1/split/LFP_MEP_1kHz_npy/orig/tt2-3_fp16.npy',
+ './data/okada/05/day1/split/LFP_MEP_1kHz_npy/orig/tt2-4_fp16.npy',
+ './data/okada/05/day2/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy',
+ './data/okada/05/day2/split/LFP_MEP_1kHz_npy/orig/tt2-2_fp16.npy',
+ './data/okada/05/day2/split/LFP_MEP_1kHz_npy/orig/tt2-3_fp16.npy',
+ './data/okada/05/day2/split/LFP_MEP_1kHz_npy/orig/tt2-4_fp16.npy',
+ './data/okada/05/day3/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy',
+ './data/okada/05/day3/split/LFP_MEP_1kHz_npy/orig/tt2-2_fp16.npy',
+ './data/okada/05/day3/split/LFP_MEP_1kHz_npy/orig/tt2-3_fp16.npy',
+ './data/okada/05/day3/split/LFP_MEP_1kHz_npy/orig/tt2-4_fp16.npy',
+ './data/okada/05/day4/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy',
+ './data/okada/05/day4/split/LFP_MEP_1kHz_npy/orig/tt2-2_fp16.npy',
+ './data/okada/05/day4/split/LFP_MEP_1kHz_npy/orig/tt2-3_fp16.npy',
+ './data/okada/05/day4/split/LFP_MEP_1kHz_npy/orig/tt2-4_fp16.npy',
+ './data/okada/05/day5/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy',
+ './data/okada/05/day5/split/LFP_MEP_1kHz_npy/orig/tt2-2_fp16.npy',
+ './data/okada/05/day5/split/LFP_MEP_1kHz_npy/orig/tt2-3_fp16.npy',
+ './data/okada/05/day5/split/LFP_MEP_1kHz_npy/orig/tt2-4_fp16.npy',
+ './data/okada/05/day1/split/LFP_MEP_1kHz_npy/orig/tt6-1_fp16.npy',
+ './data/okada/05/day1/split/LFP_MEP_1kHz_npy/orig/tt6-2_fp16.npy',
+ './data/okada/05/day1/split/LFP_MEP_1kHz_npy/orig/tt6-3_fp16.npy',
+ './data/okada/05/day1/split/LFP_MEP_1kHz_npy/orig/tt6-4_fp16.npy',
+ './data/okada/05/day2/split/LFP_MEP_1kHz_npy/orig/tt6-1_fp16.npy',
+ './data/okada/05/day2/split/LFP_MEP_1kHz_npy/orig/tt6-2_fp16.npy',
+ './data/okada/05/day2/split/LFP_MEP_1kHz_npy/orig/tt6-3_fp16.npy',
+ './data/okada/05/day2/split/LFP_MEP_1kHz_npy/orig/tt6-4_fp16.npy',
+ './data/okada/05/day3/split/LFP_MEP_1kHz_npy/orig/tt6-1_fp16.npy',
+ './data/okada/05/day3/split/LFP_MEP_1kHz_npy/orig/tt6-2_fp16.npy',
+ './data/okada/05/day3/split/LFP_MEP_1kHz_npy/orig/tt6-3_fp16.npy',
+ './data/okada/05/day3/split/LFP_MEP_1kHz_npy/orig/tt6-4_fp16.npy',
+ './data/okada/05/day4/split/LFP_MEP_1kHz_npy/orig/tt6-1_fp16.npy',
+ './data/okada/05/day4/split/LFP_MEP_1kHz_npy/orig/tt6-2_fp16.npy',
+ './data/okada/05/day4/split/LFP_MEP_1kHz_npy/orig/tt6-3_fp16.npy',
+ './data/okada/05/day4/split/LFP_MEP_1kHz_npy/orig/tt6-4_fp16.npy',
+ './data/okada/05/day5/split/LFP_MEP_1kHz_npy/orig/tt6-1_fp16.npy',
+ './data/okada/05/day5/split/LFP_MEP_1kHz_npy/orig/tt6-2_fp16.npy',
+ './data/okada/05/day5/split/LFP_MEP_1kHz_npy/orig/tt6-3_fp16.npy',
+ './data/okada/05/day5/split/LFP_MEP_1kHz_npy/orig/tt6-4_fp16.npy']
+
+2021-0809-2226
+
+Ranger optimizer loaded. 
+Gradient Centralization usage = True
+GC applied to both conv and fc layers
+Train Epoch: 1 [1024/1637208 (0.1%)]	Loss: 0.352692
+Train Epoch: 1 [52224/1637208 (3.2%)]	Loss: 0.197346
+Train Epoch: 1 [103424/1637208 (6.3%)]	Loss: 0.180113
+Train Epoch: 1 [154624/1637208 (9.4%)]	Loss: 0.165555
+Train Epoch: 1 [205824/1637208 (12.6%)]	Loss: 0.157091
+Train Epoch: 1 [257024/1637208 (15.7%)]	Loss: 0.165555
+Train Epoch: 1 [308224/1637208 (18.8%)]	Loss: 0.157971
+Train Epoch: 1 [359424/1637208 (22.0%)]	Loss: 0.158026
+Train Epoch: 1 [410624/1637208 (25.1%)]	Loss: 0.155969
+Train Epoch: 1 [461824/1637208 (28.2%)]	Loss: 0.155486
+Train Epoch: 1 [513024/1637208 (31.3%)]	Loss: 0.157616
+Train Epoch: 1 [564224/1637208 (34.5%)]	Loss: 0.139019
+Train Epoch: 1 [615424/1637208 (37.6%)]	Loss: 0.150356
+Train Epoch: 1 [666624/1637208 (40.7%)]	Loss: 0.138639
+Train Epoch: 1 [717824/1637208 (43.8%)]	Loss: 0.155194
+Train Epoch: 1 [769024/1637208 (47.0%)]	Loss: 0.164845
+Train Epoch: 1 [820224/1637208 (50.1%)]	Loss: 0.133058
+Train Epoch: 1 [871424/1637208 (53.2%)]	Loss: 0.143274
+Train Epoch: 1 [922624/1637208 (56.4%)]	Loss: 0.146759
+Train Epoch: 1 [973824/1637208 (59.5%)]	Loss: 0.142835
+Train Epoch: 1 [1025024/1637208 (62.6%)]	Loss: 0.153774
+Train Epoch: 1 [1076224/1637208 (65.7%)]	Loss: 0.155970
+Train Epoch: 1 [1127424/1637208 (68.9%)]	Loss: 0.140037
+Train Epoch: 1 [1178624/1637208 (72.0%)]	Loss: 0.157595
+Train Epoch: 1 [1229824/1637208 (75.1%)]	Loss: 0.143406
+Train Epoch: 1 [1281024/1637208 (78.2%)]	Loss: 0.158633
+Train Epoch: 1 [1332224/1637208 (81.4%)]	Loss: 0.146061
+Train Epoch: 1 [1383424/1637208 (84.5%)]	Loss: 0.141751
+Train Epoch: 1 [1434624/1637208 (87.6%)]	Loss: 0.155766
+Train Epoch: 1 [1485824/1637208 (90.8%)]	Loss: 0.144640
+Train Epoch: 1 [1537024/1637208 (93.9%)]	Loss: 0.159608
+Train Epoch: 1 [1588224/1637208 (97.0%)]	Loss: 0.136503
+Train Epoch: 2 [1024/1637208 (0.1%)]	Loss: 0.138733
+Train Epoch: 2 [52224/1637208 (3.2%)]	Loss: 0.168277
+Train Epoch: 2 [103424/1637208 (6.3%)]	Loss: 0.152887
+Train Epoch: 2 [154624/1637208 (9.4%)]	Loss: 0.149863
+Train Epoch: 2 [205824/1637208 (12.6%)]	Loss: 0.157472
+Train Epoch: 2 [257024/1637208 (15.7%)]	Loss: 0.155778
+Train Epoch: 2 [308224/1637208 (18.8%)]	Loss: 0.143846
+Train Epoch: 2 [359424/1637208 (22.0%)]	Loss: 0.147808
+Train Epoch: 2 [410624/1637208 (25.1%)]	Loss: 0.143932
+Train Epoch: 2 [461824/1637208 (28.2%)]	Loss: 0.140512
+Train Epoch: 2 [513024/1637208 (31.3%)]	Loss: 0.153958
+Train Epoch: 2 [564224/1637208 (34.5%)]	Loss: 0.133455
+Train Epoch: 2 [615424/1637208 (37.6%)]	Loss: 0.141117
+Train Epoch: 2 [666624/1637208 (40.7%)]	Loss: 0.145437
+Train Epoch: 2 [717824/1637208 (43.8%)]	Loss: 0.145168
+Train Epoch: 2 [769024/1637208 (47.0%)]	Loss: 0.135354
+Train Epoch: 2 [820224/1637208 (50.1%)]	Loss: 0.150625
+Train Epoch: 2 [871424/1637208 (53.2%)]	Loss: 0.145327
+Train Epoch: 2 [922624/1637208 (56.4%)]	Loss: 0.134202
+Train Epoch: 2 [973824/1637208 (59.5%)]	Loss: 0.154446
+Train Epoch: 2 [1025024/1637208 (62.6%)]	Loss: 0.138546
+Train Epoch: 2 [1076224/1637208 (65.7%)]	Loss: 0.140691
+Train Epoch: 2 [1127424/1637208 (68.9%)]	Loss: 0.159243
+Train Epoch: 2 [1178624/1637208 (72.0%)]	Loss: 0.161409
+Train Epoch: 2 [1229824/1637208 (75.1%)]	Loss: 0.143451
+Train Epoch: 2 [1281024/1637208 (78.2%)]	Loss: 0.140360
+Train Epoch: 2 [1332224/1637208 (81.4%)]	Loss: 0.148827
+Train Epoch: 2 [1383424/1637208 (84.5%)]	Loss: 0.152169
+Train Epoch: 2 [1434624/1637208 (87.6%)]	Loss: 0.159399
+Train Epoch: 2 [1485824/1637208 (90.8%)]	Loss: 0.135161
+Train Epoch: 2 [1537024/1637208 (93.9%)]	Loss: 0.141307
+Train Epoch: 2 [1588224/1637208 (97.0%)]	Loss: 0.135645
+
+ACC in fold#0 was 0.833
+
+
+Balanced ACC in fold#0 was 0.829
+
+
+MCC in fold#0 was 0.659
+
+
+Confusion Matrix in fold#0: 
+           nonRipple  Ripple
+nonRipple     714028  181515
+Ripple        161591  992674
+
+
+Classification Report in fold#0: 
+              nonRipple       Ripple  ...    macro avg  weighted avg
+precision         0.815        0.845  ...        0.830         0.832
+recall            0.797        0.860  ...        0.829         0.833
+f1-score          0.806        0.853  ...        0.829         0.832
+sample size  895543.000  1154265.000  ...  2049808.000   2049808.000
+
+[4 rows x 5 columns]
+
+Ranger optimizer loaded. 
+Gradient Centralization usage = True
+GC applied to both conv and fc layers
+Train Epoch: 1 [1024/1632224 (0.1%)]	Loss: 0.362877
+Train Epoch: 1 [52224/1632224 (3.2%)]	Loss: 0.215863
+Train Epoch: 1 [103424/1632224 (6.3%)]	Loss: 0.180075
+Train Epoch: 1 [154624/1632224 (9.5%)]	Loss: 0.169121
+Train Epoch: 1 [205824/1632224 (12.6%)]	Loss: 0.163300
+Train Epoch: 1 [257024/1632224 (15.7%)]	Loss: 0.160449
+Train Epoch: 1 [308224/1632224 (18.9%)]	Loss: 0.160987
+Train Epoch: 1 [359424/1632224 (22.0%)]	Loss: 0.142755
+Train Epoch: 1 [410624/1632224 (25.2%)]	Loss: 0.147341
+Train Epoch: 1 [461824/1632224 (28.3%)]	Loss: 0.147050
+Train Epoch: 1 [513024/1632224 (31.4%)]	Loss: 0.166695
+Train Epoch: 1 [564224/1632224 (34.6%)]	Loss: 0.152406
+Train Epoch: 1 [615424/1632224 (37.7%)]	Loss: 0.171942
+Train Epoch: 1 [666624/1632224 (40.8%)]	Loss: 0.152533
+Train Epoch: 1 [717824/1632224 (44.0%)]	Loss: 0.162350
+Train Epoch: 1 [769024/1632224 (47.1%)]	Loss: 0.153058
+Train Epoch: 1 [820224/1632224 (50.3%)]	Loss: 0.149758
+Train Epoch: 1 [871424/1632224 (53.4%)]	Loss: 0.150817
+Train Epoch: 1 [922624/1632224 (56.5%)]	Loss: 0.166621
+Train Epoch: 1 [973824/1632224 (59.7%)]	Loss: 0.163583
+Train Epoch: 1 [1025024/1632224 (62.8%)]	Loss: 0.151268
+Train Epoch: 1 [1076224/1632224 (65.9%)]	Loss: 0.163510
+Train Epoch: 1 [1127424/1632224 (69.1%)]	Loss: 0.146714
+Train Epoch: 1 [1178624/1632224 (72.2%)]	Loss: 0.130251
+Train Epoch: 1 [1229824/1632224 (75.3%)]	Loss: 0.157775
+Train Epoch: 1 [1281024/1632224 (78.5%)]	Loss: 0.154264
+Train Epoch: 1 [1332224/1632224 (81.6%)]	Loss: 0.151347
+Train Epoch: 1 [1383424/1632224 (84.8%)]	Loss: 0.161602
+Train Epoch: 1 [1434624/1632224 (87.9%)]	Loss: 0.154517
+Train Epoch: 1 [1485824/1632224 (91.0%)]	Loss: 0.153470
+Train Epoch: 1 [1537024/1632224 (94.2%)]	Loss: 0.148736
+Train Epoch: 1 [1588224/1632224 (97.3%)]	Loss: 0.154483
+Train Epoch: 2 [1024/1632224 (0.1%)]	Loss: 0.154582
+Train Epoch: 2 [52224/1632224 (3.2%)]	Loss: 0.144304
+Train Epoch: 2 [103424/1632224 (6.3%)]	Loss: 0.151020
+Train Epoch: 2 [154624/1632224 (9.5%)]	Loss: 0.140041
+Train Epoch: 2 [205824/1632224 (12.6%)]	Loss: 0.163371
+Train Epoch: 2 [257024/1632224 (15.7%)]	Loss: 0.160432
+Train Epoch: 2 [308224/1632224 (18.9%)]	Loss: 0.137286
+Train Epoch: 2 [359424/1632224 (22.0%)]	Loss: 0.155066
+Train Epoch: 2 [410624/1632224 (25.2%)]	Loss: 0.152065
+Train Epoch: 2 [461824/1632224 (28.3%)]	Loss: 0.153732
+Train Epoch: 2 [513024/1632224 (31.4%)]	Loss: 0.160012
+Train Epoch: 2 [564224/1632224 (34.6%)]	Loss: 0.150465
+Train Epoch: 2 [615424/1632224 (37.7%)]	Loss: 0.145873
+Train Epoch: 2 [666624/1632224 (40.8%)]	Loss: 0.163673
+Train Epoch: 2 [717824/1632224 (44.0%)]	Loss: 0.152684
+Train Epoch: 2 [769024/1632224 (47.1%)]	Loss: 0.146558
+Train Epoch: 2 [820224/1632224 (50.3%)]	Loss: 0.148052
+Train Epoch: 2 [871424/1632224 (53.4%)]	Loss: 0.157884
+Train Epoch: 2 [922624/1632224 (56.5%)]	Loss: 0.159819
+Train Epoch: 2 [973824/1632224 (59.7%)]	Loss: 0.147911
+Train Epoch: 2 [1025024/1632224 (62.8%)]	Loss: 0.149367
+Train Epoch: 2 [1076224/1632224 (65.9%)]	Loss: 0.147608
+Train Epoch: 2 [1127424/1632224 (69.1%)]	Loss: 0.163536
+Train Epoch: 2 [1178624/1632224 (72.2%)]	Loss: 0.136598
+Train Epoch: 2 [1229824/1632224 (75.3%)]	Loss: 0.156822
+Train Epoch: 2 [1281024/1632224 (78.5%)]	Loss: 0.145700
+Train Epoch: 2 [1332224/1632224 (81.6%)]	Loss: 0.142938
+Train Epoch: 2 [1383424/1632224 (84.8%)]	Loss: 0.162484
+Train Epoch: 2 [1434624/1632224 (87.9%)]	Loss: 0.149394
+Train Epoch: 2 [1485824/1632224 (91.0%)]	Loss: 0.147090
+Train Epoch: 2 [1537024/1632224 (94.2%)]	Loss: 0.149555
+Train Epoch: 2 [1588224/1632224 (97.3%)]	Loss: 0.155772
+
+ACC in fold#1 was 0.837
+
+
+Balanced ACC in fold#1 was 0.843
+
+
+MCC in fold#1 was 0.678
+
+
+Confusion Matrix in fold#1: 
+           nonRipple  Ripple
+nonRipple     767594  104146
+Ripple        229692  948376
+
+
+Classification Report in fold#1: 
+              nonRipple       Ripple  ...    macro avg  weighted avg
+precision         0.770        0.901  ...        0.835         0.845
+recall            0.881        0.805  ...        0.843         0.837
+f1-score          0.821        0.850  ...        0.836         0.838
+sample size  871740.000  1178068.000  ...  2049808.000   2049808.000
+
+[4 rows x 5 columns]
+
+Ranger optimizer loaded. 
+Gradient Centralization usage = True
+GC applied to both conv and fc layers
+Train Epoch: 1 [1024/1619912 (0.1%)]	Loss: 0.346924
+Train Epoch: 1 [52224/1619912 (3.2%)]	Loss: 0.208020
+Train Epoch: 1 [103424/1619912 (6.4%)]	Loss: 0.171253
+Train Epoch: 1 [154624/1619912 (9.5%)]	Loss: 0.153277
+Train Epoch: 1 [205824/1619912 (12.7%)]	Loss: 0.165492
+Train Epoch: 1 [257024/1619912 (15.9%)]	Loss: 0.170097
+Train Epoch: 1 [308224/1619912 (19.0%)]	Loss: 0.165252
+Train Epoch: 1 [359424/1619912 (22.2%)]	Loss: 0.154656
+Train Epoch: 1 [410624/1619912 (25.3%)]	Loss: 0.157561
+Train Epoch: 1 [461824/1619912 (28.5%)]	Loss: 0.160301
+Train Epoch: 1 [513024/1619912 (31.7%)]	Loss: 0.148883
+Train Epoch: 1 [564224/1619912 (34.8%)]	Loss: 0.170749
+Train Epoch: 1 [615424/1619912 (38.0%)]	Loss: 0.150744
+Train Epoch: 1 [666624/1619912 (41.2%)]	Loss: 0.158846
+Train Epoch: 1 [717824/1619912 (44.3%)]	Loss: 0.140355
+Train Epoch: 1 [769024/1619912 (47.5%)]	Loss: 0.161162
+Train Epoch: 1 [820224/1619912 (50.6%)]	Loss: 0.162847
+Train Epoch: 1 [871424/1619912 (53.8%)]	Loss: 0.150596
+Train Epoch: 1 [922624/1619912 (57.0%)]	Loss: 0.154258
+Train Epoch: 1 [973824/1619912 (60.1%)]	Loss: 0.149482
+Train Epoch: 1 [1025024/1619912 (63.3%)]	Loss: 0.162798
+Train Epoch: 1 [1076224/1619912 (66.4%)]	Loss: 0.140575
+Train Epoch: 1 [1127424/1619912 (69.6%)]	Loss: 0.155716
+Train Epoch: 1 [1178624/1619912 (72.8%)]	Loss: 0.148221
+Train Epoch: 1 [1229824/1619912 (75.9%)]	Loss: 0.159121
+Train Epoch: 1 [1281024/1619912 (79.1%)]	Loss: 0.162375
+Train Epoch: 1 [1332224/1619912 (82.2%)]	Loss: 0.159088
+Train Epoch: 1 [1383424/1619912 (85.4%)]	Loss: 0.133035
+Train Epoch: 1 [1434624/1619912 (88.6%)]	Loss: 0.146342
+Train Epoch: 1 [1485824/1619912 (91.7%)]	Loss: 0.153369
+Train Epoch: 1 [1537024/1619912 (94.9%)]	Loss: 0.164894
+Train Epoch: 1 [1588224/1619912 (98.0%)]	Loss: 0.157445
+Train Epoch: 2 [1024/1619912 (0.1%)]	Loss: 0.156888
+Train Epoch: 2 [52224/1619912 (3.2%)]	Loss: 0.143603
+Train Epoch: 2 [103424/1619912 (6.4%)]	Loss: 0.161745
+Train Epoch: 2 [154624/1619912 (9.5%)]	Loss: 0.172574
+Train Epoch: 2 [205824/1619912 (12.7%)]	Loss: 0.156282
+Train Epoch: 2 [257024/1619912 (15.9%)]	Loss: 0.155170
+Train Epoch: 2 [308224/1619912 (19.0%)]	Loss: 0.136510
+Train Epoch: 2 [359424/1619912 (22.2%)]	Loss: 0.149258
+Train Epoch: 2 [410624/1619912 (25.3%)]	Loss: 0.151279
+Train Epoch: 2 [461824/1619912 (28.5%)]	Loss: 0.152477
+Train Epoch: 2 [513024/1619912 (31.7%)]	Loss: 0.145040
+Train Epoch: 2 [564224/1619912 (34.8%)]	Loss: 0.136102
+Train Epoch: 2 [615424/1619912 (38.0%)]	Loss: 0.152735
+Train Epoch: 2 [666624/1619912 (41.2%)]	Loss: 0.156041
+Train Epoch: 2 [717824/1619912 (44.3%)]	Loss: 0.149308
+Train Epoch: 2 [769024/1619912 (47.5%)]	Loss: 0.146530
+Train Epoch: 2 [820224/1619912 (50.6%)]	Loss: 0.144308
+Train Epoch: 2 [871424/1619912 (53.8%)]	Loss: 0.144615
+Train Epoch: 2 [922624/1619912 (57.0%)]	Loss: 0.150538
+Train Epoch: 2 [973824/1619912 (60.1%)]	Loss: 0.136113
+Train Epoch: 2 [1025024/1619912 (63.3%)]	Loss: 0.154834
+Train Epoch: 2 [1076224/1619912 (66.4%)]	Loss: 0.138117
+Train Epoch: 2 [1127424/1619912 (69.6%)]	Loss: 0.143233
+Train Epoch: 2 [1178624/1619912 (72.8%)]	Loss: 0.141252
+Train Epoch: 2 [1229824/1619912 (75.9%)]	Loss: 0.137133
+Train Epoch: 2 [1281024/1619912 (79.1%)]	Loss: 0.143720
+Train Epoch: 2 [1332224/1619912 (82.2%)]	Loss: 0.142687
+Train Epoch: 2 [1383424/1619912 (85.4%)]	Loss: 0.143138
+Train Epoch: 2 [1434624/1619912 (88.6%)]	Loss: 0.152917
+Train Epoch: 2 [1485824/1619912 (91.7%)]	Loss: 0.138526
+Train Epoch: 2 [1537024/1619912 (94.9%)]	Loss: 0.136457
+Train Epoch: 2 [1588224/1619912 (98.0%)]	Loss: 0.136850
+
+ACC in fold#2 was 0.822
+
+
+Balanced ACC in fold#2 was 0.811
+
+
+MCC in fold#2 was 0.629
+
+
+Confusion Matrix in fold#2: 
+           nonRipple   Ripple
+nonRipple     633404   209708
+Ripple        156069  1050626
+
+
+Classification Report in fold#2: 
+              nonRipple       Ripple  ...    macro avg  weighted avg
+precision         0.802        0.834  ...        0.818         0.821
+recall            0.751        0.871  ...        0.811         0.822
+f1-score          0.776        0.852  ...        0.814         0.821
+sample size  843112.000  1206695.000  ...  2049807.000   2049807.000
+
+[4 rows x 5 columns]
+
+Ranger optimizer loaded. 
+Gradient Centralization usage = True
+GC applied to both conv and fc layers
+Train Epoch: 1 [1024/1547064 (0.1%)]	Loss: 0.360234
+Train Epoch: 1 [52224/1547064 (3.4%)]	Loss: 0.201267
+Train Epoch: 1 [103424/1547064 (6.7%)]	Loss: 0.155871
+Train Epoch: 1 [154624/1547064 (10.0%)]	Loss: 0.147786
+Train Epoch: 1 [205824/1547064 (13.3%)]	Loss: 0.183301
+Train Epoch: 1 [257024/1547064 (16.6%)]	Loss: 0.158783
+Train Epoch: 1 [308224/1547064 (19.9%)]	Loss: 0.162464
+Train Epoch: 1 [359424/1547064 (23.2%)]	Loss: 0.151718
+Train Epoch: 1 [410624/1547064 (26.5%)]	Loss: 0.159308
+Train Epoch: 1 [461824/1547064 (29.9%)]	Loss: 0.145347
+Train Epoch: 1 [513024/1547064 (33.2%)]	Loss: 0.153920
+Train Epoch: 1 [564224/1547064 (36.5%)]	Loss: 0.142458
+Train Epoch: 1 [615424/1547064 (39.8%)]	Loss: 0.145781
+Train Epoch: 1 [666624/1547064 (43.1%)]	Loss: 0.166350
+Train Epoch: 1 [717824/1547064 (46.4%)]	Loss: 0.146692
+Train Epoch: 1 [769024/1547064 (49.7%)]	Loss: 0.155445
+Train Epoch: 1 [820224/1547064 (53.0%)]	Loss: 0.145811
+Train Epoch: 1 [871424/1547064 (56.3%)]	Loss: 0.147003
+Train Epoch: 1 [922624/1547064 (59.6%)]	Loss: 0.144516
+Train Epoch: 1 [973824/1547064 (62.9%)]	Loss: 0.142304
+Train Epoch: 1 [1025024/1547064 (66.3%)]	Loss: 0.146818
+Train Epoch: 1 [1076224/1547064 (69.6%)]	Loss: 0.155393
+Train Epoch: 1 [1127424/1547064 (72.9%)]	Loss: 0.157493
+Train Epoch: 1 [1178624/1547064 (76.2%)]	Loss: 0.145873
+Train Epoch: 1 [1229824/1547064 (79.5%)]	Loss: 0.146350
+Train Epoch: 1 [1281024/1547064 (82.8%)]	Loss: 0.137799
+Train Epoch: 1 [1332224/1547064 (86.1%)]	Loss: 0.158074
+Train Epoch: 1 [1383424/1547064 (89.4%)]	Loss: 0.148834
+Train Epoch: 1 [1434624/1547064 (92.7%)]	Loss: 0.159878
+Train Epoch: 1 [1485824/1547064 (96.0%)]	Loss: 0.151496
+Train Epoch: 1 [1537024/1547064 (99.4%)]	Loss: 0.148629
+Train Epoch: 2 [1024/1547064 (0.1%)]	Loss: 0.139667
+Train Epoch: 2 [52224/1547064 (3.4%)]	Loss: 0.154882
+Train Epoch: 2 [103424/1547064 (6.7%)]	Loss: 0.149727
+Train Epoch: 2 [154624/1547064 (10.0%)]	Loss: 0.141389
+Train Epoch: 2 [205824/1547064 (13.3%)]	Loss: 0.129857
+Train Epoch: 2 [257024/1547064 (16.6%)]	Loss: 0.155833
+Train Epoch: 2 [308224/1547064 (19.9%)]	Loss: 0.144472
+Train Epoch: 2 [359424/1547064 (23.2%)]	Loss: 0.129178
+Train Epoch: 2 [410624/1547064 (26.5%)]	Loss: 0.154210
+Train Epoch: 2 [461824/1547064 (29.9%)]	Loss: 0.151117
+Train Epoch: 2 [513024/1547064 (33.2%)]	Loss: 0.140776
+Train Epoch: 2 [564224/1547064 (36.5%)]	Loss: 0.142497
+Train Epoch: 2 [615424/1547064 (39.8%)]	Loss: 0.135931
+Train Epoch: 2 [666624/1547064 (43.1%)]	Loss: 0.133294
+Train Epoch: 2 [717824/1547064 (46.4%)]	Loss: 0.140197
+Train Epoch: 2 [769024/1547064 (49.7%)]	Loss: 0.145335
+Train Epoch: 2 [820224/1547064 (53.0%)]	Loss: 0.138229
+Train Epoch: 2 [871424/1547064 (56.3%)]	Loss: 0.150414
+Train Epoch: 2 [922624/1547064 (59.6%)]	Loss: 0.145082
+Train Epoch: 2 [973824/1547064 (62.9%)]	Loss: 0.139720
+Train Epoch: 2 [1025024/1547064 (66.3%)]	Loss: 0.150720
+Train Epoch: 2 [1076224/1547064 (69.6%)]	Loss: 0.168038
+Train Epoch: 2 [1127424/1547064 (72.9%)]	Loss: 0.139263
+Train Epoch: 2 [1178624/1547064 (76.2%)]	Loss: 0.136371
+Train Epoch: 2 [1229824/1547064 (79.5%)]	Loss: 0.146182
+Train Epoch: 2 [1281024/1547064 (82.8%)]	Loss: 0.140059
+Train Epoch: 2 [1332224/1547064 (86.1%)]	Loss: 0.143506
+Train Epoch: 2 [1383424/1547064 (89.4%)]	Loss: 0.139880
+Train Epoch: 2 [1434624/1547064 (92.7%)]	Loss: 0.151079
+Train Epoch: 2 [1485824/1547064 (96.0%)]	Loss: 0.139893
+Train Epoch: 2 [1537024/1547064 (99.4%)]	Loss: 0.154332
+
+ACC in fold#3 was 0.837
+
+
+Balanced ACC in fold#3 was 0.838
+
+
+MCC in fold#3 was 0.670
+
+
+Confusion Matrix in fold#3: 
+           nonRipple  Ripple
+nonRipple     718436  133431
+Ripple        200173  997767
+
+
+Classification Report in fold#3: 
+              nonRipple       Ripple  ...    macro avg  weighted avg
+precision         0.782        0.882  ...        0.832         0.841
+recall            0.843        0.833  ...        0.838         0.837
+f1-score          0.812        0.857  ...        0.834         0.838
+sample size  851867.000  1197940.000  ...  2049807.000   2049807.000
+
+[4 rows x 5 columns]
+
+Ranger optimizer loaded. 
+Gradient Centralization usage = True
+GC applied to both conv and fc layers
+Train Epoch: 1 [1024/1541032 (0.1%)]	Loss: 0.362408
+Train Epoch: 1 [52224/1541032 (3.4%)]	Loss: 0.207399
+Train Epoch: 1 [103424/1541032 (6.7%)]	Loss: 0.170227
+Train Epoch: 1 [154624/1541032 (10.0%)]	Loss: 0.170879
+Train Epoch: 1 [205824/1541032 (13.4%)]	Loss: 0.148639
+Train Epoch: 1 [257024/1541032 (16.7%)]	Loss: 0.160484
+Train Epoch: 1 [308224/1541032 (20.0%)]	Loss: 0.141356
+Train Epoch: 1 [359424/1541032 (23.3%)]	Loss: 0.158669
+Train Epoch: 1 [410624/1541032 (26.6%)]	Loss: 0.159459
+Train Epoch: 1 [461824/1541032 (30.0%)]	Loss: 0.157037
+Train Epoch: 1 [513024/1541032 (33.3%)]	Loss: 0.151757
+Train Epoch: 1 [564224/1541032 (36.6%)]	Loss: 0.148564
+Train Epoch: 1 [615424/1541032 (39.9%)]	Loss: 0.148762
+Train Epoch: 1 [666624/1541032 (43.3%)]	Loss: 0.172343
+Train Epoch: 1 [717824/1541032 (46.6%)]	Loss: 0.154444
+Train Epoch: 1 [769024/1541032 (49.9%)]	Loss: 0.152983
+Train Epoch: 1 [820224/1541032 (53.2%)]	Loss: 0.161244
+Train Epoch: 1 [871424/1541032 (56.5%)]	Loss: 0.157825
+Train Epoch: 1 [922624/1541032 (59.9%)]	Loss: 0.146634
+Train Epoch: 1 [973824/1541032 (63.2%)]	Loss: 0.149075
+Train Epoch: 1 [1025024/1541032 (66.5%)]	Loss: 0.143342
+Train Epoch: 1 [1076224/1541032 (69.8%)]	Loss: 0.153403
+Train Epoch: 1 [1127424/1541032 (73.2%)]	Loss: 0.137661
+Train Epoch: 1 [1178624/1541032 (76.5%)]	Loss: 0.147811
+Train Epoch: 1 [1229824/1541032 (79.8%)]	Loss: 0.151946
+Train Epoch: 1 [1281024/1541032 (83.1%)]	Loss: 0.142952
+Train Epoch: 1 [1332224/1541032 (86.5%)]	Loss: 0.147943
+Train Epoch: 1 [1383424/1541032 (89.8%)]	Loss: 0.134727
+Train Epoch: 1 [1434624/1541032 (93.1%)]	Loss: 0.142810
+Train Epoch: 1 [1485824/1541032 (96.4%)]	Loss: 0.129860
+Train Epoch: 1 [1537024/1541032 (99.7%)]	Loss: 0.161372
+Train Epoch: 2 [1024/1541032 (0.1%)]	Loss: 0.151515
+Train Epoch: 2 [52224/1541032 (3.4%)]	Loss: 0.139835
+Train Epoch: 2 [103424/1541032 (6.7%)]	Loss: 0.166461
+Train Epoch: 2 [154624/1541032 (10.0%)]	Loss: 0.152469
+Train Epoch: 2 [205824/1541032 (13.4%)]	Loss: 0.149897
+Train Epoch: 2 [257024/1541032 (16.7%)]	Loss: 0.149205
+Train Epoch: 2 [308224/1541032 (20.0%)]	Loss: 0.154722
+Train Epoch: 2 [359424/1541032 (23.3%)]	Loss: 0.152626
+Train Epoch: 2 [410624/1541032 (26.6%)]	Loss: 0.141919
+Train Epoch: 2 [461824/1541032 (30.0%)]	Loss: 0.139018
+Train Epoch: 2 [513024/1541032 (33.3%)]	Loss: 0.138019
+Train Epoch: 2 [564224/1541032 (36.6%)]	Loss: 0.148775
+Train Epoch: 2 [615424/1541032 (39.9%)]	Loss: 0.141542
+Train Epoch: 2 [666624/1541032 (43.3%)]	Loss: 0.157782
+Train Epoch: 2 [717824/1541032 (46.6%)]	Loss: 0.144566
+Train Epoch: 2 [769024/1541032 (49.9%)]	Loss: 0.142726
+Train Epoch: 2 [820224/1541032 (53.2%)]	Loss: 0.136502
+Train Epoch: 2 [871424/1541032 (56.5%)]	Loss: 0.155092
+Train Epoch: 2 [922624/1541032 (59.9%)]	Loss: 0.148811
+Train Epoch: 2 [973824/1541032 (63.2%)]	Loss: 0.150162
+Train Epoch: 2 [1025024/1541032 (66.5%)]	Loss: 0.139010
+Train Epoch: 2 [1076224/1541032 (69.8%)]	Loss: 0.153213
+Train Epoch: 2 [1127424/1541032 (73.2%)]	Loss: 0.148648
+Train Epoch: 2 [1178624/1541032 (76.5%)]	Loss: 0.157313
+Train Epoch: 2 [1229824/1541032 (79.8%)]	Loss: 0.154165
+Train Epoch: 2 [1281024/1541032 (83.1%)]	Loss: 0.133447
+Train Epoch: 2 [1332224/1541032 (86.5%)]	Loss: 0.148794
+Train Epoch: 2 [1383424/1541032 (89.8%)]	Loss: 0.151505
+Train Epoch: 2 [1434624/1541032 (93.1%)]	Loss: 0.145459
+Train Epoch: 2 [1485824/1541032 (96.4%)]	Loss: 0.134025
+Train Epoch: 2 [1537024/1541032 (99.7%)]	Loss: 0.148845
+
+ACC in fold#4 was 0.795
+
+
+Balanced ACC in fold#4 was 0.798
+
+
+MCC in fold#4 was 0.595
+
+
+Confusion Matrix in fold#4: 
+           nonRipple  Ripple
+nonRipple     797546  145373
+Ripple        275803  831085
+
+
+Classification Report in fold#4: 
+              nonRipple       Ripple  ...    macro avg  weighted avg
+precision         0.743        0.851  ...        0.797         0.801
+recall            0.846        0.751  ...        0.798         0.795
+f1-score          0.791        0.798  ...        0.794         0.795
+sample size  942919.000  1106888.000  ...  2049807.000   2049807.000
+
+[4 rows x 5 columns]
+
+
+Label Errors Rate:
+0.090
+
+
+ --- 5-fold CV overall metrics --- 
+
+
+The Mattews correlation coefficient: 0.646 +/- 0.03 (mean +/- std.; n=5)
+
+
+Balanced Accuracy Score: 0.824 +/- 0.017 (mean +/- std.; n=5)
+
+
+Confusion Matrix (Test; sum; num. folds=5)
+           nonRipple   Ripple
+nonRipple    3631008   774173
+Ripple       1023328  4820528
+
+
+Classification Report (Test; mean; num. folds=5)
+              nonRipple       Ripple  ...    macro avg  weighted avg
+precision         0.782        0.863  ...        0.822         0.828
+recall            0.824        0.824  ...        0.824         0.825
+f1-score          0.801        0.842  ...        0.821         0.825
+sample size  881036.200  1168771.200  ...  2049807.400   2049807.400
+
+[4 rows x 5 columns]
+
+
+Classification Report (Test; std; num. folds=5)
+             nonRipple     Ripple  balanced accuracy  macro avg  weighted avg
+precision        0.025      0.025              0.017      0.014         0.016
+recall           0.045      0.043              0.017      0.017         0.016
+f1-score         0.016      0.022              0.017      0.016         0.016
+sample size  35820.203  35820.174              0.017      0.490         0.490
+
+
+ROC AUC micro Score: 0.912 +/- 0.011 (mean +/- std.; n=5)
+
+
+ROC AUC macro Score: 0.912 +/- 0.011 (mean +/- std.; n=5)
+
+
+Precision-Recall AUC micro Score: 0.915 +/- 0.01 (mean +/- std.; n=5)
+
+
+Precision-Recall AUC macro Score: 0.913 +/- 0.01 (mean +/- std.; n=5)
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/are_errors.npy
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/are_ripple_GMM.npy
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/psx_ripple.npy
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/mccs.csv
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/balanced_accs.csv
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/conf_mat/fold#0.png
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/conf_mat/fold#1.png
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/conf_mat/fold#2.png
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/conf_mat/fold#3.png
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/conf_mat/fold#4.png
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/conf_mat/conf_mats.csv
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/conf_mat/overall_sum.png
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/clf_reports.csv
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/aucs.csv
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/roc_curves/fold#0.png
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/roc_curves/fold#1.png
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/roc_curves/fold#2.png
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/roc_curves/fold#3.png
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/roc_curves/fold#4.png
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/pr_curves/fold#0.png
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/pr_curves/fold#1.png
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/pr_curves/fold#2.png
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/pr_curves/fold#3.png
+
+
+Saved to: ./data/okada/cleanlab_results/D02-/pr_curves/fold#4.png
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/CNN_labeled/D02-/tt6-4_fp16.pkl
+

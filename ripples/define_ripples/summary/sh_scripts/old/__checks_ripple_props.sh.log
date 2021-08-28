@@ -1,0 +1,188 @@
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(18.1, 6.0) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/summary/checks_ripple_props/log/stdout.log
+  - ./ripples/define_ripples/summary/checks_ripple_props/log/stderr.log
+
+
+--------------------------------------------------
+n_mouse: 01
+
+
+Kruskal-Wallis test:
+H_statistic: 346694.20193215733
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.655  0.829  0.964
+F2T  NaN    NaN  0.366  0.908
+T2F  NaN    NaN    NaN  0.848
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 02
+
+
+Kruskal-Wallis test:
+H_statistic: 1548910.5252399137
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.656  0.841  0.922
+F2T  NaN    NaN  0.635  0.856
+T2F  NaN    NaN    NaN  0.740
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 03
+
+
+Kruskal-Wallis test:
+H_statistic: 869154.5180425892
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.022  0.141  0.645
+F2T  NaN    NaN  0.153  0.667
+T2F  NaN    NaN    NaN  0.696
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 04
+
+
+Kruskal-Wallis test:
+H_statistic: 1622815.9174620828
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.107  0.107  0.886
+F2T  NaN    NaN  0.150  0.877
+T2F  NaN    NaN    NaN  0.899
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 05
+
+
+Kruskal-Wallis test:
+H_statistic: 1438468.2681227145
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.575  0.724  0.861
+F2T  NaN    NaN  0.412  0.741
+T2F  NaN    NaN    NaN  0.627
+F2F  NaN    NaN    NaN    NaN
+
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/duration.png
+
+./ripples/define_ripples/summary/checks_ripple_props.py:35: RuntimeWarning: Mean of empty slice
+  return np.nanmean(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(n_round)
+/home/ywatanabe/.local/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1664: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+    T2T              F2T              T2F              F2F
+T2T   -  0.403 +/- 0.279  0.528 +/- 0.333  0.856 +/- 0.111
+F2T   -                -  0.343 +/- 0.181  0.810 +/- 0.091
+T2F   -                -                -  0.762 +/- 0.099
+F2F   -                -                -                -
+
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/duration_abs_cliff_mean_plus_minus_std.csv
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(18.1, 6.0) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/summary/checks_ripple_props/log/stdout.log
+  - ./ripples/define_ripples/summary/checks_ripple_props/log/stderr.log
+
+
+--------------------------------------------------
+n_mouse: 01
+
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.8/site-packages/pandas/core/indexes/base.py", line 3080, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 70, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 101, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 4554, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 4562, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'mean ln(MEP magni. / SD)'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "./ripples/define_ripples/summary/checks_ripple_props.py", line 144, in <module>
+    df = pd.DataFrame(rips_sec[rips_sec[label]][ftr_str])
+  File "/usr/local/lib64/python3.8/site-packages/pandas/core/frame.py", line 3024, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/usr/local/lib64/python3.8/site-packages/pandas/core/indexes/base.py", line 3082, in get_loc
+    raise KeyError(key) from err
+KeyError: 'mean ln(MEP magni. / SD)'

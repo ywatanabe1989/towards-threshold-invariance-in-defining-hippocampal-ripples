@@ -1,0 +1,483 @@
+Traceback (most recent call last):
+  File "./ripples/define_ripples/summary/checks_ripple_props.py", line 8, in <module>
+    import matplotlib
+ModuleNotFoundError: No module named 'matplotlib'
+Traceback (most recent call last):
+  File "./ripples/define_ripples/summary/checks_ripple_props.py", line 8, in <module>
+    import matplotlib
+ModuleNotFoundError: No module named 'matplotlib'
+Traceback (most recent call last):
+  File "./ripples/define_ripples/summary/checks_ripple_props.py", line 8, in <module>
+    import matplotlib
+ModuleNotFoundError: No module named 'matplotlib'
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(18.1, 6.0) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/summary/checks_ripple_props/log/stdout.log
+  - ./ripples/define_ripples/summary/checks_ripple_props/log/stderr.log
+
+
+--------------------------------------------------
+n_mouse: 01
+
+
+Kruskal-Wallis test:
+H_statistic: 346694.20193215733
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.655  0.829  0.964
+F2T  NaN    NaN  0.366  0.908
+T2F  NaN    NaN    NaN  0.848
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 02
+
+
+Kruskal-Wallis test:
+H_statistic: 1548910.5252399137
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.656  0.841  0.922
+F2T  NaN    NaN  0.635  0.856
+T2F  NaN    NaN    NaN  0.740
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 03
+
+
+Kruskal-Wallis test:
+H_statistic: 869154.5180425892
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.022  0.141  0.645
+F2T  NaN    NaN  0.153  0.667
+T2F  NaN    NaN    NaN  0.696
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 04
+
+
+Kruskal-Wallis test:
+H_statistic: 1622815.9174620828
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.107  0.107  0.886
+F2T  NaN    NaN  0.150  0.877
+T2F  NaN    NaN    NaN  0.899
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 05
+
+
+Kruskal-Wallis test:
+H_statistic: 1438468.2681227145
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.575  0.724  0.861
+F2T  NaN    NaN  0.412  0.741
+T2F  NaN    NaN    NaN  0.627
+F2F  NaN    NaN    NaN    NaN
+
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/duration_distribution.png
+
+./ripples/define_ripples/summary/checks_ripple_props.py:33: RuntimeWarning: Mean of empty slice
+  return np.nanmean(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(n_round)
+/home/ywatanabe/.local/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1664: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+    T2T              F2T              T2F              F2F
+T2T   -  0.403 +/- 0.279  0.528 +/- 0.333  0.856 +/- 0.111
+F2T   -                -  0.343 +/- 0.181  0.810 +/- 0.091
+T2F   -                -                -  0.762 +/- 0.099
+F2F   -                -                -                -
+
+Matplotilb has been configured as follows:
+{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(8.7, 8.7) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
+
+
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/duration_abs_cliff_mean_plus_minus_std.csv
+
+
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/duration_abs_cliff_mean_plus_minus_std.png
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(18.1, 6.0) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/summary/checks_ripple_props/log/stdout.log
+  - ./ripples/define_ripples/summary/checks_ripple_props/log/stderr.log
+
+
+--------------------------------------------------
+n_mouse: 01
+
+
+Kruskal-Wallis test:
+H_statistic: 282139.38218781893
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.861  0.601  0.862
+F2T  NaN    NaN  0.677  0.066
+T2F  NaN    NaN    NaN  0.671
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 02
+
+
+Kruskal-Wallis test:
+H_statistic: 1339560.6286897284
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.873  0.532  0.845
+F2T  NaN    NaN  0.760  0.071
+T2F  NaN    NaN    NaN  0.692
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 03
+
+
+Kruskal-Wallis test:
+H_statistic: 2133668.8899667286
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.981  0.786  0.981
+F2T  NaN    NaN  0.855  0.190
+T2F  NaN    NaN    NaN  0.859
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 04
+
+
+Kruskal-Wallis test:
+H_statistic: 1764479.1129358748
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.957  0.571  0.890
+F2T  NaN    NaN  0.865  0.358
+T2F  NaN    NaN    NaN  0.650
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 05
+
+
+Kruskal-Wallis test:
+H_statistic: 1591635.1525342043
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.857  0.572  0.875
+F2T  NaN    NaN  0.429  0.144
+T2F  NaN    NaN    NaN  0.454
+F2F  NaN    NaN    NaN    NaN
+
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/mep_distribution.png
+
+./ripples/define_ripples/summary/checks_ripple_props.py:33: RuntimeWarning: Mean of empty slice
+  return np.nanmean(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(n_round)
+/home/ywatanabe/.local/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1664: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+    T2T              F2T              T2F              F2F
+T2T   -  0.906 +/- 0.052  0.612 +/- 0.090  0.891 +/- 0.048
+F2T   -                -  0.717 +/- 0.160  0.166 +/- 0.107
+T2F   -                -                -  0.665 +/- 0.129
+F2F   -                -                -                -
+
+Matplotilb has been configured as follows:
+{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(8.7, 8.7) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
+
+
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/mep_abs_cliff_mean_plus_minus_std.csv
+
+
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/mep_abs_cliff_mean_plus_minus_std.png
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(18.1, 6.0) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/summary/checks_ripple_props/log/stdout.log
+  - ./ripples/define_ripples/summary/checks_ripple_props/log/stderr.log
+
+
+--------------------------------------------------
+n_mouse: 01
+
+
+Kruskal-Wallis test:
+H_statistic: 83871.08279649724
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T    F2T   T2F F2F
+T2T     -      -     -   -
+F2T  True      -     -   -
+T2F  True  False     -   -
+F2F  True   True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.118  0.140  0.487
+F2T  NaN    NaN  0.013  0.428
+T2F  NaN    NaN    NaN  0.448
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 02
+
+
+Kruskal-Wallis test:
+H_statistic: 172175.42136813057
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.038  0.009  0.321
+F2T  NaN    NaN  0.069  0.298
+T2F  NaN    NaN    NaN  0.376
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 03
+
+
+Kruskal-Wallis test:
+H_statistic: 179373.10648321908
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T    F2T   T2F F2F
+T2T     -      -     -   -
+F2T  True      -     -   -
+T2F  True  False     -   -
+F2F  True   True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.308  0.313  0.196
+F2T  NaN    NaN  0.000  0.477
+T2F  NaN    NaN    NaN  0.483
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 04
+
+
+Kruskal-Wallis test:
+H_statistic: 305795.2593422725
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.201  0.157  0.355
+F2T  NaN    NaN  0.061  0.526
+T2F  NaN    NaN    NaN  0.503
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 05
+
+
+Kruskal-Wallis test:
+H_statistic: 235403.02257542335
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T    F2T   T2F F2F
+T2T     -      -     -   -
+F2T  True      -     -   -
+T2F  True  False     -   -
+F2F  True   True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.022  0.027  0.359
+F2T  NaN    NaN  0.003  0.372
+T2F  NaN    NaN    NaN  0.371
+F2F  NaN    NaN    NaN    NaN
+
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/ripple_peak_magnitude_distribution.png
+
+./ripples/define_ripples/summary/checks_ripple_props.py:33: RuntimeWarning: Mean of empty slice
+  return np.nanmean(arr, axis=0).round(n_round), np.nanstd(arr, axis=0).round(n_round)
+/home/ywatanabe/.local/lib/python3.8/site-packages/numpy/lib/nanfunctions.py:1664: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+    T2T              F2T              T2F              F2F
+T2T   -  0.137 +/- 0.107  0.129 +/- 0.109  0.344 +/- 0.093
+F2T   -                -  0.029 +/- 0.030  0.420 +/- 0.080
+T2F   -                -                -  0.436 +/- 0.054
+F2F   -                -                -                -
+
+Matplotilb has been configured as follows:
+{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(8.7, 8.7) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
+
+
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/ripple peak magnitude_abs_cliff_mean_plus_minus_std.csv
+
+
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/ripple peak magnitude_abs_cliff_mean_plus_minus_std.png
+

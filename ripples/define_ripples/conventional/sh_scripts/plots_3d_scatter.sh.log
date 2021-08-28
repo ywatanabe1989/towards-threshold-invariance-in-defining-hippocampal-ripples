@@ -1,0 +1,19 @@
+
+Random seeds have been fixed as 42
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/conventional/plots_3d_scatter/log/stdout.log
+  - ./ripples/define_ripples/conventional/plots_3d_scatter/log/stderr.log
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Random seeds have been fixed as 42
+
+*c* argument looks like a single numeric RGB or RGBA sequence, which should be avoided as value-mapping will have precedence in case its length matches with *x* & *y*.  Please use the *color* keyword-argument or provide a 2D array with a single row if you intend to specify the same RGB or RGBA value for all points.
+
+Saving to: ./ripples/define_ripples/conventional/plots_3d_scatter/videos/mouse#05.mp4
+

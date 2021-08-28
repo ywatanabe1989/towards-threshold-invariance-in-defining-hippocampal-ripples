@@ -1,0 +1,2840 @@
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+Indice of mice to load: ['01']
+8
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D01+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D01+/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D01+/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D01+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D01+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D01+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D01+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D01+/tt6-4_fp16.pkl
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+Indice of mice to load: ['02']
+48
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D02+/tt7-4_fp16.pkl
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+Indice of mice to load: ['03']
+40
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D03+/tt7-4_fp16.pkl
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+Indice of mice to load: ['04']
+48
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D04+/tt7-4_fp16.pkl
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+Indice of mice to load: ['05']
+40
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D05+/tt6-4_fp16.pkl
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+Indice of mice to load: ['02', '03', '04', '05']
+176
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D01-/tt6-4_fp16.pkl
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+Indice of mice to load: ['01', '03', '04', '05']
+136
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D02-/tt6-4_fp16.pkl
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+Indice of mice to load: ['01', '02', '04', '05']
+144
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D03-/tt6-4_fp16.pkl
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+Indice of mice to load: ['01', '02', '03', '05']
+136
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day1/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day2/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day3/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day4/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/05/day5/split/ripples_1kHz_pkl/GMM_labeled/D04-/tt6-4_fp16.pkl
+
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+Indice of mice to load: ['01', '02', '03', '04']
+144
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/01/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/02/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/03/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/GMM_labeled/D05-/tt7-4_fp16.pkl
+

@@ -1,0 +1,205 @@
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Target Mouse: 01
+Dataset Keys: ['D01+', 'D02-', 'D03-', 'D04-', 'D05-']
+
+
+Labels Concordance Rates:
+      D01+  D02-  D03-  D04-  D05-
+D05-   0.0  0.00  0.00  0.00  1.00
+D04-   0.0  0.00  0.00  1.00  0.91
+D03-   0.0  0.00  1.00  0.86  0.94
+D02-   0.0  1.00  0.98  0.84  0.92
+D01+   1.0  0.88  0.90  0.95  0.94
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/label_concordance_rates/images/mouse_#01.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/label_concordance_rates/matrices/mouse_#01.csv
+
+
+Correlation Coefficients of Predicted Probabilities for Ripples by CNN:
+      D01+  D02-  D03-  D04-  D05-
+D05-   0.0   0.0  0.00  0.00  1.00
+D04-   0.0   0.0  0.00  1.00  0.88
+D03-   0.0   0.0  1.00  0.78  0.97
+D02-   0.0   1.0  0.99  0.78  0.97
+D01+   1.0   0.9  0.91  0.93  0.95
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/corr_coef_pred_proba/images/mouse_#01.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/corr_coef_pred_proba/matrices/mouse_#01.csv
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Target Mouse: 02
+Dataset Keys: ['D01-', 'D02+', 'D03-', 'D04-', 'D05-']
+
+
+Labels Concordance Rates:
+      D01-  D02+  D03-  D04-  D05-
+D05-   0.0  0.00  0.00  0.00  1.00
+D04-   0.0  0.00  0.00  1.00  0.95
+D03-   0.0  0.00  1.00  0.91  0.95
+D02+   0.0  1.00  0.81  0.90  0.85
+D01-   1.0  0.82  0.98  0.92  0.97
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/label_concordance_rates/images/mouse_#02.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/label_concordance_rates/matrices/mouse_#02.csv
+
+
+Correlation Coefficients of Predicted Probabilities for Ripples by CNN:
+      D01-  D02+  D03-  D04-  D05-
+D05-   0.0   0.0  0.00  0.00  1.00
+D04-   0.0   0.0  0.00  1.00  0.93
+D03-   0.0   0.0  1.00  0.85  0.96
+D02+   0.0   1.0  0.74  0.96  0.85
+D01-   1.0   0.8  0.98  0.90  0.98
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/corr_coef_pred_proba/images/mouse_#02.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/corr_coef_pred_proba/matrices/mouse_#02.csv
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Target Mouse: 03
+Dataset Keys: ['D01-', 'D02-', 'D03+', 'D04-', 'D05-']
+
+
+Labels Concordance Rates:
+      D01-  D02-  D03+  D04-  D05-
+D05-   0.0  0.00  0.00  0.00  1.00
+D04-   0.0  0.00  0.00  1.00  0.94
+D03+   0.0  0.00  1.00  0.97  0.94
+D02-   0.0  1.00  0.84  0.84  0.90
+D01-   1.0  0.95  0.89  0.89  0.95
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/label_concordance_rates/images/mouse_#03.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/label_concordance_rates/matrices/mouse_#03.csv
+
+
+Correlation Coefficients of Predicted Probabilities for Ripples by CNN:
+      D01-  D02-  D03+  D04-  D05-
+D05-   0.0  0.00  0.00  0.00  1.00
+D04-   0.0  0.00  0.00  1.00  0.93
+D03+   0.0  0.00  1.00  0.97  0.87
+D02-   0.0  1.00  0.76  0.82  0.96
+D01-   1.0  0.98  0.83  0.89  0.99
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/corr_coef_pred_proba/images/mouse_#03.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/corr_coef_pred_proba/matrices/mouse_#03.csv
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Target Mouse: 04
+Dataset Keys: ['D01-', 'D02-', 'D03-', 'D04+', 'D05-']
+
+
+Labels Concordance Rates:
+      D01-  D02-  D03-  D04+  D05-
+D05-   0.0  0.00  0.00  0.00  1.00
+D04+   0.0  0.00  0.00  1.00  0.89
+D03-   0.0  0.00  1.00  0.95  0.94
+D02-   0.0  1.00  0.98  0.96  0.93
+D01-   1.0  0.96  0.97  0.92  0.96
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/label_concordance_rates/images/mouse_#04.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/label_concordance_rates/matrices/mouse_#04.csv
+
+
+Correlation Coefficients of Predicted Probabilities for Ripples by CNN:
+      D01-  D02-  D03-  D04+  D05-
+D05-   0.0  0.00  0.00  0.00  1.00
+D04+   0.0  0.00  0.00  1.00  0.79
+D03-   0.0  0.00  1.00  0.88  0.93
+D02-   0.0  1.00  0.98  0.90  0.92
+D01-   1.0  0.96  0.96  0.83  0.97
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/corr_coef_pred_proba/images/mouse_#04.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/corr_coef_pred_proba/matrices/mouse_#04.csv
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Target Mouse: 05
+Dataset Keys: ['D01-', 'D02-', 'D03-', 'D04-', 'D05+']
+
+
+Labels Concordance Rates:
+      D01-  D02-  D03-  D04-  D05+
+D05+   0.0  0.00  0.00  0.00  1.00
+D04-   0.0  0.00  0.00  1.00  0.83
+D03-   0.0  0.00  1.00  0.85  0.97
+D02-   0.0  1.00  0.98  0.83  0.97
+D01-   1.0  0.95  0.97  0.88  0.94
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/label_concordance_rates/images/mouse_#05.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/label_concordance_rates/matrices/mouse_#05.csv
+
+
+Correlation Coefficients of Predicted Probabilities for Ripples by CNN:
+      D01-  D02-  D03-  D04-  D05+
+D05+   0.0  0.00  0.00  0.00  1.00
+D04-   0.0  0.00  0.00  1.00  0.84
+D03-   0.0  0.00  1.00  0.83  0.98
+D02-   0.0  1.00  0.99  0.82  0.97
+D01-   1.0  0.98  0.98  0.87  0.97
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/corr_coef_pred_proba/images/mouse_#05.png
+
+
+Saved to: ./ripples/define_ripples/using_CNN/calcs_corr_of_labels/corr_coef_pred_proba/matrices/mouse_#05.csv
+

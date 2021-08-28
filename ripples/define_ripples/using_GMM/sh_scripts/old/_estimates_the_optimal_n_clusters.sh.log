@@ -1,0 +1,40 @@
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Random seeds have been fixed as 42
+
+Indice of mice to load: ['01']
+8
+
+Saved to: ./ripples/define_ripples/using_GMM/estimates_the_optimal_n_clusters/elbow_method_D01+_n_mouse_01.png
+
+
+Optimal Number of Clusters of GMM is 3
+
+Saved to: ./ripples/define_ripples/using_GMM/estimates_the_optimal_n_clusters/optimal_n_clusters_GMM_D01+.csv
+
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Random seeds have been fixed as 42
+
+Indice of mice to load: ['02']
+48
+
+Saved to: ./ripples/define_ripples/using_GMM/estimates_the_optimal_n_clusters/elbow_method_D02+_n_mouse_02.png
+
+
+Optimal Number of Clusters of GMM is 2
+
+Saved to: ./ripples/define_ripples/using_GMM/estimates_the_optimal_n_clusters/optimal_n_clusters_GMM_D02+.csv
+

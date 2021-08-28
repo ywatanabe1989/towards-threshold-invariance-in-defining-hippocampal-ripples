@@ -1,0 +1,20 @@
+
+Random seeds have been fixed as 42
+
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+Let's use 4 GPUs.
+
+Loaded: ./ripples/detect_ripples/CNN/train_n_vs_r/checkpoints/mouse_test#01_epoch#002.pth
+
+
+Random seeds have been fixed as 42
+
+
+Saved to: ./ripples/detect_ripples/CNN/predict_n_s_r/test_mouse#01/P_test_all.npy
+
+
+Saved to: ./ripples/detect_ripples/CNN/predict_n_s_r/test_mouse#01/pred_proba_as_r_test_all.npy
+

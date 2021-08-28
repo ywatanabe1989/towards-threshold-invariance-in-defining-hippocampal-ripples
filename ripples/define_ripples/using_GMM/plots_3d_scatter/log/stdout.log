@@ -1,0 +1,10 @@
+
+Matplotilb has been configured as follows:
+{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(45.7164, 28.22) [cm]', 'font.size': 20, 'legend.fontsize': 'small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': True, 'axes.spines.right': True}.
+
+
+Random seeds have been fixed as 42
+
+
+Saving to: ./ripples/define_ripples/using_GMM/plots_3d_scatter/videos/mouse#05.mp4
+

@@ -1,0 +1,1021 @@
+
+Random seeds have been fixed as 42
+
+
+Random seeds have been fixed as 42
+
+
+Standard Output/Error are going to be logged in the followings: 
+  - ./ripples/define_ripples/using_CNN/makes_labels/log/stdout.log
+  - ./ripples/define_ripples/using_CNN/makes_labels/log/stderr.log
+
+
+Random seeds have been fixed as 42
+
+D04+
+['./data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt2-2_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt2-3_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt2-4_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt2-2_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt2-3_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt2-4_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt2-2_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt2-3_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt2-4_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt2-1_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt2-2_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt2-3_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt2-4_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt6-1_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt6-2_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt6-3_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt6-4_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt6-1_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt6-2_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt6-3_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt6-4_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt6-1_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt6-2_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt6-3_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt6-4_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt6-1_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt6-2_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt6-3_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt6-4_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt7-1_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt7-2_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt7-3_fp16.npy',
+ './data/okada/04/day1/split/LFP_MEP_1kHz_npy/orig/tt7-4_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt7-1_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt7-2_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt7-3_fp16.npy',
+ './data/okada/04/day2/split/LFP_MEP_1kHz_npy/orig/tt7-4_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt7-1_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt7-2_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt7-3_fp16.npy',
+ './data/okada/04/day3/split/LFP_MEP_1kHz_npy/orig/tt7-4_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt7-1_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt7-2_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt7-3_fp16.npy',
+ './data/okada/04/day4/split/LFP_MEP_1kHz_npy/orig/tt7-4_fp16.npy']
+
+2021-0710-2249
+
+Ranger optimizer loaded. 
+Gradient Centralization usage = True
+GC applied to both conv and fc layers
+Train Epoch: 1 [1024/2777098 (0.0%)]	Loss: 0.363568
+Train Epoch: 1 [52224/2777098 (1.9%)]	Loss: 0.087017
+Train Epoch: 1 [103424/2777098 (3.7%)]	Loss: 0.050608
+Train Epoch: 1 [154624/2777098 (5.6%)]	Loss: 0.048644
+Train Epoch: 1 [205824/2777098 (7.4%)]	Loss: 0.064732
+Train Epoch: 1 [257024/2777098 (9.3%)]	Loss: 0.043757
+Train Epoch: 1 [308224/2777098 (11.1%)]	Loss: 0.050831
+Train Epoch: 1 [359424/2777098 (12.9%)]	Loss: 0.046194
+Train Epoch: 1 [410624/2777098 (14.8%)]	Loss: 0.051051
+Train Epoch: 1 [461824/2777098 (16.6%)]	Loss: 0.046046
+Train Epoch: 1 [513024/2777098 (18.5%)]	Loss: 0.052547
+Train Epoch: 1 [564224/2777098 (20.3%)]	Loss: 0.056883
+Train Epoch: 1 [615424/2777098 (22.2%)]	Loss: 0.038875
+Train Epoch: 1 [666624/2777098 (24.0%)]	Loss: 0.044369
+Train Epoch: 1 [717824/2777098 (25.8%)]	Loss: 0.056542
+Train Epoch: 1 [769024/2777098 (27.7%)]	Loss: 0.040733
+Train Epoch: 1 [820224/2777098 (29.5%)]	Loss: 0.053902
+Train Epoch: 1 [871424/2777098 (31.4%)]	Loss: 0.050033
+Train Epoch: 1 [922624/2777098 (33.2%)]	Loss: 0.045523
+Train Epoch: 1 [973824/2777098 (35.1%)]	Loss: 0.037568
+Train Epoch: 1 [1025024/2777098 (36.9%)]	Loss: 0.059543
+Train Epoch: 1 [1076224/2777098 (38.8%)]	Loss: 0.037539
+Train Epoch: 1 [1127424/2777098 (40.6%)]	Loss: 0.042163
+Train Epoch: 1 [1178624/2777098 (42.4%)]	Loss: 0.036496
+Train Epoch: 1 [1229824/2777098 (44.3%)]	Loss: 0.048256
+Train Epoch: 1 [1281024/2777098 (46.1%)]	Loss: 0.043948
+Train Epoch: 1 [1332224/2777098 (48.0%)]	Loss: 0.034997
+Train Epoch: 1 [1383424/2777098 (49.8%)]	Loss: 0.040428
+Train Epoch: 1 [1434624/2777098 (51.7%)]	Loss: 0.039595
+Train Epoch: 1 [1485824/2777098 (53.5%)]	Loss: 0.046549
+Train Epoch: 1 [1537024/2777098 (55.3%)]	Loss: 0.038729
+Train Epoch: 1 [1588224/2777098 (57.2%)]	Loss: 0.053021
+Train Epoch: 1 [1639424/2777098 (59.0%)]	Loss: 0.041601
+Train Epoch: 1 [1690624/2777098 (60.9%)]	Loss: 0.041556
+Train Epoch: 1 [1741824/2777098 (62.7%)]	Loss: 0.043699
+Train Epoch: 1 [1793024/2777098 (64.6%)]	Loss: 0.039831
+Train Epoch: 1 [1844224/2777098 (66.4%)]	Loss: 0.034508
+Train Epoch: 1 [1895424/2777098 (68.3%)]	Loss: 0.030014
+Train Epoch: 1 [1946624/2777098 (70.1%)]	Loss: 0.045688
+Train Epoch: 1 [1997824/2777098 (71.9%)]	Loss: 0.047370
+Train Epoch: 1 [2049024/2777098 (73.8%)]	Loss: 0.045305
+Train Epoch: 1 [2100224/2777098 (75.6%)]	Loss: 0.043678
+Train Epoch: 1 [2151424/2777098 (77.5%)]	Loss: 0.039339
+Train Epoch: 1 [2202624/2777098 (79.3%)]	Loss: 0.034420
+Train Epoch: 1 [2253824/2777098 (81.2%)]	Loss: 0.042652
+Train Epoch: 1 [2305024/2777098 (83.0%)]	Loss: 0.037070
+Train Epoch: 1 [2356224/2777098 (84.8%)]	Loss: 0.063220
+Train Epoch: 1 [2407424/2777098 (86.7%)]	Loss: 0.044731
+Train Epoch: 1 [2458624/2777098 (88.5%)]	Loss: 0.033672
+Train Epoch: 1 [2509824/2777098 (90.4%)]	Loss: 0.040123
+Train Epoch: 1 [2561024/2777098 (92.2%)]	Loss: 0.038519
+Train Epoch: 1 [2612224/2777098 (94.1%)]	Loss: 0.035022
+Train Epoch: 1 [2663424/2777098 (95.9%)]	Loss: 0.028731
+Train Epoch: 1 [2714624/2777098 (97.8%)]	Loss: 0.039258
+Train Epoch: 1 [2765824/2777098 (99.6%)]	Loss: 0.037500
+Train Epoch: 2 [1024/2777098 (0.0%)]	Loss: 0.045288
+Train Epoch: 2 [52224/2777098 (1.9%)]	Loss: 0.044337
+Train Epoch: 2 [103424/2777098 (3.7%)]	Loss: 0.040094
+Train Epoch: 2 [154624/2777098 (5.6%)]	Loss: 0.037715
+Train Epoch: 2 [205824/2777098 (7.4%)]	Loss: 0.039190
+Train Epoch: 2 [257024/2777098 (9.3%)]	Loss: 0.047661
+Train Epoch: 2 [308224/2777098 (11.1%)]	Loss: 0.033842
+Train Epoch: 2 [359424/2777098 (12.9%)]	Loss: 0.030343
+Train Epoch: 2 [410624/2777098 (14.8%)]	Loss: 0.040753
+Train Epoch: 2 [461824/2777098 (16.6%)]	Loss: 0.038200
+Train Epoch: 2 [513024/2777098 (18.5%)]	Loss: 0.032688
+Train Epoch: 2 [564224/2777098 (20.3%)]	Loss: 0.037846
+Train Epoch: 2 [615424/2777098 (22.2%)]	Loss: 0.045611
+Train Epoch: 2 [666624/2777098 (24.0%)]	Loss: 0.038176
+Train Epoch: 2 [717824/2777098 (25.8%)]	Loss: 0.040401
+Train Epoch: 2 [769024/2777098 (27.7%)]	Loss: 0.044550
+Train Epoch: 2 [820224/2777098 (29.5%)]	Loss: 0.044052
+Train Epoch: 2 [871424/2777098 (31.4%)]	Loss: 0.043913
+Train Epoch: 2 [922624/2777098 (33.2%)]	Loss: 0.026153
+Train Epoch: 2 [973824/2777098 (35.1%)]	Loss: 0.037274
+Train Epoch: 2 [1025024/2777098 (36.9%)]	Loss: 0.041275
+Train Epoch: 2 [1076224/2777098 (38.8%)]	Loss: 0.043846
+Train Epoch: 2 [1127424/2777098 (40.6%)]	Loss: 0.033898
+Train Epoch: 2 [1178624/2777098 (42.4%)]	Loss: 0.036030
+Train Epoch: 2 [1229824/2777098 (44.3%)]	Loss: 0.046400
+Train Epoch: 2 [1281024/2777098 (46.1%)]	Loss: 0.039523
+Train Epoch: 2 [1332224/2777098 (48.0%)]	Loss: 0.041319
+Train Epoch: 2 [1383424/2777098 (49.8%)]	Loss: 0.034714
+Train Epoch: 2 [1434624/2777098 (51.7%)]	Loss: 0.038127
+Train Epoch: 2 [1485824/2777098 (53.5%)]	Loss: 0.042255
+Train Epoch: 2 [1537024/2777098 (55.3%)]	Loss: 0.039300
+Train Epoch: 2 [1588224/2777098 (57.2%)]	Loss: 0.037409
+Train Epoch: 2 [1639424/2777098 (59.0%)]	Loss: 0.038516
+Train Epoch: 2 [1690624/2777098 (60.9%)]	Loss: 0.034748
+Train Epoch: 2 [1741824/2777098 (62.7%)]	Loss: 0.037623
+Train Epoch: 2 [1793024/2777098 (64.6%)]	Loss: 0.039130
+Train Epoch: 2 [1844224/2777098 (66.4%)]	Loss: 0.042074
+Train Epoch: 2 [1895424/2777098 (68.3%)]	Loss: 0.032963
+Train Epoch: 2 [1946624/2777098 (70.1%)]	Loss: 0.021872
+Train Epoch: 2 [1997824/2777098 (71.9%)]	Loss: 0.040517
+Train Epoch: 2 [2049024/2777098 (73.8%)]	Loss: 0.037574
+Train Epoch: 2 [2100224/2777098 (75.6%)]	Loss: 0.039071
+Train Epoch: 2 [2151424/2777098 (77.5%)]	Loss: 0.038489
+Train Epoch: 2 [2202624/2777098 (79.3%)]	Loss: 0.039441
+Train Epoch: 2 [2253824/2777098 (81.2%)]	Loss: 0.034849
+Train Epoch: 2 [2305024/2777098 (83.0%)]	Loss: 0.032324
+Train Epoch: 2 [2356224/2777098 (84.8%)]	Loss: 0.036599
+Train Epoch: 2 [2407424/2777098 (86.7%)]	Loss: 0.038072
+Train Epoch: 2 [2458624/2777098 (88.5%)]	Loss: 0.040344
+Train Epoch: 2 [2509824/2777098 (90.4%)]	Loss: 0.034561
+Train Epoch: 2 [2561024/2777098 (92.2%)]	Loss: 0.037826
+Train Epoch: 2 [2612224/2777098 (94.1%)]	Loss: 0.046039
+Train Epoch: 2 [2663424/2777098 (95.9%)]	Loss: 0.044729
+Train Epoch: 2 [2714624/2777098 (97.8%)]	Loss: 0.044671
+Train Epoch: 2 [2765824/2777098 (99.6%)]	Loss: 0.030188
+
+ACC in fold#0 was 0.970
+
+
+Balanced ACC in fold#0 was 0.934
+
+
+MCC in fold#0 was 0.908
+
+
+Confusion Matrix in fold#0: 
+           nonRipple  Ripple
+nonRipple     126102   18492
+Ripple          2252  547429
+
+
+Classification Report in fold#0: 
+              nonRipple      Ripple  ...   macro avg  weighted avg
+precision         0.982       0.967  ...       0.975         0.970
+recall            0.872       0.996  ...       0.934         0.970
+f1-score          0.924       0.981  ...       0.953         0.969
+sample size  144594.000  549681.000  ...  694275.000    694275.000
+
+[4 rows x 5 columns]
+
+Ranger optimizer loaded. 
+Gradient Centralization usage = True
+GC applied to both conv and fc layers
+Train Epoch: 1 [1024/2777098 (0.0%)]	Loss: 0.360492
+Train Epoch: 1 [52224/2777098 (1.9%)]	Loss: 0.093420
+Train Epoch: 1 [103424/2777098 (3.7%)]	Loss: 0.054786
+Train Epoch: 1 [154624/2777098 (5.6%)]	Loss: 0.038178
+Train Epoch: 1 [205824/2777098 (7.4%)]	Loss: 0.034759
+Train Epoch: 1 [257024/2777098 (9.3%)]	Loss: 0.051184
+Train Epoch: 1 [308224/2777098 (11.1%)]	Loss: 0.043050
+Train Epoch: 1 [359424/2777098 (12.9%)]	Loss: 0.040688
+Train Epoch: 1 [410624/2777098 (14.8%)]	Loss: 0.044459
+Train Epoch: 1 [461824/2777098 (16.6%)]	Loss: 0.045267
+Train Epoch: 1 [513024/2777098 (18.5%)]	Loss: 0.043086
+Train Epoch: 1 [564224/2777098 (20.3%)]	Loss: 0.035004
+Train Epoch: 1 [615424/2777098 (22.2%)]	Loss: 0.048307
+Train Epoch: 1 [666624/2777098 (24.0%)]	Loss: 0.050940
+Train Epoch: 1 [717824/2777098 (25.8%)]	Loss: 0.046096
+Train Epoch: 1 [769024/2777098 (27.7%)]	Loss: 0.046111
+Train Epoch: 1 [820224/2777098 (29.5%)]	Loss: 0.046788
+Train Epoch: 1 [871424/2777098 (31.4%)]	Loss: 0.041838
+Train Epoch: 1 [922624/2777098 (33.2%)]	Loss: 0.043663
+Train Epoch: 1 [973824/2777098 (35.1%)]	Loss: 0.050419
+Train Epoch: 1 [1025024/2777098 (36.9%)]	Loss: 0.042396
+Train Epoch: 1 [1076224/2777098 (38.8%)]	Loss: 0.045883
+Train Epoch: 1 [1127424/2777098 (40.6%)]	Loss: 0.049149
+Train Epoch: 1 [1178624/2777098 (42.4%)]	Loss: 0.036352
+Train Epoch: 1 [1229824/2777098 (44.3%)]	Loss: 0.038801
+Train Epoch: 1 [1281024/2777098 (46.1%)]	Loss: 0.042447
+Train Epoch: 1 [1332224/2777098 (48.0%)]	Loss: 0.029674
+Train Epoch: 1 [1383424/2777098 (49.8%)]	Loss: 0.032748
+Train Epoch: 1 [1434624/2777098 (51.7%)]	Loss: 0.038870
+Train Epoch: 1 [1485824/2777098 (53.5%)]	Loss: 0.053146
+Train Epoch: 1 [1537024/2777098 (55.3%)]	Loss: 0.043250
+Train Epoch: 1 [1588224/2777098 (57.2%)]	Loss: 0.037504
+Train Epoch: 1 [1639424/2777098 (59.0%)]	Loss: 0.038988
+Train Epoch: 1 [1690624/2777098 (60.9%)]	Loss: 0.035628
+Train Epoch: 1 [1741824/2777098 (62.7%)]	Loss: 0.052662
+Train Epoch: 1 [1793024/2777098 (64.6%)]	Loss: 0.035495
+Train Epoch: 1 [1844224/2777098 (66.4%)]	Loss: 0.027466
+Train Epoch: 1 [1895424/2777098 (68.3%)]	Loss: 0.038822
+Train Epoch: 1 [1946624/2777098 (70.1%)]	Loss: 0.026769
+Train Epoch: 1 [1997824/2777098 (71.9%)]	Loss: 0.038495
+Train Epoch: 1 [2049024/2777098 (73.8%)]	Loss: 0.031378
+Train Epoch: 1 [2100224/2777098 (75.6%)]	Loss: 0.033284
+Train Epoch: 1 [2151424/2777098 (77.5%)]	Loss: 0.034978
+Train Epoch: 1 [2202624/2777098 (79.3%)]	Loss: 0.040647
+Train Epoch: 1 [2253824/2777098 (81.2%)]	Loss: 0.042220
+Train Epoch: 1 [2305024/2777098 (83.0%)]	Loss: 0.040120
+Train Epoch: 1 [2356224/2777098 (84.8%)]	Loss: 0.032600
+Train Epoch: 1 [2407424/2777098 (86.7%)]	Loss: 0.035161
+Train Epoch: 1 [2458624/2777098 (88.5%)]	Loss: 0.029105
+Train Epoch: 1 [2509824/2777098 (90.4%)]	Loss: 0.025405
+Train Epoch: 1 [2561024/2777098 (92.2%)]	Loss: 0.035824
+Train Epoch: 1 [2612224/2777098 (94.1%)]	Loss: 0.028725
+Train Epoch: 1 [2663424/2777098 (95.9%)]	Loss: 0.040399
+Train Epoch: 1 [2714624/2777098 (97.8%)]	Loss: 0.035563
+Train Epoch: 1 [2765824/2777098 (99.6%)]	Loss: 0.035744
+Train Epoch: 2 [1024/2777098 (0.0%)]	Loss: 0.039839
+Train Epoch: 2 [52224/2777098 (1.9%)]	Loss: 0.031262
+Train Epoch: 2 [103424/2777098 (3.7%)]	Loss: 0.033559
+Train Epoch: 2 [154624/2777098 (5.6%)]	Loss: 0.032879
+Train Epoch: 2 [205824/2777098 (7.4%)]	Loss: 0.030880
+Train Epoch: 2 [257024/2777098 (9.3%)]	Loss: 0.030801
+Train Epoch: 2 [308224/2777098 (11.1%)]	Loss: 0.029157
+Train Epoch: 2 [359424/2777098 (12.9%)]	Loss: 0.032272
+Train Epoch: 2 [410624/2777098 (14.8%)]	Loss: 0.031692
+Train Epoch: 2 [461824/2777098 (16.6%)]	Loss: 0.035559
+Train Epoch: 2 [513024/2777098 (18.5%)]	Loss: 0.041624
+Train Epoch: 2 [564224/2777098 (20.3%)]	Loss: 0.033669
+Train Epoch: 2 [615424/2777098 (22.2%)]	Loss: 0.037066
+Train Epoch: 2 [666624/2777098 (24.0%)]	Loss: 0.024934
+Train Epoch: 2 [717824/2777098 (25.8%)]	Loss: 0.034532
+Train Epoch: 2 [769024/2777098 (27.7%)]	Loss: 0.029666
+Train Epoch: 2 [820224/2777098 (29.5%)]	Loss: 0.029182
+Train Epoch: 2 [871424/2777098 (31.4%)]	Loss: 0.035276
+Train Epoch: 2 [922624/2777098 (33.2%)]	Loss: 0.024947
+Train Epoch: 2 [973824/2777098 (35.1%)]	Loss: 0.033398
+Train Epoch: 2 [1025024/2777098 (36.9%)]	Loss: 0.045554
+Train Epoch: 2 [1076224/2777098 (38.8%)]	Loss: 0.028359
+Train Epoch: 2 [1127424/2777098 (40.6%)]	Loss: 0.028193
+Train Epoch: 2 [1178624/2777098 (42.4%)]	Loss: 0.029398
+Train Epoch: 2 [1229824/2777098 (44.3%)]	Loss: 0.040755
+Train Epoch: 2 [1281024/2777098 (46.1%)]	Loss: 0.038116
+Train Epoch: 2 [1332224/2777098 (48.0%)]	Loss: 0.037303
+Train Epoch: 2 [1383424/2777098 (49.8%)]	Loss: 0.036872
+Train Epoch: 2 [1434624/2777098 (51.7%)]	Loss: 0.042743
+Train Epoch: 2 [1485824/2777098 (53.5%)]	Loss: 0.035465
+Train Epoch: 2 [1537024/2777098 (55.3%)]	Loss: 0.029949
+Train Epoch: 2 [1588224/2777098 (57.2%)]	Loss: 0.024584
+Train Epoch: 2 [1639424/2777098 (59.0%)]	Loss: 0.027138
+Train Epoch: 2 [1690624/2777098 (60.9%)]	Loss: 0.035576
+Train Epoch: 2 [1741824/2777098 (62.7%)]	Loss: 0.032682
+Train Epoch: 2 [1793024/2777098 (64.6%)]	Loss: 0.030526
+Train Epoch: 2 [1844224/2777098 (66.4%)]	Loss: 0.038983
+Train Epoch: 2 [1895424/2777098 (68.3%)]	Loss: 0.027571
+Train Epoch: 2 [1946624/2777098 (70.1%)]	Loss: 0.035456
+Train Epoch: 2 [1997824/2777098 (71.9%)]	Loss: 0.032414
+Train Epoch: 2 [2049024/2777098 (73.8%)]	Loss: 0.027886
+Train Epoch: 2 [2100224/2777098 (75.6%)]	Loss: 0.030925
+Train Epoch: 2 [2151424/2777098 (77.5%)]	Loss: 0.041972
+Train Epoch: 2 [2202624/2777098 (79.3%)]	Loss: 0.040244
+Train Epoch: 2 [2253824/2777098 (81.2%)]	Loss: 0.036816
+Train Epoch: 2 [2305024/2777098 (83.0%)]	Loss: 0.040550
+Train Epoch: 2 [2356224/2777098 (84.8%)]	Loss: 0.032628
+Train Epoch: 2 [2407424/2777098 (86.7%)]	Loss: 0.026484
+Train Epoch: 2 [2458624/2777098 (88.5%)]	Loss: 0.030056
+Train Epoch: 2 [2509824/2777098 (90.4%)]	Loss: 0.028465
+Train Epoch: 2 [2561024/2777098 (92.2%)]	Loss: 0.026894
+Train Epoch: 2 [2612224/2777098 (94.1%)]	Loss: 0.023035
+Train Epoch: 2 [2663424/2777098 (95.9%)]	Loss: 0.033356
+Train Epoch: 2 [2714624/2777098 (97.8%)]	Loss: 0.039749
+Train Epoch: 2 [2765824/2777098 (99.6%)]	Loss: 0.035388
+
+ACC in fold#1 was 0.963
+
+
+Balanced ACC in fold#1 was 0.924
+
+
+MCC in fold#1 was 0.887
+
+
+Confusion Matrix in fold#1: 
+           nonRipple  Ripple
+nonRipple     123820   20775
+Ripple          4621  545059
+
+
+Classification Report in fold#1: 
+              nonRipple      Ripple  ...   macro avg  weighted avg
+precision         0.964       0.963  ...       0.964         0.963
+recall            0.856       0.992  ...       0.924         0.963
+f1-score          0.907       0.977  ...       0.942         0.963
+sample size  144595.000  549680.000  ...  694275.000    694275.000
+
+[4 rows x 5 columns]
+
+Ranger optimizer loaded. 
+Gradient Centralization usage = True
+GC applied to both conv and fc layers
+Train Epoch: 1 [1024/2777098 (0.0%)]	Loss: 0.342080
+Train Epoch: 1 [52224/2777098 (1.9%)]	Loss: 0.093684
+Train Epoch: 1 [103424/2777098 (3.7%)]	Loss: 0.058939
+Train Epoch: 1 [154624/2777098 (5.6%)]	Loss: 0.042205
+Train Epoch: 1 [205824/2777098 (7.4%)]	Loss: 0.050374
+Train Epoch: 1 [257024/2777098 (9.3%)]	Loss: 0.046340
+Train Epoch: 1 [308224/2777098 (11.1%)]	Loss: 0.043500
+Train Epoch: 1 [359424/2777098 (12.9%)]	Loss: 0.043134
+Train Epoch: 1 [410624/2777098 (14.8%)]	Loss: 0.047106
+Train Epoch: 1 [461824/2777098 (16.6%)]	Loss: 0.045067
+Train Epoch: 1 [513024/2777098 (18.5%)]	Loss: 0.046051
+Train Epoch: 1 [564224/2777098 (20.3%)]	Loss: 0.044263
+Train Epoch: 1 [615424/2777098 (22.2%)]	Loss: 0.042813
+Train Epoch: 1 [666624/2777098 (24.0%)]	Loss: 0.042164
+Train Epoch: 1 [717824/2777098 (25.8%)]	Loss: 0.040994
+Train Epoch: 1 [769024/2777098 (27.7%)]	Loss: 0.043855
+Train Epoch: 1 [820224/2777098 (29.5%)]	Loss: 0.037711
+Train Epoch: 1 [871424/2777098 (31.4%)]	Loss: 0.038881
+Train Epoch: 1 [922624/2777098 (33.2%)]	Loss: 0.045643
+Train Epoch: 1 [973824/2777098 (35.1%)]	Loss: 0.040567
+Train Epoch: 1 [1025024/2777098 (36.9%)]	Loss: 0.039503
+Train Epoch: 1 [1076224/2777098 (38.8%)]	Loss: 0.031960
+Train Epoch: 1 [1127424/2777098 (40.6%)]	Loss: 0.039933
+Train Epoch: 1 [1178624/2777098 (42.4%)]	Loss: 0.041015
+Train Epoch: 1 [1229824/2777098 (44.3%)]	Loss: 0.043675
+Train Epoch: 1 [1281024/2777098 (46.1%)]	Loss: 0.046634
+Train Epoch: 1 [1332224/2777098 (48.0%)]	Loss: 0.033120
+Train Epoch: 1 [1383424/2777098 (49.8%)]	Loss: 0.036864
+Train Epoch: 1 [1434624/2777098 (51.7%)]	Loss: 0.046152
+Train Epoch: 1 [1485824/2777098 (53.5%)]	Loss: 0.041277
+Train Epoch: 1 [1537024/2777098 (55.3%)]	Loss: 0.031768
+Train Epoch: 1 [1588224/2777098 (57.2%)]	Loss: 0.027099
+Train Epoch: 1 [1639424/2777098 (59.0%)]	Loss: 0.040155
+Train Epoch: 1 [1690624/2777098 (60.9%)]	Loss: 0.041226
+Train Epoch: 1 [1741824/2777098 (62.7%)]	Loss: 0.041700
+Train Epoch: 1 [1793024/2777098 (64.6%)]	Loss: 0.031062
+Train Epoch: 1 [1844224/2777098 (66.4%)]	Loss: 0.037678
+Train Epoch: 1 [1895424/2777098 (68.3%)]	Loss: 0.035291
+Train Epoch: 1 [1946624/2777098 (70.1%)]	Loss: 0.039071
+Train Epoch: 1 [1997824/2777098 (71.9%)]	Loss: 0.039948
+Train Epoch: 1 [2049024/2777098 (73.8%)]	Loss: 0.049230
+Train Epoch: 1 [2100224/2777098 (75.6%)]	Loss: 0.045278
+Train Epoch: 1 [2151424/2777098 (77.5%)]	Loss: 0.036416
+Train Epoch: 1 [2202624/2777098 (79.3%)]	Loss: 0.040008
+Train Epoch: 1 [2253824/2777098 (81.2%)]	Loss: 0.038030
+Train Epoch: 1 [2305024/2777098 (83.0%)]	Loss: 0.027589
+Train Epoch: 1 [2356224/2777098 (84.8%)]	Loss: 0.038615
+Train Epoch: 1 [2407424/2777098 (86.7%)]	Loss: 0.040305
+Train Epoch: 1 [2458624/2777098 (88.5%)]	Loss: 0.038393
+Train Epoch: 1 [2509824/2777098 (90.4%)]	Loss: 0.032429
+Train Epoch: 1 [2561024/2777098 (92.2%)]	Loss: 0.041512
+Train Epoch: 1 [2612224/2777098 (94.1%)]	Loss: 0.033266
+Train Epoch: 1 [2663424/2777098 (95.9%)]	Loss: 0.051322
+Train Epoch: 1 [2714624/2777098 (97.8%)]	Loss: 0.027324
+Train Epoch: 1 [2765824/2777098 (99.6%)]	Loss: 0.036345
+Train Epoch: 2 [1024/2777098 (0.0%)]	Loss: 0.040033
+Train Epoch: 2 [52224/2777098 (1.9%)]	Loss: 0.043917
+Train Epoch: 2 [103424/2777098 (3.7%)]	Loss: 0.033768
+Train Epoch: 2 [154624/2777098 (5.6%)]	Loss: 0.035573
+Train Epoch: 2 [205824/2777098 (7.4%)]	Loss: 0.033576
+Train Epoch: 2 [257024/2777098 (9.3%)]	Loss: 0.042507
+Train Epoch: 2 [308224/2777098 (11.1%)]	Loss: 0.030619
+Train Epoch: 2 [359424/2777098 (12.9%)]	Loss: 0.036331
+Train Epoch: 2 [410624/2777098 (14.8%)]	Loss: 0.024295
+Train Epoch: 2 [461824/2777098 (16.6%)]	Loss: 0.042034
+Train Epoch: 2 [513024/2777098 (18.5%)]	Loss: 0.034462
+Train Epoch: 2 [564224/2777098 (20.3%)]	Loss: 0.035490
+Train Epoch: 2 [615424/2777098 (22.2%)]	Loss: 0.041000
+Train Epoch: 2 [666624/2777098 (24.0%)]	Loss: 0.036474
+Train Epoch: 2 [717824/2777098 (25.8%)]	Loss: 0.031384
+Train Epoch: 2 [769024/2777098 (27.7%)]	Loss: 0.038843
+Train Epoch: 2 [820224/2777098 (29.5%)]	Loss: 0.039597
+Train Epoch: 2 [871424/2777098 (31.4%)]	Loss: 0.028907
+Train Epoch: 2 [922624/2777098 (33.2%)]	Loss: 0.028690
+Train Epoch: 2 [973824/2777098 (35.1%)]	Loss: 0.037311
+Train Epoch: 2 [1025024/2777098 (36.9%)]	Loss: 0.043015
+Train Epoch: 2 [1076224/2777098 (38.8%)]	Loss: 0.036078
+Train Epoch: 2 [1127424/2777098 (40.6%)]	Loss: 0.029837
+Train Epoch: 2 [1178624/2777098 (42.4%)]	Loss: 0.029839
+Train Epoch: 2 [1229824/2777098 (44.3%)]	Loss: 0.032355
+Train Epoch: 2 [1281024/2777098 (46.1%)]	Loss: 0.046343
+Train Epoch: 2 [1332224/2777098 (48.0%)]	Loss: 0.034642
+Train Epoch: 2 [1383424/2777098 (49.8%)]	Loss: 0.033972
+Train Epoch: 2 [1434624/2777098 (51.7%)]	Loss: 0.042819
+Train Epoch: 2 [1485824/2777098 (53.5%)]	Loss: 0.049806
+Train Epoch: 2 [1537024/2777098 (55.3%)]	Loss: 0.040672
+Train Epoch: 2 [1588224/2777098 (57.2%)]	Loss: 0.036093
+Train Epoch: 2 [1639424/2777098 (59.0%)]	Loss: 0.029237
+Train Epoch: 2 [1690624/2777098 (60.9%)]	Loss: 0.038217
+Train Epoch: 2 [1741824/2777098 (62.7%)]	Loss: 0.048563
+Train Epoch: 2 [1793024/2777098 (64.6%)]	Loss: 0.032582
+Train Epoch: 2 [1844224/2777098 (66.4%)]	Loss: 0.029936
+Train Epoch: 2 [1895424/2777098 (68.3%)]	Loss: 0.034892
+Train Epoch: 2 [1946624/2777098 (70.1%)]	Loss: 0.039183
+Train Epoch: 2 [1997824/2777098 (71.9%)]	Loss: 0.032739
+Train Epoch: 2 [2049024/2777098 (73.8%)]	Loss: 0.032400
+Train Epoch: 2 [2100224/2777098 (75.6%)]	Loss: 0.045882
+Train Epoch: 2 [2151424/2777098 (77.5%)]	Loss: 0.035475
+Train Epoch: 2 [2202624/2777098 (79.3%)]	Loss: 0.042369
+Train Epoch: 2 [2253824/2777098 (81.2%)]	Loss: 0.040497
+Train Epoch: 2 [2305024/2777098 (83.0%)]	Loss: 0.034291
+Train Epoch: 2 [2356224/2777098 (84.8%)]	Loss: 0.039235
+Train Epoch: 2 [2407424/2777098 (86.7%)]	Loss: 0.047233
+Train Epoch: 2 [2458624/2777098 (88.5%)]	Loss: 0.037991
+Train Epoch: 2 [2509824/2777098 (90.4%)]	Loss: 0.026946
+Train Epoch: 2 [2561024/2777098 (92.2%)]	Loss: 0.031702
+Train Epoch: 2 [2612224/2777098 (94.1%)]	Loss: 0.040081
+Train Epoch: 2 [2663424/2777098 (95.9%)]	Loss: 0.053786
+Train Epoch: 2 [2714624/2777098 (97.8%)]	Loss: 0.033846
+Train Epoch: 2 [2765824/2777098 (99.6%)]	Loss: 0.032238
+
+ACC in fold#2 was 0.959
+
+
+Balanced ACC in fold#2 was 0.907
+
+
+MCC in fold#2 was 0.874
+
+
+Confusion Matrix in fold#2: 
+           nonRipple  Ripple
+nonRipple     118202   26393
+Ripple          1920  547760
+
+
+Classification Report in fold#2: 
+              nonRipple      Ripple  ...   macro avg  weighted avg
+precision         0.984       0.954  ...       0.969         0.960
+recall            0.817       0.997  ...       0.907         0.959
+f1-score          0.893       0.975  ...       0.934         0.958
+sample size  144595.000  549680.000  ...  694275.000    694275.000
+
+[4 rows x 5 columns]
+
+Ranger optimizer loaded. 
+Gradient Centralization usage = True
+GC applied to both conv and fc layers
+Train Epoch: 1 [1024/2777099 (0.0%)]	Loss: 0.366183
+Train Epoch: 1 [52224/2777099 (1.9%)]	Loss: 0.094751
+Train Epoch: 1 [103424/2777099 (3.7%)]	Loss: 0.062214
+Train Epoch: 1 [154624/2777099 (5.6%)]	Loss: 0.056218
+Train Epoch: 1 [205824/2777099 (7.4%)]	Loss: 0.051785
+Train Epoch: 1 [257024/2777099 (9.3%)]	Loss: 0.042558
+Train Epoch: 1 [308224/2777099 (11.1%)]	Loss: 0.045453
+Train Epoch: 1 [359424/2777099 (12.9%)]	Loss: 0.037782
+Train Epoch: 1 [410624/2777099 (14.8%)]	Loss: 0.033729
+Train Epoch: 1 [461824/2777099 (16.6%)]	Loss: 0.038990
+Train Epoch: 1 [513024/2777099 (18.5%)]	Loss: 0.036221
+Train Epoch: 1 [564224/2777099 (20.3%)]	Loss: 0.042091
+Train Epoch: 1 [615424/2777099 (22.2%)]	Loss: 0.047227
+Train Epoch: 1 [666624/2777099 (24.0%)]	Loss: 0.040459
+Train Epoch: 1 [717824/2777099 (25.8%)]	Loss: 0.042419
+Train Epoch: 1 [769024/2777099 (27.7%)]	Loss: 0.035694
+Train Epoch: 1 [820224/2777099 (29.5%)]	Loss: 0.032955
+Train Epoch: 1 [871424/2777099 (31.4%)]	Loss: 0.048395
+Train Epoch: 1 [922624/2777099 (33.2%)]	Loss: 0.035265
+Train Epoch: 1 [973824/2777099 (35.1%)]	Loss: 0.043732
+Train Epoch: 1 [1025024/2777099 (36.9%)]	Loss: 0.054631
+Train Epoch: 1 [1076224/2777099 (38.8%)]	Loss: 0.035742
+Train Epoch: 1 [1127424/2777099 (40.6%)]	Loss: 0.035849
+Train Epoch: 1 [1178624/2777099 (42.4%)]	Loss: 0.043076
+Train Epoch: 1 [1229824/2777099 (44.3%)]	Loss: 0.033082
+Train Epoch: 1 [1281024/2777099 (46.1%)]	Loss: 0.037433
+Train Epoch: 1 [1332224/2777099 (48.0%)]	Loss: 0.044793
+Train Epoch: 1 [1383424/2777099 (49.8%)]	Loss: 0.048839
+Train Epoch: 1 [1434624/2777099 (51.7%)]	Loss: 0.041957
+Train Epoch: 1 [1485824/2777099 (53.5%)]	Loss: 0.040854
+Train Epoch: 1 [1537024/2777099 (55.3%)]	Loss: 0.050675
+Train Epoch: 1 [1588224/2777099 (57.2%)]	Loss: 0.042823
+Train Epoch: 1 [1639424/2777099 (59.0%)]	Loss: 0.032188
+Train Epoch: 1 [1690624/2777099 (60.9%)]	Loss: 0.043347
+Train Epoch: 1 [1741824/2777099 (62.7%)]	Loss: 0.039089
+Train Epoch: 1 [1793024/2777099 (64.6%)]	Loss: 0.033063
+Train Epoch: 1 [1844224/2777099 (66.4%)]	Loss: 0.044598
+Train Epoch: 1 [1895424/2777099 (68.3%)]	Loss: 0.042808
+Train Epoch: 1 [1946624/2777099 (70.1%)]	Loss: 0.027207
+Train Epoch: 1 [1997824/2777099 (71.9%)]	Loss: 0.035434
+Train Epoch: 1 [2049024/2777099 (73.8%)]	Loss: 0.048365
+Train Epoch: 1 [2100224/2777099 (75.6%)]	Loss: 0.043765
+Train Epoch: 1 [2151424/2777099 (77.5%)]	Loss: 0.034727
+Train Epoch: 1 [2202624/2777099 (79.3%)]	Loss: 0.040136
+Train Epoch: 1 [2253824/2777099 (81.2%)]	Loss: 0.035937
+Train Epoch: 1 [2305024/2777099 (83.0%)]	Loss: 0.044332
+Train Epoch: 1 [2356224/2777099 (84.8%)]	Loss: 0.033979
+Train Epoch: 1 [2407424/2777099 (86.7%)]	Loss: 0.048492
+Train Epoch: 1 [2458624/2777099 (88.5%)]	Loss: 0.030827
+Train Epoch: 1 [2509824/2777099 (90.4%)]	Loss: 0.042953
+Train Epoch: 1 [2561024/2777099 (92.2%)]	Loss: 0.039206
+Train Epoch: 1 [2612224/2777099 (94.1%)]	Loss: 0.037202
+Train Epoch: 1 [2663424/2777099 (95.9%)]	Loss: 0.045264
+Train Epoch: 1 [2714624/2777099 (97.8%)]	Loss: 0.029763
+Train Epoch: 1 [2765824/2777099 (99.6%)]	Loss: 0.041334
+Train Epoch: 2 [1024/2777099 (0.0%)]	Loss: 0.038029
+Train Epoch: 2 [52224/2777099 (1.9%)]	Loss: 0.044563
+Train Epoch: 2 [103424/2777099 (3.7%)]	Loss: 0.032107
+Train Epoch: 2 [154624/2777099 (5.6%)]	Loss: 0.035928
+Train Epoch: 2 [205824/2777099 (7.4%)]	Loss: 0.038938
+Train Epoch: 2 [257024/2777099 (9.3%)]	Loss: 0.030848
+Train Epoch: 2 [308224/2777099 (11.1%)]	Loss: 0.031191
+Train Epoch: 2 [359424/2777099 (12.9%)]	Loss: 0.038895
+Train Epoch: 2 [410624/2777099 (14.8%)]	Loss: 0.043576
+Train Epoch: 2 [461824/2777099 (16.6%)]	Loss: 0.041764
+Train Epoch: 2 [513024/2777099 (18.5%)]	Loss: 0.042350
+Train Epoch: 2 [564224/2777099 (20.3%)]	Loss: 0.041872
+Train Epoch: 2 [615424/2777099 (22.2%)]	Loss: 0.038605
+Train Epoch: 2 [666624/2777099 (24.0%)]	Loss: 0.033141
+Train Epoch: 2 [717824/2777099 (25.8%)]	Loss: 0.034370
+Train Epoch: 2 [769024/2777099 (27.7%)]	Loss: 0.038761
+Train Epoch: 2 [820224/2777099 (29.5%)]	Loss: 0.038028
+Train Epoch: 2 [871424/2777099 (31.4%)]	Loss: 0.029637
+Train Epoch: 2 [922624/2777099 (33.2%)]	Loss: 0.037110
+Train Epoch: 2 [973824/2777099 (35.1%)]	Loss: 0.032496
+Train Epoch: 2 [1025024/2777099 (36.9%)]	Loss: 0.026154
+Train Epoch: 2 [1076224/2777099 (38.8%)]	Loss: 0.042612
+Train Epoch: 2 [1127424/2777099 (40.6%)]	Loss: 0.041554
+Train Epoch: 2 [1178624/2777099 (42.4%)]	Loss: 0.040028
+Train Epoch: 2 [1229824/2777099 (44.3%)]	Loss: 0.039777
+Train Epoch: 2 [1281024/2777099 (46.1%)]	Loss: 0.038811
+Train Epoch: 2 [1332224/2777099 (48.0%)]	Loss: 0.028492
+Train Epoch: 2 [1383424/2777099 (49.8%)]	Loss: 0.038123
+Train Epoch: 2 [1434624/2777099 (51.7%)]	Loss: 0.033675
+Train Epoch: 2 [1485824/2777099 (53.5%)]	Loss: 0.050518
+Train Epoch: 2 [1537024/2777099 (55.3%)]	Loss: 0.033818
+Train Epoch: 2 [1588224/2777099 (57.2%)]	Loss: 0.036541
+Train Epoch: 2 [1639424/2777099 (59.0%)]	Loss: 0.037531
+Train Epoch: 2 [1690624/2777099 (60.9%)]	Loss: 0.034514
+Train Epoch: 2 [1741824/2777099 (62.7%)]	Loss: 0.037487
+Train Epoch: 2 [1793024/2777099 (64.6%)]	Loss: 0.045436
+Train Epoch: 2 [1844224/2777099 (66.4%)]	Loss: 0.032928
+Train Epoch: 2 [1895424/2777099 (68.3%)]	Loss: 0.042951
+Train Epoch: 2 [1946624/2777099 (70.1%)]	Loss: 0.039553
+Train Epoch: 2 [1997824/2777099 (71.9%)]	Loss: 0.030371
+Train Epoch: 2 [2049024/2777099 (73.8%)]	Loss: 0.024359
+Train Epoch: 2 [2100224/2777099 (75.6%)]	Loss: 0.031706
+Train Epoch: 2 [2151424/2777099 (77.5%)]	Loss: 0.031375
+Train Epoch: 2 [2202624/2777099 (79.3%)]	Loss: 0.037891
+Train Epoch: 2 [2253824/2777099 (81.2%)]	Loss: 0.033857
+Train Epoch: 2 [2305024/2777099 (83.0%)]	Loss: 0.036374
+Train Epoch: 2 [2356224/2777099 (84.8%)]	Loss: 0.035345
+Train Epoch: 2 [2407424/2777099 (86.7%)]	Loss: 0.023416
+Train Epoch: 2 [2458624/2777099 (88.5%)]	Loss: 0.035724
+Train Epoch: 2 [2509824/2777099 (90.4%)]	Loss: 0.032219
+Train Epoch: 2 [2561024/2777099 (92.2%)]	Loss: 0.033226
+Train Epoch: 2 [2612224/2777099 (94.1%)]	Loss: 0.040609
+Train Epoch: 2 [2663424/2777099 (95.9%)]	Loss: 0.037206
+Train Epoch: 2 [2714624/2777099 (97.8%)]	Loss: 0.042585
+Train Epoch: 2 [2765824/2777099 (99.6%)]	Loss: 0.034773
+
+ACC in fold#3 was 0.973
+
+
+Balanced ACC in fold#3 was 0.946
+
+
+MCC in fold#3 was 0.918
+
+
+Confusion Matrix in fold#3: 
+           nonRipple  Ripple
+nonRipple     129997   14597
+Ripple          3929  545751
+
+
+Classification Report in fold#3: 
+              nonRipple      Ripple  ...   macro avg  weighted avg
+precision         0.971       0.974  ...       0.972         0.973
+recall            0.899       0.993  ...       0.946         0.973
+f1-score          0.933       0.983  ...       0.958         0.973
+sample size  144594.000  549680.000  ...  694274.000    694274.000
+
+[4 rows x 5 columns]
+
+Ranger optimizer loaded. 
+Gradient Centralization usage = True
+GC applied to both conv and fc layers
+Train Epoch: 1 [1024/2777099 (0.0%)]	Loss: 0.368865
+Train Epoch: 1 [52224/2777099 (1.9%)]	Loss: 0.079574
+Train Epoch: 1 [103424/2777099 (3.7%)]	Loss: 0.039452
+Train Epoch: 1 [154624/2777099 (5.6%)]	Loss: 0.047902
+Train Epoch: 1 [205824/2777099 (7.4%)]	Loss: 0.042242
+Train Epoch: 1 [257024/2777099 (9.3%)]	Loss: 0.045133
+Train Epoch: 1 [308224/2777099 (11.1%)]	Loss: 0.047888
+Train Epoch: 1 [359424/2777099 (12.9%)]	Loss: 0.041573
+Train Epoch: 1 [410624/2777099 (14.8%)]	Loss: 0.047547
+Train Epoch: 1 [461824/2777099 (16.6%)]	Loss: 0.034456
+Train Epoch: 1 [513024/2777099 (18.5%)]	Loss: 0.040434
+Train Epoch: 1 [564224/2777099 (20.3%)]	Loss: 0.034605
+Train Epoch: 1 [615424/2777099 (22.2%)]	Loss: 0.033749
+Train Epoch: 1 [666624/2777099 (24.0%)]	Loss: 0.046354
+Train Epoch: 1 [717824/2777099 (25.8%)]	Loss: 0.037084
+Train Epoch: 1 [769024/2777099 (27.7%)]	Loss: 0.051579
+Train Epoch: 1 [820224/2777099 (29.5%)]	Loss: 0.037428
+Train Epoch: 1 [871424/2777099 (31.4%)]	Loss: 0.041227
+Train Epoch: 1 [922624/2777099 (33.2%)]	Loss: 0.040406
+Train Epoch: 1 [973824/2777099 (35.1%)]	Loss: 0.041420
+Train Epoch: 1 [1025024/2777099 (36.9%)]	Loss: 0.044485
+Train Epoch: 1 [1076224/2777099 (38.8%)]	Loss: 0.035124
+Train Epoch: 1 [1127424/2777099 (40.6%)]	Loss: 0.042000
+Train Epoch: 1 [1178624/2777099 (42.4%)]	Loss: 0.041917
+Train Epoch: 1 [1229824/2777099 (44.3%)]	Loss: 0.042708
+Train Epoch: 1 [1281024/2777099 (46.1%)]	Loss: 0.038102
+Train Epoch: 1 [1332224/2777099 (48.0%)]	Loss: 0.042812
+Train Epoch: 1 [1383424/2777099 (49.8%)]	Loss: 0.030635
+Train Epoch: 1 [1434624/2777099 (51.7%)]	Loss: 0.046332
+Train Epoch: 1 [1485824/2777099 (53.5%)]	Loss: 0.032609
+Train Epoch: 1 [1537024/2777099 (55.3%)]	Loss: 0.029068
+Train Epoch: 1 [1588224/2777099 (57.2%)]	Loss: 0.027940
+Train Epoch: 1 [1639424/2777099 (59.0%)]	Loss: 0.053048
+Train Epoch: 1 [1690624/2777099 (60.9%)]	Loss: 0.027749
+Train Epoch: 1 [1741824/2777099 (62.7%)]	Loss: 0.037555
+Train Epoch: 1 [1793024/2777099 (64.6%)]	Loss: 0.033701
+Train Epoch: 1 [1844224/2777099 (66.4%)]	Loss: 0.036460
+Train Epoch: 1 [1895424/2777099 (68.3%)]	Loss: 0.032085
+Train Epoch: 1 [1946624/2777099 (70.1%)]	Loss: 0.040653
+Train Epoch: 1 [1997824/2777099 (71.9%)]	Loss: 0.035104
+Train Epoch: 1 [2049024/2777099 (73.8%)]	Loss: 0.038128
+Train Epoch: 1 [2100224/2777099 (75.6%)]	Loss: 0.046307
+Train Epoch: 1 [2151424/2777099 (77.5%)]	Loss: 0.043901
+Train Epoch: 1 [2202624/2777099 (79.3%)]	Loss: 0.040719
+Train Epoch: 1 [2253824/2777099 (81.2%)]	Loss: 0.037775
+Train Epoch: 1 [2305024/2777099 (83.0%)]	Loss: 0.041971
+Train Epoch: 1 [2356224/2777099 (84.8%)]	Loss: 0.039464
+Train Epoch: 1 [2407424/2777099 (86.7%)]	Loss: 0.037120
+Train Epoch: 1 [2458624/2777099 (88.5%)]	Loss: 0.035424
+Train Epoch: 1 [2509824/2777099 (90.4%)]	Loss: 0.042096
+Train Epoch: 1 [2561024/2777099 (92.2%)]	Loss: 0.042230
+Train Epoch: 1 [2612224/2777099 (94.1%)]	Loss: 0.042993
+Train Epoch: 1 [2663424/2777099 (95.9%)]	Loss: 0.035815
+Train Epoch: 1 [2714624/2777099 (97.8%)]	Loss: 0.035900
+Train Epoch: 1 [2765824/2777099 (99.6%)]	Loss: 0.037738
+Train Epoch: 2 [1024/2777099 (0.0%)]	Loss: 0.031666
+Train Epoch: 2 [52224/2777099 (1.9%)]	Loss: 0.045685
+Train Epoch: 2 [103424/2777099 (3.7%)]	Loss: 0.041838
+Train Epoch: 2 [154624/2777099 (5.6%)]	Loss: 0.039861
+Train Epoch: 2 [205824/2777099 (7.4%)]	Loss: 0.026151
+Train Epoch: 2 [257024/2777099 (9.3%)]	Loss: 0.046262
+Train Epoch: 2 [308224/2777099 (11.1%)]	Loss: 0.031138
+Train Epoch: 2 [359424/2777099 (12.9%)]	Loss: 0.044129
+Train Epoch: 2 [410624/2777099 (14.8%)]	Loss: 0.029185
+Train Epoch: 2 [461824/2777099 (16.6%)]	Loss: 0.042155
+Train Epoch: 2 [513024/2777099 (18.5%)]	Loss: 0.050190
+Train Epoch: 2 [564224/2777099 (20.3%)]	Loss: 0.049366
+Train Epoch: 2 [615424/2777099 (22.2%)]	Loss: 0.039368
+Train Epoch: 2 [666624/2777099 (24.0%)]	Loss: 0.039376
+Train Epoch: 2 [717824/2777099 (25.8%)]	Loss: 0.032918
+Train Epoch: 2 [769024/2777099 (27.7%)]	Loss: 0.033250
+Train Epoch: 2 [820224/2777099 (29.5%)]	Loss: 0.030437
+Train Epoch: 2 [871424/2777099 (31.4%)]	Loss: 0.032472
+Train Epoch: 2 [922624/2777099 (33.2%)]	Loss: 0.036297
+Train Epoch: 2 [973824/2777099 (35.1%)]	Loss: 0.045185
+Train Epoch: 2 [1025024/2777099 (36.9%)]	Loss: 0.038498
+Train Epoch: 2 [1076224/2777099 (38.8%)]	Loss: 0.026029
+Train Epoch: 2 [1127424/2777099 (40.6%)]	Loss: 0.028483
+Train Epoch: 2 [1178624/2777099 (42.4%)]	Loss: 0.037216
+Train Epoch: 2 [1229824/2777099 (44.3%)]	Loss: 0.038485
+Train Epoch: 2 [1281024/2777099 (46.1%)]	Loss: 0.034604
+Train Epoch: 2 [1332224/2777099 (48.0%)]	Loss: 0.036645
+Train Epoch: 2 [1383424/2777099 (49.8%)]	Loss: 0.036938
+Train Epoch: 2 [1434624/2777099 (51.7%)]	Loss: 0.035531
+Train Epoch: 2 [1485824/2777099 (53.5%)]	Loss: 0.031023
+Train Epoch: 2 [1537024/2777099 (55.3%)]	Loss: 0.042346
+Train Epoch: 2 [1588224/2777099 (57.2%)]	Loss: 0.033485
+Train Epoch: 2 [1639424/2777099 (59.0%)]	Loss: 0.033905
+Train Epoch: 2 [1690624/2777099 (60.9%)]	Loss: 0.031045
+Train Epoch: 2 [1741824/2777099 (62.7%)]	Loss: 0.037140
+Train Epoch: 2 [1793024/2777099 (64.6%)]	Loss: 0.032147
+Train Epoch: 2 [1844224/2777099 (66.4%)]	Loss: 0.026920
+Train Epoch: 2 [1895424/2777099 (68.3%)]	Loss: 0.035435
+Train Epoch: 2 [1946624/2777099 (70.1%)]	Loss: 0.030137
+Train Epoch: 2 [1997824/2777099 (71.9%)]	Loss: 0.040493
+Train Epoch: 2 [2049024/2777099 (73.8%)]	Loss: 0.029029
+Train Epoch: 2 [2100224/2777099 (75.6%)]	Loss: 0.028456
+Train Epoch: 2 [2151424/2777099 (77.5%)]	Loss: 0.035666
+Train Epoch: 2 [2202624/2777099 (79.3%)]	Loss: 0.037096
+Train Epoch: 2 [2253824/2777099 (81.2%)]	Loss: 0.041222
+Train Epoch: 2 [2305024/2777099 (83.0%)]	Loss: 0.033171
+Train Epoch: 2 [2356224/2777099 (84.8%)]	Loss: 0.041962
+Train Epoch: 2 [2407424/2777099 (86.7%)]	Loss: 0.030518
+Train Epoch: 2 [2458624/2777099 (88.5%)]	Loss: 0.029864
+Train Epoch: 2 [2509824/2777099 (90.4%)]	Loss: 0.036390
+Train Epoch: 2 [2561024/2777099 (92.2%)]	Loss: 0.026960
+Train Epoch: 2 [2612224/2777099 (94.1%)]	Loss: 0.036874
+Train Epoch: 2 [2663424/2777099 (95.9%)]	Loss: 0.029405
+Train Epoch: 2 [2714624/2777099 (97.8%)]	Loss: 0.049039
+Train Epoch: 2 [2765824/2777099 (99.6%)]	Loss: 0.029905
+
+ACC in fold#4 was 0.962
+
+
+Balanced ACC in fold#4 was 0.919
+
+
+MCC in fold#4 was 0.881
+
+
+Confusion Matrix in fold#4: 
+           nonRipple  Ripple
+nonRipple     122429   22165
+Ripple          4526  545154
+
+
+Classification Report in fold#4: 
+              nonRipple      Ripple  ...   macro avg  weighted avg
+precision         0.964       0.961  ...       0.963         0.962
+recall            0.847       0.992  ...       0.919         0.962
+f1-score          0.902       0.976  ...       0.939         0.961
+sample size  144594.000  549680.000  ...  694274.000    694274.000
+
+[4 rows x 5 columns]
+
+
+Label Errors Rate:
+0.005
+
+
+ --- 5-fold CV overall metrics --- 
+
+
+The Mattews correlation coefficient: 0.893 +/- 0.017 (mean +/- std.; n=5)
+
+
+Balanced Accuracy Score: 0.926 +/- 0.013 (mean +/- std.; n=5)
+
+
+Confusion Matrix (Test; sum; num. folds=5)
+           nonRipple   Ripple
+nonRipple     620550   102422
+Ripple         17248  2731153
+
+
+Classification Report (Test; mean; num. folds=5)
+              nonRipple      Ripple  ...   macro avg  weighted avg
+precision         0.973       0.964  ...       0.969         0.966
+recall            0.858       0.994  ...       0.926         0.965
+f1-score          0.912       0.978  ...       0.945         0.965
+sample size  144594.400  549680.200  ...  694274.600    694274.600
+
+[4 rows x 5 columns]
+
+
+Classification Report (Test; std; num. folds=5)
+             nonRipple  Ripple  balanced accuracy  macro avg  weighted avg
+precision        0.009   0.007              0.013      0.005         0.005
+recall           0.027   0.002              0.013      0.013         0.005
+f1-score         0.015   0.003              0.013      0.009         0.005
+sample size      0.490   0.400              0.013      0.490         0.490
+
+
+ROC AUC micro Score: 0.996 +/- 0.001 (mean +/- std.; n=5)
+
+
+ROC AUC macro Score: 0.994 +/- 0.001 (mean +/- std.; n=5)
+
+
+Precision-Recall AUC micro Score: 0.996 +/- 0.001 (mean +/- std.; n=5)
+
+
+Precision-Recall AUC macro Score: 0.991 +/- 0.002 (mean +/- std.; n=5)
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/are_errors.npy
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/are_ripple_GMM.npy
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/psx_ripple.npy
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/mccs.csv
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/balanced_accs.csv
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/conf_mat/fold#0.png
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/conf_mat/fold#1.png
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/conf_mat/fold#2.png
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/conf_mat/fold#3.png
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/conf_mat/fold#4.png
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/conf_mat/conf_mats.csv
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/conf_mat/overall_sum.png
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/clf_reports.csv
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/aucs.csv
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/roc_curves/fold#0.png
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/roc_curves/fold#1.png
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/roc_curves/fold#2.png
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/roc_curves/fold#3.png
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/roc_curves/fold#4.png
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/pr_curves/fold#0.png
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/pr_curves/fold#1.png
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/pr_curves/fold#2.png
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/pr_curves/fold#3.png
+
+
+Saved to: ./data/okada/cleanlab_results/D04+/pr_curves/fold#4.png
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt2-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt2-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt2-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt2-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt6-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt6-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt6-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt6-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day1/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day2/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day3/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt7-4_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt7-1_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt7-2_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt7-3_fp16.pkl
+
+
+Saved to: ./data/okada/04/day4/split/ripples_1kHz_pkl/CNN_labeled/D04+/tt7-4_fp16.pkl
+

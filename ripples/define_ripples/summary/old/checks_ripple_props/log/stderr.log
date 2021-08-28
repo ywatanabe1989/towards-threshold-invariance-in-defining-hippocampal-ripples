@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "ripples/define_ripples/summary/checks_ripple_props.py", line 53, in <module>
+    LPATH_HIPPO_LFP_NPY_LIST = utils.general.read_txt(
+AttributeError: module 'utils.general' has no attribute 'read_txt'

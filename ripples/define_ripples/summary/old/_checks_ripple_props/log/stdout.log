@@ -1,0 +1,138 @@
+
+--------------------------------------------------
+n_mouse: 01
+
+
+Kruskal-Wallis test:
+H_statistic: 83871.08279649724
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T    F2T   T2F F2F
+T2T     -      -     -   -
+F2T  True      -     -   -
+T2F  True  False     -   -
+F2F  True   True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.118  0.140  0.487
+F2T  NaN    NaN  0.013  0.428
+T2F  NaN    NaN    NaN  0.448
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 02
+
+
+Kruskal-Wallis test:
+H_statistic: 172175.42136813057
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.038  0.009  0.321
+F2T  NaN    NaN  0.069  0.298
+T2F  NaN    NaN    NaN  0.376
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 03
+
+
+Kruskal-Wallis test:
+H_statistic: 179373.10648321908
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T    F2T   T2F F2F
+T2T     -      -     -   -
+F2T  True      -     -   -
+T2F  True  False     -   -
+F2F  True   True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.308  0.313  0.196
+F2T  NaN    NaN  0.000  0.477
+T2F  NaN    NaN    NaN  0.483
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 04
+
+
+Kruskal-Wallis test:
+H_statistic: 305795.2593422725
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T   F2T   T2F F2F
+T2T     -     -     -   -
+F2T  True     -     -   -
+T2F  True  True     -   -
+F2F  True  True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.201  0.157  0.355
+F2T  NaN    NaN  0.061  0.526
+T2F  NaN    NaN    NaN  0.503
+F2F  NaN    NaN    NaN    NaN
+
+--------------------------------------------------
+n_mouse: 05
+
+
+Kruskal-Wallis test:
+H_statistic: 235403.02257542335
+p-value: 0.0
+
+
+Brunner-Munzel test with Bonferroni correction (alpha = 0.05):
+      T2T    F2T   T2F F2F
+T2T     -      -     -   -
+F2T  True      -     -   -
+T2F  True  False     -   -
+F2F  True   True  True   -
+
+
+Absolute Cliff's delta values:
+     T2T    F2T    T2F    F2F
+T2T  NaN  0.022  0.027  0.359
+F2T  NaN    NaN  0.003  0.372
+T2F  NaN    NaN    NaN  0.371
+F2F  NaN    NaN    NaN    NaN
+
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/ripple_peak_magnitude_distribution.png
+
+    T2T              F2T              T2F              F2F
+T2T   -  0.137 +/- 0.107  0.129 +/- 0.109  0.344 +/- 0.093
+F2T   -                -  0.029 +/- 0.030  0.420 +/- 0.080
+T2F   -                -                -  0.436 +/- 0.054
+F2F   -                -                -                -
+
+Matplotilb has been configured as follows:
+{'figure.dpi': 100, 'savefig.dpi': 100, 'figure.figsize': '(8.7, 8.7) [cm]', 'font.size': 7, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42, 'axes.spines.top': False, 'axes.spines.right': False, 'xtick.major.size': 2.032, 'ytick.major.size': 2.032, 'xtick.major.width': 0.508, 'ytick.major.width': 0.508}.
+
+
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/ripple peak magnitude_abs_cliff_mean_plus_minus_std.csv
+
+
+Saved to: ./ripples/define_ripples/summary/checks_ripple_props/ripple peak magnitude_abs_cliff_mean_plus_minus_std.png
+
