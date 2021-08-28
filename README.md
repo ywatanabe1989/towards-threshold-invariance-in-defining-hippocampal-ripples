@@ -87,9 +87,6 @@ $ singularity build .singularity/towards_threshold_invariance_in_defining_hippoc
 
 
 ## To-Dos
-- [ ] Fig. t9, 10
-    - fontsize to 7
-
 - [ ] Experiment on hc-19
     - [x] downloads hc-19
     

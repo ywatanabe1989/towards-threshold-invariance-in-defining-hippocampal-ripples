@@ -98,51 +98,12 @@ From: centos:centos8
     python3 -m pip install ipython
     python3 -m pip install scikit-image
     python3 -m pip install cleanlab
-    python3 -m pip install yellowbrick
+    # python3 -m pip install yellowbrick
     python3 -m pip install ipdb
     python3 -m pip install statsmodels
-    python3 -m pip install ray
-    python3 -m pip install imblearn
+    # python3 -m pip install ray
+    # python3 -m pip install imblearn
     
-    
-
-
-    # ################################################################################
-    # # ## Git 2.x
-    # ################################################################################    
-    # # yum -y remove git # remove git 1.x
-    # # # dependancies
-    # # yum install -y wget openssl-devel libcurl-devel expat-devel
-    # # # git
-    # # VERSION=2.26.2
-    # # mkdir -p /usr/local/src
-    # # cd /usr/local/src
-    # # wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-${VERSION}.tar.gz
-    # # tar xf git-${VERSION}.tar.gz
-    # # rm -rf git-${VERSION}.tar.gz
-    # # # building git
-    # # cd git-${VERSION}
-    # # make prefix=/usr/local all
-    # # make prefix=/usr/local install
-    # # echo $(git --version)
-    
-
-    # ################################################################################
-    # # ## Emacs 26.1
-    # ################################################################################    
-    # # yum -y install gnutls gnutls-devel ncurses-devel
-    # # ## Install Emacs
-    # # VERSION=26.1
-    # # cd /tmp
-    # # echo $VERSION
-    # # curl -O http://ftp.gnu.org/pub/gnu/emacs/emacs-${VERSION}.tar.gz
-    # # tar xvf emacs-${VERSION}.tar.gz
-    # # cd emacs-$VERSION
-    # # ./configure --without-x
-    # # make -j 20
-    # # make install -j 20
-    # # echo `which emacs-$VERSION`
-
 
     ################################################################################
     ## PS1
@@ -166,12 +127,12 @@ From: centos:centos8
 
 
 %help
-    The container for the paper "Semisupervised hippocampal ripples."
+    The container for the paper "Towards threshold invariance in defining hippocampal ripples."
 
 
 %labels
     Author XXXXX
-    Version 0.0.6
+    Version 0.1.0
 
 
 %environment
@@ -195,15 +156,17 @@ From: centos:centos8
 
 
 
-'''
-sudo /opt/bin/singularity exec --writable ./singularity/semi_ripples python3 -m pip install PyYAML
 
-sbuild ./singularity/semi_ripples.def -f
+
+'''
+sudo /opt/bin/singularity exec --writable ./singularity/towards_threshold_invariance_in_defining_hippocampal_ripples python3 -m pip install PyYAML
+
+sbuild ./singularity/towards_threshold_invariance_in_defining_hippocampal_ripples.def -f
 sshell
 
-sbuildw ./singularity/semi_ripples.def
+sbuildw ./singularity/towards_threshold_invariance_in_defining_hippocampal_ripples.def
 
-sshellw ./singularity/semi_ripples
+sshellw ./singularity/towards_threshold_invariance_in_defining_hippocampal_ripples
 # It might be useful if you would add thise lines in ~/.bashrc.
 alias tree='singularity exec $TOOLS_SIF tree'
 alias htop='singularity exec $TOOLS_SIF htop'
