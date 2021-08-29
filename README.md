@@ -90,8 +90,8 @@ $ singularity build .singularity/towards_threshold_invariance_in_defining_hippoc
 
 
 ## TODO
-- [ ] Experiment on hc-19
-    - [x] downloads hc-19
+- [ ] Experiment on hc-18
+    - [ ] downloads hc-18
     
 - [ ] to open source models and weights with pip
 
