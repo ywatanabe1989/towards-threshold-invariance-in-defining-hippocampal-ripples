@@ -83,11 +83,16 @@ $ singularity build .singularity/towards_threshold_invariance_in_defining_hippoc
 ./ripples/define_ripples/using_CNN/calcs_corr_of_labels.py
 
 
-./ripples/detect_ripples/CNN/train_FvsT.py  
+./ripples/detect_ripples/CNN/train_FvsT.py
+
+################################################################################
+./ripples/detect_ripples/CNN/from_unseen_LFP.py
 
 
-## To-Dos
+## TODO
 - [ ] Experiment on hc-19
     - [x] downloads hc-19
     
 - [ ] to open source models and weights with pip
+
+./ripples/detect_ripples/CNN/train_FvsT/checkpoints/mouse_test#01_epoch#000.pth
