@@ -1,0 +1,22 @@
+
+Matplotilb has been configured as follows:
+{'figure.figsize': (16.2, 10), 'font.size': 20, 'legend.fontsize': 'xx-small', 'pdf.fonttype': 42, 'ps.fonttype': 42}.
+
+
+Random seeds have been fixed as 42
+
+
+Saved to: ./EDA/MEP_FFT_pow_corr/mouse_#05/r_and_t_.png
+
+
+N.S. freqs for alpha = .05: []
+
+
+N.S. freqs for alpha = .01: []
+
+
+Saved to: ./EDA/MEP_FFT_pow_corr/mouse_#05/corr_coeff.png
+
+
+Saved to: ./EDA/MEP_FFT_pow_corr/mouse_#05/corr_coeff.csv
+

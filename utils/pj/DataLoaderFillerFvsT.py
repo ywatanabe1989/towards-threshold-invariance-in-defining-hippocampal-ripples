@@ -317,28 +317,11 @@ def _define_X_T_electrode(
     the_2nd_filled_rips = rip_filled.iloc[the_2nd_indi]
     the_3rd_filled_rips = rip_filled.iloc[the_3rd_indi]
 
-    ## condition one candidate including # fixme
-    # is_only_one_candidate
-
     ##############################
     ## T_electrode
     ##############################
-    ## Base conditions
-
-    # np.unique(the_1st_filled_rips["are_ripple_CNN"])
-    # (the_1st_filled_rips["are_ripple_CNN"] == 1.0).sum()  # 3335
-    # (the_1st_filled_rips["are_ripple_CNN"] == 0).sum()  # 17650
-
-    # are_the_1st_ripple_candi = (the_1st_filled_rips["are_ripple_CNN"] == 1.0) | (
-    #     the_1st_filled_rips["are_ripple_CNN"] == 0
-    # )  # 20985
-
     are_the_1st_ripple_base = the_1st_filled_rips["are_ripple_CNN"].isna()  # 198641
-    # len(are_the_1st_ripple_base)  # 219626
-
     are_the_2nd_ripple_CNN = the_2nd_filled_rips["are_ripple_CNN"] == 1.0
-
-    # are_the_3rd_ripple_CNN = the_3rd_filled_rips["are_ripple_CNN"] == 1.0
     are_the_3rd_ripple_base = the_3rd_filled_rips["are_ripple_CNN"].isna()
 
     are_the_1st_over_the_slice_end = segs_end_sec < the_1st_filled_rips["end_sec"]
@@ -374,73 +357,13 @@ def _define_X_T_electrode(
         ]
     ).all(axis=0)
 
-    # a_condition_for_s_or_r = np.vstack(
-    #     [
-    #         ~are_the_1st_ripple_CNN,
-    #         ~are_the_1st_over_the_slice_end,
-    #         are_the_2nd_ripple_CNN,
-    #         ~are_the_2nd_over_the_slice_end,
-    #         ~are_the_3rd_ripple_CNN,
-    #         are_the_3rd_over_the_slice_end,
-    #     ]
-    # ).all(axis=0)
-
-    ################################################################################
-    ##############################
-    ## Conditions
-    ##############################
-    # # "n": "not ripple including LFP segment"
-    # are_n = np.vstack(
-    #     [
-    #         ~are_the_1st_ripple_CNN,
-    #         are_the_1st_over_the_slice_end,
-    #         np.isnan(the_2nd_ripple_peak_magnitude_SD),
-    #     ]
-    # ).all(axis=0)
-
-    # # "s": just one suspicioius ripple including LFP segment
-    # are_s = (
-    #     a_condition_for_s_or_r
-    #     & (1 <= the_2nd_ripple_peak_magnitude_SD)
-    #     & (
-    #         the_2nd_ripple_peak_magnitude_SD
-    #         < kwargs["lower_SD_thres_for_reasonable_ripple"]
-    #     )
-    # )
-
-    # # "r": just one reasonable ripple including LFP segment
-    # are_r = a_condition_for_s_or_r & (
-    #     kwargs["lower_SD_thres_for_reasonable_ripple"]
-    #     <= the_2nd_ripple_peak_magnitude_SD
-    # )
-
-    # # fix1
-    # # "rf": just one reasonable false ripple including LFP segment
-    # are_fr = a_condition_for_s_or_r & (
-    #     kwargs["lower_SD_thres_for_reasonable_ripple"]
-    #     <= the_2nd_ripple_peak_magnitude_SD
-    # )
-
-    # # "sf": just one suspicioius false ripple including LFP segment
-    # are_s = (
-    #     a_condition_for_s_or_r
-    #     & (1 <= the_2nd_ripple_peak_magnitude_SD)
-    #     & (
-    #         the_2nd_ripple_peak_magnitude_SD
-    #         < kwargs["lower_SD_thres_for_reasonable_ripple"]
-    #     )
-    # )
 
     ###################################
     ## Allocates labels, T
     ###################################
     segs_t = segs[are_t]
     segs_f = segs[are_f]
-    # segs_n = segs[are_n]
-    # segs_s = segs[are_s]
-    # segs_r = segs[are_r]
 
-    # X_el = np.vstack([segs_n, segs_s, segs_r])
     X_el = np.vstack([segs_t, segs_f])
 
     P_t = the_2nd_ripple_peak_magnitude_SD[are_t]

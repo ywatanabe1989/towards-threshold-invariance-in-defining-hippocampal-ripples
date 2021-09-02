@@ -2,8 +2,8 @@
 % 5.2.0
 
 %% Change to the Repository Home
-SEMI_RIPPLE_HOME = getenv('SEMI_RIPPLE_HOME');
-chdir(SEMI_RIPPLE_HOME);
+PROJ_HOME = getenv('PROJ_HOME'); % .towards-threshold-invariance-in-defining-hippocampal-ripples
+chdir(PROJ_HOME);
 
 
 %% Install NPMK

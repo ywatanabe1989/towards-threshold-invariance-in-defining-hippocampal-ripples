@@ -90,8 +90,9 @@ $ singularity build .singularity/towards_threshold_invariance_in_defining_hippoc
 
 
 ## TODO
-- [ ] Experiment on hc-18
-    - [ ] downloads hc-18
+- [ ] DC_M01
+    - [=] downloads (will finish 0830)
+    - parse as a numpy array
     
 - [ ] to open source models and weights with pip
 
