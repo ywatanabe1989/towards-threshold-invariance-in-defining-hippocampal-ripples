@@ -37,6 +37,7 @@ data/hc-19
 
 data/th-1/*
 !data/th-1/load.py
+!data/th-1/load.m
 
 
 
