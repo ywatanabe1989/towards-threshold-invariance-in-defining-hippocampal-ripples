@@ -35,6 +35,13 @@ data/CRCN_batch_download/download/crcns-account.txt
 data/hc-19
 
 
+data/th-1/*
+!data/th-1/load.py
+
+
+
+
+
 #################################################################33333
 
 

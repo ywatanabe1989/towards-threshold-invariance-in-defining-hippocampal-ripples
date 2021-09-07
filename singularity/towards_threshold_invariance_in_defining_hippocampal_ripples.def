@@ -103,6 +103,8 @@ From: centos:centos8
     python3 -m pip install statsmodels
     # python3 -m pip install ray
     # python3 -m pip install imblearn
+    python3 -m pip install chardet
+    python3 -m pip install cElementTree
     
 
     ################################################################################
