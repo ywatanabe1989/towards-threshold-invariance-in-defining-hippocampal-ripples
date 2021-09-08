@@ -52,6 +52,11 @@ def load(lpath, show=False):
     if lpath.endswith(".pth"):
         # return model.load_state_dict(torch.load(lpath))
         obj = torch.load(lpath)
+    # xml
+    if lpath.endswith("xml"):
+        from ._xml2dict import xml2dict
+
+        obj = xml2dict(lpath)
 
     if show:
         print("\nLoaded: {}\n".format(lpath))

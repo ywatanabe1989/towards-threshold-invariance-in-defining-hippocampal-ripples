@@ -1,6 +1,13 @@
 ## Installation
 To run the code, please clone this repository and add to the PATH this repository's top directory (.towards-threshold-invariance-in-defining-hippocampal-ripples). To check if it is correctly recognized from your python environment, executing the following python code would be helpful.
 
+``` bash
+$ git clone https:github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples
+$ cd towards-threshold-invariance-in-defining-hippocampal-ripples
+$ git submodule init
+$ git submodule update
+```
+
 ``` python
 import sys
 print(sys.path)
@@ -10,6 +17,8 @@ print(sys.path)
  '/home/<USERNAME>/.ipython',
  '.']
 '''
+
+
 ```
 
 ## Building .sif file (Singularity Image File)
