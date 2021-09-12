@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-# Time-stamp: "2021-09-07 13:54:23 (ylab)"
+# Time-stamp: "2021-09-09 05:25:31 (ywatanabe)"
 
 import utils
-import mne
-import glob
 import numpy as np
 
 
@@ -30,8 +28,8 @@ n_chs_all = 90
 len_per_ch = len(lfp) / n_chs_all
 
 
-def plot(chs_HIPP):
-    lfps_HIPP = [lfp[ch_HIPP::n_chs_all] for ch_HIPP in chs_HIPP]  # ch_HIPP+1?
+def plot(lfps_HIPP):
+    # lfps_HIPP = [lfp[ch_HIPP::n_chs_all] for ch_HIPP in chs_HIPP]  # ch_HIPP+1?
     dt_sec = 1.0 / samp_rate * 1000
     dt_ms = dt_sec * 1000
     len_tot_ms = len(lfps_HIPP[0]) / samp_rate * 1000
@@ -61,5 +59,6 @@ def plot(chs_HIPP):
 
 
 chs_HIPP = np.array([64, 66, 68, 70, 72])
-plot(chs_HIPP)
+lfps_HIPP = np.array([lfp[ch_HIPP::n_chs_all] for ch_HIPP in chs_HIPP])  # ch_HIPP+1?
+plot(lfps_HIPP)
 # plot(chs_HIPP+1)

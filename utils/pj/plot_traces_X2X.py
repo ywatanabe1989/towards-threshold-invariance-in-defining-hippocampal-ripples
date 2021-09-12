@@ -145,12 +145,6 @@ def plot_traces_X2X(signals_dict, lpath_lfp, start_sec=6516, dur_sec=3, samp_rat
             leg2 = ax.legend(handles, labels, loc="upper left", bbox_to_anchor=(1, 1))
             ax.add_artist(legends_1[i_ax])
 
-        # else:
-        #     import pdb
-
-        #     pdb.set_trace()
-        #     ax.legend()
-
     out_sig["rip_analog_sig_T2T_plt"] = rip_analog_sig_T2T_plt
     out_sig["rip_analog_sig_F2T_plt"] = rip_analog_sig_F2T_plt
     out_sig["rip_analog_sig_T2F_plt"] = rip_analog_sig_T2F_plt

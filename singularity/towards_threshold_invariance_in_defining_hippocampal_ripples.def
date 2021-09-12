@@ -105,6 +105,7 @@ From: centos:centos8
     # python3 -m pip install imblearn
     python3 -m pip install chardet
     python3 -m pip install cElementTree
+    python3 -m pip install swifter
     
 
     ################################################################################
