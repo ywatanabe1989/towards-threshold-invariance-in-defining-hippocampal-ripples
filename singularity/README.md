@@ -4,20 +4,22 @@
 - [CUDA Toolkit Documentation v10.1.243](https://docs.nvidia.com/cuda/archive/10.1/)
 - [Singularity GPU Support](https://sylabs.io/guides/3.6/user-guide/gpu.html)
 
-## ./towards_threshold_invariance_in_defining_hippocampal_ripples.def
-**./towards_threshold_invariance_in_defining_hippocampal_ripples.def** is the singularity definition file for **towards_threshold_invariance_in_defining_hippocampal_ripples.sif**.
+## ./towards.def
+The singularity definition file for **towards.sif**.
 
-## ./towards_threshold_invariance_in_defining_hippocampal_ripples.sif
-**./towards_threshold_invariance_in_defining_hippocampal_ripples.sif** is the singularity image file to run our python scripts.
+## ./towards.sif
+The singularity image file to run our python scripts.
 
 ## ./singularity-aliases.bash
-**./singularity-aliases.bash** contains bash aliases to use singularity casually.
+It contains bash aliases to use singularity easily.
 
 ``` bash
-$ sshell # move into the shell in the singularity environment (**s**ingularity **shell**).
-$ sipy # starts ipython in the singularity environment (**s**ingularity **ipy**ton).
-$ spy *.py # executs a python program in the singularity environment (**s**ingularity **py**thon).
-$ sbuild *.def # build a singularity Definition file. The second arguments takes --fakeroot (-f) or --remote (-r) to build to *sif file (e.g., $ sbuild <FILENAME>.def --fakeroot).
+$ sshell # enter the shell of the singularity container (**s**ingularity **shell**).
+$ sipy # run ipython from the singularity container (**s**ingularity **ipy**ton).
+$ spy *.py # run python from the singularity container (**s**ingularity **py**thon).
+$ sbuild *.def # build a singularity definition file. 
+$ sbuild *.def -f # --fakeroot building
+$ sbuild *.def -r # --remote building
 
 $ sshellw # writable sshell
 $ sipyw # writable sipy
