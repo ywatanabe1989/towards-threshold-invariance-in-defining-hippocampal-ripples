@@ -1,17 +1,17 @@
 ## Install ripple_detector_CNN
-The paper "Towards threshold invariance in defining hippocampal ripples" introduced a hippocamal ripple detector. It is installed via the pip.
-``` python
-pip install ripple_detector_CNN
+A hippocamal ripple detector, introduced in the paper "Towards threshold invariance in defining hippocampal ripples", can be installed via the pip.
+``` bash
+$ pip install ripple_detector_CNN
 ```
-A demo page shows how to use the detector.
+[A demo page](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/from_unseen_LFP.ipynb) shows how to use the detector.
+
 
 ### Download mouse CA1 LFP data from the CRCNS repository
-The th-1 dataset was used in the demo page. Please see dir .data/CRCN_batch_download/download/.
+The th-1 dataset was used in the demo page. Please see dir [.data/CRCN_batch_download/download/](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/tree/main/data/CRCN_batch_download/download).
 
 
 ## Install analytical code
-Please clone this repository and add to the PATH the top directory of this repository (.towards-threshold-invariance-in-defining-hippocampal-ripples). 
-
+Please clone this repository and add to the PATH the top directory of this repository.
 ``` bash
 $ git clone https:github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples
 $ cd towards-threshold-invariance-in-defining-hippocampal-ripples
@@ -31,41 +31,32 @@ print(sys.path)
 '''
 ```
 
+
 ### Build singularity container for executing the analytical code
 ``` bash
 $ singularity build .singularity/towards_threshold_invariance_in_defining_hippocampal_ripples.sif .singularity/towards_threshold_invariance_in_defining_hippocampal_ripples.def
 ```
 
-### Our machine specs
-- CPU: Intel(R) Core(TM) i7-6950X CPU @ 3.00GHz
-- RAM: 128 GB
-- GPU: NVIDIA GeForce GTX 1080 Ti * 4
-- 2 TB NVME storage
-- (28 TB RAID5 HDD storage)
-- Nvidia Driver: 465.19.01
-- CUDA version: V10.1.243
 
-
-## File/directory description (only major ones)
+## Directory tree with notes (only important ones)
 ```
 .towards-threshold-invariance-in-defining-hippocampal-ripples
-├── conf (Globally used configuration files)
-├── fig_making_scripts (Softlinks to scripts to make figures for a paper)
-├── models (Definition files (.py) and configuration files (.yaml) for deep learning models and modules for them)
-├── README.md (This file.)
+├── conf (global configuration files)
+├── fig_making_scripts (softlinks to scripts to make figures for a paper)
+├── models (our CNN definition files (.py) and configuration files (.yaml))
+├── README.md (this file)
 ├── singularity 
-│   ├── singularity-aliases.bash (Bash aliases for using the singularity container)
-│   ├── towards-threshold-invariance-in-defining-hippocampal-ripples.def (A singularity definition file)
+│   ├── towards-threshold-invariance-in-defining-hippocampal-ripples.def (a singularity definition file)
 ├── ripples
 │   ├── detect_ripples
 │   ├── define_ripples
-├── utils (other than pj has been transfered to the [mngs package](https://github.com/ywatanabe1989/mngs))
-│   ├── dsp.py (**D**igital **S**ignal **P**rocessing)
-│   ├── general.py (general code which are always written by pythonista)
-│   ├── ml (**M**achine **L**earning)
-│   ├── pj (unique for the **P**ro**j**ect)
-│   ├── plt (**Pl**o**t**ting)
-│   └── stats (**Stat**i**s**tics)
+├── utils (Now, utils is transfered to [mngs package](https://github.com/ywatanabe1989/mngs) except for the pj dir)
+│   ├── dsp.py (**d**igital **s**ignal **p**rocessing)
+│   ├── general.py (general snippets for python users)
+│   ├── ml (**m**achine **l**earning)
+│   ├── pj (unique for this **p**ro**j**ect)
+│   ├── plt (**pl**o**t**ting)
+│   └── stats (**stat**i**s**tics)
 ├── paper (info for this paper)
 ```
 
@@ -105,3 +96,13 @@ $ singularity build .singularity/towards_threshold_invariance_in_defining_hippoc
 
 ./ripples/detect_ripples/CNN/from_unseen_LFP.py
 ./ripples/detect_ripples/CNN/from_unseen_LFP.ipynb
+
+
+### Our machine info
+- CPU: Intel(R) Core(TM) i7-6950X CPU @ 3.00GHz
+- RAM: 128 GB
+- GPU: NVIDIA GeForce GTX 1080 Ti * 4
+- 2 TB NVME storage
+- (28 TB RAID5 HDD storage)
+- Nvidia Driver: 465.19.01
+- CUDA version: V10.1.243
