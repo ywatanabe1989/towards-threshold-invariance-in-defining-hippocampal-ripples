@@ -9,22 +9,19 @@
 *.png
 *.tar.gz
 *flycheck*.py
+*.sif
+*towards*/
 *.pth
 
-
-## Singularity
-*.sif
-~*.def
-*towards*/
-
-
-## octave
+# octave
 octave-workspace
 
 
-## for convenience
-*.old*
-*old*
+## Exceptions
+# Singularity
+!*.def
+!ripples/detect_ripples/CNN/train_FvsT/checkpoints/*.pth
+!package/data/checkpoints/*.pth
 
 ## Dataset
 # for my privacy
@@ -32,11 +29,15 @@ data/CRCN_batch_download/download/crcns-account.txt
 data/CRCN_batch_download/download/cookie.txt
 # Please contact us if you interested in okada's dataset.
 data/okada/data_raw
-
-
+# th-1
 data/th-1/*
 !data/th-1/load*.py
 !data/th-1/load*.m
+
+
+## for development
+*.old*
+*old*
 
 
 #################################################################

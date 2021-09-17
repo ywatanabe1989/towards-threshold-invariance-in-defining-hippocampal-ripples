@@ -3,6 +3,13 @@ A hippocamal ripple detector, introduced in the paper "Towards threshold invaria
 ``` bash
 $ pip install ripple_detector_CNN
 ```
+## Install git-lfs for the trained weights
+https://packagecloud.io/github/git-lfs/install
+
+``` bash
+$ git lfs install
+```
+
 
 ### CRCNS's opensourced-data
 [A demo page](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/from_unseen_LFP.ipynb) shows how to use the ripple_detector_CNN with LFP data from a mouse's hippocampal CA1 region in [the th-1 dataset](https://crcns.org/data-sets/thalamus/th-1/about-th-1). 
@@ -11,7 +18,7 @@ $ pip install ripple_detector_CNN
 >Extracellular recordings from multi-site silicon probes in the anterior thalamus and subicular formation of freely moving mice. CRCNS.org.  
 >http://dx.doi.org/10.6080/K0G15XS1  
 
-Download scripts for the th-1 dataset is prepaired under [./data/CRCN_batch_download/download/](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/tree/main/data/CRCN_batch_download/download), using the official downloader. Shortly, please set the following two files as below.
+Scripts for downloading the th-1 dataset is prepaired under [./data/CRCN_batch_download/download/](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/tree/main/data/CRCN_batch_download/download), using the official downloader. To reproduce the demo, please set the following two files as below.
 ``` bash
 ./towards-threshold-invariance-in-defining-hippocampal-ripples/data/th-1/data/Mouse12-120806/Mouse12-120806.eeg
 ./towards-threshold-invariance-in-defining-hippocampal-ripples/data/th-1/data/Mouse12-120806/Mouse12-120806.xml
