@@ -27,22 +27,19 @@ octave-workspace
 *old*
 
 ## Dataset
-data/CRCN_batch_download/download/crcns-account.txt
+# for my privacy
+data/CRCN_batch_download/download/crcns-account.txt 
 data/CRCN_batch_download/download/cookie.txt
+# Please contact us if you interested in okada's dataset.
 data/okada/data_raw
+
 
 data/th-1/*
 !data/th-1/load*.py
 !data/th-1/load*.m
 
 
-
-
-
 #################################################################33333
-
-
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
