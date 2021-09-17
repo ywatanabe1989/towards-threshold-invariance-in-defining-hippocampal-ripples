@@ -1,4 +1,4 @@
-## Data
+## Data files because of the large size
 *.mat
 *.npy
 *.pkl
@@ -13,31 +13,27 @@
 
 
 ## Singularity
-# Ignore image files and sandbox containers but definition files
 *.sif
 ~*.def
 *towards_threshold_invariance_in_defining_hippocampal_ripples*/
 
+
 ## octave
 octave-workspace
-
-
-## Model
-.pth
 
 
 ## for convenience
 *.old*
 *old*
 
-## Privacy
+## Dataset
 data/CRCN_batch_download/download/crcns-account.txt
-data/hc-19
-
+data/CRCN_batch_download/download/cookie.txt
+data/okada/data_raw
 
 data/th-1/*
-!data/th-1/load.py
-!data/th-1/load.m
+!data/th-1/load*.py
+!data/th-1/load*.m
 
 
 

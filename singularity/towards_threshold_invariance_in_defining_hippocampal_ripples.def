@@ -106,6 +106,7 @@ From: centos:centos8
     python3 -m pip install chardet
     python3 -m pip install cElementTree
     python3 -m pip install swifter
+    python3 -m pip install mngs    
     
 
     ################################################################################

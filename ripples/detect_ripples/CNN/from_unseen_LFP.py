@@ -1,231 +1,251 @@
 #!/usr/bin/env python3
+# coding: utf-8
+# Time-stamp: "2021-09-17 12:40:31 (ywatanabe)"
 
+import random
 import sys
 
-import numpy as np
-import torch.nn as nn
-
-sys.path.append(".")
-import random
-
-import utils
-from models.ResNet1D.ResNet1D import ResNet1D
-from scipy.signal import resample_poly
+import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
+import mngs
+import numpy as np
+import ripple_detector_CNN
 import torch
+from scipy.signal import resample_poly
 
 
 ################################################################################
-## Parameters
+## Functions
 ################################################################################
-samp_rate = 1000
+def plot_LFP_trace(
+    lfp_1ch_cropped,
+    lfp_timepoints_sec,
+    rip_sec_df,
+    lfp_start_sec=0,
+    plt_start_sec=4,
+    plt_dur_sec=6,
+    ylim=(-1050, 1050),
+):
 
+    """
+    lfp_start_sec  # 819
+    plt_start_sec  # 872
+    plt_end_sec  # 875
+    plt_dur_sec  # 3
 
-################################################################################
-## Loads signal
-################################################################################
-fpath = "data/th-1/data/Mouse12-120806/Mouse12-120806.eeg"
-LFPs_1250Hz, prop_dict = utils.pj.load.th_1(
-    lpath_eeg=fpath, start_sec_cut=0, dur_sec_cut=-1
-)
+    _plt_start_pts # 53000
+    _plt_end_pts # 56000
+    """
 
+    ## Prepares the figure
+    fig, ax = plt.subplots()
 
-################################################################################
-## Downsamples the signal from 1250 to 1000 Hz
-################################################################################
-# 1,250 -> *4 upsampling -> 5,000 -> /5 downsampling -> 1,000 Hz
-LFPs = resample_poly(LFPs_1250Hz, 4, 5, axis=1).astype(np.float32)
+    ## Determines periods to show
+    plt_end_sec = plt_start_sec + plt_dur_sec
 
+    _plt_start_pts = (plt_start_sec - lfp_start_sec) * SAMP_RATE_TGT
+    _plt_end_pts = _plt_start_pts + plt_dur_sec * SAMP_RATE_TGT
+    # plt_start_sec = plt_start_sec
 
-################################################################################
-## Use only a part of signal for the computational reason
-################################################################################
-lfp_all = LFPs[0][:, np.newaxis]
-lfp_start_sec = 0
-lfp_end_sec = 300  # 5 min
-lfp_step_sec = float(1 / samp_rate)
-lfp_time_x = np.arange(lfp_start_sec, lfp_end_sec, lfp_step_sec).round(3)
-lfp = lfp_all[lfp_start_sec * samp_rate : lfp_end_sec * samp_rate]
+    # plt_start_pts = plt_start_sec * SAMP_RATE_TGT
+    # plt_end_pts = plt_end_sec * SAMP_RATE_TGT
 
+    ## Limits LFP
+    # lfp_plt = lfp_1ch_cropped[plt_start_pts:plt_end_pts]
+    lfp_plt = lfp_1ch_cropped[_plt_start_pts:_plt_end_pts]
 
-################################################################################
-## Detects Ripple Candidates
-################################################################################
-lfp_h = len(lfp) / samp_rate / 60 / 60
-print(f"\nDetecting ripples from {fpath} (Length: {lfp_h:.1f}h)\n".format())
+    ## Limits timepoints
+    # x_sec = np.arange(len(lfp_1ch_cropped)) / SAMP_RATE_TGT
+    # x_plt_sec = x_sec[plt_start_pts:plt_end_pts]
+    # x_plt_sec = x_sec[_plt_start_pts:_plt_end_pts]
+    x_plt_sec = lfp_timepoints_sec[_plt_start_pts:_plt_end_pts]
 
-lo_hz_ripple = utils.general.load("./conf/global.yaml")["RIPPLE_CANDI_LIM_HZ"][0]
-hi_hz_ripple = utils.general.load("./conf/global.yaml")["RIPPLE_CANDI_LIM_HZ"][1]
-_, _, rip_sec = utils.pj.define_ripple_candidates(
-    lfp_time_x,
-    lfp,
-    samp_rate,
-    lo_hz=lo_hz_ripple,
-    hi_hz=hi_hz_ripple,
-    zscore_threshold=1,
-)
-rip_sec = rip_sec.reset_index()
+    ## Limits ripple data frame
+    rip_sec_df_plt = rip_sec_df[
+        (plt_start_sec <= rip_sec_df["end_sec"])
+        & (rip_sec_df["start_sec"] <= plt_end_sec)
+    ]
+    rip_sec_df_plt.loc[rip_sec_df_plt.index[-1], "end_sec"].clip(0, plt_end_sec)
 
-################################################################################
-## Checks whether each ripple can be separated in 400-ms segment
-################################################################################
-def check_if_a_ripple_candidate_is_separable(rip_sec, i_rip, window_size_pts=400):
-    window_size_sec = window_size_pts / samp_rate
-
-    ## Condition 1
-    rip_i = rip_sec.iloc[i_rip]
-    is_rip_i_short = (rip_i["end_sec"] - rip_i["start_sec"]) < window_size_sec
-
-    ## Condition 2
-    if i_rip != 0:
-        rip_i_minus_1 = rip_sec.iloc[i_rip - 1]
-        before_end_sec = rip_i_minus_1["end_sec"]
-    else:
-        before_end_sec = 0
-
-    if i_rip != len(rip_sec) - 1:
-        rip_i_plus_1 = rip_sec.iloc[i_rip + 1]
-        next_start_sec = rip_i_plus_1["start_sec"]
-    else:
-        next_start_sec = before_end_sec + window_size_sec
-
-    is_inter_ripple_interval_long = window_size_sec < (next_start_sec - before_end_sec)
-    is_rip_i_separable = is_rip_i_short & is_inter_ripple_interval_long
-    return is_rip_i_separable
-
-
-def separate_a_ripple_candidate(lfp, rip_sec, i_rip, window_size_pts=400):
-    samp_rate = 1000
-    # window_size_sec = window_size_pts / samp_rate
-    rip = rip_sec.iloc[i_rip].copy()
-    dur_sec = rip["end_sec"] - rip["start_sec"]
-    dur_pts = int(dur_sec * samp_rate)
-    dof = window_size_pts - dur_pts
-    cut_start_pts = int(rip["start_sec"] * samp_rate) - random.randint(0, dof)
-    lfp_cut = lfp[cut_start_pts : cut_start_pts + window_size_pts]
-    return lfp_cut
-
-
-rip_sec["duration_sec"] = rip_sec["end_sec"] - rip_sec["start_sec"]
-# (rip_sec["duration_sec"] * 1000).hist(bins=100)
-# plt.show()
-
-rip_sec["is_separable"] = [
-    check_if_a_ripple_candidate_is_separable(rip_sec, i_rip)
-    for i_rip in range(len(rip_sec))
-]
-
-rip_sec["cut_LFP"] = np.nan
-rip_sec["cut_LFP"] = rip_sec["cut_LFP"].astype(object)
-for i_rip in range(len(rip_sec)):
-    if rip_sec.iloc[i_rip]["is_separable"]:
-        rip_sec.loc[i_rip, "cut_LFP"] = separate_a_ripple_candidate(lfp, rip_sec, i_rip)
-
-
-################################################################################
-## Loads the trained model
-################################################################################
-MODEL_CONF = utils.general.load("./models/ResNet1D/ResNet1D.yaml")
-model = ResNet1D(MODEL_CONF)
-model = model.to("cuda")
-model.eval()
-checkpoints = utils.general.load(
-    "./ripples/detect_ripples/CNN/train_FvsT/checkpoints/mouse_test#01_epoch#000.pth"
-)
-model.load_state_dict(
-    utils.general.cvt_multi2single_model_state_dict(checkpoints["model_state_dict"])
-)
-
-
-################################################################################
-## Estimates the ripple probabilities
-################################################################################
-softmax = nn.Softmax(dim=-1)
-batch_size = 128
-labels = {0: "F", 1: "T"}
-utils.plt.configure_mpl(plt, dpi=100, figscale=1, fontsize=8, legendfontsize=7)
-
-
-rip_sec["pred_proba_for_ripple"] = np.nan  # initialization
-n_batches = len(rip_sec) // batch_size + 1
-for i_batch in range(n_batches):
-    ## Samples
-    start_idx = i_batch * batch_size
-    end_idx = (i_batch + 1) * batch_size
-    _Xb = rip_sec["cut_LFP"].iloc[start_idx:end_idx]
-    indi = _Xb.index[~_Xb.isna()]  # _indi[~_Xb.isna()]
-    Xb = rip_sec["cut_LFP"].iloc[indi]
-
-    ## NN Outputs
-    Xb = torch.tensor(np.vstack(Xb).astype(np.float32)).cuda()
-    logits = model(Xb)
-    pred_proba = softmax(logits)
-    # pred_class = pred_proba.argmax(dim=-1)  # 0: T, 1: F
-
-    rip_sec.loc[indi, "pred_proba_for_ripple"] = (
-        pred_proba[:, 1].detach().cpu().numpy().copy()
+    ## raw LFP trace
+    ax.plot(
+        x_plt_sec,
+        lfp_plt,
+        label="Raw LFP trace of the hippocampal CA1",
+        linewidth=0.2,
+        color="black",
     )
 
+    ## Ripples
+    for i_rip, rip_i in rip_sec_df_plt.iterrows():
+
+        ## Colored areas indicating ripples (blue) or burst ones (gray).
+        color_str = "blue" if not np.isnan(rip_i["ripple_conf"]) else "gray"
+        color = mngs.plt.colors.to_RGBA(
+            color_str,
+            alpha=0.2,
+        )
+        ax.axvspan(
+            rip_i.start_sec,
+            rip_i.end_sec - 1.0 / SAMP_RATE_TGT,
+            color=color,
+            zorder=1000,
+        )
+
+        ## Shows ripple confidences as text
+        # ylim = (int(ax.get_ylim()[0]), int(ax.get_ylim()[1]))
+        y_base = 0.8 * ylim[1]
+        y_fluctuation = 0.2 * random.randint(*ylim)
+        rip_i_center = (rip_i["start_sec"] + rip_i["end_sec"]) / 2
+
+        ripple_conf_str = str(round(rip_i["ripple_conf"], 2))
+        ripple_conf_str = None if ripple_conf_str == "nan" else ripple_conf_str
+
+        ax.text(
+            rip_i_center,
+            y_base + y_fluctuation,
+            ripple_conf_str,
+            horizontalalignment="center",
+            verticalalignment="center",
+        )
+
+    ## Sets axes, ticks, labels, titles
+    ax = mngs.plt.ax_set_n_ticks(ax)
+    ax.set_ylabel(f"Amplitude [$\mu$V]")
+    ax.set_xlabel("Time [sec]")
+    ax.set_title("Represented ripple events with confidence values")
+    ax.set_ylim(*ylim)
+
+    single_patch = mpatches.Patch(
+        color=mngs.plt.colors.to_RGBA("blue", alpha=0.2),
+        label="single (values: confidence for ripples)",
+    )
+    burst_patch = mpatches.Patch(
+        color=mngs.plt.colors.to_RGBA("gray", alpha=0.2), label="burst"
+    )
+    ax.legend(handles=[single_patch, burst_patch], loc="lower left")
+    # fig.show()
+    return fig
+
+
 ################################################################################
-## Plots
+## Sets tee
 ################################################################################
-utils.plt.configure_mpl(
+sys.stdout, sys.stderr = mngs.general.tee(sys)
+
+
+################################################################################
+## Fixes random seeds
+################################################################################
+mngs.general.fix_seeds(np=np, random=random, torch=torch)
+
+
+################################################################################
+## Prepares unseen signal
+################################################################################
+## Parameters
+SAMP_RATE_TGT = 1000
+
+## Loads unseen signal (mouse CA1 LFP from the CRCNS th1 dataset; https://crcns.org/data-sets/thalamus/th-1)
+LPATH_EEG = mngs.general.get_data_path_from_a_package(
+    "ripple_detector_CNN",
+    "th-1/data/Mouse12-120806/Mouse12-120806.eeg",
+)
+
+print(f"\nLoading {LPATH_EEG}\n")
+
+LFPs_1250Hz, prop_dict = ripple_detector_CNN.load_th1(
+    lpath_eeg=LPATH_EEG, start_sec_cut=0, dur_sec_cut=-1
+)
+# LFPs_1250Hz.shape
+# (5, 27966750)
+
+## Downsamples the signal from 1250 to 1000 Hz
+LFPs_1kHz = resample_poly(LFPs_1250Hz, 4, 5, axis=1).astype(np.float32)
+# LFPs_1kHz.shape
+# (5, 22373400)
+
+
+## Use only a part of signal for the computational reason
+i_ch = random.randint(0, len(LFPs_1kHz) - 1)
+lfp_start_sec = random.randint(0, int(LFPs_1kHz.shape[-1] / SAMP_RATE_TGT - 1))
+LFP_DUR_SEC = 50 * 60  # 50 min
+lfp_end_sec = lfp_start_sec + LFP_DUR_SEC
+
+lfp_dt_sec = float(1 / SAMP_RATE_TGT)
+lfp_timepoints_sec = np.arange(lfp_start_sec, lfp_end_sec, lfp_dt_sec).round(3)
+lfp_1ch_cropped = LFPs_1kHz[i_ch][:, np.newaxis][
+    lfp_start_sec * SAMP_RATE_TGT : lfp_end_sec * SAMP_RATE_TGT
+]
+# lfp_1ch_cropped.shape
+# (3000000, 1)
+
+################################################################################
+## Estimates ripple probabilities using RippleDetectorCNN
+################################################################################
+rdCNN = ripple_detector_CNN.RippleDetectorCNN(
+    lfp_1ch_cropped,
+    lfp_timepoints_sec,
+    window_size_pts=400,
+    samp_rate=SAMP_RATE_TGT,
+)
+rip_sec_df = rdCNN.detect_ripple_candidates()
+rip_sec_df_with_estimated_ripple_conf = rdCNN.estimate_ripple_proba()
+
+################################################################################
+## Visualizes the results
+################################################################################
+mngs.plt.configure_mpl(
     plt,
-    figsize=(18.1, 10),
+    dpi=300,
+    figsize=(24, 12),
     fontsize=8,
     labelsize=8,
     legendfontsize=7,
-    tick_size=0.8,
-    tick_width=0.2,
-    hide_spines=True,
+    hide_spines=False,
 )
 
 fig, ax = plt.subplots()
-start_plt_sec = 4
-dur_plt_sec = 6
-end_plt_sec = start_plt_sec + dur_plt_sec
-start_plt_pts = start_plt_sec * samp_rate
-end_plt_pts = end_plt_sec * samp_rate
+ax.hist(rdCNN.rip_sec_df["ripple_conf"], bins=30)
+ax.set_ylabel("# of ripple candidates")
+ax.set_xlabel("Ripple confidence estimated by the trained CNN")
+LFP_LENGTH_SEC = lfp_end_sec - lfp_start_sec
+n_ripples = len(rip_sec_df)
+ax.set_title(
+    f"Calculated from {LFP_LENGTH_SEC}-sec LFP trace\n(n={n_ripples} ripple candidates in total)"
+)
+ax = mngs.plt.ax_set_n_ticks(ax, n_xticks=5)
+mngs.general.save(
+    fig, f"histogram_ripple_candidates_{lfp_start_sec}-{lfp_end_sec}s.png"
+)
+# fig.show()
+plt.close()
 
-lfp_plt = lfp[start_plt_pts:end_plt_pts]
-
-x_pts = np.arange(len(lfp))
-x_sec = x_pts / samp_rate
-x_plt_sec = x_sec[start_plt_pts:end_plt_pts]
-
-rip_sec_plt = rip_sec[
-    (start_plt_sec <= rip_sec["end_sec"]) & (rip_sec["start_sec"] <= end_plt_sec)
-]
-rip_sec_plt["end_sec"].iloc[-1] = np.clip(
-    rip_sec_plt["end_sec"].iloc[-1], 0, end_plt_sec
+mngs.plt.configure_mpl(
+    plt,
+    dpi=300,
+    figsize=(24, 12),
+    fontsize=8,
+    labelsize=8,
+    legendfontsize=7,
+    hide_spines=True,
 )
 
-
-## Original
-ax.plot(x_plt_sec, lfp_plt, label="LFP", linewidth=0.2, color="black")
-
-## Ripple
-for i_rip in range(len(rip_sec_plt)):
-    row = rip_sec_plt.iloc[i_rip]
-    rip_sec_med = (row["start_sec"] + row["end_sec"]) / 2
-    ax.text(rip_sec_med - 0.05, 1000, str(round(row["pred_proba_for_ripple"], 3)))
-
-    color_str = "gray" if np.isnan(row["pred_proba_for_ripple"]) else "blue"
-    color = utils.plt.colors.to_RGBA(
-        color_str,
-        alpha=0.2,
+PLT_DUR_SEC = 5
+for i_fig in range(30):
+    random_plt_start_sec = random.randint(lfp_start_sec, lfp_end_sec - PLT_DUR_SEC)
+    fig = plot_LFP_trace(
+        lfp_1ch_cropped,
+        lfp_timepoints_sec,
+        rip_sec_df_with_estimated_ripple_conf,
+        lfp_start_sec=lfp_start_sec,
+        plt_start_sec=random_plt_start_sec,
+        plt_dur_sec=PLT_DUR_SEC,
     )
-
-    ax.axvspan(
-        row.start_sec,
-        row.end_sec - 1.0 / samp_rate,
-        color=color,
-        zorder=1000,
-    )
-
-ax = utils.plt.ax_set_n_ticks(ax)
-ax.set_ylabel(f"Amplitude [$\mu$V]")
-ax.set_xlabel("Time [sec]")
-fig.show()
+    # fig.show()
+    _start = random_plt_start_sec
+    _end = _start + PLT_DUR_SEC
+    mngs.general.save(fig, f"example_trace_ch#{i_ch}_{_start}-{_end}s.png")
+    plt.close()
 
 ## EOF
