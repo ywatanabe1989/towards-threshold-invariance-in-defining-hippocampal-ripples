@@ -1,0 +1,4 @@
+include LICENSE
+include *.md
+exclude *__pycache__*
+# include data/weights/mouse_test#01_epoch#000.pth
