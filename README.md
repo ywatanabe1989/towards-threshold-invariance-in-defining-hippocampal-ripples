@@ -13,7 +13,7 @@ $ pip install ripple_detector_CNN
 
 
 ## Install analytical code
-Please clone this repository and add to the PATH the top directory of this repository.
+Please clone this repository and add the top directory to the PATH.
 ``` bash
 $ git clone https:github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples
 $ cd towards-threshold-invariance-in-defining-hippocampal-ripples
