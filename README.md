@@ -76,7 +76,7 @@ $ singularity build .singularity/towards_threshold_invariance_in_defining_hippoc
 ```
 
 
-## The order for the analytical scripts
+## The order for the analytical scripts to be run
 - signal conversion to python numpy format
     - [./data/okada/preprocessing/nsx2mat_octave.m](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/data/okada/preprocessing/nsx2mat_octave.m)
     - [./data/okada/preprocessing/mat2npy.py](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/data/okada/preprocessing/mat2npy.py)
