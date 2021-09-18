@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 # coding: utf-8
-# Time-stamp: "2021-09-17 12:40:31 (ywatanabe)"
+# Time-stamp: "2021-09-18 08:42:44 (ywatanabe)"
+
+# spy ./ripples/detect_ripples/CNN/from_unseen_LFP.py
 
 import random
 import sys
+
+sys.path.append(".")
 
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
@@ -11,6 +15,7 @@ import mngs
 import numpy as np
 import ripple_detector_CNN
 import torch
+import utils
 from scipy.signal import resample_poly
 
 
@@ -147,18 +152,14 @@ mngs.general.fix_seeds(np=np, random=random, torch=torch)
 SAMP_RATE_TGT = 1000
 
 ## Loads unseen signal (mouse CA1 LFP from the CRCNS th1 dataset; https://crcns.org/data-sets/thalamus/th-1)
-LPATH_EEG = mngs.general.get_data_path_from_a_package(
-    "ripple_detector_CNN",
-    "th-1/data/Mouse12-120806/Mouse12-120806.eeg",
-)
-
+LPATH_EEG = "./data/th-1/data/Mouse12-120806/Mouse12-120806.eeg"
 print(f"\nLoading {LPATH_EEG}\n")
-
-LFPs_1250Hz, prop_dict = ripple_detector_CNN.load_th1(
+LFPs_1250Hz, prop_dict = utils.pj.load.th_1(
     lpath_eeg=LPATH_EEG, start_sec_cut=0, dur_sec_cut=-1
 )
 # LFPs_1250Hz.shape
 # (5, 27966750)
+
 
 ## Downsamples the signal from 1250 to 1000 Hz
 LFPs_1kHz = resample_poly(LFPs_1250Hz, 4, 5, axis=1).astype(np.float32)
@@ -190,7 +191,13 @@ rdCNN = ripple_detector_CNN.RippleDetectorCNN(
     samp_rate=SAMP_RATE_TGT,
 )
 rip_sec_df = rdCNN.detect_ripple_candidates()
-rip_sec_df_with_estimated_ripple_conf = rdCNN.estimate_ripple_proba()
+checkpoints = mngs.general.load(
+    "./ripples/detect_ripples/CNN/train_FvsT/checkpoints/mouse_test#01_epoch#000.pth"
+)
+# This weight file is included in the repository. To clone or download it, might require git-LFP is installed. Of course, other four weights (*/mouse_test#0?_epoch#000.pth) will work as well.
+rip_sec_df_with_estimated_ripple_conf = rdCNN.estimate_ripple_proba(
+    checkpoints=checkpoints
+)
 
 ################################################################################
 ## Visualizes the results
