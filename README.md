@@ -74,7 +74,7 @@ $ singularity build .singularity/towards_threshold_invariance_in_defining_hippoc
 │   └── stats (**stat**i**s**tics)
 ├── paper (info for this paper)
 ```
-https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/data/okada/preprocessing/nsx2mat_octave.m
+
 
 ## The order for the analytical scripts
 [./data/okada/preprocessing/nsx2mat_octave.m](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/data/okada/preprocessing/nsx2mat_octave.m)
