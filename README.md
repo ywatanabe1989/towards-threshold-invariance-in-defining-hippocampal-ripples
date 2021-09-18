@@ -40,7 +40,7 @@ import sys
 print(sys.path)
 '''
 ['/usr/local/bin',
- '/mnt/md0/towards-threshold-invariance-in-defining-hippocampal-ripples/package/src',
+ '/mnt/md0/towards-threshold-invariance-in-defining-hippocampal-ripples',
  ...
  '.']
 '''
