@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Time-stamp: "2021-09-18 02:17:42 (ywatanabe)"
+# Time-stamp: "2021-09-18 07:40:34 (ywatanabe)"
 
 from setuptools import setup, find_packages
 
@@ -11,7 +11,7 @@ import re
 
 ################################################################################
 PACKAGE_NAME = "ripple_detector_CNN"
-PACKAGE_DATA = {"data": ["ResNet1D.yaml", "checkpoints/mouse_test#01_epoch#000.pth"]}
+PACKAGE_DATA = {"ripple_detector_CNN": ["data/ResNet1D.yaml"]}
 PACKAGES = find_packages(where="src")
 DESCRIPTION = "Hippocampal ripple detector introduced in the paper 'Towards threshold invariance in defining hippocampal ripples'"
 KEYWORDS = ["hippocampus", "sharp-wave ripples", "CNN", "MEG"]

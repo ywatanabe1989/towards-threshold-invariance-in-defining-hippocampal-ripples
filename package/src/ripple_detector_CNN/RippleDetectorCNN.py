@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-# Time-stamp: "2021-09-16 22:55:24 (ywatanabe)"
+# Time-stamp: "2021-09-18 08:04:04 (ywatanabe)"
 
+import pkgutil
 import random
 
 import mngs
@@ -8,6 +9,7 @@ import numpy as np
 import ripple_detector_CNN
 import torch
 import torch.nn as nn
+import yaml
 
 
 class RippleDetectorCNN(object):
@@ -41,12 +43,12 @@ class RippleDetectorCNN(object):
 
         return rip_sec_df
 
-    def estimate_ripple_proba(self, batch_size=32, model_state_dict=None):
+    def estimate_ripple_proba(self, batch_size=32, checkpoints=None):
         self.rip_sec_df = self._check_if_ripple_candidates_are_separable(
             self.rip_sec_df
         )
         self.rip_sec_df = self._separate_ripple_candidates(self.rip_sec_df)
-        self._load_the_trained_CNN(model_state_dict=model_state_dict)
+        self._load_the_trained_CNN(checkpoints=checkpoints)
         softmax = nn.Softmax(dim=-1)
         # labels = {0: "F", 1: "T"}
 
@@ -148,29 +150,29 @@ class RippleDetectorCNN(object):
 
         return rip_sec_df
 
-    def _load_the_trained_CNN(self, model_state_dict=None):
+    def _load_the_trained_CNN(self, checkpoints=None):
         ## Model initialization
-        ResNet1D_conf = mngs.general.load(
-            mngs.general.get_data_path_from_a_package(
-                "ripple_detector_CNN", "ResNet1D.yaml"
-            )
+
+        ResNet1D_conf = next(
+            yaml.load_all(pkgutil.get_data("ripple_detector_CNN", "data/ResNet1D.yaml"))
         )
         model = ripple_detector_CNN.ResNet1D(ResNet1D_conf)
 
         ## Loads the trained weight on four mice's data
-        if model_state_dict is not None:
-            model.load_state_dict(model_state_dict)
-        else:
+        if checkpoints is None:
+            # checkpoints = mngs.general.load(
+            #     mngs.general.get_data_path_from_a_package(
+            #         "./ripples/detect_ripples/CNN/train_FvsT/checkpoints/mouse_test#01_epoch#000.pth"
+            #     )
+            # )
             checkpoints = mngs.general.load(
-                mngs.general.get_data_path_from_a_package(
-                    "ripple_detector_CNN", "weights/mouse_test#01_epoch#000.pth"
-                )
+                "./ripples/detect_ripples/CNN/train_FvsT/checkpoints/mouse_test#01_epoch#000.pth"
             )
-            model.load_state_dict(
-                mngs.general.cvt_multi2single_model_state_dict(
-                    checkpoints["model_state_dict"]
-                )
+        model.load_state_dict(
+            mngs.general.cvt_multi2single_model_state_dict(
+                checkpoints["model_state_dict"]
             )
+        )
 
         ## to GPU and evaluation mode
         self.model = model.to("cuda").eval()

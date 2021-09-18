@@ -68,14 +68,16 @@ class ResNet1D(nn.Module):
 
 
 if __name__ == "__main__":
-    import utils.general as ug
+    import mngs
 
     ## Data
     BS, N_CHS, SEQ_LEN = 16, 1, 400
     inp = torch.rand(BS, N_CHS, SEQ_LEN)
 
     ## Model
-    model_config = ug.load("./models/ResNet1D/ResNet1D.yaml")
+    model_config = mngs.general.load(
+        "ripple_detector_CNN/ResNet1D/ResNet1D.yaml"
+    )  # fixme
     model = ResNet1D(model_config)
 
     ## Forward
