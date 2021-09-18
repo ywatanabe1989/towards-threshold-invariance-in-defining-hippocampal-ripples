@@ -77,40 +77,40 @@ $ singularity build .singularity/towards_threshold_invariance_in_defining_hippoc
 
 
 ## The order for the analytical scripts
-[./data/okada/preprocessing/nsx2mat_octave.m](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/data/okada/preprocessing/nsx2mat_octave.m)
-[./data/okada/preprocessing/mat2npy.py](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/data/okada/preprocessing/mat2npy.py)
-[./data/okada/preprocessing/mouse05_48h_to_2days.py](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/data/okada/preprocessing/mouse05_48h_to_2days.py)
-[./data/okada/preprocessing/mk_fpaths_list_of_hippo_LFP_and_trape_MEP_tets.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/data/okada/preprocessing/mk_fpaths_list_of_hippo_LFP_and_trape_MEP_tets.sh)
+- [./data/okada/preprocessing/nsx2mat_octave.m](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/data/okada/preprocessing/nsx2mat_octave.m)
+- [./data/okada/preprocessing/mat2npy.py](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/data/okada/preprocessing/mat2npy.py)
+- [./data/okada/preprocessing/mouse05_48h_to_2days.py](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/data/okada/preprocessing/mouse05_48h_to_2days.py)
+- [./data/okada/preprocessing/mk_fpaths_list_of_hippo_LFP_and_trape_MEP_tets.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/data/okada/preprocessing/mk_fpaths_list_of_hippo_LFP_and_trape_MEP_tets.sh)
 
-[./ripples/define_ripples/conventional/sh_scripts/makes_labels.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/conventional/sh_scripts/makes_labels.sh)
-[./ripples/define_ripples/conventional/sh_scripts/extracts_bands_magnitude.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/conventional/sh_scripts/extracts_bands_magnitude.sh)
-[./ripples/define_ripples/conventional/sh_scripts/calc_props.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/conventional/sh_scripts/calc_props.sh)
+- [./ripples/define_ripples/conventional/sh_scripts/makes_labels.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/conventional/sh_scripts/makes_labels.sh)
+- [./ripples/define_ripples/conventional/sh_scripts/extracts_bands_magnitude.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/conventional/sh_scripts/extracts_bands_magnitude.sh)
+- [./ripples/define_ripples/conventional/sh_scripts/calc_props.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/conventional/sh_scripts/calc_props.sh)
 
-[./EDA/sh_scripts/MEP_FFT_pow_corr.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/EDA/sh_scripts/MEP_FFT_pow_corr.sh)
+- [./EDA/sh_scripts/MEP_FFT_pow_corr.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/EDA/sh_scripts/MEP_FFT_pow_corr.sh)
 
-[./ripples/define_ripples/conventional/sh_scripts/plots_prop_hists.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/conventional/sh_scripts/plots_prop_hists.sh)
-[./ripples/define_ripples/using_GMM/estimates_the_optimal_n_clusters.py](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_GMM/estimates_the_optimal_n_clusters.py)
+- [./ripples/define_ripples/conventional/sh_scripts/plots_prop_hists.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/conventional/sh_scripts/plots_prop_hists.sh)
+- [./ripples/define_ripples/using_GMM/estimates_the_optimal_n_clusters.py](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_GMM/estimates_the_optimal_n_clusters.py)
 
-[./ripples/define_ripples/conventional/sh_scripts/plots_3d_scatter.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/conventional/sh_scripts/plots_3d_scatter.sh)
+- [./ripples/define_ripples/conventional/sh_scripts/plots_3d_scatter.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/conventional/sh_scripts/plots_3d_scatter.sh)
 
-[./ripples/define_ripples/using_GMM/sh_scripts/makes_labels.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_GMM/sh_scripts/makes_labels.sh)
-[./ripples/define_ripples/using_GMM/sh_scripts/makes_labels_D0X-.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_GMM/sh_scripts/makes_labels_D0X-.sh)
-[./ripples/define_ripples/using_GMM/sh_scripts/plots_3d_scatter.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_GMM/sh_scripts/plots_3d_scatter.sh)
+- [./ripples/define_ripples/using_GMM/sh_scripts/makes_labels.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_GMM/sh_scripts/makes_labels.sh)
+- [./ripples/define_ripples/using_GMM/sh_scripts/makes_labels_D0X-.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_GMM/sh_scripts/makes_labels_D0X-.sh)
+- [./ripples/define_ripples/using_GMM/sh_scripts/plots_3d_scatter.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_GMM/sh_scripts/plots_3d_scatter.sh)
 
-[./ripples/define_ripples/using_CNN/sh_scripts/isolates_candidates.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_CNN/sh_scripts/isolates_candidates.sh)
-[./ripples/define_ripples/using_CNN/sh_scripts/makes_labels.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_CNN/sh_scripts/makes_labels.sh)
+- [./ripples/define_ripples/using_CNN/sh_scripts/isolates_candidates.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_CNN/sh_scripts/isolates_candidates.sh)
+- [./ripples/define_ripples/using_CNN/sh_scripts/makes_labels.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_CNN/sh_scripts/makes_labels.sh)
 
-[./ripples/define_ripples/using_CNN/plots_3d_scatter.py](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_CNN/plots_3d_scatter.py)
-[./ripples/define_ripples/using_CNN/sh_scripts/plots_3d_scatter.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_CNN/sh_scripts/plots_3d_scatter.sh)
-[./ripples/define_ripples/using_CNN/sh_scripts/checks_traces.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_CNN/sh_scripts/checks_traces.sh)
+- [./ripples/define_ripples/using_CNN/plots_3d_scatter.py](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_CNN/plots_3d_scatter.py)
+- [./ripples/define_ripples/using_CNN/sh_scripts/plots_3d_scatter.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_CNN/sh_scripts/plots_3d_scatter.sh)
+- [./ripples/define_ripples/using_CNN/sh_scripts/checks_traces.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_CNN/sh_scripts/checks_traces.sh)
 
-[./ripples/define_ripples/summary/sh_scripts/checks_ripple_props.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/summary/sh_scripts/checks_ripple_props.sh)
-[./ripples/define_ripples/using_CNN/calcs_corr_of_labels.py](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_CNN/calcs_corr_of_labels.py)
+- [./ripples/define_ripples/summary/sh_scripts/checks_ripple_props.sh](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/summary/sh_scripts/checks_ripple_props.sh)
+- [./ripples/define_ripples/using_CNN/calcs_corr_of_labels.py](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/define_ripples/using_CNN/calcs_corr_of_labels.py)
 
-[./ripples/detect_ripples/CNN/train_FvsT.py](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/train_FvsT.py)
+- [./ripples/detect_ripples/CNN/train_FvsT.py](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/train_FvsT.py)
 
-[./ripples/detect_ripples/CNN/from_unseen_LFP.py](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/from_unseen_LFP.py)
-[./ripples/detect_ripples/CNN/from_unseen_LFP.ipynb](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/from_unseen_LFP.ipynb)
+- [./ripples/detect_ripples/CNN/from_unseen_LFP.py](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/from_unseen_LFP.py)
+- [./ripples/detect_ripples/CNN/from_unseen_LFP.ipynb](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/from_unseen_LFP.ipynb)
 
 
 ### Our machine info
