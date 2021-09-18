@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 
-ORIG_DIR=`pwd` #
+ORIG_DIR=`pwd`
 
 cd ./data/CRCN_batch_download/download/
 
 ## Set your CRCN account
 echo -e "\nPlease sign in CRCN.org (https://crcns.org/) and get your own account. Then, set the ID and PW in the ./data/batch_download/downaload/crcn-account.txt\n"
-# cp ./data/batch_download/download/crcns-account.txt ./data/batch_download/download/crcns-account.txt_orig
-$EDITOR ./crcns-account.txt
-
+if [ ! -f "crcns-account.txt" ]; then
+    echo 'file not exists'
+    cp ./crcns-account.txt_orig ./crcns-account.txt
+    $EDITOR ./crcns-account.txt    
+fi
 
 pwd
 chmod u+x *.sh
