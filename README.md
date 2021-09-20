@@ -13,15 +13,8 @@ $ git lfs install
 ```
 
 
-## Available LFP Data
+## Available LFP Data and the Demo
 To reproduce [a demo](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/from_unseen_LFP.ipynb), please download [the th-1 dataset](https://crcns.org/data-sets/thalamus/th-1/about-th-1) of CRCNS. The demo (.ipynb/.py) shows how to use the ripple_detector_CNN with unseen LFP data.
-
-The .py version of the demo is also run with the command below and the results will be logged under [./ripples/detect_ripples/CNN/from_unseen_LFP/](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/from_unseen_LFP/).
-
-``` bash
-$ singularity exec --nv ./singularity/image.sif python ./ripples/detect_ripples/CNN/from_unseen_LFP.py
-# $ spy ./ripples/detect_ripples/CNN/from_unseen_LFP.py # using ./singularity/singularity-aliases.bash
-```
 
 >Peyrache, A., Petersen P., Buzsáki, G. (2015)  
 >Extracellular recordings from multi-site silicon probes in the anterior thalamus and subicular formation of freely moving mice. CRCNS.org.  
@@ -32,6 +25,14 @@ Scripts for downloading the th-1 dataset is prepaired under [./data/CRCN_batch_d
 ./towards-threshold-invariance-in-defining-hippocampal-ripples/data/th-1/data/Mouse12-120806/Mouse12-120806.eeg
 ./towards-threshold-invariance-in-defining-hippocampal-ripples/data/th-1/data/Mouse12-120806/Mouse12-120806.xml
 ```
+
+The .py version of the demo is also run with the command below and the results will be logged under [./ripples/detect_ripples/CNN/from_unseen_LFP/](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/from_unseen_LFP/).
+
+``` bash
+$ singularity exec --nv ./singularity/image.sif python ./ripples/detect_ripples/CNN/from_unseen_LFP.py
+# $ spy ./ripples/detect_ripples/CNN/from_unseen_LFP.py # using ./singularity/singularity-aliases.bash
+```
+
 
 
 ## Analytical Code
