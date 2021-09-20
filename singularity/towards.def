@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: centos:centos8
+From: nvidia/cuda:10.2-cudnn7-devel-centos8
 
 
 %setup
@@ -7,18 +7,11 @@ From: centos:centos8
 
 %post -c /bin/bash
     ################################################################################
-    ## PATHs
-    ################################################################################    
-    . $SINGULARITY_ENVIRONMENT # . /.singularity.d/env/91-environment.sh
-
-
-    ################################################################################
     ## CentOS
     ################################################################################    
     echo > /etc/hosts
     yum -y install setup
-    yum -y upgrade
-    # yum -y groupinstall "Development Tools"
+    yum -y update
 
 
     ##############################
@@ -26,8 +19,8 @@ From: centos:centos8
     ##############################
     yum -y install dnf-plugins-core
     yum config-manager --set-enabled powertools
-    yum -y install epel-release    
-    yum -y upgrade
+    yum -y install epel-release
+    yum -y update
 
 
     ##############################
@@ -37,21 +30,6 @@ From: centos:centos8
     export LC_ALL=en_US.UTF-8
     echo export LC_ALL=$LC_ALL >> $SINGULARITY_ENVIRONMENT
 
-
-    ##############################
-    ## Misc
-    ##############################
-    yum -y install python38-tkinter
-    yum -y install mesa-libGL
-    yum -y install tree
-    yum -y install htop
-
-    # ripgrep
-    RIP_GREP_REPO_URL="https://copr.fedorainfracloud.org/coprs/carlwgeorge/ripgrep/repo/\
-                       epel-7/carlwgeorge-ripgrep-epel-7.repo"
-    RIP_GREP_REPO_URL=`echo $RIP_GREP_REPO_URL | tr -d "[:blank:]"`
-    yum config-manager --add-repo=$RIP_GREP_REPO_URL
-    yum -y install ripgrep
 
     ################################################################################
     ## FFMpeg
@@ -71,24 +49,23 @@ From: centos:centos8
     ## Python
     ################################################################################
     yum -y install python38 python38-devel
-    
-    ## pip
-    python3 -m pip install --upgrade pip
-    python3 -m pip install imgcat    
-    python3 -m pip install octave_kernel
-    python3 -m pip install jupyter
-    
+    ln -s /usr/bin/python3 /usr/bin/python # alias        
+    yum -y install python38-tkinter        
+
     
     ## packages
+    python3 -m pip install --upgrade pip
+    python3 -m pip install octave_kernel
+    python3 -m pip install jupyter
     python3 -m pip install matplotlib
     python3 -m pip install natsort
     python3 -m pip install numpy
-    python3 -m pip install obspy
     python3 -m pip install pandas
-    python3 -m pip install torch torchvision torchaudio
+
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH    
+    python3 -m pip install torch torchvision
     python3 -m pip install scikit-learn
     python3 -m pip install seaborn
-    python3 -m pip install six
     python3 -m pip install tqdm
     python3 -m pip install h5py
     python3 -m pip install black
@@ -98,23 +75,20 @@ From: centos:centos8
     python3 -m pip install ipython
     python3 -m pip install scikit-image
     python3 -m pip install cleanlab
-    # python3 -m pip install yellowbrick
     python3 -m pip install ipdb
     python3 -m pip install statsmodels
-    # python3 -m pip install ray
-    # python3 -m pip install imblearn
     python3 -m pip install chardet
     python3 -m pip install cElementTree
     python3 -m pip install swifter
-    python3 -m pip install mngs    
+    python3 -m pip install ripple_detector_CNN    
     
 
     ################################################################################
     ## PS1
     ################################################################################
-    CUSTOM_PS1_FILE=/.singularity.d/env/99-zz-02_custom_ps1.sh
+    CUSTOM_PS1_FILE=/.singularity.d/env/99-zz-01_custom_ps1.sh
     cat << "    EOH" | awk '{$1=$1;print}' > $CUSTOM_PS1_FILE        
-    #!/bin/bash"
+    #!/bin/bash
     
     PS1="(S)\W \$ "
     
@@ -131,25 +105,28 @@ From: centos:centos8
 
 
 %help
-    The container for the paper "Towards threshold invariance in defining hippocampal ripples."
+    A container for the paper "Towards threshold invariance in defining hippocampal ripples."
 
 
 %labels
-    Author XXXXX
-    Version 0.1.0
+    Author ywata1989@gmail.com
+    Version 0.1.1
 
 
 %environment
-    # This section will be appended to the file /.singularity.d/env/90-environment.sh
-    # and files in /.singularity.d/env/ dir are sourced in alpha-numerical order
+    # This section will be appended to /.singularity.d/env/90-environment.sh in the
+    # container. Then, sh files under /.singularity.d/env/ are sourced in the alpha-numerical order
 
+    ################################################################################
     ## PATHs
-    export PATH=/opt/conda/condabin:/opt/conda/envs/rapids/bin:/opt/conda/bin:$HOME/.local/bin:$PATH
-    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/lib:/usr/local/lib64
+    ################################################################################
+    export PATH=/usr/local/cuda/bin:$PATH    
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
     export PYTHONPATH=''
-    export CUDA_HOME=/user/local/cuda
 
-    ## Meta data
+    ################################################################################
+    ## Meta
+    ################################################################################
     export CONTAINER_BUILD_DATE=\"`date`\"
 
 
@@ -163,27 +140,13 @@ From: centos:centos8
 
 
 '''
-sudo /opt/bin/singularity exec --writable ./singularity/towards_threshold_invariance_in_defining_hippocampal_ripples python3 -m pip install PyYAML
+sudo /opt/bin/singularity exec --writable ./singularity/towards python3 -m pip install PyYAML
 
-sbuild ./singularity/towards_threshold_invariance_in_defining_hippocampal_ripples.def -f
+sbuild ./singularity/towards.def -f
 sshell
 
-sbuildw ./singularity/towards_threshold_invariance_in_defining_hippocampal_ripples.def
+sbuildw ./singularity/towards.def
 
-sshellw ./singularity/towards_threshold_invariance_in_defining_hippocampal_ripples
-# It might be useful if you would add thise lines in ~/.bashrc.
-alias tree='singularity exec $TOOLS_SIF tree'
-alias htop='singularity exec $TOOLS_SIF htop'
-alias sshpass='singularity exec $TOOLS_SIF sshpass'
-alias rg='singularity exec $TOOLS_SIF rg'
-alias imgcat='singularity exec $TOOLS_SIF imgcat'
-# alias emacs='singularity exec $TOOLS_SIF emacs-26.1'
-
-
-WARNING: Permission handling has changed in Singularity 3.5 for improved OCI compatibility
-WARNING: The sandbox will contain files/dirs that cannot be removed until permissions are modified
-WARNING: Use 'chmod -R u+rwX' to set permissions that allow removal
-WARNING: Use the '--fix-perms' option to 'singularity build' to modify permissions at build time
-WARNING: You can provide feedback about this change at https://github.com/sylabs/singularity/issues/4671    
+sshellw ./singularity/towards
 '''
 
