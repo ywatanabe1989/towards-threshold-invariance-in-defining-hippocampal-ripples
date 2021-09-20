@@ -1,5 +1,4 @@
-ripples/detect_ripples/CNN/train_FvsT/checkpoints/mouse_test\#01_epoch\#000.pth filter=lfs diff=lfs merge=lfs -text
-ripples/detect_ripples/CNN/train_FvsT/checkpoints/mouse_test\#02_epoch\#000.pth filter=lfs diff=lfs merge=lfs -text
-ripples/detect_ripples/CNN/train_FvsT/checkpoints/mouse_test\#03_epoch\#000.pth filter=lfs diff=lfs merge=lfs -text
-ripples/detect_ripples/CNN/train_FvsT/checkpoints/mouse_test\#04_epoch\#000.pth filter=lfs diff=lfs merge=lfs -text
-ripples/detect_ripples/CNN/train_FvsT/checkpoints/mouse_test\#05_epoch\#000.pth filter=lfs diff=lfs merge=lfs -text
+# git lfs track *.pth *.png *.mp4
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.pth filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
