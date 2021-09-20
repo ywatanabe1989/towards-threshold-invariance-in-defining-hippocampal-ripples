@@ -72,10 +72,10 @@ $ singularity exec --nv ./singularity/image.sif python ./ripples/detect_ripples/
 ├── models (our CNN definition files (.py) and configuration files (.yaml))
 ├── README.md (this file)
 ├── singularity 
-│   ├── towards-threshold-invariance-in-defining-hippocampal-ripples.def (a singularity definition file)
+│   └── towards-threshold-invariance-in-defining-hippocampal-ripples.def (a singularity definition file)
 ├── ripples
 │   ├── detect_ripples
-│   ├── define_ripples
+│   └── define_ripples
 ├── utils (Now, utils is transfered to [mngs package](https://github.com/ywatanabe1989/mngs) except for the pj dir)
 │   ├── dsp.py (**d**igital **s**ignal **p**rocessing)
 │   ├── general.py (general snippets for python users)
@@ -83,7 +83,7 @@ $ singularity exec --nv ./singularity/image.sif python ./ripples/detect_ripples/
 │   ├── pj (unique for this **p**ro**j**ect)
 │   ├── plt (**pl**o**t**ting)
 │   └── stats (**stat**i**s**tics)
-├── paper (info for this paper)
+└── paper (info for this paper)
 ```
 
 
