@@ -20,6 +20,7 @@ octave-workspace
 ## Exceptions
 # Singularity
 !*.def
+!ripples/detect_ripples/CNN/from_unseen_LFP
 !ripples/detect_ripples/CNN/train_FvsT/checkpoints/*.pth
 !package/data/checkpoints/*.pth
 

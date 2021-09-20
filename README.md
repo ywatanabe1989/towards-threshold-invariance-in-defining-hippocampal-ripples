@@ -1,25 +1,27 @@
-## Install ripple_detector_CNN
+## [Ripple Detector]
 A hippocamal ripple detector, introduced in the paper "Towards threshold invariance in defining hippocampal ripples", can be installed via the pip.
 ``` bash
 $ pip install ripple_detector_CNN
 ```
-## Install git-lfs for the trained weights
-https://packagecloud.io/github/git-lfs/install
+It's also included in [the prepaired singularity container](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/singularity/towards.def).
 
+
+## [Trained Weights] 
+Please install the git-lfs for downloading [the trained weights](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/train_FvsT/checkpoints/)
+https://packagecloud.io/github/git-lfs/install
 ``` bash
 $ git lfs install
 ```
 
 
-### CRCNS's opensourced-data
-[A demo page](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/from_unseen_LFP.ipynb) shows how to use the ripple_detector_CNN with LFP data from a mouse's hippocampal CA1 region in [the th-1 dataset](https://crcns.org/data-sets/thalamus/th-1/about-th-1). 
+### [Available Data]
+To reproduce [a demo](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/from_unseen_LFP.ipynb), please download [the th-1 dataset](https://crcns.org/data-sets/thalamus/th-1/about-th-1) of CRCNS. The demo (.ipynb/.py) shows how to use the ripple_detector_CNN with unseen LFP data.
 
 The .py version of the demo is also run with the command below.
 
 ``` bash
-spy ./ripples/detect_ripples/CNN/from_useen_LFP.py
-$ singularity exec --nv ./singularity/towards.sif python3 ripples/detect_ripples/CNN/from_useen_LFP.py
-$ spy ripples/detect_ripples/CNN/from_unseen_LFP.py
+$ singularity exec --nv ./singularity/image.sif python ./ripples/detect_ripples/CNN/from_unseen_LFP.py
+# $ spy ./ripples/detect_ripples/CNN/from_unseen_LFP.py # using ./singularity/singularity-aliases.bash
 ```
 
 >Peyrache, A., Petersen P., Buzsáki, G. (2015)  
@@ -38,8 +40,7 @@ Please clone this repository and add the top directory to the PATH.
 ``` bash
 $ git clone https:github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples
 $ cd towards-threshold-invariance-in-defining-hippocampal-ripples
-$ git submodule init
-$ git submodule update
+$ du -sh ripples/detect_ripples/CNN/train_FvsT/checkpoints/ # 612MB if git-lfs was installed otherwise 20KB
 ```
 
 The PATH can be checked like below.
@@ -55,9 +56,11 @@ print(sys.path)
 ```
 
 
-### Build singularity container for executing the analytical code
+## The singularity container for the analytical code
 ``` bash
 $ singularity build .singularity/towards_threshold_invariance_in_defining_hippocampal_ripples.sif .singularity/towards_threshold_invariance_in_defining_hippocampal_ripples.def
+$ singularity exec --nv ./singularity/image.sif python ./ripples/detect_ripples/CNN/from_unseen_LFP.py # an example
+# $ spy ./ripples/detect_ripples/CNN/from_unseen_LFP.py # using ./singularity/singularity-aliases.bash
 ```
 
 
@@ -121,11 +124,21 @@ $ singularity build .singularity/towards_threshold_invariance_in_defining_hippoc
   - [./ripples/detect_ripples/CNN/from_unseen_LFP.ipynb (the demo page)](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/from_unseen_LFP.ipynb)
 
     
-### Our machine info
-- CPU: Intel(R) Core(TM) i7-6950X CPU @ 3.00GHz
-- RAM: 128 GB
-- GPU: NVIDIA GeForce GTX 1080 Ti * 4
-- 2 TB NVME storage
-- (28 TB RAID5 HDD storage)
-- Nvidia Driver: 465.19.01
-- CUDA version: V10.1.243
+## Machine info
+### For just estimating ripple probabilities using the once trained model
+    - CPU: AMD Ryzen 7 1700 Eight-Core Processor
+    - RAM: 64 GB
+    - GPU: NVIDIA GeForce GTX 1070
+    - 1 TB NVME storage
+    - Nvidia Driver: 470.63.01
+    - CUDA version: V10.2.89
+
+### For training the model from scratch 
+    - CPU: Intel(R) Core(TM) i7-6950X CPU @ 3.00GHz
+    - RAM: 128 GB
+    - GPU: NVIDIA GeForce GTX 1080 Ti * 4
+    - 2 TB NVME storage
+    - (28 TB RAID5 HDD storage)
+    - Nvidia Driver: 465.19.01
+    - CUDA version: V10.1.243
+
