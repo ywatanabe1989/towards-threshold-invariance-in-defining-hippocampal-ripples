@@ -16,7 +16,7 @@ $ git lfs install
 ## Available LFP Data
 To reproduce [a demo](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/from_unseen_LFP.ipynb), please download [the th-1 dataset](https://crcns.org/data-sets/thalamus/th-1/about-th-1) of CRCNS. The demo (.ipynb/.py) shows how to use the ripple_detector_CNN with unseen LFP data.
 
-The .py version of the demo is also run with the command below.
+The .py version of the demo is also run with the command below and the results will be logged under [./ripples/detect_ripples/CNN/from_unseen_LFP/](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/from_unseen_LFP/).
 
 ``` bash
 $ singularity exec --nv ./singularity/image.sif python ./ripples/detect_ripples/CNN/from_unseen_LFP.py
