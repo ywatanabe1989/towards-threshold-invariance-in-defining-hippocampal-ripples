@@ -72,7 +72,7 @@ $ singularity exec --nv ./singularity/image.sif python ./ripples/detect_ripples/
 ├── models (our CNN definition files (.py) and configuration files (.yaml))
 ├── README.md (this file)
 ├── singularity 
-│   └── towards-threshold-invariance-in-defining-hippocampal-ripples.def (a singularity definition file)
+│   └── towards.def (a singularity definition file)
 ├── ripples
 │   ├── detect_ripples
 │   └── define_ripples
