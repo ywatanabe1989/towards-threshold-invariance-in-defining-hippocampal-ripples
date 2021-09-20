@@ -6,7 +6,7 @@ $ pip install ripple_detector_CNN
 It's also included in [the prepaired singularity container](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/singularity/towards.def).
 
 
-## Trained Weights]
+## Trained Weights
 Please install the git-lfs for downloading [the trained weights](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/train_FvsT/checkpoints/)
 https://packagecloud.io/github/git-lfs/install
 ``` bash
