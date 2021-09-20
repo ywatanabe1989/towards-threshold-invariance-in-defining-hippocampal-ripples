@@ -1,3 +1,0 @@
-[submodule "modules/buzcode"]
-	path = modules/buzcode
-	url = https://github.com/buzsakilab/buzcode.git
