@@ -7,7 +7,7 @@ It's also included in [the prepaired singularity container](https://github.com/y
 
 
 ## Trained Weights
-Please install the git-lfs for downloading [the trained weights](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/train_FvsT/checkpoints/). Installation script is writtein on [the official page](https://packagecloud.io/github/git-lfs/install).
+Please install the git-lfs for downloading [the trained weights](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/train_FvsT/checkpoints/). Installation scripts are written on [the official page](https://packagecloud.io/github/git-lfs/install).
 ``` bash
 $ git lfs install
 ```
