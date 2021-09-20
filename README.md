@@ -1,4 +1,4 @@
-## [Ripple Detector]
+## Ripple Detector
 A hippocamal ripple detector, introduced in the paper "Towards threshold invariance in defining hippocampal ripples", can be installed via the pip.
 ``` bash
 $ pip install ripple_detector_CNN
@@ -6,7 +6,7 @@ $ pip install ripple_detector_CNN
 It's also included in [the prepaired singularity container](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/singularity/towards.def).
 
 
-## [Trained Weights] 
+## Trained Weights]
 Please install the git-lfs for downloading [the trained weights](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/train_FvsT/checkpoints/)
 https://packagecloud.io/github/git-lfs/install
 ``` bash
@@ -14,7 +14,7 @@ $ git lfs install
 ```
 
 
-### [Available Data]
+## Available LFP Data
 To reproduce [a demo](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/from_unseen_LFP.ipynb), please download [the th-1 dataset](https://crcns.org/data-sets/thalamus/th-1/about-th-1) of CRCNS. The demo (.ipynb/.py) shows how to use the ripple_detector_CNN with unseen LFP data.
 
 The .py version of the demo is also run with the command below.
@@ -35,7 +35,7 @@ Scripts for downloading the th-1 dataset is prepaired under [./data/CRCN_batch_d
 ```
 
 
-## Install analytical code
+## Analytical Code
 Please clone this repository and add the top directory to the PATH.
 ``` bash
 $ git clone https:github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples
@@ -56,7 +56,7 @@ print(sys.path)
 ```
 
 
-## The singularity container for the analytical code
+## The Singularity Container for the Analytical Code
 ``` bash
 $ singularity build .singularity/towards_threshold_invariance_in_defining_hippocampal_ripples.sif .singularity/towards_threshold_invariance_in_defining_hippocampal_ripples.def
 $ singularity exec --nv ./singularity/image.sif python ./ripples/detect_ripples/CNN/from_unseen_LFP.py # an example
@@ -64,7 +64,7 @@ $ singularity exec --nv ./singularity/image.sif python ./ripples/detect_ripples/
 ```
 
 
-## Directory tree with notes (only important ones)
+## Directory Tree
 ```
 .towards-threshold-invariance-in-defining-hippocampal-ripples
 ├── conf (global configuration files)
@@ -87,7 +87,7 @@ $ singularity exec --nv ./singularity/image.sif python ./ripples/detect_ripples/
 ```
 
 
-## The order for the analytical scripts to be run
+## The Order for the Analysis
 - signal conversion to python numpy format
     - [./data/okada/preprocessing/nsx2mat_octave.m](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/data/okada/preprocessing/nsx2mat_octave.m)
     - [./data/okada/preprocessing/mat2npy.py](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/data/okada/preprocessing/mat2npy.py)
@@ -124,7 +124,7 @@ $ singularity exec --nv ./singularity/image.sif python ./ripples/detect_ripples/
   - [./ripples/detect_ripples/CNN/from_unseen_LFP.ipynb (the demo page)](https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples/blob/main/ripples/detect_ripples/CNN/from_unseen_LFP.ipynb)
 
     
-## Machine info
+## Machine Info
 ### For just estimating ripple probabilities using the once trained model
     - CPU: AMD Ryzen 7 1700 Eight-Core Processor
     - RAM: 64 GB
@@ -142,3 +142,4 @@ $ singularity exec --nv ./singularity/image.sif python ./ripples/detect_ripples/
     - Nvidia Driver: 465.19.01
     - CUDA version: V10.1.243
 
+## Contact
