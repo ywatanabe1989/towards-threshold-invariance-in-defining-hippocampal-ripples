@@ -1,2 +1,0 @@
-/mnt/md0/towards-threshold-invariance-in-defining-hippocampal-ripples/package/src/ripple_detector_CNN/RippleDetectorCNN.py:156: YAMLLoadWarning: calling yaml.load_all() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
-  ResNet1D_conf = next(

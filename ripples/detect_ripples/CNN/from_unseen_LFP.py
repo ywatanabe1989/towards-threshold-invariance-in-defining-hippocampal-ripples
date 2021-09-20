@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # coding: utf-8
-# Time-stamp: "2021-09-20 22:24:25 (ywatanabe)"
+# Time-stamp: "2021-09-21 00:41:51 (ywatanabe)"
 
 # spy ./ripples/detect_ripples/CNN/from_unseen_LFP.py
 
@@ -116,7 +116,7 @@ def plot_LFP_trace(
 
 
 ################################################################################
-## Sets tee
+## Sets tee for logging
 ################################################################################
 sys.stdout, sys.stderr = mngs.general.tee(sys)
 
@@ -173,18 +173,24 @@ rdCNN = ripple_detector_CNN.RippleDetectorCNN(
     samp_rate=SAMP_RATE_TGT,
 )
 rip_sec_df = rdCNN.detect_ripple_candidates()
-checkpoints_lpath = (
+
+"""
+Checkpoint file is included in the repository.
+To clone or download it, git-LFS (large file system) is required.
+Also other four weights (*/mouse_test#0[2-5]_epoch#000.pth) works as well.
+"""
+checkpoint_lpath = (
     "./ripples/detect_ripples/CNN/train_FvsT/checkpoints/mouse_test#01_epoch#000.pth"
 )
 try:
-    checkpoints = mngs.general.load(checkpoints_lpath)
+    checkpoint = mngs.general.load(checkpoint_lpath)
 except:
+    checkpoint = None
     print(
-        f'\n"{checkpoints_lpath}" was not appropriately loaded. This may be caused by cloning or downloading the repository without git-LFS system. Please see https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples'
+        f'\n"{checkpoint_lpath}" was not appropriately loaded. This may be caused by cloning or downloading the repository without git-LFS system. Please see https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples'
     )
-# This weight file is included in the repository. To clone or download it, might require git-LFP is installed. Of course, other four weights (*/mouse_test#0?_epoch#000.pth) will work as well.
 rip_sec_df_with_estimated_ripple_conf = rdCNN.estimate_ripple_proba(
-    checkpoints=checkpoints
+    batch_size=32, checkpoint=checkpoint
 )
 
 ################################################################################
