@@ -58,7 +58,7 @@ print(sys.path)
 
 ## The Singularity Container for the Analytical Code
 ``` bash
-$ singularity build .singularity/towards_threshold_invariance_in_defining_hippocampal_ripples.sif .singularity/towards_threshold_invariance_in_defining_hippocampal_ripples.def
+$ singularity build .singularity/towards.sif .singularity/towards.def
 $ singularity exec --nv ./singularity/image.sif python ./ripples/detect_ripples/CNN/from_unseen_LFP.py # an example
 # $ spy ./ripples/detect_ripples/CNN/from_unseen_LFP.py # using ./singularity/singularity-aliases.bash
 ```
