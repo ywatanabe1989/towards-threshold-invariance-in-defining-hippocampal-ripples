@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # coding: utf-8
-# Time-stamp: "2021-09-18 08:42:44 (ywatanabe)"
+# Time-stamp: "2021-09-20 22:24:25 (ywatanabe)"
 
 # spy ./ripples/detect_ripples/CNN/from_unseen_LFP.py
 
@@ -32,16 +32,6 @@ def plot_LFP_trace(
     ylim=(-1050, 1050),
 ):
 
-    """
-    lfp_start_sec  # 819
-    plt_start_sec  # 872
-    plt_end_sec  # 875
-    plt_dur_sec  # 3
-
-    _plt_start_pts # 53000
-    _plt_end_pts # 56000
-    """
-
     ## Prepares the figure
     fig, ax = plt.subplots()
 
@@ -50,19 +40,11 @@ def plot_LFP_trace(
 
     _plt_start_pts = (plt_start_sec - lfp_start_sec) * SAMP_RATE_TGT
     _plt_end_pts = _plt_start_pts + plt_dur_sec * SAMP_RATE_TGT
-    # plt_start_sec = plt_start_sec
-
-    # plt_start_pts = plt_start_sec * SAMP_RATE_TGT
-    # plt_end_pts = plt_end_sec * SAMP_RATE_TGT
 
     ## Limits LFP
-    # lfp_plt = lfp_1ch_cropped[plt_start_pts:plt_end_pts]
     lfp_plt = lfp_1ch_cropped[_plt_start_pts:_plt_end_pts]
 
     ## Limits timepoints
-    # x_sec = np.arange(len(lfp_1ch_cropped)) / SAMP_RATE_TGT
-    # x_plt_sec = x_sec[plt_start_pts:plt_end_pts]
-    # x_plt_sec = x_sec[_plt_start_pts:_plt_end_pts]
     x_plt_sec = lfp_timepoints_sec[_plt_start_pts:_plt_end_pts]
 
     ## Limits ripple data frame
@@ -191,9 +173,15 @@ rdCNN = ripple_detector_CNN.RippleDetectorCNN(
     samp_rate=SAMP_RATE_TGT,
 )
 rip_sec_df = rdCNN.detect_ripple_candidates()
-checkpoints = mngs.general.load(
+checkpoints_lpath = (
     "./ripples/detect_ripples/CNN/train_FvsT/checkpoints/mouse_test#01_epoch#000.pth"
 )
+try:
+    checkpoints = mngs.general.load(checkpoints_lpath)
+except:
+    print(
+        f'\n"{checkpoints_lpath}" was not appropriately loaded. This may be caused by cloning or downloading the repository without git-LFS system. Please see https://github.com/ywatanabe1989/towards-threshold-invariance-in-defining-hippocampal-ripples'
+    )
 # This weight file is included in the repository. To clone or download it, might require git-LFP is installed. Of course, other four weights (*/mouse_test#0?_epoch#000.pth) will work as well.
 rip_sec_df_with_estimated_ripple_conf = rdCNN.estimate_ripple_proba(
     checkpoints=checkpoints
